@@ -1,8 +1,8 @@
 _resupplyAvailable = [
 	["Rifle Resupply",
 		[
-			["hlc_30Rnd_545x39_EP_ak",40],
-			["hlc_30rnd_545x39_t_ak",40]
+			["rhs_30Rnd_762x39mm_polymer",40],
+			["rhs_30Rnd_762x39mm_polymer_tracer",40]
 		]
 	],
 	["AR Resupply",
@@ -12,7 +12,7 @@ _resupplyAvailable = [
 	],
 	["MMG Resupply",
 		[
-			["rhs_100Rnd_762x54mmR_green",18]
+			["rhs_100Rnd_762x54mmR_green",20]
 		]
 	],
 	["DMR Resupply",
@@ -22,7 +22,7 @@ _resupplyAvailable = [
 	],
 	["LAT Resupply",
 		[
-			["rhs_weap_rpg75",9]
+			["rhs_weap_rpg75",8]
 		]
 	],
 	["MAT OG-7V (HE Frag)",
@@ -119,8 +119,8 @@ _resupplyAvailable = [
 	["Squad Resupply",
 		[
 		
-			["hlc_30Rnd_545x39_EP_ak",20],
-			["hlc_30rnd_545x39_t_ak",20],
+			["rhs_30Rnd_762x39mm_polymer",20],
+			["rhs_30Rnd_762x39mm_polymer_tracer",20],
 			["hlc_60Rnd_545x39_t_rpk",20],
 			["rhs_weap_rpg75",2],
 			["rhssaf_mag_br_m84",10],

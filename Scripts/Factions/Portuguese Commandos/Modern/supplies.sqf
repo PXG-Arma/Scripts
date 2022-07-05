@@ -1,8 +1,8 @@
 _resupplyAvailable = [
 	["Rifle Resupply",
 		[
-			["rhs_mag_20Rnd_SCAR_762x51_m61_ap",35],
-			["rhs_mag_20Rnd_SCAR_762x51_m62_tracer",35]
+			["rhs_mag_20Rnd_SCAR_762x51_m61_ap",40],
+			["rhs_mag_20Rnd_SCAR_762x51_m62_tracer",40]
 		]
 	],
 	["AR Resupply",

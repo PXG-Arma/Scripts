@@ -2,31 +2,32 @@ params["_side","_faction","_variant", "_loadout"];
 
 // add primary weapon
 switch (_loadout) do {
-	default { player addWeapon "rhs_weap_aks74";
-			  player addPrimaryWeaponItem "rhs_acc_pkas";
+	default { player addWeapon "hlc_rifle_ak12";
+			  player addPrimaryWeaponItem "rhs_acc_1p87";
+			  player addPrimaryWeaponItem "rhs_acc_dtk3";
+			  player addPrimaryWeaponItem "rhs_acc_perst3";
+			  player addPrimaryWeaponItem "rhs_acc_grip_ffg2";
 	};
+	case "ar_c";
+	case "pil":{player addWeapon "hlc_rifle_aku12"};
 	case "plt";
 	case "sqd_ld";
-	case "sqd_gre":{ player addWeapon "rhs_weap_aks74n_gp25";
-					player addPrimaryWeaponItem "rhs_acc_pkas"
-	};
-	case "sqd_ar": {player addWeapon "rhs_weap_rpk74m";
-					player addPrimaryWeaponItem "rhs_acc_pkas";
-	};
-	case "sqd_dmr": {player addWeapon "rhs_weap_svdp";
-					 player addPrimaryWeaponItem "rhs_acc_pso1m21_svd"
-	};	
-	case "rcn_dmr": {player addWeapon "rhs_weap_svdp";
-					 player addPrimaryWeaponItem "rhs_acc_pso1m21_svd"
-	};
-		case "rcn_drone": {player addWeapon "rhs_weap_ak74mr";
+	case "rcn_ld";
+	case "sqd_gre":{player addWeapon "hlc_rifle_ak12GL";
 					player addPrimaryWeaponItem "rhs_acc_1p87";
+					player addPrimaryWeaponItem "rhs_acc_perst3";
+					player addPrimaryWeaponItem "rhs_acc_dtk3";
 	};
-	case "rcn_ld": {player addWeapon "rhs_weap_ak74mr_gp25";
-					 player addPrimaryWeaponItem "rhs_acc_1p87"
+	case "sqd_ar": {player addWeapon "hlc_rifle_RPK12";
+					player addPrimaryWeaponItem "rhs_acc_1p87";
+			  		player addPrimaryWeaponItem "rhs_acc_dtk3";
+			  		player addPrimaryWeaponItem "rhs_acc_perst3";
 	};
-	case "sup_mmg_g": {	player addWeapon "rhs_weap_pkp";
-						player addPrimaryWeaponItem "rhs_acc_1p29_pkp"
+	case "rcn_dmr": {player addWeapon "rhs_weap_svdp";
+					 player addPrimaryWeaponItem "rhs_acc_pso1m21_svd";
+	};
+	case "sup_mmg_g": {player addWeapon "rhs_weap_pkp";
+					   player addPrimaryWeaponItem "rhs_acc_1p29_pkp";
 	};
 };
 

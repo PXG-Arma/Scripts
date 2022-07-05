@@ -13,7 +13,7 @@ _resupplyAvailable = [
 	],
 	["MMG Resupply",
 		[
-			["rhs_100Rnd_762x54mmR_green",18]
+			["rhs_100Rnd_762x54mmR_green",20]
 		]
 	],
 	["DMR Resupply",
@@ -24,7 +24,7 @@ _resupplyAvailable = [
 	],
 	["LAT Resupply",
 		[
-			["rhs_weap_rpg26",9]
+			["rhs_weap_rpg26",8]
 		]
 	],
 	["MAT OG-7V (HE Frag)",

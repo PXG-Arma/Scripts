@@ -2,20 +2,23 @@ params["_side","_faction","_variant", "_loadout"];
 
 // add primary weapon
 switch (_loadout) do {
-	default { player addWeapon "hlc_rifle_ak12";
+	default { player addWeapon "rhs_weap_ak103_zenitco01_b33";
 			  player addPrimaryWeaponItem "optic_Hamr";
 			  player addPrimaryWeaponItem "bwa3_acc_varioray_irlaser_black";
+			  player addPrimaryWeaponItem "rhs_acc_dtk3";
+			  player addPrimaryWeaponItem "rhs_acc_grip_ffg2";
 	};
 	case "plt";
 	case "sqd_ld";
 	case "rcn_ld";
-	case "sqd_gre":{ player addWeapon "hlc_rifle_ak12GL";
+	case "sqd_gre":{ player addWeapon "rhs_weap_ak103_gp25_npz";
 					player addPrimaryWeaponItem "optic_Hamr";
-					player addPrimaryWeaponItem "bwa3_acc_varioray_irlaser_black";
+					player addPrimaryWeaponItem "rhs_acc_dtk3";
 	};
 	case "sqd_ar": {player addWeapon "hlc_rifle_RPK12";
 					player addPrimaryWeaponItem "optic_Hamr";
 					player addPrimaryWeaponItem "bwa3_acc_varioray_irlaser_black";
+					player addPrimaryWeaponItem "rhs_acc_dtk3";
 	};
 	case "rcn_dmr": {player addWeapon "rhs_weap_svdp";
 					 player addPrimaryWeaponItem "rhs_acc_pso1m21_svd"

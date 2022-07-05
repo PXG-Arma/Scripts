@@ -44,7 +44,7 @@ switch (_loadout) do {
 	case "sup_mat_l": {player addBackpack "rhs_tortila_emr"};
 	case "sup_mor_l": {player addBackpack "B_Mortar_01_support_F"};
 	case "sup_mor_g": {player addBackpack "B_Mortar_01_weapon_F"};
-	case "rcn_drone": {player addBackpack "rhs_tortila_emr"};
+	case "rcn_drone": {player addBackpack "O_UAV_01_backpack_F"};
 	case "ar_c";
 	case "pil": {};
 };

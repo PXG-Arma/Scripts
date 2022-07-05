@@ -3,8 +3,8 @@ params["_side","_faction","_variant", "_loadout"];
 // add primary ammo 
 switch (_loadout) do {
 	default {
-		for "_i" from 1 to 4 do { player addItemToVest "hlc_30Rnd_545x39_EP_ak"};
-		for "_i" from 1 to 4 do { player addItemToVest "hlc_30Rnd_545x39_t_ak"};
+		for "_i" from 1 to 4 do { player addItemToVest "rhs_30Rnd_762x39mm_polymer"};
+		for "_i" from 1 to 4 do { player addItemToVest "rhs_30Rnd_762x39mm_polymer_tracer"};
 	};
 	case "sqd_ar": {
 		for "_i" from 1 to 6 do { player addItemToVest "hlc_60Rnd_545x39_t_rpk"};
@@ -20,13 +20,9 @@ switch (_loadout) do {
 		for "_i" from 1 to 2 do { player addItemToBackpack "rhs_100Rnd_762x54mmR_green"};
 	};
 	case "rcn_drone": {
-		for "_i" from 1 to 2 do { player addItemToVest "hlc_30Rnd_545x39_EP_ak"};
-		for "_i" from 1 to 2 do { player addItemToVest "hlc_30Rnd_545x39_t_ak"};
+		for "_i" from 1 to 2 do { player addItemToVest "rhs_30Rnd_762x39mm_polymer"};
+		for "_i" from 1 to 2 do { player addItemToVest "rhs_30Rnd_762x39mm_polymer_tracer"};
 		for "_i" from 1 to 2 do { player addItemToVest "ACE_UAVBattery"};
-	};
-	case "ar_c";
-	case "pil": {
-		for "_i" from 1 to 4 do { player addItemToVest "hlc_30Rnd_545x39_EP_ak"};
 	};
 };
 

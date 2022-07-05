@@ -7,12 +7,12 @@ _resupplyAvailable = [
 	],
 	["AR Resupply",
 		[
-			["rhs_100Rnd_762x54mmR_green",18]
+			["rhs_100Rnd_762x54mmR_green",20]
 		]
 	],
 	["MMG Resupply",
 		[
-			["rhs_100Rnd_762x54mmR_green",18]
+			["rhs_100Rnd_762x54mmR_green",20]
 		]
 	],
 	["DMR Resupply",

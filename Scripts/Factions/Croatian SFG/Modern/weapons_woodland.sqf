@@ -3,22 +3,23 @@ params["_side","_faction","_variant", "_loadout"];
 // add primary weapon
 switch (_loadout) do {
 	default { player addWeapon "rhs_weap_vhsk2";
-			  player addPrimaryWeaponItem "rhsusf_acc_anpeq15A";
-			  player addPrimaryWeaponItem "rhsusf_acc_ACOG2_USMC"
+			  player addPrimaryWeaponItem "bwa3_acc_varioray_irlaser_black";
+			  player addPrimaryWeaponItem "rhsusf_acc_su230";
+			  player addPrimaryWeaponItem "rhsusf_acc_tdstubby_blk";
 	};
 	case "plt";
 	case "sqd_ld";
 	case "rcn_ld";
 	case "sqd_gre":{ player addWeapon "rhs_weap_vhsd2_bg";
-			  		 player addPrimaryWeaponItem "rhsusf_acc_anpeq15A";
-			  		 player addPrimaryWeaponItem "rhsusf_acc_ACOG2_USMC"
+			  		 player addPrimaryWeaponItem "bwa3_acc_varioray_irlaser_black";
+			  		 player addPrimaryWeaponItem "rhsusf_acc_su230"
 	};
 	case "sqd_ar": { player addWeapon "hlc_lmg_mk46mod1";
-					 player addPrimaryWeaponItem "rhsusf_acc_anpeq15A";
-					 player addPrimaryWeaponItem "rhsusf_acc_ACOG2_USMC";
+					 player addPrimaryWeaponItem "bwa3_acc_varioray_irlaser_black";
+					 player addPrimaryWeaponItem "rhsusf_acc_su230";
 	};
 	case "rcn_dmr": {player addWeapon "arifle_SPAR_03_blk_F";
-					 player addPrimaryWeaponItem "rhsusf_acc_anpeq15side_bk";
+					 player addPrimaryWeaponItem "bwa3_acc_varioray_irlaser_black";
 					 player addPrimaryWeaponItem "hlc_optic_ATACR_Offset";
 					 player addPrimaryWeaponItem "rhsusf_acc_harris_bipod"
 	};

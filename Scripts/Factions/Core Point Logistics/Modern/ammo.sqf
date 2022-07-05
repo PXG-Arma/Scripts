@@ -39,7 +39,8 @@ switch (_loadout) do {
 switch (_loadout) do {
 	default {};
 	case "sqd_hgre": {
-		for "_i" from 1 to 4 do { player addItemToVest "11Rnd_45ACP_Mag"};
+		for "_i" from 1 to 4 do { player addItemToVest "rhsusf_mag_40Rnd_46x30_AP"};
+		for "_i" from 1 to 2 do { player addItemToUniform "rhsusf_mag_40Rnd_46x30_AP"};
 	};
 };
 

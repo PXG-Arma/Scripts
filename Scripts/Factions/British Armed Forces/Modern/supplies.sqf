@@ -35,7 +35,7 @@ _resupplyAvailable = [
 	],
 	["AA Resupply",
 		[
-			["rhs_fim92_mag",10],
+			["rhs_fim92_mag",10]
 		]
 	],
 	["Hand Grenades",

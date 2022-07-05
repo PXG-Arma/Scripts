@@ -5,15 +5,14 @@ switch (_loadout) do {
 	default { player addWeapon "hlc_rifle_g3a3";
 			  player addPrimaryWeaponItem "hlc_optic_STANAGZF2D_G3"
 	};
-	case "sqd_ar": {player addWeapon "hlc_lmg_MG3_optic";
-					player addPrimaryWeaponItem "ACE_optic_MRCO_2D"
+	case "sqd_ar": {player addWeapon "hlc_lmg_minimi_railed";
+					player addPrimaryWeaponItem "rhsusf_acc_eotech_xps3"
 	};	
 	case "rcn_dmr": {player addWeapon "hlc_rifle_g3sg1ris";
 					 player addPrimaryWeaponItem "rhsusf_acc_leupoldmk4";
-					 player addPrimaryWeaponItem "hlc_muzzle_SF3P_762R";
 	};
 	case "sup_mmg_g": {	player addWeapon "hlc_lmg_MG3_optic";
-						player addPrimaryWeaponItem "ACE_optic_MRCO_2D"
+						player addPrimaryWeaponItem "rhsusf_acc_acog_mdo"
 	};
 	case "ar_c";
 	case "pil": {player addWeapon "hlc_rifle_g3a3"};

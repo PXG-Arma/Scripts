@@ -5,7 +5,7 @@ _resupplyAvailable = [
 			["rhsgref_30Rnd_556x45_vhs2_t",40]
 		]
 	],
-	["LMG Resupply",
+	["AR Resupply",
 		[
 			["rhsusf_200Rnd_556x45_M855_mixed_box",30]
 		]

@@ -39,6 +39,7 @@ switch (_loadout) do {
 switch (_loadout) do {
 	default { player addBackpack "rhsusf_assault_eagleaiii_coy"};
 	case "sqd_med";
+	case "sup_aa_l";
 	case "sup_mat_l": {player addBackpack "VSM_OGA_carryall"};
 	case "sqd_eng";
 	case "sqd_ar";

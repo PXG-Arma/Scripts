@@ -9,9 +9,9 @@ switch (_loadout) do {
 	case "sqd_ld";
 	case "rcn_ld";
 	case "sqd_gre":{ player addWeapon "rhs_weap_m21a_pbg40";
-					player addPrimaryWeaponItem "rhs_acc_ekp8_02"
+					player addPrimaryWeaponItem "rhs_acc_ekp8_02";
 	};
-	case "sqd_ar": {player addWeapon "rhs_weap_m84"
+	case "sqd_ar": {player addWeapon "rhs_weap_m84";
 	};
 	case "sqd_dmr": {player addWeapon "rhs_weap_m76";
 					 player addPrimaryWeaponItem "rhs_acc_ekp8_02";
@@ -19,7 +19,8 @@ switch (_loadout) do {
 	case "rcn_dmr": {player addWeapon "rhs_weap_m76";
 					 player addPrimaryWeaponItem "rhs_acc_pso1m21";
 	};
-	case "sup_mmg_g": {	player addWeapon "rhs_weap_m84";
+	case "sup_mmg_g": {	player addWeapon "rhs_weap_pkp";
+						player addPrimaryWeaponItem "rhs_acc_1p78";
 	};
 	case "ar_c": {	player addWeapon "rhs_weap_scorpion";
 	};

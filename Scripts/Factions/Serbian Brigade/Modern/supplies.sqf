@@ -40,7 +40,7 @@ _resupplyAvailable = [
 	],
 	["AA Resupply",
 		[
-			["rhs_mag_9k38_rocket",10],
+			["rhs_mag_9k38_rocket",10]
 		]
 	],
 	["Hand Grenades",

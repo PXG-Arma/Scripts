@@ -16,15 +16,11 @@ switch (_loadout) do {
 					player addPrimaryWeaponItem "optic_MRCO";
 					player addPrimaryWeaponItem "hlc_muzzle_Gunfighter_comp"
 	};
-	case "sqd_dmr": {player addWeapon "hlc_rifle_PSG1A1_RIS";
-					 player addPrimaryWeaponItem "optic_MRCO"
-	};	
 	case "rcn_dmr": {player addWeapon "hlc_rifle_PSG1A1_RIS";
-					 player addPrimaryWeaponItem "ACE_optic_SOS_2D"
+					 player addPrimaryWeaponItem "rhsusf_acc_leupoldmk4"
 	};
 	case "sup_mmg_g": {	player addWeapon "rhs_weap_m240G";
 						player addPrimaryWeaponItem "rhsusf_acc_ELCAN";
-						player addPrimaryWeaponItem "rhsusf_acc_ARDEC_M240"
 	};
 	case "ar_c";
 	case "pil": {player addWeapon "hlc_rifle_g3ka4"};

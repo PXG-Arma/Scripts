@@ -7,12 +7,12 @@ _resupplyAvailable = [
 	],
 	["AR Resupply",
 		[
-			["hlc_100Rnd_762x51_B_MG3",25]
+			["hlc_200rnd_556x45_M_SAW",30]
 		]
 	],
 	["MMG Resupply",
 		[
-			["hlc_100Rnd_762x51_Barrier_MG3",18]
+			["hlc_100Rnd_762x51_Barrier_MG3",30]
 		]
 	],
 	["DMR Resupply",
@@ -37,7 +37,7 @@ _resupplyAvailable = [
 	],
 	["AA Resupply",
 		[
-			["rhs_fim92_mag",10],
+			["rhs_fim92_mag",10]
 		]
 	],
 	["Hand Grenades",
@@ -113,7 +113,7 @@ _resupplyAvailable = [
 		[
 			["hlc_20rnd_762x51_b_G3",20],
 			["hlc_20rnd_762x51_MDim_G3",20],
-			["hlc_100Rnd_762x51_B_MG3",10],
+			["hlc_200rnd_556x45_M_SAW",10],
 			["rhs_weap_M136",2],
 			["HandGrenade",10],
 			["rhs_mag_an_m8hc",10],

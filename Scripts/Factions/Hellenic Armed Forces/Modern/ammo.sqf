@@ -8,8 +8,8 @@ switch (_loadout) do {
 		for "_i" from 1 to 2 do { player addItemToBackpack "hlc_20rnd_762x51_MDim_G3"};
 	};
 	case "sqd_ar": {
-		for "_i" from 1 to 2 do { player addItemToVest "hlc_100Rnd_762x51_M_MG3"};
-		for "_i" from 1 to 6 do { player addItemToBackpack "hlc_100Rnd_762x51_M_MG3"};
+		for "_i" from 1 to 2 do { player addItemToVest "hlc_200rnd_556x45_M_SAW"};
+		for "_i" from 1 to 4 do { player addItemToBackpack "hlc_200rnd_556x45_M_SAW"};
 	};
 	case "sqd_dmr";
 	case "rcn_dmr": {

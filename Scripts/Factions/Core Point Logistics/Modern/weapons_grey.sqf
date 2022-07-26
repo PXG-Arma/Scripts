@@ -16,7 +16,7 @@ switch (_loadout) do {
 					 player addPrimaryWeaponItem "rhsusf_acc_anpeq15_bk";
 			  	 	 player addPrimaryWeaponItem "rhsusf_acc_sf3p556";
 	};
-	case "sqd_ar": {player addWeapon "hlc_lmg_mk46mod1";
+	case "sqd_ar": {player addWeapon "rhs_weap_m249_light_S";
 					player addPrimaryWeaponItem "rhsusf_acc_sf3p556";
 					player addPrimaryWeaponItem "rhsusf_acc_eotech_xps3";
 	};
@@ -26,7 +26,7 @@ switch (_loadout) do {
 					 player addPrimaryWeaponItem "rhsusf_acc_harris_bipod";
 					 player addPrimaryWeaponItem "rhsusf_acc_anpeq15side_bk";
 	};
-	case "sup_mmg_g": {player addWeapon "hlc_lmg_mk48mod1";
+	case "sup_mmg_g": {player addWeapon "BWA3_MG5_tan";
 					   player addPrimaryWeaponItem "rhsusf_acc_acog_mdo";
 					   player addPrimaryWeaponItem "rhsusf_acc_anpeq15side_bk";
 	};

@@ -28,21 +28,14 @@ _resupplyAvailable = [
 			["rhs_weap_M136",8]
 		]
 	],
-	["MAT (HEDP)",
+	["HAT Resupply",
 		[
-			["rhs_mag_smaw_SR",2],
-			["rhs_mag_smaw_HEDP",8]
-		]
-	],
-	["MAT (HEAA)",
-		[
-			["rhs_mag_smaw_SR",2],
-			["rhs_mag_smaw_HEAA",8]
+			["rhs_fgm148_magazine_AT",2]
 		]
 	],
 	["AA Resupply",
 		[
-			["rhs_fim92_mag",10]
+			["rhs_fim92_mag",4]
 		]
 	],
 	["Hand Grenades",
@@ -79,9 +72,10 @@ _resupplyAvailable = [
 	],	
 	["Explosives",
 		[
+			["ACE_Clacker",2],
+			["ACE_M26_Clacker",2],
 			["DemoCharge_Remote_Mag",10],
-			["SatchelCharge_Remote_Mag",8],
-			["ClaymoreDirectionalMine_Remote_Mag",8]
+			["SatchelCharge_Remote_Mag",10]
 		]
 	],
 	["Blood IVs",
@@ -127,12 +121,6 @@ _resupplyAvailable = [
 			["ACE_bloodIV", 5],
 			["ACE_elasticBandage", 15],
 			["ACE_quickclot", 15]
-		]
-	],
-	["Detonators",
-		[
-			["ACE_Clacker",10],
-			["ACE_M26_Clacker",10]
 		]
 	],
 	["Parachutes",

@@ -2,15 +2,15 @@ params["_side","_faction","_variant", "_loadout"];
 
 // add uniform
 switch (_loadout) do {
-	default { player forceAddUniform "rhsgref_uniform_altis_lizard"};
+	default { player forceAddUniform "m93_gr"};
 };
 	
 // add helmet
 switch (_loadout) do {
-	default { player addHeadgear "rhssaf_helmet_m97_olive_nocamo"};
+	default { player addHeadgear "pasgt_gr"};
 	case "sqd_ar";
 	case "sup_mmg_g";
-	case "sqd_gre": { player addHeadgear "rhssaf_helmet_m97_olive_nocamo_black_ess_bare"};
+	case "sqd_gre": { player addHeadgear "pasgt_grg"};
 	case "rcn_ld";
 	case "rcn_drone";
 	case "rcn_dmr": { player addHeadgear "H_Booniehat_oli"};
@@ -20,7 +20,7 @@ switch (_loadout) do {
 
 // add vest
 switch (_loadout) do {
-	default { player addVest "V_HarnessO_gry"};
+	default { player addVest "carrier_gr"};
 };
 
 // add backpack 
@@ -30,7 +30,6 @@ switch (_loadout) do {
 	case "sup_mat_l": {player addBackpack "VSM_OGA_OD_carryall"};
 	case "sup_mor_l": {player addBackpack "B_Mortar_01_support_F"};
 	case "sup_mor_g": {player addBackpack "B_Mortar_01_weapon_F"};
-	case "rcn_drone": {player addBackpack "B_UAV_01_backpack_F"};
 	case "ar_c";
 	case "pil": {};
 };

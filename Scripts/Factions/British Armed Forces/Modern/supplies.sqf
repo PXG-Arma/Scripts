@@ -30,12 +30,12 @@ _resupplyAvailable = [
 	],
 	["HAT Resupply",
 		[
-			["UK3CB_BAF_Javelin_Slung_Tube",4]
+			["UK3CB_BAF_Javelin_Slung_Tube",2]
 		]
 	],
 	["AA Resupply",
 		[
-			["rhs_fim92_mag",10]
+			["rhs_fim92_mag",4]
 		]
 	],
 	["Hand Grenades",
@@ -72,9 +72,10 @@ _resupplyAvailable = [
 	],	
 	["Explosives",
 		[
+			["ACE_Clacker",2],
+			["ACE_M26_Clacker",2],
 			["DemoCharge_Remote_Mag",10],
-			["SatchelCharge_Remote_Mag",8],
-			["ClaymoreDirectionalMine_Remote_Mag",8]
+			["SatchelCharge_Remote_Mag",10]
 		]
 	],
 	["Blood IVs",
@@ -129,7 +130,14 @@ _resupplyAvailable = [
 	],
 	["Vehicle Resupply 12.7mm",
 		[
-			["UK3CB_BAF_127_100Rnd",10]
+			["UK3CB_BAF_127_100Rnd",10],
+			["UK3CB_BAF_762_800Rnd_T",2]
+		]
+	],
+	["Vehicle Resupply 30mm",
+		[
+			["UK3CB_BAF_6Rnd_30mm_L21A1_APDS",20],
+			["UK3CB_BAF_6Rnd_30mm_L21A1_HE",20]
 		]
 	],
 	["Vehicle Resupply 40mm",
@@ -140,12 +148,6 @@ _resupplyAvailable = [
 	["Vehicle Resupply Milan",
 		[
 			["UK3CB_BAF_1Rnd_Milan",4]
-		]
-	],
-	["Detonators",
-		[
-			["ACE_Clacker",10],
-			["ACE_M26_Clacker",10]
 		]
 	],
 	["Parachutes",

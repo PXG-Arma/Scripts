@@ -3,7 +3,6 @@ params["_side","_faction","_variant", "_loadout"];
 // add uniform
 switch (_loadout) do {
 	default { player forceAddUniform "UK3CB_CW_SOV_O_Early_U_CombatUniform_01_KHK"};
-	case "rcn_drone";
 	case "rcn_ld";
 	case "rcn_dmr": { player forceAddUniform "UK3CB_CW_SOV_O_Early_U_Spetsnaz_Uniform_02_Ghillie_KHK"};
 	case "logi": { player forceAddUniform "rhs_uniform_cossack"};
@@ -15,7 +14,6 @@ switch (_loadout) do {
 switch (_loadout) do {
 	default { player addHeadgear "UK3CB_CW_SOV_O_EARLY_H_SSh68"};
 	case "rcn_ld": {};
-	case "rcn_drone": {};
 	case "rcn_dmr": {};
 	case "logi": {player addHeadgear "rhs_cossack_visor_cap"};
 	case "plt": {player addHeadgear "UK3CB_CW_SOV_O_EARLY_H_Officer_Cap"};
@@ -44,7 +42,6 @@ switch (_loadout) do {
 	case "sqd_ar": {player addBackpack "UK3CB_CW_SOV_O_EARLY_B_Sidor_RIF"};
 	case "sup_mor_l": {player addBackpack "O_Mortar_01_support_F"};
 	case "sup_mor_g": {player addBackpack "O_Mortar_01_weapon_F"};
-	case "rcn_drone": {player addBackpack "UK3CB_CW_SOV_O_EARLY_B_Sidor_RIF"};
 	case "ar_c";
 	case "pil": {};
 };

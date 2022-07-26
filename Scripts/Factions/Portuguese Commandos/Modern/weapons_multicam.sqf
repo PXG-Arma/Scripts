@@ -3,22 +3,20 @@ params["_side","_faction","_variant", "_loadout"];
 // add primary weapon
 switch (_loadout) do {
 	default { player addWeapon "rhs_weap_SCARH_FDE_STD";
-			  player addPrimaryWeaponItem "hlc_muzzle_sf3p_762r";
+			  player addPrimaryWeaponItem "optic_MRCO";
 			  player addPrimaryWeaponItem "bwa3_acc_varioray_irlaser_black";
-			  player addPrimaryWeaponItem "optic_MRCO"
 	};
-	case "sqd_ar": {player addWeapon "hlc_lmg_minimipara_long_railed";
+	case "sqd_ar": {player addWeapon "BWA3_MG4";
 					player addPrimaryWeaponItem "optic_MRCO";
-					player addPrimaryWeaponItem "hlc_muzzle_SF3P_556"
+					player addPrimaryWeaponItem "bwa3_acc_varioray_irlaser_black";
 	};
 	case "rcn_dmr": {player addWeapon "rhs_weap_SCARH_FDE_LB";
-					 player addPrimaryWeaponItem "hlc_muzzle_sf3p_762r";
 					 player addPrimaryWeaponItem "bwa3_acc_varioray_irlaser_black";
-					 player addPrimaryWeaponItem "hlc_optic_atacr_offset";
-					 player addPrimaryWeaponItem "rhsusf_acc_harris_bipod"
+					 player addPrimaryWeaponItem "bwa3_optic_pmii_shortdotcc_pip";
+					 player addPrimaryWeaponItem "rhsusf_acc_harris_bipod";
 	};
-	case "sup_mmg_g": {	player addWeapon "hlc_lmg_mk48mod1";
-						player addPrimaryWeaponItem "rhsusf_acc_ELCAN";
+	case "sup_mmg_g": {	player addWeapon "rhs_weap_fnmag";
+						player addPrimaryWeaponItem "rhsusf_acc_acog_mdo";
 	};
 	case "sqd_brc": {player addWeapon "UK3CB_BAF_L128A1";
 					 player addPrimaryWeaponItem "rhsusf_acc_eotech_xps3";

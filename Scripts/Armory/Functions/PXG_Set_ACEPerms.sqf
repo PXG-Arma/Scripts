@@ -15,4 +15,12 @@ switch (_loadout) do {
 		player setVariable ["ACE_IsEngineer",2,true];
 		player setVariable ["ace_medical_medicclass",0,true]
 		};
+	case "tacp": { 
+		player setVariable ["ACE_IsEngineer",1,true];
+		player setVariable ["ace_medical_medicclass",0,true]
+		};
+	case "pil": { 
+		player setVariable ["ACE_IsEngineer",1,true];
+		player setVariable ["ace_medical_medicclass",0,true]
+		};
 };

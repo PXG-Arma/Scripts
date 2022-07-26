@@ -18,7 +18,7 @@ _availableVehicles =
 	["UK3CB_B_G_UH1H_FIA", //Unarmed Doesn't spawn in black
 	"UK3CB_B_G_UH1H_M240_FIA"]], //Armed Doesn't spawn in black
 	
-	["Rotary Armed",
+	["Rotary Attack",
 	["UK3CB_B_G_UH1H_GUNSHIP_FIA"]], //Doesn't spawn in black
 	
 	["Turrets",

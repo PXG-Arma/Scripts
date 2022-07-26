@@ -22,7 +22,7 @@ switch (_loadout) do {
 	case "rcn_drone": {
 		for "_i" from 1 to 2 do { player addItemToVest "rhs_mag_30Rnd_556x45_M855_Stanag"};
 		for "_i" from 1 to 2 do { player addItemToVest "rhs_mag_30Rnd_556x45_M855_Stanag_Tracer_Red"};
-		for "_i" from 1 to 2 do { player addItemToVest "ACE_UAVBattery"};
+		for "_i" from 1 to 2 do { player addItemToBackpack "ACE_UAVBattery"};
 	};
 	case "ar_c";
 	case "pil": {
@@ -64,8 +64,8 @@ switch (_loadout) do {
 switch (_loadout) do {
 	default {
 		for "_i" from 1 to 2 do { player addItemToVest "rhs_mag_an_m8hc"};
-		for "_i" from 1 to 2 do { player addItemToVest "SmokeShellGreen"};
-		for "_i" from 1 to 2 do { player addItemToVest "SmokeShellRed"};
+		for "_i" from 1 to 1 do { player addItemToVest "SmokeShellGreen"};
+		for "_i" from 1 to 1 do { player addItemToVest "SmokeShellRed"};
 		for "_i" from 1 to 2 do { player addItemToVest "HandGrenade"};
 	};
 };
@@ -78,17 +78,15 @@ switch (_loadout) do {
 		for "_i" from 1 to 2 do {player addItemToBackpack "1Rnd_Smoke_Grenade_shell"};
 		for "_i" from 1 to 2 do {player addItemToBackpack "1Rnd_SmokeRed_Grenade_shell"};
 		for "_i" from 1 to 2 do {player addItemToBackpack "1Rnd_SmokeGreen_Grenade_shell"};
-		for "_i" from 1 to 2 do {player addItemToBackpack "1Rnd_SmokeBlue_Grenade_shell"};
 		for "_i" from 1 to 2 do {player addItemToBackpack "UGL_FlareWhite_F"};
 	};
 	case "sqd_ld";
 	case "sqd_gre";
 	case "rcn_ld": {
 		for "_i" from 1 to 10 do {player addItemToBackpack "1Rnd_HE_Grenade_shell"};
-		for "_i" from 1 to 4 do {player addItemToBackpack "1Rnd_Smoke_Grenade_shell"};
+		for "_i" from 1 to 2 do {player addItemToBackpack "1Rnd_Smoke_Grenade_shell"};
 		for "_i" from 1 to 2 do {player addItemToBackpack "1Rnd_SmokeRed_Grenade_shell"};
 		for "_i" from 1 to 2 do {player addItemToBackpack "1Rnd_SmokeGreen_Grenade_shell"};
-		for "_i" from 1 to 2 do {player addItemToBackpack "1Rnd_SmokeBlue_Grenade_shell"};
-		for "_i" from 1 to 4 do {player addItemToBackpack "UGL_FlareWhite_F"};
+		for "_i" from 1 to 2 do {player addItemToBackpack "UGL_FlareWhite_F"};
 	};
 };

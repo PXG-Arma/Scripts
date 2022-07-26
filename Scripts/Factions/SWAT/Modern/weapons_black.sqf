@@ -8,7 +8,7 @@ switch (_loadout) do {
 			  player addPrimaryWeaponItem "rhsusf_acc_sf3p556";
 			  player addPrimaryWeaponItem "rhsusf_acc_rvg_blk";
 	};
-	case "pil":{ player addWeapon "hlc_smg_MP5N"};
+	case "pil":{ player addWeapon "UK3CB_MP5N"};
 	case "sqd_gre":{ player addWeapon "rhs_weap_m4_carryhandle_m203S";
 					 player addPrimaryWeaponItem "rhsusf_acc_eotech_xps3";
 					 player addPrimaryWeaponItem "bwa3_acc_varioray_irlaser_black";
@@ -26,9 +26,8 @@ switch (_loadout) do {
 
 // add secondary weapon
 switch (_loadout) do {
-	default {player addWeapon "hlc_pistol_P226R";
-			 player addHandgunItem "hlc_optic_vtac";
-			 player addHandgunItem "hlc_acc_tlr1";
+	default {player addWeapon "rhsusf_weap_glock17g4";
+			 player addHandgunItem "acc_flashlight_pistol";
 	};
 };
 

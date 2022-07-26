@@ -25,24 +25,18 @@ _resupplyAvailable = [
 	],
 	["LAT Resupply",
 		[
-			["rhs_weap_M136",8]
+			["rhs_weap_m72a7",8]
 		]
 	],
-	["MAT (HEDP)",
+	["MAT Resuppply",
 		[
-			["rhs_mag_smaw_SR",2],
-			["rhs_mag_smaw_HEDP",8]
-		]
-	],
-	["MAT (HEAA)",
-		[
-			["rhs_mag_smaw_SR",2],
-			["rhs_mag_smaw_HEAA",8]
+			["rhs_mag_maaws_HEAT",4],
+			["rhs_mag_maaws_HEDP",4]
 		]
 	],
 	["AA Resupply",
 		[
-			["rhs_fim92_mag",10]
+			["rhs_fim92_mag",4]
 		]
 	],
 	["Hand Grenades",
@@ -79,9 +73,10 @@ _resupplyAvailable = [
 	],	
 	["Explosives",
 		[
+			["ACE_Clacker",2],
+			["ACE_M26_Clacker",2],
 			["DemoCharge_Remote_Mag",10],
-			["SatchelCharge_Remote_Mag",8],
-			["ClaymoreDirectionalMine_Remote_Mag",8]
+			["SatchelCharge_Remote_Mag",10]
 		]
 	],
 	["Blood IVs",
@@ -119,7 +114,7 @@ _resupplyAvailable = [
 			["rhs_mag_30Rnd_556x45_M855_Stanag",20],
 			["rhs_mag_30Rnd_556x45_M855_Stanag_Tracer_Red",20],
 			["rhsusf_200Rnd_556x45_M855_mixed_soft_pouch",10],
-			["rhs_weap_M136",2],
+			["rhs_weap_m72a7",2],
 			["HandGrenade",10],
 			["rhs_mag_an_m8hc",10],
 			["1Rnd_HE_Grenade_Shell",10],
@@ -127,12 +122,6 @@ _resupplyAvailable = [
 			["ACE_bloodIV", 5],
 			["ACE_elasticBandage", 15],
 			["ACE_quickclot", 15]
-		]
-	],
-	["Detonators",
-		[
-			["ACE_Clacker",10],
-			["ACE_M26_Clacker",10]
 		]
 	],
 	["Parachutes",

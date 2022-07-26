@@ -62,9 +62,10 @@ _resupplyAvailable = [
 	],
 	["Explosives",
 		[
+			["ACE_Clacker",2],
+			["ACE_M26_Clacker",2],
 			["DemoCharge_Remote_Mag",10],
-			["SatchelCharge_Remote_Mag",8],
-			["ClaymoreDirectionalMine_Remote_Mag",8]
+			["SatchelCharge_Remote_Mag",10]
 		]
 	],
 	["Blood IVs",
@@ -110,12 +111,6 @@ _resupplyAvailable = [
 			["ACE_bloodIV", 5],
 			["ACE_elasticBandage", 15],
 			["ACE_quickclot", 15]
-		]
-	],
-	["Detonators",
-		[
-			["ACE_Clacker",10],
-			["ACE_M26_Clacker",10]
 		]
 	],
 	["Parachutes",

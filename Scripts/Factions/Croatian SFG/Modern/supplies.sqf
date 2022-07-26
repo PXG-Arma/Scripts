@@ -7,7 +7,7 @@ _resupplyAvailable = [
 	],
 	["AR Resupply",
 		[
-			["rhsusf_200Rnd_556x45_M855_mixed_box",30]
+			["rhsusf_200Rnd_556x45_mixed_soft_pouch",20]
 		]
 	],
 	["MMG Resupply",
@@ -17,6 +17,12 @@ _resupplyAvailable = [
 			["rhsusf_100Rnd_762x51_m80a1epr",10]
 		]
 	],
+	["DMR Resupply",
+		[
+			["rhsusf_5Rnd_762x51_AICS_m993_Mag",15],
+			["rhsusf_5Rnd_762x51_AICS_m62_Mag",15]
+		]
+	],
 	["LAT Resupply",
 		[
 			["rhs_weap_M136",8]
@@ -24,12 +30,12 @@ _resupplyAvailable = [
 	],
 	["MAT Resupply",
 		[
-			["MRAWS_HEAT_F",10]
+			["MRAWS_HEAT_F",8]
 		]
 	],
 	["AA Resupply",
 		[
-			["rhs_fim92_mag",10]
+			["rhs_fim92_mag",4]
 		]
 	],
 	["Hand Grenades",
@@ -66,9 +72,10 @@ _resupplyAvailable = [
 	],	
 	["Explosives",
 		[
+			["ACE_Clacker",2],
+			["ACE_M26_Clacker",2],
 			["DemoCharge_Remote_Mag",10],
-			["SatchelCharge_Remote_Mag",8],
-			["ClaymoreDirectionalMine_Remote_Mag",8]
+			["SatchelCharge_Remote_Mag",10]
 		]
 	],
 	["Blood IVs",
@@ -105,7 +112,7 @@ _resupplyAvailable = [
 		[
 			["rhsgref_30Rnd_556x45_vhs2",20],
 			["rhsgref_30Rnd_556x45_vhs2_t",20],
-			["rhsusf_200Rnd_556x45_M855_mixed_box",10],
+			["rhsusf_200Rnd_556x45_mixed_soft_pouch",10],
 			["rhs_weap_M136",2],
 			["HandGrenade",10],
 			["SmokeShell",10],
@@ -114,12 +121,6 @@ _resupplyAvailable = [
 			["ACE_bloodIV", 5],
 			["ACE_elasticBandage", 15],
 			["ACE_quickclot", 15]
-		]
-	],
-	["Detonators",
-		[
-			["ACE_Clacker",10],
-			["ACE_M26_Clacker",10]
 		]
 	],
 	["Parachutes",

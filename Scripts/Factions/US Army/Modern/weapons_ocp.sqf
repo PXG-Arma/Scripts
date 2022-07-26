@@ -15,7 +15,7 @@ switch (_loadout) do {
 					player addPrimaryWeaponItem "bwa3_acc_varioray_irlaser_black";
 					player addPrimaryWeaponItem "rhsusf_acc_SFMB556"
 	};
-	case "sqd_ar": {player addWeapon "rhs_weap_m249_pip";
+	case "sqd_ar": {player addWeapon "rhs_weap_m249_pip_L_para";
 					player addPrimaryWeaponItem "optic_Hamr";
 					player addPrimaryWeaponItem "rhsusf_acc_SFMB556"
 	};
@@ -25,10 +25,10 @@ switch (_loadout) do {
 					 player addPrimaryWeaponItem "rhsusf_acc_anpeq15side_bk";
 	};
 	case "sup_mmg_g": {	player addWeapon "rhs_weap_m240G";
-						player addPrimaryWeaponItem "rhsusf_acc_acog_mdo";
+						player addPrimaryWeaponItem "rhsusf_acc_elcan";
 	};
 	case "ar_c";
-	case "pil": {player addWeapon "rhs_weap_m4a1_carryhandle_grip2"};
+	case "pil": {player addWeapon "rhs_weap_m4a1_carryhandle"};
 };
 
 // add secondary weapon
@@ -37,7 +37,6 @@ switch (_loadout) do {
 switch (_loadout) do {
 	default {};
 	case "sqd_lat": {player addWeapon "rhs_weap_M136"};
-	case "sup_mat_g": {	player addWeapon "rhs_weap_smaw_green";
-						player addSecondaryWeaponItem "rhs_weap_optic_smaw"};
+	case "sup_hat_g": {	player addWeapon "rhs_weap_fgm148"};
 	case "sup_aa_g": {	player addWeapon "rhs_weap_fim92"};					
 };

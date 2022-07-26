@@ -1,23 +1,19 @@
 _resupplyAvailable = [
 	["Rifle Resupply",
 		[
-			["hlc_20rnd_762x51_b_G3",40],
-			["hlc_20rnd_762x51_MDim_G3",40]
+			["UK3CB_G3_20rnd_762x51",40],
+			["UK3CB_G3_20rnd_762x51_GT",40]
 		]
 	],
 	["AR Resupply",
 		[
-			["hlc_200rnd_556x45_M_SAW",30]
+			["rhsusf_100Rnd_762x51",10],
+			["rhsusf_100Rnd_762x51_m62_tracer",10]
 		]
 	],
 	["MMG Resupply",
 		[
-			["hlc_100Rnd_762x51_Barrier_MG3",30]
-		]
-	],
-	["DMR Resupply",
-		[
-			["hlc_20rnd_762x51_barrier_G3",20]
+			["BWA3_120Rnd_762x51_Tracer",20]
 		]
 	],
 	["LAT Resupply",
@@ -25,19 +21,15 @@ _resupplyAvailable = [
 			["rhs_weap_M136",8]
 		]
 	],
-	["MAT (HE)",
+	["MAT Resuppply",
 		[
-			["rhs_mag_maaws_HE",10]
-		]
-	],
-	["MAT (HEAT)",
-		[
-			["rhs_mag_maaws_HEAT",10]
+			["rhs_mag_maaws_HEAT",4],
+			["rhs_mag_maaws_HEDP",4]
 		]
 	],
 	["AA Resupply",
 		[
-			["rhs_fim92_mag",10]
+			["rhs_fim92_mag",4]
 		]
 	],
 	["Hand Grenades",
@@ -74,9 +66,10 @@ _resupplyAvailable = [
 	],	
 	["Explosives",
 		[
+			["ACE_Clacker",2],
+			["ACE_M26_Clacker",2],
 			["DemoCharge_Remote_Mag",10],
-			["SatchelCharge_Remote_Mag",8],
-			["ClaymoreDirectionalMine_Remote_Mag",8]
+			["SatchelCharge_Remote_Mag",10]
 		]
 	],
 	["Blood IVs",
@@ -111,9 +104,9 @@ _resupplyAvailable = [
 	],
 	["Squad Resupply",
 		[
-			["hlc_20rnd_762x51_b_G3",20],
-			["hlc_20rnd_762x51_MDim_G3",20],
-			["hlc_200rnd_556x45_M_SAW",10],
+			["UK3CB_G3_20rnd_762x51",20],
+			["UK3CB_G3_20rnd_762x51_GT",20],
+			["rhsusf_100Rnd_762x51",10],
 			["rhs_weap_M136",2],
 			["HandGrenade",10],
 			["rhs_mag_an_m8hc",10],
@@ -122,12 +115,6 @@ _resupplyAvailable = [
 			["ACE_bloodIV", 5],
 			["ACE_elasticBandage", 15],
 			["ACE_quickclot", 15]
-		]
-	],
-	["Detonators",
-		[
-			["ACE_Clacker",10],
-			["ACE_M26_Clacker",10]
 		]
 	],
 	["Parachutes",

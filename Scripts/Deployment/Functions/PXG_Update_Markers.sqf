@@ -16,8 +16,9 @@ _deploymentPositions = missionNamespace getVariable "Pxg_Deployment_Positions";
 	_deploymentType = _deploymentType splitString "_";
 	_deploymentType = _deploymentType Select 0; 
 	_deploymentName = switch (_deploymentType) do {
-		case "StagingArea": {". Staging Area"};
 		case "Briefing": {". Briefing"};
+		case "PrimaryStaging": {". Primary Staging"};
+		case "SecondaryStaging": {". Secondary Staging"};
 		default {". FOB"};
 	};
 	_deploymentNumber = _forEachIndex + 1;

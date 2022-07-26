@@ -15,13 +15,10 @@ switch (_loadout) do {
 					player addPrimaryWeaponItem "optic_Hamr";
 					player addPrimaryWeaponItem "rhs_acc_dtk3";
 	};
-	case "sqd_ar": {player addWeapon "hlc_rifle_RPK12";
+	case "sqd_ar": {player addWeapon "arifle_RPK12_F";
 					player addPrimaryWeaponItem "optic_Hamr";
 					player addPrimaryWeaponItem "bwa3_acc_varioray_irlaser_black";
 					player addPrimaryWeaponItem "rhs_acc_dtk3";
-	};
-	case "sqd_brc": {player addWeapon "hlc_rifle_saiga12k";
-					 player addPrimaryWeaponItem "rhs_acc_okp7_dovetail";
 	};
 	case "rcn_dmr": {player addWeapon "rhs_weap_svdp";
 					 player addPrimaryWeaponItem "rhs_acc_pso1m21_svd"

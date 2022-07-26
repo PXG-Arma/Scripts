@@ -34,7 +34,7 @@ switch (_loadout) do {
 	case "sup_mor_g": { player addVest "UK3CB_BAF_V_Osprey_Rifleman_C"};
 	case "sqd_eng": { player addVest "UK3CB_BAF_V_Osprey_Rifleman_B"};
 	case "ar_c": { player addVest "UK3CB_BAF_V_Osprey_Lite"};
-	case "pil": { player addVest "UK3CB_BAF_V_Pilot_A"};
+	case "pil": { player addVest "UK3CB_V_Pilot_Vest"};
 };
 
 // add backpack 

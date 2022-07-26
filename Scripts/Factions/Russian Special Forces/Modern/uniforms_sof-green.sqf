@@ -36,6 +36,5 @@ switch (_loadout) do {
 	case "sup_mmg_g";
 	case "sup_mat_g";
 	case "sup_mat_l": {player addBackpack "rhs_tortila_olive"};
-	case "rcn_drone": {player addBackpack "O_UAV_01_backpack_F"};
 	case "pil": {};
 };

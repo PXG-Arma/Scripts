@@ -17,7 +17,8 @@ _availableVehicles =
   
   //IFV
  
-  //MBT
+  ["MBT",
+  ["UK3CB_CW_US_B_EARLY_M60a3"]],
 
   //SPG
 
@@ -38,7 +39,8 @@ _availableVehicles =
   ["RHS_M2StaticMG_MiniTripod_D",
   "RHS_M2StaticMG_D",
   "RHS_TOW_TriPod_D",
-  "RHS_MK19_TriPod_D"]]
+  "RHS_MK19_TriPod_D",
+  "RHS_M119_D"]]
   
   //Misc.
   

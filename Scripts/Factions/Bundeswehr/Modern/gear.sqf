@@ -9,3 +9,9 @@ switch (_loadout) do {
     };
     case "pil": {player addHeadgear "BWA3_Knighthelm"};
 };
+
+// add 152 radio
+switch (_loadout) do {
+    default {};
+    case "ar_c": {player addItemToUniform "ACRE_PRC152"};
+};

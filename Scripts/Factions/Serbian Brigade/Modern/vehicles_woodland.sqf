@@ -26,7 +26,7 @@ _availableVehicles =
 	["SPG",
 	["LOP_UKR_2S1"]],
 	
-	["Fixed Wing Armed",
+	["Fixed Wing Attack",
 	["UK3CB_ADA_I_Su25SM", //Doesn't spawn in correct camo
 	"UK3CB_ADA_I_Su25SM_Cluster", //Doesn't spawn in correct camo
 	"UK3CB_ADA_I_Su25SM_CAS", //Doesn't spawn in correct camo

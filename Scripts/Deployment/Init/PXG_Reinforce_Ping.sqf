@@ -34,7 +34,8 @@ while {true} do {
 		_deploymentType = _deploymentType splitString "_";
 		_deploymentType = _deploymentType Select 0; 
 		_deploymentName = switch (_deploymentType) do {
-			case "StagingArea": {". Staging Area: "};
+			case "PrimaryStaging": {". Primary Staging: "};
+			case "SecondaryStaging": {". Secondary Staging: "};
 			case "Briefing": {". Briefing: "};
 			default {". FOB: "};
 		};

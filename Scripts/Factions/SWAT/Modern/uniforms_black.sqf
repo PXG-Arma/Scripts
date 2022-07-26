@@ -20,6 +20,5 @@ switch (_loadout) do {
 // add backpack 
 switch (_loadout) do {
 	default { player addBackpack "Black_Backpack_kitbag"};
-	case "rcn_drone": {player addBackpack "B_UAV_01_backpack_F"};
 	case "pil": {};
 };

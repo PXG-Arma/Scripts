@@ -28,19 +28,15 @@ _resupplyAvailable = [
 			["BWA3_PzF3_Tandem_Loaded",8]
 		]
 	],
-	["MAT (HEDP)",
+	["MAT Resupply",
 		[
-			["BWA3_CarlGustav_HEDP",10]
-		]
-	],
-	["MAT (HEAT)",
-		[
-			["BWA3_CarlGustav_HEAT",10]
+			["BWA3_CarlGustav_HEAT",4],
+			["BWA3_CarlGustav_HEDP",4]
 		]
 	],
 	["AA Resupply",
 		[
-			["BWA3_Fliegerfaust_Mag",10]
+			["BWA3_Fliegerfaust_Mag",4]
 		]
 	],
 	["MG3 Turret Resupply",
@@ -87,9 +83,10 @@ _resupplyAvailable = [
 	],	
 	["Explosives",
 		[
+			["ACE_Clacker",2],
+			["ACE_M26_Clacker",2],
 			["DemoCharge_Remote_Mag",10],
-			["SatchelCharge_Remote_Mag",8],
-			["ClaymoreDirectionalMine_Remote_Mag",8]
+			["SatchelCharge_Remote_Mag",10]
 		]
 	],
 	["Blood IVs",
@@ -136,12 +133,6 @@ _resupplyAvailable = [
 			["ACE_bloodIV", 5],
 			["ACE_elasticBandage", 15],
 			["ACE_quickclot", 15]
-		]
-	],
-	["Detonators",
-		[
-			["ACE_Clacker",10],
-			["ACE_M26_Clacker",10]
 		]
 	],
 	["Parachutes",

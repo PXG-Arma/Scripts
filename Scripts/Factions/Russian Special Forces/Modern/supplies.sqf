@@ -24,29 +24,21 @@ _resupplyAvailable = [
 			["rhs_100Rnd_762x54mmR_green",10]
 		]
 	],
-	["MAT OG-7V (HE Frag)",
+	["MAT Resupply (HEAT)",
 		[
-			["rhs_rpg7_OG7V_mag",10]
+			["rhs_rpg7_PG7VR_mag",4],
+			["rhs_rpg7_PG7V_mag",4]
 		]
 	],
-	["MAT PG-7V (HEAT)",
+	["MAT Resupply (Misc.)",
 		[
-			["rhs_rpg7_PG7V_mag",10]
-		]
-	],
-	["MAT PG-7VR (HEAT Tandem)",
-		[
-			["rhs_rpg7_PG7VR_mag",10]
-		]
-	],
-	["MAT TBG-7V (Thermobaric)",
-		[
-			["rhs_rpg7_TBG7V_mag",10]
+			["rhs_rpg7_TBG7V_mag",4],
+			["rhs_rpg7_OG7V_mag",4]
 		]
 	],
 	["AA Resupply",
 		[
-			["rhs_mag_9k38_rocket",10]
+			["rhs_mag_9k38_rocket",4]
 		]
 	],
 	["Hand Grenades",
@@ -59,8 +51,7 @@ _resupplyAvailable = [
 		[
 			["SmokeShell",15],
 			["SmokeShellRed",10],
-			["SmokeShellGreen",10],
-			["SmokeShellBlue",10]
+			["SmokeShellGreen",10]
 		]
 	],
 		["Breaching Charges",
@@ -72,9 +63,10 @@ _resupplyAvailable = [
 	],
 	["Explosives",
 		[
+			["ACE_Clacker",2],
+			["ACE_M26_Clacker",2],
 			["DemoCharge_Remote_Mag",10],
-			["SatchelCharge_Remote_Mag",8],
-			["ClaymoreDirectionalMine_Remote_Mag",8]
+			["SatchelCharge_Remote_Mag",10]
 		]
 	],
 	["Blood IVs",
@@ -118,12 +110,6 @@ _resupplyAvailable = [
 			["ACE_bloodIV", 5],
 			["ACE_elasticBandage", 15],
 			["ACE_quickclot", 15]
-		]
-	],
-	["Detonators",
-		[
-			["ACE_Clacker",10],
-			["ACE_M26_Clacker",10]
 		]
 	],
 	["Parachutes",

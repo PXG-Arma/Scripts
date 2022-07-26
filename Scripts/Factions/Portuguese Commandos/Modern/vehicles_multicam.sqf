@@ -19,15 +19,12 @@ _availableVehicles =
 	["RHS_MELB_MH6M",
 	"UK3CB_BAF_Merlin_HC4_18_DDPM_RM"]],
 	
-	["Rotary Armed",
+	["Rotary Attack",
 	["RHS_MELB_AH6M",
 	"UK3CB_BAF_Merlin_HC4_18_GPMG_DDPM_RM"]],
 	
 	["Fixed Wing Transport",
 	["RHS_C130J"]],
-	
-	["Fixed Wing Armed",
-	["UK3CB_CW_US_B_LATE_A10"]],
 	
 	["Misc.",
 	["rhsusf_mrzr4_d"]]

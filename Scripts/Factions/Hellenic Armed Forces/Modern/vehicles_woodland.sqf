@@ -1,12 +1,12 @@
 _availableVehicles = 
 [
 	["Utility",
-	["UK3CB_MDF_B_M1151",
-	"UK3CB_MDF_B_M998_2DR",
-	"UK3CB_MDF_B_MTVR_Closed",
-	"UK3CB_MDF_B_MTVR_Reammo",
+	["UK3CB_MDF_B_MTVR_Reammo",
 	"UK3CB_MDF_B_MTVR_Refuel",
-	"UK3CB_MDF_B_MTVR_Recovery"]],
+	"UK3CB_MDF_B_MTVR_Recovery",
+	"UK3CB_MDF_B_MTVR_Closed",
+	"UK3CB_MDF_B_M1151",
+	"UK3CB_MDF_B_M998_2DR"]],
 	
 	["Armed Car/MRAP",
 	["UK3CB_MDF_B_M1151_GPK_M2",
@@ -23,8 +23,8 @@ _availableVehicles =
 	["MBT",
 	["BWA3_Leopard2_Tropen"]],
 	
-	["Fixed Wing Armed",
-	["UK3CB_CW_US_B_LATE_A10"]],
+	["Fixed Wing Attack",
+	["I_Plane_Fighter_04_F"]],
 	
 	["Misc.",
 	["UK3CB_MDF_B_Quadbike",

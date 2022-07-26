@@ -7,7 +7,7 @@ class armoryDialog
 		{
 			idc = -1;
 
-			x = 0.29 * safezoneW + safezoneX;
+			x = 0.36 * safezoneW + safezoneX;
 			y = 0.25 * safezoneH + safezoneY;
 			w = 0.28 * safezoneW;
 			h = 0.48 * safezoneH;
@@ -16,7 +16,7 @@ class armoryDialog
 		{
 			idc = -1;
 			text = "Armory"; //--- ToDo: Localize;
-			x = 0.29 * safezoneW + safezoneX;
+			x = 0.36 * safezoneW + safezoneX;
 			y = 0.227 * safezoneH + safezoneY;
 			w = 0.28 * safezoneW;
 			h = 0.022 * safezoneH;
@@ -26,7 +26,7 @@ class armoryDialog
 		{
 			idc = 431004;
 			text = "1. Side"; //--- ToDo: Localize;
-			x = 0.30 * safezoneW + safezoneX;
+			x = 0.37 * safezoneW + safezoneX;
 			y = 0.26 * safezoneH + safezoneY;
 			w = 0.06 * safezoneW;
 			h = 0.04 * safezoneH;
@@ -36,7 +36,7 @@ class armoryDialog
 			idc = 431000;
 
 			text = "2. Faction"; //--- ToDo: Localize;
-			x = 0.30 * safezoneW + safezoneX;
+			x = 0.37 * safezoneW + safezoneX;
 			y = 0.38 * safezoneH + safezoneY;
 			w = 0.06 * safezoneW;
 			h = 0.04 * safezoneH;
@@ -46,7 +46,7 @@ class armoryDialog
 			idc = 431001;
 
 			text = "3. Loadout"; //--- ToDo: Localize;
-			x = 0.44 * safezoneW + safezoneX;
+			x = 0.51 * safezoneW + safezoneX;
 			y = 0.26 * safezoneH + safezoneY;
 			w = 0.06 * safezoneW;
 			h = 0.04 * safezoneH;
@@ -55,7 +55,7 @@ class armoryDialog
 		class armorySideList: PxgGuiRscListBox
 		{
 			idc = 431500;
-			x = 0.30 * safezoneW + safezoneX;
+			x = 0.37 * safezoneW + safezoneX;
 			y = 0.31 * safezoneH + safezoneY;
 			w = 0.12 * safezoneW;
 			h = 0.06 * safezoneH;
@@ -66,7 +66,7 @@ class armoryDialog
 		{
 			idc = 431501;
 
-			x = 0.30 * safezoneW + safezoneX;
+			x = 0.37 * safezoneW + safezoneX;
 			y = 0.43 * safezoneH + safezoneY;
 			w = 0.12 * safezoneW;
 			h = 0.28 * safezoneH;
@@ -78,7 +78,7 @@ class armoryDialog
 		{
 			idc = 431503;
 
-			x = 0.44 * safezoneW + safezoneX;
+			x = 0.51 * safezoneW + safezoneX;
 			y = 0.31 * safezoneH + safezoneY;
 			w = 0.12 * safezoneW;
 			h = 0.4 * safezoneH;
@@ -91,7 +91,7 @@ class armoryDialog
 
 			text = "Get Loadout"; //--- ToDo: Localize;
 
-			x = 0.29 * safezoneW + safezoneX;
+			x = 0.58 * safezoneW + safezoneX;
 			y = 0.73 * safezoneH + safezoneY;
 			w = 0.06 * safezoneW;
 			h = 0.02 * safezoneH;
@@ -103,7 +103,7 @@ class armoryDialog
 
 			text = "Close";
 
-			x = 0.51 * safezoneW + safezoneX;
+			x = 0.36 * safezoneW + safezoneX;
 			y = 0.73 * safezoneH + safezoneY;
 			w = 0.06 * safezoneW;
 			h = 0.02 * safezoneH;

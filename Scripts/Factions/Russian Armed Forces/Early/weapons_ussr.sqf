@@ -6,6 +6,7 @@ switch (_loadout) do {
 	};
 	case "plt";
 	case "sqd_ld";
+	case "rcn_ld";
 	case "sqd_gre":{ player addWeapon "rhs_weap_ak74_gp25";
 	};
 	case "sqd_ar": {player addWeapon "UK3CB_RPK_74";
@@ -15,10 +16,6 @@ switch (_loadout) do {
 	};	
 	case "rcn_dmr": {player addWeapon "UK3CB_SVD_OLD";
 					 player addPrimaryWeaponItem "rhs_acc_pso1m2"
-	};
-		case "rcn_drone": {player addWeapon "rhs_weap_akmn";
-	};
-	case "rcn_ld": {player addWeapon "rhs_weap_akmn_gp25";
 	};
 	case "sup_mmg_g": {player addWeapon "rhs_weap_pkm";
 	};

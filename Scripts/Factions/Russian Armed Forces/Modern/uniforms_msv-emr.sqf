@@ -22,21 +22,27 @@ switch (_loadout) do {
 
 // add vest
 switch (_loadout) do {
-	default { player addVest "rhs_6b45_rifleman_2"};
-	case "plt": { player addVest "rhs_6b45_off"};
-	case "sqd_ld": { player addVest "rhs_6b45_off"};
-	case "rcn_ld": { player addVest "rhs_6b45_off"};
-	case "sqd_ar": { player addVest "rhs_6b45_mg"};
+	default { player addVest "rhs_6b45_rifleman"};
+	case "plt";
+	case "tacp": { player addVest "rhs_6b45_off"};
+	case "sqd_ld";
+	case "sqd_gre": { player addVest "rhs_6b45_grn"};
+	case "logi";
+	case "sqd_eng": { player addVest "rhs_6b45_rifleman_2"};
 	case "sup_mmg_g": { player addVest "rhs_6b45_mg"};
-	case "sqd_eng": { player addVest "rhs_6b45_grn"};
-	case "ar_c": { player addVest "rhs_6b45_rifleman"};
-	case "pil": { player addVest "rhs_vest_pistol_holster"};
+	case "sup_mmg_l";
+	case "sup_mat_l";
+	case "sup_aa_l";
+	case "sup_mor_l";
+	case "rcn_ld": { player addVest "rhs_6b45_off"};
+	case "pil": { player addVest "rhs_vest_commander"};
 };
 
 // add backpack 
 switch (_loadout) do {
 	default { player addBackpack "rhs_rk_sht_30_emr"};
-	case "logi": {player addBackpack "rhs_rk_sht_30_emr_engineer_empty"};
+	case "logi";
+	case "sqd_eng": {player addBackpack "rhs_rk_sht_30_emr_engineer_empty"};
 	case "sqd_med";
 	case "sup_mmg_l";
 	case "sup_mmg_g";
@@ -44,7 +50,6 @@ switch (_loadout) do {
 	case "sup_mat_l": {player addBackpack "rhs_tortila_emr"};
 	case "sup_mor_l": {player addBackpack "B_Mortar_01_support_F"};
 	case "sup_mor_g": {player addBackpack "B_Mortar_01_weapon_F"};
-	case "rcn_drone": {player addBackpack "O_UAV_01_backpack_F"};
 	case "ar_c";
 	case "pil": {};
 };

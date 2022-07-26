@@ -15,7 +15,7 @@ switch (_loadout) do {
 			         player addPrimaryWeaponItem "rhsusf_acc_eotech_xps3";
 					 player addPrimaryWeaponItem "bwa3_acc_varioray_irlaser_black";
 			  		 player addPrimaryWeaponItem "uk3cb_baf_sffh"};
-	case "sqd_ar": {player addWeapon "hlc_lmg_minimi_railed";
+	case "sqd_ar": {player addWeapon "UK3CB_BAF_L110A2RIS";
 			        player addPrimaryWeaponItem "rhsusf_acc_eotech_xps3"};
 	case "rcn_dmr": {player addWeapon "UK3CB_BAF_L129A1";
 					 player addPrimaryWeaponItem "uk3cb_baf_ta648"};

@@ -3,36 +3,31 @@ _availableVehicles =
 	["Utility",
 	["rhs_uaz_open_MSV_01",
 	"RHS_UAZ_MSV_01",
-	"rhs_tigr_m_msv",
 	"rhs_kamaz5350_msv", 
-	"rhs_kamaz5350_ammo_msv",
 	"rhs_kamaz5350_flatbed_msv",
-	"RHS_Ural_MSV_01",
 	"RHS_Ural_Ammo_MSV_01",
-	"RHS_Ural_Open_Flat_MSV_01"]], 
+	"RHS_Ural_Fuel_MSV_01"]], 
 	
 	["Armed Car/MRAP",
-	["rhs_tigr_sts_msv", 
+	["rhs_tigr_m_msv",
+	"rhs_tigr_sts_msv", 
 	"rhsgref_BRDM2_msv", 
 	"rhsgref_BRDM2_ATGM_msv"]],
 	
 	["Anti Air",
-	["RHS_Ural_Zu23_MSV_01", 
-	"rhs_zsu234_aa", 
+	["rhs_zsu234_aa", 
 	"UK3CB_O_2S6M_Tunguska_VPV"]],
 	
 	["APC",
     ["rhs_btr80_msv"]],
   
     ["IFV",
-    ["rhs_bmp1_msv",
-	"rhs_bmp2_msv",
+    ["rhs_bmp2_msv",
     "rhs_bmp3mera_msv"]],
   
     ["MBT",
     ["rhs_t80um",
-	"rhs_t90a_tv",
-    "rhs_t72be_tv"]],
+	"rhs_t90a_tv"]],
   
     ["SPG",
     ["rhs_2s1_tv",
@@ -45,12 +40,11 @@ _availableVehicles =
 	
 	["Rotary Attack",
 	["RHS_Mi8MTV3_vdv",
-    "rhs_mi28n_vvsc",
-	"RHS_Mi24Vt_vvsc"]],
+	"RHS_Mi24Vt_vvsc",
+	"rhs_mi28n_vvsc"]],
   
     ["Fixed Wing Attack",
-    ["rhs_mig29s_vvsc",
-	"RHS_Su25SM_vvsc"]],
+    ["RHS_Su25SM_vvsc"]],
 	
 	["Turrets",
     ["rhs_Kornet_9M133_2_msv",

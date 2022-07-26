@@ -5,11 +5,9 @@ for "_i" from 1 to 4 do { player addItemToUniform "ACE_fieldDressing"};
 for "_i" from 1 to 4 do { player addItemToUniform "ACE_elasticBandage"};
 for "_i" from 1 to 4 do { player addItemToUniform "ACE_quikclot"};
 for "_i" from 1 to 4 do { player addItemToUniform "ACE_packingBandage"};
-for "_i" from 1 to 2 do { player addItemToUniform "ACE_morphine"};
-for "_i" from 1 to 2 do { player addItemToUniform "ACE_epinephrine"};
+for "_i" from 1 to 2 do { player addItemToBackpack"ACE_morphine"};
+for "_i" from 1 to 2 do { player addItemToBackpack "ACE_epinephrine"};
 for "_i" from 1 to 2 do { player addItemToUniform "ACE_tourniquet"};
-for "_i" from 1 to 1 do { player addItemToBackpack "ACE_bloodIV"};
-for "_i" from 1 to 2 do { player addItemToBackpack "ACE_bloodIV_500"};
 
 // add medic medical items
 switch (_loadout) do {

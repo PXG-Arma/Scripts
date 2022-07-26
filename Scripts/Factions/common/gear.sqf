@@ -68,7 +68,7 @@ if (_variantEra == "Late") then {
 		case "sup_mat_l";
 		case "sup_hat_l";
 		case "sup_aa_l";
-		case "sup_mor_l": {player addItemToUniform "ACE_DAGR"};
+		case "sup_mor_l": {player addItemToBackpack "ACE_DAGR"};
 	};
 
 	// add NVG
@@ -117,6 +117,7 @@ if (_variantEra == "Modern") then {
 		default { player addWeapon "binocular"};
 		case "sqd_ld";
 		case "sqd_aar";
+		case "sqd_dmr";
 		case "rcn_ld";
 		case "rcn_dmr";
 		case "sup_mmg_l";

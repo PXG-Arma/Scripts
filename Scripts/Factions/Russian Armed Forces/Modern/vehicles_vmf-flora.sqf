@@ -3,13 +3,14 @@ _availableVehicles =
 	["Utility",
 	["rhs_uaz_open_vmf",
 	"rhs_uaz_vmf",
-	"rhs_tigr_m_3camo_vmf",
 	"RHS_Ural_VMF_01",
 	"RHS_Ural_Ammo_VMF_01",
+	"RHS_Ural_Fuel_VMF_01",
 	"RHS_Ural_Open_Flat_VMF_01"]], 
 	
 	["Armed Car/MRAP",
-	["rhs_tigr_sts_3camo_vmf", 
+	["rhs_tigr_m_3camo_vmf",
+	"rhs_tigr_sts_3camo_vmf", 
 	"rhsgref_BRDM2_vmf", 
 	"rhsgref_BRDM2_ATGM_vmf"]],
 	
@@ -49,6 +50,6 @@ _availableVehicles =
 	
 	["Misc.",
 	["B_G_Quadbike_01_F",
-	"rhs_pts_vmf"]] //Doesn't spawn in consistent camo
+	"rhs_pts_vmf"]]
 ];
 _availableVehicles

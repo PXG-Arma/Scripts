@@ -7,7 +7,7 @@ _resupplyAvailable = [
 	],
 	["AR Resupply",
 		[
-			["hlc_200rnd_556x45_M_SAW",30]
+			["rhsusf_200Rnd_556x45_mixed_soft_pouch_coyote",20]
 		]
 	],
 	["Shotgun Resupply",
@@ -18,14 +18,14 @@ _resupplyAvailable = [
 	],
 	["MMG Resupply",
 		[
-			["rhsusf_100Rnd_762x51",10],
-			["rhsusf_100Rnd_762x51_m62_tracer",10],
-			["rhsusf_100Rnd_762x51_m61_ap",10]
+			["BWA3_120Rnd_762x51_soft",10],
+			["BWA3_120Rnd_762x51_Tracer_soft",10]
 		]
 	],
 	["DMR Resupply",
 		[
-			["rhsusf_20Rnd_762x51_SR25_m993_Mag",30]
+			["rhsusf_20Rnd_762x51_SR25_m993_Mag",20],
+			["rhsusf_20Rnd_762x51_SR25_m62_Mag",20]
 		]
 	],
 	["LAT Resupply",
@@ -87,9 +87,10 @@ _resupplyAvailable = [
 	],
 	["Explosives",
 		[
+			["ACE_Clacker",2],
+			["ACE_M26_Clacker",2],
 			["DemoCharge_Remote_Mag",10],
-			["SatchelCharge_Remote_Mag",8],
-			["ClaymoreDirectionalMine_Remote_Mag",8]
+			["SatchelCharge_Remote_Mag",10]
 		]
 	],
 	["Blood IVs",
@@ -126,9 +127,9 @@ _resupplyAvailable = [
 		[
 			["rhs_mag_30Rnd_556x45_M855A1_EPM",20],
 			["rhs_mag_30Rnd_556x45_M855A1_EPM_Tracer_Red",20],
-			["hlc_200rnd_556x45_M_SAW",10],
-			["rhsusf_8Rnd_00Buck",8],
-			["rhsusf_8Rnd_Slug",8],
+			["rhsusf_200Rnd_556x45_mixed_soft_pouch_coyote",10],
+			["rhsusf_8Rnd_00Buck",4],
+			["rhsusf_8Rnd_Slug",4],
 			["rhs_weap_M136",2],
 			["HandGrenade",10],
 			["SmokeShell",10],
@@ -137,12 +138,6 @@ _resupplyAvailable = [
 			["ACE_bloodIV", 5],
 			["ACE_elasticBandage", 15],
 			["ACE_quickclot", 15]
-		]
-	],
-	["Detonators",
-		[
-			["ACE_Clacker",10],
-			["ACE_M26_Clacker",10]
 		]
 	],
 	["Vehicle Resupply 7.62mm",

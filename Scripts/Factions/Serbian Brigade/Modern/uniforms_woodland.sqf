@@ -12,7 +12,7 @@ switch (_loadout) do {
 	case "rcn_ld";
 	case "rcn_dmr";
 	case "rcn_drone" : {player addHeadgear "rhssaf_helmet_m97_veil_digital"};
-	case "ar_c": {player addHeadgear "UK3CB_H_Crew_Cap"};
+	case "ar_c": {player addHeadgear "rhssaf_helmet_m97_olive_nocamo"};
 	case "pil": {player addHeadgear "rhs_zsh7a_mike"};
 };
 
@@ -40,7 +40,6 @@ switch (_loadout) do {
 	case "sup_mmg_l": {player addBackpack "B_Carryall_oli"};
 	case "sup_mor_l": {player addBackpack "B_Mortar_01_support_F"};
 	case "sup_mor_g": {player addBackpack "B_Mortar_01_weapon_F"};
-	case "rcn_drone": {player addBackpack "I_UAV_01_backpack_F"};
 	case "ar_c";
 	case "pil": {};
 };

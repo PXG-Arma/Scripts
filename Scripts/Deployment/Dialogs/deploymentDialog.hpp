@@ -31,7 +31,7 @@ class deploymentDialog
 
 			x = 0.30 * safezoneW + safezoneX;
 			y = 0.26 * safezoneH + safezoneY;
-			w = 0.06 * safezoneW;
+			w = 0.10 * safezoneW;
 			h = 0.04 * safezoneH;
 			text = "Deployment Points";
 		};
@@ -60,7 +60,7 @@ class deploymentDialog
 		{
 			idc = 441600;
 
-			x = 0.29 * safezoneW + safezoneX;
+			x = 0.65 * safezoneW + safezoneX;
 			y = 0.73 * safezoneH + safezoneY;
 			w = 0.06 * safezoneW;
 			h = 0.02 * safezoneH;
@@ -75,7 +75,7 @@ class deploymentDialog
 
 			text = "Close";
 
-			x = 0.65 * safezoneW + safezoneX;
+			x = 0.29 * safezoneW + safezoneX;
 			y = 0.73 * safezoneH + safezoneY;
 			w = 0.06 * safezoneW;
 			h = 0.02 * safezoneH;

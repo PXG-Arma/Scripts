@@ -1,13 +1,12 @@
 _availableFactions = [
 	"British Armed Forces",
 	"Bundeswehr",
-	"Core Point Logistics", 
 	"Croatian SFG", 
-	"Hellenic Armed Forces", 
-	"NATO",
+	"Hellenic Armed Forces",
 	"Portuguese Commandos", 
 	"SWAT",
-	"US Army"
+	"US Army",
+	"US Marine Corps"
 
 ];
 

@@ -134,7 +134,8 @@ class dialog_motorpool
 			action = "execVM 'Scripts\Motorpool\Functions\PXG_Spawn_Vehicle.sqf'";
 
 			text = "Spawn"; //--- ToDo: Localize;
-			x = 0.29 * safezoneW + safezoneX;
+			
+			x = 0.65 * safezoneW + safezoneX;
 			y = 0.73 * safezoneH + safezoneY;
 			w = 0.06 * safezoneW;
 			h = 0.02 * safezoneH;
@@ -146,7 +147,7 @@ class dialog_motorpool
 
 			text = "Close";
 
-			x = 0.65 * safezoneW + safezoneX;
+			x = 0.29 * safezoneW + safezoneX;
 			y = 0.73 * safezoneH + safezoneY;
 			w = 0.06 * safezoneW;
 			h = 0.02 * safezoneH;

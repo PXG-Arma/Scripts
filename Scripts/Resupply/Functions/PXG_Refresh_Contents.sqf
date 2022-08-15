@@ -19,9 +19,9 @@ _variantEra = _variantArray #1;
 _suppliesScriptPath = "Scripts\Factions\";
 _suppliesScriptPath = _suppliesScriptPath + _faction + "\" + _variantEra +"\supplies.sqf";
 
-<<<<<<< HEAD
 _suppliesContents = [];
-=======
+_crateContentsText = "";
+
 _suppliesArray = call compile preprocessfile _suppliesScriptPath;
 
 switch (lbData [451502, _indexSupplies]) do
@@ -29,16 +29,25 @@ switch (lbData [451502, _indexSupplies]) do
     case "FOB";
 	case "Wheel";
 	case "Track": {_suppliesContents = [[],[]]};
-	default {_suppliesContents = _suppliesArray select _indexSupplies select 1};
+	default {
+		_suppliesContents = _suppliesArray select _indexSupplies select 1;
+		
+		{
+			_suppliesName = _suppliesContents select _forEachIndex select 0;
+			_suppliesCount = _suppliesContents select _forEachIndex select 1;
+			_isMag = isClass (configFile >> "CfgMagazines" >> _suppliesName);
+			_isWeapon = isClass (configFile >> "CfgWeapons" >> _suppliesName);
+
+			if (_isMag == true) then {_suppliesName = getText (configFile >> "CfgMagazines" >> _suppliesName >> "DisplayName"); };
+			if (_isWeapon == true) then {_suppliesName = getText (configFile >> "CfgWeapons" >> _suppliesName >> "DisplayName"); };
+		//	if (isClass (configFile >> >> "CfgMagazines" >> _suppliesName)) then {_suppliesName = getText (configFile >> "CfgMagazines" >> _suppliesName >> "DisplayName"); };
+		//	if (isClass (configFile >> >> "CfgMagazines" >> _suppliesName)) then {_suppliesName = getText (configFile >> "CfgMagazines" >> _suppliesName >> "DisplayName"); };
+			_suppliesDisplay = _suppliesName + ": " + str _suppliesCount;
+			_crateContentsText = _crateContentsText + _suppliesDisplay + "\n"; 
+
+		} forEach _suppliesContents;
+	};
 };
-
-
-lbClear 451505;
-
->>>>>>> 14af30b (Added Wheels and Tracks to resupply including potential zero divisor fix)
-_crateContentsText = "";
-
-_suppliesArray = call compile preprocessfile _suppliesScriptPath;
 
 switch (lbData [451502, _indexSupplies]) do
 {

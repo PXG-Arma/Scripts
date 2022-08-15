@@ -19,7 +19,23 @@ _variantEra = _variantArray #1;
 _suppliesScriptPath = "Scripts\Factions\";
 _suppliesScriptPath = _suppliesScriptPath + _faction + "\" + _variantEra +"\supplies.sqf";
 
+<<<<<<< HEAD
 _suppliesContents = [];
+=======
+_suppliesArray = call compile preprocessfile _suppliesScriptPath;
+
+switch (lbData [451502, _indexSupplies]) do
+{
+    case "FOB";
+	case "Wheel";
+	case "Track": {_suppliesContents = [[],[]]};
+	default {_suppliesContents = _suppliesArray select _indexSupplies select 1};
+};
+
+
+lbClear 451505;
+
+>>>>>>> 14af30b (Added Wheels and Tracks to resupply including potential zero divisor fix)
 _crateContentsText = "";
 
 _suppliesArray = call compile preprocessfile _suppliesScriptPath;

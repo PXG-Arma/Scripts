@@ -24,7 +24,8 @@ lbClear 451502;
 
 {
     _suppliesText = _suppliesArray select _forEachIndex select 0;
-	lbAdd [451502, _suppliesText];
+	_supplyData = lbAdd [451502, _suppliesText];
+	lbSetData [451502, _supplyData, _suppliesText];
 }	forEach _suppliesArray;
 
 _wheelSupply = lbAdd [451502, "Spare Wheel"];

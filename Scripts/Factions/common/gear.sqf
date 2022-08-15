@@ -11,7 +11,6 @@ player addItemToVest "ACE_MapTools";
 player addItemToVest "ACE_EarPlugs";
 player addItemToVest "ACE_CableTie";
 player addItemToVest "ACE_CableTie";
-player addItemToBackpack "ACE_Fortify";
 
 switch (_loadout) do {
 	default {player addItemToBackpack "ACE_EntrenchingTool"};
@@ -21,6 +20,16 @@ switch (_loadout) do {
 	case "sup_gmg_g";
 	case "sup_mor_l";
 	case "sup_mor_g": {player addItemToVest "ACE_EntrenchingTool"};
+};
+
+switch (_loadout) do {
+	default {player addItemToBackpack "ACE_Fortify"};
+	case "sup_hmg_l";
+	case "sup_hmg_g";
+	case "sup_gmg_l";
+	case "sup_gmg_g";
+	case "sup_mor_l";
+	case "sup_mor_g": {player addItemToVest "ACE_Fortify"};
 };
 
 switch (_loadout) do {

@@ -34,7 +34,9 @@ if (count _nearVehicles > 0) then {
 	
 } else {
 
-	if (_supplyData == "FOB") then { 
+	switch(_supplyData) do {
+	
+	case "FOB": { 
 		private _crate = createVehicle["ACE_Box_Chemlights", getPosATL _spawnPosition, [], 0, "CAN_COLLIDE"];
 		_crate setDir getDir _spawnPosition;
 		
@@ -48,9 +50,20 @@ if (count _nearVehicles > 0) then {
 		_crate setVariable ["ace_cargo_customName", "FOB", true];
 		[_crate, 8] call ace_cargo_fnc_setSize;
 		[_crate, true, [0,1,1], 0, true] call ace_dragging_fnc_setCarryable;
-
-
-	} else {
+		
+		}; 
+		
+	case "Wheel": {
+		private _wheel = createVehicle["ACE_Wheel", getPosATL _spawnPosition, [], 0, "CAN_COLLIDE"];
+		_wheel setDir getDir _spawnPosition;
+	};
+	case "Track": {
+		private _track = createVehicle["ACE_Track", getPosATL _spawnPosition, [], 0, "CAN_COLLIDE"];
+		_track setDir getDir _spawnPosition;
+	};
+	
+	
+	  default {
 		private _crate = createVehicle["Box_NATO_Ammo_F", getPosATL _spawnPosition, [], 0, "CAN_COLLIDE"];
 		_crate setDir getDir _spawnPosition;
 		
@@ -63,5 +76,6 @@ if (count _nearVehicles > 0) then {
 		[_crate] call compile preprocessFile "Scripts\Resupply\Functions\PXG_Crate_Fill.sqf";
 		[_crate, 1] call ace_cargo_fnc_setSize;
 		[_crate, true, [0,1,1], 0, true] call ace_dragging_fnc_setCarryable;
+		};
 	};
 };

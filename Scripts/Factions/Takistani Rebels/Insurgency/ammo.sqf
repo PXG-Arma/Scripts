@@ -3,8 +3,19 @@ params["_side","_faction","_variant", "_loadout"];
 // add primary ammo 
 switch (_loadout) do {
 	default {
-		for "_i" from 1 to 4 do { player addItemToVest "rhs_30Rnd_762x39mm"};
-		for "_i" from 1 to 4 do { player addItemToBackpack "rhs_30Rnd_762x39mm"};
+		switch (primaryWeapon player) do {
+		
+			case "rhs_weap_akm": {
+					for "_i" from 1 to 4 do { player addItemToVest "rhs_30Rnd_762x39mm"};
+					for "_i" from 1 to 4 do { player addItemToBackpack "rhs_30Rnd_762x39mm"};
+				};
+			case "rhs_weap_m38": {
+				for "_i" from 1 to 8 do { player addItemToVest "rhsgref_5Rnd_762x54_m38"};
+				for "_i" from 1 to 8 do { player addItemToBackpack "rhsgref_5Rnd_762x54_m38"};
+			};
+			
+			default {};
+		};
 	};
 };
 

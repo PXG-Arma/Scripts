@@ -27,6 +27,12 @@ lbClear 451502;
 	lbAdd [451502, _suppliesText];
 }	forEach _suppliesArray;
 
+_wheelSupply = lbAdd [451502, "Spare Wheel"];
+lbSetData [451502, _wheelSupply, "Wheel"];
+
+_trackSupply = lbAdd [451502, "Spare Track"];
+lbsetData [451502, _trackSupply, "Track"];
+
 _fobCrate = lbAdd [451502, "FOB Crate"];
 lbSetData [451502, _fobCrate, "FOB"];
 

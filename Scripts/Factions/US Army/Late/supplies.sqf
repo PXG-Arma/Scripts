@@ -23,6 +23,12 @@ _resupplyAvailable = [
 			["rhsusf_20Rnd_762x51_m993_Mag",15]
 		]
 	],
+	["AMR Resupply",
+		[
+			["rhsusf_mag_10Rnd_STD_50BMG_M33",10],
+			["rhsusf_mag_10Rnd_STD_50BMG_mk211",10]
+		]
+	],
 	["LAT Resupply",
 		[
 			["rhs_weap_m72a7",8]
@@ -88,10 +94,9 @@ _resupplyAvailable = [
 	],
 	["Bandages",
 		[
-			["ACE_fieldDressing", 50],
 			["ACE_elasticBandage", 50],
 			["ACE_packingBandage", 50],
-			["ACE_quickclot", 50]
+			["ACE_quikclot", 50]
 		]
 	],
 	["Autoinjectors",
@@ -121,7 +126,7 @@ _resupplyAvailable = [
 			["1Rnd_Smoke_Grenade_Shell",10],
 			["ACE_bloodIV", 5],
 			["ACE_elasticBandage", 15],
-			["ACE_quickclot", 15]
+			["ACE_quikclot", 15]
 		]
 	],
 	["Parachutes",

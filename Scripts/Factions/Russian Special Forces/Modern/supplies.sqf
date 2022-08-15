@@ -26,8 +26,8 @@ _resupplyAvailable = [
 	],
 	["MAT Resupply (HEAT)",
 		[
-			["rhs_rpg7_PG7VR_mag",4],
-			["rhs_rpg7_PG7V_mag",4]
+			["rhs_rpg7_PG7VL_mag",6],
+			["rhs_rpg7_PG7VR_mag",2]
 		]
 	],
 	["MAT Resupply (Misc.)",
@@ -78,10 +78,9 @@ _resupplyAvailable = [
 	],
 	["Bandages",
 		[
-			["ACE_fieldDressing", 50],
 			["ACE_elasticBandage", 50],
 			["ACE_packingBandage", 50],
-			["ACE_quickclot", 50]
+			["ACE_quikclot", 50]
 		]
 	],
 	["Autoinjectors",
@@ -109,7 +108,7 @@ _resupplyAvailable = [
 			["SmokeShell",10],
 			["ACE_bloodIV", 5],
 			["ACE_elasticBandage", 15],
-			["ACE_quickclot", 15]
+			["ACE_quikclot", 15]
 		]
 	],
 	["Parachutes",

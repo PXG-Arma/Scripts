@@ -21,6 +21,10 @@ _availableVehicles =
 	
 	["Rotary Armed",
 	["RHS_Mi8MTV3_vdv"]],
+
+	["Boat",
+	["B_Boat_Transport_01_F",
+  	"rhsgref_hidf_rhib"]],
 	
 	["Misc.",
 	["B_G_Quadbike_01_F",

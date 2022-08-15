@@ -34,7 +34,6 @@ _resupplyAvailable = [
 	],
 	["40mm Grenades",
 		[
-			["1Rnd_HE_Grenade_shell",10],
 			["rhs_mag_m576",15],
 			["rhs_mag_m4009",15]
 		]
@@ -77,10 +76,9 @@ _resupplyAvailable = [
 	],
 	["Bandages",
 		[
-			["ACE_fieldDressing", 50],
 			["ACE_elasticBandage", 50],
 			["ACE_packingBandage", 50],
-			["ACE_quickclot", 50]
+			["ACE_quikclot", 50]
 		]
 	],
 	["Autoinjectors",
@@ -110,7 +108,7 @@ _resupplyAvailable = [
 			["ACE_CableTie",20],
 			["ACE_bloodIV", 5],
 			["ACE_elasticBandage", 15],
-			["ACE_quickclot", 15]
+			["ACE_quikclot", 15]
 		]
 	],
 	["Parachutes",

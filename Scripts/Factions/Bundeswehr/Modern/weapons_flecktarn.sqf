@@ -26,6 +26,7 @@ switch (_loadout) do {
 						player addPrimaryWeaponItem "bwa3_optic_zo4x30i";
 						player addPrimaryWeaponItem "bwa3_acc_varioray_irlaser_black";
 	};
+	case "ar_ld";
 	case "ar_c";
 	case "pil": {player addWeapon "BWA3_MP7"};
 };

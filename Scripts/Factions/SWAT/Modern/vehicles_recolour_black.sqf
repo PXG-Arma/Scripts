@@ -25,5 +25,13 @@ switch(_vehicleType) do
 			["Door_1_source",0,"Door_2_source",0,"Door_3_source",0,"Door_4_source",0,"Hide_Door_1_source",0,"Hide_Door_2_source",0,"Hide_Door_3_source",0,"Hide_Door_4_source",0,"lights_em_hide",0,"ladder_hide",0,"spare_tyre_holder_hide",1,"spare_tyre_hide",1,"reflective_tape_hide",1,"roof_rack_hide",1,"LED_lights_hide",0,"sidesteps_hide",1,"rearsteps_hide",1,"side_protective_frame_hide",0,"front_protective_frame_hide",0,"beacon_front_hide",1,"beacon_rear_hide",1]
 		] call BIS_fnc_initVehicle;
 	};
+	case "C_Boat_Civil_01_police_F":
+	{
+		[
+			_vehicle,
+			["Police",1], 
+			["hidePolice",0,"HideRescueSigns",1,"HidePoliceSigns",0]
+		] call BIS_fnc_initVehicle;
+	};
 	default {};
 };

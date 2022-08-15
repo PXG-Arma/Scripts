@@ -25,6 +25,11 @@ _availableVehicles =
 	
 	["Rotary Attack",
 	["O_Heli_Light_02_dynamicLoadout_F"]],
+
+	["Boat",
+	["B_Boat_Transport_01_F",
+	"UK3CB_BAF_RHIB_GPMG",
+	"UK3CB_BAF_RHIB_HMG"]],
 	
 	["Turrets",
 	["B_G_HMG_02_F",

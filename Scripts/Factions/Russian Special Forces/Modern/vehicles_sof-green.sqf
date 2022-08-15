@@ -15,6 +15,11 @@ _availableVehicles =
 
 	["Rotary Attack",
 	["RHS_Mi8AMTSh_vvs"]],
+
+	["Boat",
+	["B_Boat_Transport_01_F",
+  	"rhsgref_hidf_rhib",
+	"rhsgref_hidf_canoe"]],
 	
 	["Misc.",
 	["B_G_Quadbike_01_F",

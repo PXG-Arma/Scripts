@@ -35,6 +35,12 @@ _availableVehicles =
 
   ["Fixed Wing Attack",
   ["RHS_A10"]],
+
+  ["Boat",
+	["B_Boat_Transport_01_F",
+  "rhsgref_hidf_rhib",
+	"UK3CB_MDF_B_RHIB_Gunboat",
+	"rhsusf_mkvsoc"]],
   
   ["Turrets",
   ["RHS_M2StaticMG_MiniTripod_D",

@@ -100,7 +100,7 @@ _resupplyAvailable = [
 		[
 			["ACE_elasticBandage", 50],
 			["ACE_packingBandage", 50],
-			["ACE_quickclot", 50]
+			["ACE_quikclot", 50]
 		]
 	],
 	["Autoinjectors",
@@ -130,7 +130,7 @@ _resupplyAvailable = [
 			["rhs_VG40OP_white",5],
 			["ACE_bloodIV", 5],
 			["ACE_elasticBandage", 15],
-			["ACE_quickclot", 15]
+			["ACE_quikclot", 15]
 		]
 	],
 	["Parachutes",

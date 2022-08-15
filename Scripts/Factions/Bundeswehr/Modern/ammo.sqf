@@ -3,9 +3,7 @@ params["_side","_faction","_variant", "_loadout"];
 // add primary ammo 
 switch (_loadout) do {
 	default {
-		for "_i" from 1 to 1 do { player addItemToUniform "BWA3_30Rnd_556x45_G36"};
-		for "_i" from 1 to 1 do { player addItemToVest "BWA3_30Rnd_556x45_G36"};
-		for "_i" from 1 to 2 do { player addItemToBackpack "BWA3_30Rnd_556x45_G36"};
+		for "_i" from 1 to 4 do { player addItemToVest "BWA3_30Rnd_556x45_G36"};
 		for "_i" from 1 to 4 do { player addItemToVest "BWA3_30Rnd_556x45_G36_Tracer"};
 	};
 	case "sqd_ar": {
@@ -27,6 +25,7 @@ switch (_loadout) do {
 		for "_i" from 1 to 2 do { player addItemToVest "BWA3_30Rnd_556x45_G36_Tracer"};
 		for "_i" from 1 to 2 do { player addItemToBackpack "ACE_UAVBattery"};
 	};
+	case "ar_ld";
 	case "ar_c";
 	case "pil": {
 		for "_i" from 1 to 4 do { player addItemToVest "BWA3_40Rnd_46x30_MP7"};

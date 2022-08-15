@@ -3,10 +3,10 @@ _availableVehicles =
 	["Utility",
 	["rhs_uaz_open_vmf",
 	"rhs_uaz_vmf",
-	"RHS_Ural_VMF_01",
-	"RHS_Ural_Ammo_VMF_01",
-	"RHS_Ural_Fuel_VMF_01",
-	"RHS_Ural_Open_Flat_VMF_01"]], 
+	"rhs_gaz66_vmf",
+	"rhs_gaz66_flat_vmf",
+	"rhs_gaz66_ammo_vmf",
+	"RHS_Ural_Fuel_VMF_01"]], 
 	
 	["Armed Car/MRAP",
 	["rhs_tigr_m_3camo_vmf",
@@ -40,6 +40,11 @@ _availableVehicles =
   
     ["Fixed Wing Attack",
     ["rhs_mig29s_vvsc"]],
+
+  	["Boat",
+	["B_Boat_Transport_01_F",
+  	"rhsgref_hidf_rhib",
+	"rhs_bmk_t"]],
 	
 	["Turrets",
     ["rhs_Kornet_9M133_2_vmf",

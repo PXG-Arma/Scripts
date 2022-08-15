@@ -60,10 +60,9 @@ switch (_loadout) do {
 // add 40mm grenades
 switch (_loadout) do {
 	default {};
-	case "sqd_gre": {
-		for "_i" from 1 to 5 do {player addItemToBackpack "1Rnd_HE_Grenade_shell"}; 
+	case "sqd_gre": { 
 		for "_i" from 1 to 2 do {player addItemToBackpack "UK3CB_BAF_1Rnd_Smoke_Grenade_shell"};
-		for "_i" from 1 to 2 do {player addItemToBackpack "rhs_mag_m4009"};
-		for "_i" from 1 to 2 do {player addItemToBackpack "rhs_mag_m576"};
+		for "_i" from 1 to 4 do {player addItemToBackpack "rhs_mag_m4009"};
+		for "_i" from 1 to 4 do {player addItemToBackpack "rhs_mag_m576"};
 	};
 };

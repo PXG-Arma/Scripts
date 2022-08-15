@@ -18,6 +18,7 @@ switch (_loadout) do {
 	case "logi";
 	case "tacp": { player addHeadgear "rhsusf_ach_helmet_headset_ucp"};
 	case "rcn_dmr";
+	case "rcn_amr";
 	case "rcn_ld": {player addHeadgear "rhs_Booniehat_ucp"};
 	case "ar_c": {player addHeadgear "rhsusf_cvc_ess"};
 	case "pil": {player addHeadgear "rhsusf_hgu56p_visor_green"};

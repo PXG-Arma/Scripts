@@ -16,6 +16,9 @@ switch (_loadout) do {
 	case "sup_mmg_g": {	player addWeapon "rhs_weap_m240G";
 						player addPrimaryWeaponItem "rhsusf_acc_elcan";
 	};
+	case "rcn_amr": {player addWeapon "rhs_weap_m107";
+					 player addPrimaryWeaponItem "rhsusf_acc_m8541_mrds";
+	};
 	case "ar_c";
 	case "pil": {player addWeapon "UK3CB_M16_Carbine"};
 };

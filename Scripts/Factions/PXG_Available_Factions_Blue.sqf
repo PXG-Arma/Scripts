@@ -1,9 +1,10 @@
 _availableFactions = [
+	"Belgian Special Forces",
 	"British Armed Forces",
+	"British Special Boat Service",
 	"Bundeswehr",
 	"Croatian SFG", 
 	"Hellenic Armed Forces",
-	"Portuguese Commandos", 
 	"SWAT",
 	"US Army",
 	"US Marine Corps"

@@ -37,34 +37,10 @@ switch (lbData [451502, _indexSupplies]) do
 			_suppliesCount = _suppliesContents select _forEachIndex select 1;
 			_isMag = isClass (configFile >> "CfgMagazines" >> _suppliesName);
 			_isWeapon = isClass (configFile >> "CfgWeapons" >> _suppliesName);
-
+			_isVehicle = isClass (configFile >> "CfgVehicles" >> _suppliesName);
 			if (_isMag == true) then {_suppliesName = getText (configFile >> "CfgMagazines" >> _suppliesName >> "DisplayName"); };
 			if (_isWeapon == true) then {_suppliesName = getText (configFile >> "CfgWeapons" >> _suppliesName >> "DisplayName"); };
-		//	if (isClass (configFile >> >> "CfgMagazines" >> _suppliesName)) then {_suppliesName = getText (configFile >> "CfgMagazines" >> _suppliesName >> "DisplayName"); };
-		//	if (isClass (configFile >> >> "CfgMagazines" >> _suppliesName)) then {_suppliesName = getText (configFile >> "CfgMagazines" >> _suppliesName >> "DisplayName"); };
-			_suppliesDisplay = _suppliesName + ": " + str _suppliesCount;
-			_crateContentsText = _crateContentsText + _suppliesDisplay + "\n"; 
-
-		} forEach _suppliesContents;
-	};
-};
-
-switch (lbData [451502, _indexSupplies]) do
-{
-    case "FOB";
-	case "Wheel";
-	case "Track": {_suppliesContents = [[],[]]};
-	default {
-		_suppliesContents = _suppliesArray select _indexSupplies select 1;
-		
-		{
-			_suppliesName = _suppliesContents select _forEachIndex select 0;
-			_suppliesCount = _suppliesContents select _forEachIndex select 1;
-			_isMag = isClass (configFile >> "CfgMagazines" >> _suppliesName);
-			_isWeapon = isClass (configFile >> "CfgWeapons" >> _suppliesName);
-
-			if (_isMag == true) then {_suppliesName = getText (configFile >> "CfgMagazines" >> _suppliesName >> "DisplayName"); };
-			if (_isWeapon == true) then {_suppliesName = getText (configFile >> "CfgWeapons" >> _suppliesName >> "DisplayName"); };
+			if (_isVehicle == true) then {_suppliesName = getText (configFile >> "CfgVehicles" >> _suppliesName >> "DisplayName"); };
 		//	if (isClass (configFile >> >> "CfgMagazines" >> _suppliesName)) then {_suppliesName = getText (configFile >> "CfgMagazines" >> _suppliesName >> "DisplayName"); };
 		//	if (isClass (configFile >> >> "CfgMagazines" >> _suppliesName)) then {_suppliesName = getText (configFile >> "CfgMagazines" >> _suppliesName >> "DisplayName"); };
 			_suppliesDisplay = _suppliesName + ": " + str _suppliesCount;

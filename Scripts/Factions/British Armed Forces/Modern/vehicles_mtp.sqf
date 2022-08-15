@@ -41,6 +41,11 @@ _availableVehicles =
 	["Fixed Wing Transport",
 	["UK3CB_BAF_Hercules_C4_MTP",
 	"UK3CB_BAF_Hercules_C4_cargo_MTP"]],
+
+	["Boat",
+	["B_Boat_Transport_01_F",
+	"UK3CB_BAF_RHIB_GPMG_MTP",
+	"UK3CB_BAF_RHIB_HMG_MTP"]],
 	
 	["Turrets",
 	["UK3CB_BAF_Static_L111A1_Deployed_High_MTP",

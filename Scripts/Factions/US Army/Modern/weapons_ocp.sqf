@@ -37,6 +37,6 @@ switch (_loadout) do {
 switch (_loadout) do {
 	default {};
 	case "sqd_lat": {player addWeapon "rhs_weap_M136"};
-	case "sup_hat_g": {	player addWeapon "rhs_weap_fgm148"};
+	case "sup_hat_g": {	player addWeapon "UK3CB_BAF_Javelin_Slung_Tube"};
 	case "sup_aa_g": {	player addWeapon "rhs_weap_fim92"};					
 };

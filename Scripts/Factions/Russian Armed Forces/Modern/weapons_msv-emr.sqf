@@ -9,7 +9,7 @@ switch (_loadout) do {
 	case "pil":{player addWeapon "rhs_weap_aks74u"};
 	case "plt";
 	case "sqd_ld";
-	case "sqd_gre":{player addWeapon "rhs_weap_ak74m_gp25";
+	case "sqd_gre": {player addWeapon "rhs_weap_ak74m_gp25";
 					player addPrimaryWeaponItem "rhs_acc_pkas";
 	};
 	case "sqd_ar": {player addWeapon "rhs_weap_rpk74m";

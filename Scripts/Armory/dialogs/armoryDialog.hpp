@@ -10,7 +10,7 @@ class armoryDialog
 			x = 0.36 * safezoneW + safezoneX;
 			y = 0.25 * safezoneH + safezoneY;
 			w = 0.28 * safezoneW;
-			h = 0.48 * safezoneH;
+			h = 0.49 * safezoneH;
 		};
 		class armoryStructuredText: PxgGuiRscStructuredText
 		{
@@ -37,7 +37,7 @@ class armoryDialog
 
 			text = "2. Faction"; //--- ToDo: Localize;
 			x = 0.37 * safezoneW + safezoneX;
-			y = 0.38 * safezoneH + safezoneY;
+			y = 0.382 * safezoneH + safezoneY;
 			w = 0.06 * safezoneW;
 			h = 0.04 * safezoneH;
 		};
@@ -58,7 +58,7 @@ class armoryDialog
 			x = 0.37 * safezoneW + safezoneX;
 			y = 0.31 * safezoneH + safezoneY;
 			w = 0.12 * safezoneW;
-			h = 0.06 * safezoneH;
+			h = 0.067 * safezoneH;
 
 			onLBSelChanged = " call compile preprocessfile 'Scripts\Armory\Functions\PXG_Refresh_Factions.sqf'";
 		};
@@ -69,7 +69,7 @@ class armoryDialog
 			x = 0.37 * safezoneW + safezoneX;
 			y = 0.43 * safezoneH + safezoneY;
 			w = 0.12 * safezoneW;
-			h = 0.28 * safezoneH;
+			h = 0.29 * safezoneH;
 
 			onTreeSelChanged = "call compile preprocessfile 'Scripts\Armory\Functions\PXG_Refresh_Loadouts.sqf'";
 
@@ -81,7 +81,7 @@ class armoryDialog
 			x = 0.51 * safezoneW + safezoneX;
 			y = 0.31 * safezoneH + safezoneY;
 			w = 0.12 * safezoneW;
-			h = 0.4 * safezoneH;
+			h = 0.41 * safezoneH;
 
 		};
 		class armoryButtonGetLoadout: PxgGuiRscButton
@@ -92,7 +92,7 @@ class armoryDialog
 			text = "Get Loadout"; //--- ToDo: Localize;
 
 			x = 0.58 * safezoneW + safezoneX;
-			y = 0.73 * safezoneH + safezoneY;
+			y = 0.74 * safezoneH + safezoneY;
 			w = 0.06 * safezoneW;
 			h = 0.02 * safezoneH;
 		};
@@ -104,7 +104,7 @@ class armoryDialog
 			text = "Close";
 
 			x = 0.36 * safezoneW + safezoneX;
-			y = 0.73 * safezoneH + safezoneY;
+			y = 0.74 * safezoneH + safezoneY;
 			w = 0.06 * safezoneW;
 			h = 0.02 * safezoneH;
 		};

@@ -1,6 +1,6 @@
 createDialog "armoryDialog";
 
-sidesArray = ["Blufor", "Opfor", "Indep"];
+sidesArray = ["BLUFOR", "OPFOR", "INDEP"];
 
 {
 	lbAdd [431500, _x];

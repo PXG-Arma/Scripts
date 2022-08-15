@@ -1,5 +1,5 @@
 _availableFactions = [
-	"Takistani Rebels",
+	"Knights of Arabia",
 	"Task Force International",
 	"Russian Armed Forces",
 	"Russian Special Forces"

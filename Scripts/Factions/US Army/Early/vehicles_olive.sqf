@@ -14,13 +14,9 @@ _availableVehicles =
 
   ["APC",
   ["UK3CB_CW_US_B_EARLY_AAV"]],
-  
-  //IFV
  
   ["MBT",
   ["UK3CB_CW_US_B_EARLY_M60a3"]],
-
-  //SPG
 
   ["Rotary Transport",
   ["UK3CB_CW_US_B_EARLY_UH1H",
@@ -32,8 +28,11 @@ _availableVehicles =
 
   ["Fixed Wing Transport",
   ["UK3CB_CW_US_B_EARLY_C130J"]],
-   
-  //Fixed Wing Attack
+
+  ["Boat",
+	["B_Boat_Transport_01_F",
+  "rhsgref_hidf_rhib",
+	"UK3CB_MDF_B_RHIB_Gunboat"]],
   
   ["Turrets",
   ["RHS_M2StaticMG_MiniTripod_D",
@@ -41,8 +40,6 @@ _availableVehicles =
   "RHS_TOW_TriPod_D",
   "RHS_MK19_TriPod_D",
   "RHS_M119_D"]]
-  
-  //Misc.
   
 ];
 _availableVehicles

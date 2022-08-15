@@ -1,3 +1,3 @@
-_avialableVariants = ["MTP Modern"];
+_avialableVariants = ["MTP Modern", "DPM Early"];
 
 _avialableVariants

@@ -26,6 +26,11 @@ _availableVehicles =
 	
 	["Fixed Wing Attack",
 	["I_Plane_Fighter_04_F"]],
+
+	["Boat",
+	["B_Boat_Transport_01_F",
+	"UK3CB_BAF_RHIB_GPMG",
+	"UK3CB_BAF_RHIB_HMG"]],
 	
 	["Turrets",
 	["RHS_M2StaticMG_MiniTripod_D",

@@ -9,3 +9,8 @@ switch (_loadout) do {
 	};
 	
 };
+
+// Javelin gunner
+switch (_loadout) do {
+	case "sup_hat_g": {player addWeapon "UK3CB_BAF_Javelin_CLU"};
+};

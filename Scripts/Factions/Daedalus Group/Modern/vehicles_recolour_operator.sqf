@@ -2,13 +2,13 @@ params["_vehicle","_vehicleType"];
 
 switch(_vehicleType) do
 {
-	case "UK3CB_B_G_UH1H_FIA";
-	case "UK3CB_B_G_UH1H_GUNSHIP_FIA";
-	case "UK3CB_B_G_UH1H_M240_FIA": 
+	case "UK3CB_AAF_B_Bell412_Utility";
+	case "UK3CB_AAF_B_Bell412_Armed";
+	case "UK3CB_AAF_B_Bell412_Armed_AT": 
 	{
 		[
 			_vehicle,
-			["BLACK",1], 
+			["BLK",1], 
 			true
 		] call BIS_fnc_initVehicle;
 	};
@@ -33,11 +33,20 @@ switch(_vehicleType) do
 		] call BIS_fnc_initVehicle;
 	};
 	
-	case "UK3CB_B_G_TT650":
+	case "UK3CB_AAF_B_Quadbike":
 	{
 		[
 			_vehicle,
-			["Blue_White",1], 
+			["Black",1], 
+			true
+		] call BIS_fnc_initVehicle;
+	};
+
+	case "UK3CB_AAF_B_M1030":
+	{
+		[
+			_vehicle,
+			["NATO",1], 
 			["ClanLogo_Hide",1,"ClanSign_Hide",1]
 		] call BIS_fnc_initVehicle;
 	};

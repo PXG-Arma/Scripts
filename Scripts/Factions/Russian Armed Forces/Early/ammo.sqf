@@ -16,8 +16,7 @@ switch (_loadout) do {
 		for "_i" from 1 to 8 do { player addItemToBackpack "UK3CB_SVD_10rnd_762x54_GT"};
 	};
 	case "sup_mmg_g": {
-		for "_i" from 1 to 2 do { player addItemToVest "rhs_100Rnd_762x54mmR"};
-		for "_i" from 1 to 2 do { player addItemToBackpack "rhs_100Rnd_762x54mmR_green"};
+		for "_i" from 1 to 4 do { player addItemToBackpack "rhs_100Rnd_762x54mmR_green"};
 	};
 	case "ar_c";
 	case "pil": {
@@ -44,8 +43,7 @@ switch (_loadout) do {
 		for "_i" from 1 to 4 do { player addItemToBackpack "rhs_100Rnd_762x54mmR_green"};
 	};
 	case "sup_mat_l": {
-		for "_i" from 1 to 3 do { player addItemToBackpack "rhs_rpg7_PG7V_mag"};
-		for "_i" from 1 to 2 do { player addItemToBackpack "rhs_rpg7_OG7V_mag"};
+		for "_i" from 1 to 3 do { player addItemToBackpack "rhs_rpg7_PG7VM_mag"};
 	};
 };
 
@@ -53,8 +51,7 @@ switch (_loadout) do {
 switch (_loadout) do {
 	default {};
 	case "sup_mat_g": {
-		for "_i" from 1 to 2 do { player addItemToBackpack "rhs_rpg7_PG7V_mag"};
-		for "_i" from 1 to 1 do { player addItemToBackpack "rhs_rpg7_OG7V_mag"};
+		for "_i" from 1 to 3 do { player addItemToBackpack "rhs_rpg7_PG7VM_mag"};
 	};
 };
 

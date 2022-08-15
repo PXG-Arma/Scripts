@@ -12,6 +12,7 @@ switch (_loadout) do {
 	case "sup_mmg_g": {	player addWeapon "BWA3_MG3";
 						player addPrimaryWeaponItem "bwa3_bipod_mg3";
 	};
+	case "ar_ld";
 	case "ar_c";
 	case "pil": {player addWeapon "UK3CB_G3A3"};
 };

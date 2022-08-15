@@ -10,8 +10,8 @@ switch (_loadout) do {
 	
 };
 
-// add 152 radio
+// add 117 radio
 switch (_loadout) do {
     default {};
-    case "ar_c": {player addItemToUniform "ACRE_PRC152"};
+    case "ar_ld": {player addItemToBackpack "ACRE_PRC117F"};
 };

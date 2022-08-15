@@ -19,6 +19,7 @@ switch (_loadout) do {
 		for "_i" from 1 to 2 do { player addItemToVest "UK3CB_G3_20rnd_762x51_GT"};
 		for "_i" from 1 to 2 do { player addItemToBackpack "ACE_UAVBattery"};
 	};
+	case "ar_ld";
 	case "ar_c";
 	case "pil": {
 		for "_i" from 1 to 4 do { player addItemToVest "UK3CB_G3_20rnd_762x51"};
@@ -42,7 +43,7 @@ switch (_loadout) do {
 	};
 	case "sup_mat_l": {
 		for "_i" from 1 to 1 do { player addItemToBackpack "rhs_mag_maaws_HEAT"};
-		for "_i" from 1 to 2 do { player addItemToBackpack "rhs_mag_maaws_HEDP"};
+		for "_i" from 1 to 1 do { player addItemToBackpack "rhs_mag_maaws_HEDP"};
 	};
 	case "sup_aa_l": {
 		for "_i" from 1 to 2 do { player addItemToBackpack "rhs_fim92_mag"};

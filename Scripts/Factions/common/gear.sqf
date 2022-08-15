@@ -12,13 +12,22 @@ player addItemToVest "ACE_EarPlugs";
 player addItemToVest "ACE_CableTie";
 player addItemToVest "ACE_CableTie";
 player addItemToBackpack "ACE_Fortify";
-player addItemToBackpack "ACE_EntrenchingTool";
+
+switch (_loadout) do {
+	default {player addItemToBackpack "ACE_EntrenchingTool"};
+	case "sup_hmg_l";
+	case "sup_hmg_g";
+	case "sup_gmg_l";
+	case "sup_gmg_g";
+	case "sup_mor_l";
+	case "sup_mor_g": {player addItemToVest "ACE_EntrenchingTool"};
+};
 
 switch (_loadout) do {
 	default {};
 	case "logi": {player addItemToBackpack "ToolKit"};
 	case "sqd_eng": {
-		for "_i" from 1 to 2 do { player addItemToBackpack "tsp_frameCharge_mag"};
+		for "_i" from 1 to 2 do { player addItemToBackpack "tsp_stickCharge_mag"};
 		for "_i" from 1 to 3 do { player addItemToBackpack "DemoCharge_Remote_Mag"};
 		player addItemToBackpack "MineDetector";
 		player addItemToBackpack "ACE_M26_Clacker";
@@ -26,10 +35,18 @@ switch (_loadout) do {
 		player addItemToBackpack "ACE_DefusalKit";
 		player addItemToBackpack "ACE_SpraypaintBlue";
 	};
-	case "sqd_sap": {
-		for "_i" from 1 to 1 do { player addItemToBackpack "IEDLandBig_Remote_Mag"};
-		for "_i" from 1 to 2 do { player addItemToBackpack "IEDLandSmall_Remote_Mag"};
+		case "sqd_sap": {
+		for "_i" from 1 to 2 do { player addItemToBackpack "IEDUrbanBig_Remote_Mag"};
+		for "_i" from 1 to 3 do { player addItemToBackpack "DemoCharge_Remote_Mag"}; 
+		player addItemToBackpack "ACE_Clacker";
+		player addItemToBackpack "ACE_wirecutter";
+		player addItemToBackpack "ACE_DefusalKit";
+	};
+	case "sqd_sap_dms": {
+		for "_i" from 1 to 2 do { player addItemToBackpack "IEDLandBig_Remote_Mag"};
+		for "_i" from 1 to 2 do { player addItemToBackpack "IEDLandSmall_Remote_Mag"}; 
 		player addItemToBackpack "ACE_Cellphone";
+		player addItemToBackpack "ACE_DeadManSwitch";
 		player addItemToBackpack "ACE_wirecutter";
 		player addItemToBackpack "ACE_DefusalKit";
 	};

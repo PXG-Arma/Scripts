@@ -4,8 +4,9 @@ params["_side","_faction","_variant", "_loadout"];
 switch (_loadout) do {
 	default { player forceAddUniform "UK3CB_UN_I_U_CombatUniform_TTSKO"};
 	case "logi": { player forceAddUniform "UK3CB_UN_I_U_Field_Operative"};
-	case "rcn_drone";
 	case "rcn_ld";
+	case "rcn_spe";
+	case "rcn_drone";
 	case "rcn_dmr": { player forceAddUniform "UK3CB_UN_B_U_H_Pilot_TTSKO"};
 	case "pil": { player forceAddUniform "UK3CB_UN_B_U_H_Pilot_TTSKO"};
 	case "ar_c";
@@ -18,6 +19,7 @@ switch (_loadout) do {
 		player addHeadgear selectRandom randomHeadgearArray;
 		};
 	case "rcn_ld": { player addHeadgear "UK3CB_UN_B_H_Beret_Off"};
+	case "rcn_spe";
 	case "rcn_drone";
 	case "rcn_dmr": { player addHeadgear "UK3CB_UN_B_H_Beret"};
 	case "ar_c": {player addHeadgear "rhs_tsh4"};
@@ -50,6 +52,7 @@ switch (_loadout) do {
 switch (_loadout) do {
 	default { player addBackpack "UK3CB_UN_I_B_ASS"};
 	case "logi": {player addBackpack "UK3CB_B_Invisible"};
+	case "rcn_spe";
 	case "sqd_eng": {player addBackpack "UK3CB_TKA_O_B_ENG_Khk"};
 	case "sqd_med";
 	case "sup_mmg_l";

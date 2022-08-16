@@ -19,6 +19,7 @@ switch (_loadout) do {
 	case "tacp": { player addHeadgear "rhsusf_ach_helmet_headset_ucp"};
 	case "rcn_dmr";
 	case "rcn_amr";
+	case "rcn_spe";
 	case "rcn_ld": {player addHeadgear "rhs_Booniehat_ucp"};
 	case "ar_c": {player addHeadgear "rhsusf_cvc_ess"};
 	case "pil": {player addHeadgear "rhsusf_hgu56p_visor_green"};
@@ -38,6 +39,7 @@ switch (_loadout) do {
 	case "tacp": { player addVest "rhsusf_spcs_ucp_teamleader_alt"};
 	case "sqd_ar": { player addVest "rhsusf_spcs_ucp_saw"};
 	case "sqd_gre": { player addVest "rhsusf_spcs_ucp_grenadier"};
+	case "rcn_spe";
 	case "sqd_med": { player addVest "rhsusf_spcs_ucp_medic"};
 	case "sup_mmg_g": { player addVest "rhsusf_spcs_ucp_machinegunner"};
 	case "pil": { player addVest "rhsusf_spcs_ucp"};

@@ -3,8 +3,9 @@ params["_side","_faction","_variant", "_loadout"];
 // add uniform
 switch (_loadout) do {
 	default { player forceAddUniform "rhs_uniform_vdv_emr_des"};
-	case "rcn_drone";
 	case "rcn_ld";
+	case "rcn_spe";
+	case "rcn_drone";
 	case "rcn_dmr": { player forceAddUniform "gorkaemrd"};
 	case "pil": { player forceAddUniform "rhs_uniform_df15_tan"};
 	case "ar_c";
@@ -14,6 +15,7 @@ switch (_loadout) do {
 switch (_loadout) do {
 	default { player addHeadgear "hg_6b7_des_ess"};
 	case "rcn_ld";
+	case "rcn_spe";
 	case "rcn_drone";
 	case "rcn_dmr": { player addHeadgear "rhs_beret_vdv2"};
 	case "ar_c": {player addHeadgear "rhsusf_cvc_alt_helmet"};

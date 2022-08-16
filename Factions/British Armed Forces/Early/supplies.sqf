@@ -18,7 +18,7 @@ _resupplyAvailable = [
 			["rhsusf_100Rnd_762x51_m80a1epr",10]
 		]
 	],
-	["Sniper Resupply",
+	["DMR Resupply",
 		[
 			["UK3CB_BAF_338_5Rnd",20],
 			["UK3CB_BAF_338_5Rnd_Tracer",20]

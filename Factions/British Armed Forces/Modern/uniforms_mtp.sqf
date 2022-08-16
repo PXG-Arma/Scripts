@@ -11,6 +11,7 @@ switch (_loadout) do {
 switch (_loadout) do {
 	default { player addHeadgear "UK3CB_BAF_H_Mk7_Camo_B"};
 	case "rcn_ld";
+	case "rcn_spe";
 	case "rcn_drone";
 	case "rcn_dmr": {player addHeadgear "UK3CB_BAF_H_Mk7_Scrim_F"};
 	case "ar_c": {player addHeadgear "UK3CB_BAF_H_CrewHelmet_B"};
@@ -21,6 +22,7 @@ switch (_loadout) do {
 switch (_loadout) do {
 	default { player addVest "UK3CB_BAF_V_Osprey_SL_D"};
 	case "logi": { player addVest "UK3CB_BAF_V_Osprey_Rifleman_A"};
+	case "rcn_spe";
 	case "sqd_med": { player addVest "UK3CB_BAF_V_Osprey_Medic_C"};
 	case "sqd_ar";
 	case "sqd_aar";
@@ -41,6 +43,7 @@ switch (_loadout) do {
 switch (_loadout) do {
 	default { player addBackpack "UK3CB_BAF_B_Bergen_MTP_Rifleman_L_B"};
 	case "logi": { player addBackpack "UK3CB_BAF_B_Bergen_MTP_Engineer_H_A"};
+	case "rcn_spe";
 	case "sqd_med": { player addBackpack "UK3CB_BAF_B_Bergen_MTP_Medic_L_B"};
 	case "sqd_ar";
 	case "sqd_aar";

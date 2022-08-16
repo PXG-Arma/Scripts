@@ -9,6 +9,7 @@ switch (_loadout) do {
 switch (_loadout) do {
 	default { player addHeadgear "VSM_OPS_multicam"};
 	case "rcn_ld";
+	case "rcn_spe";
 	case "rcn_drone";
 	case "rcn_amr";
 	case "rcn_dmr": { player addHeadgear "VSM_Multicam_Boonie"};
@@ -18,9 +19,12 @@ switch (_loadout) do {
 
 // add vest
 switch (_loadout) do {
-	default { player addVest "VSM_CarrierRig_Operator_Multicam"};
-	case "sup_mmg_g";
-	case "sqd_ar": {player addVest "VSM_CarrierRig_Gunner_Multicam"};
+	default { player addVest "VSM_RAV_operator_Multicam"};
+	case "rcn_spe";
+	case "sqd_med": {player addVest "VSM_LBT6094_operator_Multicam"};
+	case "sqd_ar";
+	case "sup_mmg_g": {player addVest "VSM_RAV_MG_Multicam"};
+	case "sqd_brc": {player addVest "VSM_RAV_Breacher_Multicam"};
 };
 
 // add backpack 

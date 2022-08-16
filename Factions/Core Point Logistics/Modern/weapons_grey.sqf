@@ -10,8 +10,7 @@ switch (_loadout) do {
 	};
 	case "plt";
 	case "sqd_ld";
-	case "rcn_ld";
-	case "sqd_gre":{ player addWeapon "rhs_weap_mk18_m320";
+	case "sqd_gre": {player addWeapon "rhs_weap_mk18_m320";
 					 player addPrimaryWeaponItem "rhsusf_acc_acog_rmr";
 					 player addPrimaryWeaponItem "rhsusf_acc_anpeq15_bk";
 			  	 	 player addPrimaryWeaponItem "rhsusf_acc_sf3p556";
@@ -21,16 +20,29 @@ switch (_loadout) do {
 					player addPrimaryWeaponItem "rhsusf_acc_eotech_xps3";
 	};
 	case "sqd_brc": {player addWeapon "rhs_weap_M590_8RD"};
-	case "rcn_dmr": {player addWeapon "rhs_weap_sr25_ec";
-					 player addPrimaryWeaponItem "rhsusf_acc_nxs_3515x50_md";
-					 player addPrimaryWeaponItem "rhsusf_acc_harris_bipod";
-					 player addPrimaryWeaponItem "rhsusf_acc_anpeq15side_bk";
-	};
 	case "sup_mmg_g": {player addWeapon "BWA3_MG5_tan";
 					   player addPrimaryWeaponItem "rhsusf_acc_acog_mdo";
 					   player addPrimaryWeaponItem "rhsusf_acc_anpeq15side_bk";
 	};
 	case "sqd_hgre": {player addWeapon "rhs_weap_m32"};
+	case "rcn_ld":{ player addWeapon "rhs_weap_mk18_m320";
+					 player addPrimaryWeaponItem "rhsusf_acc_acog_rmr";
+					 player addPrimaryWeaponItem "rhsusf_acc_anpeq15_bk";
+			  	 	 player addPrimaryWeaponItem "rhsusf_acc_nt4_tan";
+	};
+	case "rcn_spe";
+	case "rcn_drone": {player addWeapon "rhs_weap_m4a1_blockII_d";
+			  		   player addPrimaryWeaponItem "rhsusf_acc_acog_rmr";
+			  		   player addPrimaryWeaponItem "rhsusf_acc_kac_grip";
+			  		   player addPrimaryWeaponItem "rhsusf_acc_anpeq15_bk";
+			  		   player addPrimaryWeaponItem "rhsusf_acc_nt4_tan";
+	};
+	case "rcn_dmr": {player addWeapon "rhs_weap_sr25_ec";
+					 player addPrimaryWeaponItem "rhsusf_acc_nxs_3515x50_md";
+					 player addPrimaryWeaponItem "rhsusf_acc_anpeq15side_bk";
+					 player addPrimaryWeaponItem "rhsusf_acc_harris_bipod";
+					 player addPrimaryWeaponItem "rhsusf_acc_aac_762sd_silencer";
+	};
 };
 
 // add secondary weapon

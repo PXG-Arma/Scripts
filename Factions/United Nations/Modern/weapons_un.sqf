@@ -17,6 +17,7 @@ switch (_loadout) do {
 	case "rcn_dmr": {player addWeapon "rhs_weap_svd";
 					 player addPrimaryWeaponItem "rhs_acc_pso1m21_svd";
 	};
+	case "rcn_spe";
 	case "rcn_drone": {player addWeapon "rhs_weap_ak74mr";
 					   player addPrimaryWeaponItem "rhs_acc_1p87";
 	};

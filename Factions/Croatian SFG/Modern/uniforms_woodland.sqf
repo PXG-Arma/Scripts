@@ -15,19 +15,16 @@ switch (_loadout) do {
 
 // add vest
 switch (_loadout) do {
-	default { player addVest "VSM_CarrierRig_Operator_M81"};
+	default { player addVest "VSM_RAV_operator_M81"};
+	case "rcn_spe";
+	case "sqd_med": {player addVest "VSM_LBT6094_operator_M81"};
 	case "sqd_ar";
-	case "sup_mmg_g": { player addVest "VSM_CarrierRig_Gunner_M81"};
+	case "sup_mmg_g": {player addVest "VSM_LBT6094_MG_M81"};
 };
 
 // add backpack 
 switch (_loadout) do {
 	default { player addBackpack "VSM_M81_Backpack_Kitbag"};
-//	case "sqd_med";
-//	case "sup_mmg_l";
-    case "sup_aa_1";
-//	case "sup_mat_l";
-//	case "sup_hat_l": {player addBackpack "VSM_OGA_OD_carryall"};
 	case "sup_mor_l": {player addBackpack "B_Mortar_01_support_F"};
 	case "sup_mor_g": {player addBackpack "B_Mortar_01_weapon_F"};
 	case "ar_c";

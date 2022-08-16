@@ -18,14 +18,14 @@ switch (_loadout) do {
 	case "sup_mmg_g": {
 		for "_i" from 1 to 4 do { player addItemToBackpack "rhs_100Rnd_762x54mmR_green"};
 	};
+	case "rcn_drone";
 	case "rcn_ld": {
 		for "_i" from 1 to 4 do { player addItemToVest "rhs_30Rnd_545x39_7N6M_plum_AK"};
 		for "_i" from 1 to 4 do { player addItemToBackpack "rhs_30Rnd_545x39_AK_plum_green"};
 	};
-	case "rcn_drone": {
-		for "_i" from 1 to 2 do { player addItemToVest "rhs_30Rnd_545x39_7N6M_plum_AK"};
+	case "rcn_spe": {
+		for "_i" from 1 to 4 do { player addItemToVest "rhs_30Rnd_545x39_7N6M_plum_AK"};
 		for "_i" from 1 to 2 do { player addItemToBackpack "rhs_30Rnd_545x39_AK_plum_green"};
-		for "_i" from 1 to 2 do { player addItemToBackpack "ACE_UAVBattery"};
 	};
 	case "ar_c";
 	case "pil": {
@@ -84,7 +84,11 @@ switch (_loadout) do {
 		for "_i" from 1 to 1 do { player addItemToBackpack "rhssaf_mag_brd_m83_red"};
 		for "_i" from 1 to 2 do { player addItemToVest "rhs_mag_rgd5"};
 	};
+	case "sqd_ar";
 	case "sup_mmg_g";
+	case "rcn_ld";
+	case "rcn_spe";
+	case "rcn_drone";
 	case "sqd_med": {
 		for "_i" from 1 to 2 do { player addItemToVest "rhs_mag_rdg2_white"};
 		for "_i" from 1 to 1 do { player addItemToVest "rhssaf_mag_brd_m83_green"};

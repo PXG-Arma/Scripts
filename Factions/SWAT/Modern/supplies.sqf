@@ -5,7 +5,7 @@ _resupplyAvailable = [
 			["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red",40]
 		]
 	],
-	["Marksman Resupply",
+	["DMR Resupply",
 		[
 			["rhsusf_5Rnd_762x51_m993_Mag",20],
 			["rhsusf_5Rnd_762x51_m62_Mag",20]

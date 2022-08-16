@@ -18,10 +18,13 @@ switch (_loadout) do {
 		for "_i" from 1 to 4 do { player addItemToBackpack "UK3CB_BAF_762_L42A1_20Rnd"};
 		for "_i" from 1 to 4 do { player addItemToBackpack "UK3CB_BAF_762_L42A1_20Rnd_T"};
 	};
-	case "rcn_drone": {
-		for "_i" from 1 to 2 do { player addItemToBackpack "UK3CB_MP5_30Rnd_9x19_Magazine"};
+	case "rcn_spe": {
+		for "_i" from 1 to 4 do { player addItemToBackpack "UK3CB_MP5_30Rnd_9x19_Magazine"};
 		for "_i" from 1 to 2 do { player addItemToBackpack "UK3CB_MP5_30Rnd_9x19_Magazine_GT"};
-		for "_i" from 1 to 2 do { player addItemToBackpack "ACE_UAVBattery"};
+	};
+	case "rcn_drone": {
+		for "_i" from 1 to 4 do { player addItemToBackpack "UK3CB_MP5_30Rnd_9x19_Magazine"};
+		for "_i" from 1 to 4 do { player addItemToBackpack "UK3CB_MP5_30Rnd_9x19_Magazine_GT"};
 	};
 	case "ar_c";
 	case "pil": {
@@ -32,7 +35,7 @@ switch (_loadout) do {
 // add secondary ammo
 switch (_loadout) do {
 	default {
-		for "_i" from 1 to 3 do { player addItemToUniform "UK3CB_BAF_9_15Rnd"};
+		for "_i" from 1 to 2 do { player addItemToUniform "UK3CB_BAF_9_15Rnd"};
 	};
 };
 
@@ -63,6 +66,10 @@ switch (_loadout) do {
 		for "_i" from 1 to 2 do { player addItemToUniform "SmokeShell"};
 		for "_i" from 1 to 2 do { player addItemToUniform "ACE_M84"};
 		for "_i" from 1 to 2 do { player addItemToBackpack "tsp_popperCharge_mag"};
+	};
+	case "rcn_spe": {
+		for "_i" from 1 to 2 do { player addItemToUniform "SmokeShell"};
+		for "_i" from 1 to 2 do { player addItemToUniform "ACE_M84"};
 	};
 };
 

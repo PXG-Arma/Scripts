@@ -19,6 +19,6 @@ switch (_loadout) do {
 
 // add backpack 
 switch (_loadout) do {
-	default { player addBackpack "Black_Backpack_kitbag"};
+	default { player addBackpack "UK3CB_B_Invisible"};
 	case "pil": {};
 };

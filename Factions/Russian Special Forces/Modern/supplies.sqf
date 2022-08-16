@@ -14,7 +14,7 @@ _resupplyAvailable = [
 			["rhs_weap_rshg2",8]
 		]
 	],
-	["Marksman Resupply",
+	["DMR Resupply",
 		[
 			["rhs_5Rnd_338lapua_t5000",40]
 		]

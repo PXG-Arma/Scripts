@@ -15,9 +15,12 @@ switch (_loadout) do {
 
 // add vest
 switch (_loadout) do {
-	default { player addVest "VSM_CarrierRig_Operator_OGA_OD"};
+	default { player addVest "VSM_FAPC_Operator_OGA_OD"};
+	case "rcn_spe";
+	case "sqd_med": {player addVest "VSM_LBT6094_operator_OGA_OD"};
 	case "sqd_ar";
-	case "sup_mmg_g": { player addVest "VSM_CarrierRig_Gunner_OGA_OD"};
+	case "sup_mmg_g": {player addVest "VSM_FAPC_MG_OGA_OD"};
+	case "sqd_brc": {player addVest "VSM_FAPC_Breacher_OGA_OD"};
 };
 
 // add backpack 

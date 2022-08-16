@@ -12,6 +12,7 @@ switch (_loadout) do {
 	case "sup_mmg_g";
 	case "sqd_gre": { player addHeadgear "pasgt_grg"};
 	case "rcn_ld";
+	case "rcn_spe";
 	case "rcn_drone";
 	case "rcn_dmr": { player addHeadgear "H_Booniehat_oli"};
 	case "ar_ld";

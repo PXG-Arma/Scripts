@@ -20,11 +20,6 @@ switch (_loadout) do {
 		for "_i" from 1 to 2 do { player addItemToBackpack "BWA3_120Rnd_762x51_soft"};
 		for "_i" from 1 to 1 do { player addItemToBackpack "BWA3_120Rnd_762x51_Tracer_soft"};
 	};
-	case "rcn_drone": {
-		for "_i" from 1 to 2 do { player addItemToVest "BWA3_30Rnd_556x45_G36"};
-		for "_i" from 1 to 2 do { player addItemToVest "BWA3_30Rnd_556x45_G36_Tracer"};
-		for "_i" from 1 to 2 do { player addItemToBackpack "ACE_UAVBattery"};
-	};
 	case "ar_ld";
 	case "ar_c";
 	case "pil": {

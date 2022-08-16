@@ -9,19 +9,14 @@ switch (_loadout) do {
 		for "_i" from 1 to 8 do { player addItemToVest "rhs_5Rnd_338lapua_t5000"};
 	};
 	case "sup_mmg_g": {
-		for "_i" from 1 to 3 do { player addItemToBackpack "rhs_100Rnd_762x54mmR_green"};
-		for "_i" from 1 to 1 do { player addItemToVest "rhs_100Rnd_762x54mmR_green"};
-	};
-	case "rcn_drone": {
-		for "_i" from 1 to 8 do { player addItemToVest "rhs_20rnd_9x39mm_SP6"};
-		for "_i" from 1 to 2 do { player addItemToBackpack "ACE_UAVBattery"};
+		for "_i" from 1 to 4 do { player addItemToBackpack "rhs_100Rnd_762x54mmR_green"};
 	};
 };
 
 // add secondary ammo
 switch (_loadout) do {
 	default {
-		for "_i" from 1 to 4 do { player addItemToBackpack "rhs_18rnd_9x21mm_7N29"};
+		for "_i" from 1 to 4 do { player addItemToVest "rhs_18rnd_9x21mm_7N29"};
 	};
 	case "sup_aa_g";
 	case "sup_mat_g";

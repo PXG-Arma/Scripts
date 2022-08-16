@@ -66,6 +66,14 @@ switch (_loadout) do {
 		player addItemToBackpack "ACE_Clacker";
 		player addItemToBackpack "tsp_lockpick";
 	};
+	case "rcn_spe": {
+		for "_i" from 1 to 3 do { player addItemToBackpack "DemoCharge_Remote_Mag"};
+		player addItemToBackpack "MineDetector";
+		player addItemToBackpack "ACE_M26_Clacker";
+		player addItemToBackpack "ACE_wirecutter";
+		player addItemToBackpack "ACE_DefusalKit";
+		player addItemToBackpack "ACE_SpraypaintBlue";
+	};
 };
 
 // early loadouts

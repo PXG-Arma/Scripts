@@ -5,7 +5,7 @@ _resupplyAvailable = [
 			["UK3CB_MP5_30Rnd_9x19_Magazine_GT",40]
 		]
 	],
-	["Marksman Resupply",
+	["DMR Resupply",
 		[
 			["UK3CB_BAF_762_L42A1_20Rnd",20],
 			["UK3CB_BAF_762_L42A1_20Rnd_T",20]

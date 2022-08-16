@@ -11,6 +11,7 @@ switch (_loadout) do {
 switch (_loadout) do {
 	default { player addHeadgear "UK3CB_BAF_H_Beret_PR"};
 	case "rcn_ld";
+	case "rcn_spe";
 	case "rcn_drone";
 	case "rcn_dmr": {player addHeadgear "UK3CB_H_Beanie_02_BLK"};
 	case "ar_c": {player addHeadgear "UK3CB_BAF_H_Beret_RTR_PRR_Over"};

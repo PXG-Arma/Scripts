@@ -4,11 +4,11 @@ params["_side","_faction","_variant", "_loadout"];
 switch (_loadout) do {
 	default {
 		for "_i" from 1 to 4 do { player addItemToVest "UK3CB_BAF_762_20Rnd"};
-		for "_i" from 1 to 4 do { player addItemToVest "UK3CB_BAF_762_20Rnd_T"};
+		for "_i" from 1 to 4 do { player addItemToBackpack "UK3CB_BAF_762_20Rnd_T"};
 	};
 	case "sqd_ar": {
-		for "_i" from 1 to 6 do { player addItemToVest "UK3CB_Bren_30Rnd_762x51_Magazine"};
-		for "_i" from 1 to 6 do { player addItemToBackpack "UK3CB_Bren_30Rnd_762x51_Magazine_GT"};
+		for "_i" from 1 to 8 do { player addItemToVest "UK3CB_Bren_30Rnd_762x51_Magazine"};
+		for "_i" from 1 to 8 do { player addItemToBackpack "UK3CB_Bren_30Rnd_762x51_Magazine_GT"};
 	};
 	case "rcn_dmr": {
 		for "_i" from 1 to 4 do { player addItemToVest "UK3CB_BAF_338_5Rnd"};
@@ -18,11 +18,6 @@ switch (_loadout) do {
 		for "_i" from 1 to 2 do { player addItemToVest "rhsusf_100Rnd_762x51_m61_ap"};
 		for "_i" from 1 to 2 do { player addItemToBackpack "rhsusf_100Rnd_762x51_m80a1epr"};
 		for "_i" from 1 to 2 do { player addItemToBackpack "rhsusf_100Rnd_762x51_m62_tracer"};
-	};
-	case "rcn_drone": {
-		for "_i" from 1 to 2 do { player addItemToVest "rhs_mag_30Rnd_556x45_M855_Stanag"};
-		for "_i" from 1 to 2 do { player addItemToVest "rhs_mag_30Rnd_556x45_M855_Stanag_Tracer_Red"};
-		for "_i" from 1 to 2 do { player addItemToBackpack "ACE_UAVBattery"};
 	};
 	case "ar_c";
 	case "rcn_ld";
@@ -42,7 +37,7 @@ switch (_loadout) do {
 switch (_loadout) do {
 	default {};
 	case "sqd_aar": {
-		for "_i" from 1 to 4 do { player addItemToBackpack "UK3CB_Bren_30Rnd_762x51_Magazine_GT"};
+		for "_i" from 1 to 8 do { player addItemToBackpack "UK3CB_Bren_30Rnd_762x51_Magazine_GT"};
 	};
 	case "sup_mmg_l": {
 		for "_i" from 1 to 2 do { player addItemToBackpack "rhsusf_100Rnd_762x51_m61_ap"};

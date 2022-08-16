@@ -10,6 +10,7 @@ switch (_loadout) do {
 switch (_loadout) do {
 	default { player addHeadgear "rhssaf_helmet_m97_digital"};
 	case "rcn_ld";
+	case "rcn_spe";
 	case "rcn_dmr";
 	case "rcn_drone" : {player addHeadgear "rhssaf_helmet_m97_veil_digital"};
 	case "ar_c": {player addHeadgear "rhssaf_helmet_m97_olive_nocamo"};

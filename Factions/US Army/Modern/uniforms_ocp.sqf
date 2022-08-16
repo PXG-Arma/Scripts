@@ -18,6 +18,7 @@ switch (_loadout) do {
 	case "plt";
 	case "logi";
 	case "tacp": { player addHeadgear "rhsusf_ach_helmet_headset_ess_ocp_alt"};
+	case "rcn_spe";
 	case "rcn_dmr";
 	case "rcn_drone";
 	case "rcn_ld": {player addHeadgear "rhsusf_ach_helmet_camo_ocp"};
@@ -39,6 +40,7 @@ switch (_loadout) do {
 	case "tacp": { player addVest "rhsusf_spcs_ocp_teamleader_alt"};
 	case "sqd_ar": { player addVest "rhsusf_spcs_ocp_saw"};
 	case "sqd_gre": { player addVest "rhsusf_spcs_ocp_grenadier"};
+	case "rcn_spe";
 	case "sqd_med": { player addVest "rhsusf_spcs_ocp_medic"};
 	case "sup_mmg_g": { player addVest "rhsusf_spcs_ocp_machinegunner"};
 	case "pil": { player addVest "rhsusf_spcs_ocp"};
@@ -46,7 +48,7 @@ switch (_loadout) do {
 
 // add backpack 
 switch (_loadout) do {
-	default { player addBackpack "VSM_OCP_Backpack_Kitbag"};
+	default { player addBackpack "rhsusf_assault_eagleaiii_ocp"};
 	case "sqd_med";
 	case "sup_mmg_l";
 	case "sup_hat_l";

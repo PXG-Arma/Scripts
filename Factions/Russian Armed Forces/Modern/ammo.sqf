@@ -18,10 +18,9 @@ switch (_loadout) do {
 	case "sup_mmg_g": {
 		for "_i" from 1 to 4 do { player addItemToBackpack "rhs_100Rnd_762x54mmR_green"};
 	};
-	case "rcn_drone": {
-		for "_i" from 1 to 2 do { player addItemToVest "rhs_30Rnd_545x39_7N22_AK"};
-		for "_i" from 1 to 2 do { player addItemToVest "rhs_30Rnd_545x39_7N22_AK"};
-		for "_i" from 1 to 2 do { player addItemToBackpack "ACE_UAVBattery"};
+	case "rcn_spe": {
+		for "_i" from 1 to 4 do { player addItemToVest "rhs_30Rnd_545x39_7N22_AK"};
+		for "_i" from 1 to 2 do { player addItemToBackpack "rhs_30Rnd_545x39_7N22_AK"};
 	};
 	case "ar_c";
 	case "pil": {

@@ -4,7 +4,7 @@ params["_side","_faction","_variant", "_loadout"];
 switch (_loadout) do {
 	default { player addWeapon "UK3CB_M16A1"};
 	case "sqd_ar": {player addWeapon "UK3CB_M60"};
-	case "rcn_dmr": {player addWeapon "UK3CB_M14";
+	case "rcn_dmr": {player addWeapon "UK3CB_M21";
 					 player addPrimaryWeaponItem "uk3cb_optic_artel_m14"};
 };
 

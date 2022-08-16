@@ -9,7 +9,6 @@ if (_variantEra == "Early") then {
 		case "plt"; 
 		case "logi";
 		case "sqd_ld";
-		case "rcn_ld";
 		case "sup_mmg_l";
 		case "sup_hmg_l";
 		case "sup_mat_l";
@@ -17,6 +16,7 @@ if (_variantEra == "Early") then {
 		case "sup_aa_l";
 		case "sup_mor_l": {player addItemToUniform "ACRE_PRC152"};
 		case "pil": {};
+		case "rcn_ld";
 		case "tacp": {player addItemToBackpack "ACRE_PRC117F"};
 	};
 };
@@ -50,10 +50,6 @@ if (_variantEra == "Late") then {
 		case "plt"; 
 		case "logi";
 		case "sqd_ld";
-		case "rcn_ld":{
-			player addItemToUniform "ACRE_PRC343";
-			player addItemToUniform "ACRE_PRC152"
-		};
 		case "sup_mmg_l";
 		case "sup_mat_l";
 		case "sup_hat_l";
@@ -63,6 +59,7 @@ if (_variantEra == "Late") then {
 			player addItemToUniform "ACRE_PRC152"
 		};
 		case "pil": {};
+		case "rcn_ld";
 		case "tacp": { 
 			player addItemToUniform "ACRE_PRC343"; 
 			player addItemToBackpack "ACRE_PRC117F";
@@ -76,10 +73,6 @@ if (_variantEra == "Modern" || _variantEra == "Future") then {
 		case "plt"; 
 		case "logi";
 		case "sqd_ld";
-		case "rcn_ld":{
-			player addItemToUniform "ACRE_PRC343";
-			player addItemToUniform "ACRE_PRC152"
-		};
 		case "sup_mmg_l";
 		case "sup_mat_l";
 		case "sup_hat_l";
@@ -89,6 +82,7 @@ if (_variantEra == "Modern" || _variantEra == "Future") then {
 			player addItemToUniform "ACRE_PRC152"
 		};
 		case "pil": {};
+		case "rcn_ld";
 		case "tacp": { 
 			player addItemToUniform "ACRE_PRC343"; 
 			player addItemToBackpack "ACRE_PRC117F";

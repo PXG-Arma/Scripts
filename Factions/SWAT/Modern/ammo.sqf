@@ -11,8 +11,8 @@ switch (_loadout) do {
 		for "_i" from 1 to 8 do { player addItemToBackpack "UK3CB_BAF_12G_Slugs"};
 	};
 	case "sqd_dmr": {
-		for "_i" from 1 to 6 do { player addItemToVest "rhsusf_5Rnd_762x51_m993_Mag"};
-		for "_i" from 1 to 6 do { player addItemToVest "rhsusf_5Rnd_762x51_m62_Mag"};
+		for "_i" from 1 to 8 do { player addItemToVest "rhsusf_5Rnd_762x51_m993_Mag"};
+		for "_i" from 1 to 8 do { player addItemToVest "rhsusf_5Rnd_762x51_m62_Mag"};
 	};
 	case "ar_c";
 	case "pil": {

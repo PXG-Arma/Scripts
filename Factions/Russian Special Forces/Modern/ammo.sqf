@@ -7,6 +7,7 @@ switch (_loadout) do {
 	};
 	case "rcn_dmr": {
 		for "_i" from 1 to 8 do { player addItemToVest "rhs_5Rnd_338lapua_t5000"};
+		for "_i" from 1 to 8 do { player addItemToBackpack "rhs_5Rnd_338lapua_t5000"};
 	};
 	case "sup_mmg_g": {
 		for "_i" from 1 to 4 do { player addItemToBackpack "rhs_100Rnd_762x54mmR_green"};

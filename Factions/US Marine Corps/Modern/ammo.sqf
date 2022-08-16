@@ -11,8 +11,8 @@ switch (_loadout) do {
 		for "_i" from 1 to 4 do { player addItemToVest "rhsusf_8Rnd_Slug"};
 	};
 	case "rcn_dmr": {
-		for "_i" from 1 to 4 do { player addItemToVest "rhsusf_5Rnd_762x51_AICS_m993_Mag"};
-		for "_i" from 1 to 4 do { player addItemToBackpack "rhsusf_5Rnd_762x51_AICS_m62_Mag"};
+		for "_i" from 1 to 8 do { player addItemToVest "rhsusf_5Rnd_762x51_AICS_m993_Mag"};
+		for "_i" from 1 to 8 do { player addItemToBackpack "rhsusf_5Rnd_762x51_AICS_m62_Mag"};
 	};
 	case "sup_mmg_g": {
 		for "_i" from 1 to 2 do { player addItemToVest "rhsusf_100Rnd_762x51_m61_ap"};

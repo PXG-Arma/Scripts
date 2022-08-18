@@ -1,19 +1,18 @@
 _availableVehicles = 
 [
 	["Utility",
-	["LOP_IRAN_UAZ",
-	"LOP_IRAN_UAZ_Open",
-	"rhsgref_nat_ural",
-	"rhsgref_nat_ural_open",
-	"LOP_UA_Ural_fuel", 
-	"UK3CB_I_G_Ural_Ammo", //Doesn't spawn in consistent camo
-	"I_C_Offroad_02_unarmed_F"]], //Doesn't spawn in consistent cmao
+	["rhs_uaz_open_MSV_01",
+	"RHS_UAZ_MSV_01",
+	"rhs_kamaz5350_msv",
+	"rhs_kamaz5350_ammo_msv", 
+	"RHS_Ural_Fuel_MSV_01",
+	"I_C_Offroad_02_unarmed_F"]], 
 	
 	["Armed Car/MRAP",
-	["I_C_Offroad_02_LMG_F", //Doesn't spawn in consistent cmao
-	"I_C_Offroad_02_AT_F", //Doesn't spawn in consistent cmao
-	"rhs_tigr_vdv",
-	"rhs_tigr_m_vmf"]],
+	["I_C_Offroad_02_LMG_F", 
+	"I_C_Offroad_02_AT_F", 
+	"rhs_tigr_msv",
+	"rhs_tigr_sts_msv"]],
 	
 	["Rotary Transport",
 	["RHS_Mi8T_vdv",
@@ -28,6 +27,6 @@ _availableVehicles =
 	
 	["Misc.",
 	["B_G_Quadbike_01_F",
-	"UK3CB_O_G_YAVA"]] //Doesn't spawn in consistent camo
+	"UK3CB_O_G_TT650"]] 
 ];
 _availableVehicles

@@ -7,8 +7,8 @@ _resupplyAvailable = [
 	],
 	["AR Resupply",
 		[
-			["UK3CB_RPK74_60rnd_545x39_G",40],
-			["UK3CB_RPK74_60rnd_545x39_GT",40]
+			["UK3CB_RPK74_60rnd_545x39_G",20],
+			["UK3CB_RPK74_60rnd_545x39_GT",20]
 		]
 	],
 	["MMG Resupply",

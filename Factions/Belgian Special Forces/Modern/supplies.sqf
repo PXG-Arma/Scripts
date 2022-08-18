@@ -53,10 +53,10 @@ _resupplyAvailable = [
 	],
 	["Smoke Grenades",
 		[
-			["rhs_mag_an_m8hc",20],
-			["SmokeShellRed",5],
-			["SmokeShellGreen",5],
-			["SmokeShellBlue",5]
+			["rhs_mag_an_m8hc",10],
+			["SmokeShellRed",10],
+			["SmokeShellGreen",10],
+			["SmokeShellBlue",10]
 		]
 	],
 	["40mm Grenades",

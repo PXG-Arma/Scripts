@@ -7,7 +7,7 @@ _resupplyAvailable = [
 	],
 	["AR Resupply",
 		[
-			["rhsusf_200Rnd_556x45_M855_mixed_soft_pouch",30]
+			["rhsusf_200Rnd_556x45_M855_mixed_soft_pouch",20]
 		]
 	],
 	["MMG Resupply",
@@ -52,10 +52,10 @@ _resupplyAvailable = [
 	],
 	["Smoke Grenades",
 		[
-			["rhs_mag_an_m8hc",20],
-			["SmokeShellRed",5],
-			["SmokeShellGreen",5],
-			["SmokeShellBlue",5]
+			["rhs_mag_an_m8hc",10],
+			["SmokeShellRed",10],
+			["SmokeShellGreen",10],
+			["SmokeShellBlue",10]
 		]
 	],
 	["40mm Grenades",

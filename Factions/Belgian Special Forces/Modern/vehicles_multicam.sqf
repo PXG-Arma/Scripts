@@ -13,7 +13,7 @@ _availableVehicles =
 	"UK3CB_BAF_LandRover_WMIK_Milan_FFR_Sand_A_MTP"]],
 	
 	["APC",
-	["rhsusf_stryker_m1127_m2_d"]], //Doesn't spawn in correct camo
+	["rhsusf_stryker_m1127_m2_d"]],
 	
 	["Rotary Transport",
 	["RHS_MELB_MH6M",

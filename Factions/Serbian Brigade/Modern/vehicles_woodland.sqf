@@ -10,9 +10,8 @@ _availableVehicles =
 	
 	["Armed Car/MRAP",
 	["rhssaf_m1151_olive_pkm",
-	"UK3CB_I_G_BRDM2_HQ", //Doesn't spawn in correct camo
-	"UK3CB_TKM_I_BRDM2", //Doesn't spawn in correct camo
-	"UK3CB_I_G_BRDM2_ATGM"]], //Doesn't spawn in correct camo
+	"rhsgref_BRDM2_vdv", 
+	"rhsgref_BRDM2_ATGM_vdv"]],
 	
 	["APC",
 	["rhs_btr70_vdv"]],
@@ -24,13 +23,10 @@ _availableVehicles =
 	["rhssaf_army_t72s"]],
 	
 	["SPG",
-	["LOP_UKR_2S1"]],
+	["rhssaf_army_2s1"]],
 	
 	["Fixed Wing Attack",
-	["UK3CB_ADA_I_Su25SM", //Doesn't spawn in correct camo
-	"UK3CB_ADA_I_Su25SM_Cluster", //Doesn't spawn in correct camo
-	"UK3CB_ADA_I_Su25SM_CAS", //Doesn't spawn in correct camo
-	"UK3CB_ADA_I_Su25SM_KH29"]], //Doesn't spawn in correct camo
+	["rhssaf_airforce_l_18"]], 
 	
 	["Turrets",
     ["rhssaf_army_metis_9k115",

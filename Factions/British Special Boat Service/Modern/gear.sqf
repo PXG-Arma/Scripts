@@ -15,3 +15,4 @@ switch (_loadout) do {
 	default {player addItemToBackpack "G_B_Diving";};
 	case "pil": {};
 };
+

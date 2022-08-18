@@ -49,7 +49,7 @@ _resupplyAvailable = [
 	],
 	["Smoke Grenades",
 		[
-			["SmokeShell",15],
+			["SmokeShell",10],
 			["SmokeShellRed",10],
 			["SmokeShellGreen",10]
 		]

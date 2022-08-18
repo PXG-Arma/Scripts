@@ -16,3 +16,4 @@ switch (_loadout) do {
     case "pil";
     case "ar_ld": {player addItemToBackpack "ACRE_PRC117F"};
 };
+

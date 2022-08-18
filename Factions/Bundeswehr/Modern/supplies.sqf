@@ -56,10 +56,10 @@ _resupplyAvailable = [
 	],
 	["Smoke Grenades",
 		[
-			["BWA3_DM25",20],
-			["BWA3_DM32_Red",5],
-			["BWA3_DM32_Green",5],
-			["BWA3_DM32_Blue",5]
+			["BWA3_DM25",10],
+			["BWA3_DM32_Red",10],
+			["BWA3_DM32_Green",10],
+			["BWA3_DM32_Blue",10]
 		]
 	],
 	["40mm Grenades",

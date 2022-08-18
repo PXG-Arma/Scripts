@@ -1,14 +1,14 @@
 _resupplyAvailable = [
 	["Rifle Resupply",
 		[
-			["UK3CB_BAF_762_20Rnd",40],
-			["UK3CB_BAF_762_20Rnd_T",40]
+			["rhs_mag_20Rnd_762x51_m80_fnfal",40],
+			["rhs_mag_20Rnd_762x51_m62_fnfal",40]
 		]
 	],
 	["AR Resupply",
 		[
-			["UK3CB_Bren_30Rnd_762x51_Magazine",15],
-			["UK3CB_Bren_30Rnd_762x51_Magazine_GT",15]
+			["UK3CB_Bren_30Rnd_762x51_Magazine",20],
+			["UK3CB_Bren_30Rnd_762x51_Magazine_GT",20]
 		]
 	],
 	["MMG Resupply",
@@ -47,10 +47,10 @@ _resupplyAvailable = [
 	],
 	["Smoke Grenades",
 		[
-			["rhs_mag_an_m8hc",20],
-			["SmokeShellRed",5],
-			["SmokeShellGreen",5],
-			["SmokeShellBlue",5]
+			["rhs_mag_an_m8hc",10],
+			["SmokeShellRed",10],
+			["SmokeShellGreen",10],
+			["SmokeShellBlue",10]
 		]
 	],
 	["40mm Grenades",
@@ -111,8 +111,8 @@ _resupplyAvailable = [
 	],
 	["Squad Resupply",
 		[
-			["UK3CB_BAF_762_20Rnd",20],
-			["UK3CB_BAF_762_20Rnd_T",20],
+			["rhs_mag_20Rnd_762x51_m80_fnfal",20],
+			["rhs_mag_20Rnd_762x51_m62_fnfal",20],
 			["UK3CB_Bren_30Rnd_762x51_Magazine_GT",10],
 			["rhs_weap_m72a7",2],
 			["HandGrenade",10],

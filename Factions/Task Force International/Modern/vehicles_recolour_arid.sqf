@@ -32,14 +32,5 @@ switch(_vehicleType) do
 		] call BIS_fnc_initVehicle;
 	};
 	
-	case "UK3CB_O_G_YAVA":
-	{
-		[
-			_vehicle,
-			["Green",1], 
-			["Beacons_Hide",1]
-		] call BIS_fnc_initVehicle;
-	};
-	
 	default {};
 };

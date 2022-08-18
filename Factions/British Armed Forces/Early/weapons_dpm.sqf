@@ -3,20 +3,19 @@ params["_side","_faction","_variant", "_loadout"];
 // add primary weapon
 switch (_loadout) do {
 	default { 
-		randomWeaponArray = ["UK3CB_BAF_L1A1","UK3CB_BAF_L1A1_Wood"]; 
+		randomWeaponArray = ["rhs_weap_l1a1","rhs_weap_l1a1_wood"]; 
 		player addWeapon selectRandom randomWeaponArray;
 	};
 	case "plt";
-	case "sqd_ld":{ randomWeaponArray = ["UK3CB_BAF_L1A1","UK3CB_BAF_L1A1_Wood"]; 
+	case "sqd_ld":{ randomWeaponArray = ["rhs_weap_l1a1","rhs_weap_l1a1_wood"]; 
 		            player addWeapon selectRandom randomWeaponArray;
-			         player addPrimaryWeaponItem "uk3cb_baf_suit";
+			         player addPrimaryWeaponItem "rhsgref_acc_l1a1_l2a2";
 					
 	};
 	case "sqd_ar": {player addWeapon "UK3CB_Bren";
 	};
 	case "rcn_dmr": {player addWeapon "UK3CB_BAF_L115A3";
 					 player addPrimaryWeaponItem "rksl_optic_pmii_525";
-					 player addPrimaryWeaponItem "uk3cb_baf_silencer_l115a3";
 	};
 	case "sup_mmg_g": {	player addWeapon "UK3CB_BAF_L7A2"};
 	case "pil";

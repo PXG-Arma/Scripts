@@ -14,6 +14,7 @@ switch (_loadout) do {
 		randomHeadgearArray = ["UK3CB_TKA_I_H_Shemag_Des","UK3CB_H_Shemag_oli","UK3CB_H_Shemag_red_02","UK3CB_H_Shemag_white","UK3CB_TKC_H_Turban_04_1","UK3CB_TKM_O_H_Turban_01_1","UK3CB_TKM_I_H_Turban_01_1","UK3CB_H_Mil_Turban_Wrap"];
 		player addHeadgear selectRandom randomHeadgearArray;
 	};
+	case "ar_c": { player addHeadgear "rhs_tsh4"};
 };
 
 // add vest

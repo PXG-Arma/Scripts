@@ -5,16 +5,16 @@ _resupplyAvailable = [
 			["UK3CB_MP5_30Rnd_9x19_Magazine_GT",40]
 		]
 	],
-	["DMR Resupply",
-		[
-			["UK3CB_BAF_762_L42A1_20Rnd",20],
-			["UK3CB_BAF_762_L42A1_20Rnd_T",20]
-		]
-	],
 	["Shotgun Resupply",
 		[
 			["UK3CB_BAF_12G_Pellets",20],
 			["UK3CB_BAF_12G_Slugs",20]
+		]
+	],
+	["DMR Resupply",
+		[
+			["UK3CB_BAF_762_L42A1_20Rnd",20],
+			["UK3CB_BAF_762_L42A1_20Rnd_T",20]
 		]
 	],
 	["Stun Grenades",

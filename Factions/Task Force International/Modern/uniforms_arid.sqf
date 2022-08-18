@@ -14,7 +14,7 @@ switch (_loadout) do {
 	case "rcn_ld";
 	case "rcn_spe";
 	case "rcn_drone";
-	case "rcn_dmr": { player addHeadgear "H_Booniehat_khk_hs"};
+	case "rcn_dmr": { player addHeadgear "VSM_Bowman_cap_Tan"};
 	case "ar_c": {player addHeadgear "rhs_6b48"};
 	case "pil": {player addHeadgear "rhs_6m2_1"};
 };

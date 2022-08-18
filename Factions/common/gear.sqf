@@ -12,26 +12,24 @@ player addItemToVest "ACE_EarPlugs";
 player addItemToVest "ACE_CableTie";
 player addItemToVest "ACE_CableTie";
 
+// add Entrenching Tool & Fortify Hammer
 switch (_loadout) do {
-	default {player addItemToBackpack "ACE_EntrenchingTool"};
+	default {
+		player addItemToBackpack "ACE_Fortify";
+		player addItemToBackpack "ACE_EntrenchingTool";
+	};
 	case "sup_hmg_l";
 	case "sup_hmg_g";
 	case "sup_gmg_l";
 	case "sup_gmg_g";
 	case "sup_mor_l";
-	case "sup_mor_g": {player addItemToVest "ACE_EntrenchingTool"};
+	case "sup_mor_g": {
+		player addItemToVest "ACE_Fortify";
+		player addItemToVest "ACE_EntrenchingTool";
+	};
 };
 
-switch (_loadout) do {
-	default {player addItemToBackpack "ACE_Fortify"};
-	case "sup_hmg_l";
-	case "sup_hmg_g";
-	case "sup_gmg_l";
-	case "sup_gmg_g";
-	case "sup_mor_l";
-	case "sup_mor_g": {player addItemToVest "ACE_Fortify"};
-};
-
+// add Logi, EOD, Sapper, Specialist equipement
 switch (_loadout) do {
 	default {};
 	case "logi": {player addItemToBackpack "ToolKit"};
@@ -74,6 +72,14 @@ switch (_loadout) do {
 		player addItemToBackpack "ACE_DefusalKit";
 		player addItemToBackpack "ACE_SpraypaintBlue";
 	};
+};
+
+// add Range Card
+switch (_loadout) do {
+	default {};
+	case "sqd_dmr";
+	case "rcn_dmr";
+	case "rcn_amr": {player addItemToUniform "ACE_RangeCard"};
 };
 
 // early loadouts

@@ -55,6 +55,6 @@ _availableVehicles =
 	
 	["Misc.",
 	["B_G_Quadbike_01_F",
-	"UK3CB_O_G_YAVA"]] //Doesn't spawn in consistent camo
+	"UK3CB_O_G_YAVA"]]
 ];
 _availableVehicles

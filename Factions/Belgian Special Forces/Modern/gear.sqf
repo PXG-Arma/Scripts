@@ -10,18 +10,13 @@ switch (_loadout) do {
 	
 };
 
-// Javelin gunner
+// add Javelin CLU
 switch (_loadout) do {
 	case "sup_hat_g": {player addWeapon "UK3CB_BAF_Javelin_CLU"};
 };
 
-// Recon Lead spotter
+// add Spotting Scope
 switch (_loadout) do {
 	case "rcn_ld": {player addItemToBackpack "ACE_SpottingScope";
 	                player addItemToBackpack "ACE_Tripod"};
-};
-
-// Recon AMR
-switch (_loadout) do {
-	case "rcn_amr": {player addItemToUniform "ACE_RangeCard"};
 };

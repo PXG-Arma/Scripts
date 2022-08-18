@@ -3,13 +3,13 @@ params["_side","_faction","_variant", "_loadout"];
 // add primary weapon
 switch (_loadout) do {
 	default { 
-		randomWeaponArray = ["hlc_rifle_akm","rhs_weap_m4_carryhandle","rhs_weap_l1a1_wood","rhs_weap_m38","rhs_weap_Izh18","uk3cb_sks_01","uk3cb_ppsh41"]; 
+		randomWeaponArray = ["rhs_weap_akm","rhs_weap_m4_carryhandle","rhs_weap_l1a1_wood","rhs_weap_m38","rhs_weap_Izh18","uk3cb_sks_01","uk3cb_ppsh41"]; 
 		player addWeapon selectRandom randomWeaponArray;
 	};
 	case "plt";
 	case "sqd_ld";
-	case "sqd_gre": {player addWeapon "hlc_rifle_akmgl"};
-	case "sqd_ar": {player addWeapon "hlc_rifle_rpk"};
+	case "sqd_gre": {player addWeapon "rhs_weap_akm_gp25"};
+	case "sqd_ar": {player addWeapon "UK3CB_RPK"};
 	case "sup_mmg_g": {player addWeapon "rhs_weap_pkm"};
 	case "rcn_dmr": {player addWeapon "UK3CB_SVD_OLD";
 					 player addPrimaryWeaponItem "rhs_acc_pso1m21";

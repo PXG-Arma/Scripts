@@ -1,7 +1,7 @@
 _resupplyAvailable = [
 	["Primary Resupply A",
 		[
-			["hlc_30Rnd_545x39_B_AK",20],
+			["rhs_30Rnd_545x39_7N6_AK",20],
 			["rhsusf_20Rnd_762x51_m80_Mag",20],
 			["rhsgref_30rnd_1143x23_M1911B_SMG",20],
 			["UK3CB_Enfield_10rnd_Mag",20]
@@ -11,7 +11,8 @@ _resupplyAvailable = [
 		[
 			["rhs_mag_20Rnd_762x51_m80_fnfal",20],
 			["rhs_30Rnd_762x39mm_Savz58",20],
-			["UK3CB_Sten_34Rnd_Magazine",20]
+			["UK3CB_Sten_34Rnd_Magazine",20],
+			["rhsgref_8Rnd_762x63_M2B_M1rifle",20]
 		]
 	],
 	["MMG Resupply",

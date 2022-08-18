@@ -21,6 +21,10 @@ switch (_loadout) do {
 				for "_i" from 1 to 4 do { player addItemToVest "rhs_mag_20Rnd_762x51_m80_fnfal"};
 				for "_i" from 1 to 2 do { player addItemToBackpack "rhs_mag_20Rnd_762x51_m80_fnfal"};
 			};
+			case "rhs_weap_m1garand_sa43": {
+				for "_i" from 1 to 8 do { player addItemToVest "rhsgref_8Rnd_762x63_M2B_M1rifle"};
+				for "_i" from 1 to 8 do { player addItemToBackpack "rhsgref_8Rnd_762x63_M2B_M1rifle"};
+			};
 			case "UK3CB_Enfield": {
 				for "_i" from 1 to 8 do { player addItemToVest "UK3CB_Enfield_10rnd_Mag"};
 				for "_i" from 1 to 8 do { player addItemToVest "UK3CB_Enfield_10rnd_Mag"};
@@ -29,9 +33,9 @@ switch (_loadout) do {
 				for "_i" from 1 to 6 do { player addItemToVest "UK3CB_Sten_34Rnd_Magazine"};
 				for "_i" from 1 to 2 do { player addItemToBackpack "UK3CB_Sten_34Rnd_Magazine"};
 			};
-			case "hlc_rifle_ak74_dirty": {
-				for "_i" from 1 to 4 do { player addItemToVest "hlc_30Rnd_545x39_B_AK"};
-				for "_i" from 1 to 4 do { player addItemToBackpack "hlc_30Rnd_545x39_B_AK"};
+			case "rhs_weap_aks74": {
+				for "_i" from 1 to 4 do { player addItemToVest "rhs_30Rnd_545x39_7N6_AK"};
+				for "_i" from 1 to 4 do { player addItemToBackpack "rhs_30Rnd_545x39_7N6_AK"};
 			};
 			
 			default {};
@@ -97,17 +101,13 @@ switch (_loadout) do {
 // add 40mm grenades
 switch (_loadout) do {
 	default {};
-	case "plt": {
-		for "_i" from 1 to 5 do {player addItemToBackpack "1Rnd_HE_Grenade_shell"};
-		for "_i" from 1 to 2 do {player addItemToBackpack "1Rnd_Smoke_Grenade_shell"};
-		for "_i" from 1 to 2 do {player addItemToBackpack "1Rnd_SmokeRed_Grenade_shell"};
-		for "_i" from 1 to 2 do {player addItemToBackpack "1Rnd_SmokeGreen_Grenade_shell"};
-	};
+	case "plt";
 	case "sqd_ld";
 	case "sqd_gre": {
 		for "_i" from 1 to 10 do {player addItemToBackpack "1Rnd_HE_Grenade_shell"};
 		for "_i" from 1 to 2 do {player addItemToBackpack "1Rnd_Smoke_Grenade_shell"};
 		for "_i" from 1 to 2 do {player addItemToBackpack "1Rnd_SmokeRed_Grenade_shell"};
 		for "_i" from 1 to 2 do {player addItemToBackpack "1Rnd_SmokeGreen_Grenade_shell"};
+		for "_i" from 1 to 2 do {player addItemToBackpack "UGL_FlareWhite_F"};
 	};
 };

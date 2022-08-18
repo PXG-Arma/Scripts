@@ -13,6 +13,16 @@ switch (_loadout) do {
 	};
 };
 
+// add IED
+switch (_loadout) do {
+	default {};
+	case "sqd_gre";
+	case "sqd_ar";
+	case "sqd_aar": {player addItemToBackpack "IEDLandSmall_Remote_Mag"};
+	case "sqd_lat": {player addItemToVest "IEDLandSmall_Remote_Mag"};
+	case "rcn_ld": {player addItemToBackpack "IEDLandBig_Remote_Mag"};
+};
+
 // add DMS
 switch (_loadout) do {
 	default {};
@@ -20,4 +30,3 @@ switch (_loadout) do {
 		for "_i" from 1 to 6 do { player addItemToBackpack "ACE_DeadManSwitch"};
 	};
 };
-

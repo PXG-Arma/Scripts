@@ -54,20 +54,20 @@ _resupplyAvailable = [
 	],
 	["40mm Grenades",
 		[
-			["UK3CB_BAF_1Rnd_HE_Grenade_Shell",30]
+			["1Rnd_HE_Grenade_Shell",30]
 		]
 	],
 	["40mm Smoke Rounds",
 		[
-			["UK3CB_BAF_1Rnd_Smoke_Grenade_shell",20],
-			["UK3CB_BAF_1Rnd_SmokeRed_Grenade_shell",10],
-			["UK3CB_BAF_1Rnd_SmokeGreen_Grenade_shell",10],
-			["UK3CB_BAF_1Rnd_SmokeBlue_Grenade_shell",10]
+			["1Rnd_Smoke_Grenade_Shell",20],
+			["1Rnd_SmokeRed_Grenade_Shell",10],
+			["1Rnd_SmokeGreen_Grenade_Shell",10],
+			["1Rnd_SmokeBlue_Grenade_Shell",10]
 		]
 	],
 	["40mm Flares",
 		[
-			["UGL_FlareWhite_F",30],
+			["UGL_FlareWhite_F",20],
 			["UGL_FlareCIR_F",20]
 		]
 	],	

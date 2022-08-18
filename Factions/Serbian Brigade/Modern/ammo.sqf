@@ -84,13 +84,15 @@ switch (_loadout) do {
 		for "_i" from 1 to 2 do {player addItemToBackpack "rhs_GRD40_White"};
 		for "_i" from 1 to 2 do {player addItemToBackpack "rhs_GRD40_Red"};
 		for "_i" from 1 to 2 do {player addItemToBackpack "rhs_GRD40_Green"};
+		for "_i" from 1 to 2 do {player addItemToBackpack "rhs_VG40OP_white"};
 	};
 	case "sqd_ld";
 	case "sqd_gre";
 	case "rcn_ld": {
-		for "_i" from 1 to 5 do {player addItemToBackpack "rhs_VOG25"}; 
+		for "_i" from 1 to 10 do {player addItemToBackpack "rhs_VOG25"}; 
 		for "_i" from 1 to 2 do {player addItemToBackpack "rhs_GRD40_White"};
 		for "_i" from 1 to 2 do {player addItemToBackpack "rhs_GRD40_Red"};
 		for "_i" from 1 to 2 do {player addItemToBackpack "rhs_GRD40_Green"};
+		for "_i" from 1 to 2 do {player addItemToBackpack "rhs_VG40OP_white"};
 	};
 };

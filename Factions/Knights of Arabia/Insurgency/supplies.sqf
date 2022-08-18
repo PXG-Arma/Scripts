@@ -1,7 +1,7 @@
 _resupplyAvailable = [
 	["Primary Resupply A",
 		[
-			["hlc_30Rnd_762x39_b_ak",40],
+			["rhs_30Rnd_762x39mm",40],
 			["rhsgref_5Rnd_762x54_m38",20],
 			["rhsgref_1Rnd_00Buck",20],
 			["rhsgref_1Rnd_Slug",20]
@@ -13,6 +13,12 @@ _resupplyAvailable = [
 			["rhs_mag_30Rnd_556x45_M855_Stanag",20],
 			["uk3cb_10rnd_magazine_sks",20],
 			["uk3cb_PPSH_71rnd_magazine",20]
+		]
+	],
+	["AR Resupply",
+		[
+			["rhs_75Rnd_762x39mm",20],
+			["rhs_75Rnd_762x39mm_tracer",20]
 		]
 	],
 	["MMG Resupply",
@@ -49,15 +55,25 @@ _resupplyAvailable = [
 			["rhs_mag_f1",20],
 			["rhs_mag_rdg2_white",10]
 		]
-	],
 	["40mm Grenades",
 		[
-			["hlc_VOG25_AK",30],
-		    ["hlc_GRD_White",10],
-			["hlc_GRD_Red",10],
-			["hlc_GRD_green",10]
+			["rhs_VOG25",30]
+		]
+	],
+	["40mm Smoke Rounds",
+		[
+		    ["rhs_GRD40_White",10],
+			["rhs_GRD40_Red",10],
+			["rhs_GRD40_Green",10]
 		]
 	],	
+	["40mm Flares",
+		[
+			["rhs_VG40OP_white",10],
+			["rhs_VG40OP_red",10],
+			["rhs_VG40OP_green",10]
+		]
+	],
 	["Explosives",
 		[
 			["ACE_Cellphone",2],

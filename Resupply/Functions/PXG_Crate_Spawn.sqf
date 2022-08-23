@@ -84,6 +84,7 @@ if (count _nearVehicles > 0) then {
 		[_crate, true, [0,1,1], 0, true] call ace_dragging_fnc_setCarryable;
 	};
 
+	case "40mm Heavy";
 	case "40mm Grenades";
 	case "Hand Grenades":
 	{

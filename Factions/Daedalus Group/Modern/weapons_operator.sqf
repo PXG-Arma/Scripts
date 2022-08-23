@@ -47,6 +47,6 @@ switch (_loadout) do {
 switch (_loadout) do {
 	default {};
 	case "sqd_lat": {player addWeapon "rhs_weap_M136"};
-	case "sup_mat_g": {	player addWeapon "rhs_weap_maaws";
-						player addSecondaryWeaponItem "rhs_optic_maaws"};
+	case "sup_mat_g": {	player addWeapon "BWA3_CarlGustav";
+						player addSecondaryWeaponItem "bwa3_optic_carlgustav"};
 };

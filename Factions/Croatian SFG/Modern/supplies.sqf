@@ -28,9 +28,10 @@ _resupplyAvailable = [
 			["rhs_weap_M136",8]
 		]
 	],
-	["MAT Resupply",
+	["HAT Resupply",
 		[
-			["MRAWS_HEAT_F",8]
+			["Vorona_HEAT",2],
+			["Vorona_HE",2]
 		]
 	],
 	["AA Resupply",
@@ -68,6 +69,13 @@ _resupplyAvailable = [
 		[
 			["UGL_FlareWhite_F",20],
 			["UGL_FlareCIR_F",20]
+		]
+	],
+	["40mm Heavy",
+		[
+			["rhsusf_mag_6Rnd_M441_HE",8],
+			["rhsusf_mag_6Rnd_M714_white",4],
+			["rhsusf_mag_6Rnd_M713_red",4]
 		]
 	],	
 	["Explosives",

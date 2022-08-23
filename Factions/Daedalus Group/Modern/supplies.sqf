@@ -27,10 +27,10 @@ _resupplyAvailable = [
 			["rhs_weap_M136",8]
 		]
 	],
-	["MAT Resuppply",
+	["MAT Resupply",
 		[
-			["rhs_mag_maaws_HEAT",4],
-			["rhs_mag_maaws_HEDP",4]
+			["BWA3_CarlGustav_HEAT",4],
+			["BWA3_CarlGustav_HEDP",4]
 		]
 	],
 	["Hand Grenades",

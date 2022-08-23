@@ -6,17 +6,13 @@ _resupplyAvailable = [
 	],
 	["LAT Resupply",
 		[
-			["rhs_weap_rpg26",8]
-		]
-	],
-	["Grenadier Resupply",
-		[
-			["rhs_weap_rshg2",8]
+			["rhs_weap_rpg26",8],
+			["rhs_weap_rshg2",4]
 		]
 	],
 	["DMR Resupply",
 		[
-			["rhs_5Rnd_338lapua_t5000",40]
+			["rhs_5Rnd_338lapua_t5000",30]
 		]
 	],
 	["MMG Resupply",

@@ -49,6 +49,5 @@ switch (_loadout) do {
 switch (_loadout) do {
 	default {};
 	case "sqd_lat": {player addWeapon "rhs_weap_rpg75"};
-	case "sup_mat_g": {	player addWeapon "rhs_weap_rpg7";
-						player addSecondaryWeaponItem "rhs_acc_pgo7v3"};
+	case "sup_hat_g": {	player addWeapon "launch_O_Vorona_green_F"};
 };

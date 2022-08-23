@@ -40,8 +40,8 @@ switch (_loadout) do {
 		for "_i" from 1 to 2 do { player addItemToBackpack "UK3CB_MG3_100rnd_762x51_GM"};
 	};
 	case "sup_mat_l": {
-		for "_i" from 1 to 1 do { player addItemToBackpack "rhs_mag_maaws_HEAT"};
-		for "_i" from 1 to 2 do { player addItemToBackpack "rhs_mag_maaws_HEDP"};
+		for "_i" from 1 to 1 do { player addItemToBackpack "BWA3_CarlGustav_HEDP"};
+		for "_i" from 1 to 2 do { player addItemToBackpack "BWA3_CarlGustav_HEAT"};
 	};
 };
 
@@ -49,8 +49,8 @@ switch (_loadout) do {
 switch (_loadout) do {
 	default {};
 	case "sup_mat_g": {
-		for "_i" from 1 to 1 do { player addItemToBackpack "rhs_mag_maaws_HEAT"};
-		for "_i" from 1 to 1 do { player addItemToBackpack "rhs_mag_maaws_HEDP"};
+		for "_i" from 1 to 1 do { player addItemToBackpack "BWA3_CarlGustav_HEDP"};
+		for "_i" from 1 to 1 do { player addItemToBackpack "BWA3_CarlGustav_HEAT"};
 	};
 };
 

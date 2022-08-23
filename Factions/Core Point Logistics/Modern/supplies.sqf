@@ -33,9 +33,11 @@ _resupplyAvailable = [
 			["rhs_weap_M136",8]
 		]
 	],
-	["HAT Resupply",
+	["MAT Resupply",
 		[
-			["Titan_AT",4]
+			["rhs_mag_smaw_SR",2],
+			["rhs_mag_smaw_HEAA",4],
+			["rhs_mag_smaw_HEDP",4]
 		]
 	],
 	["Hand Grenades",
@@ -73,9 +75,9 @@ _resupplyAvailable = [
 	],	
 	["40mm Heavy",
 		[
-			["rhsusf_mag_6Rnd_M441_HE",10],
-			["rhsusf_mag_6Rnd_M714_white",5],
-			["rhsusf_mag_6Rnd_M713_red",5]
+			["rhsusf_mag_6Rnd_M441_HE",8],
+			["rhsusf_mag_6Rnd_M714_white",4],
+			["rhsusf_mag_6Rnd_M713_red",4]
 		]
 	],
 	["Breaching Charges",

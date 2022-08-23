@@ -17,8 +17,7 @@ switch (_loadout) do {
 	};
 	case "sup_mmg_g": {
 		for "_i" from 1 to 2 do { player addItemToVest "BWA3_120Rnd_762x51_soft"};
-		for "_i" from 1 to 2 do { player addItemToBackpack "BWA3_120Rnd_762x51_soft"};
-		for "_i" from 1 to 1 do { player addItemToBackpack "BWA3_120Rnd_762x51_Tracer_soft"};
+		for "_i" from 1 to 2 do { player addItemToBackpack "BWA3_120Rnd_762x51_Tracer_soft"};
 	};
 	case "ar_ld";
 	case "ar_c";
@@ -45,8 +44,8 @@ switch (_loadout) do {
 		for "_i" from 1 to 2 do { player addItemToBackpack "BWA3_120Rnd_762x51_Tracer_soft"};
 	};
 	case "sup_mat_l": {
-		for "_i" from 1 to 1 do { player addItemToBackpack "rhs_mag_maaws_HEAT"};
-		for "_i" from 1 to 2 do { player addItemToBackpack "rhs_mag_maaws_HEDP"};
+		for "_i" from 1 to 1 do { player addItemToBackpack "BWA3_CarlGustav_HEDP"};
+		for "_i" from 1 to 2 do { player addItemToBackpack "BWA3_CarlGustav_HEAT"};
 	};
 	case "sup_aa_l": {
 		for "_i" from 1 to 3 do { player addItemToBackpack "BWA3_Fliegerfaust_Mag"};

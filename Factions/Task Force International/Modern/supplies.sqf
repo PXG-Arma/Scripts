@@ -26,16 +26,10 @@ _resupplyAvailable = [
 			["rhs_weap_rpg75",8]
 		]
 	],
-	["MAT Resupply (HEAT)",
+	["HAT Resupply",
 		[
-			["rhs_rpg7_PG7VL_mag",6],
-			["rhs_rpg7_PG7VR_mag",2]
-		]
-	],
-	["MAT Resupply (Misc.)",
-		[
-			["rhs_rpg7_TBG7V_mag",4],
-			["rhs_rpg7_OG7V_mag",4]
+			["Vorona_HEAT",2],
+			["Vorona_HE",2]
 		]
 	],
 	["Hand Grenades",

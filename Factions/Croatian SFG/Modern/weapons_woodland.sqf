@@ -18,6 +18,7 @@ switch (_loadout) do {
 					 player addPrimaryWeaponItem "bwa3_acc_varioray_irlaser_black";
 					 player addPrimaryWeaponItem "rhsusf_acc_su230";
 	};
+	case "sqd_hgre": {player addWeapon "rhs_weap_m32"};
 	case "rcn_dmr": {player addWeapon "rhs_weap_m40a5";
 					 player addPrimaryWeaponItem "rhsusf_acc_leupoldmk4";
 					 player addPrimaryWeaponItem "bwa3_acc_varioray_irlaser_black";
@@ -32,6 +33,7 @@ switch (_loadout) do {
 // add secondary weapon
 switch (_loadout) do {
 	default {};
+	case "sqd_hgre";
 	case "rcn_ld";
 	case "rcn_drone";
 	case "rcn_dmr": { player addWeapon "UK3CB_USP"};
@@ -41,6 +43,6 @@ switch (_loadout) do {
 switch (_loadout) do {
 	default {};
 	case "sqd_lat": {player addWeapon "rhs_weap_M136"};
-	case "sup_mat_g": {	player addWeapon "launch_MRAWS_green_F"};
+	case "sup_hat_g": {	player addWeapon "launch_O_Vorona_green_F"};
 	case "sup_aa_g": {	player addWeapon "rhs_weap_fim92"};
 };

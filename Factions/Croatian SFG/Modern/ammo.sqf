@@ -22,11 +22,18 @@ switch (_loadout) do {
 	case "pil": {
 		for "_i" from 1 to 4 do { player addItemToVest "rhsgref_30rnd_556x45_vhs2"};
 	};
+	case "sqd_hgre": {
+		for "_i" from 1 to 3 do { player addItemToVest "rhsusf_mag_6Rnd_M441_HE"};
+		for "_i" from 1 to 3 do { player addItemToBackpack "rhsusf_mag_6Rnd_M441_HE"};
+		for "_i" from 1 to 1 do { player addItemToBackpack "rhsusf_mag_6Rnd_M713_red"};
+		for "_i" from 1 to 1 do { player addItemToBackpack "rhsusf_mag_6Rnd_M714_white"}
+	};
 };
 
 // add secondary ammo
 switch (_loadout) do {
 	default {};
+	case "sqd_hgre";
 	case "rcn_ld";
 	case "rcn_drone";
 	case "rcn_dmr": {
@@ -44,8 +51,9 @@ switch (_loadout) do {
 		for "_i" from 1 to 2 do { player addItemToBackpack "rhsusf_100Rnd_762x51"};
 		for "_i" from 1 to 2 do { player addItemToBackpack "rhsusf_100Rnd_762x51_m62_tracer"};
 	};
-	case "sup_mat_l": {
-		for "_i" from 1 to 3 do { player addItemToBackpack "MRAWS_HEAT_F"};
+	case "sup_hat_l": {
+		for "_i" from 1 to 1 do { player addItemToBackpack "Vorona_HEAT"};
+		for "_i" from 1 to 1 do { player addItemToBackpack "Vorona_HE"};
 	};
 	case "sup_aa_l": {
 		for "_i" from 1 to 3 do { player addItemToBackpack "rhs_fim92_mag"};
@@ -55,8 +63,9 @@ switch (_loadout) do {
 // add other ammo 
 switch (_loadout) do {
 	default {};
-	case "sup_mat_g": {
-		for "_i" from 1 to 2 do { player addItemToBackpack "MRAWS_HEAT_F"};
+	case "sup_hat_g": {
+		for "_i" from 1 to 1 do { player addItemToBackpack "Vorona_HEAT"};
+		for "_i" from 1 to 1 do { player addItemToBackpack "Vorona_HE"};
 	};
 	case "sup_aa_g": {
 		for "_i" from 1 to 2 do { player addItemToBackpack "rhs_fim92_mag"};

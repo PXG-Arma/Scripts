@@ -56,6 +56,7 @@ switch (_loadout) do {
 switch (_loadout) do {
 	default {};
 	case "sqd_lat": {player addWeapon "rhs_weap_M136"};
-	case "sup_hat_g": {	player addWeapon "launch_I_Titan_short_F"};
+	case "sup_mat_g": {	player addWeapon "rhs_weap_smaw";
+						player addSecondaryWeaponItem "rhs_weap_optic_smaw"};
 };
 

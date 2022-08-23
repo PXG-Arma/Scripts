@@ -45,19 +45,18 @@ switch (_loadout) do {
 	case "sup_mmg_l": {
 		for "_i" from 1 to 4 do { player addItemToBackpack "rhs_100Rnd_762x54mmR_green"};
 	};
-	case "sup_mat_l": {
-		for "_i" from 1 to 2 do { player addItemToBackpack "rhs_rpg7_OG7V_mag"};
-		for "_i" from 1 to 2 do { player addItemToBackpack "rhs_rpg7_PG7VL_mag"};
-		for "_i" from 1 to 1 do { player addItemToBackpack "rhs_rpg7_PG7VR_mag"};
+	case "sup_hat_l": {
+		for "_i" from 1 to 1 do { player addItemToBackpack "Vorona_HEAT"};
+		for "_i" from 1 to 1 do { player addItemToBackpack "Vorona_HE"};
 	};
 };
 
 // add other ammo 
 switch (_loadout) do {
 	default {};
-	case "sup_mat_g": {
-		for "_i" from 1 to 2 do { player addItemToBackpack "rhs_rpg7_PG7VL_mag"};
-		for "_i" from 1 to 1 do { player addItemToBackpack "rhs_rpg7_PG7VR_mag"};
+	case "sup_hat_g": {
+		for "_i" from 1 to 1 do { player addItemToBackpack "Vorona_HEAT"};
+		for "_i" from 1 to 1 do { player addItemToBackpack "Vorona_HE"};
 	};
 };
 

@@ -8,7 +8,9 @@ sidesArray = ["BLUFOR", "OPFOR", "INDEP"];
 }	forEach sidesArray;
 
 {
-	lbAdd [461500, vehicleVarName _x]; 
+	_spawnString = (vehicleVarName _x) splitString "_";
+	_spawnString = _spawnString joinString " ";
+	lbAdd [461500, _spawnString]; 
 } forEach synchronizedObjects vehicle_spawn_master; //Fills list of available spawnpoints
 
 _sideMemory = player getVariable ["PXG_Motorpool_Memory_Side", -1];

@@ -1,11 +1,11 @@
 _availableVehicles = 
 [
 	["Utility",
-	["UK3CB_CW_SOV_O_EARLY_UAZ_Closed",
-	"UK3CB_CW_SOV_O_EARLY_UAZ_Open",
+	["UK3CB_CW_SOV_O_EARLY_Gaz66_Ammo",
 	"UK3CB_CW_SOV_O_EARLY_Zil131_Covered",
 	"UK3CB_CW_SOV_O_EARLY_Zil131_Flatbed", 
-	"UK3CB_CW_SOV_O_EARLY_Gaz66_Ammo"]], 
+	"UK3CB_CW_SOV_O_EARLY_UAZ_Closed",
+	"UK3CB_CW_SOV_O_EARLY_UAZ_Open"]], 
 	
 	["Armed Car/MRAP",
 	["UK3CB_CW_SOV_O_EARLY_UAZ_MG", 

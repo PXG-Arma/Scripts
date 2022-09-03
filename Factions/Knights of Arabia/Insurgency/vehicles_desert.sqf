@@ -1,8 +1,8 @@
 _availableVehicles = 
 [
 	["Utility",
-	["UK3CB_TKM_O_Ural_Covered",
-	"UK3CB_TKM_O_Ural_Ammo",
+	["UK3CB_TKM_O_Ural_Ammo",
+	"UK3CB_TKM_O_Ural_Covered",
 	"UK3CB_TKM_O_Ural_Fuel",
 	"UK3CB_TKM_O_Hilux_Open",
 	"UK3CB_TKM_O_LR_Closed"]],

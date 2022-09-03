@@ -1,3 +1,3 @@
-_avialableVariants = ["Lizard Modern"];
+_avialableVariants = ["Lizard Late"];
 
 _avialableVariants

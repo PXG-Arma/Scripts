@@ -1,10 +1,10 @@
 _availableVehicles = 
 [
 	["Utility",
-	["UK3CB_I_G_V3S_Closed",
-	"UK3CB_I_G_V3S_Reammo",
+	["UK3CB_I_G_V3S_Reammo",
 	"UK3CB_I_G_V3S_Refuel",
 	"UK3CB_I_G_V3S_Recovery",
+	"UK3CB_I_G_V3S_Closed",
 	"UK3CB_I_G_Hilux_Open",
 	"UK3CB_I_G_LandRover_Closed"]],
 	

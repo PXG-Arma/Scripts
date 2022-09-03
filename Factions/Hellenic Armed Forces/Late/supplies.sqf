@@ -7,13 +7,14 @@ _resupplyAvailable = [
 	],
 	["AR Resupply",
 		[
-			["rhsusf_100Rnd_762x51",10],
-			["rhsusf_100Rnd_762x51_m62_tracer",10]
+			["BWA3_120Rnd_762x51_Tracer",20]
 		]
 	],
 	["MMG Resupply",
 		[
-			["BWA3_120Rnd_762x51_Tracer",20]
+			["rhsusf_100Rnd_762x51_m61_ap",10],
+			["rhsusf_100Rnd_762x51_m62_tracer",10],
+			["rhsusf_100Rnd_762x51",10]
 		]
 	],
 	["LAT Resupply",
@@ -105,7 +106,7 @@ _resupplyAvailable = [
 		[
 			["UK3CB_G3_20rnd_762x51",20],
 			["UK3CB_G3_20rnd_762x51_GT",20],
-			["rhsusf_100Rnd_762x51",10],
+			["BWA3_120Rnd_762x51_Tracer",10],
 			["rhs_weap_M136",2],
 			["HandGrenade",10],
 			["rhs_mag_an_m8hc",10],

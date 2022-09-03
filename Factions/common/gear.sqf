@@ -9,8 +9,7 @@ player linkItem "ItemWatch";
 player addItemToUniform "ACE_Flashlight_XL50"; 
 player addItemToVest "ACE_MapTools";
 player addItemToVest "ACE_EarPlugs";
-player addItemToVest "ACE_CableTie";
-player addItemToVest "ACE_CableTie";
+for "_i" from 1 to 4 do {player addItemToVest "ACE_CableTie"};
 
 // add Entrenching Tool & Fortify Hammer
 switch (_loadout) do {
@@ -145,8 +144,8 @@ if (_variantEra == "Late") then {
 	};
 };
 
-// modern loadouts
-if (_variantEra == "Modern") then {
+// modern/future loadouts
+if (_variantEra == "Modern" || _variantEra == "Future") then {
 	
 	// add GPS
 	player linkItem "ItemGPS";

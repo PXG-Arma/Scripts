@@ -1,12 +1,12 @@
 _availableVehicles = 
 [
 	["Utility",
-	["rhs_uaz_open_vmf",
-	"rhs_uaz_vmf",
-	"rhs_gaz66_vmf",
-	"rhs_gaz66_flat_vmf",
+	["rhs_gaz66_vmf",
 	"rhs_gaz66_ammo_vmf",
-	"RHS_Ural_Fuel_VMF_01"]], 
+	"rhs_gaz66_flat_vmf",
+	"RHS_Ural_Fuel_VMF_01",
+	"rhs_uaz_open_vmf",
+	"rhs_uaz_vmf"]], 
 	
 	["Armed Car/MRAP",
 	["rhs_tigr_m_3camo_vmf",

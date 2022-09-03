@@ -1,4 +1,4 @@
-_avialableVariants = ["M10 Modern"];
+_avialableVariants = ["M10 Late"];
 
 _avialableVariants
 

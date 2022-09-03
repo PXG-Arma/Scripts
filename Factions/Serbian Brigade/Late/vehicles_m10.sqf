@@ -1,12 +1,10 @@
 _availableVehicles = 
 [
 	["Utility",
-	["rhssaf_m1151_olive",
+	["rhssaf_army_ural",
+	"rhssaf_m1151_olive",
 	"rhssaf_m1152_rsv_olive",
-	"rhssaf_m1152_TCV_olive",
-	"rhssaf_army_ural",
-	"rhssaf_army_ural_open",
-	"rhssaf_army_ural_fuel"]],
+	"rhssaf_m1152_TCV_olive"]],
 	
 	["Armed Car/MRAP",
 	["rhssaf_m1151_olive_pkm",

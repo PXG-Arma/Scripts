@@ -1,12 +1,12 @@
 _availableVehicles = 
 [
 	["Utility",
-	["rhs_uaz_open_MSV_01",
-	"RHS_UAZ_MSV_01",
-	"rhs_kamaz5350_msv", 
+	["rhs_kamaz5350_msv", 
 	"rhs_kamaz5350_flatbed_msv",
 	"RHS_Ural_Ammo_MSV_01",
-	"RHS_Ural_Fuel_MSV_01"]], 
+	"RHS_Ural_Fuel_MSV_01",
+	"rhs_uaz_open_MSV_01",
+	"RHS_UAZ_MSV_01"]], 
 	
 	["Armed Car/MRAP",
 	["rhs_tigr_m_msv",

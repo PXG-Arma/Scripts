@@ -1,8 +1,8 @@
 _availableVehicles = 
 [
 	["Utility",
-	["UK3CB_BAF_MAN_HX60_Transport_Green_MTP_RM",
-	"UK3CB_BAF_MAN_HX60_Fuel_Green_MTP_RM",
+	["UK3CB_BAF_MAN_HX60_Fuel_Green_MTP_RM",
+	"UK3CB_BAF_MAN_HX60_Transport_Green_MTP_RM",
 	"UK3CB_BAF_LandRover_Hard_FFR_Green_A_MTP_RM"]],
 
 	["Armed Car/MRAP",

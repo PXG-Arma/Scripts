@@ -9,7 +9,6 @@ _availableVehicles =
 	
 	["Armed Car/MRAP",
 	["UK3CB_BAF_LandRover_WMIK_HMG_FFR_Sand_A_MTP",
-	"UK3CB_BAF_LandRover_WMIK_GMG_FFR_Sand_A_MTP",
 	"UK3CB_BAF_LandRover_WMIK_Milan_FFR_Sand_A_MTP",
 	"UK3CB_BAF_Jackal2_L2A1_D_MTP",
 	"UK3CB_BAF_Coyote_Passenger_L111A1_D_MTP"]],

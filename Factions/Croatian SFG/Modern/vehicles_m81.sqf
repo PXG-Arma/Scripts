@@ -9,11 +9,10 @@ _availableVehicles =
 	"rhsusf_m1151_usarmy_wd"]],
 	
 	["Armed Car/MRAP",
-	["rhsusf_m1240a1_usarmy_wd",
-	"rhsusf_m1240a1_m2crows_usarmy_wd",
-	"rhsusf_m1240a1_m2crows_usarmy_wd",
-	"UK3CB_B_MaxxPro_M2_US_W",
-	"UK3CB_B_MaxxPro_MK19_US_W"	]],
+	["rhsusf_m1043_w_m2",
+	"rhsusf_m1240a1_usarmy_wd",
+	"rhsusf_m1240a1_m240_uik_usarmy_wd",
+	"rhsusf_m1240a1_m2_uik_usarmy_wd"]],
 	
 	["IFV",
 	["RHS_M2A3_wd"]],

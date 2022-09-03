@@ -10,10 +10,8 @@ _availableVehicles =
   
   ["Armed Car/MRAP",
   ["rhsusf_m1151_m2crows_usmc_wd",
-  "rhsusf_m1151_mk19crows_usmc_wd",
   "rhsusf_m1045_w_s",
-  "rhsusf_CGRCAT1A2_M2_usmc_wd",
-  "rhsusf_CGRCAT1A2_Mk19_usmc_wd"]],
+  "rhsusf_CGRCAT1A2_M2_usmc_wd"]],
   
   ["APC",
   ["UK3CB_B_AAV_US_WDL"]],

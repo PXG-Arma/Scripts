@@ -11,9 +11,6 @@ _availableVehicles =
 	["Armed Car/MRAP",
 	["rhs_tigr_3camo_vdv",
 	"rhs_tigr_sts_3camo_vdv"]],
-	
-	["Anti Air",
-	["rhs_zsu234_aa"]],
 
 	["APC",
 	["rhs_btr80_vdv"]],
@@ -25,6 +22,9 @@ _availableVehicles =
   
     ["MBT",
     ["rhs_sprut_vdv"]],
+	
+	["SPAA",
+	["rhs_zsu234_aa"]],
   
     ["SPG",
     ["rhs_D30_vdv"]],

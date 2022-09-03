@@ -9,15 +9,12 @@ _availableVehicles =
 	["Armed Car/MRAP",
 	["BWA3_Eagle_Fleck",
 	"BWA3_Eagle_FLW100_Fleck",
-	"BWA3_Dingo2_FLW200_M2_CG13_Fleck",
-	"BWA3_Dingo2_FLW200_GMW_CG13_Fleck"]],
+	"BWA3_Dingo2_FLW100_MG3_CG13_Fleck",
+	"BWA3_Dingo2_FLW200_M2_CG13_Fleck"]],
 
 	["APC",
 	["Redd_Tank_Fuchs_1A4_Jg_Milan_Flecktarn",
 	"Redd_Tank_Fuchs_1A4_Pi_Flecktarn"]],
-
-	["Anti Air",
-	["Redd_Tank_Gepard_1A2_Flecktarn"]],
 	
 	["IFV",
 	["Redd_Tank_Wiesel_1A4_MK20_Flecktarn",
@@ -27,6 +24,9 @@ _availableVehicles =
 	
 	["MBT",
 	["BWA3_Leopard2_Fleck"]],
+
+	["SPAA",
+	["Redd_Tank_Gepard_1A2_Flecktarn"]],
 	
 	["SPG",
 	["BWA3_Panzerhaubitze2000_Fleck"]],

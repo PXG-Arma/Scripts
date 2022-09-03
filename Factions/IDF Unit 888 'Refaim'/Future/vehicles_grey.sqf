@@ -11,7 +11,6 @@ _availableVehicles =
 	
 	["Armed Car/MRAP",
 	["rhsusf_m1151_m2crows_usarmy_d",
-	"rhsusf_m1151_mk19crows_usarmy_d",
 	"rhsusf_m1151_m2_lras3_v1_usarmy_d",
 	"rhsusf_m966_d",
 	"B_UGV_01_rcws_F"]],

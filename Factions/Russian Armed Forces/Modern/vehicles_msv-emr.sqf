@@ -14,10 +14,6 @@ _availableVehicles =
 	"rhsgref_BRDM2_msv", 
 	"rhsgref_BRDM2_ATGM_msv"]],
 	
-	["Anti Air",
-	["rhs_zsu234_aa", 
-	"UK3CB_O_2S6M_Tunguska_VPV"]],
-	
 	["APC",
     ["rhs_btr80_msv"]],
   
@@ -28,7 +24,11 @@ _availableVehicles =
     ["MBT",
     ["rhs_t80um",
 	"rhs_t90a_tv"]],
-  
+
+	["SPAA",
+	["rhs_zsu234_aa", 
+	"UK3CB_O_2S6M_Tunguska_VPV"]],
+
     ["SPG",
     ["rhs_2s3_tv"]],
 	

@@ -14,10 +14,6 @@ _availableVehicles =
 	"rhsgref_BRDM2_vmf", 
 	"rhsgref_BRDM2_ATGM_vmf"]],
 	
-	["Anti Air",
-	["RHS_Ural_Zu23_VMF_01", 
-	"rhs_zsu234_aa"]],
-	
 	["APC",
     ["rhs_btr80a_vmf",
 	"rhs_btr80_vmf"]],
@@ -25,7 +21,11 @@ _availableVehicles =
     ["IFV",
     ["rhs_bmp1_vmf",
 	"rhs_bmp2_vmf"]],
-  
+	
+	["SPAA",
+	["RHS_Ural_Zu23_VMF_01", 
+	"rhs_zsu234_aa"]],
+
     ["SPG",
     ["rhs_2s1_vmf"]],
 

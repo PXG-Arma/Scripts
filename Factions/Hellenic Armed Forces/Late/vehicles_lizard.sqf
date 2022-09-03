@@ -5,8 +5,8 @@ _availableVehicles =
 	"UK3CB_MDF_B_MTVR_Reammo",
 	"UK3CB_MDF_B_MTVR_Refuel",
 	"UK3CB_MDF_B_MTVR_Recovery",
-	"UK3CB_MDF_B_M1151",
-	"UK3CB_MDF_B_M998_2DR"]],
+	"UK3CB_MDF_B_M998_2DR",
+	"UK3CB_MDF_B_M1151"]],
 	
 	["Armed Car/MRAP",
 	["UK3CB_MDF_B_M1151_GPK_M2",
@@ -22,6 +22,9 @@ _availableVehicles =
 	
 	["MBT",
 	["BWA3_Leopard2_Tropen"]],
+
+	["SPAA",
+	["UK3CB_KRG_B_M270_Avenger"]],
 
 	["Rotary Transport",
 	["UK3CB_MDF_B_UH1H_M240",

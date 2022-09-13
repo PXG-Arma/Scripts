@@ -17,6 +17,11 @@ _resupplyAvailable = [
 			["UK3CB_BAF_762_L42A1_20Rnd_T",20]
 		]
 	],
+	["LAT Resupply",
+		[
+			["launch_NLAW_F",8]
+		]
+	],
 	["Stun Grenades",
 		[
 			["ACE_CableTie",20],

@@ -24,8 +24,7 @@ _availableVehicles =
 	"B_SDV_01_F"]],
 	
 	["Misc.",
-	["rhsusf_mrzr4_d",
-	"B_Quadbike_01_F",
+	["B_Quadbike_01_F",
 	"UK3CB_BAF_MAN_HX60_Container_Green"]]
 
 ];

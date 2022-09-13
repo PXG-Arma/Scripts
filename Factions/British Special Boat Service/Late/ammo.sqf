@@ -22,6 +22,7 @@ switch (_loadout) do {
 		for "_i" from 1 to 4 do { player addItemToBackpack "UK3CB_MP5_30Rnd_9x19_Magazine"};
 		for "_i" from 1 to 2 do { player addItemToBackpack "UK3CB_MP5_30Rnd_9x19_Magazine_GT"};
 	};
+	case "tacp";
 	case "rcn_ld";
 	case "rcn_drone": {
 		for "_i" from 1 to 4 do { player addItemToBackpack "UK3CB_MP5_30Rnd_9x19_Magazine"};

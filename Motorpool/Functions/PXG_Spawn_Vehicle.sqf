@@ -45,7 +45,6 @@ if (count _nearVehicles > 0) then {
 	}
 	_vehicle setDir getDir _spawnPosition;
 
-	
 	_vehicleSplitType = _vehicleType splitString "_";
 
 	_variantArray = tvText [461501, _indexFaction];

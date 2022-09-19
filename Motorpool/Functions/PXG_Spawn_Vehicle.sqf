@@ -34,8 +34,17 @@ if (count _nearVehicles > 0) then {
 	forEach _nearVehicles;
 	
 } else {
-	private _vehicle = createVehicle[_vehicleType, getPosATL _spawnPosition, [], 0, "CAN_COLLIDE"];
+	
+	_spawnString = ((vehicleVarName _spawnPosition) splitString "_") select 0; 
+
+	if (_spawnString == "Port") then {
+		private _vehicle = createVehicle[_vehicleType, getPosASL _spawnPosition, [], 0, "CAN_COLLIDE"];
+	}
+	else {
+		private _vehicle = createVehicle[_vehicleType, getPosATL _spawnPosition, [], 0, "CAN_COLLIDE"];
+	}
 	_vehicle setDir getDir _spawnPosition;
+
 	
 	_vehicleSplitType = _vehicleType splitString "_";
 

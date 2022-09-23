@@ -22,8 +22,8 @@ switch (_loadout) do {
 	case "sup_mmg_g": {	player addWeapon "rhs_weap_pkp";
 						player addPrimaryWeaponItem "rhs_acc_1p78";
 	};
-	case "ar_c": {	player addWeapon "rhs_weap_scorpion";
-	};
+	case "ar_ld";
+	case "ar_c";
 	case "pil": {	player addWeapon "rhs_weap_scorpion";
 	};
 };

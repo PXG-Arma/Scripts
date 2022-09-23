@@ -17,6 +17,7 @@ switch (_loadout) do {
 	case "rcn_dmr": {};
 	case "logi": {player addHeadgear "rhs_cossack_visor_cap"};
 	case "plt": {player addHeadgear "rhs_cossack_visor_cap_tan"};
+    case "ar_ld";
 	case "ar_c": {player addHeadgear "rhs_tsh4"};
 	case "pil": {player addHeadgear "rhs_zsh7a_mike_alt"};
 };
@@ -32,6 +33,7 @@ switch (_loadout) do {
 	case "rcn_dmr";
 	case "rcn_spe";
 	case "rcn_ld": { player addVest "rhs_chicom_khk"};
+	case "ar_ld";
 	case "ar_c";
 	case "pil": { player addVest "rhs_vest_commander"};
 };
@@ -44,6 +46,8 @@ switch (_loadout) do {
 	case "rcn_dmr": {player addBackpack "UK3CB_B_Invisible"};
 	case "sup_mor_l": {player addBackpack "O_Mortar_01_support_F"};
 	case "sup_mor_g": {player addBackpack "O_Mortar_01_weapon_F"};
+	case "ar_ld";
+    case "ar_ld";
 	case "ar_c";
 	case "pil": {};
 };

@@ -19,9 +19,10 @@ switch (_loadout) do {
 					 player addPrimaryWeaponItem "uk3cb_underbarrel_acc_bipod";
 	};
 	case "sup_mmg_g": {	player addWeapon "UK3CB_BAF_L7A2"};
-	case "pil";
 	case "rcn_ld";
-	case "ar_c": {player addWeapon "UK3CB_Sten";
+	case "ar_ld";
+	case "ar_c";
+	case "pil": {player addWeapon "UK3CB_Sten";
 	};
 };
 

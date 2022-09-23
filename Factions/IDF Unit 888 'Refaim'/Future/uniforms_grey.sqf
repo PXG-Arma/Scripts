@@ -8,6 +8,7 @@ switch (_loadout) do {
 // add helmet
 switch (_loadout) do {
 	default { player addHeadgear "VSM_OGA_OD_Helmet2"};
+    case "ar_ld";
 	case "ar_c": {player addHeadgear "rhsusf_cvc_green_ess"};
 	case "pil": {player addHeadgear "rhsusf_hgu56p_visor"};
 };
@@ -19,6 +20,7 @@ switch (_loadout) do {
 	case "rcn_spe";
 	case "rcn_dmr";
 	case "rcn_drone"; {player addVest "VSM_OGA_OD_Vest_2"};
+	case "ar_ld";
 	case "ar_c";
 	case "pil": {player addVest "VSM_OGA_OD_Vest_3"};
 };
@@ -28,6 +30,8 @@ switch (_loadout) do {
 	default { player addBackpack "VSM_OGA_OD_Backpack_Kitbag"};
 	case "sup_mor_l": {player addBackpack "B_Mortar_01_support_F"};
 	case "sup_mor_g": {player addBackpack "B_Mortar_01_weapon_F"};
+	case "ar_ld";
+    case "ar_ld";
 	case "ar_c";
 	case "pil": {};
 };

@@ -23,9 +23,8 @@ switch (_loadout) do {
 		for "_i" from 1 to 2 do { player addItemToVest "rhsgref_30rnd_556x45_m21"};
 		for "_i" from 1 to 4 do { player addItemToBackpack "rhsgref_30rnd_556x45_m21_t"};
 	};
-	case "ar_c": {
-		for "_i" from 1 to 4 do { player addItemToVest "rhsgref_20rnd_765x17_vz61"};
-	};
+	case "ar_ld";
+	case "ar_c";
 	case "pil": {
 		for "_i" from 1 to 4 do { player addItemToVest "rhsgref_20rnd_765x17_vz61"};
 	};

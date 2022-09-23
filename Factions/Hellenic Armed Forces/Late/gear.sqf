@@ -9,9 +9,3 @@ switch (_loadout) do {
 	};
 	
 };
-
-// add 117 radio
-switch (_loadout) do {
-    default {};
-    case "ar_ld": {player addItemToBackpack "ACRE_PRC117F"};
-};

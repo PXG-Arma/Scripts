@@ -35,7 +35,7 @@ switch(_vehicleType) do
 	case "UK3CB_CW_SOV_O_EARLY_LI2";
 	case "UK3CB_CW_SOV_O_EARLY_LI2_ARMED":
 	{
-		[_vehicle, 10] call ace_cargo_fnc_setSpace;
+		[_vehicle,  8] call ace_cargo_fnc_setSpace;
 	};
 	
 	case "UK3CB_CW_SOV_O_EARLY_Antonov_AN2_Armed_Rockets";

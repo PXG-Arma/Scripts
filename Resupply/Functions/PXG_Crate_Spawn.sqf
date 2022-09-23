@@ -10,7 +10,7 @@ if (count _indexFaction == 1) exitWith { hint "Please select faction variant."};
 if (_indexSupply == -1) exitWith { hint "Please select supply crate."};
 if (_indexSpawn == -1) exitWith {hint "Please select spawn point."};
 
-_spawnPosition = synchronizedObjects item_spawn_master select _indexSpawn;
+_spawnPosition = synchronizedObjects (player getVariable "PXG_Resupply_Master") select _indexSpawn;
 
 player setVariable ["PXG_Resupply_Memory_Side", _indexSide];
 player setVariable ["PXG_Resupply_Memory_Faction", _indexFaction];

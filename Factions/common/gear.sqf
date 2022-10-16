@@ -83,6 +83,13 @@ switch (_loadout) do {
 	case "rcn_amr": {player addItemToUniform "ACE_RangeCard"};
 };
 
+// add Mortar Table
+switch (_loadout) do {
+	default {};
+	case "sup_mor_l";
+	case "sup_mor_g": {player addItemToUniform "ACE_RangeTable_82mm"};
+};
+
 // early loadouts
 if (_variantEra == "Early") then { player addWeapon "binocular"};
 

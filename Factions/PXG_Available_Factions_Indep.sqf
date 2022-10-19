@@ -1,7 +1,7 @@
 _availableFactions = [
-	//"Core Point Logistics", 
-	//"Daedalus Group",
-	//"Northern Isle Separatists",
+	//"Core Point Logistics"
+	//"Daedalus Group"
+	//"Northern Isle Separatists"
 	//"Serbian Brigade"
 ];
 

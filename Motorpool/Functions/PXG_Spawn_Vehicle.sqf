@@ -12,7 +12,7 @@ if (_indexSpawn == -1) exitWith {hint "Please select spawn point."};
 
 _vehicleType = tvData [461502, _indexVehicle];
 
-_spawnPosition = synchronizedObjects vehicle_spawn_master select _indexSpawn;
+_spawnPosition = synchronizedObjects (player getVariable "PXG_Vehicle_Master") select _indexSpawn;
 
 player setVariable ["PXG_Motorpool_Memory_Side", _indexSide];
 player setVariable ["PXG_Motorpool_Memory_Faction", _indexFaction];

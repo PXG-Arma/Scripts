@@ -26,9 +26,6 @@ _availableVehicles =
 	["SPAA",
 	["rhs_zsu234_aa"]],
 	
-	["Artillery",
-    ["rhs_D30_vdv"]],
-	
 	["Misc.",
 	["UK3CB_ADA_O_Quadbike",
 	"UK3CB_O_G_YAVA"]]

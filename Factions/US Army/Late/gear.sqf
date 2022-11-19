@@ -12,3 +12,7 @@ switch (_loadout) do {
 					player addWeapon "ACE_Vector"};
 };
 
+// remove NVG 
+switch (_loadout) do {
+    default {player unlinkItem "ACE_NVG_Gen4_Black"};
+};

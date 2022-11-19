@@ -14,7 +14,7 @@ switch (_loadout) do {
 					 player addPrimaryWeaponItem "uk3cb_baf_silencer_l115a3";
 					 player addPrimaryWeaponItem "uk3cb_underbarrel_acc_bipod";
 	};
-	case "pil":{ player addWeapon "UK3CB_MP5N"};
+	case "pil":{};
 };
 
 // add secondary weapon
@@ -22,6 +22,9 @@ switch (_loadout) do {
 	default {player addWeapon "UK3CB_BAF_L105A2";
 			 player addHandgunItem "uk3cb_baf_flashlight_l105a1";
 			 player addHandgunItem "uk3cb_baf_silencer_l105a1";
+	};
+	case "pil":{player addWeapon "UK3CB_BAF_L105A2";
+			 	player addHandgunItem "uk3cb_baf_flashlight_l105a1";
 	};
 };
 

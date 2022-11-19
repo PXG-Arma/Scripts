@@ -28,17 +28,15 @@ switch (_loadout) do {
 		for "_i" from 1 to 4 do { player addItemToBackpack "UK3CB_MP5_30Rnd_9x19_Magazine"};
 		for "_i" from 1 to 4 do { player addItemToBackpack "UK3CB_MP5_30Rnd_9x19_Magazine_GT"};
 	};
-	case "ar_ld";
-	case "ar_c";
-	case "pil": {
-		for "_i" from 1 to 4 do { player addItemToVest "UK3CB_MP5_30Rnd_9x19_Magazine"};
-	};
 };
 
 // add secondary ammo
 switch (_loadout) do {
 	default {
 		for "_i" from 1 to 2 do { player addItemToUniform "UK3CB_BAF_9_15Rnd"};
+	};
+	case "pil": {
+		for "_i" from 1 to 4 do { player addItemToVest "UK3CB_BAF_9_15Rnd"};
 	};
 };
 
@@ -73,6 +71,9 @@ switch (_loadout) do {
 	case "rcn_spe": {
 		for "_i" from 1 to 2 do { player addItemToUniform "SmokeShell"};
 		for "_i" from 1 to 2 do { player addItemToUniform "ACE_M84"};
+	};
+	case "pil": {
+		for "_i" from 1 to 2 do { player addItemToVest "SmokeShell"};
 	};
 };
 

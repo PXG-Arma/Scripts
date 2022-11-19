@@ -75,6 +75,11 @@ switch (_loadout) do {
 	};
 };
 
+// add Head Lamp
+switch (_loadout) do {
+    default {player addItemToBackpack "WBK_HeadLampItem"};
+};
+
 // add Range Card
 switch (_loadout) do {
 	default {};

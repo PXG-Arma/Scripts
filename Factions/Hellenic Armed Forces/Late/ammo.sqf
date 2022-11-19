@@ -3,7 +3,8 @@ params["_side","_faction","_variant", "_loadout"];
 // add primary ammo 
 switch (_loadout) do {
 	default {
-		for "_i" from 1 to 4 do { player addItemToVest "UK3CB_G3_20rnd_762x51"};
+		for "_i" from 1 to 2 do { player addItemToVest "UK3CB_G3_20rnd_762x51"};
+		for "_i" from 1 to 2 do { player addItemToBackpack "UK3CB_G3_20rnd_762x51"};
 		for "_i" from 1 to 4 do { player addItemToBackpack "UK3CB_G3_20rnd_762x51_GT"};
 	};
 	case "sup_mmg_g": {

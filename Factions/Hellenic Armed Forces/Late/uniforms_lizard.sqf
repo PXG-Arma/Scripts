@@ -2,15 +2,12 @@ params["_side","_faction","_variant", "_loadout"];
 
 // add uniform
 switch (_loadout) do {
-	default { player forceAddUniform "m93_gr"};
+	default { player forceAddUniform "rhsgref_uniform_altis_lizard"};
 };
 	
 // add helmet
 switch (_loadout) do {
-	default { player addHeadgear "pasgt_gr"};
-	case "sqd_ar";
-	case "sup_mmg_g";
-	case "sqd_gre": { player addHeadgear "pasgt_grg"};
+	default { player addHeadgear "rhsgref_helmet_pasgt_altis_lizard"};
 	case "rcn_ld";
 	case "rcn_spe";
 	case "rcn_drone";
@@ -22,7 +19,7 @@ switch (_loadout) do {
 
 // add vest
 switch (_loadout) do {
-	default { player addVest "carrier_gr"};
+	default { player addVest "rhsgref_otv_khaki"};
 };
 
 // add backpack 

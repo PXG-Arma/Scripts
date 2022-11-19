@@ -43,7 +43,7 @@ switch (_loadout) do {
 	case "sqd_gre": { player addVest "UK3CB_TKA_I_V_6Sh92_vog_Khk"};
 };
 
-// remove eyewear
+// add eyewear
 switch (_loadout) do {
 	default {
 		randomGoggleArray = ["UK3CB_G_Bandanna_aviator_green_check","UK3CB_G_Bandanna_sport_green_check","UK3CB_G_Bandanna_green_check","G_Balaclava_blk"];

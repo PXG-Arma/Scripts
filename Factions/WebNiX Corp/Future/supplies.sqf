@@ -1,27 +1,33 @@
 _resupplyAvailable = [
-	["Rifle Resupply",
+	["PDW Resupply",
 		[
-			["rhs_mag_30Rnd_556x45_M855A1_Stanag",40],
-			["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red",40]
+			["50Rnd_570x28_SMG_03",60]
 		]
 	],
-	["DMR Resupply",
+	["AR Resupply",
 		[
-			["rhsusf_5Rnd_762x51_m993_Mag",20],
-			["rhsusf_5Rnd_762x51_m62_Mag",20]
+			["130Rnd_338_Mag",20]
 		]
 	],
-	["Shotgun Resupply",
+	["AMR Resupply",
 		[
-			["UK3CB_BAF_12G_Pellets",20],
-			["UK3CB_BAF_12G_Slugs",20]
+			["ACE_5Rnd_127x99_AMAX_Mag",10],
+			["ACE_5Rnd_127x99_API_Mag",10]
 		]
 	],
-	["Stun Grenades",
+		["LAT Resupply",
 		[
-			["ACE_CableTie",20],
-			["ACE_M84",20],
-			["rhs_mag_m7a3_cs",20]
+			["BWA3_PzF3_Tandem_Loaded",8]
+		]
+	],
+	["Exo-Skeleton Batteries",
+		[
+			["Battery_Full",20]
+		]
+	],
+	["Hand Grenades",
+		[
+			["HandGrenade",20]
 		]
 	],
 	["Smoke Grenades",
@@ -34,29 +40,21 @@ _resupplyAvailable = [
 	],
 	["40mm Grenades",
 		[
-			["rhs_mag_m576",15],
-			["rhs_mag_m4009",15]
+			["1Rnd_HE_Grenade_Shell",30]
 		]
 	],
 	["40mm Smoke Rounds",
 		[
-			["UK3CB_BAF_1Rnd_Smoke_Grenade_shell",20],
-			["UK3CB_BAF_1Rnd_SmokeRed_Grenade_shell",10],
-			["UK3CB_BAF_1Rnd_SmokeGreen_Grenade_shell",10],
-			["UK3CB_BAF_1Rnd_SmokeBlue_Grenade_shell",10]
+			["1Rnd_Smoke_Grenade_Shell",20],
+			["1Rnd_SmokeRed_Grenade_Shell",10],
+			["1Rnd_SmokeGreen_Grenade_Shell",10],
+			["1Rnd_SmokeBlue_Grenade_Shell",10]
 		]
 	],
 	["40mm Flares",
 		[
 			["UGL_FlareWhite_F",20],
 			["UGL_FlareCIR_F",20]
-		]
-	],	
-	["Breaching Charges",
-		[
-			["tsp_popperCharge_mag",16],
-			["tsp_stickCharge_mag",8],
-			["tsp_frameCharge_mag",8]
 		]
 	],
 	["Explosives",
@@ -98,24 +96,17 @@ _resupplyAvailable = [
 	],
 	["Squad Resupply",
 		[
-			["rhs_mag_30Rnd_556x45_M855A1_Stanag",20],
-			["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red",20],
-			["UK3CB_BAF_12G_Pellets",8],
-			["UK3CB_BAF_12G_Slugs",8],
-			["rhsusf_5Rnd_762x51_m993_Mag",10],
-			["ACE_M84",10],
-			["SmokeShell",10],
-			["ACE_CableTie",20],
+			["50Rnd_570x28_SMG_03",30],
+			["130Rnd_338_Mag",10],
+			["BWA3_PzF3_Tandem_Loaded",4],
+			["HandGrenade",10],
+			["rhs_mag_an_m8hc",10],
+			["1Rnd_HE_Grenade_Shell",10],
+			["1Rnd_Smoke_Grenade_Shell",10],
 			["ACE_bloodIV", 5],
 			["ACE_elasticBandage", 15],
 			["ACE_quikclot", 15]
 		]
-	],
-	["Parachutes",
-		[
-			["B_Parachute", 20]
-		]
 	]
-	
 ];
 _resupplyAvailable

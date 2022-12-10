@@ -140,20 +140,6 @@ _resupplyAvailable = [
 			["ACE_surgicalKit", 2]
 		]
 	],
-	["Squad Resupply",
-		[
-			["AMMO",20],
-			["AMMO_TRACER",20],
-			["CLASS_ID",2],
-			["HandGrenade",10],
-			["rhs_mag_an_m8hc",10],
-			["1Rnd_HE_Grenade_Shell",10],
-			["1Rnd_Smoke_Grenade_Shell",10],
-			["ACE_elasticBandage", 10],
-			["ACE_packingBandage", 10],
-			["ACE_quikclot", 10]
-		]
-	],
 	["Parachutes",
 		[
 			["B_Parachute", 20]
@@ -297,21 +283,6 @@ _resupplyAvailable = [
 			["ACE_tourniquet", 20],
 			["ACE_bodyBag", 20],
 			["ACE_surgicalKit", 2]
-		]
-	],
-	["Squad Resupply",
-		[
-		
-			["AMMO",20],
-			["AMMO_TRACER",20],
-			["CLASS_ID",2],
-			["rhs_mag_rgd5",10],
-			["rhs_mag_rdg2_white",10],
-			["rhs_VOG25",10],
-			["rhs_VG40OP_white",10],
-			["ACE_elasticBandage", 10],
-			["ACE_packingBandage", 10],
-			["ACE_quikclot", 10]
 		]
 	],
 	["Parachutes",

@@ -10,7 +10,7 @@ switch (_loadout) do {
 	default { player addHeadgear "VSM_OGA_Helmet1"};
     case "ar_ld";
 	case "ar_c": {player addHeadgear "rhsusf_cvc_helmet"};
-	case "pil": {player addHeadgear "rhsusf_hgu56p_visor_mask_skull"};
+	case "pil": {player addHeadgear "rhsusf_hgu56p_visor_tan"};
 };
 
 // add vest

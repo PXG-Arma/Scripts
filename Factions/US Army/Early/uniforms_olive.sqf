@@ -3,19 +3,21 @@ params["_side","_faction","_variant", "_loadout"];
 // add uniform
 switch (_loadout) do {
 	default { player forceAddUniform "UK3CB_CW_US_B_Early_U_CombatUniform_01_OLI"};
-	case "pil": { player forceAddUniform "U_B_HeliPilotCoveralls"};
+	case "pil": { player forceAddUniform "UK3CB_CW_US_B_Early_U_H_Pilot_Uniform_02_OLI"};
 };
 	
 // add helmet
 switch (_loadout) do {
 	default { player addHeadgear "UK3CB_MDF_B_H_M1"};
 	case "sqd_med": {player addHeadgear "UK3CB_MDF_B_H_M1_MED"};
-	case "pil": {player addHeadgear "UK3CB_H_Crew_Helmet"};
+	case "ar_ld";
+	case "ar_c": {player addHeadgear "rhsusf_cvc_green_helmet"};
+	case "pil": {player addHeadgear "UK3CB_H_Pilot_Helmet"};
 };
 
 // add vest
 switch (_loadout) do {
-	default { player addVest "UK3CB_V_Belt_Rig_Lite_KHK"};
+	default { player addVest "rhsgref_alice_webbing"};
 };
 
 // add backpack 

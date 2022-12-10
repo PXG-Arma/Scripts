@@ -7,7 +7,9 @@ switch (_loadout) do {
 		player addWeapon selectRandom randomWeaponArray;
 	};
 	case "sqd_ar": {player addWeapon "UK3CB_Bren"};
-	case "sup_mmg_g": {player addWeapon "rhs_weap_fnmag"};
+	case "sup_mmg_g": {player addWeapon "rhs_weap_mg42";
+					   player addPrimaryWeaponItem "rhsgref_mg42_acc_aasight";
+	};
 	case "rcn_amr": {player addWeapon "rhs_weap_m82a1";
 					 player addPrimaryWeaponItem "rhsusf_acc_m8541";
 	};

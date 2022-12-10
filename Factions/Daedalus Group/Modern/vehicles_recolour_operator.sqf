@@ -34,6 +34,15 @@ switch(_vehicleType) do
 			true
 		] call BIS_fnc_initVehicle;
 	};
+
+	case "RHSGREF_A29B_HIDF":
+	{
+		[
+			_vehicle,
+			["Standard",1], 
+			true
+		] call BIS_fnc_initVehicle;
+	};
 	
 	case "UK3CB_AAF_B_Quadbike":
 	{

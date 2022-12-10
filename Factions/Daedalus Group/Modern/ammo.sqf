@@ -21,14 +21,15 @@ switch (_loadout) do {
 	};
 	case "ar_ld";
 	case "ar_c";
-	case "pil": {
-		for "_i" from 1 to 4 do { player addItemToVest "rhs_mag_20Rnd_762x51_m80_fnfal"};
-	};
+	case "pil": {};
 };
 
 // add secondary ammo
 switch (_loadout) do {
 	default {};
+	case "ar_ld";
+	case "ar_c";
+	case "pil";
 	case "sqd_brc": {
 		for "_i" from 1 to 4 do { player addItemToVest "BWA3_12Rnd_45ACP_P12"};
 	};

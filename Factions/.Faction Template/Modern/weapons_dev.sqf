@@ -8,6 +8,7 @@ switch (_loadout) do {
 			  player addPrimaryWeaponItem "MUZZLE";
 			  player addPrimaryWeaponItem "UNDER-BARREL";
 	};
+// 40mm UBGL weapon
 	case "plt";
 	case "sqd_ld";
 	case "rcn_ld";
@@ -16,36 +17,45 @@ switch (_loadout) do {
 					 player addPrimaryWeaponItem "bwa3_acc_varioray_irlaser_black";
 					 player addPrimaryWeaponItem "UNDER-BARREL";
 	};
+// Heavy Grenadier
 	case "sqd_hgre": {player addWeapon "rhs_weap_m32";
 					 player addPrimaryWeaponItem "bwa3_acc_varioray_irlaser_black";
 	};
+// Breacher
 	case "sqd_brc": {player addWeapon "CLASS_ID"};
+// Automatic Rifleman
 	case "sqd_ar": {player addWeapon "CLASS_ID";
 					player addPrimaryWeaponItem "SIGHT";
 					player addPrimaryWeaponItem "bwa3_acc_varioray_irlaser_black";
 					player addPrimaryWeaponItem "MUZZLE";
 					player addPrimaryWeaponItem "UNDER-BARREL";
 	};
+// MMG Gunner
 	case "sup_mmg_g": {player addWeapon "CLASS_ID";
 					   player addPrimaryWeaponItem "SIGHT";
 					   player addPrimaryWeaponItem "bwa3_acc_varioray_irlaser_black";
 					   player addPrimaryWeaponItem "MUZZLE";
 					   player addPrimaryWeaponItem "UNDER-BARREL";
 	};
+// DMR
 	case "rcn_dmr": {player addWeapon "CLASS_ID";
 					 player addPrimaryWeaponItem "SIGHT";
 					 player addPrimaryWeaponItem "bwa3_acc_varioray_irlaser_black";
 					 player addPrimaryWeaponItem "MUZZLE";
 					 player addPrimaryWeaponItem "UNDER-BARREL";
 	};
+// AMR
 	case "rcn_amr": {player addWeapon "CLASS_ID";
 					 player addPrimaryWeaponItem "SIGHT";
 					 player addPrimaryWeaponItem "bwa3_acc_varioray_irlaser_black";
 	};
+// Vehicle Crew
 	case "ar_ld";
 	case "ar_c";
 	case "pil": {player addWeapon "CLASS_ID"};
 };
+
+
 
 // add secondary weapon
 switch (_loadout) do {

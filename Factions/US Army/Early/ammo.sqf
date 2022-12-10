@@ -4,7 +4,7 @@ params["_side","_faction","_variant", "_loadout"];
 switch (_loadout) do {
 	default {
 		for "_i" from 1 to 4 do { player addItemToVest "UK3CB_M16_20rnd_556x45"};
-		for "_i" from 1 to 4 do { player addItemToVest "UK3CB_M16_20rnd_556x45_RT"};
+		for "_i" from 1 to 4 do { player addItemToBackpack "UK3CB_M16_20rnd_556x45_RT"};
 	};
 	case "sqd_brc": {
 		for "_i" from 1 to 6 do { player addItemToVest "6Rnd_00_Buckshot_Magazine"};
@@ -20,10 +20,8 @@ switch (_loadout) do {
 		for "_i" from 1 to 4 do { player addItemToBackpack "UK3CB_M14_20rnd_762x51_RT"};
 	};
 	case "ar_ld";
-	case "ar_c";
-	case "pil": {
-		for "_i" from 1 to 4 do { player addItemToVest "UK3CB_M16_20rnd_556x45"};
-	};
+	case "ar_c": {for "_i" from 1 to 2 do { player addItemToVest "rhsgref_30rnd_1143x23_M1911B_SMG"}};
+	case "pil":{};
 };
 
 // add secondary ammo
@@ -32,14 +30,11 @@ switch (_loadout) do {
 	case "plt";
 	case "logi";
 	case "sqd_ld";
-	case "rcn_ld": {
-		for "_i" from 1 to 4 do { player addItemToVest "6Rnd_357M_Magazine"};
-	}; 
+	case "rcn_ld": {for "_i" from 1 to 4 do { player addItemToVest "6Rnd_357M_Magazine"}}; 
 	case "sqd_gre";
 	case "sqd_brc";
-	case "rcn_dmr": {
-		for "_i" from 1 to 4 do { player addItemToVest "rhsusf_mag_7x45acp_MHP"};
-	}; 
+	case "rcn_dmr";
+	case "pil": {for "_i" from 1 to 4 do { player addItemToVest "rhsusf_mag_7x45acp_MHP"}}; 
 };
 
 // add assistant ammo 

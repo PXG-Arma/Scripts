@@ -17,8 +17,7 @@ _resupplyAvailable = [
 	],
 	["MMG Resupply",
 		[
-			["UK3CB_Bren_30Rnd_762x51_Magazine",20],
-			["UK3CB_Bren_30Rnd_762x51_Magazine_GT",20]
+			["rhsgref_296Rnd_792x57_SmK_belt",10]
 		]
 	],
 	["AMR Resupply",

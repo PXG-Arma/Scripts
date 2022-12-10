@@ -19,6 +19,9 @@ _availableVehicles =
 	["UK3CB_AAF_B_Bell412_Armed",
 	"UK3CB_AAF_B_Bell412_Armed_AT"]],
 
+	["Fixed Wing Attack",
+	["RHSGREF_A29B_HIDF"]],
+
 	["Boat",
 	["B_Boat_Transport_01_F",
 	"UK3CB_BAF_RHIB_GPMG",

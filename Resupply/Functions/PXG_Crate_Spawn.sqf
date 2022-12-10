@@ -80,7 +80,7 @@ if (count _nearVehicles > 0) then {
 		clearBackpackCargoGlobal _crate;
 
 		[_crate] call compile preprocessFile "Scripts\Resupply\Functions\PXG_Crate_Fill.sqf";
-		[_crate, 1] call ace_cargo_fnc_setSize;
+		[_crate, 2] call ace_cargo_fnc_setSize;
 		[_crate, true, [0,1,1], 0, true] call ace_dragging_fnc_setCarryable;
 	};
 

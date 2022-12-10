@@ -35,12 +35,15 @@ switch (_loadout) do {
 	};
 	case "ar_ld";
 	case "ar_c";
-	case "pil": {player addWeapon "UK3CB_FNFAL_OSW"};
+	case "pil": {};
 };
 
 // add secondary weapon
 switch (_loadout) do {
 	default {};
+	case "ar_ld";
+	case "ar_c";
+	case "pil";
 	case "sqd_brc": {player addWeapon "BWA3_P12"};
 };
 

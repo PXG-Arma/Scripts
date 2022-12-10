@@ -25,7 +25,7 @@ switch (_loadout) do {
 	case "ar_ld";
 	case "ar_c";
 	case "pil": {
-		for "_i" from 1 to 4 do { player addItemToVest "rhs_mag_30Rnd_556x45_M855A1_PMAG"};
+		for "_i" from 1 to 4 do { player addItemToVest "rhsusf_mag_40Rnd_46x30_AP"};
 	};
 	case "sqd_hgre": {
 		for "_i" from 1 to 3 do { player addItemToVest "rhsusf_mag_6Rnd_M441_HE"};

@@ -21,13 +21,13 @@ switch (_loadout) do {
 				for "_i" from 1 to 8 do { player addItemToVest "rhsgref_5Rnd_762x54_m38"};
 				for "_i" from 1 to 8 do { player addItemToUniform "rhsgref_5Rnd_762x54_m38"};
 			};
-			case "rhs_weap_Izh18": {
-				for "_i" from 1 to 24 do { player addItemToVest "rhsgref_1Rnd_00Buck"};
-				for "_i" from 1 to 24 do { player addItemToVest "rhsgref_1Rnd_Slug"};
+			case "bnae_spr220_virtual": {
+				for "_i" from 1 to 12 do { player addItemToVest "2Rnd_00_Buckshot_Magazine"};
+				for "_i" from 1 to 12 do { player addItemToVest "2Rnd_Slug_Magazine"};
 			};
 			case "uk3cb_sks_01": {
-				for "_i" from 1 to 8 do { player addItemToVest "uk3cb_10rnd_magazine_sks"};
-				for "_i" from 1 to 8 do { player addItemToUniform "uk3cb_10rnd_magazine_sks"};
+				for "_i" from 1 to 6 do { player addItemToVest "uk3cb_10rnd_magazine_sks"};
+				for "_i" from 1 to 6 do { player addItemToUniform "uk3cb_10rnd_magazine_sks"};
 			};
 			case "uk3cb_ppsh41": {
 				for "_i" from 1 to 4 do { player addItemToVest "uk3cb_PPSH_71rnd_magazine"};
@@ -58,9 +58,12 @@ switch (_loadout) do {
 };
 
 // add secondary ammo
-//switch (_loadout) do {
-//	default {};
-//};
+switch (_loadout) do {
+	default {};
+	case "plt": {
+		for "_i" from 1 to 4 do { player addItemToVest "8Rnd_45ACP_Magazine"};
+	}; 
+};
 
 // add assistant ammo 
 switch (_loadout) do {
@@ -73,8 +76,8 @@ switch (_loadout) do {
 		for "_i" from 1 to 4 do { player addItemToBackpack "rhs_100Rnd_762x54mmR_green"};
 	};
 	case "sup_mat_l": {
-		for "_i" from 1 to 2 do { player addItemToBackpack "rhs_rpg7_PG7VL_mag"};
-		for "_i" from 1 to 1 do { player addItemToBackpack "rhs_rpg7_OG7V_mag"};
+		for "_i" from 1 to 2 do { player addItemToBackpack "rhs_rpg7_OG7V_mag"};
+		for "_i" from 1 to 1 do { player addItemToBackpack "rhs_rpg7_PG7VR_mag"};
 	};
 };
 

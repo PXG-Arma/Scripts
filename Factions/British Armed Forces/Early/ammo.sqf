@@ -3,23 +3,40 @@ params["_side","_faction","_variant", "_loadout"];
 // add primary ammo 
 switch (_loadout) do {
 	default {
-		for "_i" from 1 to 4 do { player addItemToVest "rhs_mag_20Rnd_762x51_m80_fnfal"};
-		for "_i" from 1 to 4 do { player addItemToBackpack "rhs_mag_20Rnd_762x51_m62_fnfal"};
+		switch (primaryWeapon player) do {
+
+		case "bnae_mk1_virtual": {
+					for "_i" from 1 to 6 do { player addItemToVest "10Rnd_303_Magazine"};
+					for "_i" from 1 to 6 do { player addItemToBackpack "10Rnd_303_Magazine"};
+			};
+			case "rhs_weap_l1a1": {
+					for "_i" from 1 to 4 do { player addItemToVest "rhs_mag_20Rnd_762x51_m80_fnfal"};
+					for "_i" from 1 to 4 do { player addItemToBackpack "rhs_mag_20Rnd_762x51_m80_fnfal"};
+			};
+			case "rhs_weap_l1a1_wood": {
+					for "_i" from 1 to 4 do { player addItemToVest "rhs_mag_20Rnd_762x51_m80_fnfal"};
+					for "_i" from 1 to 4 do { player addItemToBackpack "rhs_mag_20Rnd_762x51_m80_fnfal"};
+			};
+
+			default {};
+		};
 	};
 	case "sqd_ar": {
 		for "_i" from 1 to 8 do { player addItemToVest "UK3CB_Bren_30Rnd_762x51_Magazine"};
 		for "_i" from 1 to 8 do { player addItemToBackpack "UK3CB_Bren_30Rnd_762x51_Magazine_GT"};
 	};
 	case "rcn_dmr": {
-		for "_i" from 1 to 8 do { player addItemToVest "UK3CB_BAF_338_5Rnd"};
-		for "_i" from 1 to 8 do { player addItemToBackpack "UK3CB_BAF_338_5Rnd_Tracer"};
+		for "_i" from 1 to 6 do { player addItemToVest "10Rnd_303_Magazine"};
+		for "_i" from 1 to 6 do { player addItemToBackpack "10Rnd_303_Magazine"};
 	};
 	case "sup_mmg_g": {
 		for "_i" from 1 to 2 do { player addItemToVest "rhsusf_100Rnd_762x51_m61_ap"};
 		for "_i" from 1 to 2 do { player addItemToBackpack "rhsusf_100Rnd_762x51_m80a1epr"};
 		for "_i" from 1 to 2 do { player addItemToBackpack "rhsusf_100Rnd_762x51_m62_tracer"};
 	};
+	case "sup_aa_g";
 	case "rcn_ld";
+	case "rcn_spe";
 	case "ar_ld";
 	case "ar_c";
 	case "pil": {
@@ -30,7 +47,7 @@ switch (_loadout) do {
 
 // add secondary ammo
 switch (_loadout) do {
-	default {for "_i" from 1 to 2 do { player addItemToVest "UK3CB_BHP_9_13Rnd"}};
+	default {for "_i" from 1 to 4 do { player addItemToVest "UK3CB_BHP_9_13Rnd"}};
 	
 };
 

@@ -1,5 +1,5 @@
 _resupplyAvailable = [
-	["Rifle Resupply",
+	["Primary Resupply",
 		[
 			["rhsgref_30Rnd_556x45_m21",40],
 			["rhsgref_30Rnd_556x45_m21_t",40]
@@ -105,21 +105,6 @@ _resupplyAvailable = [
 			["ACE_splint", 20],
 			["ACE_bodyBag", 12],
 			["ACE_surgicalKit",2]
-		]
-	],
-	["Squad Resupply",
-		[
-			["rhsgref_30Rnd_556x45_m21",20],
-			["rhsgref_30Rnd_556x45_m21_t",20],
-			["rhs_100Rnd_762x54mmR_green",10],
-			["rhs_weap_M80",2],
-			["rhssaf_mag_br_m84",10],
-			["rhssaf_mag_brd_m83_white",10],			
-			["rhs_VOG25",10],
-			["rhs_VG40OP_white",5],
-			["ACE_bloodIV", 5],
-			["ACE_elasticBandage", 15],
-			["ACE_quikclot", 15]
 		]
 	],
 	["Parachutes",

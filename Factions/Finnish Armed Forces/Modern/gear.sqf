@@ -4,20 +4,18 @@ params["_side","_faction","_variant", "_loadout"];
 switch (_loadout) do {
 	default {};
 	case "rcn_drone": {player linkItem "B_UavTerminal";
-		player addItemToBackpack "ITC_Land_B_AR2e_Packed";
+		player addItemToBackpack "ITC_Land_B_AR2i_Packed";
 		for "_i" from 1 to 2 do { player addItemToBackpack "ACE_UAVBattery"};
 	};
 	
 };
 
-// add diving goggles
+// remove NVG 
 switch (_loadout) do {
-	default {player addItemToBackpack "G_B_Diving";};
-	case "pil": {};
+    default {player unlinkItem "ACE_NVG_Gen4_Black"};
 };
 
-// add cable ties
-switch (_loadout) do {
-	default {for "_i" from 1 to 4 do {player addItemToUniform "ACE_CableTie"}};
-};
-
+// add Javelin CLU
+// switch (_loadout) do {
+// 	case "sup_hat_g": {player addWeapon "UK3CB_BAF_Javelin_CLU"};
+// };

@@ -28,7 +28,7 @@ switch (_loadout) do {
 
 // add secondary ammo
 switch (_loadout) do {
-	default {for "_i" from 1 to 2 do { player addItemToVest "rhsusf_mag_17Rnd_9x19_JHP"}};
+	default {for "_i" from 1 to 4 do { player addItemToVest "rhsusf_mag_17Rnd_9x19_JHP"}};
 };
 
 // add assistant ammo 

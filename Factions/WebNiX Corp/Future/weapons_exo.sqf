@@ -26,7 +26,8 @@ switch (_loadout) do {
 switch (_loadout) do {
 	default {};
 	case "plt";
-	case "sqd_ld": { player addWeapon "rhs_weap_M320";
+	case "sqd_ld";
+	case "sqd_gre": { player addWeapon "rhs_weap_M320";
 	};
 };
 

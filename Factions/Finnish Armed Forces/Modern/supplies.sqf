@@ -1,31 +1,43 @@
 _resupplyAvailable = [
-	["Rifle Resupply",
+	// NATO
+	["Primary Resupply",
 		[
-			["UK3CB_G3_20rnd_762x51",40],
-			["UK3CB_G3_20rnd_762x51_GT",40]
+			["30Rnd_762x39_Magazine",80]
+		]
+	],
+	["Shotgun Resupply",
+		[
+			["rhsusf_8Rnd_00Buck",20],
+			["rhsusf_8Rnd_Slug",20]
 		]
 	],
 	["AR Resupply",
 		[
-			["BWA3_120Rnd_762x51_Tracer",20]
+			["rhsusf_200Rnd_556x45_M855_mixed_soft_pouch",20]
 		]
 	],
 	["MMG Resupply",
 		[
-			["rhsusf_100Rnd_762x51_m61_ap",10],
+			["rhsusf_100Rnd_762x51",10],
 			["rhsusf_100Rnd_762x51_m62_tracer",10],
-			["rhsusf_100Rnd_762x51",10]
+			["rhsusf_100Rnd_762x51_m61_ap",10]
+		]
+	],
+	["DMR Resupply",
+		[
+			["5Rnd_338LM_Magazine",20],
+			["5Rnd_APDS_338LM_Magazine",20]
+		]
+	],
+	["AMR Resupply",
+		[
+			["rhsusf_mag_10Rnd_STD_50BMG_M33",10],
+			["rhsusf_mag_10Rnd_STD_50BMG_mk211",10]
 		]
 	],
 	["LAT Resupply",
 		[
-			["rhs_weap_M136",8]
-		]
-	],
-	["MAT Resuppply",
-		[
-			["rhs_mag_maaws_HEAT",4],
-			["rhs_mag_maaws_HEDP",4]
+			["rhs_weap_m72a7",8]
 		]
 	],
 	["AA Resupply",
@@ -64,7 +76,14 @@ _resupplyAvailable = [
 			["UGL_FlareWhite_F",20],
 			["UGL_FlareCIR_F",20]
 		]
-	],	
+	],
+	["Breaching Charges",
+		[
+			["tsp_popperCharge_mag",16],
+			["tsp_stickCharge_mag",8],
+			["tsp_frameCharge_mag",8]
+		]
+	],
 	["Explosives",
 		[
 			["ACE_Clacker",2],
@@ -75,46 +94,34 @@ _resupplyAvailable = [
 	],
 	["Blood IVs",
 		[
-			["ACE_bloodIV", 25],
-			["ACE_bloodIV_500", 25],
-			["ACE_bloodIV_250", 25]
+			["ACE_bloodIV", 20],
+			["ACE_bloodIV_500", 20],
+			["ACE_bloodIV_250", 20]
 		]
 	],
 	["Bandages",
 		[
-			["ACE_elasticBandage", 50],
-			["ACE_packingBandage", 50],
-			["ACE_quikclot", 50]
+			["ACE_elasticBandage", 40],
+			["ACE_packingBandage", 40],
+			["ACE_quikclot", 40]
 		]
 	],
 	["Autoinjectors",
 		[
-			["ACE_epinephrine", 25],
-			["ACE_morphine", 25],
-			["ACE_adenosine", 25]
+			["ACE_epinephrine", 20],
+			["ACE_morphine", 20]
 		]
 	],
 	["Misc. Medical Supplies",
 		[
 			["ACE_tourniquet", 20],
-			["ACE_splint", 20],
 			["ACE_bodyBag", 20],
 			["ACE_surgicalKit", 2]
 		]
 	],
-	["Squad Resupply",
+	["GMW Turret Resupply",
 		[
-			["UK3CB_G3_20rnd_762x51",20],
-			["UK3CB_G3_20rnd_762x51_GT",20],
-			["BWA3_120Rnd_762x51_Tracer",10],
-			["rhs_weap_M136",2],
-			["HandGrenade",10],
-			["rhs_mag_an_m8hc",10],
-			["1Rnd_HE_Grenade_Shell",10],
-			["1Rnd_Smoke_Grenade_Shell",10],
-			["ACE_bloodIV", 5],
-			["ACE_elasticBandage", 15],
-			["ACE_quikclot", 15]
+			["rnt_gmw_kasten_fake",20]
 		]
 	],
 	["Parachutes",

@@ -3,7 +3,7 @@ params["_side","_faction","_variant", "_loadout"];
 // add primary weapon
 switch (_loadout) do {
 	default { 
-		randomWeaponArray = ["rhs_weap_akm","rhs_weap_m4_carryhandle","rhs_weap_l1a1_wood","rhs_weap_m38","rhs_weap_Izh18","uk3cb_sks_01","uk3cb_ppsh41"]; 
+		randomWeaponArray = ["rhs_weap_akm","rhs_weap_m4_carryhandle","rhs_weap_l1a1_wood","rhs_weap_m38","bnae_spr220_virtual","uk3cb_sks_01","uk3cb_ppsh41"]; 
 		player addWeapon selectRandom randomWeaponArray;
 	};
 	case "plt";
@@ -17,9 +17,10 @@ switch (_loadout) do {
 };
 
 // add secondary weapon
-//switch (_loadout) do {
-//	default {};
-//};
+switch (_loadout) do {
+	default {};
+	case "plt":{ player addWeapon "bnae_r1_e_virtual"};
+};
 
 // add launcher
 switch (_loadout) do {
@@ -27,5 +28,6 @@ switch (_loadout) do {
 	case "sqd_gre": {player addWeapon "rhs_weap_rshg2"};
 	case "sqd_lat": {player addWeapon "rhs_weap_rpg7"};
 	case "sup_mat_g": {	player addWeapon "rhs_weap_rpg7";
-						player addSecondaryWeaponItem "rhs_acc_pgo7v3"};
+						player addSecondaryWeaponItem "rhs_acc_pgo7v3";
+						player addSecondaryWeaponItem "rhs_rpg7_PG7VL_mag"};
 };

@@ -23,7 +23,7 @@ switch(_vehicleType) do
 
 	case "I_UAV_06_F":
 	{
-		[_vehicle,  1] call ace_cargo_fnc_setSpace;
+		[_vehicle,  2] call ace_cargo_fnc_setSpace;
 	};
 	default {};
 };

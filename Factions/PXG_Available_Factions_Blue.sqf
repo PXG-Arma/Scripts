@@ -1,14 +1,14 @@
 _availableFactions = [
+	".Faction Template",
 	"Belgian Special Forces",
 	"British Armed Forces",
-	"British Special Boat Service",
 	"Bundeswehr",
 	"Croatian SFG",
-	"Hellenic Armed Forces",
+	"Finnish Armed Forces",
 	"SWAT",
 	"US Army",
-	"US Marine Corps"
-
+	"US Marine Corps",
+	"US Space Force"
 ];
 
 _availableFactions

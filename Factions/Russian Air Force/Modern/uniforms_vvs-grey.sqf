@@ -16,6 +16,6 @@ switch (_loadout) do {
 };
 
 // add backpack 
-switch (_loadout) do {
-	default { player addBackpack "B_Parachute"};
-};
+//switch (_loadout) do {
+//	default {};
+//};

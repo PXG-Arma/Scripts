@@ -3,7 +3,7 @@ params["_side","_faction","_variant", "_loadout"];
 // add primary weapon
 switch (_loadout) do {
 	default { 
-		randomWeaponArray = ["rhs_weap_l1a1","rhs_weap_m14","rhs_weap_savz58p","rhs_weap_aks74","rhs_weap_m1garand_sa43","UK3CB_Enfield","UK3CB_Sten","rhs_weap_m3a1"]; 
+		randomWeaponArray = ["rhs_weap_l1a1","rhs_weap_m14","rhs_weap_savz58p","rhs_weap_aks74","rhs_weap_m1garand_sa43","bnae_mk1_virtual","UK3CB_Sten","rhs_weap_m3a1"]; 
 		player addWeapon selectRandom randomWeaponArray;
 	};
 	case "sqd_ar": {player addWeapon "UK3CB_Bren"};
@@ -18,6 +18,10 @@ switch (_loadout) do {
 // add secondary weapon
 switch (_loadout) do {
 	default {};
+	case "plt";
+	case "logi";
+	case "sqd_ld";
+	case "rcn_ld":{ player addWeapon "bnae_saa_virtual"};
 	case "ar_ld";
 	case "ar_c": {player addWeapon "rhs_weap_tt33"};
 };

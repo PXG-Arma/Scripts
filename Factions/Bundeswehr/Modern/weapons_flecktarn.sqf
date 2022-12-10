@@ -2,17 +2,12 @@ params["_side","_faction","_variant", "_loadout"];
 
 // add primary weapon
 switch (_loadout) do {
-	default { player addWeapon "BWA3_G36A3";
-			  player addPrimaryWeaponItem "bwa3_acc_varioray_irlaser_black";
-			  player addPrimaryWeaponItem "bwa3_optic_eotech552"
-	};
-	case "";
+	default { player addWeapon "BWA3_G36A1";
+			  player addPrimaryWeaponItem "bwa3_acc_varioray_irlaser_black"};
 	case "plt";
 	case "sqd_gre";
-	case "sqd_ld": {player addWeapon "BWA3_G36A3_AG40";
-					player addPrimaryWeaponItem "bwa3_acc_varioray_irlaser_black";
-			        player addPrimaryWeaponItem "bwa3_optic_eotech552"
-	};
+	case "sqd_ld": {player addWeapon "BWA3_G36A1_AG40";
+					player addPrimaryWeaponItem "bwa3_acc_varioray_irlaser_black"};
 	case "sqd_ar": {player addWeapon "BWA3_MG4";
 					player addPrimaryWeaponItem "bwa3_optic_zo4x30";
 					player addPrimaryWeaponItem "bwa3_acc_varioray_irlaser_black";

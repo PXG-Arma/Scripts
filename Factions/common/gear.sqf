@@ -17,10 +17,13 @@ switch (_loadout) do {
 		player addItemToBackpack "ACE_Fortify";
 		player addItemToBackpack "ACE_EntrenchingTool";
 	};
+	case "ar_ld";
 	case "ar_c";
 	case "pil";
 	case "sup_hmg_l";
 	case "sup_hmg_g";
+	case "sup_hat_l";
+	case "sup_hat_g";
 	case "sup_gmg_l";
 	case "sup_gmg_g";
 	case "sup_mor_l";
@@ -78,6 +81,17 @@ switch (_loadout) do {
 // add Head Lamp
 switch (_loadout) do {
     default {player addItemToBackpack "WBK_HeadLampItem"};
+	case "ar_ld";
+	case "ar_c";
+	case "pil";
+	case "sup_hmg_l";
+	case "sup_hmg_g";
+	case "sup_hat_l";
+	case "sup_hat_g";
+	case "sup_gmg_l";
+	case "sup_gmg_g";
+	case "sup_mor_l";
+	case "sup_mor_g": {player addItemToVest "WBK_HeadLampItem"};
 };
 
 // add Range Card
@@ -94,6 +108,13 @@ switch (_loadout) do {
 	case "sup_mor_l";
 	case "sup_mor_g": {player addItemToUniform "ACE_RangeTable_82mm"};
 };
+
+// add Patrachutes to pilots
+switch (_loadout) do {
+	default {};
+	case "pil": {player addBackpack "B_Parachute"};
+};
+
 
 // early loadouts
 if (_variantEra == "Early") then { player addWeapon "binocular"};

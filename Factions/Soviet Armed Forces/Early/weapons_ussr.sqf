@@ -19,13 +19,17 @@ switch (_loadout) do {
 	};
 	case "sup_mmg_g": {player addWeapon "rhs_weap_pkm";
 	};
-	case "pil": {player addWeapon "rhs_weap_aks74";
-	};
+	case "ar_ld";
+	case "ar_c";
+	case "pil": {};
 };
 
 // add secondary weapon
 switch (_loadout) do {
 	default {};
+	case "ar_ld";
+	case "ar_c";
+	case "pil";
 	case "logi":{ player addWeapon "rhs_weap_makarov_pm";
 	};
 };

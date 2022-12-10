@@ -10,6 +10,7 @@ switch (_loadout) do {
 switch (_loadout) do {
 	default { player addHeadgear "UK3CB_MDF_B_H_M1"};
 	case "sqd_med": {player addHeadgear "UK3CB_MDF_B_H_M1_MED"};
+	case "pil": {player addHeadgear "UK3CB_H_Crew_Helmet"};
 };
 
 // add vest

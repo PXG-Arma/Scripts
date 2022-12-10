@@ -32,11 +32,11 @@ _availableVehicles =
 	["BWA3_Panzerhaubitze2000_Fleck"]],
 
 	["Rotary Transport",
-	["UK3CB_B_Bell412_Utility_HIDF",
-	"UK3CB_BAF_Merlin_HC3_18_DPMW"]],
+	["BWA3_NH90_TTH_Fleck",
+	"BWA3_NH90_TTH_M3M_Fleck"]],
 	
 	["Rotary Attack",
-	["BWA3_Tiger_RMK_Universal"]],
+	["BWA3_Tiger_RMK_Heavy"]],
 	
 	["Turrets",
 	["rnt_gmw_static",

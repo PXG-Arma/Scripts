@@ -10,7 +10,7 @@ switch (_loadout) do {
 	
 };
 
-// remove NVG 
-switch (_loadout) do {
-    default {player unlinkItem "ACE_NVG_Gen4_Black"};
-};
+// add Javelin CLU
+// switch (_loadout) do {
+// 	case "sup_hat_g": {player addWeapon "UK3CB_BAF_Javelin_CLU"};
+// };

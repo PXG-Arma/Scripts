@@ -3,7 +3,7 @@ _availableFactions = [
 	"Daedalus Group",
 	"Northern Isle Separatists",
 	"Serbian Brigade",
-	"WebNiX Corp"
+	"WebNiX Corporation"
 ];
 
 _availableFactions

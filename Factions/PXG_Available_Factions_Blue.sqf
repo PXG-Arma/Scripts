@@ -7,8 +7,8 @@ _availableFactions = [
 	"Finnish Armed Forces",
 	"SWAT",
 	"US Army",
-	"US Marine Corps",
-	"US Space Force"
+	"US EExpeditionary Force",
+	"US Marine Corps"
 ];
 
 _availableFactions

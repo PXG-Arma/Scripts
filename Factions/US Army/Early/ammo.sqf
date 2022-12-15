@@ -44,19 +44,12 @@ switch (_loadout) do {
 		for "_i" from 1 to 2 do { player addItemToBackpack "rhsusf_100Rnd_762x51"};
 		for "_i" from 1 to 2 do { player addItemToBackpack "rhsusf_100Rnd_762x51_m62_tracer"};
 	};
-		case "sup_mat_l": {
-		for "_i" from 1 to 1 do { player addItemToBackpack "rhs_mag_maaws_HEAT"};
-		for "_i" from 1 to 1 do { player addItemToBackpack "rhs_mag_maaws_HEDP"};
-	};
+	case "sup_hat_l": {	player addWeapon "ace_dragon_super"};
 };
 
 // add other ammo 
 switch (_loadout) do {
 	default {};
-	case "sup_mat_g": {
-		for "_i" from 1 to 1 do { player addItemToBackpack "rhs_mag_maaws_HEDP"};
-		for "_i" from 1 to 1 do { player addItemToBackpack "rhs_mag_maaws_HEAT"};
-	};
 };
 
 // add grenades

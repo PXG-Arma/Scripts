@@ -40,8 +40,8 @@ switch (_loadout) do {
 	case "sup_mmg_l";
 	case "sup_mat_l";
 	case "rcn_spe": {player addBackpack "rhs_tortila_olive"};
-	case "sup_hat_l": {player addBackpack "rhs_TOW_Tripod_Bag"};
-	case "sup_hat_g": {player addBackpack "rhs_Tow_Gun_Bag"};
+	case "sup_tow_l": {player addBackpack "rhs_TOW_Tripod_Bag"};
+	case "sup_tow_g": {player addBackpack "rhs_Tow_Gun_Bag"};
 	case "sup_mor_l": {player addBackpack "B_Mortar_01_support_F"};
 	case "sup_mor_g": {player addBackpack "B_Mortar_01_weapon_F"};
 	case "ar_ld";

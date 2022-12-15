@@ -1,46 +1,47 @@
 _resupplyAvailable = [
-	["Primary Resupply",
+	["Rifle Resupply",
 		[
-			["UK3CB_M16_20rnd_556x45",40],
-			["UK3CB_M16_20rnd_556x45_RT",40]
+			["rhs_mag_30Rnd_556x45_M855A1_PMAG",40],
+			["rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red",40]
 		]
 	],
-	["Shotgun Resupply",
+	["AR Resupply",
 		[
-			["6Rnd_00_Buckshot_Magazine",10],
-			["6Rnd_Slug_Magazine",10]
+			["rhsusf_100Rnd_556x45_soft_pouch_coyote",10],
+			["rhsusf_100Rnd_556x45_mixed_soft_pouch_coyote",10]
 		]
 	],
 	["MMG Resupply",
 		[
+			["rhsusf_100Rnd_762x51_m61_ap",10],
 			["rhsusf_100Rnd_762x51_m62_tracer",10],
-			["rhsusf_100Rnd_762x51",10]
-		]
-	],
-	["DMR Resupply",
-		[
-			["UK3CB_M14_20rnd_762x51",15],
-			["UK3CB_M14_20rnd_762x51_RT",15]
+			["rhsusf_100Rnd_762x51_m80a1epr",10]
 		]
 	],
 	["LAT Resupply",
 		[
-			["rhs_weap_m72a7",8]
+			["launch_NLAW_F",8]
 		]
 	],
 	["HAT Resuppply",
 		[
-			["ace_dragon_super",2]
+			["UK3CB_BAF_Javelin_Slung_Tube",2]
+		]
+	],
+	["AA Resupply",
+		[
+			["rhs_fim92_mag",4]
 		]
 	],
 	["Hand Grenades",
 		[
-			["HandGrenade",20]
+			["HandGrenade",20],
+			["ACE_M84",10]
 		]
 	],
 	["Smoke Grenades",
 		[
-			["rhs_mag_an_m8hc",10],
+			["SmokeShell",10],
 			["SmokeShellRed",10],
 			["SmokeShellGreen",10],
 			["SmokeShellBlue",10]
@@ -48,7 +49,7 @@ _resupplyAvailable = [
 	],
 	["40mm Grenades",
 		[
-			["1Rnd_HE_Grenade_Shell",20]
+			["1Rnd_HE_Grenade_Shell",30]
 		]
 	],
 	["40mm Smoke Rounds",
@@ -61,10 +62,17 @@ _resupplyAvailable = [
 	],
 	["40mm Flares",
 		[
-			["UGL_FlareWhite_F",30],
+			["UGL_FlareWhite_F",20],
 			["UGL_FlareCIR_F",20]
 		]
-	],	
+	],
+	["Breaching Charges",
+		[
+			["tsp_popperCharge_mag",16],
+			["tsp_stickCharge_mag",8],
+			["tsp_frameCharge_mag",8]
+		]
+	],
 	["Explosives",
 		[
 			["ACE_Clacker",2],
@@ -100,11 +108,35 @@ _resupplyAvailable = [
 			["ACE_surgicalKit", 2]
 		]
 	],
+	["Vehicle Resupply 7.62mm",
+		[
+			["UK3CB_BAF_762_200Rnd_T",20]
+		]
+	],	
+	["Vehicle Resupply Milan",
+		[
+			["UK3CB_BAF_1Rnd_Milan",4]
+		]
+	],
+	["7.62 Turret Ammo",
+		[
+			["UK3CB_BAF_762_200Rnd_T",15]
+		]
+	],
+	["12.7 Turret Ammo",
+		[
+			["UK3CB_BAF_127_100Rnd",10]
+		]
+	],
+	["40mm Turret Ammo",
+		[
+			["UK3CB_BAF_32Rnd_40mm_g_Box",5]
+		]
+	],
 	["Parachutes",
 		[
 			["B_Parachute", 20]
 		]
 	]
-	
 ];
 _resupplyAvailable

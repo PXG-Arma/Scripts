@@ -43,7 +43,7 @@ switch (_loadout) do {
 	};
 	case "sup_mat_l": {
 		for "_i" from 1 to 1 do { player addItemToBackpack "BWA3_CarlGustav_HEDP"};
-		for "_i" from 1 to 2 do { player addItemToBackpack "BWA3_CarlGustav_HEAT"};
+		for "_i" from 1 to 1 do { player addItemToBackpack "BWA3_CarlGustav_HEAT"};
 	};
 };
 

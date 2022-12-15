@@ -28,5 +28,5 @@ switch (_loadout) do {
 switch (_loadout) do {
 	default {};
 	case "sqd_lat": {player addWeapon "rhs_weap_m72a7"};
-	case "sup_mat_g": {player addWeapon "rhs_weap_maaws"};
+	case "sup_hat_g": {	player addWeapon "ace_dragon_super"};
 };

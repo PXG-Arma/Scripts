@@ -8,8 +8,7 @@ _availableVehicles =
 	["Armed Car/MRAP",
 	["rhsusf_m1165a1_gmv_m2_m240_socom_d",
 	"rhsusf_m1165a1_gmv_m134d_m240_socom_d",
-	"rhsusf_M1238A1_socom_d",
-	"rhsusf_M1238A1_M2_socom_d"]],
+	"rhsusf_M1238A1_socom_d"]],
 
 	["Rotary Transport",
 	["RHS_MELB_MH6M",

@@ -22,8 +22,8 @@ switch (_loadout) do {
 	case "pil";
 	case "sup_hmg_l";
 	case "sup_hmg_g";
-	case "sup_hat_l";
-	case "sup_hat_g";
+	case "sup_tow_l";
+	case "sup_tow_g";
 	case "sup_gmg_l";
 	case "sup_gmg_g";
 	case "sup_mor_l";
@@ -86,8 +86,8 @@ switch (_loadout) do {
 	case "pil";
 	case "sup_hmg_l";
 	case "sup_hmg_g";
-	case "sup_hat_l";
-	case "sup_hat_g";
+	case "sup_tow_l";
+	case "sup_tow_g";
 	case "sup_gmg_l";
 	case "sup_gmg_g";
 	case "sup_mor_l";
@@ -99,6 +99,7 @@ switch (_loadout) do {
 	default {};
 	case "sqd_dmr";
 	case "rcn_dmr";
+	case "rcn_sni";
 	case "rcn_amr": {player addItemToUniform "ACE_RangeCard"};
 };
 
@@ -157,6 +158,7 @@ if (_variantEra == "Late") then {
 		case "sqd_dmr";
 		case "rcn_ld";
 		case "rcn_dmr";
+		case "rcn_sni";
 		case "rcn_amr";
 		case "sup_mmg_l";
 		case "sup_mmg_g";	
@@ -196,6 +198,7 @@ if (_variantEra == "Modern") then {
 		case "sqd_dmr";
 		case "rcn_ld";
 		case "rcn_dmr";
+		case "rcn_sni";
 		case "rcn_amr";
 		case "sup_mmg_l";
 		case "sup_mmg_g";	
@@ -231,6 +234,7 @@ if (_variantEra == "Future") then {
 		case "sqd_aar";
 		case "sqd_dmr";
 		case "rcn_ld";
+		case "rcn_sni";
 		case "rcn_dmr";
 		case "rcn_amr";
 		case "sup_mmg_l";

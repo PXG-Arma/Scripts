@@ -7,13 +7,15 @@ _resupplyAvailable = [
 	],
 	["AR Resupply",
 		[
-			["rhs_75Rnd_762x39mm",20],
-			["rhs_75Rnd_762x39mm_tracer",20]
+			["75rnd_762x39_AK12_Mag_F",20],
+			["75rnd_762x39_AK12_Mag_Tracer_F",20]
 		]
 	],
 	["MMG Resupply",
 		[
-			["rhs_100Rnd_762x54mmR_green",20]
+			["rhs_100Rnd_762x54mmR_7BZ3",10],
+			["rhs_100Rnd_762x54mmR_green",10],
+			["rhs_100Rnd_762x54mmR",10]
 		]
 	],
 	["DMR Resupply",

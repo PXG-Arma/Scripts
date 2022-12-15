@@ -17,7 +17,9 @@ _resupplyAvailable = [
 	],
 	["MMG Resupply",
 		[
-			["rhs_100Rnd_762x54mmR_green",10]
+			["rhs_100Rnd_762x54mmR_7BZ3",10],
+			["rhs_100Rnd_762x54mmR_green",10],
+			["rhs_100Rnd_762x54mmR",10]
 		]
 	],
 	["MAT Resupply (HEAT)",

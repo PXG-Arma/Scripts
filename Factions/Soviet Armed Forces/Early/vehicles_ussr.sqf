@@ -31,9 +31,6 @@ _availableVehicles =
 	["UK3CB_CW_SOV_O_EARLY_Gaz66_ZU23", 
 	"UK3CB_CW_SOV_O_EARLY_MTLB_ZU23"]],
   
-    ["SPG",
-    ["UK3CB_CW_SOV_O_Early_D30"]],
-	
 	["Rotary Transport",
 	["UK3CB_CW_SOV_O_EARLY_Mi8"]],
 	
@@ -53,7 +50,8 @@ _availableVehicles =
 	["Turrets",
 	["UK3CB_CW_SOV_O_Early_DSHKM",
 	"UK3CB_CW_SOV_O_Early_DSHkM_Mini_TriPod",
-	"UK3CB_CW_SOV_O_Early_SPG9"]]
+	"UK3CB_CW_SOV_O_Early_SPG9",
+	"UK3CB_CW_SOV_O_Early_D30"]]
 	
 ];
 _availableVehicles

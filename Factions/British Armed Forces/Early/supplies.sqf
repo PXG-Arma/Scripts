@@ -19,9 +19,8 @@ _resupplyAvailable = [
 	],
 	["MMG Resupply",
 		[
-			["rhsusf_100Rnd_762x51_m61_ap",10],
 			["rhsusf_100Rnd_762x51_m62_tracer",10],
-			["rhsusf_100Rnd_762x51_m80a1epr",10]
+			["rhsusf_100Rnd_762x51",10]
 		]
 	],
 	["LAT Resupply",

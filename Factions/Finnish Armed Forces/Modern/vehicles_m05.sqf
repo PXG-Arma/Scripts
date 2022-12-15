@@ -6,8 +6,7 @@ _availableVehicles =
 	"rhs_kamaz5350_msv",
 	"C_Truck_02_fuel_F",
 	"UK3CB_KRG_B_M270_Transport",
-	"Redd_Tank_LKW_leicht_gl_Wolf_Flecktarn_FueFu",
-	"UK3CB_BAF_LandRover_Soft_FFR_Green_A_MTP"]],
+	"Redd_Tank_LKW_leicht_gl_Wolf_Flecktarn_FueFu"]],
 	
 	["Armed Car/MRAP",
 	["BWA3_Eagle_Fleck",

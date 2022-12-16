@@ -9,3 +9,9 @@ switch (_loadout) do {
 	};
 	
 };
+
+// add Spotting Scope
+switch (_loadout) do {
+	case "sqd_dmr": {player addItemToBackpack "ACE_SpottingScope";
+	                player addItemToBackpack "ACE_Tripod"};
+};

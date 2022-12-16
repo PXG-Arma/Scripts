@@ -7,8 +7,8 @@ switch (_loadout) do {
 		for "_i" from 1 to 4 do { player addItemToVest "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red"};
 	};
 	case "sqd_hgre": {
-		for "_i" from 1 to 3 do { player addItemToVest "rhsusf_mag_6Rnd_M441_HE"};
-		for "_i" from 1 to 3 do { player addItemToBackpack "rhsusf_mag_6Rnd_M441_HE"};
+		for "_i" from 1 to 2 do { player addItemToVest "rhsusf_mag_6Rnd_M441_HE"};
+		for "_i" from 1 to 4 do { player addItemToBackpack "rhsusf_mag_6Rnd_M441_HE"};
 		for "_i" from 1 to 1 do { player addItemToBackpack "rhsusf_mag_6Rnd_M713_red"};
 		for "_i" from 1 to 1 do { player addItemToBackpack "rhsusf_mag_6Rnd_M714_white"}
 	};
@@ -30,8 +30,8 @@ switch (_loadout) do {
 		for "_i" from 1 to 4 do { player addItemToBackpack "rhsusf_20Rnd_762x51_SR25_m993_Mag"};
 	};
 	case "rcn_sni": {
-		for "_i" from 1 to 6 do { player addItemToVest "rhsusf_5Rnd_300winmag_xm2010"};
-		for "_i" from 1 to 6 do { player addItemToBackpack "rhsusf_5Rnd_300winmag_xm2010"};
+		for "_i" from 1 to 8 do { player addItemToVest "rhsusf_5Rnd_300winmag_xm2010"};
+		for "_i" from 1 to 8 do { player addItemToBackpack "rhsusf_5Rnd_300winmag_xm2010"};
 	};
 	case "pil": {
 		for "_i" from 1 to 4 do { player addItemToVest "UK3CB_MP5_30Rnd_9x19_Magazine"};

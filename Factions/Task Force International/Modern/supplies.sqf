@@ -20,7 +20,8 @@ _resupplyAvailable = [
 	],
 	["DMR Resupply",
 		[
-			["rhs_10Rnd_762x54mmR_7N14",30]
+			["rhs_10Rnd_762x54mmR_7N11",15],
+			["rhs_10Rnd_762x54mmR_7N14",15]
 		]
 	],
 	["LAT Resupply",

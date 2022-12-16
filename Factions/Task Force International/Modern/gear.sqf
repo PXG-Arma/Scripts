@@ -14,3 +14,9 @@ switch (_loadout) do {
 switch (_loadout) do {
     default {player unlinkItem "ACE_NVG_Gen4_Black"};
 };
+
+// add Spotting Scope
+switch (_loadout) do {
+	case "rcn_dmr": {player addItemToBackpack "ACE_SpottingScope";
+	                player addItemToBackpack "ACE_Tripod"};
+};

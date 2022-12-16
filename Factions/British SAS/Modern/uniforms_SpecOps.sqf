@@ -1,6 +1,5 @@
 params["_side","_faction","_variant", "_loadout"]; 
-randomOfficerUniformArray = ["LOP_U_PMC_red_hi","LOP_U_PMC_blue_hi"];
-randomUniformArray = ["UK3CB_ADM_B_U_Shirt_Pants_01_BLU_WDL_ALT", "UK3CB_ADM_B_U_Shirt_Pants_01_BLU_WDL", "UK3CB_LNM_B_U_Shirt_Pants_05", "UK3CB_LNM_B_U_Shirt_Pants_06", "UK3CB_LNM_B_U_Shirt_Pants_07", "UK3CB_LNM_B_U_Shirt_Pants_08", "UK3CB_LNM_B_U_Shirt_Pants_09", "UK3CB_LNM_B_U_Shirt_Pants_10", "UK3CB_LNM_B_U_Shirt_Pants_11", "UK3CB_LNM_B_U_Shirt_Pants_12", "UK3CB_ADM_B_U_Shirt_Pants_01_GRN_WDL_ALT", "UK3CB_ADM_B_U_Shirt_Pants_01_GRN_WDL", "UK3CB_LNM_B_U_Shirt_Pants_13", "UK3CB_LNM_B_U_Shirt_Pants_14", "UK3CB_LNM_B_U_Shirt_Pants_15", "UK3CB_LNM_B_U_Shirt_Pants_16", "UK3CB_LNM_B_U_Shirt_Pants_01", "UK3CB_LNM_B_U_Shirt_Pants_02", "UK3CB_LNM_B_U_Shirt_Pants_03", "UK3CB_LNM_B_U_Shirt_Pants_04"];
+randomUniformArray = ["UK3CB_LNM_B_U_Shirt_Pants_05", "UK3CB_LNM_B_U_Shirt_Pants_07", "UK3CB_LNM_B_U_Shirt_Pants_08", "UK3CB_LNM_B_U_Shirt_Pants_09", "UK3CB_LNM_B_U_Shirt_Pants_10", "UK3CB_LNM_B_U_Shirt_Pants_12", "UK3CB_LNM_B_U_Shirt_Pants_13", "UK3CB_LNM_B_U_Shirt_Pants_15", "UK3CB_LNM_B_U_Shirt_Pants_16", "UK3CB_LNM_B_U_Shirt_Pants_01", "UK3CB_LNM_B_U_Shirt_Pants_02", "UK3CB_LNM_B_U_Shirt_Pants_03"];
 
 
 // add uniform
@@ -8,17 +7,11 @@ switch (_loadout) do {
 	default { 
 		player forceAddUniform selectRandom randomUniformArray;
 	};
-	case "plt";
-	case "logi";
-	case "tacp";
-	case "sqd_ld";
-	case "sup_mmg_l";
-	case "sup_hat_l";
-	case "sup_aa_l";
-	case "sup_mor_l";
 	case "rcn_ld";
-	case "ar_ld";
-	case "pil": {player forceAddUniform selectRandom randomOfficerUniformArray};
+	case "rcn_spe";
+	case "rcn_dmr";
+	case "rcn_sni";
+	case "rcn_drone": {player forceAddUniform "U_O_R_Gorka_01_black_F"};
 };
 	
 // add helmet

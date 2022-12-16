@@ -16,3 +16,8 @@ switch (_loadout) do {
     case "pil": {player addItemToBackpack "ACRE_PRC117F"};
 };
 
+// add Spotting Scope
+switch (_loadout) do {
+	case "rcn_dmr": {player addItemToBackpack "ACE_SpottingScope";
+	                player addItemToBackpack "ACE_Tripod"};
+};

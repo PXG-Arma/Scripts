@@ -2,22 +2,24 @@ params["_side","_faction","_variant", "_loadout"];
 
 // add primary weapon
 switch (_loadout) do {
-	default { player addWeapon "rhs_weap_m4a1_carryhandle_grip2";
-			  player addPrimaryWeaponItem "optic_Hamr";
+	default { player addWeapon "rhs_weap_m4a1";
+			  player addPrimaryWeaponItem "rhsusf_acc_acog_usmc";
 			  player addPrimaryWeaponItem "rhsusf_acc_SFMB556";
-			  player addPrimaryWeaponItem "bwa3_acc_varioray_irlaser_black"
+			  player addPrimaryWeaponItem "rhsusf_acc_grip1";
+			  player addPrimaryWeaponItem "rhsusf_acc_anpeq15_bk";
 	};
 	case "plt";
 	case "sqd_ld";
 	case "rcn_ld";
-	case "sqd_gre":{ player addWeapon "rhs_weap_m4a1_carryhandle_m203";
-					player addPrimaryWeaponItem "optic_Hamr";
-					player addPrimaryWeaponItem "bwa3_acc_varioray_irlaser_black";
-					player addPrimaryWeaponItem "rhsusf_acc_SFMB556"
+	case "sqd_gre":{ player addWeapon "rhs_weap_m4a1_m320";
+					player addPrimaryWeaponItem "rhsusf_acc_acog_usmc";
+					player addPrimaryWeaponItem "rhsusf_acc_anpeq15_bk";
+					player addPrimaryWeaponItem "rhsusf_acc_SFMB556";
 	};
+	case "sqd_hgre": { player addWeapon "rhs_weap_m32"};
 	case "sqd_ar": {player addWeapon "rhs_weap_m249_pip_L_para";
-					player addPrimaryWeaponItem "optic_Hamr";
-					player addPrimaryWeaponItem "rhsusf_acc_SFMB556"
+					player addPrimaryWeaponItem "rhsusf_acc_eotech_xps3";
+					player addPrimaryWeaponItem "rhsusf_acc_SFMB556";
 	};
 	case "rcn_dmr": {player addWeapon "rhs_weap_m14ebrri";
 					 player addPrimaryWeaponItem "rhsusf_acc_leupoldmk4";
@@ -33,6 +35,10 @@ switch (_loadout) do {
 };
 
 // add secondary weapon
+switch (_loadout) do {
+	default {};
+	case "sqd_hgre": {player addWeapon "rhsusf_weap_m9"};
+};
 
 // add launcher
 switch (_loadout) do {

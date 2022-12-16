@@ -46,7 +46,6 @@ _availableVehicles =
 	"rnt_gmw_static"]],
 	
 	["Misc.",
-	["B_G_Quadbike_01_F",
-	"UK3CB_BAF_LandRover_Panama_Green_A_MTP"]]
+	["B_G_Quadbike_01_F"]]
 ];
 _availableVehicles

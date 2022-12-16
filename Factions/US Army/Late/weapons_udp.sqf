@@ -7,6 +7,7 @@ switch (_loadout) do {
 	case "sqd_ld";
 	case "rcn_ld";
 	case "sqd_gre":{ player addWeapon "UK3CB_M16A2_UGL";};
+	case "sqd_hgre": { player addWeapon "rhs_weap_m32"};
 	case "sqd_ar": {player addWeapon "rhs_weap_m249_pip";};
 	case "rcn_dmr": {player addWeapon "rhs_weap_m14ebrri";
 					 player addPrimaryWeaponItem "rhsusf_acc_leupoldmk4";
@@ -25,6 +26,10 @@ switch (_loadout) do {
 };
 
 // add secondary weapon
+switch (_loadout) do {
+	default {};
+	case "sqd_hgre": {player addWeapon "rhsusf_weap_m9"};
+};
 
 // add launcher
 switch (_loadout) do {

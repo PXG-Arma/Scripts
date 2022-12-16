@@ -12,8 +12,8 @@ switch (_loadout) do {
 	};
 	case "sqd_dmr";
 	case "rcn_dmr": {
-		for "_i" from 1 to 8 do { player addItemToVest "rhs_10Rnd_762x54mmR_7N14"};
-		for "_i" from 1 to 8 do { player addItemToBackpack "rhs_10Rnd_762x54mmR_7N14"};
+		for "_i" from 1 to 6 do { player addItemToVest "rhs_10Rnd_762x54mmR_7N1"};
+		for "_i" from 1 to 6 do { player addItemToBackpack "rhs_10Rnd_762x54mmR_7N14"};
 	};
 	case "sup_mmg_g": {
 		for "_i" from 1 to 2 do { player addItemToBackpack "rhs_100Rnd_762x54mmR"};
@@ -26,6 +26,7 @@ switch (_loadout) do {
 	};
 	case "sup_aa_l";
 	case "sup_aa_g";
+	case "rcn_ld";
 	case "rcn_spe": {
 		for "_i" from 1 to 4 do { player addItemToVest "rhs_30Rnd_545x39_7N22_AK"};
 		for "_i" from 1 to 2 do { player addItemToBackpack "rhs_30Rnd_545x39_7N22_AK"};

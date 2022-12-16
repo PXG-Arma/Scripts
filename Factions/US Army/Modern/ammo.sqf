@@ -6,6 +6,12 @@ switch (_loadout) do {
 		for "_i" from 1 to 4 do { player addItemToVest "rhs_mag_30Rnd_556x45_M855_Stanag"};
 		for "_i" from 1 to 4 do { player addItemToVest "rhs_mag_30Rnd_556x45_M855_Stanag_Tracer_Red"};
 	};
+	case "sqd_hgre": {
+		for "_i" from 1 to 2 do { player addItemToVest "rhsusf_mag_6Rnd_M441_HE"};
+		for "_i" from 1 to 4 do { player addItemToBackpack "rhsusf_mag_6Rnd_M441_HE"};
+		for "_i" from 1 to 1 do { player addItemToBackpack "rhsusf_mag_6Rnd_M713_red"};
+		for "_i" from 1 to 1 do { player addItemToBackpack "rhsusf_mag_6Rnd_M714_white"}
+	};
 	case "sqd_ar": {
 		for "_i" from 1 to 4 do { player addItemToBackpack "rhsusf_200Rnd_556x45_M855_mixed_soft_pouch"};
 	};
@@ -27,9 +33,12 @@ switch (_loadout) do {
 };
 
 // add secondary ammo
-//switch (_loadout) do {
-//	default {};
-//};
+switch (_loadout) do {
+	default {};
+	case "sqd_hgre": {
+		for "_i" from 1 to 4 do { player addItemToVest "rhsusf_mag_15Rnd_9x19_FMJ"};
+	};
+};
 
 // add assistant ammo 
 switch (_loadout) do {

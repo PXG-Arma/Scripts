@@ -12,7 +12,7 @@ switch (_loadout) do {
 	};
 	case "sqd_dmr";
 	case "rcn_dmr": {
-		for "_i" from 1 to 6 do { player addItemToVest "rhs_10Rnd_762x54mmR_7N14"};
+		for "_i" from 1 to 6 do { player addItemToVest "rhs_10Rnd_762x54mmR_7N11"};
 		for "_i" from 1 to 6 do { player addItemToBackpack "rhs_10Rnd_762x54mmR_7N14"};
 	};
 	case "sup_mmg_g": {

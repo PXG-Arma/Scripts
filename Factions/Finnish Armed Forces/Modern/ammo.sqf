@@ -3,8 +3,8 @@ params["_side","_faction","_variant", "_loadout"];
 // add primary ammo 
 switch (_loadout) do {
 	default {
-		for "_i" from 1 to 4 do { player addItemToVest "30Rnd_762x39_Magazine"};
-		for "_i" from 1 to 4 do { player addItemToBackpack "30Rnd_762x39_Magazine"};
+		for "_i" from 1 to 6 do { player addItemToVest "30Rnd_762x39_Magazine"};
+		for "_i" from 1 to 2 do { player addItemToBackpack "30Rnd_762x39_Magazine"};
 	};
 	// Breacher
 		case "sqd_brc": {

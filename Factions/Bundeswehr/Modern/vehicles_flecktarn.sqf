@@ -3,6 +3,7 @@ _availableVehicles =
 	["Utility",
 	["rnt_lkw_7t_mil_gl_kat_i_mun_fleck",
 	"rnt_lkw_10t_mil_gl_kat_i_repair_fleck",
+	"rnt_lkw_5t_mil_gl_kat_i_fuel_fleck",
 	"rnt_lkw_5t_mil_gl_kat_i_transport_fleck",
 	"Redd_Tank_LKW_leicht_gl_Wolf_Flecktarn_FueFu"]],
 	

@@ -53,8 +53,8 @@ switch (_loadout) do {
 	case "sup_mmg_l";
 	case "sup_mat_l";
 	case "sup_aa_l": {player addBackpack "rhs_tortila_grey"};
-	case "sup_mor_l": {player addBackpack "B_Mortar_01_support_F"};
-	case "sup_mor_g": {player addBackpack "B_Mortar_01_weapon_F"};
+	case "sup_mor_l": {player addBackpack "I_Mortar_01_support_F"};
+	case "sup_mor_g": {player addBackpack "I_Mortar_01_weapon_F"};
 	case "ar_ld";
     case "ar_ld";
 	case "ar_c";

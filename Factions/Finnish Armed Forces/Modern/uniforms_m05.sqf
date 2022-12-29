@@ -14,6 +14,7 @@ switch (_loadout) do {
 		randomHelmetArray = ["pasgt_fi" ,"pasgt_fig"];
 		player addHeadgear selectRandom randomHelmetArray;
 	};
+	case "sqd_dmr";
 	case "rcn_ld";
 	case "rcn_spe";
 	case "rcn_amr";
@@ -42,8 +43,8 @@ switch (_loadout) do {
 	case "rcn_spe": {player addBackpack "rhs_tortila_olive"};
 	case "sup_tow_l": {player addBackpack "rhs_TOW_Tripod_Bag"};
 	case "sup_tow_g": {player addBackpack "rhs_Tow_Gun_Bag"};
-	case "sup_mor_l": {player addBackpack "B_Mortar_01_support_F"};
-	case "sup_mor_g": {player addBackpack "B_Mortar_01_weapon_F"};
+	case "sup_mor_l": {player addBackpack "I_Mortar_01_support_F"};
+	case "sup_mor_g": {player addBackpack "I_Mortar_01_weapon_F"};
 	case "ar_ld";
 	case "ar_c";
 	case "pil": {};

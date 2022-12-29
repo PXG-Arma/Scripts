@@ -33,18 +33,14 @@ switch (_loadout) do {
 					player addPrimaryWeaponItem "rhsusf_acc_compm4";
 					player addPrimaryWeaponItem "rhsusf_acc_aac_762sdn6_silencer";
 	};
-	case "ar_ld";
-	case "ar_c";
 	case "pil": {};
 };
 
 // add secondary weapon
 switch (_loadout) do {
 	default {};
-	case "ar_ld";
-	case "ar_c";
-	case "pil";
-	case "sqd_brc": {player addWeapon "BWA3_P12"};
+	case "sqd_brc";
+	case "pil": {player addWeapon "BWA3_P12"};
 };
 
 // add launcher

@@ -51,7 +51,5 @@ switch (_loadout) do {
 // add backpack 
 switch (_loadout) do {
 	default { player addBackpack "Black_Backpack_kitbag"};
-	case "sup_mor_l": {player addBackpack "B_Mortar_01_support_F"};
-	case "sup_mor_g": {player addBackpack "B_Mortar_01_weapon_F"};
 	case "pil": {};
 };

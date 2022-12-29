@@ -13,8 +13,7 @@ switch (_loadout) do {
 	};
 	// Automatic Rifleman
 		case "sqd_ar": {
-		for "_i" from 1 to 2 do { player addItemToVest "rhsusf_200Rnd_556x45_M855_mixed_soft_pouch"};
-		for "_i" from 1 to 2 do { player addItemToBackpack "rhsusf_200Rnd_556x45_M855_mixed_soft_pouch"};
+		for "_i" from 1 to 4 do { player addItemToBackpack "rhsusf_200Rnd_556x45_M855_mixed_soft_pouch"};
 	};
 	// MMG Gunner
 		case "sup_mmg_g": {
@@ -40,10 +39,17 @@ switch (_loadout) do {
 	};
 };
 
-// add secondary ammo
-// switch (_loadout) do {
-// 	default {for "_i" from 1 to 2 do { player addItemToVest "AMMO"}};
-// };
+// add secondary weapon
+switch (_loadout) do {
+	default {};
+	case "sqd_brc": {
+		for "_i" from 1 to 4 do { player addItemToVest "rhsusf_mag_17Rnd_9x19_FMJ"};
+	};
+	case "sqd_dmr";
+	case "rcn_amr": {
+		for "_i" from 1 to 4 do { player addItemToBackpack "rhsusf_mag_17Rnd_9x19_FMJ"};
+	};
+};
 
 // add assistant ammo 
 switch (_loadout) do {

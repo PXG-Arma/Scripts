@@ -2,18 +2,15 @@ params["_side","_faction","_variant", "_loadout"];
 
 // add primary weapon
 switch (_loadout) do {
-	default { player addWeapon "rhs_weap_ak74";
+	default { player addWeapon "rhs_weap_akm";
 	};
 	case "plt";
 	case "sqd_ld";
 	case "rcn_ld";
-	case "sqd_gre":{ player addWeapon "rhs_weap_ak74_gp25";
+	case "sqd_gre":{ player addWeapon "rhs_weap_akm_gp25";
 	};
-	case "sqd_ar": {player addWeapon "UK3CB_RPK_74";
+	case "sqd_ar": {player addWeapon "UK3CB_RPK";
 	};
-	case "sqd_dmr": {player addWeapon "UK3CB_SVD_OLD";
-					 player addPrimaryWeaponItem "rhs_acc_pso1m2"
-	};	
 	case "rcn_dmr": {player addWeapon "UK3CB_SVD_OLD";
 					 player addPrimaryWeaponItem "rhs_acc_pso1m2"
 	};

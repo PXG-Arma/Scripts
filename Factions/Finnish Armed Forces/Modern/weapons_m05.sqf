@@ -29,9 +29,14 @@ switch (_loadout) do {
 };
 
 // add secondary weapon
-// switch (_loadout) do {
-// 	default { player addWeapon "CLASS_ID"};
-// };
+switch (_loadout) do {
+	default {};
+	case "sqd_brc";
+	case "sqd_dmr";
+	case "rcn_amr": {player addWeapon "rhsusf_weap_glock17g4";
+			 		 player addHandgunItem "acc_flashlight_pistol";
+	};
+};
 
 // add secondary weapon M320
 switch (_loadout) do {

@@ -53,6 +53,6 @@ _availableVehicles =
 	["UK3CB_ADA_B_M1030",
 	"UK3CB_ADA_B_Quadbike",
 	"UK3CB_BAF_LandRover_Panama_Sand_A_MTP",
-	"UK3CB_BAF_MAN_HX60_Container_Green"]]
+	"UK3CB_BAF_MAN_HX58_Container_Sand"]]
 ];
 _availableVehicles

@@ -28,8 +28,6 @@ switch (_loadout) do {
 		for "_i" from 1 to 6 do { player addItemToVest "rhsusf_8Rnd_00Buck"};
 		for "_i" from 1 to 6 do { player addItemToBackpack "rhsusf_8Rnd_Slug"};
 	};
-	case "ar_ld";
-	case "ar_c";
 	case "pil": {
 		for "_i" from 1 to 4 do { player addItemToVest "rhsusf_mag_40Rnd_46x30_AP"};
 	};

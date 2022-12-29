@@ -1,10 +1,10 @@
 _availableVehicles = 
 [
 	["Utility",
-	["UK3CB_BAF_MAN_HX58_Cargo_Green_B_MTP",
-	"UK3CB_BAF_MAN_HX58_Fuel_Green_MTP",
-	"UK3CB_BAF_MAN_HX58_Repair_Green_MTP",
-	"UK3CB_BAF_MAN_HX58_Transport_Green_MTP",
+	["rnt_lkw_7t_mil_gl_kat_i_mun_fleck",
+	"rnt_lkw_10t_mil_gl_kat_i_repair_fleck",
+	"rnt_lkw_5t_mil_gl_kat_i_fuel_fleck",
+	"rnt_lkw_5t_mil_gl_kat_i_transport_fleck",
 	"rhsusf_m998_w_2dr",
 	"rhsusf_m1151_usarmy_wd"]],
 	

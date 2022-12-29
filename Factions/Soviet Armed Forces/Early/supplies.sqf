@@ -1,14 +1,13 @@
 _resupplyAvailable = [
 	["Primary Resupply",
 		[
-			["rhs_30Rnd_545x39_7N6_AK",40],
-			["rhs_30Rnd_545x39_AK_green",40]
+			["rhs_30Rnd_762x39mm",40],
+			["rhs_30Rnd_762x39mm_tracer",40]
 		]
 	],
 	["AR Resupply",
 		[
-			["UK3CB_RPK74_60rnd_545x39_G",20],
-			["UK3CB_RPK74_60rnd_545x39_GT",20]
+			["UK3CB_AK47_45Rnd_Magazine_G",40]
 		]
 	],
 	["MMG Resupply",
@@ -19,7 +18,7 @@ _resupplyAvailable = [
 	],
 	["DMR Resupply",
 		[
-			["rhs_10Rnd_762x54mmR_7N1",15],
+			["UK3CB_SVD_10rnd_762x54",15],
 			["UK3CB_SVD_10rnd_762x54_GT",15]
 		]
 	],
@@ -41,9 +40,7 @@ _resupplyAvailable = [
 	["Smoke Grenades",
 		[
 			["rhs_mag_rdg2_white",10],
-			["rhssaf_mag_brd_m83_red",10],
-			["rhssaf_mag_brd_m83_green",10],
-			["rhssaf_mag_brd_m83_blue",10]
+			["rhs_mag_rdg2_black",10]
 		]
 	],
 	["40mm Grenades",

@@ -3,6 +3,7 @@ _availableVehicles =
 	["Utility",
 	["rnt_lkw_7t_mil_gl_kat_i_mun_fleck",
 	"rnt_lkw_10t_mil_gl_kat_i_repair_fleck",
+	"rnt_lkw_5t_mil_gl_kat_i_fuel_fleck",
 	"rnt_lkw_5t_mil_gl_kat_i_transport_fleck",
 	"Redd_Tank_LKW_leicht_gl_Wolf_Flecktarn_FueFu"]],
 	
@@ -32,11 +33,11 @@ _availableVehicles =
 	["BWA3_Panzerhaubitze2000_Fleck"]],
 
 	["Rotary Transport",
-	["UK3CB_B_Bell412_Utility_HIDF",
-	"UK3CB_BAF_Merlin_HC3_18_DPMW"]],
+	["BWA3_NH90_TTH_Fleck",
+	"BWA3_NH90_TTH_M3M_Fleck"]],
 	
 	["Rotary Attack",
-	["BWA3_Tiger_RMK_Universal"]],
+	["BWA3_Tiger_RMK_Heavy"]],
 	
 	["Turrets",
 	["rnt_gmw_static",

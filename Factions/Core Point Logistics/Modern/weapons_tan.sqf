@@ -43,6 +43,8 @@ switch (_loadout) do {
 					 player addPrimaryWeaponItem "rhsusf_acc_harris_bipod";
 					 player addPrimaryWeaponItem "rhsusf_acc_aac_762sd_silencer";
 	};
+	case "pil": {player addWeapon "rhsusf_weap_MP7A2_desert";
+	};
 };
 
 // add secondary weapon

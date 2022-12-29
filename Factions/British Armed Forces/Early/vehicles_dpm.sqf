@@ -34,9 +34,12 @@ _availableVehicles =
 	"UK3CB_BAF_RHIB_HMG_DPMW"]],
 	
 	["Turrets",
-	["UK3CB_BAF_Static_L111A1_Deployed_High_MTP",
-	"UK3CB_BAF_Static_L111A1_Deployed_Low_MTP",
-	"Redd_Milan_Static"]],
+	["UK3CB_BAF_Static_L7A2_Deployed_Low_Tropical",
+	"UK3CB_BAF_Static_L7A2_Deployed_High_Tropical",
+	"UK3CB_BAF_Static_L111A1_Deployed_Low_Tropical",
+	"UK3CB_BAF_Static_L111A1_Deployed_High_Tropical",
+	"UK3CB_BAF_Static_L134A1_Deployed_Low_Tropical",
+	"UK3CB_BAF_Static_L134A1_Deployed_High_Tropical"]],
 	
 	["Misc.",
 	["UK3CB_ADA_B_M1030",

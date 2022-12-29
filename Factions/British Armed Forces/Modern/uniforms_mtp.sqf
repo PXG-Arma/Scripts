@@ -58,8 +58,8 @@ switch (_loadout) do {
 	case "rcn_ld";
 	case "rcn_dmr": { player addBackpack "UK3CB_BAF_B_Bergen_MTP_Rifleman_L_A"};
 	case "sqd_eng": { player addBackpack "UK3CB_BAF_B_Bergen_MTP_Sapper_L_A"};
-	case "sup_mor_l": {player addBackpack "B_Mortar_01_support_F"};
-	case "sup_mor_g": {player addBackpack "B_Mortar_01_weapon_F"};
+	case "sup_mor_l": {player addBackpack "I_Mortar_01_support_F"};
+	case "sup_mor_g": {player addBackpack "I_Mortar_01_weapon_F"};
 	case "rcn_drone": {player addBackpack "UK3CB_BAF_B_Bergen_MTP_Rifleman_L_C"};
 	case "ar_ld";
 	case "ar_c": {};

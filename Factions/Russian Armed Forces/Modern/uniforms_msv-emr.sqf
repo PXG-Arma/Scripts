@@ -45,11 +45,11 @@ switch (_loadout) do {
 	case "sqd_eng": {player addBackpack "rhs_rk_sht_30_emr_engineer_empty"};
 	case "sqd_med";
 	case "sup_mmg_l";
-	case "sup_mmg_g";
+	case "sup_mmg_g": {player addBackpack "rhs_tortila_emr"};
 	case "sup_mat_g";
-	case "sup_mat_l": {player addBackpack "rhs_tortila_emr"};
-	case "sup_mor_l": {player addBackpack "B_Mortar_01_support_F"};
-	case "sup_mor_g": {player addBackpack "B_Mortar_01_weapon_F"};
+	case "sup_mat_l": {player addBackpack "rhs_rpg_6b3"};
+	case "sup_mor_l": {player addBackpack "I_Mortar_01_support_F"};
+	case "sup_mor_g": {player addBackpack "I_Mortar_01_weapon_F"};
 	case "ar_ld";
 	case "ar_c": {};
 };

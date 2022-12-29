@@ -37,9 +37,10 @@ switch (_loadout) do {
 
 // add secondary weapon
 switch (_loadout) do {
-	default {};
-	case "sqd_brc";
-	case "rcn_dmr": { player addWeapon "rhsusf_weap_m9"};
+	default {player addWeapon "bnae_r1_t_virtual"};
+	case "sup_aa_g";
+	case "sup_mat_g";
+	case "sup_mmg_g": {};
 };
 
 // add launcher

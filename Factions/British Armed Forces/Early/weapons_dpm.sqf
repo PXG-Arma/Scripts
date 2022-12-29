@@ -3,7 +3,7 @@ params["_side","_faction","_variant", "_loadout"];
 // add primary weapon
 switch (_loadout) do {
 	default { 
-		randomWeaponArray = ["rhs_weap_l1a1","rhs_weap_l1a1_wood"]; 
+		randomWeaponArray = ["rhs_weap_l1a1","rhs_weap_l1a1_wood","bnae_mk1_virtual"]; 
 		player addWeapon selectRandom randomWeaponArray;
 	};
 	case "plt";
@@ -14,12 +14,13 @@ switch (_loadout) do {
 	};
 	case "sqd_ar": {player addWeapon "UK3CB_Bren";
 	};
-	case "rcn_dmr": {player addWeapon "UK3CB_BAF_L115A3";
-					 player addPrimaryWeaponItem "rhsusf_acc_m8541";
-					 player addPrimaryWeaponItem "uk3cb_underbarrel_acc_bipod";
+	case "rcn_dmr": {player addWeapon "bnae_mk1_t_virtual";
+					 player addPrimaryWeaponItem "bnae_scope_v3_virtual";
 	};
 	case "sup_mmg_g": {	player addWeapon "UK3CB_BAF_L7A2"};
+	case "sup_aa_g";
 	case "rcn_ld";
+	case "rcn_spe";
 	case "ar_ld";
 	case "ar_c";
 	case "pil": {player addWeapon "UK3CB_Sten";

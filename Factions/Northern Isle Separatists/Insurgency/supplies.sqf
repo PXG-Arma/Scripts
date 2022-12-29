@@ -4,7 +4,7 @@ _resupplyAvailable = [
 			["rhs_30Rnd_545x39_7N6_AK",20],
 			["rhsusf_20Rnd_762x51_m80_Mag",20],
 			["rhsgref_30rnd_1143x23_M1911B_SMG",20],
-			["UK3CB_Enfield_10rnd_Mag",20]
+			["10Rnd_303_Magazine",20]
 		]
 	],
 	["Primary Resupply B",
@@ -17,8 +17,7 @@ _resupplyAvailable = [
 	],
 	["MMG Resupply",
 		[
-			["UK3CB_Bren_30Rnd_762x51_Magazine",20],
-			["UK3CB_Bren_30Rnd_762x51_Magazine_GT",20]
+			["rhsgref_296Rnd_792x57_SmK_belt",10]
 		]
 	],
 	["AMR Resupply",
@@ -74,29 +73,27 @@ _resupplyAvailable = [
 	],
 	["Blood IVs",
 		[
-			["ACE_bloodIV", 25],
-			["ACE_bloodIV_500", 25],
-			["ACE_bloodIV_250", 25]
+			["ACE_bloodIV", 20],
+			["ACE_bloodIV_500", 20],
+			["ACE_bloodIV_250", 20]
 		]
 	],
 	["Bandages",
 		[
-			["ACE_elasticBandage", 50],
-			["ACE_packingBandage", 50],
-			["ACE_quikclot", 50]
+			["ACE_elasticBandage", 40],
+			["ACE_packingBandage", 40],
+			["ACE_quikclot", 40]
 		]
 	],
 	["Autoinjectors",
 		[
-			["ACE_epinephrine", 25],
-			["ACE_morphine", 25],
-			["ACE_adenosine", 25]
+			["ACE_epinephrine", 20],
+			["ACE_morphine", 20]
 		]
 	],
 	["Misc. Medical Supplies",
 		[
 			["ACE_tourniquet", 20],
-			["ACE_splint", 20],
 			["ACE_bodyBag", 20],
 			["ACE_surgicalKit", 2]
 		]

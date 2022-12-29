@@ -42,13 +42,17 @@ _availableVehicles =
 	"UK3CB_BAF_RHIB_HMG_MTP"]],
 	
 	["Turrets",
-	["UK3CB_BAF_Static_L111A1_Deployed_High_MTP",
-	"UK3CB_BAF_Static_L111A1_Deployed_Low_MTP",
-	"UK3CB_BAF_Static_L134A1_Deployed_Low_MTP"]],
+	["UK3CB_BAF_Static_L7A2_Deployed_Low_Tropical",
+	"UK3CB_BAF_Static_L7A2_Deployed_High_Tropical",
+	"UK3CB_BAF_Static_L111A1_Deployed_Low_Tropical",
+	"UK3CB_BAF_Static_L111A1_Deployed_High_Tropical",
+	"UK3CB_BAF_Static_L134A1_Deployed_Low_Tropical",
+	"UK3CB_BAF_Static_L134A1_Deployed_High_Tropical"]],
 	
 	["Misc.",
-	["UK3CB_BAF_LandRover_Panama_Sand_A_MTP",
-	"UK3CB_ADA_B_M1030",
-	"UK3CB_ADA_B_Quadbike"]]
+	["UK3CB_ADA_B_M1030",
+	"UK3CB_ADA_B_Quadbike",
+	"UK3CB_BAF_LandRover_Panama_Sand_A_MTP",
+	"UK3CB_BAF_MAN_HX58_Container_Sand"]]
 ];
 _availableVehicles

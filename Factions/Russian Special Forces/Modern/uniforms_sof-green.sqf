@@ -34,8 +34,8 @@ switch (_loadout) do {
 	case "logi": {player addBackpack "rhs_assault_umbts_engineer_empty"};
 	case "sqd_med";
 	case "sup_mmg_l";
-	case "sup_mmg_g";
+	case "sup_mmg_g": {player addBackpack "rhs_tortila_olive"};
 	case "sup_mat_g";
-	case "sup_mat_l": {player addBackpack "rhs_tortila_olive"};
+	case "sup_mat_l": {player addBackpack "rhs_rpg_empty"};
 	case "pil": {};
 };

@@ -6,8 +6,7 @@ _availableVehicles =
 	"B_GEN_Offroad_01_comms_F"]],
 	
 	["Armed Car/MRAP",
-	["UK3CB_AAF_B_SUV_Armoured",
-	"UK3CB_AAF_B_SUV_Armed"]],
+	["UK3CB_AAF_B_SUV_Armoured"]],
 	
 	["Rotary Transport",
 	["RHS_MELB_MH6M",
@@ -16,11 +15,6 @@ _availableVehicles =
 	["Boat",
 	["B_Boat_Transport_01_F",
 	"rhsgref_hidf_rhib",
-	"C_Boat_Civil_01_police_F"]],
-	
-	["Misc.",
-	["UK3CB_B_M1030_NATO",
-	"B_Quadbike_01_F"]]
-
+	"C_Boat_Civil_01_police_F"]]
 ];
 _availableVehicles

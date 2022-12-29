@@ -43,7 +43,7 @@ switch (_loadout) do {
 	case "sqd_gre": { player addVest "UK3CB_TKA_I_V_6Sh92_vog_Khk"};
 };
 
-// remove eyewear
+// add eyewear
 switch (_loadout) do {
 	default {
 		randomGoggleArray = ["UK3CB_G_Bandanna_aviator_green_check","UK3CB_G_Bandanna_sport_green_check","UK3CB_G_Bandanna_green_check","G_Balaclava_blk"];
@@ -59,8 +59,8 @@ switch (_loadout) do {
 	case "sqd_aar";
 	case "sup_mmg_l";
 	case "sup_mmg_g": {player addBackpack "UK3CB_B_Largepack"};
-	case "sup_mor_l": {player addBackpack "B_Mortar_01_support_F"};
-	case "sup_mor_g": {player addBackpack "B_Mortar_01_weapon_F"};
+	case "sup_mor_l": {player addBackpack "I_Mortar_01_support_F"};
+	case "sup_mor_g": {player addBackpack "I_Mortar_01_weapon_F"};
 	case "ar_ld";
 	case "ar_c": {};
 };

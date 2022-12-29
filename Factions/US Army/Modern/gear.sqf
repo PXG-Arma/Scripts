@@ -10,7 +10,13 @@ switch (_loadout) do {
 	
 };
 
-// Javelin gunner
+// add Javelin CLU
 switch (_loadout) do {
 	case "sup_hat_g": {player addWeapon "UK3CB_BAF_Javelin_CLU"};
+};
+
+// add Spotting Scope
+switch (_loadout) do {
+	case "rcn_dmr": {player addItemToBackpack "ACE_SpottingScope";
+	                player addItemToBackpack "ACE_Tripod"};
 };

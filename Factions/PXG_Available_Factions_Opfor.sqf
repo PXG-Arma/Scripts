@@ -3,7 +3,8 @@ _availableFactions = [
 	"Task Force International",
 	"Russian Air Force",
 	"Russian Armed Forces",
-	"Russian Special Forces"
+	"Russian Special Forces",
+	"Soviet Armed Forces"
 ];
 
 _availableFactions

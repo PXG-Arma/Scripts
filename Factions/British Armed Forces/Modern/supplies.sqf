@@ -105,6 +105,20 @@ _resupplyAvailable = [
 			["ACE_surgicalKit", 2]
 		]
 	],
+	["Squad Resupply",
+		[
+			["rhs_mag_30Rnd_556x45_M855_Stanag", 24],
+			["rhsusf_200Rnd_556x45_box", 4],
+			["launch_NLAW_F", 1],
+			["1Rnd_HE_Grenade_Shell", 12],
+			["HandGrenade", 6],
+			["rhs_mag_an_m8hc", 6],
+			["ACE_elasticBandage", 12],
+			["ACE_packingBandage", 12],
+			["ACE_quikclot", 12],
+			["ACE_bloodIV_500", 6]
+		]
+	],
 	["Vehicle Resupply 7.62mm",
 		[
 			["UK3CB_BAF_762_200Rnd_T",20]

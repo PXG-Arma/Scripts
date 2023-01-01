@@ -97,6 +97,20 @@ _resupplyAvailable = [
 			["ACE_surgicalKit", 2]
 		]
 	],
+	["Squad Resupply",
+		[
+			["rhs_30Rnd_762x39mm", 24],
+			["UK3CB_AK47_45Rnd_Magazine_G", 8],
+			["rhs_weap_rpg26", 1],
+			["rhs_VOG25", 12],
+			["rhs_mag_rgd5", 6],
+			["rhs_GRD40_White", 6],
+			["ACE_elasticBandage", 12],
+			["ACE_packingBandage", 12],
+			["ACE_quikclot", 12],
+			["ACE_bloodIV_500", 6]
+		]
+	],
 	["Parachutes",
 		[
 			["B_Parachute", 20]

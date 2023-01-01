@@ -24,7 +24,7 @@ _resupplyAvailable = [
 	],
 	["LAT Resupply",
 		[
-			["rhs_weap_rpg26",8]
+			["rhs_weap_rpg18",8]
 		]
 	],
 	["MAT Resupply (HEAT)",
@@ -101,7 +101,7 @@ _resupplyAvailable = [
 		[
 			["rhs_30Rnd_762x39mm", 24],
 			["UK3CB_AK47_45Rnd_Magazine_G", 8],
-			["rhs_weap_rpg26", 1],
+			["rhs_weap_rpg18", 1],
 			["rhs_VOG25", 12],
 			["rhs_mag_rgd5", 6],
 			["rhs_GRD40_White", 6],

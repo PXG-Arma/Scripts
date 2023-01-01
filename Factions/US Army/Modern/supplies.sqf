@@ -7,7 +7,7 @@ _resupplyAvailable = [
 	],
 	["AR Resupply",
 		[
-			["rhsusf_200Rnd_556x45_M855_mixed_soft_pouch",20]
+			["rhsusf_200rnd_556x45_mixed_box",20]
 		]
 	],
 	["MMG Resupply",
@@ -115,7 +115,7 @@ _resupplyAvailable = [
 	["Squad Resupply",
 		[
 			["rhs_mag_30Rnd_556x45_M855_Stanag", 24],
-			["rhsusf_200Rnd_556x45_M855_mixed_soft_pouch", 4],
+			["rhsusf_200rnd_556x45_mixed_box", 4],
 			["rhs_weap_M136", 1],
 			["1Rnd_HE_Grenade_Shell", 12],
 			["rhsusf_mag_6Rnd_M441_HE", 2],

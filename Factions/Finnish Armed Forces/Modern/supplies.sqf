@@ -7,19 +7,14 @@ _resupplyAvailable = [
 	],
 	["AR Resupply",
 		[
-			["rhsusf_200Rnd_556x45_M855_mixed_soft_pouch",20]
+			["rhs_100Rnd_762x54mmR",10],
+			["rhs_100Rnd_762x54mmR_green",10]
 		]
 	],
 	["Shotgun Resupply",
 		[
 			["rhsusf_8Rnd_00Buck",20],
 			["rhsusf_8Rnd_Slug",20]
-		]
-	],
-	["MMG Resupply",
-		[
-			["rhsusf_100Rnd_762x51_m62_tracer",10],
-			["rhsusf_100Rnd_762x51_m80a1epr",10]
 		]
 	],
 	["DMR Resupply",
@@ -121,7 +116,7 @@ _resupplyAvailable = [
 	["Squad Resupply",
 		[
 			["30Rnd_762x39_Magazine", 24],
-			["rhsusf_200Rnd_556x45_M855_mixed_soft_pouch", 4],
+			["rhs_100Rnd_762x54mmR", 4],
 			["rhsusf_8Rnd_00Buck",4],
 			["rhsusf_8Rnd_Slug",4],
 			["rhs_weap_m72a7", 1],

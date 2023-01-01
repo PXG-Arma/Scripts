@@ -13,8 +13,8 @@ switch (_loadout) do {
 		for "_i" from 1 to 1 do { player addItemToBackpack "rhsusf_mag_6Rnd_M714_white"}
 	};
 	case "sqd_ar": {
-		for "_i" from 1 to 4 do { player addItemToVest "rhsusf_100Rnd_556x45_mixed_soft_pouch_coyote"};
-		for "_i" from 1 to 4 do { player addItemToBackpack "rhsusf_100Rnd_556x45_mixed_soft_pouch_coyote"};
+		for "_i" from 1 to 2 do { player addItemToVest "rhsusf_100Rnd_556x45_mixed_soft_pouch_coyote"};
+		for "_i" from 1 to 6 do { player addItemToBackpack "rhsusf_100Rnd_556x45_mixed_soft_pouch_coyote"};
 	};
 	case "rcn_dmr": {
 		for "_i" from 1 to 4 do { player addItemToVest "rhsusf_20Rnd_762x51_SR25_m993_Mag"};

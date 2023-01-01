@@ -22,7 +22,7 @@ switch (_loadout) do {
 					  player addPrimaryWeaponItem "rhsusf_acc_eotech_xps3";
 					  player addPrimaryWeaponItem "bwa3_acc_varioray_irlaser_black"
 	};
-	case "sqd_ar": { player addWeapon "rhs_weap_m249_pip_S";
+	case "sqd_ar": { player addWeapon "rhs_weap_m249_light_S";
 					 player addPrimaryWeaponItem "bwa3_acc_varioray_irlaser_black";
 					 player addPrimaryWeaponItem "rhsusf_acc_g33_xps3";
 					 player addPrimaryWeaponItem "rhsusf_acc_nt4_black"

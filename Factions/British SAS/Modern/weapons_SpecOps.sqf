@@ -8,8 +8,7 @@ switch (_loadout) do {
 			  player addPrimaryWeaponItem "bwa3_acc_varioray_irlaser_black";
 			  player addPrimaryWeaponItem "rhsusf_acc_rotex5_grey"
 	};
-	case "tacp";
-	case "sqd_ld";
+	case "plt";
 	case "sqd_gre";
 	case "rcn_ld";
 	case "sqd_ld": {player addWeapon "rhs_weap_mk18_m320";

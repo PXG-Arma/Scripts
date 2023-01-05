@@ -78,22 +78,6 @@ switch (_loadout) do {
 	};
 };
 
-// add Head Lamp
-switch (_loadout) do {
-    default {player addItemToBackpack "WBK_HeadLampItem"};
-	case "ar_ld";
-	case "ar_c";
-	case "pil";
-	case "sup_hmg_l";
-	case "sup_hmg_g";
-	case "sup_tow_l";
-	case "sup_tow_g";
-	case "sup_gmg_l";
-	case "sup_gmg_g";
-	case "sup_mor_l";
-	case "sup_mor_g": {player addItemToVest "WBK_HeadLampItem"};
-};
-
 // add Range Card
 switch (_loadout) do {
 	default {};

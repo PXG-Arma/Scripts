@@ -50,7 +50,7 @@ if (count _nearVehicles > 0) then {
 		[[_crate],"Scripts\Resupply\Functions\PXG_Add_FOB_Option.sqf"] remoteExec ["execVM", 0, _crate];
 		_crate setVariable ["ace_cargo_customName", "FOB", true];
 		[_crate, 8] call ace_cargo_fnc_setSize;
-		[_crate, true, [0,1,1], 0, true] call ace_dragging_fnc_setCarryable;	
+		[_crate] execVM "Scripts\Resupply\Functions\PXG_Crate_Global_Carry.sqf";	
 	}; 
 		
 	case "Wheel": {
@@ -81,7 +81,7 @@ if (count _nearVehicles > 0) then {
 
 		[_crate] call compile preprocessFile "Scripts\Resupply\Functions\PXG_Crate_Fill.sqf";
 		[_crate, 2] call ace_cargo_fnc_setSize;
-		[_crate, true, [0,1,1], 0, true] call ace_dragging_fnc_setCarryable;
+		[_crate] execVM "Scripts\Resupply\Functions\PXG_Crate_Global_Carry.sqf";
 	};
 
 	case "40mm Heavy";
@@ -99,7 +99,7 @@ if (count _nearVehicles > 0) then {
 
 		[_crate] call compile preprocessFile "Scripts\Resupply\Functions\PXG_Crate_Fill.sqf";
 		[_crate, 1] call ace_cargo_fnc_setSize;
-		[_crate, true, [0,1,1], 0, true] call ace_dragging_fnc_setCarryable;
+		[_crate] execVM "Scripts\Resupply\Functions\PXG_Crate_Global_Carry.sqf";
 	};
 
 	case "40mm Flares";
@@ -118,7 +118,7 @@ if (count _nearVehicles > 0) then {
 
 		[_crate] call compile preprocessFile "Scripts\Resupply\Functions\PXG_Crate_Fill.sqf";
 		[_crate, 1] call ace_cargo_fnc_setSize;
-		[_crate, true, [0,1,1], 0, true] call ace_dragging_fnc_setCarryable;
+		[_crate] execVM "Scripts\Resupply\Functions\PXG_Crate_Global_Carry.sqf";
 	};
 
 	case "Misc. Medical Supplies";
@@ -137,7 +137,7 @@ if (count _nearVehicles > 0) then {
 
 		[_crate] call compile preprocessFile "Scripts\Resupply\Functions\PXG_Crate_Fill.sqf";
 		[_crate, 1] call ace_cargo_fnc_setSize;
-		[_crate, true, [0,1,1], 0, true] call ace_dragging_fnc_setCarryable;
+		[_crate] execVM "Scripts\Resupply\Functions\PXG_Crate_Global_Carry.sqf";
 	};
 
 	case "Breaching Charges";
@@ -154,7 +154,7 @@ if (count _nearVehicles > 0) then {
 
 		[_crate] call compile preprocessFile "Scripts\Resupply\Functions\PXG_Crate_Fill.sqf";
 		[_crate, 1] call ace_cargo_fnc_setSize;
-		[_crate, true, [0,1,1], 0, true] call ace_dragging_fnc_setCarryable;
+		[_crate] execVM "Scripts\Resupply\Functions\PXG_Crate_Global_Carry.sqf";
 	};
 
 	case "Squad Resupply":
@@ -170,7 +170,7 @@ if (count _nearVehicles > 0) then {
 
 		[_crate] call compile preprocessFile "Scripts\Resupply\Functions\PXG_Crate_Fill.sqf";
 		[_crate, 2] call ace_cargo_fnc_setSize;
-		[_crate, true, [0,1,1], 0, true] call ace_dragging_fnc_setCarryable;
+		[_crate] execVM "Scripts\Resupply\Functions\PXG_Crate_Global_Carry.sqf";
 	};
 
 	case "Parachutes":
@@ -186,7 +186,7 @@ if (count _nearVehicles > 0) then {
 
 		[_crate] call compile preprocessFile "Scripts\Resupply\Functions\PXG_Crate_Fill.sqf";
 		[_crate, 1] call ace_cargo_fnc_setSize;
-		[_crate, true, [0,1,1], 0, true] call ace_dragging_fnc_setCarryable;
+		[_crate] execVM "Scripts\Resupply\Functions\PXG_Crate_Global_Carry.sqf";
 	};
 
 	default {
@@ -201,7 +201,7 @@ if (count _nearVehicles > 0) then {
 
 		[_crate] call compile preprocessFile "Scripts\Resupply\Functions\PXG_Crate_Fill.sqf";
 		[_crate, 1] call ace_cargo_fnc_setSize;
-		[_crate, true, [0,1,1], 0, true] call ace_dragging_fnc_setCarryable;
+		[_crate] execVM "Scripts\Resupply\Functions\PXG_Crate_Global_Carry.sqf";
 		};
 	};
 };

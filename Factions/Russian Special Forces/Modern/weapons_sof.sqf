@@ -35,7 +35,6 @@ switch (_loadout) do {
 	case "sqd_lat": {player addWeapon "rhs_weap_rpg75"};
 	case "sqd_gre": {player addWeapon "rhs_weap_rshg2"};
 	case "sup_mat_g": {	player addWeapon "rhs_weap_rpg7";
-						player addSecondaryWeaponItem "rhs_acc_pgo7v3";
-						player addSecondaryWeaponItem "rhs_rpg7_PG7VL_mag"};
+						player addSecondaryWeaponItem "rhs_acc_pgo7v3"};
 	case "sup_aa_g": {	player addWeapon "rhs_weap_igla"};	
 };

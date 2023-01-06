@@ -7,7 +7,7 @@ switch (_loadout) do {
 	
 // add helmet
 switch (_loadout) do {
-	default { player addHeadgear "rhs_altyn_novisor_ess_bala"};
+	default { player addHeadgear "rhs_altyn_novisor_bala"};
 	case "pil": { player addHeadgear "rhs_zsh7a_mike_green_alt"};
 	case "rcn_dmr";
 	case "rcn_drone";
@@ -32,10 +32,7 @@ switch (_loadout) do {
 switch (_loadout) do {
 	default { player addBackpack "rhs_assault_umbts"};
 	case "logi": {player addBackpack "rhs_assault_umbts_engineer_empty"};
-	case "sqd_med";
 	case "sup_mmg_l";
 	case "sup_mmg_g": {player addBackpack "rhs_tortila_olive"};
-	case "sup_mat_g";
-	case "sup_mat_l": {player addBackpack "rhs_rpg_empty"};
 	case "pil": {};
 };

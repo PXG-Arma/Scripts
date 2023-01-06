@@ -24,11 +24,11 @@ switch (_loadout) do {
 // add secondary weapon
 switch (_loadout) do {
 	default {};
+	case "plt";
+	case "logi";
 	case "ar_ld";
 	case "ar_c";
-	case "pil";
-	case "logi":{ player addWeapon "rhs_weap_makarov_pm";
-	};
+	case "pil": { player addWeapon "rhs_weap_makarov_pm"};
 };
 // add launcher
 switch (_loadout) do {

@@ -21,7 +21,7 @@ switch (_loadout) do {
 	};
 	case "ar_ld";
 	case "ar_c";
-	case "pil": {
+	case "ger_pil": {
 		for "_i" from 1 to 4 do { player addItemToVest "BWA3_40Rnd_46x30_MP7"};
 	};
 };

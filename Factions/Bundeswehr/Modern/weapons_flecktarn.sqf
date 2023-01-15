@@ -23,7 +23,7 @@ switch (_loadout) do {
 	};
 	case "ar_ld";
 	case "ar_c";
-	case "pil": {player addWeapon "BWA3_MP7"};
+	case "ger_pil": {player addWeapon "BWA3_MP7"};
 };
 
 // add secondary weapon

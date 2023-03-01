@@ -47,7 +47,7 @@ switch (_loadout) do {
 	case "rcn_dmr": { player addVest "rhsusf_spc_marksman"};
 	case "ar_ld";
 	case "ar_c": { player addVest "rhsusf_spc_crewman"};
-	case "pil": { player addVest "rhsusf_spc"};
+	case "pil": { player addVest "rhsusf_spc_crewman"};
 };
 
 // add backpack 

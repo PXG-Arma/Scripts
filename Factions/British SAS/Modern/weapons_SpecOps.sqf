@@ -3,7 +3,7 @@ params["_side","_faction","_variant", "_loadout"];
 // add primary weapon
 switch (_loadout) do {
 	default { player addWeapon "rhs_weap_mk18";
-			  player addPrimaryWeaponItem "rhsusf_acc_g33_xps3";
+			  player addPrimaryWeaponItem "rhsusf_acc_eotech_xps3";
 			  player addPrimaryWeaponItem "rhsusf_acc_kac_grip";
 			  player addPrimaryWeaponItem "bwa3_acc_varioray_irlaser_black";
 			  player addPrimaryWeaponItem "rhsusf_acc_rotex5_grey"
@@ -12,7 +12,7 @@ switch (_loadout) do {
 	case "sqd_gre";
 	case "rcn_ld";
 	case "sqd_ld": {player addWeapon "rhs_weap_mk18_m320";
-					player addPrimaryWeaponItem "rhsusf_acc_g33_xps3";
+					player addPrimaryWeaponItem "rhsusf_acc_eotech_xps3";
 					player addPrimaryWeaponItem "bwa3_acc_varioray_irlaser_black";
 					player addPrimaryWeaponItem "rhsusf_acc_rotex5_grey"
 	};
@@ -23,7 +23,7 @@ switch (_loadout) do {
 	};
 	case "sqd_ar": { player addWeapon "rhs_weap_m249_light_S";
 					 player addPrimaryWeaponItem "bwa3_acc_varioray_irlaser_black";
-					 player addPrimaryWeaponItem "rhsusf_acc_g33_xps3";
+					 player addPrimaryWeaponItem "rhsusf_acc_eotech_xps3";
 					 player addPrimaryWeaponItem "rhsusf_acc_nt4_black"
 	};
 	case "sqd_dmr": { player addWeapon "rhs_weap_mk18";

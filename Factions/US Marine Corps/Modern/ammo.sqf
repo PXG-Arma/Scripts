@@ -27,7 +27,7 @@ switch (_loadout) do {
 	case "ar_ld";
 	case "ar_c";
 	case "pil": {
-		for "_i" from 1 to 4 do { player addItemToVest "rhs_mag_30Rnd_556x45_M855_Stanag"};
+		for "_i" from 1 to 2 do { player addItemToVest "rhs_mag_30Rnd_556x45_M855_Stanag"};
 	};
 };
 
@@ -36,6 +36,9 @@ switch (_loadout) do {
 	default {
 		for "_i" from 1 to 4 do { player addItemToBackpack "8Rnd_45ACP_Magazine"};
 	};
+	case "ar_ld";
+	case "ar_c";
+	case "pil";
 	case "sup_aa_g";
 	case "sup_mat_g";
 	case "sup_mmg_g": {};

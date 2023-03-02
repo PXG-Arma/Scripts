@@ -30,6 +30,8 @@ switch (_loadout) do {
 // add secondary weapon
 switch (_loadout) do {
 	default { player addWeapon "UK3CB_BHP"};
+	case "sqd_eng";
+	case "rcn_spe": {};
 };
 
 // add launcher

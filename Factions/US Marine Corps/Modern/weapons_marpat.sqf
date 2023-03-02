@@ -43,7 +43,9 @@ switch (_loadout) do {
 	case "pil";
 	case "sup_aa_g";
 	case "sup_mat_g";
-	case "sup_mmg_g": {};
+	case "sup_mmg_g";
+	case "sqd_eng";
+	case "rcn_spe": {};
 };
 
 // add launcher

@@ -32,12 +32,6 @@ switch(_vehicleType) do
 			["IFF_Panels_Hide",1]
 		] call BIS_fnc_initVehicle;
 	};
-
-	case "RHS_MELB_AH6M":
-	{
-		[_vehicle, 2] call ace_cargo_fnc_setSpace;
-	};
-	
 	case "I_Plane_Fighter_04_F":
 	{
 		[

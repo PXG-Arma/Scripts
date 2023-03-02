@@ -59,6 +59,8 @@ switch (_loadout) do {
 	case "sqd_hgre";
 	case "sqd_brc";
 	case "rcn_sni": { player addWeapon "rhsusf_weap_MP7A2_folded"};
+	case "sqd_eng";
+	case "rcn_spe": {};
 };
 // add launcher
 //case "sup_aa_g": {	player addWeapon "rhs_weap_fim92"};	

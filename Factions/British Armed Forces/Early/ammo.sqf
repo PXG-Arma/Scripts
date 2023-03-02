@@ -48,7 +48,8 @@ switch (_loadout) do {
 // add secondary ammo
 switch (_loadout) do {
 	default {for "_i" from 1 to 4 do { player addItemToVest "UK3CB_BHP_9_13Rnd"}};
-	
+	case "sqd_eng";
+	case "rcn_spe": {};
 };
 
 // add assistant ammo 

@@ -20,10 +20,5 @@ switch(_vehicleType) do
 			true 
 		] call BIS_fnc_initVehicle;
 	};
-
-	case "I_UAV_06_F":
-	{
-		[_vehicle,  2] call ace_cargo_fnc_setSpace;
-	};
 	default {};
 };

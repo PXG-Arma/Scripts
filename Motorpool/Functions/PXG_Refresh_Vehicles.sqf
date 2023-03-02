@@ -28,9 +28,12 @@ tvClear 461502;
 	_vehicleList = _x select 1; 
 	_parentType = _forEachIndex; 
 	{
-		_vehicleName = getText (configFile >> "CfgVehicles" >> _x >> "DisplayName");
+		_vehicleClass = _x select 0;			// vehicle class 
+		_vehicleCargo = _x select 1;			// vehicle cargo value
+		_vehicleName = getText (configFile >> "CfgVehicles" >> _vehicleClass >> "DisplayName");
 		_indexList = tvAdd [461502, [_parentType], _vehicleName];
-		tvSetData [461502, [_parentType, _indexList], _x];
+		tvSetData [461502, [_parentType, _indexList], _vehicleClass];				// saves class in tvData for later use in PXG_Spawn_Vehicle.sqf
+		tvSetValue [461502, [_parentType, _indexList], _vehicleCargo];			// saves cargo value in tvValue for later use in PXG_Spawn_Vehicle.sqf 
 
 	} forEach _vehicleList;
 }	forEach _vehiclesArray;

@@ -60,6 +60,13 @@ if (count _nearVehicles > 0) then {
 	_recolourScriptPath = "Scripts\Factions\" + _faction + "\" + _variant + "\vehicles_recolour_" + _camo + ".sqf";
     [_vehicle, _vehicleType] call compile preprocessfile _recolourScriptPath;
 
+	// Set ACE cargo 
+	_vehicleCargo = tvValue [461502, _indexVehicle];	// Get cargo value from tvValue
+	
+	if (_vehicleCargo >= 0) then {						// If value is 0 or greater, set it to that value. If it is negative, leave it alone.
+		[_vehicle, _vehicleCargo] call ace_cargo_fnc_setSpace;	
+	};
+
 	//Remove default contents from vehicle
 	clearItemCargoGlobal _vehicle;
 	clearWeaponCargoGlobal _vehicle;

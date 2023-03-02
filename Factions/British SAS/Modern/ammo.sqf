@@ -49,6 +49,8 @@ switch (_loadout) do {
 	case "rcn_sni": {
 		for "_i" from 1 to 4 do { player addItemToVest "rhsusf_mag_40Rnd_46x30_AP"};
 	};
+	case "sqd_eng";
+	case "rcn_spe": {};
 };
 
 // add assistant ammo 

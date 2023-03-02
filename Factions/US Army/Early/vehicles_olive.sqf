@@ -1,45 +1,74 @@
-_availableVehicles = 
+_availableVehicles =
+
 [
-  ["Utility",
-  ["UK3CB_CW_US_B_EARLY_M939_Guntruck",
-  "UK3CB_CW_US_B_EARLY_M939_Fuel",
-  "UK3CB_CW_US_B_EARLY_M939_Reammo",
-  "UK3CB_CW_US_B_EARLY_M939_Recovery",
-  "UK3CB_CW_US_B_EARLY_M151_Jeep_Closed",
-  "UK3CB_CW_US_B_EARLY_M151_Jeep_Open"]],
 
-  ["Armed Car/MRAP",
-  ["UK3CB_CW_US_B_EARLY_M151_Jeep_TOW",
-  "UK3CB_CW_US_B_EARLY_M151_Jeep_HMG"]],
+	['Utility', 
+		[
+			['UK3CB_CW_US_B_EARLY_M939_Guntruck', 8], 
+			['UK3CB_CW_US_B_EARLY_M939_Fuel', 0], 
+			['UK3CB_CW_US_B_EARLY_M939_Reammo', 4], 
+			['UK3CB_CW_US_B_EARLY_M939_Recovery', 4], 
+			['UK3CB_CW_US_B_EARLY_M151_Jeep_Closed', 4], 
+			['UK3CB_CW_US_B_EARLY_M151_Jeep_Open', 4]
+		]
+	],
 
-  ["APC",
-  ["UK3CB_CW_US_B_EARLY_AAV"]],
- 
-  ["MBT",
-  ["UK3CB_CW_US_B_EARLY_M60a3"]],
+	['Armed Car/MRAP', 
+		[
+			['UK3CB_CW_US_B_EARLY_M151_Jeep_TOW', 4], 
+			['UK3CB_CW_US_B_EARLY_M151_Jeep_HMG', 4]
+		]
+	],
 
-  ["Rotary Transport",
-  ["UK3CB_CW_US_B_EARLY_UH1H_M240"]],
+	['APC', 
+		[
+			['UK3CB_CW_US_B_EARLY_AAV', 6]
+		]
+	],
 
-  ["Rotary Attack",
-  ["UK3CB_CW_US_B_EARLY_UH1H_GUNSHIP",
-  "UK3CB_CW_US_B_EARLY_AH1Z_GS"]],
+	['MBT', 
+		[
+			['UK3CB_CW_US_B_EARLY_M60a3', 4]
+		]
+	],
 
-  ["Fixed Wing Transport",
-  ["UK3CB_CW_US_B_EARLY_C47",
-  "UK3CB_CW_US_B_EARLY_C130J"]],
+	['Rotary Transport', 
+		[
+			['UK3CB_CW_US_B_EARLY_UH1H_M240', 6]
+		]
+	],
 
-  ["Boat",
-	["B_Boat_Transport_01_F",
-  "rhsgref_hidf_rhib",
-	"UK3CB_MDF_B_RHIB_Gunboat"]],
-  
-  ["Turrets",
-  ["RHS_M2StaticMG_MiniTripod_D",
-  "RHS_M2StaticMG_D",
-  "RHS_TOW_TriPod_D",
-  "RHS_MK19_TriPod_D",
-  "RHS_M119_D"]]
-  
+	['Rotary Attack', 
+		[
+			['UK3CB_CW_US_B_EARLY_UH1H_GUNSHIP', 6], 
+			['UK3CB_CW_US_B_EARLY_AH1Z_GS', 0]
+		]
+	],
+
+	['Fixed Wing Transport', 
+		[
+			['UK3CB_CW_US_B_EARLY_C47', 12], 
+			['UK3CB_CW_US_B_EARLY_C130J', 24]
+		]
+	],
+
+	['Boat', 
+		[
+			['B_Boat_Transport_01_F', 2], 
+			['rhsgref_hidf_rhib', 8], 
+			['UK3CB_MDF_B_RHIB_Gunboat', 8]
+		]
+	],
+
+	['Turrets', 
+		[
+			['RHS_M2StaticMG_MiniTripod_D', -1], 
+			['RHS_M2StaticMG_D', -1], 
+			['RHS_TOW_TriPod_D', -1], 
+			['RHS_MK19_TriPod_D', -1], 
+			['RHS_M119_D', -1]
+		]
+	]
 ];
+
 _availableVehicles

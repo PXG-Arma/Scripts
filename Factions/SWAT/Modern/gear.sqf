@@ -10,6 +10,14 @@ switch (_loadout) do {
 	
 };
 
+switch (_loadout) do {
+	default {};
+	case "sqd_eng": {player linkItem "B_UavTerminal";
+		for "_i" from 1 to 2 do { player addItemToBackpack "ACE_UAVBattery"};
+	};	
+};
+
+
 // add Spotting Scope
 switch (_loadout) do {
 	case "sqd_dmr": {player addItemToBackpack "ACE_SpottingScope";

@@ -31,19 +31,6 @@ switch(_vehicleType) do
 			["hideLeftDoor",1,"hideRightDoor",1,"hideRearDoor",0,"hideFenders",1,"hideHeadSupportFront",0,"hideSpareWheel",1]
 		] call BIS_fnc_initVehicle;
 	};
-
-	case "UK3CB_CW_SOV_O_EARLY_LI2";
-	case "UK3CB_CW_SOV_O_EARLY_LI2_ARMED":
-	{
-		[_vehicle,  8] call ace_cargo_fnc_setSpace;
-	};
-	
-	case "UK3CB_CW_SOV_O_EARLY_Antonov_AN2_Armed_Rockets";
-	case "UK3CB_CW_SOV_O_EARLY_Antonov_AN2":
-	{
-		[_vehicle, 4] call ace_cargo_fnc_setSpace;
-	};
-	
 	case "UK3CB_CW_SOV_O_EARLY_MIG21_CAS":
 	{
 		[

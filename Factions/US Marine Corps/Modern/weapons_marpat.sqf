@@ -38,9 +38,14 @@ switch (_loadout) do {
 // add secondary weapon
 switch (_loadout) do {
 	default {player addWeapon "bnae_r1_t_virtual"};
+	case "ar_ld";
+	case "ar_c";
+	case "pil";
 	case "sup_aa_g";
 	case "sup_mat_g";
-	case "sup_mmg_g": {};
+	case "sup_mmg_g";
+	case "sqd_eng";
+	case "rcn_spe": {};
 };
 
 // add launcher

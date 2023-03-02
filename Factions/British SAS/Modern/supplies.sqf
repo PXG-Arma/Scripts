@@ -16,6 +16,13 @@ _resupplyAvailable = [
 			["UK3CB_BAF_12G_Slugs",20]
 		]
 	],
+	["DMR Resupply",
+		[
+			["rhsusf_20Rnd_762x51_SR25_m62_Mag",10],
+			["rhsusf_20Rnd_762x51_SR25_m993_Mag",10],
+			["rhsusf_5Rnd_300winmag_xm2010",20]
+		]
+	],
 	["MMG Resupply",
 		[
 			["rhsusf_100Rnd_762x51_m61_ap",10],

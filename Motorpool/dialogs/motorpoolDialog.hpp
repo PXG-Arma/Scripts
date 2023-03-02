@@ -40,7 +40,7 @@ class dialog_motorpool
 
 			text = "2. Faction";
 			x = 0.30 * safezoneW + safezoneX;
-			y = 0.382 * safezoneH + safezoneY;
+			y = 0.3835 * safezoneH + safezoneY;
 			w = 0.06 * safezoneW;
 			h = 0.04 * safezoneH;
 		};
@@ -69,9 +69,9 @@ class dialog_motorpool
 		{
 			idc = -1; 
 
-			text = "Asset Preview";
+			text = "Asset Preview:";
 			x = 0.58 * safezoneW + safezoneX;
-			y = 0.55 * safezoneH + safezoneY;
+			y = 0.51 * safezoneH + safezoneY;
 			w = 0.06 * safezoneW;
 			h = 0.04 * safezoneH;
 		};
@@ -123,9 +123,27 @@ class dialog_motorpool
 			idc = 461505; 
 
 			x = 0.58 * safezoneW + safezoneX;
-			y = 0.545 * safezoneH + safezoneY;
+			y = 0.51 * safezoneH + safezoneY;
 			w = 0.12 * safezoneW;
-			h = 0.23 * safezoneH;
+			h = 0.20 * safezoneH;
+		};
+		class motorpoolCargoText: PxgGuiRscText
+		{
+			idc = 461499;
+
+			x = 0.58 * safezoneW + safezoneX;
+			y = 0.68 * safezoneH + safezoneY;
+			w = 0.1 * safezoneW;
+			h = 0.02 * safezoneH;
+		};
+		class motorpoolSeatsText: PxgGuiRscText
+		{
+			idc = 461498;
+
+			x = 0.58 * safezoneW + safezoneX;
+			y = 0.70 * safezoneH + safezoneY;
+			w = 0.1 * safezoneW;
+			h = 0.02 * safezoneH;
 		};
 	
 		class dim_vehicle_spawn_button: PxgGuiRscButton

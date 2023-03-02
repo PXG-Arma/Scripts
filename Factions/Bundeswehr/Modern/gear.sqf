@@ -13,7 +13,13 @@ switch (_loadout) do {
 // add 117 radio
 switch (_loadout) do {
     default {};
-    case "pil": {player addItemToBackpack "ACRE_PRC117F"};
+    case "ger_pil": {player addItemToBackpack "ACRE_PRC117F"};
+};
+
+// add TopOwl to pilot
+switch (_loadout) do {
+    default {};
+    case "ger_pil": {player addHeadgear "BWA3_TopOwl_nvg"};
 };
 
 // add Spotting Scope

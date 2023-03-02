@@ -29,6 +29,8 @@ switch (_loadout) do {
 	default {player addWeapon "rhsusf_weap_glock17g4";
 			 player addHandgunItem "acc_flashlight_pistol";
 	};
+	case "sqd_eng";
+	case "rcn_spe": {};
 };
 
 // add launcher

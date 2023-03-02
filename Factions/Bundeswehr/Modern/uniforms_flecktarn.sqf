@@ -5,7 +5,7 @@ switch (_loadout) do {
 	default { player forceAddUniform "BWA3_Uniform_Fleck"};
 	case "ar_ld";
 	case "ar_c": {player forceAddUniform "BWA3_Uniform_Crew_Fleck"};
-	case "pil": {player forceAddUniform "BWA3_Uniform_Helipilot"};
+	case "ger_pil": {player forceAddUniform "BWA3_Uniform_Helipilot"};
 };
 	
 // add helmet
@@ -17,8 +17,6 @@ switch (_loadout) do {
 	case "rcn_dmr": { player addHeadgear "BWA3_Booniehat_Fleck"};
 	case "ar_ld";
 	case "ar_c": {player addHeadgear "BWA3_CrewmanKSK_Fleck_Headset"};
-	case "pil": {player addHeadgear "H_PilotHelmetHeli_B"};
-
 };
 
 // add vest
@@ -33,7 +31,7 @@ switch (_loadout) do {
 	case "sqd_ar": { player addVest "BWA3_Vest_MachineGunner_Fleck"};
 	case "ar_ld";
 	case "ar_c";
-	case "pil": { player addVest "BWA3_Vest_Fleck"};
+	case "ger_pil": { player addVest "BWA3_Vest_Fleck"};
 };
 
 // add backpack 
@@ -44,7 +42,7 @@ switch (_loadout) do {
 	case "sup_mat_l": {player addBackpack "BWA3_Carryall_Fleck"};
 	case "sup_mor_l": {player addBackpack "I_Mortar_01_support_F"};
 	case "sup_mor_g": {player addBackpack "I_Mortar_01_weapon_F"};
-	case "pil": {player addBackpack "BWA3_AssaultPack_Fleck"};
+	case "ger_pil": {player addBackpack "BWA3_AssaultPack_Fleck"};
 	case "ar_ld";
 	case "ar_c": {};
 };

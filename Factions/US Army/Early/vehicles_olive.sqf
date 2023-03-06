@@ -22,8 +22,7 @@ _availableVehicles =
 
 	['APC', 
 		[
-			['UK3CB_CW_US_B_EARLY_M113_M2', 6],
-			['UK3CB_CW_US_B_EARLY_M113_MK19', 6]
+			['UK3CB_CW_US_B_EARLY_AAV', 6]
 		]
 	],
 

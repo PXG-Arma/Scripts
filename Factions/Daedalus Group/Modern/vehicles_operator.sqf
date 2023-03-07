@@ -42,8 +42,7 @@ _availableVehicles =
 	['Boat', 
 		[
 			['B_Boat_Transport_01_F', 2], 
-			['UK3CB_BAF_RHIB_GPMG', 8], 
-			['UK3CB_BAF_RHIB_HMG', 8]
+			['rhsgref_hidf_rhib', 8]
 		]
 	],
 

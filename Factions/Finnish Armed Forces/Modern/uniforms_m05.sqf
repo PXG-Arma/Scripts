@@ -5,7 +5,6 @@ switch (_loadout) do {
 	default { player forceAddUniform "m93_fi"};
 	case "ar_ld";
 	case "ar_c": {player forceAddUniform "m93_fi"};
-	case "pil": {player forceAddUniform "U_I_pilotCoveralls"};
 };
 
 // add helmet random
@@ -21,7 +20,6 @@ switch (_loadout) do {
 	case "rcn_drone": {player addHeadgear "rhs_beanie_green"};
 	case "ar_ld";
 	case "ar_c": {player addHeadgear "rhs_6b48"};
-	case "pil": {player addHeadgear "rhsusf_hgu56p_visor_green"};
 };
 
 // add vest
@@ -29,7 +27,6 @@ switch (_loadout) do {
 	default { player addVest "v6b23fi"};
 	case "ar_ld";
 	case "ar_c": {player addVest "v6b23fi"};
-	case "pil": { player addVest "v6b23fi"};
 };
 
 // add backpack 
@@ -47,6 +44,5 @@ switch (_loadout) do {
 	case "sup_mor_l": {player addBackpack "I_Mortar_01_support_F"};
 	case "sup_mor_g": {player addBackpack "I_Mortar_01_weapon_F"};
 	case "ar_ld";
-	case "ar_c";
-	case "pil": {};
+	case "ar_c": {};
 };

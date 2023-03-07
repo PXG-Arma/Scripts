@@ -24,13 +24,13 @@ _resupplyAvailable = [
 	],
 	["LAT Resupply",
 		[
-			["BWA3_RGW90_Loaded",8]
+			["launch_NLAW_F",8]
 		]
 	],
-	["MAT Resupply",
+	["MAT Resuppply",
 		[
-			["BWA3_CarlGustav_HEAT",4],
-			["BWA3_CarlGustav_HEDP",4]
+			["rhs_mag_maaws_HEAT",4],
+			["rhs_mag_maaws_HEDP",4]
 		]
 	],
 	["Hand Grenades",
@@ -113,7 +113,7 @@ _resupplyAvailable = [
 			["rhs_mag_20Rnd_762x51_m80_fnfal", 24],
 			["rhsusf_8Rnd_00Buck",4],
 			["rhsusf_8Rnd_Slug",4],
-			["BWA3_RGW90_Loaded", 1],
+			["launch_NLAW_F", 1],
 			["1Rnd_HE_Grenade_Shell", 12],
 			["HandGrenade", 6],
 			["rhs_mag_an_m8hc", 6],

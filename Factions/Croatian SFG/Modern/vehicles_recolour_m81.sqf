@@ -2,6 +2,16 @@ params["_vehicle","_vehicleType"];
 
 switch(_vehicleType) do
 {
+	case "rhsusf_M1078A1R_SOV_M2_D_fmtv_socom";
+	case "rhsusf_M1084A1R_SOV_M2_D_fmtv_socom":
+	{
+		[
+			_vehicle,
+			["rhs_woodland",1], 
+			true
+		] call BIS_fnc_initVehicle;
+	};
+
 	case "rhsusf_m998_w_2dr";
 	case "rhsusf_m1025_w";
 	case "rhsusf_m1043_w_m2":
@@ -44,4 +54,3 @@ switch(_vehicleType) do
 	default {};
 	
 };
-

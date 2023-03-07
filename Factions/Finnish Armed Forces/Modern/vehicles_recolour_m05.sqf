@@ -29,7 +29,7 @@ switch(_vehicleType) do
 		] call BIS_fnc_initVehicle;
 	};
 
-	case "UK3CB_O_G_MTLB_PKT":
+	case "UK3CB_B_G_MTLB_PKT":
 	{
 		[
 			_vehicle,
@@ -38,7 +38,7 @@ switch(_vehicleType) do
 		] call BIS_fnc_initVehicle;
 	};
 
-	case "UK3CB_O_G_MTLB_Zu23":
+	case "UK3CB_B_G_MTLB_Zu23":
 	{
 		[
 			_vehicle,
@@ -47,7 +47,7 @@ switch(_vehicleType) do
 		] call BIS_fnc_initVehicle;
 	};
 
-	case "UK3CB_O_G_BMP1":
+	case "UK3CB_B_G_BMP1":
 	{
 		[
 			_vehicle,
@@ -56,7 +56,7 @@ switch(_vehicleType) do
 		] call BIS_fnc_initVehicle;
 	};
 
-	case "UK3CB_O_G_BMP2K":
+	case "UK3CB_B_G_BMP2K":
 	{
 		[
 			_vehicle,

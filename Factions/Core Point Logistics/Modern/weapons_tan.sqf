@@ -20,7 +20,7 @@ switch (_loadout) do {
 					player addPrimaryWeaponItem "rhsusf_acc_eotech_xps3";
 	};
 	case "sqd_brc": {player addWeapon "rhs_weap_M590_8RD"};
-	case "sup_mmg_g": {player addWeapon "BWA3_MG5_tan";
+	case "sup_mmg_g": {player addWeapon "rhs_weap_m240B";
 					   player addPrimaryWeaponItem "rhsusf_acc_acog_mdo";
 					   player addPrimaryWeaponItem "rhsusf_acc_anpeq15side_bk";
 	};

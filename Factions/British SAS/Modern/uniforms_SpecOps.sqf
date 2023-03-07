@@ -21,7 +21,7 @@ switch (_loadout) do {
 	case "rcn_dmr";
 	case "rcn_sni";
 	case "rcn_amr": {player addHeadgear "H_Watchcap_blk"};
-	case "pil": {player addHeadgear "UK3CB_BAF_H_PilotHelmetHeli_A"};
+	case "pil": {player addHeadgear "rhsusf_hgu56p_black"};
 };
 
 // add vest
@@ -51,5 +51,7 @@ switch (_loadout) do {
 // add backpack 
 switch (_loadout) do {
 	default { player addBackpack "Black_Backpack_kitbag"};
+	case "sup_hat_l";
+	case "sup_hat_g": {player addBackpack "Black_Carryall"};
 	case "pil": {};
 };

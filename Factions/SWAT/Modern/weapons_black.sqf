@@ -4,23 +4,21 @@ params["_side","_faction","_variant", "_loadout"];
 switch (_loadout) do {
 	default { player addWeapon "rhs_weap_m4_carryhandle_mstock";
 			  player addPrimaryWeaponItem "rhsusf_acc_eotech_xps3";
-			  player addPrimaryWeaponItem "bwa3_acc_varioray_irlaser_black";
+			  player addPrimaryWeaponItem "rhsusf_acc_anpeq15_bk";
 			  player addPrimaryWeaponItem "rhsusf_acc_sf3p556";
 			  player addPrimaryWeaponItem "rhsusf_acc_rvg_blk";
 	};
 	case "pil":{ player addWeapon "UK3CB_MP5N"};
 	case "sqd_gre":{ player addWeapon "rhs_weap_m4_carryhandle_m203S";
 					 player addPrimaryWeaponItem "rhsusf_acc_eotech_xps3";
-					 player addPrimaryWeaponItem "bwa3_acc_varioray_irlaser_black";
+					 player addPrimaryWeaponItem "rhsusf_acc_wmx_bk";
 					 player addPrimaryWeaponItem "rhsusf_acc_sf3p556";
 	};
 	case "sqd_dmr": {player addWeapon "rhs_weap_m24sws";
 					 player addPrimaryWeaponItem "rhsusf_acc_leupoldmk4";
 					 player addPrimaryWeaponItem "rhsusf_acc_harris_swivel";
 	};
-	case "sqd_brc": {player addWeapon "UK3CB_BAF_L128A1";
-					 player addPrimaryWeaponItem "rhsusf_acc_eotech_xps3";
-					 player addPrimaryWeaponItem "bwa3_acc_varioray_irlaser_black";
+	case "sqd_brc": {player addWeapon "rhs_weap_M590_8RD";
 	};
 };
 

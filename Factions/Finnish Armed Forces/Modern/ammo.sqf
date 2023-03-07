@@ -30,8 +30,7 @@ switch (_loadout) do {
 	};
 	// Armour Crew/Pilot
 	case "ar_ld";
-	case "ar_c";
-	case "pil": {
+	case "ar_c": {
 		for "_i" from 1 to 4 do { player addItemToVest "30Rnd_762x39_Magazine"};
 	};
 };

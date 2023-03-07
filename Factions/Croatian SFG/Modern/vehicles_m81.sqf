@@ -4,12 +4,9 @@ _availableVehicles =
 
 	['Utility', 
 		[
-			['rnt_lkw_7t_mil_gl_kat_i_mun_fleck', 4], 
-			['rnt_lkw_10t_mil_gl_kat_i_repair_fleck', 8], 
-			['rnt_lkw_5t_mil_gl_kat_i_fuel_fleck', 0], 
-			['rnt_lkw_5t_mil_gl_kat_i_transport_fleck', 8], 
-			['rhsusf_m998_w_2dr', 6], 
-			['rhsusf_m1151_usarmy_wd', 4]
+			['rhsusf_M1078A1R_SOV_M2_D_fmtv_socom', 4], 
+			['rhsusf_M1084A1R_SOV_M2_D_fmtv_socom', 12], 
+			['rhsusf_m998_w_2dr', 6]
 		]
 	],
 
@@ -49,8 +46,7 @@ _availableVehicles =
 	['Boat', 
 		[
 			['B_Boat_Transport_01_F', 2], 
-			['UK3CB_BAF_RHIB_GPMG', 8], 
-			['UK3CB_BAF_RHIB_HMG', 8]
+			['rhsgref_hidf_rhib', 8]
 		]
 	],
 

@@ -1,14 +1,18 @@
 _resupplyAvailable = [
 	["Primary Resupply",
 		[
-			["rhs_30Rnd_762x39mm_polymer",40],
-			["rhs_30Rnd_762x39mm_polymer_tracer",40]
+			["rhs_30Rnd_762x39mm_polymer",20],
+			["rhs_30Rnd_762x39mm_polymer_tracer",10],
+			["rhs_30Rnd_545x39_7N22_plum_AK",20],
+			["rhs_30Rnd_545x39_AK_plum_green",10],
+			["rhs_20rnd_9x39mm_SP6",20]
 		]
 	],
-	["AR Resupply",
+	["DMR Resupply",
 		[
-			["75rnd_762x39_AK12_Mag_F",20],
-			["75rnd_762x39_AK12_Mag_Tracer_F",20]
+			["rhs_10Rnd_762x54mmR_7N1",10],
+			["rhs_10Rnd_762x54mmR_7N14",10],
+			["rhs_5Rnd_338lapua_t5000",20]
 		]
 	],
 	["MMG Resupply",
@@ -18,35 +22,39 @@ _resupplyAvailable = [
 			["rhs_100Rnd_762x54mmR",10]
 		]
 	],
-	["DMR Resupply",
-		[
-			["rhs_10Rnd_762x54mmR_7N11",15],
-			["rhs_10Rnd_762x54mmR_7N14",15]
-		]
-	],
 	["LAT Resupply",
 		[
 			["rhs_weap_rpg75",8]
 		]
 	],
-	["HAT Resupply",
+	["MAT Resupply (HEAT)",
 		[
-			["Vorona_HEAT",2],
-			["Vorona_HE",2]
+			["rhs_rpg7_PG7VL_mag",6],
+			["rhs_rpg7_PG7VR_mag",2]
+		]
+	],
+	["MAT Resupply (Misc.)",
+		[
+			["rhs_rpg7_TBG7V_mag",4],
+			["rhs_rpg7_OG7V_mag",4]
+		]
+	],
+	["AA Resupply",
+		[
+			["rhs_mag_9k38_rocket",4]
 		]
 	],
 	["Hand Grenades",
 		[
-			["rhssaf_mag_br_m84",20],
+			["rhs_grenade_khattabka_vog25_mag",20],
 			["rhs_mag_zarya2",10]
 		]
 	],
 	["Smoke Grenades",
 		[
-			["rhs_mag_rdg2_white",10],
-			["rhssaf_mag_brd_m83_red",10],
-			["rhssaf_mag_brd_m83_green",10],
-			["rhssaf_mag_brd_m83_blue",10]
+			["rhs_mag_an_m8hc",10],
+			["SmokeShellRed",10],
+			["SmokeShellGreen",10]
 		]
 	],
 	["40mm Grenades",
@@ -68,7 +76,7 @@ _resupplyAvailable = [
 			["rhs_VG40OP_green",10]
 		]
 	],
-	["Breaching Charges",
+		["Breaching Charges",
 		[
 			["tsp_popperCharge_mag",16],
 			["tsp_stickCharge_mag",8],
@@ -112,12 +120,13 @@ _resupplyAvailable = [
 	],
 	["Squad Resupply",
 		[
-			["rhs_30Rnd_762x39mm_polymer", 24],
-			["75rnd_762x39_AK12_Mag_F", 8],
+			["rhs_30Rnd_762x39mm_polymer", 10],
+			["rhs_30Rnd_545x39_7N22_plum_AK", 10],
+			["rhs_20rnd_9x39mm_SP6", 10],
 			["rhs_weap_rpg75", 1],
-			["rhs_VOG25", 12],
-			["rhs_mag_rgd5", 6],
-			["rhs_GRD40_White", 6],
+			["rhs_VOG25",12],
+			["rhs_grenade_khattabka_vog25_mag", 6],
+			["rhs_mag_an_m8hc", 6],
 			["ACE_elasticBandage", 12],
 			["ACE_packingBandage", 12],
 			["ACE_quikclot", 12],

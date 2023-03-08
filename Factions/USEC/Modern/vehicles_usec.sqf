@@ -7,15 +7,14 @@ _availableVehicles =
 			['C_Van_01_transport_F', 8], 
 			['C_Van_01_box_F', 8], 
 			['C_Van_01_fuel_F', 0], 
-			['O_LSV_02_unarmed_F', 4]
+			['C_Offroad_01_covered_F', 4], 
+			
 		]
 	],
 
 	['Armed Car/MRAP', 
 		[
-			['O_LSV_02_armed_F', 4], 
-			['O_LSV_02_AT_F', 4], 
-			['UK3CB_AAF_B_SUV_Armoured', 4], 
+			['UK3CB_AAF_B_SUV_Armoured', 4],
 			['UK3CB_AAF_B_SUV_Armed', 4]
 		]
 	],
@@ -46,17 +45,10 @@ _availableVehicles =
 		]
 	],
 
-	['Turrets', 
-		[
-			['B_G_HMG_02_F', -1], 
-			['B_G_HMG_02_high_F', -1]
-		]
-	],
-
 	['Misc.', 
 		[
-			['UK3CB_AAF_B_Quadbike', 2], 
-			['UK3CB_AAF_B_M1030', 2]
+			['B_G_Quadbike_01_F', 2], 
+			['UK3CB_B_M1030_NATO', 2]
 		]
 	]
 ];

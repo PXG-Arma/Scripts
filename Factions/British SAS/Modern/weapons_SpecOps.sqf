@@ -16,7 +16,6 @@ switch (_loadout) do {
 					player addPrimaryWeaponItem "rhsusf_acc_anpeq15_bk_light";
 					player addPrimaryWeaponItem "rhsusf_acc_rotex5_grey"
 	};
-	case "sqd_hgre": { player addWeapon "rhs_weap_m32"};
 	case "sqd_ar": { player addWeapon "rhs_weap_m249_light_S";
 					 player addPrimaryWeaponItem "rhsusf_acc_anpeq15_bk_light";
 					 player addPrimaryWeaponItem "rhsusf_acc_eotech_xps3";

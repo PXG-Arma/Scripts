@@ -5,18 +5,19 @@ switch (_loadout) do {
 	default {
 		switch (primaryWeapon player) do {
 		
-			case "rhs_weap_ak103_zenitco01_b33";
 			case "rhs_weap_ak104_zenitco01_b33";
+			case "rhs_weap_ak103_zenitco01_b33";
 			case "rhs_weap_ak103_gp25_npz": {
 					for "_i" from 1 to 4 do { player addItemToVest "rhs_30Rnd_762x39mm_polymer"};
-					for "_i" from 1 to 4 do { player addItemToVest "rhs_30Rnd_762x39mm_polymer_tracer"};
+					for "_i" from 1 to 4 do { player addItemToBackpack "rhs_30Rnd_762x39mm_polymer_tracer"};
 			};
 			case "rhs_weap_ak105_zenitco01_b33";
 			case "rhs_weap_ak74m_zenitco01_b33";
-			case "rhs_weap_rpk74m_npz";
-			case "rhs_weap_ak74mr_gp25": {
+			case "rhs_weap_ak74m_gp25_npz";
+			case "rhs_weap_ak74mr_gp25";
+			case "rhs_weap_rpk74m_npz": {
 				for "_i" from 1 to 4 do { player addItemToVest "rhs_30Rnd_545x39_7N22_plum_AK"};
-				for "_i" from 1 to 4 do { player addItemToVest "rhs_30Rnd_545x39_AK_plum_green"};
+				for "_i" from 1 to 4 do { player addItemToBackpack "rhs_30Rnd_545x39_AK_plum_green"};
 			};
 			case "rhs_weap_asval_grip_npz";
 			case "rhs_weap_vss_grip_npz": {

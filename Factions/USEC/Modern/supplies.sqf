@@ -1,36 +1,44 @@
 _resupplyAvailable = [
 	["Primary Resupply",
 		[
-			["rhs_mag_20Rnd_762x51_m80_fnfal",40],
-			["rhs_mag_20Rnd_762x51_m62_fnfal",40]
-		]
-	],
-	["Shotgun Resupply",
-		[
-			["rhsusf_8Rnd_00Buck",20],
-			["rhsusf_8Rnd_Slug",20]
+			["rhs_mag_30Rnd_556x45_M855A1_PMAG",20],
+			["rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red",10]
+			["rhssaf_30rnd_556x45_EPR_G36",20],
+			["rhssaf_30rnd_556x45_Tracers_G36",10]
+			["rhs_mag_20Rnd_SCAR_762x51_m61_ap_bk",20],
+			["rhs_mag_20Rnd_SCAR_762x51_m62_tracer_bk",10]
+			["rhsusf_mag_40Rnd_46x30_AP",20],
 		]
 	],
 	["MMG Resupply",
 		[
-			["UK3CB_MG3_100rnd_762x51_GM",20]
+			["rhsusf_100Rnd_762x51_m61_ap",10],
+			["rhsusf_100Rnd_762x51_m62_tracer",10],
+			["rhsusf_100Rnd_762x51_m80a1epr",10]
 		]
 	],
 	["DMR Resupply",
 		[
-			["UK3CB_G3_20rnd_762x51",10],
-			["UK3CB_G3_20rnd_762x51_GT",10]
+			["rhsusf_20Rnd_762x51_SR25_m993_Mag",10],
+			["rhsusf_20Rnd_762x51_SR25_m62_Mag",10],
+			["rhsusf_5Rnd_300winmag_xm2010",20]
 		]
 	],
 	["LAT Resupply",
 		[
-			["launch_NLAW_F",8]
+			["rhs_weap_m72a7",8]
 		]
 	],
-	["MAT Resuppply",
+	["MAT Resupply",
 		[
-			["rhs_mag_maaws_HEAT",4],
-			["rhs_mag_maaws_HEDP",4]
+			["rhs_mag_smaw_SR",2],
+			["rhs_mag_smaw_HEAA",4],
+			["rhs_mag_smaw_HEDP",4]
+		]
+	],
+	["AA Resupply",
+		[
+			["rhs_fim92_mag",4]
 		]
 	],
 	["Hand Grenades",
@@ -64,6 +72,13 @@ _resupplyAvailable = [
 		[
 			["UGL_FlareWhite_F",20],
 			["UGL_FlareCIR_F",20]
+		]
+	],	
+	["40mm Heavy",
+		[
+			["rhsusf_mag_6Rnd_M441_HE",8],
+			["rhsusf_mag_6Rnd_M714_white",4],
+			["rhsusf_mag_6Rnd_M713_red",4]
 		]
 	],
 	["Breaching Charges",
@@ -110,11 +125,13 @@ _resupplyAvailable = [
 	],
 	["Squad Resupply",
 		[
-			["rhs_mag_20Rnd_762x51_m80_fnfal", 24],
-			["rhsusf_8Rnd_00Buck",4],
-			["rhsusf_8Rnd_Slug",4],
-			["launch_NLAW_F", 1],
+			["rhs_mag_30Rnd_556x45_M855A1_PMAG", 10],
+			["rhssaf_30rnd_556x45_EPR_G36", 10],
+			["rhs_mag_20Rnd_SCAR_762x51_m61_ap_bk", 10],
+			["rhsusf_mag_40Rnd_46x30_AP", 10],
+			["rhs_weap_m72a7", 1],
 			["1Rnd_HE_Grenade_Shell", 12],
+			["rhsusf_mag_6Rnd_M441_HE", 2],
 			["HandGrenade", 6],
 			["rhs_mag_an_m8hc", 6],
 			["ACE_elasticBandage", 12],

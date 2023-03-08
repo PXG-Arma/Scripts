@@ -2,12 +2,12 @@ _resupplyAvailable = [
 	["Primary Resupply",
 		[
 			["rhs_mag_30Rnd_556x45_M855A1_PMAG",20],
-			["rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red",10]
+			["rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red",10],
 			["rhssaf_30rnd_556x45_EPR_G36",20],
-			["rhssaf_30rnd_556x45_Tracers_G36",10]
+			["rhssaf_30rnd_556x45_Tracers_G36",10],
 			["rhs_mag_20Rnd_SCAR_762x51_m61_ap_bk",20],
-			["rhs_mag_20Rnd_SCAR_762x51_m62_tracer_bk",10]
-			["rhsusf_mag_40Rnd_46x30_AP",20],
+			["rhs_mag_20Rnd_SCAR_762x51_m62_tracer_bk",10],
+			["rhsusf_mag_40Rnd_46x30_AP",20]
 		]
 	],
 	["MMG Resupply",

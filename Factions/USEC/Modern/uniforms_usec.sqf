@@ -3,7 +3,7 @@ params["_side","_faction","_variant", "_loadout"];
 // add uniform
 switch (_loadout) do {
 	default {
-		randomUniformArray = ["U_BG_Guerrilla_6_1","UK3CB_ION_B_U_CombatSmock_02_WDL","UK3CB_ION_B_U_CombatSmock_04_URB"];
+		randomUniformArray = ["U_BG_Guerrilla_6_1","UK3CB_ION_B_U_CombatSmock_02_WDL","UK3CB_ION_B_U_CombatSmock_03_URB","UK3CB_ION_B_U_CombatSmock_04_URB"];
 		player forceAddUniform selectRandom randomUniformArray;
 	};
 };
@@ -11,7 +11,7 @@ switch (_loadout) do {
 // add helmet
 switch (_loadout) do {
 	default {
-		randomHelmetArray = ["rhsusf_opscore_mar_ut_pelt","rhsusf_opscore_bk_pelt"];
+		randomHelmetArray = ["rhsusf_opscore_bk_pelt","rhsusf_opscore_mar_ut_pelt"];
 		player addHeadgear selectRandom randomHelmetArray;
 	};
 };
@@ -43,10 +43,10 @@ switch (_loadout) do {
 
 // add backpack 
 switch (_loadout) do {
-	default { player addBackpack "rhsusf_assault_eagleaiii_coy"};
+	default { player addBackpack "B_Kitbag_cbr"};
 	case "sqd_med";
-	case "rcn_spe": {player addBackpack "rhsusf_assault_eagleaiii_coy"};
+	case "rcn_spe": {player addBackpack "B_Kitbag_cbr"};
 	case "sup_mmg_l";
-	case "sup_mmg_g": {player addBackpack "rhsusf_assault_eagleaiii_coy"};
+	case "sup_mmg_g": {player addBackpack "B_Kitbag_cbr"};
 	case "pil": {};
 };

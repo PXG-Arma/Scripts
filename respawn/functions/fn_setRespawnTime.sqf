@@ -12,7 +12,7 @@ Example:
 	call pxg_respawn_fnc_
 */
 
-private _respawnMode = RespawnMaster getVariable ["PXG_Respawn_Mode",0];
+private _respawnMode = missionNamespace getVariable ["PXG_Respawn_Mode",0];
 
 sleep 5; 
 
@@ -38,3 +38,4 @@ switch (str player) do {
 		};
 	};
 };
+

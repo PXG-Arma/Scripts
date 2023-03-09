@@ -6,6 +6,9 @@ class pxg_Respawn{
 		class respawnPlayers{};
 		class setRespawnTime{};
 		class startRespawnWave{};
+		class setRespawnTime2{};
+		class respawnOnePLayer{};
+		class respawnOnePLayerRemote{};
 	};
 
 	class gui_functions{

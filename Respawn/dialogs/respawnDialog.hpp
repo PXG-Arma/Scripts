@@ -95,7 +95,7 @@ class dialog_respawn
 		class respawn_respawn_single_player: PxgGuiRscButton
 		{
 			idc = 471605;
-			action = "[pxg_respawn_fnc_respawnPlayers] remoteExec ['call',lbValue [471604,lbCurSel 471604],false]; closeDialog 2;";
+			action = "call pxg_respawn_fnc_respawnOnePlayerRemote; closeDialog 2;";
 
 			text = "Respawn One";
 

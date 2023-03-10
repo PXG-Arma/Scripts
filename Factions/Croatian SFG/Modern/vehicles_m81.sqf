@@ -6,7 +6,7 @@ _availableVehicles =
 		[
 			['rhsusf_M1078A1R_SOV_M2_D_fmtv_socom', 4], 
 			['rhsusf_M1084A1R_SOV_M2_D_fmtv_socom', 12], 
-			['rhsusf_m998_w_2dr', 6]
+			['rhsusf_m998_w_2dr', 4]
 		]
 	],
 

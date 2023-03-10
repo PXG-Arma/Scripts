@@ -12,7 +12,7 @@ switch (_loadout) do {
 	case "rcn_ld";
 	case "sqd_gre":{ player addWeapon "rhs_weap_vhsd2_bg";
 			  		 player addPrimaryWeaponItem "rhsusf_acc_anpeq15a";
-			  		 player addPrimaryWeaponItem "rhsusf_acc_su230"
+			  		 player addPrimaryWeaponItem "rhsusf_acc_su230";
 	};
 	case "sqd_ar": { player addWeapon "rhs_weap_m249_pip_S";
 					 player addPrimaryWeaponItem "rhsusf_acc_anpeq15a";
@@ -26,7 +26,7 @@ switch (_loadout) do {
 	};
 	case "sup_mmg_g": {player addWeapon "rhs_weap_fnmag";
 					   player addPrimaryWeaponItem "rhsusf_acc_ardec_m240";
-					   player addPrimaryWeaponItem "rhsusf_acc_ELCAN"
+					   player addPrimaryWeaponItem "rhsusf_acc_ELCAN";
 	};
 };
 

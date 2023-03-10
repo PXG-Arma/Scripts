@@ -57,7 +57,7 @@ switch (_loadout) do {
 		for "_i" from 1 to 1 do { player addItemToBackpack "Vorona_HE"};
 	};
 	case "sup_aa_l": {
-		for "_i" from 1 to 3 do { player addItemToBackpack "rhs_fim92_mag"};
+		for "_i" from 1 to 1 do { player addItemToBackpack "rhs_fim92_mag"};
 	};
 };
 
@@ -69,7 +69,7 @@ switch (_loadout) do {
 		for "_i" from 1 to 1 do { player addItemToBackpack "Vorona_HE"};
 	};
 	case "sup_aa_g": {
-		for "_i" from 1 to 2 do { player addItemToBackpack "rhs_fim92_mag"};
+		for "_i" from 1 to 1 do { player addItemToBackpack "rhs_fim92_mag"};
 	};
 };
 

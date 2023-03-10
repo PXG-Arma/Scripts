@@ -60,7 +60,7 @@ _availableVehicles =
 	['Rotary Attack', 
 		[
 			['UK3CB_TKA_I_Bell412_Armed', 6],
-			['UK3CB_TKA_I_Mi_24V', 8]
+			['UK3CB_TKA_I_Mi_24V', 4]
 		]
 	],
 	['Fixed Wing Transport', 
@@ -73,7 +73,6 @@ _availableVehicles =
 		[
 			['UK3CB_TKA_I_AC47', 4],
 			['UK3CB_TKA_I_L39_PYLON', -1],
-			['UK3CB_TKA_I_MIG21_CAS', -1],
 			['UK3CB_TKA_I_Su25SM_CAS', -1]
 		]
 	],

@@ -59,7 +59,7 @@ if (_variantEra == "Late") then {
 		case "sup_aa_l";
 		case "sup_mor_l":{
 			player addItemToUniform "ACRE_PRC343";
-			player addItemToUniform "ACRE_PRC152";
+			player addItemToVest "ACRE_PRC152";
 		};
 		case "pil": {};
 		case "rcn_ld";
@@ -83,7 +83,7 @@ if (_variantEra == "Modern" || _variantEra == "Future") then {
 		case "sup_aa_l";
 		case "sup_mor_l":{
 			player addItemToUniform "ACRE_PRC343";
-			player addItemToUniform "ACRE_PRC152"
+			player addItemToVest "ACRE_PRC152"
 		};
 		case "pil": {};
 		case "rcn_ld";

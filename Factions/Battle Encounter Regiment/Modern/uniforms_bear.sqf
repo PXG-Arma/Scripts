@@ -3,7 +3,7 @@ params["_side","_faction","_variant", "_loadout"];
 // add uniform
 switch (_loadout) do {
 	default {
-		randomUniformArray = ["UK3CB_NAP_B_U_Officer_Uniform_GRN","UK3CB_ION_B_U_SF_Uniform_SHIRT_03_DES","UK3CB_ION_B_U_SF_Uniform_Short_Shirt_08_WDL","rhs_uniform_gorka_r_g_gloves","G3Gorka_CombatUniform_EPSM_Kneepads"];
+		randomUniformArray = ["UK3CB_NAP_B_U_Officer_Uniform_GRN","UK3CB_ION_B_U_SF_Uniform_SHIRT_03_DES","UK3CB_ION_B_U_SF_Uniform_Short_Shirt_08_WDL","rhs_uniform_gorka_r_g_gloves","U_BG_Guerrilla_6_1"];
 		player forceAddUniform selectRandom randomUniformArray;
 	};
 };

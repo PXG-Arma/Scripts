@@ -1,5 +1,5 @@
 _availableFactions = [
-	"BEAR",
+	"Battle Encounter Regiment",
 	"Knights of Arabia",
 	"Russian Air Force",
 	"Russian Armed Forces",

@@ -3,7 +3,7 @@ params["_side","_faction","_variant", "_loadout"];
 // add uniform
 switch (_loadout) do {
 	default {
-		randomUniformArray = ["U_BG_Guerrilla_6_1","UK3CB_ION_B_U_CombatSmock_02_WDL","UK3CB_ION_B_U_CombatSmock_03_URB","UK3CB_ION_B_U_CombatSmock_04_URB"];
+		randomUniformArray = ["UK3CB_ION_B_U_CombatSmock_02_URB","UK3CB_ION_B_U_CombatSmock_02_WDL","UK3CB_ION_B_U_CombatSmock_03_URB","UK3CB_ION_B_U_CombatSmock_04_URB"];
 		player forceAddUniform selectRandom randomUniformArray;
 	};
 };

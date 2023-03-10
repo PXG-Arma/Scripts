@@ -1,4 +1,5 @@
 params["_side","_faction","_variant", "_loadout"]; 
+
 randomUniformArray = ["UK3CB_LNM_B_U_Shirt_Pants_05", "UK3CB_LNM_B_U_Shirt_Pants_07", "UK3CB_LNM_B_U_Shirt_Pants_08", "UK3CB_LNM_B_U_Shirt_Pants_09", "UK3CB_LNM_B_U_Shirt_Pants_10", "UK3CB_LNM_B_U_Shirt_Pants_12", "UK3CB_LNM_B_U_Shirt_Pants_13", "UK3CB_LNM_B_U_Shirt_Pants_15", "UK3CB_LNM_B_U_Shirt_Pants_16", "UK3CB_LNM_B_U_Shirt_Pants_01", "UK3CB_LNM_B_U_Shirt_Pants_02", "UK3CB_LNM_B_U_Shirt_Pants_03"];
 
 

@@ -31,12 +31,9 @@ switch (_loadout) do {
 
 // add backpack 
 switch (_loadout) do {
-	default {player addBackpack "rhs_rk_sht_30_olive"};
-	case "logi";
-	case "sqd_eng": {player addBackpack "rhs_rk_sht_30_olive_engineer_empty"};
+	default {player addBackpack "rhssaf_kitbag_smb"};
 	case "sqd_med";
-	case "sup_mat_l";
-	case "rcn_spe": {player addBackpack "rhs_tortila_olive"};
+	case "rcn_spe": {player addBackpack "rhssaf_alice_smb"};
 	case "sup_hmg_l": {player addBackpack "RHS_NSV_Tripod_Bag"};
 	case "sup_hmg_g": {player addBackpack "RHS_NSV_Gun_Bag"};
 	case "sup_tow_l": {player addBackpack "rhs_TOW_Tripod_Bag"};

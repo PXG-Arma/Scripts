@@ -15,7 +15,7 @@ Example:
 private _respawnMode = PXG_Respawn_Mode;
 private _respawnTime = PXG_Respawn_Time;
 	
-if ((str player != "C_civ1_civ1") or (str player != "C_civ1_civ2")) then {		// Exclude zeus
+if ((str player == "C_civ1_civ1") or (str player == "C_civ1_civ2")) then {		// Exclude zeus
 	
 	setPlayerRespawnTime 10;
 

@@ -4,7 +4,7 @@ _resupplyAvailable = [
 			["rhs_30Rnd_545x39_7N6_AK",20],
 			["rhsusf_20Rnd_762x51_m80_Mag",20],
 			["rhsgref_30rnd_1143x23_M1911B_SMG",20],
-			["10Rnd_303_Magazine",20]
+			["uk3cb_no4_enfield_303_10Rnd_magazine",20]
 		]
 	],
 	["Primary Resupply B",

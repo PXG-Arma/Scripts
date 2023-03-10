@@ -1,7 +1,6 @@
 _availableFactions = [
 	"British SAS",
 	"Croatian SFG",
-	"Finnish Armed Forces",
 	"SWAT",
 	"US Army",
 	"US Expeditionary Force",

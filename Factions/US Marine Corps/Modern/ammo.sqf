@@ -34,7 +34,7 @@ switch (_loadout) do {
 // add secondary ammo
 switch (_loadout) do {
 	default {
-		for "_i" from 1 to 4 do { player addItemToBackpack "8Rnd_45ACP_Magazine"};
+		for "_i" from 1 to 4 do { player addItemToBackpack "rhsusf_mag_7x45acp_MHP"};
 	};
 	case "ar_ld";
 	case "ar_c";

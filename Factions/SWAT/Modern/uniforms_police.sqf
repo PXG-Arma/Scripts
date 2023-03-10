@@ -1,10 +1,9 @@
 params["_side","_faction","_variant", "_loadout"];
 
-randomUniformArray = ["UK3CB_APD_B_U_66sh122_CombatSmock_Gloves_01_EKAM", "UK3CB_APD_B_U_66sh122_CombatSmock_Gloves_02_EKAM", "UK3CB_APD_B_U_66sh122_CombatSmock_Gloves_03_EKAM", "UK3CB_APD_B_U_66sh122_CombatSmock_Gloves_04_EKAM"];
-
 // add uniform
 switch (_loadout) do {
-		default { 
+	default { 
+		randomUniformArray = ["UK3CB_APD_B_U_66sh122_CombatSmock_Gloves_01_EKAM", "UK3CB_APD_B_U_66sh122_CombatSmock_Gloves_02_EKAM", "UK3CB_APD_B_U_66sh122_CombatSmock_Gloves_03_EKAM", "UK3CB_APD_B_U_66sh122_CombatSmock_Gloves_04_EKAM"];
 		player forceAddUniform selectRandom randomUniformArray;
 	};
 	case "plt": {player forceAddUniform "UK3CB_APD_B_U_CombatUniform_OFF_02_BLU"};

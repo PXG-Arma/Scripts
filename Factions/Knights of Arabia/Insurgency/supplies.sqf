@@ -4,7 +4,8 @@ _resupplyAvailable = [
 			["rhs_30Rnd_762x39mm",40],
 			["rhsgref_5Rnd_762x54_m38",20],
 			["2Rnd_00_Buckshot_Magazine",20],
-			["2Rnd_Slug_Magazine",20]
+			["rhsgref_1Rnd_00Buck",20],
+			["rhsgref_1Rnd_Slug",20]
 		]
 	],
 	["Primary Resupply B",

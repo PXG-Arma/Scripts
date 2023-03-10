@@ -32,11 +32,9 @@ switch (_loadout) do {
 
 // add secondary weapon
 switch (_loadout) do {
-	default {};
-	case "sqd_hgre";
-	case "rcn_ld";
-	case "rcn_drone";
-	case "rcn_dmr": { player addWeapon "UK3CB_USP"};
+	default { player addWeapon "rhsusf_weap_glock17g4"};
+	case "sqd_eng";
+	case "rcn_spe": {};
 };
 
 // add launcher

@@ -21,9 +21,9 @@ switch (_loadout) do {
 				for "_i" from 1 to 8 do { player addItemToVest "rhsgref_5Rnd_762x54_m38"};
 				for "_i" from 1 to 8 do { player addItemToUniform "rhsgref_5Rnd_762x54_m38"};
 			};
-			case "bnae_spr220_virtual": {
-				for "_i" from 1 to 12 do { player addItemToVest "2Rnd_00_Buckshot_Magazine"};
-				for "_i" from 1 to 12 do { player addItemToVest "2Rnd_Slug_Magazine"};
+			case "rhs_weap_Izh18": {
+				for "_i" from 1 to 24 do { player addItemToVest "rhsgref_1Rnd_00Buck"};
+				for "_i" from 1 to 24 do { player addItemToVest "rhsgref_1Rnd_Slug"};
 			};
 			case "uk3cb_sks_01": {
 				for "_i" from 1 to 6 do { player addItemToVest "uk3cb_10rnd_magazine_sks"};
@@ -58,12 +58,9 @@ switch (_loadout) do {
 };
 
 // add secondary ammo
-switch (_loadout) do {
-	default {};
-	case "plt": {
-		for "_i" from 1 to 4 do { player addItemToVest "8Rnd_45ACP_Magazine"};
-	}; 
-};
+//switch (_loadout) do {
+//	default {};
+//};
 
 // add assistant ammo 
 switch (_loadout) do {

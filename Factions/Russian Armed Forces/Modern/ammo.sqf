@@ -26,9 +26,14 @@ switch (_loadout) do {
 };
 
 // add secondary ammo
-//switch (_loadout) do {
-//	default {};
-//};
+switch (_loadout) do {
+	default {
+		for "_i" from 1 to 4 do { player addItemToBackpack "rhs_mag_9x19_7n31_17"};
+	};
+	case "sqd_eng";
+	case "rcn_spe": {};
+};
+
 
 // add assistant ammo 
 switch (_loadout) do {

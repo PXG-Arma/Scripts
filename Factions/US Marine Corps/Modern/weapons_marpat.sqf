@@ -37,7 +37,7 @@ switch (_loadout) do {
 
 // add secondary weapon
 switch (_loadout) do {
-	default {player addWeapon "bnae_r1_t_virtual"};
+	default {player addWeapon "rhsusf_weap_m1911a1"};
 	case "ar_ld";
 	case "ar_c";
 	case "pil";

@@ -12,30 +12,27 @@ Example:
 	call pxg_respawn_fnc_
 */
 
-private _respawnMode = missionNamespace getVariable ["PXG_Respawn_Mode",0];
+private _respawnMode = PXG_Respawn_Mode;
+private _respawnTime = PXG_Respawn_Time;
+	
+if ((str player != "C_civ1_civ1") or (str player != "C_civ1_civ2")) then {		// Exclude zeus
+	
+	setPlayerRespawnTime 10;
 
-sleep 5; 
-
-switch (str player) do {
-	case "C_civ1_civ1";
-	case "C_civ1_civ2": {
-		player addAction ["Respawn Menu", {call pxg_respawn_fnc_openDialog;}]
-	};
-	default { 
-		switch (_respawnMode) do {
-			case 1: {
-				setPlayerRespawnTime 7200;
-			};
-			case 2: {
-				setPlayerRespawnTime 7200;
-			};
-			case 3: {
-				setPlayerRespawnTime 30;
-			};
-			default {
-				hint "Respawn Mode is not set correctly";
-			};
+} else {
+		switch (_respawnMode) do {		// Set respawn timer based PXG_Respawn_Mode setting. 
+		case 1: {				// Limited wave / manual respawn
+			setPlayerRespawnTime 7200;		
 		};
-	};
+		case 2: {				// Timed wave 
+			private _playerRespawnTimer = PXG_Respawn_Time - serverTime mod PXG_Respawn_Time;
+			setPlayerRespawnTime _playerRespawnTimer;
+		};
+		case 3: {				// "Instant Respawn"  
+			setPlayerRespawnTime 10;
+		};
+		default {
+			hint "Respawn Mode is not set correctly";
+		};
+	};	
 };
-

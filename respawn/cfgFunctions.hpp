@@ -2,11 +2,15 @@ class pxg_Respawn{
 	class functions{
 		file = "Scripts\respawn\functions";
 
+		class zeusSetup{};
+		class addActionMenu{};
+		class removeActionMenu{};
+
 		class addRespawnWave{};
 		class respawnPlayers{};
 		class setRespawnTime{};
 		class startRespawnWave{};
-		class setRespawnTime2{};
+		
 		class respawnOnePLayer{};
 		class respawnOnePLayerRemote{};
 	};
@@ -19,6 +23,8 @@ class pxg_Respawn{
 
 	class xeh{
 		file = "Scripts\respawn\xeh";
+
+		class preInit{};
 
 		class initRespawn{};
 	};

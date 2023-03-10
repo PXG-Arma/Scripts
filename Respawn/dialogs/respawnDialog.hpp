@@ -34,10 +34,10 @@ class dialog_respawn
 			w = 0.18 * safezoneW;
 			h = 0.04 * safezoneH;
 		};
-		class respawn_add_wave_button: PxgGuiRscButton
+/*		class respawn_add_wave_button: PxgGuiRscButton
 		{
 			idc = 471600;
-			action = "[1] call pxg_respawn_fnc_addRespawnWave; closeDialog 2;";
+			action = "[-1] call pxg_respawn_fnc_addRespawnWave; closeDialog 2;";
 
 			text = "Add wave"; //--- ToDo: Localize;
 			
@@ -49,7 +49,7 @@ class dialog_respawn
 		class respawn_remove_wave_button: PxgGuiRscButton
 		{
 			idc = 471601;
-			action = "[-1] call pxg_respawn_fnc_addRespawnWave; closeDialog 2;";
+			action = "[1] call pxg_respawn_fnc_addRespawnWave; closeDialog 2;";
 
 			text = "Remove wave"; //--- ToDo: Localize;
 			
@@ -57,7 +57,7 @@ class dialog_respawn
 			y = 0.53 * safezoneH + safezoneY;
 			w = 0.06 * safezoneW;
 			h = 0.02 * safezoneH;
-		};
+		};*/
 		class respawn_trigger_wave_button: PxgGuiRscButton
 		{
 			idc = 471602;

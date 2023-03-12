@@ -11,7 +11,7 @@ class dialog_motorpool
 			x = 0.29 * safezoneW + safezoneX;
 			y = 0.25 * safezoneH + safezoneY;
 			w = 0.42 * safezoneW;
-			h = 0.49 * safezoneH;
+			h = 0.51 * safezoneH;
 		};
 		
 		class RscStructuredText_1: PxgGuiRscStructuredText
@@ -65,16 +65,6 @@ class dialog_motorpool
 			w = 0.07 * safezoneW;
 			h = 0.04 * safezoneH;
 		};
-		class motorpoolPreviewText: PxgGuiRscText
-		{
-			idc = -1; 
-
-			text = "Asset Preview:";
-			x = 0.58 * safezoneW + safezoneX;
-			y = 0.51 * safezoneH + safezoneY;
-			w = 0.06 * safezoneW;
-			h = 0.04 * safezoneH;
-		};
 		class dim_vehicle_spawnpoint_list: PxgGuiRscListBox
 		{
 			idc = 461500;
@@ -94,7 +84,7 @@ class dialog_motorpool
 			x = 0.44 * safezoneW + safezoneX;
 			y = 0.31 * safezoneH + safezoneY;
 			w = 0.12 * safezoneW;
-			h = 0.41 * safezoneH;
+			h = 0.43 * safezoneH;
 		};
 	
 		class dim_vehicle_faction_list: PxgGuiRscTree
@@ -105,7 +95,7 @@ class dialog_motorpool
 			x = 0.30 * safezoneW + safezoneX;
 			y = 0.43 * safezoneH + safezoneY;
 			w = 0.12 * safezoneW;
-			h = 0.29 * safezoneH;
+			h = 0.31 * safezoneH;
 		};
 		
 		class dim_vehicle_faction_side_list: PxgGuiRscListbox
@@ -122,27 +112,30 @@ class dialog_motorpool
 		{
 			idc = 461505; 
 
+			text = "\A3\EditorPreviews_F\Data\CfgVehicles\Land_InvisibleBarrier_F.jpg";
 			x = 0.58 * safezoneW + safezoneX;
-			y = 0.51 * safezoneH + safezoneY;
+			y = 0.57 * safezoneH + safezoneY;
 			w = 0.12 * safezoneW;
-			h = 0.20 * safezoneH;
+			h = 0.17 * safezoneH;
 		};
 		class motorpoolCargoText: PxgGuiRscText
 		{
 			idc = 461499;
 
+			text = "Cargo Capacity: 0";
 			x = 0.58 * safezoneW + safezoneX;
-			y = 0.68 * safezoneH + safezoneY;
-			w = 0.1 * safezoneW;
+			y = 0.52 * safezoneH + safezoneY;
+			w = 0.12 * safezoneW;
 			h = 0.02 * safezoneH;
 		};
 		class motorpoolSeatsText: PxgGuiRscText
 		{
 			idc = 461498;
 
+			text = "Crew: 0 Passengers: 0";
 			x = 0.58 * safezoneW + safezoneX;
-			y = 0.70 * safezoneH + safezoneY;
-			w = 0.1 * safezoneW;
+			y = 0.54 * safezoneH + safezoneY;
+			w = 0.12 * safezoneW;
 			h = 0.02 * safezoneH;
 		};
 	
@@ -154,7 +147,7 @@ class dialog_motorpool
 			text = "Spawn"; //--- ToDo: Localize;
 			
 			x = 0.65 * safezoneW + safezoneX;
-			y = 0.74 * safezoneH + safezoneY;
+			y = 0.76 * safezoneH + safezoneY;
 			w = 0.06 * safezoneW;
 			h = 0.02 * safezoneH;
 		};
@@ -166,7 +159,7 @@ class dialog_motorpool
 			text = "Close";
 
 			x = 0.29 * safezoneW + safezoneX;
-			y = 0.74 * safezoneH + safezoneY;
+			y = 0.76 * safezoneH + safezoneY;
 			w = 0.06 * safezoneW;
 			h = 0.02 * safezoneH;
 		};

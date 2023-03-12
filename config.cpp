@@ -1,6 +1,6 @@
 class CfgFunctions
 {   
-    #include <Kappa\cfgFunctions.hpp>
+    #include <respawn\cfgFunctions.hpp>
     #include <markers\cfgFunctions.hpp>
 };
 
@@ -13,6 +13,6 @@ class CfgRemoteExec
 
 #include <macros.hpp>
 
-#include <Kappa\config.cpp>
+#include <respawn\config.cpp>
 #include <markers\config.cpp>
 

@@ -5,6 +5,10 @@ if (count _indexFaction < 2) exitwith {};
 _indexData = tvData [461502, _indexVehicle];
 _previewPicturePath = getText (configFile >> "CfgVehicles" >> _indexData >> "EditorPreview");
 
+if (_previewPicturePath == "") then {
+	_previewPicturePath = "\A3\EditorPreviews_F\Data\CfgVehicles\Land_InvisibleBarrier_F.jpg";
+};
+
 ctrlSetText [461505, _previewPicturePath];
 
 // Cargo Preview 

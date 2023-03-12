@@ -12,7 +12,6 @@ switch (_loadout) do {
 		for "_i" from 1 to 2 do { player addItemToBackpack "rhs_100Rnd_762x54mmR"};
 		for "_i" from 1 to 2 do { player addItemToBackpack "rhs_100Rnd_762x54mmR_green"};
 	};
-	case "sqd_dmr";
 	case "rcn_dmr": {
 		for "_i" from 1 to 8 do { player addItemToBackpack "rhsgref_10Rnd_792x57_m76"};
 		for "_i" from 1 to 8 do { player addItemToBackpack "rhssaf_10Rnd_792x57_m76_tracer"};

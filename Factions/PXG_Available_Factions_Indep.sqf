@@ -1,8 +1,8 @@
 _availableFactions = [
-	"Core Point Logistics",
-	"Daedalus Group",
 	"Northern Isle Separatists",
 	"Serbian Brigade",
+	"Takistan National Army",
+	"United Security",
 	"WebNiX Corporation"
 ];
 

@@ -13,8 +13,8 @@ _resupplyAvailable = [
 	],
 	["Shotgun Resupply",
 		[
-			["UK3CB_BAF_12G_Pellets",20],
-			["UK3CB_BAF_12G_Slugs",20]
+			["rhsusf_8Rnd_00Buck",20],
+			["rhsusf_8Rnd_Slug",20]
 		]
 	],
 	["Stun Grenades",
@@ -40,10 +40,10 @@ _resupplyAvailable = [
 	],
 	["40mm Smoke Rounds",
 		[
-			["UK3CB_BAF_1Rnd_Smoke_Grenade_shell",20],
-			["UK3CB_BAF_1Rnd_SmokeRed_Grenade_shell",10],
-			["UK3CB_BAF_1Rnd_SmokeGreen_Grenade_shell",10],
-			["UK3CB_BAF_1Rnd_SmokeBlue_Grenade_shell",10]
+			["rhs_mag_m714_White",10],
+			["rhs_mag_m713_Red",5],
+			["rhs_mag_m715_Green",5],
+			["rhs_mag_m716_yellow",5]
 		]
 	],
 	["40mm Flares",
@@ -98,8 +98,8 @@ _resupplyAvailable = [
 		[
 			["rhs_mag_30Rnd_556x45_M855A1_Stanag", 24],
 			["rhsusf_5Rnd_762x51_m993_Mag",4],
-			["UK3CB_BAF_12G_Pellets", 4],
-			["UK3CB_BAF_12G_Slugs", 4],
+			["rhsusf_8Rnd_00Buck",4],
+			["rhsusf_8Rnd_Slug",4]
 			["ACE_M84", 6],
 			["rhs_mag_m7a3_cs", 6],
 			["rhs_mag_an_m8hc", 6],

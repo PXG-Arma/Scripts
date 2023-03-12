@@ -29,11 +29,6 @@ switch (_loadout) do {
 	default {};
 	case "plt";
 	case "logi";
-	case "sqd_ld";
-	case "rcn_ld": {for "_i" from 1 to 4 do { player addItemToVest "6Rnd_357M_Magazine"}}; 
-	case "sqd_gre";
-	case "sqd_brc";
-	case "rcn_dmr";
 	case "pil": {for "_i" from 1 to 4 do { player addItemToVest "rhsusf_mag_7x45acp_MHP"}}; 
 };
 

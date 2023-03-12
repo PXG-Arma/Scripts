@@ -1,4 +1,5 @@
 params["_side","_faction","_variant", "_loadout"]; 
+
 randomUniformArray = ["UK3CB_LNM_B_U_Shirt_Pants_05", "UK3CB_LNM_B_U_Shirt_Pants_07", "UK3CB_LNM_B_U_Shirt_Pants_08", "UK3CB_LNM_B_U_Shirt_Pants_09", "UK3CB_LNM_B_U_Shirt_Pants_10", "UK3CB_LNM_B_U_Shirt_Pants_12", "UK3CB_LNM_B_U_Shirt_Pants_13", "UK3CB_LNM_B_U_Shirt_Pants_15", "UK3CB_LNM_B_U_Shirt_Pants_16", "UK3CB_LNM_B_U_Shirt_Pants_01", "UK3CB_LNM_B_U_Shirt_Pants_02", "UK3CB_LNM_B_U_Shirt_Pants_03"];
 
 
@@ -21,7 +22,7 @@ switch (_loadout) do {
 	case "rcn_dmr";
 	case "rcn_sni";
 	case "rcn_amr": {player addHeadgear "H_Watchcap_blk"};
-	case "pil": {player addHeadgear "UK3CB_BAF_H_PilotHelmetHeli_A"};
+	case "pil": {player addHeadgear "rhsusf_hgu56p_black"};
 };
 
 // add vest
@@ -51,5 +52,7 @@ switch (_loadout) do {
 // add backpack 
 switch (_loadout) do {
 	default { player addBackpack "Black_Backpack_kitbag"};
+	case "sup_hat_l";
+	case "sup_hat_g": {player addBackpack "Black_Carryall"};
 	case "pil": {};
 };

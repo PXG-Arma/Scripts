@@ -33,6 +33,11 @@ switch (_loadout) do {
 };
 
 // add secondary weapon
+switch (_loadout) do {
+	default { player addWeapon "rhs_weap_pya"};
+	case "sqd_eng";
+	case "rcn_spe": {};
+};
 
 // add launcher
 switch (_loadout) do {

@@ -10,12 +10,6 @@ _resupplyAvailable = [
 			["rhsusf_100Rnd_556x45_mixed_soft_pouch_coyote",20]
 		]
 	],
-	["Shotgun Resupply",
-		[
-			["UK3CB_BAF_12G_Pellets",20],
-			["UK3CB_BAF_12G_Slugs",20]
-		]
-	],
 	["DMR Resupply",
 		[
 			["rhsusf_20Rnd_762x51_SR25_m62_Mag",10],
@@ -37,7 +31,7 @@ _resupplyAvailable = [
 	],
 	["HAT Resuppply",
 		[
-			["UK3CB_BAF_Javelin_Slung_Tube",2]
+			["rhs_fgm148_magazine_AT",2]
 		]
 	],
 	["AA Resupply",
@@ -78,13 +72,6 @@ _resupplyAvailable = [
 			["UGL_FlareCIR_F",20]
 		]
 	],
-	["40mm Heavy",
-		[
-			["rhsusf_mag_6Rnd_M441_HE",8],
-			["rhsusf_mag_6Rnd_M714_white",4],
-			["rhsusf_mag_6Rnd_M713_red",4]
-		]
-	],	
 	["Breaching Charges",
 		[
 			["tsp_popperCharge_mag",16],
@@ -131,8 +118,6 @@ _resupplyAvailable = [
 		[
 			["rhs_mag_30Rnd_556x45_M855A1_PMAG", 24],
 			["rhsusf_100Rnd_556x45_mixed_soft_pouch_coyote", 4],
-			["UK3CB_BAF_12G_Pellets", 4],
-			["UK3CB_BAF_12G_Slugs", 4],
 			["launch_NLAW_F", 1],
 			["1Rnd_HE_Grenade_Shell", 12],
 			["rhsusf_mag_6Rnd_M441_HE", 2],
@@ -142,31 +127,6 @@ _resupplyAvailable = [
 			["ACE_packingBandage", 12],
 			["ACE_quikclot", 12],
 			["ACE_bloodIV_500", 6]
-		]
-	],
-	["Vehicle Resupply 7.62mm",
-		[
-			["UK3CB_BAF_762_200Rnd_T",20]
-		]
-	],	
-	["Vehicle Resupply Milan",
-		[
-			["UK3CB_BAF_1Rnd_Milan",4]
-		]
-	],
-	["7.62 Turret Ammo",
-		[
-			["UK3CB_BAF_762_200Rnd_T",15]
-		]
-	],
-	["12.7 Turret Ammo",
-		[
-			["UK3CB_BAF_127_100Rnd",10]
-		]
-	],
-	["40mm Turret Ammo",
-		[
-			["UK3CB_BAF_32Rnd_40mm_g_Box",5]
 		]
 	],
 	["Parachutes",

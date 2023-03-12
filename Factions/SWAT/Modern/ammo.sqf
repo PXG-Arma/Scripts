@@ -7,8 +7,8 @@ switch (_loadout) do {
 		for "_i" from 1 to 4 do { player addItemToVest "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red"};
 	};
 	case "sqd_brc": {
-		for "_i" from 1 to 8 do { player addItemToVest "UK3CB_BAF_12G_Pellets"};
-		for "_i" from 1 to 8 do { player addItemToBackpack "UK3CB_BAF_12G_Slugs"};
+		for "_i" from 1 to 6 do { player addItemToVest "rhsusf_8Rnd_00Buck"};
+		for "_i" from 1 to 6 do { player addItemToBackpack "rhsusf_8Rnd_Slug"};
 	};
 	case "sqd_dmr": {
 		for "_i" from 1 to 8 do { player addItemToVest "rhsusf_5Rnd_762x51_m993_Mag"};
@@ -62,7 +62,7 @@ switch (_loadout) do {
 switch (_loadout) do {
 	default {};
 	case "sqd_gre": { 
-		for "_i" from 1 to 2 do {player addItemToBackpack "UK3CB_BAF_1Rnd_Smoke_Grenade_shell"};
+		for "_i" from 1 to 2 do {player addItemToBackpack "rhs_mag_m714_White"};
 		for "_i" from 1 to 4 do {player addItemToBackpack "rhs_mag_m4009"};
 		for "_i" from 1 to 4 do {player addItemToBackpack "rhs_mag_m576"};
 	};

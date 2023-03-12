@@ -17,7 +17,7 @@ _resupplyAvailable = [
 	],
 		["LAT Resupply",
 		[
-			["BWA3_PzF3_Tandem_Loaded",8]
+			["launch_NLAW_F",8]
 		]
 	],
 	["Exo-Skeleton Batteries",
@@ -96,7 +96,7 @@ _resupplyAvailable = [
 		[
 			["50Rnd_570x28_SMG_03", 24],
 			["130Rnd_338_Mag", 4],
-			["BWA3_PzF3_Tandem_Loaded", 1],
+			["launch_NLAW_F", 1],
 			["1Rnd_HE_Grenade_Shell", 12],
 			["HandGrenade", 6],
 			["rhs_mag_an_m8hc", 6],

@@ -34,7 +34,7 @@ switch (_loadout) do {
 // add secondary ammo
 switch (_loadout) do {
 	default {
-		for "_i" from 1 to 4 do { player addItemToBackpack "8Rnd_45ACP_Magazine"};
+		for "_i" from 1 to 4 do { player addItemToBackpack "rhsusf_mag_7x45acp_MHP"};
 	};
 	case "ar_ld";
 	case "ar_c";
@@ -64,7 +64,7 @@ switch (_loadout) do {
 		for "_i" from 1 to 1 do { player addItemToBackpack "rhs_mag_smaw_SR"};
 	};
 	case "sup_aa_l": {
-		for "_i" from 1 to 2 do { player addItemToBackpack "rhs_fim92_mag"};
+		for "_i" from 1 to 1 do { player addItemToBackpack "rhs_fim92_mag"};
 	};
 };
 
@@ -77,7 +77,7 @@ switch (_loadout) do {
 		for "_i" from 1 to 1 do { player addItemToBackpack "rhs_mag_smaw_SR"};
 	};
 	case "sup_aa_g": {
-		for "_i" from 1 to 2 do { player addItemToBackpack "rhs_fim92_mag"};
+		for "_i" from 1 to 1 do { player addItemToBackpack "rhs_fim92_mag"};
 	};
 };
 

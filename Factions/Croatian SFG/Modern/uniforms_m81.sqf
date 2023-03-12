@@ -10,7 +10,7 @@ switch (_loadout) do {
 switch (_loadout) do {
 	default { player addHeadgear "VSM_OGA_OD_OPS_2"};
     case "ar_ld";
-	case "ar_c": {player addHeadgear "H_HelmetCrew_B"};
+	case "ar_c": {player addHeadgear "rhsusf_cvc_green_helmet"};
 	case "pil": {player addHeadgear "rhsusf_hgu56p_visor_mask_skull"};
 };
 
@@ -32,7 +32,6 @@ switch (_loadout) do {
 	case "sup_mor_l": {player addBackpack "I_Mortar_01_support_F"};
 	case "sup_mor_g": {player addBackpack "I_Mortar_01_weapon_F"};
 	case "ar_ld";
-    case "ar_ld";
 	case "ar_c";
 	case "pil": {};
 };

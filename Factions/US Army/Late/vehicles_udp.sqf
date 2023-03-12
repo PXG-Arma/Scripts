@@ -7,7 +7,7 @@ _availableVehicles =
 			['rhsusf_M977A4_AMMO_BKIT_usarmy_d', 4], 
 			['rhsusf_M978A4_usarmy_d', 0], 
 			['rhsusf_M1078A1P2_D_fmtv_usarmy', 12], 
-			['rhsusf_m998_d_s_2dr_fulltop', 6], 
+			['rhsusf_m998_d_s_2dr_fulltop', 4], 
 			['rhsusf_m1025_d', 4]
 		]
 	],

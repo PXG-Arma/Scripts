@@ -3,7 +3,7 @@ params["_side","_faction","_variant", "_loadout"];
  // add uniform
 switch (_loadout) do {
 	default {
-		randomUniformArray = ["UK3CB_BAF_U_JumperUniform_Plain","UK3CB_BAF_U_JumperUniform_Plain","UK3CB_LNM_B_U_CombatSmock_19","UK3CB_LNM_B_U_CombatSmock_20","UK3CB_LNM_B_U_CombatSmock_21","UK3CB_LSM_B_U_CombatSmock_07"];
+		randomUniformArray = ["UK3CB_LNM_B_U_CombatSmock_19","UK3CB_LNM_B_U_CombatSmock_20","UK3CB_LNM_B_U_CombatSmock_21","UK3CB_LSM_B_U_CombatSmock_07"];
 		player forceAddUniform selectRandom randomUniformArray;
 	};
 	case "plt";

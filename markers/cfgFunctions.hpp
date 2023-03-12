@@ -43,7 +43,7 @@ class pxg_markers {
 		file = "Scripts\markers\xeh"
 
 		class preInit{};
-		class initMarkers{};
+		class postInit{};
 	};
 
 };

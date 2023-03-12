@@ -25,7 +25,6 @@ class pxg_Respawn{
 		file = "Scripts\respawn\xeh";
 
 		class preInit{};
-
-		class initRespawn{};
+		class postInit{};
 	};
 };

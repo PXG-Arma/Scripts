@@ -6,10 +6,10 @@ class CfgFunctions
 
 class CfgRemoteExec
 {
-    #include <CfgRemoteExec.hpp>
+    #include <cfgRemoteExec.hpp>
 };
 
-#include <CfgExtendedEventHandlers.hpp>
+#include <cfgExtendedEventHandlers.hpp>
 
 #include <macros.hpp>
 

@@ -1,12 +1,12 @@
 class CfgFunctions
 {   
     #include <Respawn\cfgFunctions.hpp>
-    #include <markers\cfgFunctions.hpp>
+    #include <Markers\cfgFunctions.hpp>
 };
 
 class CfgRemoteExec
 {
-    #include <CfgRemoteExec.hpp>
+    #include <cfgRemoteExec.hpp>
 };
 
 #include <cfgExtendedEventHandlers.hpp>
@@ -14,5 +14,5 @@ class CfgRemoteExec
 #include <macros.hpp>
 
 #include <Respawn\config.cpp>
-#include <markers\config.cpp>
+#include <Markers\config.cpp>
 

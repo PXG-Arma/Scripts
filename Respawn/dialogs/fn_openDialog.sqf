@@ -4,7 +4,7 @@ createDialog "dialog_respawn";
 private _currentWaves = missionNamespace getVariable ["PXG_Respawn_Waves", 0];
 
 
-private _wavesText = "Waves triggered: " + str _currentWaves;
+private _wavesText = "Waves Triggered: " + str _currentWaves;
 
 ctrlSetText [471100, _wavesText];
 

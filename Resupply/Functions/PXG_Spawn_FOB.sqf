@@ -17,7 +17,7 @@ deleteVehicle _crate;
 _spawn = createVehicle["Land_ConnectorTent_01_NATO_cross_F", _location, [], 0, "CAN_COLLIDE"];
 _spawn setDir _rotation;
 _spawn allowDamage false;
-_spawn setVariable setVariable["PXG_isFOB", true, true];
+_spawn setVariable ["PXG_isFOB", true, true];
 
 // Retrieve the list of avialable deployment positions, add newly created FOB to the list and save the list into a global variable 
 _deployment = missionNamespace getVariable "Pxg_Deployment_Positions";

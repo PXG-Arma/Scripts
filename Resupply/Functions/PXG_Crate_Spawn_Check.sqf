@@ -31,7 +31,7 @@ if (count _nearVehicles > 0) then {
 		{ 		
 			if (((_vehicle getVariable "ace_cargo_space") - 8) >= 0) then {
 					
-				[_supplyData, "B_supplyCrate_F", 8, _vehicle, _spawnPosition] call "Scripts\Resupply\Functions\PXG_Crate_Spawn_VehicleLoad.sqf";
+				[_supplyData, "B_supplyCrate_F", 8, _vehicle, _spawnPosition] call compile preprocessFileLineNumbers "Scripts\Resupply\Functions\PXG_Crate_Spawn_VehicleLoad.sqf";
 				hint "Loaded crate into vehicle";
 			} else {
 				hint "Could not load crate into vehicle";
@@ -74,7 +74,7 @@ if (count _nearVehicles > 0) then {
 		case "AA Resupply":
 		{
 			if (((_vehicle getVariable "ace_cargo_space") - 2) >= 0) then {
-				[_supplyData, "Box_NATO_WpsLaunch_F", 2, _vehicle, _spawnPosition] call "Scripts\Resupply\Functions\PXG_Crate_Spawn_VehicleLoad.sqf";
+				[_supplyData, "Box_NATO_WpsLaunch_F", 2, _vehicle, _spawnPosition] call compile preprocessFileLineNumbers "Scripts\Resupply\Functions\PXG_Crate_Spawn_VehicleLoad.sqf";
 				hint "Loaded crate into vehicle";
 			} else {
 				hint "Could not load crate into vehicle";
@@ -86,7 +86,7 @@ if (count _nearVehicles > 0) then {
 		case "Hand Grenades":
 		{	
 			if (((_vehicle getVariable "ace_cargo_space") - 1) >= 0) then {
-				[_supplyData, "Box_NATO_Grenades_F", 1, _vehicle, _spawnPosition] call "Scripts\Resupply\Functions\PXG_Crate_Spawn_VehicleLoad.sqf";
+				[_supplyData, "Box_NATO_Grenades_F", 1, _vehicle, _spawnPosition] call compile preprocessFileLineNumbers "Scripts\Resupply\Functions\PXG_Crate_Spawn_VehicleLoad.sqf";
 				hint "Loaded crate into vehicle";
 			} else {
 				hint "Could not load crate into vehicle";
@@ -99,7 +99,7 @@ if (count _nearVehicles > 0) then {
 		case "Stun Grenades":
 		{		
 			if (((_vehicle getVariable "ace_cargo_space") - 1) >= 0) then {
-				[_supplyData, "Box_NATO_Support_F", 1, _vehicle, _spawnPosition] call "Scripts\Resupply\Functions\PXG_Crate_Spawn_VehicleLoad.sqf";
+				[_supplyData, "Box_NATO_Support_F", 1, _vehicle, _spawnPosition] call compile preprocessFileLineNumbers "Scripts\Resupply\Functions\PXG_Crate_Spawn_VehicleLoad.sqf";
 				hint "Loaded crate into vehicle";
 			} else {
 				hint "Could not load crate into vehicle";
@@ -112,7 +112,7 @@ if (count _nearVehicles > 0) then {
 		case "Blood IVs":
 		{	
 			if (((_vehicle getVariable "ace_cargo_space") - 1) >= 0) then {
-				[_supplyData, "Land_PlasticCase_01_medium_gray_F", 1, _vehicle, _spawnPosition] call "Scripts\Resupply\Functions\PXG_Crate_Spawn_VehicleLoad.sqf";
+				[_supplyData, "Land_PlasticCase_01_medium_gray_F", 1, _vehicle, _spawnPosition] call compile preprocessFileLineNumbers "Scripts\Resupply\Functions\PXG_Crate_Spawn_VehicleLoad.sqf";
 				hint "Loaded crate into vehicle";
 			} else {
 				hint "Could not load crate into vehicle";
@@ -123,7 +123,7 @@ if (count _nearVehicles > 0) then {
 		case "Explosives":
 		{		
 			if (((_vehicle getVariable "ace_cargo_space") - 1) >= 0) then {
-				[_supplyData, "Box_NATO_AmmoOrd_F", 1, _vehicle, _spawnPosition] call "Scripts\Resupply\Functions\PXG_Crate_Spawn_VehicleLoad.sqf";
+				[_supplyData, "Box_NATO_AmmoOrd_F", 1, _vehicle, _spawnPosition] call compile preprocessFileLineNumbers "Scripts\Resupply\Functions\PXG_Crate_Spawn_VehicleLoad.sqf";
 				hint "Loaded crate into vehicle";
 			} else {
 				hint "Could not load crate into vehicle";
@@ -133,7 +133,7 @@ if (count _nearVehicles > 0) then {
 		case "Squad Resupply":
 		{		
 			if (((_vehicle getVariable "ace_cargo_space") - 2) >= 0) then {
-				[_supplyData, "Box_NATO_WpsSpecial_F", 2, _vehicle, _spawnPosition] call "Scripts\Resupply\Functions\PXG_Crate_Spawn_VehicleLoad.sqf";
+				[_supplyData, "Box_NATO_WpsSpecial_F", 2, _vehicle, _spawnPosition] call compile preprocessFileLineNumbers "Scripts\Resupply\Functions\PXG_Crate_Spawn_VehicleLoad.sqf";
 				hint "Loaded crate into vehicle";
 			} else {
 				hint "Could not load crate into vehicle";
@@ -143,7 +143,7 @@ if (count _nearVehicles > 0) then {
 		case "Parachutes":
 		{	
 			if (((_vehicle getVariable "ace_cargo_space") - 1) >= 0) then {
-				[_supplyData, "Box_NATO_Equip_F", 1, _vehicle, _spawnPosition] call "Scripts\Resupply\Functions\PXG_Crate_Spawn_VehicleLoad.sqf";
+				[_supplyData, "Box_NATO_Equip_F", 1, _vehicle, _spawnPosition] call compile preprocessFileLineNumbers "Scripts\Resupply\Functions\PXG_Crate_Spawn_VehicleLoad.sqf";
 				hint "Loaded crate into vehicle";
 			} else {
 				hint "Could not load crate into vehicle";
@@ -152,8 +152,7 @@ if (count _nearVehicles > 0) then {
 
 		default {		
 			if (((_vehicle getVariable "ace_cargo_space") - 1) >= 0) then {
-				[_supplyData, "Box_NATO_Ammo_F", 1, _vehicle, _spawnPosition] call "Scripts\Resupply\Functions\PXG_Crate_Spawn_VehicleLoad.sqf";
-				[_crate, _vehicle, true] call ace_cargo_fnc_loadItem;
+				[_supplyData, "Box_NATO_Ammo_F", 1, _vehicle, _spawnPosition] call compile preprocessFileLineNumbers "Scripts\Resupply\Functions\PXG_Crate_Spawn_VehicleLoad.sqf";
 				hint "Loaded crate into vehicle";
 			} else {
 				hint "Could not load crate into vehicle";

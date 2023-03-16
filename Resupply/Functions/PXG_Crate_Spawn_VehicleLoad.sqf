@@ -18,7 +18,7 @@ switch(_supplyData) do {
 		[_crate, true, [0,1,1], 0, true] remoteExec ["ace_dragging_fnc_setCarryable"];
 		[_crate, _vehicleLoad, true] call ace_cargo_fnc_loadItem;
 	};
-	default: {
+	default {
 		private _crate = createVehicle[_crateType, [3000,3000,3000], [], 0, "CAN_COLLIDE"];
 		_crate setDir getDir _spawnPosition;
 			

@@ -27,6 +27,7 @@ if (count _nearVehicles > 0) then {
 	
 	switch(_supplyData) do {
 	
+		case "FARP";
 		case "FOB": 
 		{ 		
 			if (((_vehicle getVariable "ace_cargo_space") - 8) >= 0) then {
@@ -180,7 +181,24 @@ if (count _nearVehicles > 0) then {
 		[_crate, 8] call ace_cargo_fnc_setSize;
 		[_crate, true, [0,1,1], 0, true] remoteExec ["ace_dragging_fnc_setCarryable"];	
 	}; 
+	
+	case "FARP": 
+	{ 
+		private _crate = createVehicle["B_supplyCrate_F", getPosATL _spawnPosition, [], 0, "CAN_COLLIDE"];
+		_crate setDir getDir _spawnPosition;
 		
+		//Remove default contents from crate
+		clearItemCargoGlobal _crate;
+		clearMagazineCargoGlobal _crate;
+		clearWeaponCargoGlobal _crate;
+		clearBackpackCargoGlobal _crate;
+	
+		[[_crate],"Scripts\Resupply\Functions\PXG_Add_FARP_Option.sqf"] remoteExec ["execVM", 0, _crate];
+		_crate setVariable ["ace_cargo_customName", "FOB", true];
+		[_crate, 8] call ace_cargo_fnc_setSize;
+		[_crate, true, [0,1,1], 0, true] remoteExec ["ace_dragging_fnc_setCarryable"];	
+	}; 
+	
 	case "Wheel": {
 		private _wheel = createVehicle["ACE_Wheel", getPosATL _spawnPosition, [], 0, "CAN_COLLIDE"];
 		_wheel setDir getDir _spawnPosition;

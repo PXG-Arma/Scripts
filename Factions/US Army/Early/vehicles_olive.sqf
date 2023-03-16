@@ -22,7 +22,8 @@ _availableVehicles =
 
 	['APC', 
 		[
-			['UK3CB_CW_US_B_EARLY_AAV', 6]
+			['UK3CB_CW_US_B_EARLY_M113_M2', 6],
+			['UK3CB_CW_US_B_EARLY_M113_MK19', 6]
 		]
 	],
 
@@ -55,8 +56,7 @@ _availableVehicles =
 	['Boat', 
 		[
 			['B_Boat_Transport_01_F', 2], 
-			['rhsgref_hidf_rhib', 8], 
-			['UK3CB_MDF_B_RHIB_Gunboat', 8]
+			['rhsgref_hidf_rhib', 8]
 		]
 	],
 

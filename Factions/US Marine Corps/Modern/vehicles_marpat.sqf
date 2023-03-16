@@ -8,8 +8,7 @@ _availableVehicles =
 			['UK3CB_B_MTVR_Closed_USMC_WDL', 8], 
 			['UK3CB_B_MTVR_Refuel_USMC_WDL', 0], 
 			['UK3CB_B_MTVR_Recovery_USMC_WDL', 4], 
-			['rhsusf_m998_w_s_2dr_fulltop', 6], 
-			['rhsusf_m998_w_s_2dr_halftop', 6]
+			['rhsusf_m998_w_s_2dr_fulltop', 4]
 		]
 	],
 

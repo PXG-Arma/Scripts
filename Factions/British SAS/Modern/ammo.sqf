@@ -6,16 +6,6 @@ switch (_loadout) do {
 		for "_i" from 1 to 4 do { player addItemToVest "rhs_mag_30Rnd_556x45_M855A1_PMAG"};
 		for "_i" from 1 to 4 do { player addItemToVest "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red"};
 	};
-	case "sqd_hgre": {
-		for "_i" from 1 to 2 do { player addItemToVest "rhsusf_mag_6Rnd_M441_HE"};
-		for "_i" from 1 to 4 do { player addItemToBackpack "rhsusf_mag_6Rnd_M441_HE"};
-		for "_i" from 1 to 1 do { player addItemToBackpack "rhsusf_mag_6Rnd_M713_red"};
-		for "_i" from 1 to 1 do { player addItemToBackpack "rhsusf_mag_6Rnd_M714_white"}
-	};
-	case "sqd_brc": {
-		for "_i" from 1 to 6 do { player addItemToVest "UK3CB_BAF_12G_Pellets"};
-		for "_i" from 1 to 6 do { player addItemToBackpack "UK3CB_BAF_12G_Slugs"};
-	};
 	case "sqd_ar": {
 		for "_i" from 1 to 4 do { player addItemToVest "rhsusf_100Rnd_556x45_mixed_soft_pouch_coyote"};
 		for "_i" from 1 to 4 do { player addItemToBackpack "rhsusf_100Rnd_556x45_mixed_soft_pouch_coyote"};
@@ -44,7 +34,6 @@ switch (_loadout) do {
 	default {
 		for "_i" from 1 to 4 do { player addItemToVest "rhsusf_mag_17Rnd_9x19_FMJ"};
 	};
-	case "sqd_hgre";
 	case "sqd_brc";
 	case "rcn_sni": {
 		for "_i" from 1 to 4 do { player addItemToVest "rhsusf_mag_40Rnd_46x30_AP"};
@@ -66,16 +55,18 @@ switch (_loadout) do {
 		for "_i" from 1 to 2 do { player addItemToBackpack "rhsusf_100Rnd_762x51_m62_tracer"};
 	};
 		case "sup_aa_l": {
-		for "_i" from 1 to 2 do { player addItemToBackpack "rhs_fim92_mag"};
+		for "_i" from 1 to 1 do { player addItemToBackpack "rhs_fim92_mag"};
 	};
 };
 
 // add other ammo 
 switch (_loadout) do {
 	default {};
-	case "sup_hat_l": {	player addWeapon "UK3CB_BAF_Javelin_Slung_Tube"};
+	case "sup_hat_l": {
+		for "_i" from 1 to 1 do { player addItemToBackpack "rhs_fgm148_magazine_AT"};
+	};
 	case "sup_aa_g": {
-		for "_i" from 1 to 2 do { player addItemToBackpack "rhs_fim92_mag"};
+		for "_i" from 1 to 1 do { player addItemToBackpack "rhs_fim92_mag"};
 	};
 };
 

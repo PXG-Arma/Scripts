@@ -1,6 +1,6 @@
 params["_side","_faction","_variant", "_loadout"]; 
 
-// add M79 terminal
+// add M79
 switch (_loadout) do {
 	default {};	
 	case "plt";

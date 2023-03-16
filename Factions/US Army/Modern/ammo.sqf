@@ -52,16 +52,18 @@ switch (_loadout) do {
 		for "_i" from 1 to 2 do { player addItemToBackpack "rhsusf_100Rnd_762x51_m62_tracer"};
 	};
 	case "sup_aa_l": {
-		for "_i" from 1 to 2 do { player addItemToBackpack "rhs_fim92_mag"};
+		for "_i" from 1 to 1 do { player addItemToBackpack "rhs_fim92_mag"};
 	};
 };
 
 // add other ammo 
 switch (_loadout) do {
 	default {};
-	case "sup_hat_l": {	player addWeapon "UK3CB_BAF_Javelin_Slung_Tube"};
+	case "sup_hat_l": {
+		for "_i" from 1 to 1 do { player addItemToBackpack "rhs_fgm148_magazine_AT"};
+	};
 	case "sup_aa_g": {
-		for "_i" from 1 to 2 do { player addItemToBackpack "rhs_fim92_mag"};
+		for "_i" from 1 to 1 do { player addItemToBackpack "rhs_fim92_mag"};
 	};
 };
 

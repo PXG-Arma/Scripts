@@ -22,7 +22,7 @@ _availableVehicles =
 		]
 	],
 
-	['IVF', 
+	['IFV', 
 		[
 			['UK3CB_LDF_B_Marshall', 4],
 			['UK3CB_LDF_B_BMP2K', 4]

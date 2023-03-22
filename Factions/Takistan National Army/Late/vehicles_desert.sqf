@@ -29,7 +29,7 @@ _availableVehicles =
 		]
 	],
 
-	['IVF', 
+	['IFV', 
 		[
 			['UK3CB_TKA_I_MTLB_Cannon', 4],
 			['UK3CB_TKA_I_MTLB_BMP', 4],

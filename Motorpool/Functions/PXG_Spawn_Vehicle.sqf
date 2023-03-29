@@ -47,7 +47,7 @@ if (count _nearVehicles > 0) then {
 
 	if (_spawnString == "Port") then {
 		_spawnCoords = getPosASL _spawnPosition;
-}
+	}
 	else {
 		_spawnCoords = getPosATL _spawnPosition;
 	};

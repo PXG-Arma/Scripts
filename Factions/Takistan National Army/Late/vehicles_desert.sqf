@@ -85,12 +85,6 @@ _availableVehicles =
 			['UK3CB_TKA_I_KORD', -1], 
 			['UK3CB_TKA_I_SPG9', -1]
 		]
-	],
-
-	['Misc.', 
-		[
-			['UK3CB_TKA_I_MAZ_543_SCUD', 0]
-		]
 	]
 ];
 

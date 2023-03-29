@@ -99,7 +99,7 @@ _resupplyAvailable = [
 			["rhs_mag_30Rnd_556x45_M855A1_Stanag", 24],
 			["rhsusf_5Rnd_762x51_m993_Mag",4],
 			["rhsusf_8Rnd_00Buck",4],
-			["rhsusf_8Rnd_Slug",4]
+			["rhsusf_8Rnd_Slug",4],
 			["ACE_M84", 6],
 			["rhs_mag_m7a3_cs", 6],
 			["rhs_mag_an_m8hc", 6],

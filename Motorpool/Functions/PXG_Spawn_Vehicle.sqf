@@ -27,7 +27,7 @@ if (count _nearVehicles > 0) then {
 		//Check if vehicle is empty
 		private _playerCrew = ({ isPlayer _x } count (crew _x));
 	
-		if (_playerCrew == 0) then {
+		if (_playerCrew == 0 && (count (_x getVariable "ace_cargo_loaded") < 2) ) then {
 			deleteVehicle _x;
 		};	
 	}

@@ -8,52 +8,46 @@ _availableVehicles =
 			['rhs_kamaz5350_flatbed_msv', 12], 
 			['RHS_Ural_Ammo_MSV_01', 4], 
 			['RHS_Ural_Fuel_MSV_01', 0], 
-			['rhs_uaz_open_MSV_01', 4], 
-			['RHS_UAZ_MSV_01', 4]
+			['rhs_uaz_vdv', 4], 
+			['rhs_uaz_open_vdv', 4]
 		]
 	],
 
 	['Armed Car/MRAP', 
 		[
-			['rhs_tigr_m_msv', 4], 
-			['rhs_tigr_sts_msv', 4], 
-			['rhsgref_BRDM2_msv', 4], 
-			['rhsgref_BRDM2_ATGM_msv', 4]
-		]
-	],
-
-	['APC', 
-		[
-			['rhs_btr80a_msv', 6],
-			['rhs_btr80_msv', 6]
+			['rhs_tigr_vdv', 4], 
+			['rhs_tigr_m_vdv', 4]
 		]
 	],
 
 	['IFV', 
 		[
-			['rhs_bmp2_msv', 4], 
-			['rhs_bmp3mera_msv', 4]
+			['rhs_bmd1p', 4], 
+			['rhs_bmd1r', 4],
+			['rhs_bmd2k', 4],
+			['rhs_sprut_vdv', 4]
 		]
 	],
 
-	['MBT', 
+	['Rotary Transport', 
 		[
-			['rhs_t90a_tv', 4]
+			['RHS_Mi8AMT_vdv', 8], 
+			['rhs_ka60_c', 6]
 		]
 	],
 
-	['SPAA', 
-		[
-			['UK3CB_O_2S6M_Tunguska_VPV', 4]
+	['Rotary Attack', 
+		[ 
+			['rhs_mi28n_vvsc', 6]
 		]
 	],
 
-	['SPG', 
+	['Fixed Wing Attack',
 		[
-			['rhs_2s3_tv', 4],
-			['RHS_BM21_MSV_01', 4]
+			['UK3CB_CW_SOV_O_LATE_Su25SM', -1],
+			['rhs_mig29sm_vvsc', -1]
 		]
-	],
+	]
 
 	['Turrets', 
 		[

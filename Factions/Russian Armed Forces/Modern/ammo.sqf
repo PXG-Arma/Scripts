@@ -48,7 +48,8 @@ switch (_loadout) do {
 		for "_i" from 1 to 1 do { player addItemToBackpack "rhs_100Rnd_762x54mmR_green"};
 	};
 	case "sup_mat_l": {
-		for "_i" from 1 to 3 do { player addItemToBackpack "rhs_rpg7_PG7VL_mag"};
+		for "_i" from 1 to 2 do { player addItemToBackpack "rhs_rpg7_OG7V_mag"};
+		for "_i" from 1 to 1 do { player addItemToBackpack "rhs_rpg7_PG7VR_mag"};
 	};
 	case "sup_aa_l": {
 		for "_i" from 1 to 1 do { player addItemToBackpack "rhs_mag_9k38_rocket"};
@@ -59,7 +60,8 @@ switch (_loadout) do {
 switch (_loadout) do {
 	default {};
 	case "sup_mat_g": {
-		for "_i" from 1 to 4 do { player addItemToBackpack "rhs_rpg7_PG7VL_mag"};
+		for "_i" from 1 to 2 do { player addItemToBackpack "rhs_rpg7_PG7VL_mag"};
+		for "_i" from 1 to 1 do { player addItemToBackpack "rhs_rpg7_PG7VR_mag"};
 	};
 	case "sup_aa_g": {
 		for "_i" from 1 to 1 do { player addItemToBackpack "rhs_mag_9k38_rocket"};

@@ -15,8 +15,8 @@ _availableVehicles =
 
 	['Armed Car/MRAP', 
 		[
-			['rhs_tigr_m_msv', 4], 
-			['rhs_tigr_sts_msv', 4], 
+			['rhs_tigr_vdv', 4], 
+			['rhs_tigr_m_vdv', 4],
 			['rhsgref_BRDM2_msv', 4], 
 			['rhsgref_BRDM2_ATGM_msv', 4]
 		]

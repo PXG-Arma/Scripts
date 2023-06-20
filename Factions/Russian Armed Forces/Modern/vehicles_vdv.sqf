@@ -31,14 +31,13 @@ _availableVehicles =
 
 	['Rotary Transport', 
 		[
-			['RHS_Mi8AMT_vdv', 8], 
-			['rhs_ka60_c', 6]
+			['RHS_Mi8AMT_vdv', 8] 
 		]
 	],
 
 	['Rotary Attack', 
 		[ 
-			['rhs_mi28n_vvsc', 6]
+			['rhs_mi28n_vvsc', 4]
 		]
 	],
 
@@ -47,7 +46,7 @@ _availableVehicles =
 			['UK3CB_CW_SOV_O_LATE_Su25SM', -1],
 			['rhs_mig29sm_vvsc', -1]
 		]
-	]
+	],
 
 	['Turrets', 
 		[

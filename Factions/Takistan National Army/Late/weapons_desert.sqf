@@ -3,7 +3,6 @@ params["_side","_faction","_variant", "_loadout"];
 // add primary weapon
 switch (_loadout) do {
 	default { player addWeapon "rhs_weap_l1a1";
-			  player addPrimaryWeaponItem "rhsgref_acc_l1a1_l2a2"
 	};
 	case "sqd_ar": {player addWeapon "rhs_weap_pkm";
 	};

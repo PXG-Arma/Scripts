@@ -52,7 +52,7 @@ switch (_loadout) do {
 switch (_loadout) do {
 	default {};
 	case "sqd_lat": {
-		unitBackpack player addItemCargoGlobal["rhs_weap_M136",2];
+		unitBackpack player addItemCargoGlobal["rhs_weap_M136",1];
 		player addWeapon "rhs_weap_M136";
 	};
 	case "sup_mat_g": {	player addWeapon "rhs_weap_smaw_green";

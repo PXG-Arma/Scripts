@@ -22,7 +22,7 @@ switch (_loadout) do {
 switch (_loadout) do {
 	default {};
 	case "sqd_lat": {
-		unitBackpack player addItemCargoGlobal["rhs_weap_m72a7",2];
+		unitBackpack player addItemCargoGlobal["rhs_weap_m72a7",1];
 		player addWeapon "rhs_weap_m72a7";
 	};
 	case "sup_hat_g": {	player addWeapon "ace_dragon_super"};

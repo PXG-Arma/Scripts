@@ -62,7 +62,6 @@ switch (_loadout) do {
 switch (_loadout) do {
 	default {};	
 	case "sqd_lat": {
-		unitBackpack player addItemCargoGlobal["launch_NLAW_F",2];
 		player addWeapon "launch_NLAW_F";
 		};
 	case "sup_hat_g": {player addWeapon "rhs_weap_fgm148";

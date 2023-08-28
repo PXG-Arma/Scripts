@@ -77,9 +77,22 @@ _spawn setFlagTexture "Textures\pxg_flag.jpg";
 _logicCenter = createCenter sideLogic;
 _logicGroup = createGroup _logicCenter;
 fobLogicMaster = _logicGroup createUnit ["Logic", _location, [], 0, "NONE"];
-_logicSpawn1 = _logicGroup createUnit ["Logic", _location, [], 0, "NONE"];
-_logicSpawn2 = _logicGroup createUnit ["Logic", _location, [], 0, "NONE"];
-_logicSpawn3 = _logicGroup createUnit ["Logic", _location, [], 0, "NONE"];
+
+_positionOffset = [_location, (240.255+90), 6.1561, _rotation] call compile preprocessFileLineNumbers "Scripts\Misc\PXG_Calculate_Position_AngleOffset.sqf";
+_logicSpawn1 = _logicGroup createUnit ["Logic", _positionOffset, [], 0, "NONE"];
+_logicSpawn1 setPosATL _positionOffset;
+_logicSpawn1 setDir (_rotation);
+
+_positionOffset = [_location, (265.914+90), 5.50772, _rotation] call compile preprocessFileLineNumbers "Scripts\Misc\PXG_Calculate_Position_AngleOffset.sqf";
+_logicSpawn2 = _logicGroup createUnit ["Logic", _positionOffset, [], 0, "NONE"];
+_logicSpawn2 setPosATL _positionOffset;
+_logicSpawn2 setDir (_rotation);
+
+_positionOffset = [_location, (292.036+90), 5.8356, _rotation] call compile preprocessFileLineNumbers "Scripts\Misc\PXG_Calculate_Position_AngleOffset.sqf";
+_logicSpawn3 = _logicGroup createUnit ["Logic", _positionOffset, [], 0, "NONE"];
+_logicSpawn3 setPosATL _positionOffset;
+_logicSpawn3 setDir (_rotation);
+
 _logicSpawn1 setVehicleVarName "FOB_"+str(_fobCount-3)+"_Supply_1";
 _logicSpawn2 setVehicleVarName "FOB_"+str(_fobCount-3)+"_Supply_2";
 _logicSpawn3 setVehicleVarName "FOB_"+str(_fobCount-3)+"_Supply_3";

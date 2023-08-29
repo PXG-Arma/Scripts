@@ -99,4 +99,4 @@ _logicSpawn3 setVehicleVarName "FOB_"+str(_fobCount-3)+"_Supply_3";
 
 fobLogicMaster synchronizeObjectsAdd [_logicSpawn1, _logicSpawn2, _logicSpawn3];
 
-_spawn addAction ["<t color='#fcec03'>Spawn Resupply</t>",{[fobLogicMaster] execVM "Scripts\Resupply\dialogs\openSupplyDialog.sqf"}];  
+_spawn addAction ["<t color='#fcec03'>Spawn Resupply</t>",{[fobLogicMaster, true] execVM "Scripts\Resupply\dialogs\openSupplyDialog.sqf"}];  

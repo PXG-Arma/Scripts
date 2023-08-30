@@ -5,7 +5,6 @@ _fobMarkerName = _fobMarkerName + str count _deployment;
 _fobCircleName = "FobCircle";
 _fobCircleName = _fobCircleName + str count _deployment;
 
-
 // Get location of crate
 _location = getPosATL _crate;
 _rotation = getDir _crate;
@@ -23,7 +22,6 @@ _spawn setVariable ["PXG_isFOB", true, true];
 _deployment = missionNamespace getVariable "Pxg_Deployment_Positions";
 _deployment pushBack _spawn; 
 missionNamespace setVariable ["Pxg_Deployment_Positions", _deployment, true];
-
 
 _fobCount = count _deployment; 
 _fobCount = _fobCount; 
@@ -43,7 +41,6 @@ _fobCircle setMarkerSize [150,150];
 _buildArea = [_spawn, 150, 150, 0, false, -1];
 
 [[_buildArea],"Scripts\Resupply\Functions\PXG_Create_Build_Area.sqf"] remoteExec ["execVM", 0, _spawn];
-
 
 //Generate Walls and tent for FOB
 _positionOffset = [_location, (225.309+90), 7.93175, _rotation] call compile preprocessFileLineNumbers "Scripts\Misc\PXG_Calculate_Position_AngleOffset.sqf";
@@ -70,10 +67,11 @@ _positionOffset = [_location, (256.827+90), 6.15556, _rotation] call compile pre
 _fobTent = createVehicle["CamoNet_BLUFOR_Open_F", _positionOffset, [], 0, "CAN_COLLIDE"];
 _fobTent setPosATL _positionOffset;
 _fobTent setDir (_rotation);
-
+_fobTent allowDamage false;
 
 _spawn setFlagTexture "Textures\pxg_flag.jpg";
 
+//Generate logic units
 _logicCenter = createCenter sideLogic;
 _logicGroup = createGroup _logicCenter;
 fobLogicMaster = _logicGroup createUnit ["Logic", _location, [], 0, "NONE"];

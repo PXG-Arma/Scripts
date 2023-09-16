@@ -11,10 +11,7 @@ switch (_loadout) do {
 	
 // add helmet
 switch (_loadout) do {
-	default { 
-		randomHelmetArray = ["UK3CB_TKA_O_H_6b7_1m_bala2_Surpat", "UK3CB_TKA_O_H_6b7_1m_ess_bala1_TAN", "UK3CB_TKA_O_H_6b7_1m_bala1_TAN"];
-		player addHeadgear selectRandom randomHelmetArray;
-	};
+	default { player addHeadgear "UK3CB_TKA_O_H_6b27m_ESS_Surpat"};
 	case "plt";
 	case "logi";
 	case "tacp": {player addHeadgear "UK3CB_TKA_B_H_Beret"};
@@ -40,7 +37,7 @@ switch (_loadout) do {
 
 // add backpack 
 switch (_loadout) do {
-	default { player addBackpack "UK3CB_TKA_O_B_RIF_Tan"};
+	default { player addBackpack "UK3CB_TKA_B_B_RIF"};
 	case "logi";
 	case "sqd_eng";
 	case "rcn_spe": {player addBackpack "UK3CB_TKA_O_B_ENG_Tan"};

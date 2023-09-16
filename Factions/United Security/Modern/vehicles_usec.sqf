@@ -8,7 +8,6 @@ _availableVehicles =
 			['C_Van_01_box_F', 8], 
 			['C_Van_01_fuel_F', 0], 
 			['C_Offroad_01_covered_F', 4]
-			
 		]
 	],
 
@@ -22,19 +21,6 @@ _availableVehicles =
 	['Rotary Transport', 
 		[
 			['UK3CB_AAF_B_Bell412_Utility', 6]
-		]
-	],
-
-	['Rotary Attack', 
-		[
-			['UK3CB_AAF_B_Bell412_Armed', 6], 
-			['UK3CB_AAF_B_Bell412_Armed_AT', 6]
-		]
-	],
-
-	['Fixed Wing Attack', 
-		[
-			['RHSGREF_A29B_HIDF', -1]
 		]
 	],
 

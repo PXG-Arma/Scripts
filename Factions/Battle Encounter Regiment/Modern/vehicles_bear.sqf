@@ -19,21 +19,9 @@ _availableVehicles =
 		]
 	],
 
-	['IFV', 
-		[
-			['UK3CB_ARD_O_GAZ_Vodnik_Cannon', 4]
-		]
-	],
-
 	['Rotary Transport', 
 		[
 			['O_Heli_Light_02_unarmed_F', 8]
-		]
-	],
-
-	['Rotary Armed', 
-		[
-			['O_Heli_Light_02_dynamicLoadout_F', 8]
 		]
 	],
 

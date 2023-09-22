@@ -45,6 +45,6 @@ switch (_loadout) do {
 	case "sup_mor_l": {player addBackpack "I_Mortar_01_support_F"};
 	case "sup_mor_g": {player addBackpack "I_Mortar_01_weapon_F"};
 	case "ar_ld";
-	case "pil": {player addBackpack "BWA3_AssaultPack_Fleck"};
+	case "pil";
 	case "ar_c": {};
 };

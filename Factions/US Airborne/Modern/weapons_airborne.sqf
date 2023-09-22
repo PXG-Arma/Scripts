@@ -31,14 +31,13 @@ switch (_loadout) do {
 	case "sup_mmg_g": {	player addWeapon "rhs_weap_m240G";
 						player addPrimaryWeaponItem "rhsusf_acc_elcan";
 	};
-	case "ar_ld";
-	case "ar_c": {	player addWeapon "rhs_weap_m4"};
+	case "pil": {	player addWeapon "rhs_weap_m4"};
 };
 
 // add secondary weapon
 switch (_loadout) do {
 	default {};
-	case "sqd_hgre": {player addWeapon "rhsusf_weap_m9"};
+	case "pil": {player addWeapon "rhsusf_weap_m9"};
 };
 
 // add launcher

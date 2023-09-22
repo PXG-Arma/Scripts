@@ -19,14 +19,12 @@ switch (_loadout) do {
 		for "_i" from 1 to 2 do { player addItemToBackpack "rhsusf_100Rnd_762x51_m61_ap"};
 		for "_i" from 1 to 2 do { player addItemToBackpack "rhsusf_100Rnd_762x51_m62_tracer"};
 	};
-	case "ar_ld";
-	case "ar_c";
 };
 
 // add secondary ammo
 switch (_loadout) do {
 	default {
-		for "_i" from 1 to 3 do { player addItemToUniform "rhssaf_mag_15Rnd_9x19_FMJ"};
+		for "_i" from 1 to 2 do { player addItemToUniform "rhssaf_mag_15Rnd_9x19_FMJ"};
 	};
 };
 

@@ -35,7 +35,6 @@ switch (_loadout) do {
 	case "rcn_spe";
 	case "sqd_med": { player addVest "rhsusf_spcs_ucp_medic"};
 	case "sup_mmg_g": { player addVest "rhsusf_spcs_ucp_machinegunner"};
-	case "pil": {};
 };
 
 // add backpack 

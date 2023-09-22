@@ -9,18 +9,18 @@ switch (_loadout) do {
 	};
 	case "sqd_hgre": { player addWeapon "rhs_weap_m32"};
 	case "sqd_ar": {player addWeapon "BWA3_MG4";
-					player addPrimaryWeaponItem "BWA3_optic_ZO4x30i_MicroT2";
+					player addPrimaryWeaponItem "bwa3_optic_zo4x30i_microt2";
 					player addPrimaryWeaponItem "BWA3_muzzle_snds_Rotex_IIIC";
 					player addPrimaryWeaponItem "BWA3_acc_VarioRay_irlaser_black";
 	};
-	case "rcn_dmr": {player addWeapon "rhs_weap_sr25_ec";
-					 player addPrimaryWeaponItem "rhsusf_acc_aac_762sdn6_silencer";
-					 player addPrimaryWeaponItem "rhsusf_acc_anpeq15side_bk";
-					 player addPrimaryWeaponItem "rhs_usf_acc_m8541_mrds";
+	case "rcn_dmr": {player addWeapon "BWA3_G28";
+					 player addPrimaryWeaponItem "bwa3_acc_varioray_irlaser_black";
+					 player addPrimaryWeaponItem "bwa3_optic_m5xi_msr_microt2";
 					 player addPrimaryWeaponItem "rhsusf_acc_harris_bipod";
+					 player addPrimaryWeaponItem "bwa3_muzzle_snds_rotex_iia"
 	};
 	case "sup_mmg_g": {	player addWeapon "BWA3_MG5";
-						player addPrimaryWeaponItem "bwa3_optic_zo4x30i";
+						player addPrimaryWeaponItem "bwa3_optic_zo4x30i_microt2";
 						player addPrimaryWeaponItem "bwa3_acc_varioray_irlaser_black";
 	};
 	case "ar_ld";
@@ -30,8 +30,12 @@ switch (_loadout) do {
 
 // add secondary weapon
 switch (_loadout) do {
-	default { player addWeapon "BWA3_P12";};
+	default { player addWeapon "BWA3_P12";
+			  player addHandgunItem "muzzle_snds_acp";
+			  player addHandgunItem "bwa3_acc_llmpi_irlaser";
+	};
 };
+
 
 // add launcher
 switch (_loadout) do {

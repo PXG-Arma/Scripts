@@ -14,7 +14,7 @@ switch (_loadout) do {
 			        player addPrimaryWeaponItem "bwa3_optic_eotech552"
 	};
 	case "sqd_ar": {player addWeapon "BWA3_MG4";
-					player addPrimaryWeaponItem "bwa3_optic_zo4x30";
+					player addPrimaryWeaponItem "bwa3_optic_eotech552";
 					player addPrimaryWeaponItem "bwa3_acc_varioray_irlaser_black";
 	};
 	case "rcn_dmr": {player addWeapon "BWA3_G28";
@@ -23,7 +23,7 @@ switch (_loadout) do {
 					 player addPrimaryWeaponItem "rhsusf_acc_harris_bipod"
 	};
 	case "sup_mmg_g": {	player addWeapon "BWA3_MG5";
-						player addPrimaryWeaponItem "bwa3_optic_zo4x30i";
+						player addPrimaryWeaponItem "bwa3_optic_zo4x30i_microt2";
 						player addPrimaryWeaponItem "bwa3_acc_varioray_irlaser_black";
 	};
 	case "ar_c";

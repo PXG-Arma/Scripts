@@ -18,7 +18,6 @@ switch (_loadout) do {
 	case "rcn_ld";
 	case "rcn_spe";
 	case "rcn_dmr": {player addHeadgear "UK3CB_TKA_I_H_Shemag_Des"};
-	case "pil": {player addHeadgear "UK3CB_TKA_O_H_zsh7a_mike_Des_alt"};
 };
 
 // add vest
@@ -31,8 +30,7 @@ switch (_loadout) do {
 	case "rcn_spe";
 	case "rcn_dmr";
 	case "ar_ld";
-	case "ar_c";
-	case "pil": { player addVest "UK3CB_TKA_B_V_GA_LITE_DES_MARPAT"};
+	case "ar_c": { player addVest "UK3CB_TKA_B_V_GA_LITE_DES_MARPAT"};
 };
 
 // add backpack 
@@ -46,6 +44,5 @@ switch (_loadout) do {
 	case "sup_mor_l": {player addBackpack "I_Mortar_01_support_F"};
 	case "sup_mor_g": {player addBackpack "I_Mortar_01_weapon_F"};
     case "ar_ld";
-	case "ar_c";
-	case "pil": {};
+	case "ar_c": {};
 };

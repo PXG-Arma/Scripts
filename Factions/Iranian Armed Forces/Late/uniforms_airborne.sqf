@@ -3,7 +3,6 @@ params["_side","_faction","_variant", "_loadout"];
 // add uniform
 switch (_loadout) do {
 	default { player forceAddUniform "LOP_U_IRAN_Fatigue_01"};
-	case "pil": { player forceAddUniform "U_B_HeliPilotCoveralls"};
 };
 	
 // add helmet
@@ -13,13 +12,12 @@ switch (_loadout) do {
 	case "rcn_amr";
 	case "rcn_spe";
 	case "rcn_ld": {player addHeadgear "UK3CB_TKA_O_H_Patrolcap_ADPM"};
-	case "pil": {player addHeadgear "rhsusf_hgu56p_visor_green"};
+	case "pil": {player addHeadgear "UK3CB_H_Pilot_Helmet"};
 };
 
 // add vest
 switch (_loadout) do {
 	default { player addVest "LOP_V_6B23_Rifleman_IDPM"};
-	case "pil": {};
 };
 
 // add backpack 

@@ -3,12 +3,6 @@ params["_side","_faction","_variant", "_loadout"];
 // add uniform
 switch (_loadout) do {
 	default { player forceAddUniform "Alpine_Crye_Camo"};
-	case "rcn_ld";
-	case "rcn_spe";
-	case "rcn_dmr";
-	case "rcn_drone";
-	case "ar_ld";
-	case "ar_c";
 };
 	
 // add helmet
@@ -20,7 +14,6 @@ switch (_loadout) do {
 	case "rcn_drone";
 	case "rcn_dmr";
 	case "rcn_ld": {player addHeadgear "H_Booniehat_oli"};
-	case "pil";
 };
 
 // add vest
@@ -35,8 +28,6 @@ switch (_loadout) do {
 	case "sqd_med": {player addVest "UK3CB_V_MBAV_MEDIC_OLI"};
 	case "sqd_ar": {player addVest "UK3CB_V_MBAV_MG_OLI"};
 	case "sup_mmg_g": {player addVest "UK3CB_V_MBAV_MG_OLI"};
-	case "ar_ld": {player addVest "UK3CB_ADA_B_V_MBAV_OLI"};
-	case "ar_c": {player addVest "UK3CB_ADA_B_V_MBAV_OLI"};
 };
 
 // add backpack 

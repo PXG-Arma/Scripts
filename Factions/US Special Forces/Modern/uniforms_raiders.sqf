@@ -22,7 +22,6 @@ switch (_loadout) do {
 	case "sqd_med";
 	case "sqd_aar";
 	case "sqd_ar": { player addVest "VSM_LBT6094_operator_OGA"};
-	case "pil": {};
 };
 
 // add backpack 

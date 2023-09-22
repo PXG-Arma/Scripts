@@ -28,8 +28,6 @@ switch (_loadout) do {
 	case "sqd_med": {player addVest "UK3CB_V_MBAV_MEDIC_OLI"};
 	case "sqd_ar": {player addVest "UK3CB_V_MBAV_MG_OLI"};
 	case "sup_mmg_g": {player addVest "UK3CB_V_MBAV_MG_OLI"};
-	case "ar_ld": {player addVest "UK3CB_ADA_B_V_MBAV_OLI"};
-	case "ar_c": {player addVest "UK3CB_ADA_B_V_MBAV_OLI"};
 };
 
 // add backpack 

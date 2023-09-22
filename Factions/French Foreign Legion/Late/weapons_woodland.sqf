@@ -18,9 +18,6 @@ switch (_loadout) do {
 	case "sup_mmg_g": {	player addWeapon "rhs_weap_fnmag";
 						player addPrimaryWeaponItem "rhsusf_acc_elcan";
 	};
-	case "ar_ld";
-	case "ar_c";
-	case "pil":{};
 };
 
 // add secondary weapon

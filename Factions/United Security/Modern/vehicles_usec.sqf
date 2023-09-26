@@ -14,7 +14,7 @@ _availableVehicles =
 	['Armed Car/MRAP', 
 		[
 			['UK3CB_AAF_B_SUV_Armoured', 4],
-			['UK3CB_AAF_B_SUV_Armed', 4]
+			['LOP_PMC_Offroad_M2', 4]
 		]
 	],
 

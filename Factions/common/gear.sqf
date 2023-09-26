@@ -133,7 +133,7 @@ if (_variantEra == "Late") then {
 	};
 
 	// add NVG
-	player linkItem "ACE_NVG_Gen4_Black";
+	player linkItem "ACE_NVG_Wide_Black";
 	player addItemToUniform "ACE_IR_Strobe_Item"; 
 
 	// add binocular
@@ -173,7 +173,7 @@ if (_variantEra == "Modern") then {
 	player addItemToUniform "ACE_microDAGR";
 
 	// add NVG
-	player linkItem "ACE_NVG_Gen4_Black";
+	player linkItem "ACE_NVG_Wide_Black";
 	player addItemToUniform "ACE_IR_Strobe_Item"; 
 
 	// add binocular

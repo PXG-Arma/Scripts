@@ -16,7 +16,7 @@ _availableVehicles =
 	['Armed Car/MRAP', 
 		[
 			['UK3CB_LDF_B_SUV_Armoured', 4], 
-			['BWA3_Dingo2_FLW200_M2_CG13_Fleck', 4]
+			['BWA3_Dingo2_FLW200_M2_Fleck', 4]
 		]
 	],
 

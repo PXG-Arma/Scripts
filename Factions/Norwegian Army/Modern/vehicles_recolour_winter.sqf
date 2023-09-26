@@ -4,7 +4,7 @@ switch(_vehicleType) do
 {
 	default {};
 
-	case "BWA3_Dingo2_FLW200_M2_CG13_Fleck":
+	case "BWA3_Dingo2_FLW200_M2_Fleck":
 	{
 		[
 			_vehicle,

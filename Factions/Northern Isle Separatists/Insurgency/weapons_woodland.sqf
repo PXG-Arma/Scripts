@@ -11,9 +11,6 @@ switch (_loadout) do {
 	case "sup_mmg_g": {player addWeapon "rhs_weap_mg42";
 					   player addPrimaryWeaponItem "rhsgref_mg42_acc_aasight";
 	};
-	case "rcn_amr": {player addWeapon "rhs_weap_m82a1";
-					 player addPrimaryWeaponItem "rhsusf_acc_m8541";
-	};
 	case "ar_ld";
 	case "ar_c": {};
 };

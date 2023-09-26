@@ -8,15 +8,15 @@ _availableVehicles =
 			['rnt_lkw_5t_mil_gl_kat_i_transport_fleck', 12],
 			['rnt_lkw_10t_mil_gl_kat_i_repair_fleck', 4],  
 			['rnt_lkw_5t_mil_gl_kat_i_fuel_fleck', 0], 
-			['Redd_Tank_LKW_leicht_gl_Wolf_Flecktarn_FueFu', 4], 
-			['UK3CB_LDF_B_SUV_Armoured', 4], 
+			['Redd_Tank_LKW_leicht_gl_Wolf_Flecktarn_FueFu', 4],
 			['B_LSV_01_unarmed_F', 4]
 		]
 	],
 
 	['Armed Car/MRAP', 
 		[
-			['BWA3_Dingo2_FLW100_M2_CG13_Fleck', 4]
+			['UK3CB_LDF_B_SUV_Armoured', 4],
+			['BWA3_Dingo2_FLW200_M2_CG13_Fleck', 4]
 		]
 	],
 

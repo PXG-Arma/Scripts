@@ -29,6 +29,12 @@ _availableVehicles =
 		]
 	],
 
+	['Fixed Wing Attack', 
+		[
+			['UK3CB_AAF_B_Gripen_G', -1]
+		]
+	],
+
 	['Boat', 
 		[
 			['B_Boat_Transport_01_F', 2], 

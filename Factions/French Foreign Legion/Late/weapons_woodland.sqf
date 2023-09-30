@@ -3,12 +3,12 @@ params["_side","_faction","_variant", "_loadout"];
 // add primary weapon
 switch (_loadout) do {
 	default { player addWeapon "UK3CB_FAMAS_F1";
-				player addPrimaryWeaponItem "rhsusf_acc_eotech_xps3"};
+				player addPrimaryWeaponItem "rhsusf_acc_rm05"};
 	case "plt";
 	case "sqd_ld";
 	case "rcn_ld";
 	case "sqd_gre":{ player addWeapon "UK3CB_FAMAS_F1_GLM203";
-					player addPrimaryWeaponitem "rhsusf_acc_eotech_xps3"};
+					player addPrimaryWeaponitem "rhsusf_acc_rm05"};
 	case "sqd_ar": {player addWeapon "rhs_weap_minimi_para_railed";
 					player addPrimaryWeaponItem "rhsusf_acc_saw_bipod"};
 	case "rcn_dmr": {player addWeapon "UK3CB_PSG1A1";

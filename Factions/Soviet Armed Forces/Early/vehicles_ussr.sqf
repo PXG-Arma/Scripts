@@ -39,8 +39,7 @@ _availableVehicles =
 
 	['MBT', 
 		[
-			['UK3CB_CW_SOV_O_EARLY_T55', 4], 
-			['UK3CB_CW_SOV_O_EARLY_T72A', 4]
+			['UK3CB_CW_SOV_O_EARLY_T55', 4]
 		]
 	],
 

@@ -133,8 +133,8 @@ if (_variantEra == "Late") then {
 	};
 
 	// add NVG
-	player linkItem "ACE_NVG_Wide_Black";
-	player addItemToUniform "ACE_IR_Strobe_Item"; 
+	//player linkItem "ACE_NVG_Wide_Black";
+	//player addItemToUniform "ACE_IR_Strobe_Item"; 
 
 	// add binocular
 	switch (_loadout) do {

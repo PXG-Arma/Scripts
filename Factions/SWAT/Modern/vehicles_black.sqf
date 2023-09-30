@@ -2,9 +2,8 @@ _availableVehicles =
 [
 	['Utility',
 		[
-			['UK3CB_APD_B_Offroad_Covered_EKAM', 4],
-			['C_Van_01_transport_F', 8],
-			['UK3CB_ION_B_Urban_Transit_Transport', 8]
+			['UK3CB_APD_B_Offroad_Unarmed_EKAM', 4],
+			['C_Van_01_transport_F', 8]
 		]
 	],
 	

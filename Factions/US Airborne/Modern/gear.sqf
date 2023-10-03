@@ -15,3 +15,9 @@ switch (_loadout) do {
 	case "rcn_dmr": {player addItemToBackpack "ACE_SpottingScope";
 	                player addItemToBackpack "ACE_Tripod"};
 };
+
+//Remove NVG from pilot
+//switch (_loadout) do {
+//	case "pil": {
+//		player unlinkItem "ACE_NVG_Wide_Black"};
+//};

@@ -30,6 +30,7 @@ switch (_loadout) do {
 					   player addPrimaryWeaponItem "rhsusf_acc_ardec_m240";
 					   player addPrimaryWeaponItem "rhsusf_acc_ELCAN";
 	};
+	case "pil": {};
 };
 
 // add secondary weapon

@@ -131,11 +131,6 @@ _resupplyAvailable = [
 			["ACE_bloodIV_500", 6]
 		]
 	],
-	["IHADSS Helmets",
-		[
-			["rhsusf_ihadss",10]
-		]
-	],
 	["Parachutes",
 		[
 			["B_Parachute", 20]

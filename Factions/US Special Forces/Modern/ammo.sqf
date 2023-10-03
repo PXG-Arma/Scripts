@@ -94,19 +94,4 @@ switch (_loadout) do {
 // add 40mm grenades
 switch (_loadout) do {
 	default {};
-	case "plt": {
-		for "_i" from 1 to 5 do {player addItemToBackpack "1Rnd_HE_Grenade_shell"}; 
-		for "_i" from 1 to 2 do {player addItemToBackpack "1Rnd_Smoke_Grenade_shell"};
-		for "_i" from 1 to 2 do {player addItemToBackpack "1Rnd_SmokeRed_Grenade_shell"};
-		for "_i" from 1 to 2 do {player addItemToBackpack "1Rnd_SmokeGreen_Grenade_shell"};
-		for "_i" from 1 to 2 do {player addItemToBackpack "UGL_FlareWhite_F"};
-	};
-	case "sqd_ld";
-	case "rcn_ld": {
-		for "_i" from 1 to 10 do {player addItemToBackpack "1Rnd_HE_Grenade_shell"};
-		for "_i" from 1 to 2 do {player addItemToBackpack "1Rnd_Smoke_Grenade_shell"};
-		for "_i" from 1 to 2 do {player addItemToBackpack "1Rnd_SmokeRed_Grenade_shell"};
-		for "_i" from 1 to 2 do {player addItemToBackpack "1Rnd_SmokeGreen_Grenade_shell"};
-		for "_i" from 1 to 2 do {player addItemToBackpack "UGL_FlareWhite_F"};
-	};
 };

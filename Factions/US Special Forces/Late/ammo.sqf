@@ -24,6 +24,11 @@ switch (_loadout) do {
 		for "_i" from 1 to 2 do { player addItemToBackpack "rhsusf_100Rnd_762x51_m61_ap"};
 		for "_i" from 1 to 2 do { player addItemToBackpack "rhsusf_100Rnd_762x51_m62_tracer"};
 	};
+	case "sup_mat_l";
+	case "sup_mat_g": {
+		for "_i" from 1 to 4 do { player addItemToVest "rhs_mag_30Rnd_556x45_m855_Stanag"};
+		for "_i" from 1 to 2 do { player addItemToBackpack "rhs_mag_30Rnd_556x45_M855_Stanag_Tracer_Red"};
+	};
 	case "pil": {};
 };
 
@@ -86,20 +91,4 @@ switch (_loadout) do {
 // add 40mm grenades
 switch (_loadout) do {
 	default {};
-	case "plt": {
-		for "_i" from 1 to 5 do {player addItemToBackpack "1Rnd_HE_Grenade_shell"}; 
-		for "_i" from 1 to 2 do {player addItemToBackpack "1Rnd_Smoke_Grenade_shell"};
-		for "_i" from 1 to 2 do {player addItemToBackpack "1Rnd_SmokeRed_Grenade_shell"};
-		for "_i" from 1 to 2 do {player addItemToBackpack "1Rnd_SmokeGreen_Grenade_shell"};
-		for "_i" from 1 to 2 do {player addItemToBackpack "UGL_FlareWhite_F"};
-	};
-	case "sqd_ld";
-	case "sqd_gre";
-	case "rcn_ld": {
-		for "_i" from 1 to 10 do {player addItemToBackpack "1Rnd_HE_Grenade_shell"};
-		for "_i" from 1 to 2 do {player addItemToBackpack "1Rnd_Smoke_Grenade_shell"};
-		for "_i" from 1 to 2 do {player addItemToBackpack "1Rnd_SmokeRed_Grenade_shell"};
-		for "_i" from 1 to 2 do {player addItemToBackpack "1Rnd_SmokeGreen_Grenade_shell"};
-		for "_i" from 1 to 2 do {player addItemToBackpack "UGL_FlareWhite_F"};
-	};
 };

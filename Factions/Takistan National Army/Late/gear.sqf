@@ -6,15 +6,15 @@ switch (_loadout) do {
 	case "plt";
 	case "sqd_ld";
 	case "sqd_gre";
-	case "rcn_ld": {player addItemToBackpack "rhs_weap_m79"};
+	case "rcn_ld": {[ player, "rhs_weap_m79", 1 ] call pxg_armory_fnc_addToBackpack};
 };
 
 // add Spotting Scope
 switch (_loadout) do {
-	case "rcn_dmr": {player addItemToBackpack "ACE_SpottingScope";
-	                player addItemToBackpack "ACE_Tripod"};
+	case "rcn_dmr": {[ player, "ACE_SpottingScope", 1 ] call pxg_armory_fnc_addToBackpack;
+	[ player, "ACE_Tripod", 1 ] call pxg_armory_fnc_addToBackpack;
+	};
 };
-
 // remove NVG 
 switch (_loadout) do {
     default {player unlinkItem "ACE_NVG_Gen4_Black"};

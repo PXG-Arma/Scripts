@@ -16,15 +16,15 @@ if (_variantEra == "Early") then {
 		case "sup_mat_l";
 		case "sup_hat_l";
 		case "sup_aa_l";
-		case "sup_mor_l": {player addItemToUniform "ACRE_PRC152"};
+		case "sup_mor_l": {[ player, "ACRE_PRC152", 1 ] call pxg_armory_fnc_addToUniform};
 		case "rcn_ld";
-		case "tacp": {player addItemToBackpack "ACRE_PRC117F"};
+		case "tacp": {[ player, "ACRE_PRC117F", 1 ] call pxg_armory_fnc_addToBackpack};
 	};
 };
 
 if (_variantEra == "Insurgency") then {
 	switch (_loadout) do {
-		default { player addItemToUniform "ACRE_PRC343"};
+		default {[ player, "ACRE_PRC343", 1 ] call pxg_armory_fnc_addToUniform};
 		case "plt"; 
 		case "logi";
 		case "sqd_ld";
@@ -35,20 +35,20 @@ if (_variantEra == "Insurgency") then {
 		case "sup_hat_l";
 		case "sup_aa_l";
 		case "sup_mor_l":{
-			player addItemToUniform "ACRE_PRC343";
-			player addItemToUniform "ACRE_PRC152"
+			[ player, "ACRE_PRC343", 1 ] call pxg_armory_fnc_addToUniform;
+			[ player, "ACRE_PRC152", 1 ] call pxg_armory_fnc_addToUniform;
 		};
 		case "pil": {};
 		case "tacp": { 
-			player addItemToUniform "ACRE_PRC343"; 
-			player addItemToBackpack "ACRE_PRC117F"; 
+			[ player, "ACRE_PRC343", 1 ] call pxg_armory_fnc_addToUniform;
+			[ player, "ACRE_PRC117F", 1 ] call pxg_armory_fnc_addToBackpack;
 		};
 	};
 };
 
 if (_variantEra == "Late") then {
 	switch (_loadout) do {
-		default { player addItemToUniform "ACRE_PRC343"};
+		default {[ player, "ACRE_PRC343", 1 ] call pxg_armory_fnc_addToUniform};
 		case "plt"; 
 		case "logi";
 		case "sqd_ld";
@@ -58,21 +58,21 @@ if (_variantEra == "Late") then {
 		case "sup_hat_l";
 		case "sup_aa_l";
 		case "sup_mor_l":{
-			player addItemToUniform "ACRE_PRC343";
-			player addItemToVest "ACRE_PRC152";
+			[ player, "ACRE_PRC343", 1 ] call pxg_armory_fnc_addToUniform;
+			[ player, "ACRE_PRC152", 1 ] call pxg_armory_fnc_addToVest;
 		};
-		case "pil": { player addItemToUniform "ACRE_PRC152"};
+		case "pil": {[ player, "ACRE_PRC152", 1 ] call pxg_armory_fnc_addToUniform};
 		case "rcn_ld";
 		case "tacp": { 
-			player addItemToUniform "ACRE_PRC343"; 
-			player addItemToBackpack "ACRE_PRC117F";
+			[ player, "ACRE_PRC343", 1 ] call pxg_armory_fnc_addToUniform;
+			[ player, "ACRE_PRC117F", 1 ] call pxg_armory_fnc_addToBackpack;
 		};
 	};
 };
 
 if (_variantEra == "Modern" || _variantEra == "Future") then {
 	switch (_loadout) do {
-		default { player addItemToUniform "ACRE_PRC343"};
+		default {[ player, "ACRE_PRC343", 1 ] call pxg_armory_fnc_addToUniform};
 		case "plt"; 
 		case "logi";
 		case "sqd_ld";
@@ -82,14 +82,14 @@ if (_variantEra == "Modern" || _variantEra == "Future") then {
 		case "sup_hat_l";
 		case "sup_aa_l";
 		case "sup_mor_l":{
-			player addItemToUniform "ACRE_PRC343";
-			player addItemToVest "ACRE_PRC152"
+			[ player, "ACRE_PRC343", 1 ] call pxg_armory_fnc_addToUniform;
+			[ player, "ACRE_PRC152", 1 ] call pxg_armory_fnc_addToVest;
 		};
-		case "pil": { player addItemToUniform "ACRE_PRC152"};
+		case "pil": {[ player, "ACRE_PRC152", 1 ] call pxg_armory_fnc_addToUniform};
 		case "rcn_ld";
 		case "tacp": { 
-			player addItemToUniform "ACRE_PRC343"; 
-			player addItemToBackpack "ACRE_PRC117F";
+			[ player, "ACRE_PRC343", 1 ] call pxg_armory_fnc_addToUniform;
+			[ player, "ACRE_PRC117F", 1 ] call pxg_armory_fnc_addToBackpack;
 		};
 	};
 };

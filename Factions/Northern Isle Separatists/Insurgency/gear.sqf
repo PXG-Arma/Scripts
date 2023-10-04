@@ -5,13 +5,13 @@ switch (_loadout) do {
 	default {};	
 	case "plt";
 	case "sqd_ld";
-	case "sqd_gre": {player addItemToBackpack "rhs_weap_m79"};
+	case "sqd_gre": {[ player, "rhs_weap_m79", 1 ] call pxg_armory_fnc_addToBackpack};
 };
 
 // add Spotting Scope
 switch (_loadout) do {
-	case "rcn_ld": {player addItemToBackpack "ACE_SpottingScope";
-	                player addItemToBackpack "ACE_Tripod";
+	case "rcn_ld": {[ player, "ACE_SpottingScope", 1 ] call pxg_armory_fnc_addToBackpack;
+	[ player, "ACE_Tripod", 1 ] call pxg_armory_fnc_addToBackpack;
 					player addWeapon "ACE_Vector"};
 };
 

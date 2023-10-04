@@ -6,15 +6,15 @@ _variantEra = _variantArray #1;
 player linkItem "ItemMap";
 player linkItem "ItemCompass";
 player linkItem "ItemWatch";
-player addItemToVest "ACE_Flashlight_XL50"; 
-player addItemToVest "ACE_MapTools";
-for "_i" from 1 to 4 do {player addItemToVest "ACE_CableTie"};
+[ player, "ACE_Flashlight_XL50", 1 ] call pxg_armory_fnc_addToVest;
+[ player, "ACE_MapTools", 1 ] call pxg_armory_fnc_addToVest;
+[ player, "ACE_CableTie", 4 ] call pxg_armory_fnc_addToVest;
 
 // add Entrenching Tool & Fortify Hammer
 switch (_loadout) do {
 	default {
-		player addItemToBackpack "ACE_Fortify";
-		player addItemToBackpack "ACE_EntrenchingTool";
+		[ player, "ACE_Fortify", 1 ] call pxg_armory_fnc_addToBackpack;
+		[ player, "ACE_EntrenchingTool", 1 ] call pxg_armory_fnc_addToBackpack;
 	};
 	case "ar_ld";
 	case "ar_c";
@@ -27,53 +27,53 @@ switch (_loadout) do {
 	case "sup_gmg_g";
 	case "sup_mor_l";
 	case "sup_mor_g": {
-		player addItemToVest "ACE_Fortify";
-		player addItemToVest "ACE_EntrenchingTool";
+		[ player, "ACE_Fortify", 1 ] call pxg_armory_fnc_addToVest;
+		[ player, "ACE_EntrenchingTool", 1 ] call pxg_armory_fnc_addToVest;
 	};
 };
 
 // add Logi, EOD, Sapper, Specialist equipement
 switch (_loadout) do {
 	default {};
-	case "logi": {player addItemToBackpack "ToolKit"};
+	case "logi": {[ player, "ToolKit", 1 ] call pxg_armory_fnc_addToBackpack};
 	case "sqd_eng": {
-		for "_i" from 1 to 2 do { player addItemToBackpack "tsp_stickCharge_mag"};
-		for "_i" from 1 to 4 do { player addItemToBackpack "DemoCharge_Remote_Mag"};
+		[ player, "tsp_stickCharge_mag", 2 ] call pxg_armory_fnc_addToBackpack;
+		[ player, "DemoCharge_Remote_Mag", 4 ] call pxg_armory_fnc_addToBackpack;
 		player addWeapon "ACE_VMM3";
-		player addItemToBackpack "ACE_M26_Clacker";
-		player addItemToBackpack "ACE_wirecutter";
-		player addItemToBackpack "ACE_DefusalKit";
-		player addItemToBackpack "ACE_SpraypaintBlue";
+		[ player, "ACE_M26_Clacker", 1 ] call pxg_armory_fnc_addToBackpack;
+		[ player, "ACE_wirecutter", 1 ] call pxg_armory_fnc_addToBackpack;
+		[ player, "ACE_DefusalKit", 1 ] call pxg_armory_fnc_addToBackpack;
+		[ player, "ACE_SpraypaintBlue", 1 ] call pxg_armory_fnc_addToBackpack;
 	};
 		case "sqd_sap": {
-		for "_i" from 1 to 2 do { player addItemToBackpack "IEDUrbanBig_Remote_Mag"};
-		for "_i" from 1 to 3 do { player addItemToBackpack "DemoCharge_Remote_Mag"}; 
-		player addItemToBackpack "ACE_Clacker";
-		player addItemToBackpack "ACE_wirecutter";
-		player addItemToBackpack "ACE_DefusalKit";
+		[ player, "IEDUrbanBig_Remote_Mag", 2 ] call pxg_armory_fnc_addToBackpack;
+		[ player, "DemoCharge_Remote_Mag", 3 ] call pxg_armory_fnc_addToBackpack;
+		[ player, "ACE_Clacker", 1 ] call pxg_armory_fnc_addToBackpack;
+		[ player, "ACE_wirecutter", 1 ] call pxg_armory_fnc_addToBackpack;
+		[ player, "ACE_DefusalKit", 1 ] call pxg_armory_fnc_addToBackpack;
 	};
 	case "sqd_sap_dms": {
-		for "_i" from 1 to 2 do { player addItemToBackpack "IEDLandBig_Remote_Mag"};
-		for "_i" from 1 to 2 do { player addItemToBackpack "IEDLandSmall_Remote_Mag"}; 
-		player addItemToBackpack "ACE_Cellphone";
-		player addItemToBackpack "ACE_DeadManSwitch";
-		player addItemToBackpack "ACE_wirecutter";
-		player addItemToBackpack "ACE_DefusalKit";
+		[ player, "IEDLandBig_Remote_Mag", 2 ] call pxg_armory_fnc_addToBackpack;
+		[ player, "IEDLandSmall_Remote_Mag", 2 ] call pxg_armory_fnc_addToBackpack;
+		[ player, "ACE_Cellphone", 1 ] call pxg_armory_fnc_addToBackpack;
+		[ player, "ACE_DeadManSwitch", 1 ] call pxg_armory_fnc_addToBackpack;
+		[ player, "ACE_wirecutter", 1 ] call pxg_armory_fnc_addToBackpack;
+		[ player, "ACE_DefusalKit", 1 ] call pxg_armory_fnc_addToBackpack;
 	};
 	case "sqd_brc": {
-		for "_i" from 1 to 6 do { player addItemToBackpack "tsp_popperCharge_mag"};
-		for "_i" from 1 to 4 do { player addItemToBackpack "tsp_stickCharge_mag"};
-		for "_i" from 1 to 2 do { player addItemToBackpack "tsp_frameCharge_mag"};
-		player addItemToBackpack "ACE_Clacker";
-		player addItemToBackpack "tsp_lockpick";
+		[ player, "tsp_popperCharge_mag", 6 ] call pxg_armory_fnc_addToBackpack;
+		[ player, "tsp_stickCharge_mag", 4 ] call pxg_armory_fnc_addToBackpack;
+		[ player, "tsp_frameCharge_mag", 2 ] call pxg_armory_fnc_addToBackpack;
+		[ player, "ACE_Clacker", 1 ] call pxg_armory_fnc_addToBackpack;
+		[ player, "tsp_lockpick", 1 ] call pxg_armory_fnc_addToBackpack;
 	};
 	case "rcn_spe": {
-		for "_i" from 1 to 3 do { player addItemToBackpack "DemoCharge_Remote_Mag"};
+		[ player, "DemoCharge_Remote_Mag", 3 ] call pxg_armory_fnc_addToBackpack;
 		player addWeapon "ACE_VMM3";
-		player addItemToBackpack "ACE_M26_Clacker";
-		player addItemToBackpack "ACE_wirecutter";
-		player addItemToBackpack "ACE_DefusalKit";
-		player addItemToBackpack "ACE_SpraypaintBlue";
+		[ player, "ACE_M26_Clacker", 1 ] call pxg_armory_fnc_addToBackpack;
+		[ player, "ACE_wirecutter", 1 ] call pxg_armory_fnc_addToBackpack;
+		[ player, "ACE_DefusalKit", 1 ] call pxg_armory_fnc_addToBackpack;
+		[ player, "ACE_SpraypaintBlue", 1 ] call pxg_armory_fnc_addToBackpack;
 	};
 };
 
@@ -83,14 +83,14 @@ switch (_loadout) do {
 	case "sqd_dmr";
 	case "rcn_dmr";
 	case "rcn_sni";
-	case "rcn_amr": {player addItemToUniform "ACE_RangeCard"};
+	case "rcn_amr": {[ player, "ACE_RangeCard", 1 ] call pxg_armory_fnc_addToUniform};
 };
 
 // add Mortar Table
 switch (_loadout) do {
 	default {};
 	case "sup_mor_l";
-	case "sup_mor_g": {player addItemToUniform "ACE_artilleryTable"};
+	case "sup_mor_g": {[ player, "ACE_artilleryTable", 1 ] call pxg_armory_fnc_addToUniform};
 };
 
 // add Patrachutes to pilots
@@ -129,12 +129,12 @@ if (_variantEra == "Late") then {
 		case "sup_mat_l";
 		case "sup_hat_l";
 		case "sup_aa_l";
-		case "sup_mor_l": {player addItemToBackpack "ACE_DAGR"};
+		case "sup_mor_l": {[ player, "ACE_DAGR", 1 ] call pxg_armory_fnc_addToBackpack};
 	};
 
 	// add NVG
 	//player linkItem "ACE_NVG_Wide_Black";
-	//player addItemToUniform "ACE_IR_Strobe_Item"; 
+	[ player, "ACE_IR_Strobe_Item", 1 ] call pxg_armory_fnc_addToUniform;
 
 	// add binocular
 	switch (_loadout) do {
@@ -160,8 +160,8 @@ if (_variantEra == "Late") then {
 		case "plt";
 		case "tacp": {
 			player addWeapon "Laserdesignator";
-			player addItemToBackpack "Laserbatteries";
-			player addItemToBackpack "Laserbatteries";
+			[ player, "Laserbatteries", 1 ] call pxg_armory_fnc_addToBackpack;
+			[ player, "Laserbatteries", 1 ] call pxg_armory_fnc_addToBackpack;
 		};
 	};
 };
@@ -171,11 +171,11 @@ if (_variantEra == "Modern") then {
 	
 	// add GPS
 	player linkItem "ItemGPS";
-	player addItemToUniform "ACE_microDAGR";
+	[ player, "ACE_microDAGR", 1 ] call pxg_armory_fnc_addToUniform;
 
 	// add NVG
 	player linkItem "ACE_NVG_Wide_Black";
-	player addItemToUniform "ACE_IR_Strobe_Item"; 
+	[ player, "ACE_IR_Strobe_Item", 1 ] call pxg_armory_fnc_addToUniform;
 
 	// add binocular
 	switch (_loadout) do {
@@ -200,8 +200,8 @@ if (_variantEra == "Modern") then {
 		case "plt";
 		case "tacp": {
 			player addWeapon "Laserdesignator";
-			player addItemToBackpack "Laserbatteries";
-			player addItemToBackpack "Laserbatteries";
+			[ player, "Laserbatteries", 1 ] call pxg_armory_fnc_addToBackpack;
+			[ player, "Laserbatteries", 1 ] call pxg_armory_fnc_addToBackpack;
 		};
 	};
 };
@@ -211,8 +211,8 @@ if (_variantEra == "Future") then {
 	
 	// add GPS
 	player linkItem "ItemGPS";
-	player addItemToUniform "ACE_microDAGR";
-	player addItemToUniform "ACE_IR_Strobe_Item"; 
+	[ player, "ACE_microDAGR", 1 ] call pxg_armory_fnc_addToUniform;
+	[ player, "ACE_IR_Strobe_Item", 1 ] call pxg_armory_fnc_addToUniform;
 
 	// add binocular
 	switch (_loadout) do {
@@ -220,8 +220,8 @@ if (_variantEra == "Future") then {
 		case "plt";
 		case "tacp": {
 			player addWeapon "Laserdesignator";
-			player addItemToUniform "Laserbatteries";
-			player addItemToUniform "Laserbatteries";
+			[ player, "Laserbatteries", 1 ] call pxg_armory_fnc_addToUniform;
+			[ player, "Laserbatteries", 1 ] call pxg_armory_fnc_addToUniform;
 		};
 	};
 };

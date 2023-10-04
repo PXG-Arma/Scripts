@@ -2,6 +2,7 @@ class CfgFunctions
 {   
     #include <Respawn\cfgFunctions.hpp>
     #include <Markers\cfgFunctions.hpp>
+    #include <Armory\cfgFunctions.hpp>
 };
 
 class CfgRemoteExec

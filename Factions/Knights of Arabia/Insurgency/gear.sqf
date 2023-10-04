@@ -4,12 +4,12 @@ params["_side","_faction","_variant", "_loadout"];
 switch (_loadout) do {
 	default {};
 	case "rcn_drone": {player linkItem "O_UavTerminal";
-					   player addItemToBackpack "DRNP_AR2P";
-		for "_i" from 1 to 3 do { player addItemToBackpack "ACE_UAVBattery"};;
+					[ player, "DRNP_AR2P", 1 ] call pxg_armory_fnc_addToBackpack;
+		[ player, "ACE_UAVBattery", 3 ] call pxg_armory_fnc_addToBackpack;
 	};
-	case "rcn_ld": {player addItemToBackpack "ACE_Cellphone";
-					player addItemToBackpack "DRNP_AR2P";
-		for "_i" from 1 to 3 do { player addItemToBackpack "ACE_UAVBattery"};
+	case "rcn_ld": {[ player, "ACE_Cellphone", 1 ] call pxg_armory_fnc_addToBackpack;
+					[ player, "DRNP_AR2P", 1 ] call pxg_armory_fnc_addToBackpack;
+		[ player, "ACE_UAVBattery", 3 ] call pxg_armory_fnc_addToBackpack;
 	};
 };
 
@@ -18,15 +18,15 @@ switch (_loadout) do {
 	default {};
 	case "sqd_gre";
 	case "sqd_ar";
-	case "sqd_aar": {player addItemToBackpack "IEDLandSmall_Remote_Mag"};
-	case "sqd_lat": {player addItemToVest "IEDLandSmall_Remote_Mag"};
-	case "rcn_ld": {player addItemToBackpack "IEDLandBig_Remote_Mag"};
+	case "sqd_aar": {[ player, "IEDLandSmall_Remote_Mag", 1 ] call pxg_armory_fnc_addToBackpack};
+	case "sqd_lat": {[ player, "IEDLandSmall_Remote_Mag", 1 ] call pxg_armory_fnc_addToVest};
+	case "rcn_ld": {[ player, "IEDLandBig_Remote_Mag", 1 ] call pxg_armory_fnc_addToBackpack};
 };
 
 // add DMS
 switch (_loadout) do {
 	default {};
 	case "sqd_ld": {
-		for "_i" from 1 to 6 do { player addItemToBackpack "ACE_DeadManSwitch"};
+		[ player, "ACE_DeadManSwitch", 6 ] call pxg_armory_fnc_addToBackpack;
 	};
 };

@@ -6,16 +6,16 @@ switch (_loadout) do {
 		switch (primaryWeapon player) do {
 		
 			case "rhs_weap_akm": {
-					for "_i" from 1 to 4 do { player addItemToVest "rhs_30Rnd_762x39mm"};
-					for "_i" from 1 to 4 do { player addItemToUniform "rhs_30Rnd_762x39mm"};
+					[ player, "rhs_30Rnd_762x39mm", 4 ] call pxg_armory_fnc_addToVest;
+					[ player, "rhs_30Rnd_762x39mm", 4 ] call pxg_armory_fnc_addToUniform;
 			};
 			case "rhs_weap_savz58p": {
-					for "_i" from 1 to 4 do { player addItemToVest "rhs_30Rnd_762x39mm_Savz58"};
-					for "_i" from 1 to 4 do { player addItemToUniform "rhs_30Rnd_762x39mm_Savz58"};
+					[ player, "rhs_30Rnd_762x39mm_Savz58", 4 ] call pxg_armory_fnc_addToVest;
+					[ player, "rhs_30Rnd_762x39mm_Savz58", 4 ] call pxg_armory_fnc_addToUniform;
 			};
 			case "uk3cb_sks_01": {
-					for "_i" from 1 to 4 do { player addItemToVest "uk3cb_10rnd_magazine_sks"};
-					for "_i" from 1 to 4 do { player addItemToUniform "uk3cb_10rnd_magazine_sks"};
+					[ player, "uk3cb_10rnd_magazine_sks", 4 ] call pxg_armory_fnc_addToVest;
+					[ player, "uk3cb_10rnd_magazine_sks", 4 ] call pxg_armory_fnc_addToUniform;
 			};
 			
 			default {};
@@ -24,20 +24,20 @@ switch (_loadout) do {
 	case "plt";
 	case "sqd_ld";
 	case "sqd_gre": {
-		for "_i" from 1 to 4 do { player addItemToVest "rhs_30Rnd_762x39mm"};
-		for "_i" from 1 to 4 do { player addItemToUniform "rhs_30Rnd_762x39mm"};
+		[ player, "rhs_30Rnd_762x39mm", 4 ] call pxg_armory_fnc_addToVest;
+		[ player, "rhs_30Rnd_762x39mm", 4 ] call pxg_armory_fnc_addToUniform;
 	};
 	case "sqd_ar": {
-		for "_i" from 1 to 4 do { player addItemToVest "rhs_75Rnd_762x39mm"};
-		for "_i" from 1 to 4 do { player addItemToBackpack "rhs_75Rnd_762x39mm_tracer"};
+		[ player, "rhs_75Rnd_762x39mm", 4 ] call pxg_armory_fnc_addToVest;
+		[ player, "rhs_75Rnd_762x39mm_tracer", 4 ] call pxg_armory_fnc_addToBackpack;
 	};
 	case "sup_mmg_g": {
-		for "_i" from 1 to 2 do { player addItemToBackpack "rhs_100Rnd_762x54mmR_green"};
-		for "_i" from 1 to 2 do { player addItemToBackpack "rhs_100Rnd_762x54mmR"};
+		[ player, "rhs_100Rnd_762x54mmR_green", 2 ] call pxg_armory_fnc_addToBackpack;
+		[ player, "rhs_100Rnd_762x54mmR", 2 ] call pxg_armory_fnc_addToBackpack;
 	};
 	case "rcn_dmr": {
-		for "_i" from 1 to 6 do { player addItemToVest "UK3CB_SVD_10rnd_762x54"};
-		for "_i" from 1 to 6 do { player addItemToUniform "UK3CB_SVD_10rnd_762x54_GT"};
+		[ player, "UK3CB_SVD_10rnd_762x54", 6 ] call pxg_armory_fnc_addToVest;
+		[ player, "UK3CB_SVD_10rnd_762x54_GT", 6 ] call pxg_armory_fnc_addToUniform;
 	};
 };
 
@@ -50,16 +50,16 @@ switch (_loadout) do {
 switch (_loadout) do {
 	default {};
 	case "sqd_aar": {
-		for "_i" from 1 to 4 do { player addItemToBackpack "rhs_75Rnd_762x39mm"};
-		for "_i" from 1 to 4 do { player addItemToBackpack "rhs_75Rnd_762x39mm_tracer"};
+		[ player, "rhs_75Rnd_762x39mm", 4 ] call pxg_armory_fnc_addToBackpack;
+		[ player, "rhs_75Rnd_762x39mm_tracer", 4 ] call pxg_armory_fnc_addToBackpack;
 	};
 	case "sup_mmg_l": {
-		for "_i" from 1 to 2 do { player addItemToBackpack "rhs_100Rnd_762x54mmR_green"};
-		for "_i" from 1 to 2 do { player addItemToBackpack "rhs_100Rnd_762x54mmR"};
+		[ player, "rhs_100Rnd_762x54mmR_green", 2 ] call pxg_armory_fnc_addToBackpack;
+		[ player, "rhs_100Rnd_762x54mmR", 2 ] call pxg_armory_fnc_addToBackpack;
 	};
 	case "sup_mat_l": {
-		for "_i" from 1 to 2 do { player addItemToBackpack "rhs_rpg7_OG7V_mag"};
-		for "_i" from 1 to 1 do { player addItemToBackpack "rhs_rpg7_PG7VR_mag"};
+		[ player, "rhs_rpg7_OG7V_mag", 2 ] call pxg_armory_fnc_addToBackpack;
+		[ player, "rhs_rpg7_PG7VR_mag", 1 ] call pxg_armory_fnc_addToBackpack;
 	};
 };
 
@@ -67,16 +67,16 @@ switch (_loadout) do {
 switch (_loadout) do {
 	default {};
 	case "sup_mat_g": {
-		for "_i" from 1 to 1 do { player addItemToBackpack "rhs_rpg7_PG7VL_mag"};
-		for "_i" from 1 to 1 do { player addItemToBackpack "rhs_rpg7_PG7VR_mag"};
+		[ player, "rhs_rpg7_PG7VL_mag", 1 ] call pxg_armory_fnc_addToBackpack;
+		[ player, "rhs_rpg7_PG7VR_mag", 1 ] call pxg_armory_fnc_addToBackpack;
 	};
 };
 
 // add grenades
 switch (_loadout) do {
 	default {
-		for "_i" from 1 to 2 do { player addItemToVest "rhs_mag_f1"};
-		for "_i" from 1 to 2 do { player addItemToVest "rhs_mag_rdg2_white"};
+		[ player, "rhs_mag_f1", 2 ] call pxg_armory_fnc_addToVest;
+		[ player, "rhs_mag_rdg2_white", 2 ] call pxg_armory_fnc_addToVest;
 	};
 };
 
@@ -84,18 +84,18 @@ switch (_loadout) do {
 switch (_loadout) do {
 	default {};
 	case "plt": {
-		for "_i" from 1 to 5 do {player addItemToBackpack "rhs_VOG25"}; 
-		for "_i" from 1 to 2 do {player addItemToBackpack "rhs_GRD40_White"};
-		for "_i" from 1 to 2 do {player addItemToBackpack "rhs_GRD40_Red"};
-		for "_i" from 1 to 2 do {player addItemToBackpack "rhs_GRD40_Green"};
-		for "_i" from 1 to 2 do {player addItemToBackpack "rhs_VG40OP_white"};
+		[ player, "rhs_VOG25", 5 ] call pxg_armory_fnc_addToBackpack;
+		[ player, "rhs_GRD40_White", 2 ] call pxg_armory_fnc_addToBackpack;
+		[ player, "rhs_GRD40_Red", 2 ] call pxg_armory_fnc_addToBackpack;
+		[ player, "rhs_GRD40_Green", 2 ] call pxg_armory_fnc_addToBackpack;
+		[ player, "rhs_VG40OP_white", 2 ] call pxg_armory_fnc_addToBackpack;
 	};
 	case "sqd_ld";
 	case "sqd_gre": {
-		for "_i" from 1 to 10 do {player addItemToBackpack "rhs_VOG25"}; 
-		for "_i" from 1 to 2 do {player addItemToBackpack "rhs_GRD40_White"};
-		for "_i" from 1 to 2 do {player addItemToBackpack "rhs_GRD40_Red"};
-		for "_i" from 1 to 2 do {player addItemToBackpack "rhs_GRD40_Green"};
-		for "_i" from 1 to 2 do {player addItemToBackpack "rhs_VG40OP_white"};
+		[ player, "rhs_VOG25", 10 ] call pxg_armory_fnc_addToBackpack;
+		[ player, "rhs_GRD40_White", 2 ] call pxg_armory_fnc_addToBackpack;
+		[ player, "rhs_GRD40_Red", 2 ] call pxg_armory_fnc_addToBackpack;
+		[ player, "rhs_GRD40_Green", 2 ] call pxg_armory_fnc_addToBackpack;
+		[ player, "rhs_VG40OP_white", 2 ] call pxg_armory_fnc_addToBackpack;
 	};
 };

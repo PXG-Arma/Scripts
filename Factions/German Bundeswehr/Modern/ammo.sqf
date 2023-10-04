@@ -3,40 +3,40 @@ params["_side","_faction","_variant", "_loadout"];
 // add primary ammo 
 switch (_loadout) do {
 	default {
-		for "_i" from 1 to 4 do { player addItemToVest "BWA3_30Rnd_556x45_G36"};
-		for "_i" from 1 to 4 do { player addItemToBackpack "BWA3_30Rnd_556x45_G36_Tracer"};
+		[ player, "BWA3_30Rnd_556x45_G36", 4 ] call pxg_armory_fnc_addToVest;
+		[ player, "BWA3_30Rnd_556x45_G36_Tracer", 4 ] call pxg_armory_fnc_addToBackpack;
 	};
 	case "sqd_ar": {
-		for "_i" from 1 to 2 do { player addItemToVest "BWA3_200Rnd_556x45"};
-		for "_i" from 1 to 2 do { player addItemToBackpack "BWA3_200Rnd_556x45_Tracer"};
+		[ player, "BWA3_200Rnd_556x45", 2 ] call pxg_armory_fnc_addToVest;
+		[ player, "BWA3_200Rnd_556x45_Tracer", 2 ] call pxg_armory_fnc_addToBackpack;
 	};
 	case "sqd_dmr";
 	case "rcn_dmr": {
-		for "_i" from 1 to 4 do { player addItemToVest "BWA3_20Rnd_762x51_G28_AP"};
-		for "_i" from 1 to 4 do { player addItemToBackpack "BWA3_20Rnd_762x51_G28_Tracer"};
+		[ player, "BWA3_20Rnd_762x51_G28_AP", 4 ] call pxg_armory_fnc_addToVest;
+		[ player, "BWA3_20Rnd_762x51_G28_Tracer", 4 ] call pxg_armory_fnc_addToBackpack;
 	};
 	case "sup_mmg_g": {
-		for "_i" from 1 to 2 do { player addItemToVest "BWA3_120Rnd_762x51_soft"};
-		for "_i" from 1 to 4 do { player addItemToBackpack "BWA3_120Rnd_762x51_Tracer_soft"};
+		[ player, "BWA3_120Rnd_762x51_soft", 2 ] call pxg_armory_fnc_addToVest;
+		[ player, "BWA3_120Rnd_762x51_Tracer_soft", 4 ] call pxg_armory_fnc_addToBackpack;
 	};
 	case "sup_mor_l": {
-		for "_i" from 1 to 4 do { player addItemToVest "BWA3_30Rnd_556x45_G36"};
+		[ player, "BWA3_30Rnd_556x45_G36", 4 ] call pxg_armory_fnc_addToVest;
 		for "_i" from 1 to 4 do { player addItemTovest "BWA3_30Rnd_556x45_G36_Tracer"};
 	};
 	case "sup_mor_g": {
-		for "_i" from 1 to 4 do { player addItemToVest "BWA3_30Rnd_556x45_G36"};
+		[ player, "BWA3_30Rnd_556x45_G36", 4 ] call pxg_armory_fnc_addToVest;
 		for "_i" from 1 to 4 do { player addItemTovest "BWA3_30Rnd_556x45_G36_Tracer"};
 	};
 	case "ar_ld";
 	case "ar_c": {
-		for "_i" from 1 to 4 do { player addItemToVest "BWA3_40Rnd_46x30_MP7"};
+		[ player, "BWA3_40Rnd_46x30_MP7", 4 ] call pxg_armory_fnc_addToVest;
 	};
 };
 
 // add secondary ammo
 switch (_loadout) do {
 	default {
-		for "_i" from 1 to 4 do { player addItemToBackpack "BWA3_12Rnd_45ACP_P12"};
+		[ player, "BWA3_12Rnd_45ACP_P12", 4 ] call pxg_armory_fnc_addToBackpack;
 	};
 };
 
@@ -44,19 +44,19 @@ switch (_loadout) do {
 switch (_loadout) do {
 	default {};
 	case "sqd_aar": {
-		for "_i" from 1 to 2 do { player addItemToBackpack "BWA3_200Rnd_556x45"};
-		for "_i" from 1 to 2 do { player addItemToBackpack "BWA3_200Rnd_556x45_Tracer"};
+		[ player, "BWA3_200Rnd_556x45", 2 ] call pxg_armory_fnc_addToBackpack;
+		[ player, "BWA3_200Rnd_556x45_Tracer", 2 ] call pxg_armory_fnc_addToBackpack;
 	};
 	case "sup_mmg_l": {
-		for "_i" from 1 to 2 do { player addItemToBackpack "BWA3_120Rnd_762x51_soft"};
-		for "_i" from 1 to 2 do { player addItemToBackpack "BWA3_120Rnd_762x51_Tracer_soft"};
+		[ player, "BWA3_120Rnd_762x51_soft", 2 ] call pxg_armory_fnc_addToBackpack;
+		[ player, "BWA3_120Rnd_762x51_Tracer_soft", 2 ] call pxg_armory_fnc_addToBackpack;
 	};
 	case "sup_mat_l": {
-		for "_i" from 1 to 1 do { player addItemToBackpack "BWA3_CarlGustav_HEDP"};
-		for "_i" from 1 to 2 do { player addItemToBackpack "BWA3_CarlGustav_HEAT"};
+		[ player, "BWA3_CarlGustav_HEDP", 1 ] call pxg_armory_fnc_addToBackpack;
+		[ player, "BWA3_CarlGustav_HEAT", 2 ] call pxg_armory_fnc_addToBackpack;
 	};
 	case "sup_aa_l": {
-		for "_i" from 1 to 2 do { player addItemToBackpack "BWA3_Fliegerfaust_Mag"};
+		[ player, "BWA3_Fliegerfaust_Mag", 2 ] call pxg_armory_fnc_addToBackpack;
 	};
 };
 
@@ -64,21 +64,21 @@ switch (_loadout) do {
 switch (_loadout) do {
 	default {};
 	case "sup_mat_g": {
-		for "_i" from 1 to 1 do { player addItemToBackpack "BWA3_CarlGustav_HEDP"};
-		for "_i" from 1 to 1 do { player addItemToBackpack "BWA3_CarlGustav_HEAT"};
+		[ player, "BWA3_CarlGustav_HEDP", 1 ] call pxg_armory_fnc_addToBackpack;
+		[ player, "BWA3_CarlGustav_HEAT", 1 ] call pxg_armory_fnc_addToBackpack;
 	};
 	case "sup_aa_g": {
-		for "_i" from 1 to 2 do { player addItemToBackpack "BWA3_Fliegerfaust_Mag"};
+		[ player, "BWA3_Fliegerfaust_Mag", 2 ] call pxg_armory_fnc_addToBackpack;
 	};
 };
 
 // add grenades
 switch (_loadout) do {
 	default {
-		for "_i" from 1 to 2 do { player addItemToVest "BWA3_DM25"};
-		for "_i" from 1 to 1 do { player addItemToVest "BWA3_DM32_Green"};
-		for "_i" from 1 to 1 do { player addItemToVest "BWA3_DM32_Red"};
-		for "_i" from 1 to 2 do { player addItemToVest "BWA3_DM51A1"};
+		[ player, "BWA3_DM25", 2 ] call pxg_armory_fnc_addToVest;
+		[ player, "BWA3_DM32_Green", 1 ] call pxg_armory_fnc_addToVest;
+		[ player, "BWA3_DM32_Red", 1 ] call pxg_armory_fnc_addToVest;
+		[ player, "BWA3_DM51A1", 2 ] call pxg_armory_fnc_addToVest;
 	};
 };
 
@@ -86,19 +86,19 @@ switch (_loadout) do {
 switch (_loadout) do {
 	default {};
 	case "plt": {
-		for "_i" from 1 to 5 do {player addItemToBackpack "1Rnd_HE_Grenade_shell"}; 
-		for "_i" from 1 to 2 do {player addItemToBackpack "1Rnd_Smoke_Grenade_shell"};
-		for "_i" from 1 to 2 do {player addItemToBackpack "1Rnd_SmokeRed_Grenade_shell"};
-		for "_i" from 1 to 2 do {player addItemToBackpack "1Rnd_SmokeGreen_Grenade_shell"};
-		for "_i" from 1 to 2 do {player addItemToBackpack "UGL_FlareWhite_F"};
+		[ player, "1Rnd_HE_Grenade_shell", 5 ] call pxg_armory_fnc_addToBackpack;
+		[ player, "1Rnd_Smoke_Grenade_shell", 2 ] call pxg_armory_fnc_addToBackpack;
+		[ player, "1Rnd_SmokeRed_Grenade_shell", 2 ] call pxg_armory_fnc_addToBackpack;
+		[ player, "1Rnd_SmokeGreen_Grenade_shell", 2 ] call pxg_armory_fnc_addToBackpack;
+		[ player, "UGL_FlareWhite_F", 2 ] call pxg_armory_fnc_addToBackpack;
 	};
 	case "sqd_ld";
 	case "sqd_gre";
 	case "rcn_ld": {
-		for "_i" from 1 to 10 do {player addItemToBackpack "1Rnd_HE_Grenade_shell"};
-		for "_i" from 1 to 2 do {player addItemToBackpack "1Rnd_Smoke_Grenade_shell"};
-		for "_i" from 1 to 2 do {player addItemToBackpack "1Rnd_SmokeRed_Grenade_shell"};
-		for "_i" from 1 to 2 do {player addItemToBackpack "1Rnd_SmokeGreen_Grenade_shell"};
-		for "_i" from 1 to 2 do {player addItemToBackpack "UGL_FlareWhite_F"};
+		[ player, "1Rnd_HE_Grenade_shell", 10 ] call pxg_armory_fnc_addToBackpack;
+		[ player, "1Rnd_Smoke_Grenade_shell", 2 ] call pxg_armory_fnc_addToBackpack;
+		[ player, "1Rnd_SmokeRed_Grenade_shell", 2 ] call pxg_armory_fnc_addToBackpack;
+		[ player, "1Rnd_SmokeGreen_Grenade_shell", 2 ] call pxg_armory_fnc_addToBackpack;
+		[ player, "UGL_FlareWhite_F", 2 ] call pxg_armory_fnc_addToBackpack;
 	};
 };

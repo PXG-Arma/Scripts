@@ -4,8 +4,8 @@ params["_side","_faction","_variant", "_loadout"];
 switch (_loadout) do {
 	default {};
 	case "rcn_drone": {player linkItem "O_UavTerminal";
-		player addItemToBackpack "ITC_Land_O_AR2i_Packed";
-		for "_i" from 1 to 2 do { player addItemToBackpack "ACE_UAVBattery"};
+		[ player, "ITC_Land_O_AR2i_Packed", 1 ] call pxg_armory_fnc_addToBackpack;
+		[ player, "ACE_UAVBattery", 2 ] call pxg_armory_fnc_addToBackpack;
 	};
 	
 };

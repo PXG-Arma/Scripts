@@ -15,6 +15,8 @@ removeVest player;
 removeBackpack player;
 removeHeadgear player;
 
+hint ("You have a fresh loadout."); // Hint for debugging if loadouts are missing items
+
 // Path for uniform script 
 _uniformPath = "Scripts\Factions\";
 _uniformPath = _uniformPath + _faction + "\" + _variantEra + "\uniforms_" + _variantCamo + ".sqf";

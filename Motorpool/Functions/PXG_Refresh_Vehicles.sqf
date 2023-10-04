@@ -22,6 +22,8 @@ _vehiclesScriptPath = _vehiclesScriptPath + _faction + "\" + _variantEra +"\vehi
 _vehiclesArray = call compile preprocessfile _vehiclesScriptPath;
 
 tvClear 461502;
+_skipParentType = 0;   // Used to skip to correct index value if vehicle type is restricted. 
+
 {
 	_vehicleType = _x select 0; 
 	_dumbCheck = 0;
@@ -33,20 +35,27 @@ tvClear 461502;
 		_dumbCheck = _dumbCheck + 1;
 	};
 	
-	tvAdd [461502, [], _vehicleType]; 
 	_vehicleList = _x select 1; 
-	_parentType = _forEachIndex; 
-	{
-		_vehicleClass = _x select 0;			// vehicle class 
-		_vehicleCargo = _x select 1;			// vehicle cargo value
-		_vehicleName = getText (configFile >> "CfgVehicles" >> _vehicleClass >> "DisplayName");
-		if (_dumbCheck > 0) then {
-			_indexList = tvAdd [461502, [_parentType], _vehicleName];
-			tvSetData [461502, [_parentType, _indexList], _vehicleClass];				// saves class in tvData for later use in PXG_Spawn_Vehicle.sqf
-			tvSetValue [461502, [_parentType, _indexList], _vehicleCargo];			// saves cargo value in tvValue for later use in PXG_Spawn_Vehicle.sqf 
-		};
-	} forEach _vehicleList;
+	_parentType = _forEachIndex - _skipParentType;  // Sub to skip to correct index 
+
 	
+	if (_dumbCheck > 0) then {		
+		tvAdd [461502, [], _vehicleType]; 
+
+		{
+			_vehicleClass = _x select 0;			// vehicle class 
+			_vehicleCargo = _x select 1;			// vehicle cargo value
+			_vehicleName = getText (configFile >> "CfgVehicles" >> _vehicleClass >> "DisplayName");
+			if (_dumbCheck > 0) then {
+				_indexList = tvAdd [461502, [_parentType], _vehicleName];
+				tvSetData [461502, [_parentType, _indexList], _vehicleClass];				// saves class in tvData for later use in PXG_Spawn_Vehicle.sqf
+				tvSetValue [461502, [_parentType, _indexList], _vehicleCargo];			// saves cargo value in tvValue for later use in PXG_Spawn_Vehicle.sqf 
+			};
+	} forEach _vehicleList;
+
+	} else {
+		_skipParentType = _skipParentType + 1;	
+	};	
 }	forEach _vehiclesArray;
 
 _vehicleMemory = player getVariable ["PXG_Motorpool_Memory_Vehicle", [-1,-1]];

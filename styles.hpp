@@ -77,3 +77,10 @@ class PxgGuiRscPicture: RscPictureKeepAspect
 {
 	    colorText[] = {1,1,1,1};
 };
+
+class PxgGuiHiddenButton: RscButton
+{
+	colorBackground[] = {1, 1, 1, 0.05}; 
+	colorBackgroundActive[] = {0,0,0,0.25};
+	colorFocused[] = {0,0,0,0};
+};

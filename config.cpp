@@ -17,3 +17,8 @@ class CfgRemoteExec
 #include <Respawn\config.cpp>
 #include <Markers\config.cpp>
 
+class PXGFactions 
+{
+    #include <Factions\cfgFactions.hpp>
+};
+

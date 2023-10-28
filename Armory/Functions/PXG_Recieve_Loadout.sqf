@@ -1,9 +1,9 @@
 params["_side","_faction","_variant", "_loadout"]; 
 
 // Split variant name to get era and camopattern 
-_variantArray = _variant splitString " ";
-_variantEra = _variantArray #1;
-_variantCamo = _variantArray #0;
+//_variantArray = _variant splitString " ";
+//_variantEra = _variantArray #1;
+//_variantCamo = _variantArray #0;
 
 // removes all items from current loadout
 removeAllWeapons player;
@@ -17,47 +17,23 @@ removeHeadgear player;
 
 hint ("You have a fresh loadout."); // Hint for debugging if loadouts are missing items
 
-// Path for uniform script 
-_uniformPath = "Scripts\Factions\";
-_uniformPath = _uniformPath + _faction + "\" + _variantEra + "\uniforms_" + _variantCamo + ".sqf";
+// Give uniforms 
 
-// Path for weapon script 
-_weaponsPath = "Scripts\Factions\";
-_weaponsPath = _weaponsPath + _faction + "\" + _variantEra + "\weapons_" + _variantCamo + ".sqf";
+[_loadout] call compile preprocessFile "scripts\Armory\Functions\fn_addUniform.sqf";
 
-// Path for ammo script 
-_ammoPath = "Scripts\Factions\";
-_ammoPath = _ammoPath + _faction + "\" + _variantEra + "\ammo.sqf";
+[_loadout] call compile preprocessFile "scripts\Armory\Functions\fn_addWeapons.sqf";
 
-// Path for gear script
-_gearPath = "Scripts\Factions\";
-_gearPath = _gearPath + _faction + "\" + _variantEra + "\gear.sqf";
+[_loadout] call compile preprocessFile "scripts\Armory\Functions\fn_addRadio.sqf";
+
+[_loadout] call compile preprocessFile "scripts\Armory\Functions\fn_addMedical.sqf";
+
+[_loadout] call compile preprocessFile "scripts\Armory\Functions\fn_addGear.sqf";
+
+[_loadout] call compile preprocessFile "scripts\Armory\Functions\fn_addAmmo.sqf";
 
 // Set ACE permissions 
 [_side, _faction, _variant, _loadout] call compile preprocessFile "scripts\Armory\Functions\PXG_Set_ACEPerms.sqf";
 
-// Give Uniforms
-[_side, _faction, _variant, _loadout] call compile preprocessFile _uniformPath;
-
-// Give Weapons
-[_side, _faction, _variant, _loadout] call compile preprocessFile _weaponsPath;
-
-// Give Ammo
-[_side, _faction, _variant, _loadout] call compile preprocessFile _ammoPath;
-
-// Give radios
-[_side, _faction, _variant, _loadout] call compile preprocessFile "Scripts\Factions\common\radios.sqf";
-
-// Give common gear
-[_side, _faction, _variant, _loadout] call compile preprocessFile "Scripts\Factions\common\gear.sqf";
-
-// Give Specific gear 
-[_side, _faction, _variant, _loadout] call compile preprocessFile _gearPath;
-
-// Give medical  
-[_side, _faction, _variant, _loadout] call compile preprocessFile "Scripts\Factions\common\medical.sqf";
-
 // configure radios
 [_side, _faction, _variant, _loadout] call compile preprocessFile "scripts\Armory\Functions\PXG_Configure_RadioChannels.sqf";
 
-//hint format ["%1, %2, %3", _faction, _variant, _loadout];

@@ -1,5 +1,8 @@
 params ["_unit", "_item", "_quantity"];
 
+private _leftoverItems = 0;
+private _itemsThatFit = 0;
+
 if ( _quantity > 0 ) then {
 	private _canFit = _unit canAddItemToVest [_item, _quantity];
 
@@ -7,7 +10,17 @@ if ( _quantity > 0 ) then {
 		for "_i" from 1 to _quantity do { 
 			_unit addItemToVest _item;
 		};
+		_itemsThatFit = _quantity;
 	} else {
-		hint format ["Could not add %1 to Vest.", _item];
+		for "_i" from 1 to _quantity do {
+			if ( _unit canAddItemToVest [_item, 1] ) then {
+				_unit addItemToVest _item;
+				_itemsThatFit = _itemsThatFit + 1;
+			};
+		};
 	};
 };
+
+_leftoverItems = _quantity - _itemsThatFit;
+
+_leftoverItems 

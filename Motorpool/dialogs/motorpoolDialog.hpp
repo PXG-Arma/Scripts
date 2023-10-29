@@ -1,7 +1,10 @@
 class dialog_motorpool
 {
 	idd = 461922;
+	onUnload = "call compile preprocessfile 'Scripts\Motorpool\Functions\PXG_onUnload.sqf'";
+	onLoad = "call compile preprocessfile 'Scripts\Motorpool\Functions\PXG_onLoad.sqf'";
 	class controls
+
 	{
 		
 		class RscFrame_1: PxgGuiBackground

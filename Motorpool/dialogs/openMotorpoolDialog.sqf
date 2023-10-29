@@ -1,4 +1,4 @@
-params ["_vehicleMaster", ["_isCalledFromFARP", false]];
+params ["_vehicleMaster", "_flagpole" ,["_isCalledFromFARP", false]];
 createDialog "dialog_motorpool"; 
 //Opens the vehicle spawn dialog and fills lists.
 
@@ -22,4 +22,11 @@ player setVariable ["PXG_IsCalledFromFARP", _isCalledFromFARP];
 
 if (_sideMemory != -1) then {lbSetCurSel [461504, _sideMemory];};
 if (_spawnMemory != -1) then {lbSetCurSel [461500, _spawnMemory];};
+
+private _flag = _flagpole select 0;
+
+PXG_Motorpool_cam = "camera" camCreate (_flag modelToWorld [0, 25, 25]);
+PXG_Motorpool_cam camSetTarget _flag; 
+PXG_Motorpool_cam cameraEffect ["Internal", "back"];
+PXG_Motorpool_cam camCommit 1; 
 

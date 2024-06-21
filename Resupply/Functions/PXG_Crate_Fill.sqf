@@ -11,9 +11,10 @@ _faction = tvText [451501, _indexFaction];
 _variantArray = _variant splitString " ";
 hint format ["%1", _variantArray];
 _variantEra = _variantArray select 1;
+_variantCamo = _variantArray #0;
 
 _suppliesScriptPath = "Scripts\Factions\";
-_suppliesScriptPath = _suppliesScriptPath + _faction + "\" + _variantEra +"\supplies.sqf";
+_suppliesScriptPath = _suppliesScriptPath + _faction + "\" + _variantEra +"\supplies_" + _variantCamo + ".sqf";
 
 _suppliesArray = call compile preprocessfile _suppliesScriptPath;
 

@@ -14,10 +14,11 @@ _variant = tvText [451501, _indexFaction];
 // Split variant name to get variant era 
 _variantArray = _variant splitString " ";
 _variantEra = _variantArray #1;
+_variantCamo = _variantArray #0;
 
 // Path for loadout list 
 _suppliesScriptPath = "Scripts\Factions\";
-_suppliesScriptPath = _suppliesScriptPath + _faction + "\" + _variantEra +"\supplies.sqf";
+_suppliesScriptPath = _suppliesScriptPath + _faction + "\" + _variantEra +"\supplies_" + _variantCamo + ".sqf";
 
 _suppliesContents = [];
 _crateContentsText = "";

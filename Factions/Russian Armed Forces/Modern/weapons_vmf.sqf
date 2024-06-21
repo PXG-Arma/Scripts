@@ -34,7 +34,7 @@ switch (_loadout) do {
 
 // add secondary weapon
 switch (_loadout) do {
-	default {};
+	default { player addWeapon "rhs_weap_pya" };
 	case "pil": { player addWeapon "rhs_weap_pya"};
 };
 

@@ -119,6 +119,7 @@ if (_variantEra == "Late") then {
 	switch (_loadout) do {
 		default {};
 		case "plt";
+		case "plt_med"; 
 		case "logi";
 		case "tacp";
 		case "sqd_ld";

@@ -25,11 +25,11 @@ _weaponsPath = _weaponsPath + _faction + "\" + _variantEra + "\weapons_" + _vari
 
 // Path for ammo script 
 _ammoPath = "Scripts\Factions\";
-_ammoPath = _ammoPath + _faction + "\" + _variantEra + "\ammo.sqf";
+_ammoPath = _ammoPath + _faction + "\" + _variantEra + "\ammo_" + _variantCamo + ".sqf";
 
 // Path for gear script
 _gearPath = "Scripts\Factions\";
-_gearPath = _gearPath + _faction + "\" + _variantEra + "\gear.sqf";
+_gearPath = _gearPath + _faction + "\" + _variantEra + "\gear_" + _variantCamo + ".sqf";
 
 // Set ACE permissions 
 [_side, _faction, _variant, _loadout] call compile preprocessFile "scripts\Armory\Functions\PXG_Set_ACEPerms.sqf";

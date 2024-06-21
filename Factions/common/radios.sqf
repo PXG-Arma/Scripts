@@ -6,7 +6,8 @@ _variantEra = _variantArray #1;
 if (_variantEra == "Early") then {
 	switch (_loadout) do {
 		default {};
-		case "plt"; 
+		case "plt";
+		case "plt_med"; 
 		case "logi";
 		case "pil";
 		case "sqd_ld";
@@ -25,7 +26,8 @@ if (_variantEra == "Early") then {
 if (_variantEra == "Insurgency") then {
 	switch (_loadout) do {
 		default { player addItemToUniform "ACRE_PRC343"};
-		case "plt"; 
+		case "plt";
+		case "plt_med";  
 		case "logi";
 		case "sqd_ld";
 		case "rcn_ld";
@@ -49,7 +51,8 @@ if (_variantEra == "Insurgency") then {
 if (_variantEra == "Late") then {
 	switch (_loadout) do {
 		default { player addItemToUniform "ACRE_PRC343"};
-		case "plt"; 
+		case "plt";
+		case "plt_med";  
 		case "logi";
 		case "sqd_ld";
 		case "ar_ld";
@@ -73,7 +76,8 @@ if (_variantEra == "Late") then {
 if (_variantEra == "Modern" || _variantEra == "Future") then {
 	switch (_loadout) do {
 		default { player addItemToUniform "ACRE_PRC343"};
-		case "plt"; 
+		case "plt";
+		case "plt_med";  
 		case "logi";
 		case "sqd_ld";
 		case "ar_ld";

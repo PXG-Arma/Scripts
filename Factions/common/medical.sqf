@@ -22,6 +22,19 @@ switch (_loadout) do {
 		for "_i" from 1 to 6 do { player addItemToBackpack "ACE_morphine"};
 		for "_i" from 1 to 6 do { player addItemToBackpack "ACE_epinephrine"};
 	};
+
+	case "plt_med": {
+		for "_i" from 1 to 1 do { player addItemToBackpack "ACE_surgicalKit"};
+		for "_i" from 1 to 12 do { player addItemToBackpack "ACE_elasticBandage"};
+		for "_i" from 1 to 12 do { player addItemToBackpack "ACE_quikclot"};
+		for "_i" from 1 to 12 do { player addItemToBackpack "ACE_packingBandage"};	
+		for "_i" from 1 to 6 do { player addItemToBackpack "ACE_tourniquet"};			
+		for "_i" from 1 to 6 do { player addItemToBackpack "ACE_bloodIV"};
+		for "_i" from 1 to 6 do { player addItemToBackpack "ACE_bloodIV_500"};
+		for "_i" from 1 to 6 do { player addItemToBackpack "ACE_morphine"};
+		for "_i" from 1 to 6 do { player addItemToBackpack "ACE_epinephrine"};
+		for "_i" from 1 to 1 do { player addItemToBackpack "ACE_personalAidKit"};
+	};
 };
 
 // add specialist medical items

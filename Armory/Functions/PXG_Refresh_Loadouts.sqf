@@ -13,10 +13,11 @@ _variant = tvText [431501, _indexFaction];
 // Split variant name to get variant era 
 _variantArray = _variant splitString " ";
 _variantEra = _variantArray #1;
+_variantCamo = _variantArray #0;
 
 // Path for loadout list 
 _loadoutsScriptPath = "Scripts\Factions\";
-_loadoutsScriptPath = _loadoutsScriptPath + _faction + "\" + _variantEra +"\loadoutlist.sqf";
+_loadoutsScriptPath = _loadoutsScriptPath + _faction + "\" + _variantEra + "\loadoutlist_" + _variantCamo + ".sqf";
 
 // Get loadouts config for faction
 _loadoutsArray = call compile preprocessfile _loadoutsScriptPath;

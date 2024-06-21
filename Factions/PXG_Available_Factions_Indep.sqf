@@ -1,7 +1,5 @@
 _availableFactions = [
-	"United Nations",
-	"Taliban",
-	"United Security"
+	"Taliban"
 ];
 
 _availableFactions

@@ -10,3 +10,8 @@ switch (_loadout) do {
 	case "rcn_dmr": {player addItemToBackpack "ACE_SpottingScope";
 	                player addItemToBackpack "ACE_Tripod"};
 };
+
+// NVG swap
+switch (_loadout) do {
+    default {player linkItem "UK3CB_PVS5A"};
+};

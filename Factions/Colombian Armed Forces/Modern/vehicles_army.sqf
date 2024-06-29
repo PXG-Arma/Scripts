@@ -15,14 +15,14 @@ _availableVehicles =
 	['Armed Car/MRAP', 
 		[
 			['rhsusf_M1117_W', 4], 
-			['rhsusf_m1045_w_s', 4], 
-			['rhsusf_CGRCAT1A2_M2_usmc_wd', 4]
+			['rhsusf_m1045_w_s', 4]
 		]
 	],
 
 	['APC', 
 		[
-			['rhsusf_m113_usarmy', 6]
+			['rhsusf_m113_usarmy', 6],
+			['rhsusf_CGRCAT1A2_M2_usmc_wd', 4]
 		]
 	],
 

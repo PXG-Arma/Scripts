@@ -1,5 +1,6 @@
 _availableFactions = [
-	"Taliban"
+	"Taliban",
+	"Cartel De Sinaloa"
 ];
 
 _availableFactions

@@ -1,5 +1,6 @@
 _availableFactions = [
-	"British Armed Forces"
+	"British Armed Forces",
+	"Colombian Armed Forces"
 ];
 
 _availableFactions 

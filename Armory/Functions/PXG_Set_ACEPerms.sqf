@@ -36,5 +36,3 @@ switch (_loadout) do {
 		player setVariable ["ace_medical_medicclass",0,true]
 		};
 };
-
-"plt_med"

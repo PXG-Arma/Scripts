@@ -96,16 +96,5 @@ _logicSpawn2 setVehicleVarName "FOB_"+str(_fobCount-3)+"_Supply_2";
 _logicSpawn3 setVehicleVarName "FOB_"+str(_fobCount-3)+"_Supply_3";
 
 fobLogicMaster synchronizeObjectsAdd [_logicSpawn1, _logicSpawn2, _logicSpawn3];
-_fobLogicMaster = fobLogicMaster;
-//[fobLogicMaster, true, _spawn] execVM "Scripts\Resupply\Functions\PXG_addAction_FOB.sqf";
 
-
-//[fobLogicMaster, true, _spawn] remoteExec ["Scripts\Resupply\Functions\PXG_addAction_FOB.sqf",0,true];
-
-
-[_spawn,["<t color='#fcec03'>Spawn Resupply</t>","Scripts\Resupply\Functions\PXG_addAction_FOB.sqf",[_fobLogicMaster],1,false,true,"",""]] remoteExec ["addAction",0,true];
-
-
-
-//_spawn addAction ["<t color='#fcec03'>Spawn Resupply</t>",{[fobLogicMaster, true] execVM "Scripts\Resupply\dialogs\openSupplyDialog.sqf"}];  
-
+_spawn addAction ["<t color='#fcec03'>Spawn Resupply</t>",{[fobLogicMaster, true] execVM "Scripts\Resupply\dialogs\openSupplyDialog.sqf"}];  

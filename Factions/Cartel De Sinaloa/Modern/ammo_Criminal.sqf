@@ -20,11 +20,11 @@ switch (_loadout) do {
                 for "_i" from 1 to 4 do { player addItemToVest "rhs_mag_30Rnd_556x45_M855_PMAG"; };
                 for "_i" from 1 to 4 do { player addItemToBackpack "rhs_mag_30Rnd_556x45_M855_PMAG_Tracer_Red"; };
             };
-            case "rhs_weap_m16A4": {
+            case "rhs_weap_m16a4": {
                 for "_i" from 1 to 4 do { player addItemToVest "rhs_mag_30Rnd_556x45_M855_PMAG"; };
                 for "_i" from 1 to 4 do { player addItemToBackpack "rhs_mag_30Rnd_556x45_M855_PMAG_Tracer_Red"; };
             };
-            case "rhs_weap_m16A4_carryhandle_m203": {
+            case "rhs_weap_m16a4_carryhandle_m203": {
                 for "_i" from 1 to 4 do { player addItemToVest "rhs_mag_30Rnd_556x45_M855_PMAG"; };
                 for "_i" from 1 to 4 do { player addItemToBackpack "rhs_mag_30Rnd_556x45_M855_PMAG_Tracer_Red"; };
             };

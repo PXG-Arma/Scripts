@@ -75,9 +75,9 @@ switch (_loadout) do {
 		for "_i" from 1 to 2 do { player addItemToVest "rhs_mag_m7a3_cs"};
 	};
 	case "sqd_brc": {
-		for "_i" from 1 to 2 do { player addItemToVest "ACE_CTS9"};
-		for "_i" from 1 to 2 do { player addItemToVest "ACE_M84"};
-		for "_i" from 1 to 2 do { player addItemToVest "rhs_mag_m7a3_cs"};
+		for "_i" from 1 to 3 do { player addItemToVest "ACE_CTS9"};
+		for "_i" from 1 to 3 do { player addItemToVest "ACE_M84"};
+		for "_i" from 1 to 3 do { player addItemToVest "rhs_mag_m7a3_cs"};
 	};
 };
 

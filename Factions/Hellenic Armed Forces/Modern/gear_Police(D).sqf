@@ -15,3 +15,36 @@ switch (_loadout) do {
     default {player linkItem "UK3CB_PVS5A"};
 };
 
+switch (_loadout) do {
+case "rcn_spe": {
+	player removeWeapon "ACE_VMM3";
+	player addWeapon "rhsusf_weap_glock17g4";
+	clearAllItemsFromBackpack player;
+	};
+	
+};	
+
+switch (_loadout) do {
+	default {};
+	case "rcn_spe": {
+		for "_i" from 1 to 4 do { player addItemToBackpack "ACE_elasticBandage"};
+		for "_i" from 1 to 4 do { player addItemToBackpack "ACE_quikclot"};
+		for "_i" from 1 to 4 do { player addItemToBackpack "ACE_packingBandage"};	
+		for "_i" from 1 to 6 do { player addItemToBackpack "ACE_tourniquet"};			
+		for "_i" from 1 to 4 do { player addItemToBackpack "ACE_bloodIV"};
+		for "_i" from 1 to 2 do { player addItemToBackpack "ACE_bloodIV_500"};
+		for "_i" from 1 to 18 do { player addItemToBackpack "rhsusf_mag_17Rnd_9x19_FMJ"};
+		player addItemToBackpack "ACE_Fortify";
+		player addItemToBackpack "ACE_EntrenchingTool";
+	};
+};	
+
+switch (_loadout) do {
+	default {};
+	case "rcn_drone": {
+		clearAllItemsFromBackpack player;
+		for "_i" from 1 to 18 do { player addItemToBackpack "rhsusf_mag_17Rnd_9x19_FMJ"};
+		player addItemToBackpack "ACE_Fortify";
+		player addItemToBackpack "ACE_EntrenchingTool";
+	};
+};	

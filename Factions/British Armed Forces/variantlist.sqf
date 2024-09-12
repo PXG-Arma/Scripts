@@ -1,5 +1,5 @@
 _avialableVariants = ["--------- Army ---------",
-					  //"Army Early",
+					  "Army Early",
 					  "Army Modern",
 					  "Army(W) Modern",
 					  "----- Royal Marines -----",

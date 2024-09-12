@@ -1,49 +1,42 @@
 _resupplyAvailable = [
 	["Rifle Resupply",
 		[
-			["UK3CB_BAF_556_30Rnd",40],
-			["UK3CB_BAF_556_30Rnd_T",40]
+			["UK3CB_FNFAL_20rnd_762x51",40],
+			["UK3CB_FNFAL_20rnd_762x51_RT",40],
+			["UK3CB_Sten_34Rnd_Magazine_RT",40],
+			["UK3CB_Sten_34Rnd_Magazine",40],
+			["rhs_mag_20Rnd_556x45_M855_Stanag",40],
+			["rhs_mag_20Rnd_556x45_M196_Stanag_Tracer_Red",40]
 		]
 	],
 	["AR Resupply",
 		[
-			["UK3CB_BAF_556_200Rnd",10],
-			["UK3CB_BAF_556_200Rnd_T",10]
-		]
-	],
-	["Breacher Resupply",
-		[
-			["UK3CB_BAF_12G_Pellets",40],
-			["UK3CB_BAF_12G_Slugs",40]
+			["UK3CB_BAF_762_200Rnd_T",10],
+			["UK3CB_BAF_762_200Rnd",10]
 		]
 	],
 	["LAT Resupply",
 		[
-			["UK3CB_BAF_NLAW_Launcher",10]
+			["rhs_weap_m72a7",10]
 		]
 	],
-	["MMG Resupply",
+	["MAT Resupply",
 		[
-			["UK3CB_BAF_762_200Rnd",10],
-			["UK3CB_BAF_762_200Rnd_T",10]
-		]
-	],
-	["HAT Resupply",
-		[
-			["UK3CB_BAF_Javelin_Slung_Tube",6]
+			["BWA3_CarlGustav_HEAT",6],
+			["BWA3_CarlGustav_HE",6],
+			["BWA3_CarlGustav_Smoke",6],
+			["BWA3_CarlGustav_Illum",6]
 		]
 	],
 	["AA Resupply",
 		[
-			["rhs_fim92_mag",8]
+			["UK3CB_Blowpipe_Round",8]
 		]
 	],
-	["DMR/Sniper Resupply",
+	["Sniper Resupply",
 		[
-			["UK3CB_BAF_338_5Rnd",10],
-			["UK3CB_BAF_338_5Rnd_Tracer",10],
-			["UK3CB_BAF_762_L42A1_20Rnd",10],
-			["UK3CB_BAF_762_L42A1_20Rnd_T",10]
+			["uk3cb_l42_enfield_762_10Rnd_magazine_RT",10],
+			["uk3cb_l42_enfield_762_10Rnd_magazine_RT",10]
 		]
 	],
 	["Hand Grenades",
@@ -126,13 +119,15 @@ _resupplyAvailable = [
 	],
 	["Squad Resupply",
 		[
-			["UK3CB_BAF_556_30Rnd",20],
-			["UK3CB_BAF_556_30Rnd_T",20],
-			["UK3CB_BAF_12G_Slugs",20],
-			["UK3CB_BAF_12G_Pellets",20],
-			["UK3CB_BAF_556_200Rnd",5],
-			["UK3CB_BAF_9_17Rnd",20],
-			["UK3CB_BAF_NLAW_Launcher",2],
+			["UK3CB_FNFAL_20rnd_762x51",20],
+			["UK3CB_FNFAL_20rnd_762x51_RT",20],
+			["UK3CB_Sten_34Rnd_Magazine",20],
+			["UK3CB_Sten_34Rnd_Magazine_RT",20],
+			["rhs_mag_20Rnd_556x45_M855_Stanag",20],
+			["rhs_mag_20Rnd_556x45_M196_Stanag_Tracer_Red",20],
+			["UK3CB_BAF_762_200Rnd_T",5],
+			["UK3CB_BAF_9_13Rnd",20],
+			["rhs_weap_m72a7",2],
 			["HandGrenade",10],
 			["rhs_mag_an_m8hc",10],
 			["1Rnd_HE_Grenade_Shell",10],

@@ -55,6 +55,7 @@ switch (_loadout) do {
 // add vest
 switch (_loadout) do {
 	default {
+		player addVest "UK3CB_APD_B_MBAV_RIFLEMAN_BLK";
 		 	switch (Uniform player) do {
 
 		    case "UK3CB_APD_B_U_66sh122_CombatSmock_Gloves_02_EKAM": {player addVest "UK3CB_APD_B_MBAV_RIFLEMAN_BLK"};

@@ -31,8 +31,7 @@ switch (_loadout) do {
 	case "rcn_spe";
 	case "rcn_dmr": {
 	};
-	case "sup_mmg_g": {player addWeapon "rhs_weap_pkp";
-					   player addPrimaryWeaponItem "rhs_acc_1p29_pkp";
+	case "sup_mmg_g": {player addWeapon "rhs_weap_fnmag";
 	};
 };
 

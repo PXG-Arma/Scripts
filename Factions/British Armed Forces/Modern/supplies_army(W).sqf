@@ -28,6 +28,14 @@ _resupplyAvailable = [
 			["UK3CB_BAF_762_200Rnd_T",10]
 		]
 	],
+	["DMR/Sniper Resupply",
+		[
+			["UK3CB_BAF_338_5Rnd",10],
+			["UK3CB_BAF_338_5Rnd_Tracer",10],
+			["UK3CB_BAF_762_L42A1_20Rnd",10],
+			["UK3CB_BAF_762_L42A1_20Rnd_T",10]
+		]
+	],
 	["HAT Resupply",
 		[
 			["UK3CB_BAF_Javelin_Slung_Tube",6]
@@ -36,14 +44,6 @@ _resupplyAvailable = [
 	["AA Resupply",
 		[
 			["rhs_fim92_mag",8]
-		]
-	],
-	["DMR/Sniper Resupply",
-		[
-			["UK3CB_BAF_338_5Rnd",10],
-			["UK3CB_BAF_338_5Rnd_Tracer",10],
-			["UK3CB_BAF_762_L42A1_20Rnd",10],
-			["UK3CB_BAF_762_L42A1_20Rnd_T",10]
 		]
 	],
 	["Hand Grenades",

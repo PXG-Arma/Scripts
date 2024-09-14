@@ -2,7 +2,8 @@ _resupplyAvailable = [
 	["Rifle Resupply",
 		[
 			["UK3CB_G3_20rnd_762x51",20],
-			["UK3CB_G3_20rnd_762x51_YT",20]
+			["UK3CB_G3_20rnd_762x51_YT",20],
+			["Redd_gmw_Belt_32",20]
 		]
 	],
 	["AR Resupply",

@@ -1,6 +1,6 @@
 _avialableVariants = ["--------- Army ---------",
-                      "Army(D) Modern",
+                      "Army(WD) Modern",
 					  "-- Law Enforcement --",
-					  "Police(D) Modern"];
+					  "Police Modern"];
 
 _avialableVariants

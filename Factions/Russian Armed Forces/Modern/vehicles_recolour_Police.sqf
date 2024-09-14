@@ -14,6 +14,8 @@ switch(_vehicleType) do
 	};
 	case "UK3CB_KDF_O_Ural_Fuel":
 	{
+		_vehicle setVariable ["BIS_enableRandomization", false];
+		sleep 0.03;
 		[
 			_vehicle,
 			["Yellow",1], 
@@ -22,6 +24,8 @@ switch(_vehicleType) do
 	};
 	case "UK3CB_KDF_O_Ural_Ammo":
 	{
+		_vehicle setVariable ["BIS_enableRandomization", false];
+		sleep 0.03;
 		[
 			_vehicle,
 			["Yellow",1], 
@@ -31,3 +35,4 @@ switch(_vehicleType) do
 	
 	default {};
 };
+

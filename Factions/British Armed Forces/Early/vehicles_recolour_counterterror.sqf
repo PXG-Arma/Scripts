@@ -83,11 +83,8 @@ switch(_vehicleType) do
 			["Silver",1], 
 			["Radio_Hide",1,"Front_Grill_Hide",1,"Light_Covers_Hide",1,"Fuel_Cans_Hide",1,"Spare_Wheel_Hide",1,"Beacons_Hide",1,"ClanLogo_Hide",1]
 		] call BIS_fnc_initVehicle;
-	}
+	};
 
-
-
-	
 	default {};
 };
 

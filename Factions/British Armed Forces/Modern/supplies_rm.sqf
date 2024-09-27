@@ -105,8 +105,7 @@ _resupplyAvailable = [
 		[
 			["ACE_elasticBandage", 50],
 			["ACE_packingBandage", 50],
-			["ACE_quikclot", 50],
-			["dev_enzymeCapsule", 50]
+			["ACE_quikclot", 50]
 		]
 	],
 	["Autoinjectors",

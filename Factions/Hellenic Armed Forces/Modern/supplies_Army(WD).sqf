@@ -1,55 +1,43 @@
 _resupplyAvailable = [
 	["Rifle Resupply",
 		[
-			["UK3CB_BAF_556_30Rnd",40],
-			["UK3CB_BAF_556_30Rnd_T",40]
+			["UK3CB_G3_20rnd_762x51",20],
+			["UK3CB_G3_20rnd_762x51_YT",20],
+			["Redd_gmw_Belt_32",20]
 		]
 	],
 	["AR Resupply",
 		[
-			["UK3CB_BAF_556_200Rnd",10],
-			["UK3CB_BAF_556_200Rnd_T",10]
-		]
-	],
-	["Breacher Resupply",
-		[
-			["UK3CB_BAF_12G_Pellets",40],
-			["UK3CB_BAF_12G_Slugs",40]
-		]
-	],
-	["LAT Resupply",
-		[
-			["UK3CB_BAF_NLAW_Launcher",10]
+			["rhsusf_200Rnd_556x45_box",20],
+			["rhsusf_200rnd_556x45_mixed_box",20]
 		]
 	],
 	["MMG Resupply",
 		[
-			["UK3CB_BAF_762_200Rnd",10],
-			["UK3CB_BAF_762_200Rnd_T",10]
+			["rhsusf_100Rnd_762x51_m61_ap",10],
+			["rhsusf_100Rnd_762x51_m62_tracer",10],
+			["rhsusf_100Rnd_762x51_m80a1epr",10]
 		]
 	],
-	["HAT Resupply",
+	["LAT Resupply",
 		[
-			["UK3CB_BAF_Javelin_Slung_Tube",6]
+			["rhs_weap_m72a7",8]
+		]
+	],
+	["MAT Resupply",
+		[
+			["rhs_mag_maaws_HEAT",4],
+			["rhs_mag_maaws_HEDP",4]
 		]
 	],
 	["AA Resupply",
 		[
-			["rhs_fim92_mag",8]
-		]
-	],
-	["DMR/Sniper Resupply",
-		[
-			["UK3CB_BAF_338_5Rnd",10],
-			["UK3CB_BAF_338_5Rnd_Tracer",10],
-			["UK3CB_BAF_762_L42A1_20Rnd",10],
-			["UK3CB_BAF_762_L42A1_20Rnd_T",10]
+			["rhs_fim92_mag",4]
 		]
 	],
 	["Hand Grenades",
 		[
-			["HandGrenade",20],
-			["ACE_M84",10]
+			["HandGrenade",20]
 		]
 	],
 	["Smoke Grenades",
@@ -75,17 +63,10 @@ _resupplyAvailable = [
 	],
 	["40mm Flares",
 		[
-			["UGL_FlareWhite_F",20],
+			["UGL_FlareWhite_F",30],
 			["UGL_FlareCIR_F",20]
 		]
-	],
-	["Breaching Charges",
-		[
-			["tsp_popperCharge_mag",16],
-			["tsp_stickCharge_mag",8],
-			["tsp_frameCharge_mag",8]
-		]
-	],
+	],	
 	["Explosives",
 		[
 			["ACE_Clacker",2],
@@ -125,27 +106,24 @@ _resupplyAvailable = [
 	],
 	["Squad Resupply",
 		[
-			["UK3CB_BAF_556_30Rnd",20],
-			["UK3CB_BAF_556_30Rnd_T",20],
-			["UK3CB_BAF_12G_Slugs",20],
-			["UK3CB_BAF_12G_Pellets",20],
-			["UK3CB_BAF_556_200Rnd",5],
-			["UK3CB_BAF_9_17Rnd",20],
-			["UK3CB_BAF_NLAW_Launcher",2],
+		
+			["UK3CB_G3_20rnd_762x51",20],
+			["rhsusf_200Rnd_556x45_box",10],
+			["rhs_weap_m72a7",2],
 			["HandGrenade",10],
 			["rhs_mag_an_m8hc",10],
 			["1Rnd_HE_Grenade_Shell",10],
-			["1Rnd_Smoke_Grenade_Shell",10],
+			["1Rnd_Smoke_Grenade_Shell",5],
 			["ACE_bloodIV", 5],
 			["ACE_elasticBandage", 15],
 			["ACE_quikclot", 15]
 		]
 	],
-	
 	["Parachutes",
 		[
 			["B_Parachute", 20]
 		]
 	]
+	
 ];
 _resupplyAvailable

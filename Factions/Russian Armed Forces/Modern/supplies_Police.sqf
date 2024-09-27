@@ -1,53 +1,27 @@
 _resupplyAvailable = [
-	["Rifle Resupply",
+	["Primary Resupply",
 		[
-			["rhs_30Rnd_762x39mm_bakelite_89",20],
-			["rhs_30Rnd_762x39mm_bakelite_tracer",20]
-		]
-	],
-	["AR Resupply",
-		[
-			["UK3CB_RPD_100rnd_762x39_GM",20],
-			["UK3CB_RPD_100rnd_762x39_GT",20]
+			["rhs_30Rnd_762x39mm_89",30],
+			["rhs_30Rnd_762x39mm_tracer",30],
+			["rhs_10Rnd_762x54mmR_7N14",30],
+			["UK3CB_SVD_10rnd_762x54_GT",30],
+			["rhs_mag_9x18_8_57N181S",50],
+			["rhsusf_5Rnd_00Buck",30],
+			["rhsusf_5Rnd_Slug",30],
+			["rhsusf_8Rnd_00Buck",30],
+			["rhsusf_8Rnd_Slug",30]
 		]
 	],
 	["MMG Resupply",
 		[
-			["rhs_100Rnd_762x54mmR_green",20]
-		]
-	],
-	["Recon Resupply",
-		[
-			["rhs_10Rnd_762x54mmR_7N14",30],
-			["rhs_30Rnd_545x39_7N6_AK",30],
-			["rhs_30Rnd_545x39_AK_green",30]
-		]
-	],
-	["LAT Resupply",
-		[
-			["rhs_weap_rpg26",8]
-		]
-	],
-	["MAT Resupply (HEAT)",
-		[
-			["rhs_rpg7_PG7VL_mag",6],
-			["rhs_rpg7_PG7VR_mag",2]
-		]
-	],
-	["MAT Resupply (Misc.)",
-		[
-			["rhs_rpg7_TBG7V_mag",4],
-			["rhs_rpg7_OG7V_mag",4]
-		]
-	],
-	["AA Resupply",
-		[
-			["rhs_mag_9k38_rocket",4]
+			["rhs_75Rnd_762x39mm",20],
+			["UK3CB_RPK_75rnd_762x39_GM",20]
 		]
 	],
 	["Hand Grenades",
 		[
-			["rhs_mag_rgd5",20]
+			["rhs_mag_rgd5",20],
+			["rhssaf_mag_rshb_p98",10]
 		]
 	],
 	["Smoke Grenades",
@@ -60,7 +34,7 @@ _resupplyAvailable = [
 	],
 	["40mm Grenades",
 		[
-			["rhs_VOG25",30]
+			["rhs_VG40SZ",20]
 		]
 	],
 	["40mm Smoke Rounds",
@@ -96,7 +70,7 @@ _resupplyAvailable = [
 		[
 			["ACE_elasticBandage", 50],
 			["ACE_packingBandage", 50],
-			["ACE_quickclot", 50]
+			["ACE_quikclot", 50]
 		]
 	],
 	["Autoinjectors",
@@ -116,17 +90,17 @@ _resupplyAvailable = [
 	],
 	["Squad Resupply",
 		[
-		
-			["rhs_30Rnd_762x39mm_bakelite_tracer",40],
-			["UK3CB_RPD_100rnd_762x39_GM",10],
-			["rhs_weap_rpg26",2],
-			["rhs_mag_rgd5",10],
-			["rhs_mag_rdg2_white",10],
-			["rhs_VOG25",10],
-			["rhs_VG40OP_white",5],
-			["ACE_bloodIV", 5],
-			["ACE_elasticBandage", 15],
-			["ACE_quickclot", 15]
+			["rhs_30Rnd_762x39mm_89",20],
+			["rhs_10Rnd_762x54mmR_7N14",20],
+			["rhs_mag_9x18_8_57N181S",40],
+			["rhsusf_5Rnd_Slug",20],
+			["rhsusf_8Rnd_Slug",20],
+			["rhs_mag_rgd5", 6],
+			["rhs_GRD40_White", 6],
+			["ACE_elasticBandage", 12],
+			["ACE_packingBandage", 12],
+			["ACE_quikclot", 12],
+			["ACE_bloodIV_500", 6]
 		]
 	],
 	["Parachutes",

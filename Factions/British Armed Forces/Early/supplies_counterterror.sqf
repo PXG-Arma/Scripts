@@ -1,55 +1,32 @@
 _resupplyAvailable = [
 	["Rifle Resupply",
 		[
-			["UK3CB_BAF_556_30Rnd",40],
-			["UK3CB_BAF_556_30Rnd_T",40]
-		]
-	],
-	["AR Resupply",
-		[
-			["UK3CB_BAF_556_200Rnd",10],
-			["UK3CB_BAF_556_200Rnd_T",10]
+			["UK3CB_MP5_30Rnd_9x19_Magazine_RT",40],
+			["UK3CB_MP5_30Rnd_9x19_Magazine_RT",40]
 		]
 	],
 	["Breacher Resupply",
 		[
-			["UK3CB_BAF_12G_Pellets",40],
-			["UK3CB_BAF_12G_Slugs",40]
+			["rhsusf_8Rnd_00Buck",40],
+			["rhsusf_8Rnd_Slug",40]
 		]
 	],
 	["LAT Resupply",
 		[
-			["UK3CB_BAF_NLAW_Launcher",10]
-		]
-	],
-	["MMG Resupply",
-		[
-			["UK3CB_BAF_762_200Rnd",10],
-			["UK3CB_BAF_762_200Rnd_T",10]
-		]
-	],
-	["HAT Resupply",
-		[
-			["UK3CB_BAF_Javelin_Slung_Tube",6]
-		]
-	],
-	["AA Resupply",
-		[
-			["rhs_fim92_mag",8]
+			["uk3cb_m72a1_law_loaded",4]
 		]
 	],
 	["DMR/Sniper Resupply",
 		[
-			["UK3CB_BAF_338_5Rnd",10],
-			["UK3CB_BAF_338_5Rnd_Tracer",10],
-			["UK3CB_BAF_762_L42A1_20Rnd",10],
-			["UK3CB_BAF_762_L42A1_20Rnd_T",10]
+			["rhsusf_5Rnd_762x51_m62_Mag",10],
+			["rhsusf_5Rnd_762x51_m993_Mag",10]
 		]
 	],
 	["Hand Grenades",
 		[
 			["HandGrenade",20],
-			["ACE_M84",10]
+			["ACE_M84",20],
+			["ACE_CTS9",10]
 		]
 	],
 	["Smoke Grenades",
@@ -62,21 +39,9 @@ _resupplyAvailable = [
 	],
 	["40mm Grenades",
 		[
-			["1Rnd_HE_Grenade_Shell",30]
-		]
-	],
-	["40mm Smoke Rounds",
-		[
-			["1Rnd_Smoke_Grenade_Shell",20],
-			["1Rnd_SmokeRed_Grenade_Shell",10],
-			["1Rnd_SmokeGreen_Grenade_Shell",10],
-			["1Rnd_SmokeBlue_Grenade_Shell",10]
-		]
-	],
-	["40mm Flares",
-		[
-			["UGL_FlareWhite_F",20],
-			["UGL_FlareCIR_F",20]
+			["1Rnd_HE_Grenade_Shell",30],
+			["rhs_mag_m576",30],
+			["rhs_mag_m4009",30]
 		]
 	],
 	["Breaching Charges",
@@ -125,13 +90,12 @@ _resupplyAvailable = [
 	],
 	["Squad Resupply",
 		[
-			["UK3CB_BAF_556_30Rnd",20],
-			["UK3CB_BAF_556_30Rnd_T",20],
-			["UK3CB_BAF_12G_Slugs",20],
-			["UK3CB_BAF_12G_Pellets",20],
-			["UK3CB_BAF_556_200Rnd",5],
-			["UK3CB_BAF_9_17Rnd",20],
-			["UK3CB_BAF_NLAW_Launcher",2],
+			["UK3CB_MP5_30Rnd_9x19_Magazine_RT",20],
+			["UK3CB_MP5_30Rnd_9x19_Magazine_RT",20],
+			["UK3CB_BAF_9_13Rnd",20],
+			["rhsusf_8Rnd_00Buck",20],
+			["rhsusf_8Rnd_Slug",20],
+			["uk3cb_m72a1_law_loaded",1],
 			["HandGrenade",10],
 			["rhs_mag_an_m8hc",10],
 			["1Rnd_HE_Grenade_Shell",10],

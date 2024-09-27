@@ -5,7 +5,8 @@ _avialableVariants = ["--------- Army ---------",
 					  "----- Royal Marines -----",
 					  "RM Modern",
 					  "---------- SAS ----------",
-					  "CounterTerror Modern"
+					  "CounterTerror Modern",
+					  "CounterTerror Early"
 					 ];
 
 _avialableVariants

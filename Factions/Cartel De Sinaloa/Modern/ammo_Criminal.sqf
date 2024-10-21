@@ -74,7 +74,10 @@ switch (_loadout) do {
         for "_i" from 1 to 1 do { player addItemToVest "150Rnd_762x51_Box"; };
         for "_i" from 1 to 2 do { player addItemToBackpack "150Rnd_762x51_Box_Tracer"; };
     };
-    case "sqd_ar": {};
+    case "sqd_ar": {
+        for "_i" from 1 to 2 do { player addItemToBackpack "rhsusf_200Rnd_556x45_M855_soft_pouch"; };
+        for "_i" from 1 to 2 do { player addItemToBackpack "rhsusf_200Rnd_556x45_M855_mixed_soft_pouch"; };
+    };
     case "ar_ld": {};
     case "ar_c": {};
     case "pil": {};
@@ -124,10 +127,6 @@ switch (_loadout) do {
 
 // add assistant ammo 
 switch (_loadout) do {
-    case "sqd_ar": {
-        for "_i" from 1 to 2 do { player addItemToBackpack "rhsusf_200Rnd_556x45_M855_soft_pouch"; };
-        for "_i" from 1 to 2 do { player addItemToBackpack "rhsusf_200Rnd_556x45_M855_mixed_soft_pouch"; };
-    };
     case "sup_mmg_l": {
         for "_i" from 1 to 2 do { player addItemToBackpack "150Rnd_762x51_Box"; };
         for "_i" from 1 to 2 do { player addItemToBackpack "150Rnd_762x51_Box_Tracer"; };

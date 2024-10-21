@@ -1,5 +1,5 @@
 params["_side", "_faction", "_variant", "_loadout"];
-
+ 
 // add primary ammo 
 switch (_loadout) do {
     default {
@@ -77,9 +77,7 @@ switch (_loadout) do {
     case "sqd_ar": {};
     case "ar_ld": {};
     case "ar_c": {};
-    case "pil": {
-        for "_i" from 1 to 2 do { player addItemToVest "50Rnd_570x28_SMG_03"; };
-    };
+    case "pil": {};
 };
 
 
@@ -101,6 +99,25 @@ switch (_loadout) do {
             };
             default {
             };
+        };
+    };
+    case "ar_ld";
+    case "ar_c";
+    case "pil": {
+        switch (handgunWeapon player) do {
+            case "hgun_ACPC2_F": {
+                    for "_i" from 1 to 2 do { player addItemToUniform "9Rnd_45ACP_Mag"; };
+                };
+                case "rhsusf_weap_glock17g4": {
+                    for "_i" from 1 to 2 do { player addItemToUniform "rhsusf_mag_17Rnd_9x19_JHP"; };
+                };
+                case "UK3CB_Micro_Uzi": {
+                    for "_i" from 1 to 2 do { player addItemToUniform "UK3CB_Uzi_32Rnd_Magazine"; };
+                };
+                case "rhsusf_weap_MP7A2_folded": {
+                    for "_i" from 1 to 2 do { player addItemToUniform "rhsusf_mag_40Rnd_46x30_FMJ"; };
+                };
+                default {};
         };
     };
 };

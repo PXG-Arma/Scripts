@@ -6,8 +6,8 @@ switch (_loadout) do {
         switch (primaryWeapon player) do {
 
             default {
-                    for "_i" from 1 to 4 do { player addItemToVest "rhs_mag_30Rnd_556x45_M200_Stanag"};
-                    for "_i" from 1 to 4 do { player addItemToBackpack "rhs_mag_30Rnd_556x45_M200_Stanag"};
+                    for "_i" from 1 to 4 do { player addItemToVest "rhs_mag_30Rnd_556x45_M194_Stanag"};
+                    for "_i" from 1 to 4 do { player addItemToBackpack "rhs_mag_30Rnd_556x45_M194_Stanag"};
             };
 
             case "UK3CB_G36A1_C";

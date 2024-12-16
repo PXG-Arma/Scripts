@@ -23,6 +23,7 @@ switch (_loadout) do {
 	case "plt";
 	case "logi";
 	case "plt_med";
+	case "sqd_brc";
 	case "rcn_ld": { 
 		randomWeaponArray1 = ["UK3CB_MP5A3","BWA3_MP7"]; 
 		player addWeapon selectRandom randomWeaponArray1;

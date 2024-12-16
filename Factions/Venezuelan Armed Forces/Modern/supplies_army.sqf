@@ -3,7 +3,8 @@ _resupplyAvailable = [
 		[
 			["rhs_30Rnd_762x39mm_polymer",40],
 			["rhs_30Rnd_762x39mm_polymer_tracer",40],
-			["rhsusf_mag_15Rnd_9x19_JHP",20]
+			["rhsusf_mag_15Rnd_9x19_JHP",20],
+			["rhsusf_200Rnd_556x45_M855_mixed_soft_pouch",40]
 		]
 	],
 	["MMG Resupply",
@@ -106,6 +107,7 @@ _resupplyAvailable = [
 	["Squad Resupply",
 		[
 			["rhs_30Rnd_762x39mm_polymer", 32],
+			["rhsusf_200Rnd_556x45_M855_mixed_soft_pouch",20],
 			["UK3CB_BAF_AT4_CS_AP_Launcher", 1],
 			["rhs_VOG25", 12],
 			["rhs_mag_rgd5", 6],

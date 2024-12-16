@@ -6,6 +6,10 @@ switch (_loadout) do {
 		for "_i" from 1 to 4 do { player addItemToVest "rhs_30Rnd_762x39mm_polymer"};
 		for "_i" from 1 to 4 do { player addItemToBackpack "rhs_30Rnd_762x39mm_polymer_tracer"};
 	};
+	case "sqd_ar": {
+		for "_i" from 1 to 2 do { player addItemToVest "rhsusf_200Rnd_556x45_M855_soft_pouch"};
+		for "_i" from 1 to 2 do { player addItemToBackpack "rhsusf_200Rnd_556x45_M855_mixed_soft_pouch"};
+	};
 	case "rcn_drone";
 	case "sqd_med": {
 		for "_i" from 1 to 4 do { player addItemToVest "rhs_30Rnd_762x39mm_polymer"};
@@ -42,10 +46,6 @@ switch (_loadout) do {
 // add assistant ammo 
 switch (_loadout) do {
 	default {};
-	case "sqd_ar": {
-		for "_i" from 1 to 2 do { player addItemToBackpack "rhsusf_200Rnd_556x45_M855_soft_pouch"};
-		for "_i" from 1 to 2 do { player addItemToBackpack "rhsusf_200Rnd_556x45_M855_mixed_soft_pouch"};
-	};
 	case "sup_mmg_l": {
 		for "_i" from 1 to 2 do { player addItemToBackpack "150Rnd_762x51_Box"};
 		for "_i" from 1 to 2 do { player addItemToBackpack "150Rnd_762x51_Box_Tracer"};

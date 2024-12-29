@@ -59,6 +59,7 @@ switch (_loadout) do {
 		player addItemToBackpack "ACE_DefusalKit";
 	};
 	case "sqd_brc": {
+		player addItemToBackpack "ACE_wirecutter";
 	};
 	case "rcn_spe": {
 		for "_i" from 1 to 3 do { player addItemToBackpack "DemoCharge_Remote_Mag"};

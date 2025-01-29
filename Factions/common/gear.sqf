@@ -37,8 +37,6 @@ switch (_loadout) do {
 	default {};
 	case "logi": {player addItemToBackpack "ToolKit"};
 	case "sqd_eng": {
-		for "_i" from 1 to 2 do { player addItemToBackpack "tsp_stickCharge_mag"};
-		for "_i" from 1 to 4 do { player addItemToBackpack "DemoCharge_Remote_Mag"};
 		player addWeapon "ACE_VMM3";
 		player addItemToBackpack "ACE_M26_Clacker";
 		player addItemToBackpack "ACE_wirecutter";
@@ -61,6 +59,7 @@ switch (_loadout) do {
 		player addItemToBackpack "ACE_DefusalKit";
 	};
 	case "sqd_brc": {
+		player addItemToBackpack "ACE_wirecutter";
 	};
 	case "rcn_spe": {
 		for "_i" from 1 to 3 do { player addItemToBackpack "DemoCharge_Remote_Mag"};

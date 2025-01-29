@@ -72,13 +72,6 @@ _resupplyAvailable = [
 			["UGL_FlareCIR_F",20]
 		]
 	],
-	["Breaching Charges",
-		[
-			["tsp_popperCharge_mag",16],
-			["tsp_stickCharge_mag",8],
-			["tsp_frameCharge_mag",8]
-		]
-	],
 	["Explosives",
 		[
 			["ACE_Clacker",2],
@@ -98,8 +91,7 @@ _resupplyAvailable = [
 		[
 			["ACE_elasticBandage", 50],
 			["ACE_packingBandage", 50],
-			["ACE_quikclot", 50],
-			["dev_enzymeCapsule", 50]
+			["ACE_quikclot", 50]
 		]
 	],
 	["Autoinjectors",

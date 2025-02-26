@@ -29,6 +29,15 @@ switch(_vehicleType) do
         ] call BIS_fnc_initVehicle;
 	};
 
+	case "UK3CB_KRG_B_FV4201":
+	{
+		[
+			_vehicle,
+			["OLI_B",1], 
+			["Hide_External_Kit",0]
+		] call BIS_fnc_initVehicle;
+	};
+
 	case "C_Van_01_fuel_F":
 	{
 		[

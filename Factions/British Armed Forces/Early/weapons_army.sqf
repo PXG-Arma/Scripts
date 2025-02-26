@@ -32,7 +32,6 @@ switch (_loadout) do {
 // add secondary weapon
 switch (_loadout) do {
 	default {player addWeapon "UK3CB_BAF_L9A1";
-			 player addMagazine "UK3CB_Blowpipe_Round";
 	};
 };
 // add launcher

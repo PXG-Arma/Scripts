@@ -6,7 +6,7 @@ switch (_loadout) do {
 			  player addPrimaryWeaponItem "bwa3_acc_varioray_irlaser_black";
 			  player addPrimaryWeaponItem "bwa3_optic_eotech552"
 	};
-	case "";
+	case "rcn_ld";
 	case "plt";
 	case "sqd_gre";
 	case "sqd_ld": {player addWeapon "BWA3_G36A3_AG40";

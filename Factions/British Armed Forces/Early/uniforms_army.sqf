@@ -18,7 +18,7 @@ switch (_loadout) do {
 	case "rcn_ld";
 	case "rcn_spe";
 	case "rcn_dmr": { player forceAddUniform selectRandom randomReconUniformArray};
-	case "rcn_sni": { player forceAddUniform "UK3CB_BAF_U_CombatUniform_MTP_Ghillie_RM"};
+	case "rcn_sni": { player forceAddUniform "UK3CB_BAF_U_CombatUniform_DPMW_Ghillie_RM"};
 	case "pil" : { player forceAddUniform "UK3CB_BAF_U_HeliPilotCoveralls_Army"};
 };
 	

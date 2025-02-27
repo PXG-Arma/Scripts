@@ -17,7 +17,8 @@ switch (_loadout) do {
 // add Spotting Scope
 switch (_loadout) do {
 	case "rcn_ld": {player addItemToBackpack "ACE_SpottingScope";
-	                player addItemToBackpack "ACE_Tripod"};
+	                player addItemToBackpack "ACE_Tripod";
+			player addItemToBackpack "ACRE_PRC152";};
 };
 
 // NVG swap

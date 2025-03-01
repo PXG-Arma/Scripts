@@ -76,3 +76,11 @@ switch (_loadout) do {
 		for "_i" from 1 to 6 do {player addItemToBackpack "UGL_FlareRed_F"};
 	};
 };
+
+switch (_loadout) do {
+	default {};
+	case "sqd_eng": {
+		for "_i" from 1 to 1 do {player addItemToBackpack "IEDLandBig_Remote_Mag"};
+		for "_i" from 1 to 2 do {player addItemToBackpack "IEDLandSmall_Remote_Mag"};
+	};
+};

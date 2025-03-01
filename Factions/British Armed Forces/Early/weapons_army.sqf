@@ -25,7 +25,7 @@ switch (_loadout) do {
 	};
 	case "ar_ld";
 	case "ar_c";
-	case "pil": { player addWeapon "UK3CB_BAF_L22";
+	case "pil": { player addWeapon "UK3CB_Sten";
 	};
 };
 

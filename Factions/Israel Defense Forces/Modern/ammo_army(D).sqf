@@ -62,6 +62,9 @@ switch (_loadout) do {
 	case "sup_aa_l": {
 		for "_i" from 1 to 2 do { player addItemToBackpack "rhs_fim92_mag"};
 	};
+	case "sup_hat_l": {
+	for "_i" from 1 to 1 do {player addItemToBackpack "rhs_fgm148_magazine_AT"};
+	};
 };
 
 // add other ammo 

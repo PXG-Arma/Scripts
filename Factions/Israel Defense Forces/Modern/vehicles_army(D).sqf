@@ -74,7 +74,6 @@ _availableVehicles =
 
 	['Boat', 
 		[
-			['UK3CB_BAF_RHIB_HMG', 8],
 			['B_Boat_Transport_01_F', 4],
 			['B_SDV_01_F', 4]
 		]

@@ -48,11 +48,6 @@ switch (_loadout) do {
 						};
 					};
 	};
-	case "rcn_sni": {player addWeapon "UK3CB_BAF_L115A3_DE";
-					 player addPrimaryWeaponItem "bwa3_optic_m5xi_msr";
-					 player addPrimaryWeaponItem "uk3cb_baf_silencer_l115a3";
-					 player addPrimaryWeaponItem "uk3cb_underbarrel_acc_bipod";
-	};
 	case "rcn_amr": {player addWeapon "rhs_weap_M107";
 					 player addPrimaryWeaponItem "rksl_optic_pmii_525";
 	};

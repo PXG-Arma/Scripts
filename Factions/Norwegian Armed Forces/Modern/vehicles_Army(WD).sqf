@@ -27,8 +27,7 @@ _availableVehicles =
 	],
 	
 	["Rotary Transport",
-	[["LOP_IA_UH1Y_UN", 4],
-	["UK3CB_BAF_Merlin_HC4_18_GPMG_MTP", 8]]
+	[["LOP_IA_UH1Y_UN", 4] 8]]
 	],
 	
 	["Fixed Wing Transport",
@@ -36,15 +35,12 @@ _availableVehicles =
 	],
 
 	["Boat",
-	[["B_Boat_Transport_01_F", 4],
-	["UK3CB_BAF_RHIB_GPMG", 8],
-	["UK3CB_BAF_RHIB_HMG", 8]]
+	[["B_Boat_Transport_01_F", 4]]
 	],
 	
 	["Misc.",
 	[["rhsusf_mrzr4_d", 4],
-	["B_Quadbike_01_F", 4],
-	["UK3CB_BAF_MAN_HX58_Container_Green", 4]]
+	["B_Quadbike_01_F", 4]]
 	]
 	
 ];

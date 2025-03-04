@@ -40,7 +40,7 @@ _availableVehicles =
 	
 	["Misc.",
 	[["rhsusf_mrzr4_d", 4],
-	["B_Quadbike_01_F", 4]]
+	["B_Quadbike_01_F", 4]
 	]
 	
 ];

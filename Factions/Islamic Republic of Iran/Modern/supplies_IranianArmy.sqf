@@ -66,9 +66,9 @@ _resupplyAvailable = [
 	],
 	["40mm Smoke Rounds",
 		[
-		    ["UK3CB_BAF_1Rnd_Smoke_Grenade_shell",10],
-			["UK3CB_BAF_1Rnd_SmokeRed_Grenade_shell",10],
-			["UK3CB_BAF_1Rnd_SmokeGreen_Grenade_shell",10]
+		    ["1Rnd_Smoke_Grenade_shell",10],
+			["1Rnd_SmokeBlue_Grenade_shell",10],
+			["1Rnd_SmokeRed_Grenade_shell",10]
 		]
 	],	
 	["Explosives",

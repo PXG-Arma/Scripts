@@ -47,9 +47,7 @@ _availableVehicles =
 	["UK3CB_KDF_I_Su25SM_Cluster", -1]]],
 
 	["Boat",
-	[["B_Boat_Transport_01_F", 4],
-	["UK3CB_BAF_RHIB_GPMG", 8],
-	["UK3CB_BAF_RHIB_HMG", 8]]],
+	[["B_Boat_Transport_01_F", 4]]],
 	
 	["Misc.",
 	[["UK3CB_NAP_I_YAVA", -1],
@@ -73,16 +71,13 @@ _availableVehicles =
 	["rhsusf_M1083A1P2_WD_fmtv_usarmy", 10],
 	["rhsusf_m1152_rsv_usarmy_wd", 4],
 	["rhssaf_army_o_m1152_tcv_olive", 4],
-	["rhsusf_CGRCAT1A2_usmc_wd", 4],
-	["UK3CB_BAF_Husky_Logistics_HMG_Green_MTP", 4]]],
+	["rhsusf_CGRCAT1A2_usmc_wd", 4]]],
 	
 	["Armed Car/MRAP",
 	[["rhssaf_army_o_m1151_olive_pkm", 4],
 	["rhsusf_CGRCAT1A2_M2_usmc_wd", 4],
 	["UK3CB_B_MaxxPro_M2_US_W", 4],
-	["BWA3_Dingo2_FLW200_M2_CG13_Fleck", 4],
-	["UK3CB_BAF_Husky_Passenger_HMG_Green_MTP", 4],
-	["UK3CB_BAF_Panther_GPMG_Green_A", 4]]],
+	["BWA3_Dingo2_FLW200_M2_CG13_Fleck", 4]]],
 
 	["APC",
 	[["rhsusf_m113_usarmy_supply", 4],

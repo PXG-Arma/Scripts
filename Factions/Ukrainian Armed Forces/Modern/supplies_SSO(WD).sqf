@@ -38,7 +38,7 @@ _resupplyAvailable = [
 	],
 	["HAT Resuppply",
 		[
-			["UK3CB_BAF_Javelin_Slung_Tube",2]
+			["rhs_fgm148_magazine_AT",2]
 		]
 	],
 	["AA Resupply",
@@ -130,16 +130,6 @@ _resupplyAvailable = [
 			["ACE_bloodIV", 5],
 			["ACE_elasticBandage", 15],
 			["ACE_quikclot", 15]
-		]
-	],
-	["Vehicle Resupply 7.62mm",
-		[
-			["UK3CB_BAF_762_200Rnd_T",20]
-		]
-	],
-	["Vehicle Resupply 12.7mm",
-		[
-			["UK3CB_BAF_127_100Rnd",10]
 		]
 	],
 	["Parachutes",

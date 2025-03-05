@@ -25,7 +25,7 @@ _resupplyAvailable = [
 		[
 			["rhs_weap_M136",1],
 			["BWA3_Bunkerfaust_Loaded",1],
-			["UK3CB_BAF_NLAW_Launcher",1],
+			["launch_NLAW_F",1],
 			["rhs_weap_m72a7",1],
 			["BWA3_RGW90_Loaded",1],
 			["rhs_weap_rpg75",1],
@@ -57,7 +57,7 @@ _resupplyAvailable = [
 	],
 	["HAT Resuppply",
 		[
-			["UK3CB_BAF_Javelin_Slung_Tube",2]
+			["rhs_fgm148_magazine_AT",2]
 		]
 	],
 	["AA Resupply",
@@ -78,8 +78,8 @@ _resupplyAvailable = [
 			["UK3CB_SVD_10rnd_762x54_YT",10],
 			["rhsusf_5Rnd_762x51_m62_Mag",20],
 			["rhsusf_5Rnd_762x51_m993_Mag",20],
-			["UK3CB_BAF_338_5Rnd",20],
-			["UK3CB_BAF_338_5Rnd_Tracer",20]
+			["hlc_5rnd_300WM_AP_AWM",20],
+			["hlc_5rnd_300WM_T_AWM",20]
 		]
 	],
 	["Hand Grenades",
@@ -157,16 +157,6 @@ _resupplyAvailable = [
 			["ACE_splint", 20],
 			["ACE_bodyBag", 20],
 			["ACE_surgicalKit", 2]
-		]
-	],
-	["Vehicle Resupply 7.62mm",
-		[
-			["UK3CB_BAF_762_200Rnd_T",20]
-		]
-	],
-	["Vehicle Resupply 12.7mm",
-		[
-			["UK3CB_BAF_127_100Rnd",10]
 		]
 	],
 	["Parachutes",

@@ -25,9 +25,7 @@ _availableVehicles =
 	[["LOP_UKR_Mi8MTV3_UPK23", 6]]],
 
 	["Boat",
-	[["B_Boat_Transport_01_F", 4],
-	["UK3CB_BAF_RHIB_GPMG", 8],
-	["UK3CB_BAF_RHIB_HMG", 8]]],
+	[["B_Boat_Transport_01_F", 4]]],
 	
 	["Misc.",
 	[["UK3CB_LFR_B_M1030", -1],

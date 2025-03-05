@@ -21,10 +21,6 @@ switch (_loadout) do {
 	case "plt";
 	case "logi";
 	case "tacp": { player addHeadgear "VSM_oga_OPS_2"};
-	case "rcn_spe";
-	case "rcn_dmr";
-	case "rcn_drone";
-	case "rcn_ld": {player addHeadgear "UK3CB_BAF_H_Beret_RLC_Commando"};
     case "ar_ld";
 	case "ar_c": {player addHeadgear "rhsusf_cvc_ess"};
 	case "pil": {player addHeadgear "rhsusf_hgu56p_visor_tan"};

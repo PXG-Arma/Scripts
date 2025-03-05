@@ -34,14 +34,13 @@ switch (_loadout) do {
 
 // add secondary weapon
 switch (_loadout) do {
-	default {player addWeapon "UK3CB_BAF_L131A1";
-			         player addHandgunItem "UK3CB_BAF_Flashlight_L131A1";
+	default {player addWeapon "hlc_pistol_P226US";
 	};
 };
 // add launcher
 switch (_loadout) do {
 	default {};
-	case "sqd_lat": { player addWeapon "UK3CB_BAF_NLAW_Launcher"};
+	case "sqd_lat": { player addWeapon "launch_NLAW_F"};
 	case "sup_hat_g": {	player addWeapon "rhs_weap_rpg7";
 						player addPrimaryWeaponItem "rhs_acc_pgo7v3";
 	};

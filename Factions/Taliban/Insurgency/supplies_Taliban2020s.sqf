@@ -13,7 +13,7 @@ _resupplyAvailable = [
 	],
 	["LAT Resupply",
 		[
-			["UK3CB_BAF_NLAW_Launcher",10]
+			["launch_NLAW_F",10]
 		]
 	],
 	["MMG Resupply",
@@ -104,8 +104,8 @@ _resupplyAvailable = [
 			["rhs_mag_30Rnd_556x45_M855A1_PMAG",20],
 			["rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red",20],
 			["rhs_60Rnd_545X39_7N22_AK",5],
-			["UK3CB_BAF_9_17Rnd",20],
-			["UK3CB_BAF_NLAW_Launcher",2],
+			["hlc_15Rnd_9x19_B_P226",20],
+			["launch_NLAW_F",2],
 			["HandGrenade",10],
 			["rhs_mag_an_m8hc",10],
 			["1Rnd_HE_Grenade_Shell",10],

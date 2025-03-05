@@ -52,8 +52,8 @@ switch (_loadout) do {
 	case "sup_aa_g";
 	case "sup_mmg_l";
 	case "sup_mmg_g";
-	case "sup_hat_g";
-	case "sup_hat_l": {player addBackpack "B_Kitbag_cbr"};
+	case "sup_hat_g": {player addBackpack "B_Kitbag_cbr"};
+	case "sup_hat_l": {player addBackpack "B_Carryall_cbr"};
 	case "sup_mor_l": {player addBackpack "O_Mortar_01_support_F"};
 	case "sup_mor_g": {player addBackpack "O_Mortar_01_weapon_F"};
 	case "ar_ld";

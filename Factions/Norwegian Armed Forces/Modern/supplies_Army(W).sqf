@@ -39,6 +39,13 @@ _resupplyAvailable = [
 			["rhs_fim92_mag",4]
 		]
 	],
+	["Sniper Resupply",
+	[
+	["hlc_5rnd_300WM_T_AWM",15],
+	["hlc_5rnd_300WM_SBT_AWM",10],
+	["hlc_5rnd_300WM_AP_AWM",15]
+	]
+	],
 	["Hand Grenades",
 		[
 			["HandGrenade",20],
@@ -122,17 +129,7 @@ _resupplyAvailable = [
 			["ACE_elasticBandage", 15],
 			["ACE_quikclot", 15]
 		]
-	],
-	["Vehicle Resupply 7.62mm",
-		[
-			["UK3CB_BAF_762_200Rnd_T",20]
-		]
-	],
-	["Vehicle Resupply 12.7mm",
-		[
-			["UK3CB_BAF_127_100Rnd",10]
-		]
-	],
+	]
 	["Parachutes",
 		[
 			["B_Parachute", 20]

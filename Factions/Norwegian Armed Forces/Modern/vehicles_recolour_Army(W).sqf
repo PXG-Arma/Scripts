@@ -37,7 +37,28 @@ switch(_vehicleType) do
 	        ["unhide_camo_chassis_net",0,"unhide_camo_turret_net",1,"unhide_camo_gun_net",1,"unhide_mudflap",0]
 	] call BIS_fnc_initVehicle;
 	};
-	
+
+	case "UK3CB_ION_B_Woodland_Bell412_FLIR":
+	{
+		[
+			_vehicle,
+			["Luxury",1], 
+			["AddWinch",0,"AddCargohook",0,"AddCargoHook_cover",1,"DoorL2_Hide",0,"DoorR2_Hide",0,"RotorCover_Hide",0]		
+			] call BIS_fnc_initVehicle;
+	};
+
+	case "sfp_strf90c":
+	{
+		[
+		_vehicle,
+		["snow",1], 
+		["hide_cargo_box",0,"hide_cargo_skis",1]
+		] call BIS_fnc_initVehicle;
+	};
+
+
+
+
 	default {};
 };
 

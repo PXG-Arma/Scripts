@@ -11,10 +11,9 @@ switch (_loadout) do {
 					player addPrimaryWeaponItem "bwa3_acc_varioray_irlaser_black";
 					player addPrimaryWeaponItem "rhsusf_acc_saw_bipod";
 	};
-	case "rcn_dmr": {player addWeapon "UK3CB_BAF_L115A3_DE";
+	case "rcn_dmr": {player addWeapon "hlc_rifle_awcovert_FDE";
 					 player addPrimaryWeaponItem "rhsusf_acc_m8541_mrds";
-					 player addPrimaryWeaponItem "uk3cb_baf_silencer_l115a3";
-					 player addPrimaryWeaponItem "uk3cb_underbarrel_acc_bipod";
+					 player addPrimaryWeaponItem "uk3cb_baf_silencer_l115a3"
 	};
 	case "sup_mmg_g": {	player addWeapon "rhs_weap_m240B";
 						player addPrimaryWeaponItem "rhsusf_acc_elcan";

@@ -30,5 +30,14 @@ switch(_vehicleType) do
 		[_vehicle, 2] call ace_cargo_fnc_setSpace;
 	};
 	
+
+	case "UK3CB_ION_B_Woodland_Bell412_FLIR";
+	{
+		[
+			_vehicle,
+			["Luxury",1], 
+			["AddWinch",0,"AddCargohook",0,"AddCargoHook_cover",1,"DoorL2_Hide",0,"DoorR2_Hide",0,"RotorCover_Hide",0]		
+			] call BIS_fnc_initVehicle;
+	};
 	default {};
 };

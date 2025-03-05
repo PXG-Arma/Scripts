@@ -1,10 +1,10 @@
 _availableVehicles = 
 [
 	["Utility",
-	[["UK3CB_BAF_MAN_HX58_Transport_Green_MTP", 4],
-	["UK3CB_BAF_MAN_HX58_Repair_Green_MTP", 4],
-	["UK3CB_BAF_MAN_HX58_Fuel_Green_MTP", 4],
-	["UK3CB_BAF_MAN_HX58_Cargo_Green_B_MTP", 4],
+	[["rnt_lkw_7t_mil_gl_kat_i_mun_fleck", 4],
+	["rnt_lkw_5t_mil_gl_kat_i_transport_fleck", 8],
+	["rnt_lkw_5t_mil_gl_kat_i_fuel_fleck", 4],
+	["rnt_lkw_10t_mil_gl_kat_i_repair_fleck", 4],
 	["rhsusf_m113_usarmy_supply", 4]]
 	],
 	
@@ -18,16 +18,23 @@ _availableVehicles =
 	["rhsusf_m113_usarmy_M2_90", 4]]
 	],
 
+	["IFV",
+	[
+		["sfp_strf90c", 4]
+	]
+	],
+
 	["MBT",
 	[["BWA3_Leopard2_Fleck", 4]]
 	],
 
 	["Artillery",
-	[["UK3CB_CW_US_B_LATE_M270_MLRS_HE", 4]]
+	[["UK3CB_CW_US_B_LATE_M270_MLRS_HE", 4],
+	["sfp_grkpbv90120", 4]]
 	],
 	
 	["Rotary Transport",
-	[["LOP_IA_UH1Y_UN", 4] 8]]
+	[["LOP_IA_UH1Y_UN", 4]]
 	],
 	
 	["Fixed Wing Transport",
@@ -42,6 +49,6 @@ _availableVehicles =
 	[["rhsusf_mrzr4_d", 4],
 	["B_Quadbike_01_F", 4]
 	]
-	
+	]
 ];
 _availableVehicles

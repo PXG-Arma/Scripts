@@ -13,7 +13,6 @@ switch (_loadout) do {
 	};
 	case "rcn_dmr": {player addWeapon "hlc_rifle_awcovert_FDE";
 					 player addPrimaryWeaponItem "rhsusf_acc_m8541_mrds";
-					 player addPrimaryWeaponItem "uk3cb_baf_silencer_l115a3"
 	};
 	case "sup_mmg_g": {	player addWeapon "rhs_weap_m240B";
 						player addPrimaryWeaponItem "rhsusf_acc_elcan";

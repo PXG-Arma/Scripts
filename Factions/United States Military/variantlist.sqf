@@ -10,6 +10,7 @@ _avialableVariants = ["------- Airborne -------",
 					  "--- Special Forces ---",
 					  "Delta(Mix) Late",
 					  "GreenBerets(D) Modern",
+					  "NavySeals(D) Modern",
 					  "Raiders(WD) Modern"];
 
 _avialableVariants

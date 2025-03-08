@@ -37,17 +37,13 @@ _availableVehicles =
 	],  
 	["Boats",
 	  [
-	   ["B_Boat_Transport_01_F", 4],
-	   ["UK3CB_BAF_RHIB_GPMG_MTP", 8],
-	   ["UK3CB_BAF_RHIB_HMG_MTP", 8]
+	   ["B_Boat_Transport_01_F", 4]
 	  ]
 	], 
 	
 	["Misc.",
 	  [
-	   ["C_Quadbike_01_F", 4],
-	   ["UK3CB_BAF_MAN_HX58_Container_Sand", 30],
-	   ["UK3CB_BAF_MAN_HX58_Container_Green", 30]
+	   ["C_Quadbike_01_F", 4]
 	  ]
 	] 
 ];

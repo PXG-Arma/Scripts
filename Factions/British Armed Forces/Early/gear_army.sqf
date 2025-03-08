@@ -10,9 +10,6 @@ switch (_loadout) do {
 	
 };
 
-// add Javelin CLU
-switch (_loadout) do {
-};
 
 // add Spotting Scope
 switch (_loadout) do {

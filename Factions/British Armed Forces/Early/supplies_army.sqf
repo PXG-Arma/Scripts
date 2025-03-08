@@ -11,8 +11,8 @@ _resupplyAvailable = [
 	],
 	["AR Resupply",
 		[
-			["UK3CB_BAF_762_200Rnd_T",10],
-			["UK3CB_BAF_762_200Rnd",10]
+			["hlc_200Rnd_762x51_B_M60E4",10],
+			["hlc_200Rnd_762x51_T_M60E4",10]
 		]
 	],
 	["LAT Resupply",
@@ -117,8 +117,7 @@ _resupplyAvailable = [
 			["UK3CB_Sten_34Rnd_Magazine_RT",20],
 			["rhs_mag_20Rnd_556x45_M855_Stanag",20],
 			["rhs_mag_20Rnd_556x45_M196_Stanag_Tracer_Red",20],
-			["UK3CB_BAF_762_200Rnd_T",5],
-			["UK3CB_BAF_9_13Rnd",20],
+			["hlc_200Rnd_762x51_T_M60E4",5],
 			["rhs_weap_m72a7",2],
 			["HandGrenade",10],
 			["rhs_mag_an_m8hc",10],

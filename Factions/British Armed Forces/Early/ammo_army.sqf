@@ -26,18 +26,12 @@ switch (_loadout) do {
 		for "_i" from 1 to 5 do { player addItemToBackpack "rhs_mag_20Rnd_556x45_M196_Stanag_Tracer_Red"};
 	};
 	case "sqd_ar": {
-		for "_i" from 1 to 2 do { player addItemToVest "UK3CB_BAF_762_200Rnd_T"};
-		for "_i" from 1 to 2 do { player addItemToBackpack "UK3CB_BAF_762_200Rnd"};
+		for "_i" from 1 to 2 do { player addItemToVest "hlc_200Rnd_762x51_T_M60E4"};
+		for "_i" from 1 to 2 do { player addItemToBackpack "hlc_200Rnd_762x51_B_M60E4"};
 	};
 	case "rcn_sni": {
 		for "_i" from 1 to 5 do { player addItemToVest "uk3cb_l42_enfield_762_10Rnd_magazine_RT"};
 		for "_i" from 1 to 5 do { player addItemToBackpack "uk3cb_l42_enfield_762_10Rnd_magazine_RT"};
-	};
-};
-// add secondary ammo
-switch (_loadout) do {
-	default {
-		for "_i" from 1 to 2 do { player addItemToBackpack "UK3CB_BAF_9_13Rnd"};
 	};
 };
 
@@ -45,8 +39,8 @@ switch (_loadout) do {
 switch (_loadout) do {
 	default {};
 	case "sqd_aar": {
-		for "_i" from 1 to 2 do { player addItemToVest "UK3CB_BAF_762_200Rnd_T"};
-		for "_i" from 1 to 2 do { player addItemToBackpack "UK3CB_BAF_762_200Rnd"};
+		for "_i" from 1 to 2 do { player addItemToVest "hlc_200Rnd_762x51_T_M60E4"};
+		for "_i" from 1 to 2 do { player addItemToBackpack "hlc_200Rnd_762x51_B_M60E4"};
 	};
 	case "sup_hat_l": {
 		for "_i" from 1 to 2 do { player addItemToBackpack "BWA3_CarlGustav_HEAT"};

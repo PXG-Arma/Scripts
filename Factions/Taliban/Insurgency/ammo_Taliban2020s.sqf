@@ -38,6 +38,15 @@ switch (_loadout) do {
 		for "_i" from 1 to 1 do { player addItemToBackpack "rhsusf_100Rnd_762x51_m61_ap"};
 		for "_i" from 1 to 2 do { player addItemToBackpack "rhsusf_100Rnd_762x51_m62_tracer"};
 	};
+		case "sup_hat_l": {
+		for "_i" from 1 to 2 do { player addItemToBackpack "rhs_rpg7_OG7V_mag"};
+		for "_i" from 1 to 2 do { player addItemToBackpack "rhs_rpg7_PG7VL_mag"};
+		for "_i" from 1 to 1 do { player addItemToBackpack "rhs_rpg7_PG7VR_mag"};
+	};
+		case "sup_hat_g": {
+		for "_i" from 1 to 2 do { player addItemToBackpack "rhs_rpg7_PG7VL_mag"};
+		for "_i" from 1 to 1 do { player addItemToBackpack "rhs_rpg7_PG7VR_mag"};
+	};
 };
 
 // add other ammo 
@@ -74,5 +83,13 @@ switch (_loadout) do {
 		for "_i" from 1 to 10 do {player addItemToBackpack "1Rnd_HE_Grenade_shell"};
 		for "_i" from 1 to 2 do {player addItemToBackpack "1Rnd_Smoke_Grenade_shell"};
 		for "_i" from 1 to 6 do {player addItemToBackpack "UGL_FlareRed_F"};
+	};
+};
+
+switch (_loadout) do {
+	default {};
+	case "sqd_eng": {
+		for "_i" from 1 to 1 do {player addItemToBackpack "IEDLandBig_Remote_Mag"};
+		for "_i" from 1 to 2 do {player addItemToBackpack "IEDLandSmall_Remote_Mag"};
 	};
 };

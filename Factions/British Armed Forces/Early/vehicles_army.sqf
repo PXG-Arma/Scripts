@@ -24,6 +24,12 @@ _availableVehicles =
 	   ]
 	],
 
+	["MBT",
+		[
+			["UK3CB_KRG_B_FV4201"]
+		]
+	],
+
 	["Rotary Transport",
       [
 	   ["UK3CB_BAF_Chinook_HC2_MTP", 16]

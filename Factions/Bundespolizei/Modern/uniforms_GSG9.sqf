@@ -12,7 +12,7 @@ switch (_loadout) do {
 	case "rcn_snp";
 	case "rcn_amr";
 	case "rcn_spe";
-	case "rcn_ld": {player forceAddUniform "U_I_FullGhillie_ard"};
+	case "rcn_ld": {player forceAddUniform "U_O_T_FullGhillie_tna_F"};
 };
 	
 // add helmet

@@ -43,7 +43,7 @@ switch (_loadout) do {
 	default {};
 	case "sqd_lat": { player addWeapon "UK3CB_BAF_NLAW_Launcher"};
 	case "sup_hat_g": {	player addWeapon "rhs_weap_rpg7";
-						player addPrimaryWeaponItem "rhs_acc_pgo7v3";
+						player addSecondaryWeaponItem "rhs_acc_pgo7v3";
 	};
 	case "sup_aa_g": {	player addWeapon "rhs_weap_fim92"};					
 };

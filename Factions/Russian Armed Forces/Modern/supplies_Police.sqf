@@ -9,6 +9,7 @@ _resupplyAvailable = [
 			["rhsusf_5Rnd_00Buck",30],
 			["rhsusf_5Rnd_Slug",30],
 			["rhsusf_8Rnd_00Buck",30],
+			["rhs_mag_9x18_8_57N181S",30],
 			["rhsusf_8Rnd_Slug",30]
 		]
 	],

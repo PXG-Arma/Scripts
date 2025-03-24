@@ -1,6 +1,8 @@
 _resupplyAvailable = [
 	["Rifle Resupply",
 		[
+			["UK3CB_BHP_9_13Rnd",20],
+			["11Rnd_45ACP_Mag",20],
 			["rhs_30Rnd_762x39mm_bakelite_89",20],
 			["rhs_30Rnd_762x39mm_bakelite_tracer",20]
 		]

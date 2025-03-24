@@ -1,7 +1,8 @@
 _resupplyAvailable = [
 	["Primary Resupply",
 		[
-			["rhs_30Rnd_545x39_7N10_AK",80]
+			["rhs_30Rnd_545x39_7N10_AK",80],
+			["16Rnd_9x21_Mag",80]
 		]
 	],
 	["AR Resupply",

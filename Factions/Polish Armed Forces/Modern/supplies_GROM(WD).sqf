@@ -2,6 +2,7 @@ _resupplyAvailable = [
 	["Rifle Resupply",
 		[
 			["UK3CB_ACR_30rnd_556x45_Y",40],
+			["UK3CB_USP_9_15Rnd",40],
 			["UK3CB_ACR_30rnd_556x45_YT",40]
 		]
 	],

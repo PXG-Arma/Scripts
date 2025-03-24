@@ -7,6 +7,7 @@ _resupplyAvailable = [
 			["rhs_mag_30Rnd_556x45_M855_PMAG_Tracer_Red",40],
 			["UK3CB_FNFAL_30rnd_762x51",40],
 			["UK3CB_FNFAL_30rnd_762x51_RT",40],
+			["rhsusf_mag_17Rnd_9x19_JHP",40],
 			["rhsusf_mag_15Rnd_9x19_JHP",20]
 		]
 	],

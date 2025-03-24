@@ -2,6 +2,7 @@ _resupplyAvailable = [
 	["Primary Resupply",
 		[
 			["rhs_mag_30Rnd_556x45_M855_Stanag",40],
+			["rhsusf_mag_15Rnd_9x19_FMJ",40],
 			["rhs_mag_30Rnd_556x45_M855_Stanag_Tracer_Red",40]
 		]
 	],

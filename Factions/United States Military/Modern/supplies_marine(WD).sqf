@@ -2,6 +2,7 @@ _resupplyAvailable = [
 	["Primary Resupply",
 		[
 			["rhs_mag_30Rnd_556x45_M855A1_PMAG",40],
+			["rhsusf_mag_7x45acp_MHP",40],
 			["rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red",40]
 		]
 	],

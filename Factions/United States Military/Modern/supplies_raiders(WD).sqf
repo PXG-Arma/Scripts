@@ -3,6 +3,7 @@ _resupplyAvailable = [
 		[
 			["rhs_mag_20Rnd_SCAR_762x51_m61_ap_bk",40],
 			["rhs_mag_20Rnd_SCAR_762x51_m62_tracer_bk",40],
+			["rhsusf_mag_17Rnd_9x19_JHP",40],
 			["rhsusf_5Rnd_Slug",40]
 		]
 	],

@@ -1,6 +1,7 @@
 _resupplyAvailable = [
 	["Rifle Resupply",
 		[
+			["rhsusf_mag_17Rnd_9x19_FMJ",40],
 			["rhs_mag_30Rnd_556x45_M855A1_Stanag",40],
 			["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red",40]
 		]

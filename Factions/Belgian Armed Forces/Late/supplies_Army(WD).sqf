@@ -4,6 +4,7 @@ _resupplyAvailable = [
 			["UK3CB_FNFAL_20rnd_762x51_G",40],
 			["UK3CB_FNFAL_20rnd_762x51_GT",40],
 			["UK3CB_Uzi_32Rnd_Magazine",20],
+			["UK3CB_BHP_9_13Rnd",20],
 			["UK3CB_Uzi_32Rnd_Magazine_GT",20]
 		]
 	],

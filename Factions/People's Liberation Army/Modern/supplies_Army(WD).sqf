@@ -2,6 +2,7 @@ _resupplyAvailable = [
 	["Primary Resupply",
 		[
 			["UK3CB_DBP88_30rnd_580x42_Y",40],
+			["UK3CB_CZ75_9_20Rnd",40],
 			["UK3CB_DBP88_30rnd_580x42_YT",40]
 		]
 	],

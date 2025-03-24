@@ -137,6 +137,16 @@ _resupplyAvailable = [
 			["ACE_bloodIV_500", 6]
 		]
 	],
+	["Drone Resupply",
+		[
+			["DRNP_AR2P", 4]
+		]
+	],
+	["Crocus",
+		[
+			["B_Crocus_AT_Bag", 4]
+		]
+	],
 	["Parachutes",
 		[
 			["B_Parachute", 20]

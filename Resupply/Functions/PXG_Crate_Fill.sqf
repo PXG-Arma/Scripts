@@ -21,13 +21,22 @@ _suppliesArray = call compile preprocessfile _suppliesScriptPath;
 _suppliesContent = _suppliesArray select _indexSupplies select 1;
 _suppliesName = _suppliesArray select _indexSupplies select 0;
 
+if (_suppliesName == "Crocus") then {
+	{
+	_supplyType = _suppliesContent select _forEachIndex select 0;
+	_supplyAmount = _suppliesContent select _forEachIndex select 1;
+	_crate addBackpackCargoGlobal [_supplyType,_supplyAmount];
+	}foreach _suppliesContent;
+};
+
 if (_suppliesName == "Parachutes") then {
 	{
 	_supplyType = _suppliesContent select _forEachIndex select 0;
 	_supplyAmount = _suppliesContent select _forEachIndex select 1;
 	_crate addBackpackCargoGlobal [_supplyType,_supplyAmount];
 	}foreach _suppliesContent;
-} else {
+
+} else{
 	{
 	_supplyType = _suppliesContent select _forEachIndex select 0;
 	_supplyAmount = _suppliesContent select _forEachIndex select 1;

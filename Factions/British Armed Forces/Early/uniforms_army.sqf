@@ -32,7 +32,7 @@ switch (_loadout) do {
 	default { player addBackpack "UK3CB_B_Kitbag_DPM_95"};
 	case "sup_mor_g" : { player addBackpack "I_Mortar_01_weapon_F"};
 	case "sup_mor_l" : { player addBackpack "I_Mortar_01_support_F"};
-	case "sup_hat_l"
+	case "sup_hat_l";
 	case "sup_hat_g": { player addBackpack "UK3CB_B_Carryall_DPM_95"};
     case "ar_ld";
 	case "ar_c";

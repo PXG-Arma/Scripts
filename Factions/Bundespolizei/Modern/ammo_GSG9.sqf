@@ -72,7 +72,6 @@ switch (_loadout) do {
 		for "_i" from 1 to 1 do { player addItemToVest "BWA3_DM32_Green"};
 		for "_i" from 1 to 1 do { player addItemToVest "BWA3_DM32_Blue"};
 		for "_i" from 1 to 1 do { player addItemToVest "BWA3_DM32_Red"};
-		for "_i" from 1 to 1 do { player addItemToVest "BWA3_DM51A1"};
 	};
 	case "sqd_brc": {
 		for "_i" from 1 to 3 do { player addItemToVest "BWA3_DM25"};

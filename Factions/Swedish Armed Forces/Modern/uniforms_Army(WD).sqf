@@ -51,7 +51,6 @@ switch (_loadout) do {
 	case "sqd_ld";
 	case "rcn_ld";
 	case "sup_mat_l": {player addBackpack "sfp_stridssack2000_ra_ksk90"};
-	case "sup_mat_g": {player addBackpack "sfp_backpack_grg_loader"};
 	case "sup_mor_l": {player addBackpack "I_Mortar_01_support_F"};
 	case "sup_mor_g": {player addBackpack "I_Mortar_01_weapon_F"};
 	case "sup_aa_l": {player addBackpack "sfp_rbs70_support_bag"};

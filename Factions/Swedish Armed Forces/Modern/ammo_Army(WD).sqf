@@ -6,6 +6,10 @@ switch (_loadout) do {
 		for "_i" from 1 to 4 do { player addItemToVest "sfp_30Rnd_556x45_Stanag_plastic"};
 		for "_i" from 1 to 4 do { player addItemToBackpack "sfp_30Rnd_556x45_Stanag_tracer_plastic"};
 	};
+	case "mat_g":{
+		for "_i" from 1 to 4 do { player addItemToVest "sfp_30Rnd_556x45_Stanag_plastic"};
+		for "_i" from 1 to 4 do { player addItemToVest "sfp_30Rnd_556x45_Stanag_tracer_plastic"};
+	};
 	case "sqd_ar": {
 		for "_i" from 1 to 2 do { player addItemToVest "sfp_200Rnd_556x45_ksp90"};
 		for "_i" from 1 to 2 do { player addItemToBackpack "sfp_200Rnd_556x45_ksp90_irtracer"};

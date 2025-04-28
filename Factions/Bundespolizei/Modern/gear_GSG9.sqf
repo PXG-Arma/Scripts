@@ -13,13 +13,15 @@ switch (_loadout) do {
 // add Spotting Scope and Scope NVS
 switch (_loadout) do {
 	case "sqd_dm": {player addItemToBackpack "ACE_Tripod";
-	                player addItemToBackpack "BWA3_optic_NSV600"};
+	                player addItemToBackpack "BWA3_optic_NSV600";
+					player addItemToUniform "ACE_RangeCard"};
 };
 
 switch (_loadout) do {
 	case "rcn_snp";
 	case "rcn_amr": {player addItemToBackpack "BWA3_optic_NSV80";
-	                player addItemToBackpack "ACE_Tripod"};
+	                player addItemToBackpack "ACE_Tripod";
+					player addItemToVest "ACE_RangeCard"};
 };
 
 switch (_loadout) do {

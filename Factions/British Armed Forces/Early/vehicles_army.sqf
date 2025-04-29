@@ -2,25 +2,17 @@ _availableVehicles =
 [
 	["Utility",
 		[
-			["UK3CB_BAF_LandRover_Soft_FFR_Sand_A_MTP", 4],
-			["UK3CB_BAF_LandRover_Soft_FFR_Green_A_MTP", 4],
-			["UK3CB_BAF_MAN_HX58_Transport_Sand_MTP", 8],
-			["UK3CB_BAF_MAN_HX58_Transport_Green_MTP", 8],
-			["UK3CB_BAF_MAN_HX58_Cargo_Sand_A_MTP", 0],
-			["UK3CB_BAF_MAN_HX58_Cargo_Green_A_MTP", 0],
-			["UK3CB_BAF_MAN_HX58_Fuel_Sand_MTP", 2],
-			["UK3CB_BAF_MAN_HX58_Fuel_Green_MTP", 2],
-			["UK3CB_BAF_LandRover_Amb_FFR_Sand_A_MTP", 4],
-			["UK3CB_BAF_LandRover_Amb_FFR_Green_A_MTP", 4]
+			["UK3CB_B_MTVR_Reammo_WDL", 4],
+			["UK3CB_B_MTVR_Refuel_WDL", 4],
+			["UK3CB_B_MTVR_Open_WDL", 12],
+			["UK3CB_B_MTVR_Repair_WDL", 4],
+			["UK3CB_FIA_I_LR_Closed", 4]
 		]
 	],	
 	
 	["Armed Car/MRAP",
 	   [
-		["UK3CB_BAF_LandRover_WMIK_HMG_FFR_Sand_A_MTP", 4],
-		["UK3CB_BAF_LandRover_WMIK_HMG_FFR_Green_A_MTP", 4],
-		["UK3CB_BAF_LandRover_WMIK_Milan_FFR_Sand_A_MTP", 4],
-		["UK3CB_BAF_LandRover_WMIK_Milan_FFR_Green_A_MTP", 4]
+		["UK3CB_FIA_I_LR_M2", 2]
 	   ]
 	],
 
@@ -32,7 +24,7 @@ _availableVehicles =
 
 	["Rotary Transport",
       [
-	   ["UK3CB_BAF_Chinook_HC2_MTP", 16]
+	   ["UK3CB_CW_US_B_EARLY_CH47", 16]
 	  ]
 	],  
 	["Boats",

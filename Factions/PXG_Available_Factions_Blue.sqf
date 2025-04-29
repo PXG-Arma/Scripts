@@ -1,4 +1,5 @@
 _availableFactions = [
+	"Australian Armed Forces",
 	"Belgian Armed Forces",
 	"British Armed Forces",
 	"Bundespolizei",
@@ -11,7 +12,6 @@ _availableFactions = [
 	"Polish Armed Forces",
 	"Swedish Armed Forces",
 	"United States Military"
-	
 ];
 
 _availableFactions 

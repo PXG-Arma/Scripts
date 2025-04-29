@@ -1,14 +1,14 @@
 _resupplyAvailable = [
 	["Rifle Resupply",
 		[
-			["UK3CB_BAF_556_30Rnd",40],
-			["UK3CB_BAF_556_30Rnd_T",40]
+			["rhs_mag_30Rnd_556x45_M855A1_PMAG",40],
+			["rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red",40]
 		]
 	],
 	["Breacher Resupply",
 		[
-			["UK3CB_BAF_9_30Rnd",40],
-			["UK3CB_BAF_9_30Rnd",40]
+			["rhsusf_8Rnd_00Buck",40],
+			["rhsusf_8Rnd_Slug",40]
 		]
 	],
 	["LAT Resupply",
@@ -18,8 +18,6 @@ _resupplyAvailable = [
 	],
 	["DMR/Sniper Resupply",
 		[
-			["UK3CB_BAF_762_L42A1_20Rnd",10],
-			["UK3CB_BAF_762_L42A1_20Rnd_T",10],
 			["rhsusf_5Rnd_762x51_m62_Mag",10],
 			["rhsusf_5Rnd_762x51_m993_Mag",10]
 		]
@@ -96,11 +94,11 @@ _resupplyAvailable = [
 	],
 	["Squad Resupply",
 		[
-			["UK3CB_BAF_556_30Rnd",20],
-			["UK3CB_BAF_556_30Rnd_T",20],
-			["UK3CB_BAF_9_30Rnd",20],
-			["UK3CB_BAF_762_L42A1_20Rnd_T",20],
-			["UK3CB_BAF_9_17Rnd",20],
+			["rhs_mag_30Rnd_556x45_M855A1_PMAG",20],
+			["rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red",20],
+			["rhsusf_8Rnd_00Buck",20],
+			["rhsusf_8Rnd_Slug",20],
+			["UK3CB_BHP_9_13Rnd",20],
 			["rhs_weap_M136",2],
 			["HandGrenade",10],
 			["rhs_mag_an_m8hc",10],

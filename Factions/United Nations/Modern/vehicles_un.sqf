@@ -3,7 +3,6 @@ _availableVehicles =
 	["Utility",
 	[["UK3CB_UN_I_Landcruiser", 4], 
 	["UK3CB_UN_I_M1151", 4],
-	["UK3CB_BAF_LandRover_Amb_FFR_UN_A", 4], 
 	["UK3CB_UN_I_Kamaz_Open", 8], 
 	["UK3CB_UN_I_Kamaz_Fuel", 4], 
 	["UK3CB_UN_I_Ural_Ammo", 4], 

@@ -2,6 +2,7 @@ _resupplyAvailable = [
 	["Rifle Resupply",
 		[
 			["UK3CB_ACR_30rnd_556x45_Y",40],
+			["UK3CB_USP_9_15Rnd",40],
 			["UK3CB_ACR_30rnd_556x45_YT",40]
 		]
 	],
@@ -36,7 +37,7 @@ _resupplyAvailable = [
 	],
 	["HAT Resuppply",
 		[
-			["UK3CB_BAF_Javelin_Slung_Tube",2]
+			["rhs_fgm148_magazine_AT",2]
 		]
 	],
 	["AA Resupply",
@@ -130,14 +131,14 @@ _resupplyAvailable = [
 			["ACE_quikclot", 15]
 		]
 	],
-	["Vehicle Resupply 7.62mm",
+	["Drone Resupply",
 		[
-			["UK3CB_BAF_762_200Rnd_T",20]
+			["DRNP_AR2P", 4]
 		]
 	],
-	["Vehicle Resupply 12.7mm",
+	["Crocus",
 		[
-			["UK3CB_BAF_127_100Rnd",10]
+			["B_Crocus_AT_Bag", 4]
 		]
 	],
 	["Parachutes",

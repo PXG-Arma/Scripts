@@ -12,8 +12,8 @@ switch (_loadout) do {
 	};
 	case "sqd_dmr";
 	case "rcn_dmr": {
-		for "_i" from 1 to 15 do { player addItemToBackpack "UK3CB_BAF_338_5Rnd"};
-		for "_i" from 1 to 15 do { player addItemToBackpack "UK3CB_BAF_338_5Rnd_Tracer"};
+		for "_i" from 1 to 15 do { player addItemToBackpack "hlc_5rnd_300WM_AP_AWM"};
+		for "_i" from 1 to 15 do { player addItemToBackpack "hlc_5rnd_300WM_T_AWM"};
 	};
 	case "sup_mmg_g": {
 		for "_i" from 1 to 2 do { player addItemToVest "rhsusf_100Rnd_762x51_m61_ap"};

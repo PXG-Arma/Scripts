@@ -59,7 +59,7 @@ switch (_loadout) do {
 	case "rcn_amr": {player addWeapon "rhs_weap_m82a1";
 					 player addPrimaryWeaponItem "rhsusf_acc_m8541_mrds";
 	};
-	case "rcn_dmr": {randomWeapon2Array = ["UK3CB_SVD_OLD","rhs_weap_m24sws","UK3CB_BAF_L115A3_DE"]; 
+	case "rcn_dmr": {randomWeapon2Array = [/*"UK3CB_SVD_OLD","rhs_weap_m24sws",*/"hlc_rifle_awmagnum"]; 
 		             player addWeapon selectRandom randomWeapon2Array;
 	switch (primaryWeapon player) do {
 		
@@ -72,9 +72,8 @@ switch (_loadout) do {
 			         player addPrimaryWeaponItem "rhsusf_acc_harris_swivel";
 			};
 
-			case "UK3CB_BAF_L115A3_DE": {
+			case "hlc_rifle_awmagnum": {
 					 player addPrimaryWeaponItem "rhsusf_acc_m8541";
-			         player addPrimaryWeaponItem "uk3cb_underbarrel_acc_bipod";
 			};
 			
 			default {};
@@ -184,7 +183,7 @@ switch (_loadout) do {
 // add launcher
 switch (_loadout) do {
 	default {};
-	case "sqd_lat": {randomWeapon7Array = ["rhs_weap_M136","BWA3_Bunkerfaust_Loaded","UK3CB_BAF_NLAW_Launcher","rhs_weap_m72a7","BWA3_RGW90_Loaded","rhs_weap_rpg75","rhs_weap_rpg26","rhs_weap_m80"]; 
+	case "sqd_lat": {randomWeapon7Array = ["rhs_weap_M136","BWA3_Bunkerfaust_Loaded","launch_NLAW_F","rhs_weap_m72a7","BWA3_RGW90_Loaded","rhs_weap_rpg75","rhs_weap_rpg26","rhs_weap_m80"]; 
 		player addWeapon selectRandom randomWeapon7Array;
 	                 unitBackpack player addItemCargoGlobal["rhs_weap_m72a7",1]};
 	case "sup_mat_g": {player addWeapon "rhs_weap_rpg7";
@@ -193,7 +192,8 @@ switch (_loadout) do {
 	                  player addPrimaryWeaponItem "rhs_optic_maaws";};
 	case "sup_mat_g3": {player addWeapon "rhs_weap_smaw_green";
 	                  player addPrimaryWeaponItem "rhs_weap_optic_smaw";};	
-	case "sup_hat_g": {	player addWeapon "UK3CB_BAF_Javelin_Slung_Tube"};
+	case "sup_hat_g": {	player addWeapon "rhs_weap_fgm148";
+						player addSecondaryWeaponItem "rhs_fgm148_magazine_AT"};
 	case "sup_aa_g": { player addWeapon "rhs_weap_igla"};
 	case "sup_aa_g2": {	player addWeapon "rhs_weap_fim92"};					
 };

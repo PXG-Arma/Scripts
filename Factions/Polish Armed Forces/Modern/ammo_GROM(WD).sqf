@@ -45,6 +45,7 @@ switch (_loadout) do {
 	case "pil": {
 		for "_i" from 1 to 4 do { player addItemToVest "30Rnd_9x21_Mag"};
 	};
+	case "sup_hat_l";
 	case "sup_aa_g";
 	case "sup_aa_l": {
 		for "_i" from 1 to 3 do { player addItemToVest "UK3CB_ACR_30rnd_556x45_Y"};
@@ -72,12 +73,14 @@ switch (_loadout) do {
 		case "sup_aa_l": {
 		for "_i" from 1 to 2 do { player addItemToBackpack "rhs_mag_9k38_rocket"};
 	};
+		case "sup_hat_l": {
+		for "_i" from 1 to 1 do { player addItemToBackpack "rhs_fgm148_magazine_AT"};
+	};
 };
 
 // add other ammo 
 switch (_loadout) do {
 	default {};
-	case "sup_hat_l": {	player addWeapon "UK3CB_BAF_Javelin_Slung_Tube"};
 	case "sup_aa_g": {
 		for "_i" from 1 to 2 do { player addItemToBackpack "rhs_mag_9k38_rocket"};
 	};

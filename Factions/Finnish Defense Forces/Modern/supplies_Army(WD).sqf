@@ -2,6 +2,8 @@ _resupplyAvailable = [
 	["Rifle Resupply",
 		[
 			["rhsgref_30rnd_556x45_m21",40],
+			["UK3CB_BHP_9_13Rnd",40],
+			["rhsgref_20rnd_765x17_vz61",40],
 			["rhsgref_30rnd_556x45_m21_t",40]
 		]
 	],
@@ -113,6 +115,11 @@ _resupplyAvailable = [
 			["ACE_bloodIV", 5],
 			["ACE_elasticBandage", 15],
 			["ACE_quikclot", 15]
+		]
+	],
+	["Drone Resupply",
+		[
+			["DRNP_AR2P", 4]
 		]
 	],
 	["Parachutes",

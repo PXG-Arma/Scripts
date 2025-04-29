@@ -2,6 +2,7 @@ _resupplyAvailable = [
 	["Primary Resupply",
 		[
 			["rhs_mag_30Rnd_556x45_M855_Stanag",40],
+			["rhsusf_mag_15Rnd_9x19_FMJ",40],
 			["rhs_mag_30Rnd_556x45_M855_Stanag_Tracer_Red",40]
 		]
 	],
@@ -121,6 +122,16 @@ _resupplyAvailable = [
 			["ACE_packingBandage", 12],
 			["ACE_quikclot", 12],
 			["ACE_bloodIV_500", 6]
+		]
+	],
+	["Drone Resupply",
+		[
+			["DRNP_AR2P", 4]
+		]
+	],
+	["Crocus",
+		[
+			["B_Crocus_AT_Bag", 4]
 		]
 	],
 	["Parachutes",

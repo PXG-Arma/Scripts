@@ -70,6 +70,53 @@ case "UK3CB_LFR_B_M1030":
 		[_vehicle, 2] call ace_cargo_fnc_setSpace;
 	};
 	
+case "UK3CB_AAF_O_Kamaz_MLRS":
+	{
+		[
+			_vehicle,
+	["CSAT_W",1], 
+	["ClanLogo_Hide",0]
+        ] call BIS_fnc_initVehicle;
+	};
+
+case "UK3CB_CHD_O_Kamaz_Ammo":
+	{
+		[
+			_vehicle,
+	["CSAT_W",1], 
+	["ClanLogo_Hide",0]
+        ] call BIS_fnc_initVehicle;
+	};
+
+case "UK3CB_CHD_O_Kamaz_Covered":
+	{
+		[
+			_vehicle,
+	["CSAT_W",1], 
+	["ClanLogo_Hide",0]
+        ] call BIS_fnc_initVehicle;
+	};
+	
+case "UK3CB_CHD_O_Kamaz_Fuel":
+	{
+		[
+			_vehicle,
+	["CSAT_W",1], 
+	["ClanLogo_Hide",0]
+        ] call BIS_fnc_initVehicle;
+	};
+
+case "UK3CB_CHD_O_Kamaz_Repair":
+	{
+		[
+			_vehicle,
+	["CSAT_W",1], 
+	["ClanLogo_Hide",0]
+        ] call BIS_fnc_initVehicle;
+	};
+
+
 	default {};
 };
+
 

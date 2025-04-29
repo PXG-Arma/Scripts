@@ -10,6 +10,7 @@ if (_variantEra == "Early") then {
 		case "plt_med"; 
 		case "logi";
 		case "pil";
+		case "hpil";
 		case "sqd_ld";
 		case "ar_ld";
 		case "sup_mmg_l";
@@ -89,6 +90,7 @@ if (_variantEra == "Modern" || _variantEra == "Future") then {
 			player addItemToUniform "ACRE_PRC343";
 			player addItemToVest "ACRE_PRC152"
 		};
+		case "hpil";
 		case "pil": { player addItemToUniform "ACRE_PRC152"};
 		case "rcn_ld";
 		case "tacp": { 

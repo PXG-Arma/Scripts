@@ -14,7 +14,7 @@ switch (_loadout) do {
 	case "rcn_amr";
 	case "rcn_dmr": { player addHeadgear "VSM_Multicam_Boonie"};
     case "ar_ld";
-	case "ar_c": {player addHeadgear "UK3CB_BAF_H_CrewHelmet_B"};
+	case "ar_c": {player addHeadgear "BWA3_CrewmanKSK_Headset"};
 	case "pil": {player addHeadgear "rhsusf_hgu56p_visor"};
 };
 

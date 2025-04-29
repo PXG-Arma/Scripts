@@ -148,14 +148,9 @@ switch (_loadout) do {
 					for "_i" from 1 to 15 do { player addItemToBackpack "rhsusf_5Rnd_762x51_m993_Mag"};
 			};
 
-			case "UK3CB_BAF_L115A3_DE": {
-					for "_i" from 1 to 10 do { player addItemToVest "UK3CB_BAF_338_5Rnd"};
-					for "_i" from 1 to 10 do { player addItemToBackpack "UK3CB_BAF_338_5Rnd_Tracer"};
-			};
-
-			case "UK3CB_BAF_L115A3_Bipod_DE": {
-					for "_i" from 1 to 10 do { player addItemToVest "UK3CB_BAF_338_5Rnd"};
-					for "_i" from 1 to 10 do { player addItemToBackpack "UK3CB_BAF_338_5Rnd_Tracer"};
+			case "hlc_rifle_awmagnum": {
+					for "_i" from 1 to 10 do { player addItemToVest "hlc_5rnd_300WM_AP_AWM"};
+					for "_i" from 1 to 10 do { player addItemToBackpack "hlc_5rnd_300WM_T_AWM"};
 			};
 
 			default {};
@@ -192,6 +187,7 @@ switch (_loadout) do {
 	case "sup_mat_l3";
 	case "sup_hat_g2";
 	case "sup_hat_l2";
+	case "sup_hat_l";
 	case "sup_hat_g3";
 	case "sup_hat_l3";
 	case "sup_mor_l";
@@ -364,7 +360,9 @@ switch (_loadout) do {
 // add other ammo 
 switch (_loadout) do {
 	default {};
-	case "sup_hat_l": {	player addWeapon "UK3CB_BAF_Javelin_Slung_Tube"};
+	case "sup_hat_l": {
+		for "_i" from 1 to 1 do { player addItemToBackpack "rhs_fgm148_magazine_AT"};
+	};
 	case "sup_aa_g": {
 		for "_i" from 1 to 2 do { player addItemToBackpack "rhs_mag_9k38_rocket"};
 	};

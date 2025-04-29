@@ -3,8 +3,8 @@ _availableVehicles =
 	["Utility",
 	[["UK3CB_I_LandRover_Closed_CDF", 4],
 	["UK3CB_I_LandRover_Open_CDF", 4],
-	["UK3CB_BAF_MAN_HX58_Transport_Green_Arctic", 4],
-	["UK3CB_BAF_MAN_HX58_Cargo_Green_B_Arctic", 4]]],
+	["sfp_bv206", 12],
+	["rnt_lkw_5t_mil_gl_kat_i_transport_fleck", 8]]],
 	
 	["Armed Car/MRAP",
 	[["UK3CB_I_LandRover_SF_M2_CDF", 4],
@@ -39,13 +39,11 @@ _availableVehicles =
 	["UK3CB_MDF_B_C130J_CARGO", 20]]],
 
 	["Boat",
-	[["UK3CB_BAF_RHIB_HMG_DDPM", 8],
-	["UK3CB_AAF_B_Skiff", 4],
+	[["UK3CB_AAF_B_Skiff", 4],
 	["UK3CB_AAF_B_Rubber_Rhib", 4]]],
 	
 	["Misc.",
-	[["B_Quadbike_01_F", 4],
-	["UK3CB_BAF_MAN_HX58_Container_Sand", 30]]],
+	[["B_Quadbike_01_F", 4]]],
 
 	['Turrets', 
 		[

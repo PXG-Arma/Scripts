@@ -15,7 +15,3 @@ switch (_loadout) do {
     default {player linkItem "UK3CB_PVS5A"};
 };
 
-// add Javelin CLU
-switch (_loadout) do {
-	case "sup_hat_g": {player addWeapon "UK3CB_BAF_Javelin_CLU"};
-};

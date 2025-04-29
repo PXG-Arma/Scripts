@@ -12,6 +12,8 @@ _slotRole = player getVariable "PXG_Slot_Role";
 switch (_slotGroup) do {
 	default { };
 	case "plt": {_srCh = 1};
+	case "pil": {_lrCh = 2};
+	case "hpil": {_lrCh = 2};
 	case "logi": {_srCh = 1};
 	case "sqd1": {_srCh = 2};
 	case "sqd2": {_srCh = 3};

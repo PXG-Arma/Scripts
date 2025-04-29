@@ -38,9 +38,10 @@ _resupplyAvailable = [
 			["BWA3_10Rnd_127x99_G82_Raufoss",20]
 		]
 	],
-	["Hand Grenades",
+	["Bangs",
 		[
-			["BWA3_DM51A1",20]
+			["ACE_CTS9",20],
+			["ACE_M84",20]
 		]
 	],
 	["Smoke Grenades",
@@ -116,6 +117,11 @@ _resupplyAvailable = [
 			["ACE_bloodIV", 5],
 			["ACE_elasticBandage", 15],
 			["ACE_quikclot", 15]
+		]
+	],
+	["Drone Resupply",
+		[
+			["DRNP_AR2P", 4]
 		]
 	],
 	["Parachutes",

@@ -1,7 +1,7 @@
 params["_side","_faction","_variant", "_loadout"]; 
 
 randomUniformArray = ["LOP_U_ISTS_Fatigue_12", "LOP_U_ISTS_Fatigue_27", "LOP_U_ISTS_Fatigue_21", "LOP_U_IRA_Fatigue_DPM_TSW", "LOP_U_IRA_Fatigue_DPM_BSW", "LOP_U_ISTS_Fatigue_28", "LOP_U_ISTS_Fatigue_13", "LOP_U_ISTS_Fatigue_11", "LOP_U_ISTS_Fatigue_20", "LOP_U_ISTS_Fatigue_16", "LOP_U_ISTS_Fatigue_09"];
-randomVestArray = ["rhsusf_mbav_rifleman", "rhsusf_spc_rifleman", "UK3CB_BAF_V_Osprey_Rifleman_F", "UK3CB_BAF_V_Osprey_Rifleman_F"];
+randomVestArray = ["rhsusf_mbav_rifleman", "rhsusf_spc_rifleman"];
 
 
 // add uniform

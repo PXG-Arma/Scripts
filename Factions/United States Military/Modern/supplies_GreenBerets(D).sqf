@@ -2,6 +2,7 @@ _resupplyAvailable = [
 	["Rifle Resupply",
 		[
 			["rhs_mag_30Rnd_556x45_M855A1_PMAG",40],
+			["rhsusf_mag_17Rnd_9x19_JHP",40],
 			["rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red",40]
 		]
 	],
@@ -36,7 +37,7 @@ _resupplyAvailable = [
 	],
 	["HAT Resuppply",
 		[
-			["UK3CB_BAF_Javelin_Slung_Tube",4]
+			["rhs_fgm148_magazine_AT",4]
 		]
 	],
 	["AA Resupply",
@@ -126,6 +127,16 @@ _resupplyAvailable = [
 			["ACE_bloodIV", 5],
 			["ACE_elasticBandage", 15],
 			["ACE_quikclot", 15]
+		]
+	],
+	["Drone Resupply",
+		[
+			["DRNP_AR2P", 4]
+		]
+	],
+	["Crocus",
+		[
+			["B_Crocus_AT_Bag", 4]
 		]
 	],
 	["Parachutes",

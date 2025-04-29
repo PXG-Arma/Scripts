@@ -27,6 +27,7 @@ switch (_loadout) do {
 		for "_i" from 1 to 4 do { player addItemToVest "150Rnd_762x54_Box"};
 		for "_i" from 1 to 4 do { player addItemToBackpack "150Rnd_762x54_Box_Tracer"};
 	};
+	case "sup_hat_l";
 	case "sqd_lat": {
 		switch (primaryWeapon player) do {
 		    case "arifle_TRG20_F": {
@@ -112,7 +113,9 @@ switch (_loadout) do {
 // add other ammo 
 switch (_loadout) do {
 	default {};
-	case "sup_hat_l": {	player addWeapon "UK3CB_BAF_Javelin_Slung_Tube"};
+	case "sup_hat_l": {
+		for "_i" from 1 to 1 do { player addItemToBackpack "rhs_fgm148_magazine_AT"};
+	};
 	case "sup_aa_g": {
 		for "_i" from 1 to 2 do { player addItemToBackpack "rhs_mag_9k38_rocket"};
 	};

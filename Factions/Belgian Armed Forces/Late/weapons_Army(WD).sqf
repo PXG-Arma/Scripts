@@ -10,7 +10,7 @@ switch (_loadout) do {
 	case "rcn_amr": {player addWeapon "rhs_weap_m82a1";
 					 player addPrimaryWeaponItem "rhsusf_acc_m8541_mrds";
 	};
-	case "rcn_dmr": {player addWeapon "UK3CB_BAF_L115A3";
+	case "rcn_dmr": {player addWeapon "hlc_rifle_awmagnum";
 					 player addPrimaryWeaponItem "rhsusf_acc_M8541_mrds";
 					 player addPrimaryWeaponItem "UK3CB_underbarrel_acc_bipod";
 	};

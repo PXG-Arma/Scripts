@@ -7,6 +7,7 @@ _resupplyAvailable = [
 			["rhs_mag_30Rnd_556x45_M855_PMAG_Tracer_Red",40],
 			["UK3CB_FNFAL_30rnd_762x51",40],
 			["UK3CB_FNFAL_30rnd_762x51_RT",40],
+			["rhsusf_mag_17Rnd_9x19_JHP",40],
 			["rhsusf_mag_15Rnd_9x19_JHP",20]
 		]
 	],
@@ -26,7 +27,7 @@ _resupplyAvailable = [
 	],
 	["LAT Resupply",
 		[
-			["UK3CB_BAF_AT4_CS_AP_Launcher",8]
+			["UK3CB_M72A1_law_loaded",8]
 		]
 	],
 	["MAT Resupply",
@@ -119,7 +120,7 @@ _resupplyAvailable = [
 			["rhs_30Rnd_762x39mm_polymer", 32],
 			["UK3CB_FNFAL_30rnd_762x51",40],
 			["rhs_mag_30Rnd_556x45_M855_PMAG",40],
-			["UK3CB_BAF_AT4_CS_AP_Launcher", 1],
+			["UK3CB_M72A1_law_loaded", 1],
 			["rhs_VOG25", 12],
 			["1Rnd_HE_Grenade_shell",30],
 			["rhs_mag_rgd5", 6],
@@ -128,6 +129,11 @@ _resupplyAvailable = [
 			["ACE_packingBandage", 12],
 			["ACE_quikclot", 12],
 			["ACE_bloodIV_500", 6]
+		]
+	],
+	["Drone Resupply",
+		[
+			["DRNP_AR2P", 4]
 		]
 	],
 	//["IR Strobes",

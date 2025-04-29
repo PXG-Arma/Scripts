@@ -2,6 +2,7 @@ _resupplyAvailable = [
 	["Primary Resupply",
 		[
 			["UK3CB_G3_20rnd_762x51",40],
+			["rhs_mag_9x19_7n31_17",40],
 			["UK3CB_G3_20rnd_762x51_Y",40]
 		]
 	],
@@ -66,9 +67,9 @@ _resupplyAvailable = [
 	],
 	["40mm Smoke Rounds",
 		[
-		    ["UK3CB_BAF_1Rnd_Smoke_Grenade_shell",10],
-			["UK3CB_BAF_1Rnd_SmokeRed_Grenade_shell",10],
-			["UK3CB_BAF_1Rnd_SmokeGreen_Grenade_shell",10]
+		    ["1Rnd_Smoke_Grenade_shell",10],
+			["1Rnd_SmokeBlue_Grenade_shell",10],
+			["1Rnd_SmokeRed_Grenade_shell",10]
 		]
 	],	
 	["Explosives",
@@ -120,6 +121,16 @@ _resupplyAvailable = [
 			["ACE_packingBandage", 12],
 			["ACE_quikclot", 12],
 			["ACE_bloodIV_500", 6]
+		]
+	],
+	["Drone Resupply",
+		[
+			["DRNP_AR2P", 4]
+		]
+	],
+	["Crocus",
+		[
+			["I_Crocus_AT_Bag", 4]
 		]
 	],
 	["Parachutes",

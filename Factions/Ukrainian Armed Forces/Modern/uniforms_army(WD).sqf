@@ -92,8 +92,8 @@ switch (_loadout) do {
 	case "sup_mat_l2";
 	case "sup_mat_g3";
 	case "sup_mat_l3";
-	case "sup_hat_g";
-	case "sup_hat_l": {player addBackpack "B_Kitbag_rgr"};
+	case "sup_hat_g": {player addBackpack "B_Kitbag_rgr"};
+	case "sup_hat_l": {player addBackpack "B_Carryall_green_F"};
 	case "sup_hat_g2": {player addBackpack "RHS_Kornet_Gun_Bag"};
 	case "sup_hat_l2": {player addBackpack "RHS_Kornet_Tripod_Bag"};
 	case "sup_hat_g3": {player addBackpack "rhs_Tow_Gun_Bag"};

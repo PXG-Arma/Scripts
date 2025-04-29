@@ -20,7 +20,7 @@ _availableVehicles =
 
 	['Rotary Transport', 
 		[
-			["EC-135 PLACEHOLDER", 12]
+			["TB_EC135_BPol", 12]
 		]
 	],
 

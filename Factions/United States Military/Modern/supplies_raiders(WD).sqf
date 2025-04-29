@@ -3,6 +3,7 @@ _resupplyAvailable = [
 		[
 			["rhs_mag_20Rnd_SCAR_762x51_m61_ap_bk",40],
 			["rhs_mag_20Rnd_SCAR_762x51_m62_tracer_bk",40],
+			["rhsusf_mag_17Rnd_9x19_JHP",40],
 			["rhsusf_5Rnd_Slug",40]
 		]
 	],
@@ -126,6 +127,16 @@ _resupplyAvailable = [
 			["ACE_packingBandage", 12],
 			["ACE_quikclot", 12],
 			["ACE_bloodIV_500", 6]
+		]
+	],
+	["Drone Resupply",
+		[
+			["DRNP_AR2P", 4]
+		]
+	],
+	["Crocus",
+		[
+			["B_Crocus_AT_Bag", 4]
 		]
 	],
 	["Parachutes",

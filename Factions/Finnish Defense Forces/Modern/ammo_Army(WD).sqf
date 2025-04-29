@@ -40,9 +40,6 @@ switch (_loadout) do {
 			};
 		};
 	};
-	case "rcn_sni": {for "_i" from 1 to 8 do {player addItemToVest "UK3CB_BAF_LAPUA_338_5Rnd"};
-					 for "_i" from 1 to 8 do {player addItemToBackpack "UK3CB_BAF_LAPUA_338_5Rnd_T"};
-	};
 	case "rcn_amr": {
 		for "_i" from 1 to 4 do { player addItemToBackpack "rhsusf_mag_10Rnd_STD_50BMG_M33"};
 		for "_i" from 1 to 2 do { player addItemToBackpack "rhsusf_mag_10Rnd_STD_50BMG_mk211"};

@@ -40,8 +40,8 @@ switch (_loadout) do {
 switch (_loadout) do {
 	default {};
 	case "sqd_lat": {
-		unitBackpack player addItemCargoGlobal["UK3CB_BAF_AT4_CS_AP_Launcher",1];
-		player addWeapon "UK3CB_BAF_AT4_CS_AP_Launcher";
+		unitBackpack player addItemCargoGlobal["rhs_weap_M136",1];
+		player addWeapon "rhs_weap_M136";
 	};
 	case "sup_mat_g": {	player addWeapon "rhs_weap_rpg7";
 						player addSecondaryWeaponItem "rhs_acc_pgo7v2";

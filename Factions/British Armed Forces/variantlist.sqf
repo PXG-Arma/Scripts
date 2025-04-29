@@ -1,12 +1,12 @@
 _avialableVariants = ["--------- Army ---------",
-					  "Army Early",
-					  "Army Modern",
+					  "Army Early"
+					  /*"Army Modern",
 					  "Army(W) Modern",
 					  "----- Royal Marines -----",
 					  "RM Modern",
 					  "---------- SAS ----------",
 					  "CounterTerror Modern",
-					  "CounterTerror Early"
+					  "CounterTerror Early"*/
 					 ];
 
 _avialableVariants

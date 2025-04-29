@@ -4,6 +4,7 @@ _resupplyAvailable = [
 			["UK3CB_FNFAL_20rnd_762x51_G",40],
 			["UK3CB_FNFAL_20rnd_762x51_GT",40],
 			["UK3CB_Uzi_32Rnd_Magazine",20],
+			["UK3CB_BHP_9_13Rnd",20],
 			["UK3CB_Uzi_32Rnd_Magazine_GT",20]
 		]
 	],
@@ -15,8 +16,8 @@ _resupplyAvailable = [
 	],
 	["DMR Resupply",
 		[
-			["UK3CB_BAF_338_5Rnd",20],
-			["UK3CB_BAF_338_5Rnd_Tracer",20]
+			["hlc_5rnd_300WM_AP_AWM",20],
+			["hlc_5rnd_300WM_T_AWM",20]
 		]
 	],
 	["MMG Resupply",
@@ -126,26 +127,6 @@ _resupplyAvailable = [
 			["ACE_bloodIV", 5],
 			["ACE_elasticBandage", 15],
 			["ACE_quikclot", 15]
-		]
-	],
-	["Vehicle Resupply 7.62mm",
-		[
-			["UK3CB_BAF_762_200Rnd_T",20]
-		]
-	],
-	["Vehicle Resupply 12.7mm",
-		[
-			["UK3CB_BAF_127_100Rnd",10]
-		]
-	],
-	["Vehicle Resupply 40mm",
-		[
-			["UK3CB_BAF_32Rnd_40mm_G_Box",10]
-		]
-	],
-	["Vehicle Resupply Milan",
-		[
-			["UK3CB_BAF_1Rnd_Milan",4]
 		]
 	],
 	["Parachutes",

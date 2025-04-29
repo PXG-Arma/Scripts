@@ -9,6 +9,7 @@ _resupplyAvailable = [
 			["rhsusf_5Rnd_00Buck",30],
 			["rhsusf_5Rnd_Slug",30],
 			["rhsusf_8Rnd_00Buck",30],
+			["rhs_mag_9x18_8_57N181S",30],
 			["rhsusf_8Rnd_Slug",30]
 		]
 	],
@@ -101,6 +102,16 @@ _resupplyAvailable = [
 			["ACE_packingBandage", 12],
 			["ACE_quikclot", 12],
 			["ACE_bloodIV_500", 6]
+		]
+	],
+	["Drone Resupply",
+		[
+			["DRNP_AR2P", 4]
+		]
+	],
+	["Crocus",
+		[
+			["O_Crocus_AT_Bag", 4]
 		]
 	],
 	["Parachutes",

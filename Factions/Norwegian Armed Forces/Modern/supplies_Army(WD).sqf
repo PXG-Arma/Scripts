@@ -1,6 +1,7 @@
 _resupplyAvailable = [
 	["Rifle Resupply",
 		[
+			["rhsusf_mag_17Rnd_9x19_FMJ",40],
 			["rhs_mag_30Rnd_556x45_M855A1_Stanag",40],
 			["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red",40]
 		]
@@ -33,6 +34,13 @@ _resupplyAvailable = [
 			["rhs_mag_maaws_HEAT",4],
 			["rhs_mag_maaws_HEDP",4]
 		]
+	],
+	["Sniper Resupply",
+	[
+	["hlc_5rnd_300WM_T_AWM",15],
+	["hlc_5rnd_300WM_SBT_AWM",10],
+	["hlc_5rnd_300WM_AP_AWM",15]
+	]
 	],
 	["AA Resupply",
 		[
@@ -123,14 +131,9 @@ _resupplyAvailable = [
 			["ACE_quikclot", 15]
 		]
 	],
-	["Vehicle Resupply 7.62mm",
+	["Drone Resupply",
 		[
-			["UK3CB_BAF_762_200Rnd_T",20]
-		]
-	],
-	["Vehicle Resupply 12.7mm",
-		[
-			["UK3CB_BAF_127_100Rnd",10]
+			["DRNP_AR2P", 4]
 		]
 	],
 	["Parachutes",

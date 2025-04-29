@@ -9,6 +9,7 @@ _availableFactions = [
     "Israel Defense Forces",
 	"Norwegian Armed Forces",
 	"Polish Armed Forces",
+	"Swedish Armed Forces",
 	"United States Military"
 	
 ];

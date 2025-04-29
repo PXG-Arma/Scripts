@@ -34,13 +34,13 @@ switch (_loadout) do {
 
 // add backpack 
 switch (_loadout) do {
-	default { player addBackpack "UK3CB_BAF_B_Kitbag_TAN"};
+	default { player addBackpack "B_Kitbag_tan"};
 	case "sup_aa_g";
 	case "sup_aa_l";
 	case "sup_mat_g";
 	case "sup_mat_l";
 	case "sup_mmg_l";
-	case "sup_mmg_g": {player addBackpack "UK3CB_BAF_B_Carryall_TAN"};
+	case "sup_mmg_g": {player addBackpack "VSM_OGA_carryall"};
 	case "sup_mor_l": {player addBackpack "I_Mortar_01_support_F"};
 	case "sup_mor_g": {player addBackpack "I_Mortar_01_weapon_F"};
 	case "ar_ld": (player addBackpack "UK3CB_B_Invisible");

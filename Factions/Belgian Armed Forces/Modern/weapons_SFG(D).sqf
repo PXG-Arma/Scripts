@@ -52,6 +52,8 @@ switch (_loadout) do {
 	case "sqd_lat": {randomWeaponArray = ["rhs_weap_m72a7","BWA3_RGW90_Loaded"]; 
 		player addWeapon selectRandom randomWeaponArray;
 	                 unitBackpack player addItemCargoGlobal [selectRandom randomWeaponArray,1]};
-	case "sup_hat_g": {	player addWeapon "UK3CB_BAF_Javelin_Slung_Tube"};
+	case "sup_hat_g": {	player addWeapon "rhs_weap_fgm148";
+						player addSecondaryWeaponItem "rhs_fgm148_magazine_AT";
+						};
 	case "sup_aa_g": {	player addWeapon "rhs_weap_fim92"};					
 };

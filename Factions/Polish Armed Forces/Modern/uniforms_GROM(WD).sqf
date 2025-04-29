@@ -15,8 +15,6 @@ switch (_loadout) do {
 	case "rcn_drone";
 	case "rcn_amr";
 	case "rcn_dmr": {};
-    case "ar_ld";
-	case "ar_c": {player addHeadgear "UK3CB_BAF_H_CrewHelmet_B"};
 	case "pil": {player addHeadgear "rhsusf_hgu56p_visor"};
 };
 
@@ -52,8 +50,8 @@ switch (_loadout) do {
 	case "sup_aa_g";
 	case "sup_mmg_l";
 	case "sup_mmg_g";
-	case "sup_hat_g";
-	case "sup_hat_l": {player addBackpack "B_Kitbag_cbr"};
+	case "sup_hat_g": {player addBackpack "B_Kitbag_cbr"};
+	case "sup_hat_l": {player addBackpack "B_Carryall_cbr"};
 	case "sup_mor_l": {player addBackpack "O_Mortar_01_support_F"};
 	case "sup_mor_g": {player addBackpack "O_Mortar_01_weapon_F"};
 	case "ar_ld";

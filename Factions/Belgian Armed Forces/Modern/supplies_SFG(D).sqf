@@ -3,6 +3,7 @@ _resupplyAvailable = [
 		[
 			["rhs_mag_20Rnd_SCAR_762x51_m61_ap",40],
 			["rhs_mag_20Rnd_SCAR_762x51_m62_tracer",40],
+			["11Rnd_45ACP_Mag",40],
 			["50Rnd_570x28_SMG_03",20]
 		]
 	],
@@ -33,7 +34,7 @@ _resupplyAvailable = [
 	],
 	["HAT Resuppply",
 		[
-			["UK3CB_BAF_Javelin_Slung_Tube",2]
+			["rhs_fgm148_magazine_AT",2]
 		]
 	],
 	["AA Resupply",
@@ -127,24 +128,9 @@ _resupplyAvailable = [
 			["ACE_quikclot", 15]
 		]
 	],
-	["Vehicle Resupply 7.62mm",
+	["Drone Resupply",
 		[
-			["UK3CB_BAF_762_200Rnd_T",20]
-		]
-	],
-	["Vehicle Resupply 12.7mm",
-		[
-			["UK3CB_BAF_127_100Rnd",10]
-		]
-	],
-	["Vehicle Resupply 40mm",
-		[
-			["UK3CB_BAF_32Rnd_40mm_G_Box",10]
-		]
-	],
-	["Vehicle Resupply Milan",
-		[
-			["UK3CB_BAF_1Rnd_Milan",4]
+			["DRNP_AR2P", 4]
 		]
 	],
 	["Parachutes",

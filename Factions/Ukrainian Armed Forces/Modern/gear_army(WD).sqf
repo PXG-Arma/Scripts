@@ -10,10 +10,7 @@ switch (_loadout) do {
 	
 };
 
-// add Javelin CLU
-switch (_loadout) do {
-	case "sup_hat_g": {player addWeapon "UK3CB_BAF_Javelin_CLU"};
-};
+
 
 // add gear/radio to extra support roles
 switch (_loadout) do {

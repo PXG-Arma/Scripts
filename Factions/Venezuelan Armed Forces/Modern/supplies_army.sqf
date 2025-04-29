@@ -20,7 +20,7 @@ _resupplyAvailable = [
 	],
 	["LAT Resupply",
 		[
-			["UK3CB_BAF_AT4_CS_AP_Launcher",8]
+			["rhs_weap_M136",8]
 		]
 	],
 	["MAT Resupply",
@@ -106,7 +106,7 @@ _resupplyAvailable = [
 	["Squad Resupply",
 		[
 			["rhs_30Rnd_762x39mm_polymer", 32],
-			["UK3CB_BAF_AT4_CS_AP_Launcher", 1],
+			["rhs_weap_M136", 1],
 			["rhs_VOG25", 12],
 			["rhs_mag_rgd5", 6],
 			["rhs_mag_an_m8hc", 6],
@@ -114,6 +114,11 @@ _resupplyAvailable = [
 			["ACE_packingBandage", 12],
 			["ACE_quikclot", 12],
 			["ACE_bloodIV_500", 6]
+		]
+	],
+	["Drone Resupply",
+		[
+			["DRNP_AR2P", 4]
 		]
 	],
 	["IR Strobes",

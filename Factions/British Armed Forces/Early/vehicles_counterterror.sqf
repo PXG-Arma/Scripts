@@ -5,7 +5,6 @@ _availableVehicles =
 			["C_Van_01_box_F", 12],
 			["C_Van_02_vehicle_F", 12],
 			["C_Van_02_transport_F", 6],
-			["UK3CB_Civ_LandRover_Hard_Red_A", 4],
 			["C_Offroad_01_covered_F", 4],
 			["UK3CB_ION_B_Desert_Transit_Medevac", 4]
 		]

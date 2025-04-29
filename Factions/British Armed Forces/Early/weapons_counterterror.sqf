@@ -24,7 +24,7 @@ switch (_loadout) do {
 
 // add secondary weapon
 switch (_loadout) do {
-	default {player addWeapon "UK3CB_BAF_L9A1";
+	default {player addWeapon "UK3CB_BHP";
 	};
 };
 // add launcher

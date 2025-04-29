@@ -7,7 +7,7 @@ randomMaskArray = ["M40_Gas_mask_nbc_v1_d", "M40_Gas_mask_nbc_v4_d"];
 switch (_loadout) do {
 	default {player forceAddUniform "LOP_U_IRA_Fatigue_GRK_BLK";
 	};
-	case "pil" : { player forceAddUniform "UK3CB_BAF_U_HeliPilotCoveralls_Army"};
+	case "pil" : { player forceAddUniform "rhssaf_uniform_heli_pilot"};
 };
 	
 // add helmet

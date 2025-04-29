@@ -18,7 +18,7 @@ switch (_loadout) do {
 // add secondary ammo
 switch (_loadout) do {
 	default {
-		for "_i" from 1 to 3 do { player addItemToBackpack "UK3CB_BAF_9_13Rnd"};
+		for "_i" from 1 to 3 do { player addItemToBackpack "UK3CB_BHP_9_13Rnd"};
 	};
 };
 

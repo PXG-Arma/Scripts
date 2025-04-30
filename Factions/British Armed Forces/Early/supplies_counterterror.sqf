@@ -2,7 +2,8 @@ _resupplyAvailable = [
 	["Rifle Resupply",
 		[
 			["UK3CB_MP5_30Rnd_9x19_Magazine_RT",40],
-			["UK3CB_MP5_30Rnd_9x19_Magazine_RT",40]
+			["UK3CB_MP5_30Rnd_9x19_Magazine_RT",40],
+			["UK3CB_BHP_9_13Rnd",40]
 		]
 	],
 	["Breacher Resupply",

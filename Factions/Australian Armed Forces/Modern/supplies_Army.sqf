@@ -1,38 +1,53 @@
 _resupplyAvailable = [
 	["Rifle Resupply",
 		[
-			["rhs_mag_30Rnd_556x45_M855A1_PMAG",40],
-			["rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red",40]
+			["hlc_30Rnd_556x45_B_AUG",40],
+			["hlc_30Rnd_556x45_T_AUG",40]
 		]
 	],
-	["Breacher Resupply",
+	["AR Resupply",
 		[
-			["rhsusf_8Rnd_00Buck",40],
-			["rhsusf_8Rnd_Slug",40]
+			["hlc_200rnd_556x45_B_SAW",10],
+			["hlc_200rnd_556x45_T_SAW",10]
+		]
+	],
+	["Sniper Resupply",
+		[
+			["hlc_5rnd_300WM_FMJ_AWM",30],
+			["hlc_5rnd_300WM_T_AWM",10]
 		]
 	],
 	["LAT Resupply",
 		[
-			["rhs_weap_M136",6]
+			["rhs_weap_m72a7",8]
 		]
 	],
-	["DMR/Sniper Resupply",
+	["MAT Resupply",
 		[
-			["rhsusf_5Rnd_762x51_m62_Mag",10],
-			["rhsusf_5Rnd_762x51_m993_Mag",10]
+			["BWA3_CarlGustav_HEAT",4],
+			["BWA3_CarlGustav_HEDP",4]
+		]
+	],
+	["HAT Resupply",
+		[
+			["rhs_fgm148_magazine_AT",4]
+		]
+	],
+	["AA Resupply",
+		[
+			["rhs_fim92_mag",4]
 		]
 	],
 	["Hand Grenades",
 		[
-			["HandGrenade",20],
-			["ACE_M84",10]
+			["HandGrenade",20]
 		]
 	],
 	["Smoke Grenades",
 		[
-			["rhs_mag_an_m8hc",10],
-			["SmokeShellRed",10],
+			["BWA3_DM25",10],
 			["SmokeShellGreen",10],
+			["SmokeShellRed",10],
 			["SmokeShellBlue",10]
 		]
 	],
@@ -54,7 +69,7 @@ _resupplyAvailable = [
 			["UGL_FlareWhite_F",20],
 			["UGL_FlareCIR_F",20]
 		]
-	],
+	],	
 	["Explosives",
 		[
 			["ACE_Clacker",2],
@@ -94,14 +109,12 @@ _resupplyAvailable = [
 	],
 	["Squad Resupply",
 		[
-			["rhs_mag_30Rnd_556x45_M855A1_PMAG",20],
-			["rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red",20],
-			["rhsusf_8Rnd_00Buck",20],
-			["rhsusf_8Rnd_Slug",20],
-			["UK3CB_BHP_9_13Rnd",20],
-			["rhs_weap_M136",2],
+			["hlc_30Rnd_556x45_B_AUG",20],
+			["hlc_30Rnd_556x45_T_AUG",20],
+			["hlc_200rnd_556x45_B_SAW",5],
+			["hlc_200rnd_556x45_T_SAW",5],
+			["rhs_weap_m72a7",2],
 			["HandGrenade",10],
-			["rhs_mag_an_m8hc",10],
 			["1Rnd_HE_Grenade_Shell",10],
 			["1Rnd_Smoke_Grenade_Shell",10],
 			["ACE_bloodIV", 5],
@@ -109,11 +122,16 @@ _resupplyAvailable = [
 			["ACE_quikclot", 15]
 		]
 	],
-	
+	["Drone Resupply",
+		[
+			["DRNP_AR2P", 4]
+		]
+	],
 	["Parachutes",
 		[
 			["B_Parachute", 20]
 		]
 	]
+	
 ];
 _resupplyAvailable

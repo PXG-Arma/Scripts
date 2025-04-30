@@ -3,16 +3,12 @@ params["_side","_faction","_variant", "_loadout"];
 // add primary ammo 
 switch (_loadout) do {
 	default { 
-		for "_i" from 1 to 4 do { player addItemToVest "UK3CB_BAF_556_30Rnd"};
-		for "_i" from 1 to 4 do { player addItemToBackpack "UK3CB_BAF_556_30Rnd_T"};
+		for "_i" from 1 to 4 do { player addItemToVest "rhs_mag_30Rnd_556x45_M855A1_PMAG"};
+		for "_i" from 1 to 4 do { player addItemToBackpack "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red"};
 	};
 	case "sqd_brc": {
-		for "_i" from 1 to 4 do { player addItemToVest "UK3CB_BAF_9_30Rnd"};
-		for "_i" from 1 to 4 do { player addItemToBackpack "UK3CB_BAF_9_30Rnd"};
-	};
-	case "sqd_dmr": {
-		for "_i" from 1 to 5 do { player addItemToVest "UK3CB_BAF_762_L42A1_20Rnd"};
-		for "_i" from 1 to 5 do { player addItemToBackpack "UK3CB_BAF_762_L42A1_20Rnd_T"};
+		for "_i" from 1 to 4 do { player addItemToVest "rhsusf_8Rnd_00Buck"};
+		for "_i" from 1 to 4 do { player addItemToBackpack "rhsusf_8Rnd_Slug"};
 	};
 	case "rcn_sni": {
 		for "_i" from 1 to 5 do { player addItemToVest "rhsusf_5Rnd_762x51_m62_Mag"};
@@ -22,7 +18,7 @@ switch (_loadout) do {
 // add secondary ammo
 switch (_loadout) do {
 	default {
-		for "_i" from 1 to 3 do { player addItemToBackpack "UK3CB_BAF_9_17Rnd"};
+		for "_i" from 1 to 3 do { player addItemToBackpack "UK3CB_BHP_9_13Rnd"};
 	};
 };
 

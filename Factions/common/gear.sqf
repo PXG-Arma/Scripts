@@ -84,7 +84,9 @@ switch (_loadout) do {
 switch (_loadout) do {
 	default {};
 	case "sup_mor_l";
-	case "sup_mor_g": {player addItemToUniform "ACE_artilleryTable"};
+	case "sup_mor_g": {player addItemToUniform "ACE_artilleryTable";
+						player addItemToUniform "ACE_PlottingBoard";
+						};
 };
 
 // add Patrachutes to pilots

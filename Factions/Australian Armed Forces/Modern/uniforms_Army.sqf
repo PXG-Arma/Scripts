@@ -28,8 +28,8 @@ switch (_loadout) do {
 // add backpack 
 switch (_loadout) do {
 	default { player addBackpack "VSM_Multicam_Backpack_Kitbag"};
-	case "sup_mat_g";
-	case "sup_mat_l": {player addBackpack "BWA3_CarrVSM_Multicam_carryallyall_Tropen"};
+	case "sup_hat_g";
+	case "sup_hat_l": {player addBackpack "BWA3_CarrVSM_Multicam_carryallyall_Tropen"};
 	case "sup_mor_l": {player addBackpack "O_Mortar_01_support_F"};
 	case "sup_mor_g": {player addBackpack "O_Mortar_01_weapon_F"};
 	case "pil";

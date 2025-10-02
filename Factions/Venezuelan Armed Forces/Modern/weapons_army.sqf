@@ -15,7 +15,7 @@ switch (_loadout) do {
 	case "sqd_dmr":{player addWeapon "rhs_weap_ak103_npz";
 					player addPrimaryWeaponItem "rhs_acc_dtk";
 					player addPrimaryWeaponItem "rhs_acc_perst1ik";
-					player addPrimaryWeaponItem "RKSL_optic_PMII_312";
+					player addPrimaryWeaponItem "optic_dms";
 	};
 	case "sqd_ar": {player addWeapon "rhs_weap_minimi_para_railed";
 					player addPrimaryWeaponItem "rhs_acc_1p87";

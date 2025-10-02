@@ -1,8 +1,8 @@
 params["_side","_faction","_variant", "_loadout"]; 
 
 // weapon arrays
-randomPrimaryArray = ["rhs_weap_ak103_zenitco01_b33","UK3CB_M16A2","UK3CB_FNFAL_FULL","rhs_weap_ak74m_zenitco01_b33"];
-randomGLArray = ["rhs_weap_ak103_gp25_npz","rhs_weap_ak74m_gp25_npz","UK3CB_M16A2_UGL"]; 
+randomPrimaryArray = ["rhs_weap_ak74m_zenitco01","UK3CB_M16A2","UK3CB_FNFAL_FULL","rhs_weap_ak74m_zenitco01"];
+randomGLArray = ["rhs_weap_ak103_gp25","rhs_weap_ak74m_gp25","UK3CB_M16A2_UGL"]; 
 randomDMRArray = ["rhs_weap_svdp_npz","rhs_weap_svds_npz"];
 // add primary weapon
 switch (_loadout) do {
@@ -20,7 +20,7 @@ switch (_loadout) do {
 	};
 	case "sqd_dmr":{
 		player addWeapon "rhs_weap_m24sws";
-		player addPrimaryWeaponItem "RKSL_optic_PMII_312";
+		player addPrimaryWeaponItem "rhsusf_acc_LEUPOLDMK4";
 	};
 	case "sqd_ar": {
 		player addWeapon "rhs_weap_minimi_para_railed";
@@ -31,7 +31,7 @@ switch (_loadout) do {
 	};
 	case "rcn_dmr": {
 		player addWeapon selectRandom randomDMRArray;
-		player addPrimaryWeaponItem "RKSL_optic_PMII_312";
+		player addPrimaryWeaponItem "rhsusf_acc_LEUPOLDMK4";
 	};
 	case "sup_mmg_g": {
 		player addWeapon "rhs_weap_fnmag";

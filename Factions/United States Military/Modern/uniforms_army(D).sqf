@@ -4,6 +4,7 @@
 // When assigning gear to a case for one role use -case "role": equipment script, when you want multiple roles to follow that specific script use -case "role"; above the assigned gear. take note of the : and ;
 // case "plt";
 // case "logi";
+// case "plt_eod";
 // case "plt_med";
 // case "tacp";
 // case "sqd_ld";
@@ -52,7 +53,7 @@ switch (_loadout) do {
 	case "r_pil": {player forceAddUniform "rhs_uniform_cu_ocp_1stcav"};
 	case "f_pil": {player forceAddUniform "U_B_PilotCoveralls"};
 };
-	
+
 // add helmet
 switch (_loadout) do {
 	default {randomOfficerHelmetArray = ["rhsusf_ach_helmet_headset_ocp_alt","rhsusf_ach_helmet_headset_ocp"];
@@ -84,6 +85,7 @@ switch (_loadout) do {
 	case "sqd_ld": {player addVest "rhsusf_spcs_ocp_squadleader"};
 	case "plt";
 	case "logi";
+	case "plt_eod";
 	case "tacp": {player addVest "rhsusf_spcs_ocp_teamleader_alt"};
 	case "sqd_ar": {player addVest "rhsusf_spcs_ocp_saw"};
 	case "sqd_gre": {player addVest "rhsusf_spcs_ocp_grenadier"};

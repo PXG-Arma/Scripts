@@ -68,6 +68,7 @@ switch (_loadout) do {
 switch (_loadout) do {
 	default {};
 	case "logi": {player addItemToBackpack "ToolKit"};
+	case "plt_eod";
 	case "sqd_eng": {
 		for "_i" from 1 to 4 do { player addItemToBackpack "DemoCharge_Remote_Mag"};
 		for "_i" from 1 to 1 do { player addItemToBackpack "SatchelCharge_Remote_Mag"};

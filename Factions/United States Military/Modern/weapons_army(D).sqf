@@ -16,6 +16,7 @@ if (_mode == "SLOTGROUP") exitWith {
 	_group = switch (_loadout) do {
 		case "plt";
 		case "logi";
+		case "plt_eod";
 		case "plt_med";
 		case "tacp";
 		case "sqd_ld";

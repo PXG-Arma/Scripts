@@ -11,6 +11,7 @@ if (_variantEra == "Early") then {
 		case "plt";
 		case "plt_med"; 
 		case "logi";
+		case "plt_eod";
 		case "r_pil";
 		case "f_pil";
 		case "sqd_ld";
@@ -33,6 +34,7 @@ if (_variantEra == "Insurgency") then {
 		case "plt";
 		case "plt_med";  
 		case "logi";
+		case "plt_eod";
 		case "sqd_ld";
 		case "sf_ld";
 		case "ar_ld";
@@ -63,6 +65,7 @@ if (_variantEra == "Late") then {
 		default { player addItemToUniform "ACRE_PRC343"};
 		case "plt";
 		case "plt_med";  
+		case "plt_eod";
 		case "logi";
 		case "sqd_ld";
 		case "sf_ld";
@@ -93,7 +96,8 @@ if (_variantEra == "Modern" || _variantEra == "Future") then {
 	switch (_loadout) do {
 		default { player addItemToUniform "ACRE_PRC343"};
 		case "plt";
-		case "plt_med";  
+		case "plt_med";
+		case "plt_eod";
 		case "logi";
 		case "sqd_ld";
 		case "sf_ld";

@@ -42,6 +42,7 @@ switch (_loadout) do {
 	case "sup_aa_l";
 	case "plt";
 	case "logi";
+	case "plt_eod";
 	case "plt_med";
 	case "tacp";
 	case "sqd_ld";
@@ -157,6 +158,7 @@ if (_variantEra == "Late") then {
 		case "plt";
 		case "plt_med"; 
 		case "logi";
+		case "plt_eod";
 		case "tacp";
 		case "sqd_ld";
 		case "sf_ld";

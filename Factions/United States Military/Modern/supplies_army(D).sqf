@@ -163,6 +163,11 @@ _suppliesConfig = [
 			["kat_bloodIV_O_N_500", 6]
 		]
 	],
+	["EOD Drones",
+	[
+			["Rev_Pelter", 2]
+		]
+	],
 	["Parachutes",
 		[
 			["B_Parachute", 20],
@@ -180,7 +185,8 @@ _supplyCategories = [
 	["Weapons Teams", ["MMG Resupply", "Marksman Resupply", "LAT Resupply", "MAT Resupply", "HAT Resupply", "AA Resupply"]],
 	["Medical",       ["Basic Medical Supplies", "Advanced Medical Supplies", "Misc. Medical Supplies", "CBRN Defense Supplies"]],
 	["Engineer",      ["Explosives"]],
-	["Air Assets",    ["Parachutes"]]
+	["Air Assets",    ["Parachutes"]],
+	["Other", ["EOD Drones"]]
 ];
 
 [_suppliesConfig, _supplyCategories]

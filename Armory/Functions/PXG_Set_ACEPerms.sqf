@@ -1,4 +1,4 @@
-// Gives players ACE permisions for MEDIC and ENGINEER
+// Gives players ACE permisions for MEDIC, ENGINEER and EOD (explosives specialist)
 
 params["_side","_faction","_variant", "_loadout"]; 
 

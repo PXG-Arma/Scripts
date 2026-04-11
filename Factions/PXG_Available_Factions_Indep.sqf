@@ -1,10 +1,8 @@
+// This folder puts down the available factions in the Indep faction list, this can have spaces 
+// The last faction in the list can not have a comma.
+
 _availableFactions = [
-	"Cartel De Sinaloa",
-	"Islamic Republic of Iran",
-	"Takistan Armed Forces",
-	"Taliban",
-	"United Nations",
-	"Ukrainian Armed Forces"
+	"United Nations Peacekeepers"
 ];
 
 _availableFactions

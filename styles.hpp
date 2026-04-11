@@ -77,3 +77,9 @@ class PxgGuiRscPicture: RscPictureKeepAspect
 {
 	    colorText[] = {1,1,1,1};
 };
+
+class PxgGuiRscBrightBox: PxgGuiRscText
+{
+	colorBackground[] = {0.8, 0.8, 0.8, 0.9};
+	text = "";
+};

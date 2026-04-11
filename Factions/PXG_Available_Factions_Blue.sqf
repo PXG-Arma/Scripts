@@ -1,17 +1,11 @@
+// This folder puts down the available factions in the Blufor faction list, this can have spaces 
+// The last faction in the list can not have a comma.
+
+
 _availableFactions = [
-	"Australian Armed Forces",
-	"Belgian Armed Forces",
 	"British Armed Forces",
-	"Bundespolizei",
-	"Bundeswehr",
-	"Colombian Armed Forces",
-	"Finnish Defense Forces",
-	"Hellenic Armed Forces",
-    "Israel Defense Forces",
-	"Norwegian Armed Forces",
-	"Polish Armed Forces",
-	"Swedish Armed Forces",
-	"United States Military"
+	"United States Military",
+	"Testing Faction"
 ];
 
 _availableFactions 

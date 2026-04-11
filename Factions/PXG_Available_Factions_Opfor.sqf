@@ -1,8 +1,8 @@
+// This folder puts down the available factions in the faction Opfor list, this can have spaces 
+// The last faction in the list can not have a comma.
+
 _availableFactions = [
-		"People's Liberation Army",
-		"Revolutionary Armed Forces of Colombia",
-		"Russian Armed Forces",
-		"Venezuelan Armed Forces"
+	"Russian Armed Forces"
 ];
 
 _availableFactions

@@ -1,60 +1,232 @@
-params["_side","_faction","_variant", "_loadout"]; 
+// Welcome to the Faction Weapons file, This should be called "Weapons_FactionName"
+// In this file you assign which role gets what weapon, scope, and attachments
+// MODE "SLOTGROUP": Maps Roles to Groups, those are called SLOTGROUP.
+// MODE "GUNGROUP": Maps Guns to Groups, those are called GUNGROUP.
+// MODE "WEAPASSIGN": Maps GUNGROUPS to SLOTGROUPS or individual Roles
+// MODE "SCOPES": Maps selectable Scopes to SLOTGROUPS and then GUNGROUPS
+// MODE "SECONDARY": Maps the secondary Weapon
+// MODE "LAUNCHER": Maps the Launcher to a role
+// MODE "ATTACHMENTS": Returns standard attachments [Muzzle, Rail, Underbarrel] for a weapon
 
-// add primary weapon
-switch (_loadout) do {
-	default { player addWeapon "rhs_weap_m4a1_carryhandle";
-			  PrimaryWeaponItemArray = ["rhsusf_acc_eotech_xps3","rhsusf_acc_compm4"]; 
-		      player addPrimaryWeaponItem selectRandom PrimaryWeaponItemArray;
-			  player addPrimaryWeaponItem "rhsusf_acc_grip3";
-			  player addPrimaryWeaponItem "rhsusf_acc_anpeq15_bk_top";
+params["_side","_faction","_variant", "_loadout", ["_mode", "WEAPASSIGN"], ["_weapon", ""], ["_weaponGroup", ""], ["_roleGroup", ""]]; 
+
+// ====================================================================================
+// MODE: SLOTGROUP (Maps Roles to Groups.)
+if (_mode == "SLOTGROUP") exitWith {
+	_group = switch (_loadout) do {
+		case "plt";
+		case "logi";
+		case "plt_med";
+		case "tacp";
+		case "sqd_ld";
+		case "sup_mmg_l";
+		case "sup_hmg_l";
+		case "sup_mat_l";
+		case "sup_hat_l";
+		case "sup_aa_l";
+		case "sup_mor_l": { "Lead Elements" };
+
+		case "rcn_ld";
+		case "rcn_sni"; //X
+		case "rcn_amr"; //X
+		case "rcn_drone": { "Recon" };
+
+		case "sqd_med";
+		case "sqd_eng";
+		case "sqd_lat"; //X
+		case "sqd_brc"; //X
+		case "sqd_gre"; //X
+		case "sqd_hgre"; //X
+		case "sqd_ar"; //X
+		case "sqd_aar":{ "Squad Members" };
+
+		case "sf_ld";
+		case "sf_med";
+		case "sf_dmr";
+		case "sf_eng":{ "Special Forces" };
+
+		case "sup_mmg_g";
+		case "sup_hmg_g";
+		case "sup_mat_g";
+		case "sup_hat_g";
+		case "sup_aa_g";
+		case "sup_mor_g": { "Support Elements" };
+
+		case "ar_ld";
+		case "ar_c";
+		case "r_pil";
+		case "f_pil": { "Cavalry" };
+
+		default { "" };
 	};
-	case "plt";
-	case "sup_mmg_l";
-	case "sup_mat_l";
-	case "sup_hat_l";
-	case "sup_mor_l";
-	case "sup_aa_l";
-	case "rcn_ld";
-	case "sqd_gre";
-	case "sqd_ld":{ player addWeapon "rhs_weap_m4a1_carryhandle_m203S";
-	                PrimaryWeaponItemArray1 = ["rhsusf_acc_eotech_xps3","rhsusf_acc_compm4"];
-					player addPrimaryWeaponItem selectRandom PrimaryWeaponItemArray1;
-					player addPrimaryWeaponItem "rhsusf_acc_anpeq15side_bk";
-					player addPrimaryWeaponItem "rhsusf_acc_grip_m203_blk";
-	};
-	case "sqd_hgre": { player addWeapon "rhs_weap_m32"};
-	case "sqd_ar": {player addWeapon "rhs_weap_m249_pip_L_para";
-					player addPrimaryWeaponItem "rhsusf_acc_eotech_xps3";
-	};
-	case "rcn_dmr": {player addWeapon "rhs_weap_m14ebrri";
-					 player addPrimaryWeaponItem "rhsusf_acc_leupoldmk4";
-					 player addPrimaryWeaponItem "rhsusf_acc_harris_bipod";
-					 player addPrimaryWeaponItem "rhsusf_acc_anpeq15side_bk";
-	};
-	case "sup_mmg_g": {	player addWeapon "rhs_weap_m240G";
-						player addPrimaryWeaponItem "rhsusf_acc_elcan";
-	};
-	case "pil";
-	case "ar_ld";
-	case "ar_c": {	player addWeapon "rhs_weap_m4"};
+	_group
 };
 
-// add secondary weapon
-switch (_loadout) do {
-	default {player addWeapon "rhsusf_weap_m9"};
+// ====================================================================================
+// MODE: GUNGROUP (Weapon Groups Mapping)
+if (_mode == "GUNGROUP") exitWith {
+	_guns = switch (_loadout) do {
+		case "Assault Rifles": { ["rhs_weap_m4a1_carryhandle", "rhs_weap_m4"] };
+		case "SF Rifles": { ["rhs_weap_m4a1_carryhandle", "rhs_weap_m4"] };
+		case "Lead Rifles": { ["rhs_weap_m4a1_carryhandle_m203S","rhs_weap_m4_carryhandle_m203"] };
+		case "Machine Guns": { ["rhs_weap_m249_pip_L_para"] };
+		case "Snipers": { ["rhs_weap_m40a5_d", "rhs_weap_m14ebrri", "rhs_weap_M107"] };
+		case "Standard Snipers": { ["rhs_weap_m40a5_d"] };
+		case "Anti Material Rifles": { ["rhs_weap_M107"] };
+		case "Heavy Weapons": { ["rhs_weap_m32"] };
+		case "Cavalry Rifles": { ["rhs_weap_m4"] };
+		case "Shotguns": { ["rhs_weap_M590_8RD"] };
+		case "DMR": { ["rhs_weap_m14ebrri"] };
+
+		//Support Elements
+		case "MMG": { ["rhs_weap_m240G"] };
+		default { [] };
+	};
+	_guns
 };
 
-// add launcher
-switch (_loadout) do {
-	default {};
-	case "sqd_lat": {
-		unitBackpack player addItemCargoGlobal["rhs_weap_M136",1];
-		player addWeapon "rhs_weap_M136";
+// ====================================================================================
+// MODE: WEAPASSIGN (Selectable Weapons for the UI)
+if (_mode == "WEAPASSIGN") exitWith {
+	_list = switch (_loadout) do {
+		case "Lead Elements": { ["Lead Rifles"] };
+		case "Squad Members": { ["Assault Rifles"] };
+		case "Support Elements": { ["Assault Rifles"] };
+		case "Recon": { ["Assault Rifles"] };
+		case "Cavalry": { ["Cavalry Rifles"] };
+		case "Special Forces": { ["SF Rifles"] };
+
+		case "sqd_ar": { ["Machine Guns"] };
+		case "rcn_sni": { ["Standard Snipers"] };
+		case "rcn_amr": { ["Anti Material Rifles"] };
+		case "sqd_hgre": { ["Heavy Weapons"] };
+		case "sqd_brc": { ["Shotguns"] };
+		case "sqd_gre": { ["Lead Rifles"] };
+		case "sf_dmr": { ["DMR"] };
+
+		//Support Elements
+
+		case "sup_mmg_g": { ["MMG"] };
+		
+		default { [] };
 	};
-	case "sup_mat_g": {player addWeapon "rhs_weap_maaws";
-					   player addSecondaryWeaponItem "rhs_optic_maaws"};
-	case "sup_hat_g": {	player addWeapon "rhs_weap_fgm148";
-						player addSecondaryWeaponItem "rhs_fgm148_magazine_AT";
-						};				   
-	case "sup_aa_g": {	player addWeapon "rhs_weap_fim92"};					
+	_list
 };
+
+// ====================================================================================
+// MODE: SCOPES (Allowed Optics for each weapon AND role group)
+if (_mode == "SCOPES") exitWith {
+	// Nested Hierarchical Switch (Role Group -> Weapon Group)
+	_scopes = switch (_roleGroup) do {
+		case "Squad Members";
+		case "Lead Elements": {
+			switch (_weaponGroup) do {
+				case "Assault Rifles";
+				case "Lead Rifles": { ["rhsusf_acc_compm4", "rhsusf_acc_eotech_xps3"] };
+				case "Machine Guns": { ["rhsusf_acc_elcan"] };
+				default { [] };
+			};
+		};
+		case "Recon";
+		case "Special Forces": {
+			switch (_weaponGroup) do {
+				case "Assault Rifles";
+				case "Lead Rifles";
+				case "SF Rifles": { ["rhsusf_acc_compm4", "rhsusf_acc_eotech_xps3", "rhsusf_acc_ACOG_RMR"] };
+				case "DMR";
+				case "Snipers": { ["rhsusf_acc_ACOG_RMR", "rhsusf_acc_premier_low"] };
+				case "Machine Guns": { ["rhsusf_acc_elcan", "rhsusf_acc_eotech_xps3"] };
+				default { [] };
+			};
+		};
+		default { 
+			switch (_weaponGroup) do {
+				default { [] };
+			};
+		};
+	};
+	_scopes
+};
+
+// ====================================================================================
+// MODE: ATTACHMENTS (Standard Attachments for each weapon or group)
+if (_mode == "ATTACHMENTS") exitWith {
+	_attachments = switch (_roleGroup) do {
+		case "Special Forces";
+		case "Recon": {
+			switch (_weaponGroup) do {
+				case "SF Rifles";
+				case "Assault Rifles": { ["BWA3_muzzle_snds_Rotex_IIIC", "rhsusf_acc_anpeq15_bk_top", "rhsusf_acc_grip3"] };
+				case "Snipers": { ["", "rhsusf_acc_anpeq15side_bk", "rhsusf_acc_harris_bipod"] };
+				default { ["", "", ""] };
+			};
+		};
+		default {
+			switch (_weapon) do {
+				// --- Gun Group Standards ---
+				case "Lead Rifles": { ["", "rhsusf_acc_anpeq15side_bk", "rhsusf_acc_grip_m203_blk"] };
+				case "Assault Rifles": { ["", "rhsusf_acc_anpeq15_bk_top", "rhsusf_acc_grip3"] };
+				case "Machine Guns": { ["", "", "rhsusf_acc_saw_bipod"] };
+				case "Standard Snipers": { ["", "rhsusf_acc_harris_swivel", ""] };
+				case "Anti Material Rifles": { ["", "", ""] };
+				case "Snipers": { ["", "rhsusf_acc_anpeq15side_bk", "rhsusf_acc_harris_bipod"] };
+				case "Cavalry Rifles": { ["", "rhsusf_acc_anpeq15_bk_top", ""] };
+				case "SF Rifles": { ["BWA3_muzzle_snds_Rotex_IIIC", "rhsusf_acc_anpeq15_bk_top", "rhsusf_acc_grip3"] };
+				
+				// --- Individual Classname Overrides ---
+				case "rhs_weap_m4a1_carryhandle_m203S": { ["", "rhsusf_acc_anpeq15side_bk", "rhsusf_acc_grip_m203_blk"] };
+				case "rhs_weap_m14ebrri": { ["", "rhsusf_acc_anpeq15side_bk", "rhsusf_acc_harris_bipod"] };
+				case "rhs_weap_m40a5_d": { ["", "rhsusf_acc_harris_swivel", ""] };
+				default { ["", "", ""] };
+			};
+		};
+	};
+	_attachments
+};
+
+// ====================================================================================
+// MODE: SECONDARY (Handgun Assignment)
+if (_mode == "SECONDARY") exitWith {
+	_secondary = switch (_loadout) do {
+		// --- Individual Role Overrides ---
+//		case "logi";
+//		case "plt": {"rhs_weap_pp2000_folded"};					//UNCOMMENT FOR INDIVIDUAL ROLES
+		default {
+		// ---SLOTGROUP mapping---
+			switch (_roleGroup) do {
+//				case "Lead Elements": { "rhs_weap_pb_6p9" };	//UNCOMMENT FOR GROUPS
+				default { "rhsusf_weap_m9" };
+			};
+		};
+	};
+	_secondary
+};
+
+// ====================================================================================
+// MODE: LAUNCHER (Launcher Assignment)
+if (_mode == "LAUNCHER") exitWith {
+	_launcher = switch (_loadout) do {
+		case "sf_eng": { ["rhs_weap_M136", [""]] };
+
+		case "sqd_lat": {
+			unitBackpack player addItemCargoGlobal["rhs_weap_M136",1];
+			 ["rhs_weap_M136", [""]] 
+		};
+		//MAT
+		case "sup_mat_g": { ["rhs_weap_maaws", ["rhs_optic_maaws"]] };
+		//HAT
+		case "sup_hat_g": { ["rhs_weap_fgm148", ["rhs_fgm148_magazine_AT"]] };
+		//AA
+		case "sup_aa_g": { ["rhs_weap_fim92", [""]] };
+		//HMG
+		case "sup_hmg_l": {	["ace_csw_m3CarryTripod", [""]] };	
+		case "sup_hmg_g": {	["ace_csw_staticM2ShieldSightCarry", [""]] };
+		//Mortar
+		case "sup_mor_l": { ["ace_csw_carryMortarBaseplate", [""]] };
+		case "sup_mor_g": { ["ace_csw_staticMortarCarry", [""]] };
+
+		default { ["", [""]] };
+	};
+	_launcher
+};
+

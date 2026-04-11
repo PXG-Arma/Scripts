@@ -6,7 +6,8 @@ _availableVehicles =
 		[
 			['rhs_kamaz5350_msv', 12], 
 			['rhs_kamaz5350_ammo_msv', 4], 
-			['RHS_Ural_Fuel_MSV_01', 0], 
+			['rhs_kamaz5350_flatbed_msv', 4], 
+			['RHS_Ural_Fuel_MSV_01', 4], 
 			['rhs_uaz_open_MSV_01', 4], 
 			['RHS_UAZ_MSV_01', 4]
 		]
@@ -43,17 +44,18 @@ _availableVehicles =
 		]
 	],
 
-	['SPAA', 
+	['Anti-Air', 
 		[
 			['UK3CB_O_2S6M_Tunguska_VPV', 4], 
 			['rhs_zsu234_aa', 4]
 		]
 	],
 
-	['SPG', 
+	['Artillery', 
 		[
 			['rhs_2s3_tv', 4],
-			['RHS_BM21_MSV_01', 4]
+			['RHS_BM21_MSV_01', 4], 
+			['rhs_D30_msv', -1]
 		]
 	],
 
@@ -72,25 +74,15 @@ _availableVehicles =
 
 	['Rotary Attack', 
 		[
-			['rhs_mi28n_vvsc', 4]
+			['rhs_mi28n_vvsc', 4], 
+			['RHS_Mi8MTV3_heavy_vvsc', 8]
 		]
 	],
 
 	['Fixed Wing Attack', 
 		[
-			['RHS_Su25SM_vvsc', -1],
+			['FIR_Su25SM3', -1],
 			['rhs_mig29sm_vvsc', -1]
-		]
-	],
-
-	['Turrets', 
-		[
-			['rhs_Kornet_9M133_2_msv', -1], 
-			['RHS_AGS30_TriPod_MSV', -1], 
-			['rhs_KORD_high_MSV', -1], 
-			['rhs_KORD_MSV', -1], 
-			['rhs_SPG9M_MSV', -1], 
-			['rhs_D30_msv', -1]
 		]
 	],
 

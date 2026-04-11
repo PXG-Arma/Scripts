@@ -1,3 +1,7 @@
+// Welcome to the Faction Vehicles file, This should be called "Vehicles_FactionName"
+// In this file you assign which Vehicles appear in the Motorpool Menu.
+// When assigning Vehicles you do so by "[VehicleClassName, CargoSpace],". The last vehicle in a group should not have a "," at the end. -1 Cargo equals no Cargo option.
+
 _availableVehicles =
 
 [
@@ -43,17 +47,18 @@ _availableVehicles =
 		]
 	],
 
-	['SPG', 
+	['Artillery', 
 		[
 			['rhsusf_m109d_usarmy', 4],
-			['rhsusf_M142_usarmy_D', 4]
+			['rhsusf_M142_usarmy_D', 4], 
+			['RHS_M119_D', -1]
 		]
 	],
 
 	['Rotary Transport', 
 		[
 			['RHS_MELB_MH6M', 4], 
-			['RHS_UH60M_d', 6], 
+			['vtx_UH60M', 6], 
 			['RHS_CH_47F_10', 8], 
 			['RHS_CH_47F_10_cargo', 8]
 		]
@@ -62,7 +67,7 @@ _availableVehicles =
 	['Rotary Attack', 
 		[
 			['RHS_MELB_AH6M', 0], 
-			['RHS_UH60M_ESSS_d', 4], 
+			['vtx_MH60M_DAP_MLASS', 4], 
 			['RHS_AH64D', 0]
 		]
 	],
@@ -77,15 +82,17 @@ _availableVehicles =
 
 	['Fixed Wing Attack', 
 		[
-			['USAF_MQ9', -1],
-			['USAF_A10', -1],
-			['USAF_F22_Heavy', -1]
+			['UK3CB_BAF_MQ9_Reaper_Generic_DPMW_RM', -1],
+			['FIR_A10C_47FS_Tigress', -1],
+			['FIR_F16C', -1],
+			['FIR_F16D', -1]
 		]
 	],
 
 	['Boat', 
 		[
 			['rhsusf_mkvsoc', 12],
+			['UK3CB_BAF_RHIB_HMG', 8],
 			['B_Boat_Transport_01_F', 4],
 			['B_SDV_01_F', 4]
 		]
@@ -95,16 +102,6 @@ _availableVehicles =
 		[
 			['UK3CB_KRG_B_Quadbike', 4],
 			['rhsusf_mrzr4_d', 4]
-		]
-	],
-
-	['Turrets', 
-		[
-			['RHS_M2StaticMG_MiniTripod_D', -1], 
-			['RHS_M2StaticMG_D', -1], 
-			['RHS_TOW_TriPod_D', -1], 
-			['RHS_MK19_TriPod_D', -1], 
-			['RHS_M119_D', -1]
 		]
 	]
 ];

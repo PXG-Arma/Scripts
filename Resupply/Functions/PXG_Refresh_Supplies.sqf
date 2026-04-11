@@ -15,35 +15,60 @@ _variantArray = _variant splitString " ";
 _variantEra = _variantArray #1;
 _variantCamo = _variantArray #0;
 
-// Path for loadout list 
+// Path for supplies list 
 _suppliesScriptPath = "Scripts\Factions\";
-_suppliesScriptPath = _suppliesScriptPath + _faction + "\" + _variantEra +"\supplies_" + _variantCamo + ".sqf";
+_suppliesScriptPath = _suppliesScriptPath + _faction + "\" + _variantEra + "\supplies_" + _variantCamo + ".sqf";
 
-_suppliesArray = call compile preprocessfile _suppliesScriptPath;
+_suppliesFile = call compile preprocessfile _suppliesScriptPath;
+_suppliesConfig = _suppliesFile select 0;     // What goes in each crate
+_supplyCategories = _suppliesFile select 1;   // How they appear in the UI tree
 
-lbClear 451502;
+tvClear 451502;
 
+// Populate categories and their supply names from the faction file
 {
-    _suppliesText = _suppliesArray select _forEachIndex select 0;
-	_supplyData = lbAdd [451502, _suppliesText];
-	lbSetData [451502, _supplyData, _suppliesText];
-}	forEach _suppliesArray;
+	_categoryName = _x select 0;
+	_categorySupplies = _x select 1;
+	_catIdx = _forEachIndex;
 
-_wheelSupply = lbAdd [451502, "Spare Wheel"];
-lbSetData [451502, _wheelSupply, "Wheel"];
+	// Add category header as a parent node
+	tvAdd [451502, [], _categoryName];
 
-_trackSupply = lbAdd [451502, "Spare Track"];
-lbsetData [451502, _trackSupply, "Track"];
+	// Add each supply name as a child node, storing the name as data
+	{
+		tvAdd [451502, [_catIdx], _x];
+		tvSetData [451502, [_catIdx, _forEachIndex], _x];
+	} forEach _categorySupplies;
+
+} forEach _supplyCategories;
+
+// Add special logistics items under their own auto-generated category
+_logisticsCatIdx = count _supplyCategories;
+tvAdd [451502, [], "Logistics"];
+_logIdx = 0;
+
+tvAdd [451502, [_logisticsCatIdx], "Spare Wheel"];
+tvSetData [451502, [_logisticsCatIdx, _logIdx], "Wheel"];
+_logIdx = _logIdx + 1;
+
+tvAdd [451502, [_logisticsCatIdx], "Spare Track"];
+tvSetData [451502, [_logisticsCatIdx, _logIdx], "Track"];
+_logIdx = _logIdx + 1;
 
 _calledFromFOB = player getVariable ["PXG_IsCalledFromFOB", false];
-if(!_calledFromFOB) then
-{
-	_fobCrate = lbAdd [451502, "FOB Crate"];
-	lbSetData [451502, _fobCrate, "FOB"];
+if (!_calledFromFOB) then {
+	tvAdd [451502, [_logisticsCatIdx], "FOB Crate"];
+	tvSetData [451502, [_logisticsCatIdx, _logIdx], "FOB"];
+	_logIdx = _logIdx + 1;
 
-	_farpCrate = lbadd [451502, "FARP Crate"];
-	lbSetData [451502, _farpCrate, "FARP"];
+	tvAdd [451502, [_logisticsCatIdx], "FARP Crate"];
+	tvSetData [451502, [_logisticsCatIdx, _logIdx], "FARP"];
+	_logIdx = _logIdx + 1;
+
+	tvAdd [451502, [_logisticsCatIdx], "Slingloadable Crate (8)"];
+	tvSetData [451502, [_logisticsCatIdx, _logIdx], "Slingloadable Crate (8)"];
 };
 
-_suppliesMemory = player getVariable ["PXG_Resupply_Memory_Supply", -1];
-if (_suppliesMemory != -1) then {lbSetCurSel [451502, _suppliesMemory];};
+// Restore memory (stored as [catIdx, supplyIdx] array)
+_suppliesMemory = player getVariable ["PXG_Resupply_Memory_Supply", []];
+if (count _suppliesMemory > 0) then { tvSetCurSel [451502, _suppliesMemory]; };

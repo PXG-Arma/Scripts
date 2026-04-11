@@ -23,7 +23,7 @@ switch (_loadout) do {
 		player setVariable ["ace_medical_medicclass",0,true];
 		player setVariable ["ACE_IsEngineer",1,true]
 		};
-	case "exo_med": { 
+	case "sf_med": { 
 		player setVariable ["ace_medical_medicclass",1,true];
 		player setVariable ["ACE_IsEngineer",0,true]
 		};
@@ -35,8 +35,13 @@ switch (_loadout) do {
 		player setVariable ["ACE_IsEngineer",1,true];
 		player setVariable ["ace_medical_medicclass",0,true]
 		};
-	case "pil": { 
+	case "r_pil": { 
 		player setVariable ["ACE_IsEngineer",1,true];
 		player setVariable ["ace_medical_medicclass",0,true]
 		};
+	case "f_pil": { 
+		player setVariable ["ACE_IsEngineer",1,true];
+		player setVariable ["ace_medical_medicclass",0,true]
+		};	
+		
 };

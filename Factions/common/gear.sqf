@@ -68,9 +68,19 @@ switch (_loadout) do {
 // add Logi, EOD, Sapper, Specialist equipement
 switch (_loadout) do {
 	default {};
-	case "logi": {player addItemToBackpack "ToolKit"};
-	case "plt_eod";
+	case "logi": {player addItemToBackpack "ToolKit"
+	};
 	case "sqd_eng": {
+		for "_i" from 1 to 4 do { player addItemToBackpack "DemoCharge_Remote_Mag"};
+		for "_i" from 1 to 1 do { player addItemToBackpack "SatchelCharge_Remote_Mag"};
+		player addWeapon "ACE_VMM3";
+		player addItemToBackpack "ACE_Clacker";
+		player addItemToBackpack "ACE_wirecutter";
+		player addItemToBackpack "ACE_DefusalKit";
+		player addItemToUniform "TOMH_Stencil_Eod";
+		for "_i" from 1 to 2 do { player addItemToBackpack "iedd_item_notebook"};
+	};
+	case "plt_eod": {
 		for "_i" from 1 to 4 do { player addItemToBackpack "DemoCharge_Remote_Mag"};
 		for "_i" from 1 to 1 do { player addItemToBackpack "SatchelCharge_Remote_Mag"};
 		player addWeapon "ACE_VMM3";
@@ -84,7 +94,7 @@ switch (_loadout) do {
 		for "_i" from 1 to 4 do { player addItemToBackpack "DemoCharge_Remote_Mag"};
 		for "_i" from 1 to 1 do { player addItemToBackpack "SatchelCharge_Remote_Mag"};
 		player addWeapon "ACE_VMM3";
-		player addItemToBackpack "ACE_M26_Clacker";
+		player addItemToBackpack "ACE_Clacker";
 		player addItemToBackpack "ACE_wirecutter";
 		player addItemToBackpack "ACE_DefusalKit";
 		player addItemToUniform "TOMH_Stencil_Eod";

@@ -20,91 +20,106 @@
 _suppliesConfig = [
 	["Primary Resupply",
 		[
-			["rhs_mag_30Rnd_556x45_M855_Stanag", 40],
-			["rhs_mag_30Rnd_556x45_M855_Stanag_Tracer_Red", 40],
-			["rhsusf_mag_15Rnd_9x19_FMJ", 40]
+			["rhs_mag_30Rnd_556x45_M855_Stanag",40],
+			["rhs_mag_30Rnd_556x45_M855_Stanag_Tracer_Red",40],
+			["rhsusf_8Rnd_00Buck",40],
+			["rhsusf_8Rnd_Slug",40],
+			["rhsusf_mag_15Rnd_9x19_FMJ",40]
 		]
 	],
 	["AR Resupply",
 		[
-			["rhsusf_200rnd_556x45_mixed_box", 20]
-		]
-	],
-	["MMG Resupply",
-		[
-			["rhsusf_100Rnd_762x51_m61_ap", 20],
-			["rhsusf_100Rnd_762x51_m62_tracer", 20]
+			["rhsusf_200rnd_556x45_mixed_box",20]
 		]
 	],
 	["Marksman Resupply",
 		[
-			["rhsusf_20Rnd_762x51_m62_Mag", 20],
-			["rhsusf_20Rnd_762x51_m993_Mag", 20],
-			["rhsusf_10Rnd_762x51_m62_Mag", 20],
-			["ACE_10Rnd_127x99_AMAX_Mag", 20],
-			["ACE_10Rnd_127x99_API_Mag", 20]
+			["rhsusf_20Rnd_762x51_m62_Mag",20],
+			["rhsusf_20Rnd_762x51_m993_Mag",20],
+			["rhsusf_10Rnd_762x51_m62_Mag",20],
+			["rhsusf_20Rnd_762x51_m993_Mag",20],
+			["ACE_10Rnd_127x99_AMAX_Mag",20],
+			["ACE_10Rnd_127x99_API_Mag",20]
+		]
+	],
+	["MMG Resupply",
+		[
+			["rhsusf_100Rnd_762x51_m61_ap",20],
+			["rhsusf_100Rnd_762x51_m62_tracer",20]
+		]
+	],
+	["HMG Resupply",
+		[
+			["ace_csw_100Rnd_127x99_mag_red",20]
 		]
 	],
 	["LAT Resupply",
 		[
-			["rhs_weap_M136", 8]
+			["rhs_weap_M136",8]
 		]
 	],
 	["MAT Resupply",
 		[
-			["rhs_mag_maaws_HEAT", 8],
-			["rhs_mag_maaws_HEDP", 8]
+			["rhs_mag_maaws_HEAT",8],
+			["rhs_mag_maaws_HEDP",8]
 		]
 	],
 	["HAT Resupply",
 		[
-			["rhs_fgm148_magazine_AT", 8]
+			["rhs_fgm148_magazine_AT",8]
 		]
 	],
 	["AA Resupply",
 		[
-			["rhs_fim92_mag", 8]
+			["rhs_fim92_mag",8]
+		]
+	],
+	["Mortar Resupply",
+		[
+			["ACE_1Rnd_82mm_Mo_HE",20],
+			["ACE_1Rnd_82mm_Mo_Illum",20],
+			["ACE_1Rnd_82mm_Mo_Smoke",20]
 		]
 	],
 	["Grenades",
 		[
-			["SmokeShell", 20],
-			["SmokeShellRed", 10],
-			["SmokeShellYellow", 10],
-			["SmokeShellBlue", 10],
-			["HandGrenade", 20]
+			["SmokeShell",20],
+			["SmokeShellRed",10],
+			["SmokeShellYellow",10],
+			["SmokeShellBlue",10],
+			["HandGrenade",20]
 		]
 	],
 	["40mm Grenades",
 		[
-			["1Rnd_HE_Grenade_Shell", 30],
-			["1Rnd_Smoke_Grenade_Shell", 20],
-			["1Rnd_SmokeRed_Grenade_Shell", 10],
-			["1Rnd_SmokeYellow_Grenade_Shell", 10],
-			["1Rnd_SmokeBlue_Grenade_Shell", 10]
+			["1Rnd_HE_Grenade_Shell",30],
+			["1Rnd_Smoke_Grenade_Shell",20],
+			["1Rnd_SmokeRed_Grenade_Shell",10],
+			["1Rnd_SmokeYellow_Grenade_Shell",10],
+			["1Rnd_SmokeBlue_Grenade_Shell",10]
 		]
 	],
 	["40mm Heavy",
 		[
-			["rhsusf_mag_6Rnd_M441_HE", 10],
-			["rhsusf_mag_6Rnd_M714_white", 4],
-			["rhsusf_mag_6Rnd_M713_red", 4]
+			["rhsusf_mag_6Rnd_M441_HE",10],
+			["rhsusf_mag_6Rnd_M714_white",4],
+			["rhsusf_mag_6Rnd_M713_red",4]
 		]
 	],
 	["Flares",
 		[
-			["UGL_FlareWhite_F", 30],
-			["UGL_FlareCIR_F", 20]
+			["UGL_FlareWhite_F",30],
+			["UGL_FlareCIR_F",20]
 		]
-	],
+	],		
 	["Explosives",
 		[
-			["ACE_Clacker", 2],
-			["ACE_M26_Clacker", 2],
-			["DemoCharge_Remote_Mag", 10],
-			["SatchelCharge_Remote_Mag", 10],
-			["ATMine_Range_Mag", 15],
-			["SLAMDirectionalMine_Wire_Mag", 15]
+			["ACE_Clacker",2],
+			["ACE_M26_Clacker",2],
+			["DemoCharge_Remote_Mag",10],
+			["SatchelCharge_Remote_Mag",10],
+			["ATMine_Range_Mag",15],
+			["SLAMDirectionalMine_Wire_Mag",15]
 		]
 	],
 	["Basic Medical Supplies",
@@ -163,6 +178,11 @@ _suppliesConfig = [
 			["kat_bloodIV_O_N_500", 6]
 		]
 	],
+	["Recon Drones",
+	[
+			["Rev_darter", 2]
+		]
+	],
 	["EOD Drones",
 	[
 			["Rev_Pelter", 2]
@@ -181,12 +201,14 @@ _suppliesConfig = [
 // ===========================================================================================
 
 _supplyCategories = [
-	["Squad",         ["Primary Resupply", "AR Resupply", "Grenades", "40mm Grenades", "40mm Heavy", "Flares", "Squad Resupply"]],
-	["Weapons Teams", ["MMG Resupply", "Marksman Resupply", "LAT Resupply", "MAT Resupply", "HAT Resupply", "AA Resupply"]],
-	["Medical",       ["Basic Medical Supplies", "Advanced Medical Supplies", "Misc. Medical Supplies", "CBRN Defense Supplies"]],
-	["Engineer",      ["Explosives"]],
-	["Air Assets",    ["Parachutes"]],
-	["Other", ["EOD Drones"]]
+	["Ammo",              ["Primary Resupply", "AR Resupply", "Marksman Resupply", "MMG Resupply", "HMG Resupply"]],
+	["Anti-Tank",         ["LAT Resupply", "MAT Resupply", "HAT Resupply"]],
+	["Anti-Air",          ["AA Resupply"]],
+	["Fire Support",      ["Mortar Resupply"]],
+	["Grenades & 40mm",   ["Grenades", "40mm Grenades", "40mm Heavy", "Flares"]],
+	["Medical",           ["Basic Medical Supplies", "Advanced Medical Supplies", "Misc. Medical Supplies"]],
+	["Explosives",        ["Explosives"]],
+	["Support & Utility", ["Recon Drones", "EOD Drones", "Parachutes", "CBRN Defense Supplies"]]
 ];
 
 [_suppliesConfig, _supplyCategories]

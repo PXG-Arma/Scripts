@@ -100,6 +100,9 @@ switch (_loadout) do {
 		for "_i" from 1 to 3 do { player addItemToBackpack "rhsusf_100Rnd_762x51_m61_ap"};
 		for "_i" from 1 to 2 do { player addItemToBackpack "rhsusf_100Rnd_762x51_m62_tracer"};
 	};
+	case "sup_hmg_l": {
+		for "_i" from 1 to 2 do { player addItemToBackpack "ace_csw_100Rnd_127x99_mag_red"};
+	};
 	case "sup_mat_l": {
 		for "_i" from 1 to 3 do { player addItemToBackpack "rhs_mag_maaws_HEDP"};
 	};
@@ -109,11 +112,18 @@ switch (_loadout) do {
 	case "sup_aa_l": {
 		for "_i" from 1 to 2 do { player addItemToBackpack "rhs_fim92_mag"};
 	};
+	case "sup_mor_l": {
+		for "_i" from 1 to 4 do { player addItemToBackpack "ACE_1Rnd_82mm_Mo_HE"};
+		for "_i" from 1 to 1 do { player addItemToBackpack "ACE_1Rnd_82mm_Mo_Smoke"};
+	};
 };
 
 // add other ammo 
 switch (_loadout) do {
 	default {};
+	case "sup_hmg_g": {
+		for "_i" from 1 to 3 do { player addItemToBackpack "ace_csw_100Rnd_127x99_mag_red"};
+	};
 	case "sup_mat_g": {
 		for "_i" from 1 to 3 do { player addItemToBackpack "rhs_mag_maaws_HEAT"};
 	};
@@ -122,6 +132,10 @@ switch (_loadout) do {
 	};
 	case "sup_aa_g": {
 		for "_i" from 1 to 2 do { player addItemToBackpack "rhs_fim92_mag"};
+	};
+	case "sup_mor_g": {
+		for "_i" from 1 to 5 do { player addItemToBackpack "ACE_1Rnd_82mm_Mo_HE"};
+		for "_i" from 1 to 1 do { player addItemToBackpack "ACE_1Rnd_82mm_Mo_Smoke"};
 	};
 };
 

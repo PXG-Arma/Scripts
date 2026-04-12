@@ -27,10 +27,10 @@ if (_mode == "SLOTGROUP") exitWith {
 		case "sup_aa_l";
 		case "sup_mor_l": { "Lead Elements" };
 
-		case "rcn_ld";
+		case "rcn_ld"; //X
 		case "rcn_sni"; //X
 		case "rcn_amr"; //X
-		case "rcn_drone": { "Recon" };
+		case "rcn_drone": { "Recon" }; //X
 
 		case "sqd_med";
 		case "sqd_eng";
@@ -41,9 +41,9 @@ if (_mode == "SLOTGROUP") exitWith {
 		case "sqd_ar"; //X
 		case "sqd_aar":{ "Squad Members" };
 
-		case "sf_ld";
-		case "sf_med";
-		case "sf_dmr";
+		case "sf_ld"; //X
+		case "sf_med"; //X
+		case "sf_dmr"; //X
 		case "sf_eng":{ "Special Forces" };
 
 		case "sup_mmg_g";
@@ -96,12 +96,16 @@ if (_mode == "WEAPASSIGN") exitWith {
 		case "Recon": { ["Assault Rifles"] };
 		case "Cavalry": { ["Cavalry Rifles"] };
 		case "Special Forces": { ["SF Rifles"] };
-
+        
+		case "sf_med";
 		case "sqd_ar": { ["Machine Guns"] };
 		case "rcn_sni": { ["Standard Snipers"] };
 		case "rcn_amr": { ["Anti Material Rifles"] };
 		case "sqd_hgre": { ["Heavy Weapons"] };
 		case "sqd_brc": { ["Shotguns"] };
+		case "rcn_ld";
+		case "rcn_drone";
+		case "sf_ld";
 		case "sqd_gre": { ["Lead Rifles"] };
 		case "sf_dmr": { ["DMR"] };
 
@@ -119,12 +123,14 @@ if (_mode == "WEAPASSIGN") exitWith {
 if (_mode == "SCOPES") exitWith {
 	// Nested Hierarchical Switch (Role Group -> Weapon Group)
 	_scopes = switch (_roleGroup) do {
+		case "Support Elements";
 		case "Squad Members";
 		case "Lead Elements": {
 			switch (_weaponGroup) do {
 				case "Assault Rifles";
-				case "Lead Rifles": { ["rhsusf_acc_compm4", "rhsusf_acc_eotech_xps3"] };
-				case "Machine Guns": { ["rhsusf_acc_elcan"] };
+				case "Lead Rifles": { ["rhsusf_acc_ACOG", "rhsusf_acc_compm4", "rhsusf_acc_eotech_552", "rhsusf_acc_eotech_xps3"] };
+				case "Machine Guns": { ["rhsusf_acc_elcan", "rhsusf_acc_eotech_xps3"] };
+				case "MMG": { ["rhsusf_acc_elcan", "rhsusf_acc_ACOG_MDO", "rhsusf_acc_eotech_xps3"] };
 				default { [] };
 			};
 		};
@@ -133,7 +139,7 @@ if (_mode == "SCOPES") exitWith {
 			switch (_weaponGroup) do {
 				case "Assault Rifles";
 				case "Lead Rifles";
-				case "SF Rifles": { ["rhsusf_acc_compm4", "rhsusf_acc_eotech_xps3", "rhsusf_acc_ACOG_RMR"] };
+				case "SF Rifles": { ["rhsusf_acc_ACOG_RMR", "rhsusf_acc_compm4", "rhsusf_acc_eotech_552", "rhsusf_acc_eotech_xps3"] };
 				case "DMR";
 				case "Snipers": { ["rhsusf_acc_ACOG_RMR", "rhsusf_acc_premier_low"] };
 				case "Machine Guns": { ["rhsusf_acc_elcan", "rhsusf_acc_eotech_xps3"] };

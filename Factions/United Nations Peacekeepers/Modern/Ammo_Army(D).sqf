@@ -24,42 +24,39 @@ params["_side","_faction","_variant", "_loadout"];
 
 switch (_loadout) do {
 	default {
-		for "_i" from 1 to 4 do { player addItemToVest "rhs_mag_30Rnd_556x45_M855_Stanag"};
-		for "_i" from 1 to 4 do { player addItemToVest "rhs_mag_30Rnd_556x45_M855_Stanag_Tracer_Red"};
-	};
-	case "sqd_hgre": {
-		for "_i" from 1 to 2 do { player addItemToVest "rhsusf_mag_6Rnd_M441_HE"};
-		for "_i" from 1 to 4 do { player addItemToBackpack "rhsusf_mag_6Rnd_M441_HE"};
-		for "_i" from 1 to 1 do { player addItemToBackpack "rhsusf_mag_6Rnd_M713_red"};
-		for "_i" from 1 to 1 do { player addItemToBackpack "rhsusf_mag_6Rnd_M714_white"}
+		for "_i" from 1 to 2 do { player addItemToVest "rhs_30Rnd_762x39mm"};
+		for "_i" from 1 to 2 do { player addItemToBackpack "rhs_30Rnd_762x39mm"};
+		for "_i" from 1 to 4 do { player addItemToBackpack "rhs_30Rnd_762x39mm_tracer"};
 	};
 	case "sqd_ar": {
-		for "_i" from 1 to 2 do { player addItemToVest "rhsusf_200Rnd_556x45_M855_soft_pouch_coyote"};
-		for "_i" from 1 to 3 do { player addItemToBackpack "rhsusf_200Rnd_556x45_M855_mixed_soft_pouch_coyote"};
+		for "_i" from 1 to 1 do { player addItemToVest "rhs_75Rnd_762x39mm"};
+		for "_i" from 1 to 2 do { player addItemToBackpack "rhs_75Rnd_762x39mm"};
+		for "_i" from 1 to 3 do { player addItemToBackpack "rhs_75Rnd_762x39mm_tracer"};
 	};
 	case "sqd_brc": {
 		for "_i" from 1 to 8 do { player addItemToVest "rhsusf_8Rnd_00Buck"};
 		for "_i" from 1 to 12 do { player addItemToBackpack "rhsusf_8Rnd_Slug"};
 	};
 	case "sf_dmr": {
-		for "_i" from 1 to 5 do { player addItemToVest "rhsusf_20Rnd_762x51_m993_Mag"};
-		for "_i" from 1 to 5 do { player addItemToBackpack "rhsusf_20Rnd_762x51_m62_Mag"};
+		for "_i" from 1 to 10 do { player addItemToVest "UK3CB_SVD_10rnd_762x54"};
+		for "_i" from 1 to 10 do { player addItemToBackpack "UK3CB_SVD_10rnd_762x54_GT"};
 	};
 	case "sf_med": {
-		for "_i" from 1 to 2 do { player addItemToVest "rhsusf_200Rnd_556x45_M855_soft_pouch_coyote"};
-		for "_i" from 1 to 2 do { player addItemToBackpack "rhsusf_200Rnd_556x45_M855_mixed_soft_pouch_coyote"};
+		for "_i" from 1 to 2 do { player addItemToVest "rhs_75Rnd_762x39mm"};
+		for "_i" from 1 to 3 do { player addItemToBackpack "rhs_75Rnd_762x39mm_tracer"};
 	};
 	case "rcn_sni": {
-		for "_i" from 1 to 10 do { player addItemToVest "rhsusf_10Rnd_762x51_m993_Mag"};
-		for "_i" from 1 to 10 do { player addItemToBackpack "rhsusf_10Rnd_762x51_m62_Mag"};
+		for "_i" from 1 to 10 do { player addItemToVest "rhs_5Rnd_338lapua_t5000"};
+		for "_i" from 1 to 15 do { player addItemToBackpack "rhs_5Rnd_338lapua_t5000"};
 	};
 	case "rcn_amr": {
 		for "_i" from 1 to 3 do { player addItemToVest "ACE_10Rnd_127x99_AMAX_Mag"};
 		for "_i" from 1 to 5 do { player addItemToBackpack "ACE_10Rnd_127x99_API_Mag"};
 	};
 	case "sup_mmg_g": {
-		for "_i" from 1 to 3 do { player addItemToBackpack "rhsusf_100Rnd_762x51_m61_ap"};
-		for "_i" from 1 to 3 do { player addItemToBackpack "rhsusf_100Rnd_762x51_m62_tracer"};
+		for "_i" from 1 to 1 do { player addItemToVest "rhs_100Rnd_762x54mmR_green"};
+		for "_i" from 1 to 2 do { player addItemToBackpack "rhs_100Rnd_762x54mmR_green"};
+		for "_i" from 1 to 2 do { player addItemToBackpack "rhs_100Rnd_762x54mmR_7N13"};
 	};
 	case "sup_hmg_l";
 	case "sup_hmg_g";
@@ -67,25 +64,21 @@ switch (_loadout) do {
 	case "sup_hat_g";
 	case "sup_mor_l";
 	case "sup_mor_g": {
-		for "_i" from 1 to 4 do { player addItemToVest "rhs_mag_30Rnd_556x45_M855_Stanag"};
-		for "_i" from 1 to 4 do { player addItemToVest "rhs_mag_30Rnd_556x45_M855_Stanag_Tracer_Red"};
+		for "_i" from 1 to 2 do { player addItemToVest "rhs_30Rnd_762x39mm"};
+		for "_i" from 1 to 2 do { player addItemToVest "rhs_30Rnd_762x39mm_tracer"};
 	};
 	case "ar_ld";
 	case "ar_c";
 	case "f_pil";
 	case "r_pil": {
-		for "_i" from 1 to 4 do { player addItemToVest "rhs_mag_30Rnd_556x45_M855_Stanag"};
+		for "_i" from 1 to 4 do { player addItemToVest "rhs_30Rnd_762x39mm"};
 	};
 	case "f_pil"
 };
 
 // add secondary ammo
 switch (_loadout) do {
-	default {for "_i" from 1 to 2 do { player addItemToUniform "rhsusf_mag_15Rnd_9x19_FMJ"};};
-	case "sqd_hgre": {
-		for "_i" from 1 to 4 do { player addItemToVest "rhsusf_mag_15Rnd_9x19_FMJ"};
-		for "_i" from 1 to 2 do { player addItemToUniform "rhsusf_mag_15Rnd_9x19_FMJ"};
-	};
+	default {for "_i" from 1 to 2 do { player addItemToUniform "UK3CB_BHP_9_13Rnd"};};
 	case "sqd_eng";
 	case "sf_eng": {};
 };
@@ -94,34 +87,52 @@ switch (_loadout) do {
 switch (_loadout) do {
 	default {};
 	case "sqd_aar": {
-		for "_i" from 1 to 4 do { player addItemToBackpack "rhsusf_200rnd_556x45_mixed_box"};
+		for "_i" from 1 to 4 do { player addItemToBackpack "rhs_75Rnd_762x39mm"};
 	};
 	case "sup_mmg_l": {
-		for "_i" from 1 to 3 do { player addItemToBackpack "rhsusf_100Rnd_762x51_m61_ap"};
-		for "_i" from 1 to 2 do { player addItemToBackpack "rhsusf_100Rnd_762x51_m62_tracer"};
+		for "_i" from 1 to 2 do { player addItemToBackpack "rhs_100Rnd_762x54mmR_green"};
+	};
+	case "sup_hmg_l": {
+		for "_i" from 1 to 4 do { player addItemToBackpack "ace_csw_50Rnd_127x108_mag"};
 	};
 	case "sup_mat_l": {
-		for "_i" from 1 to 3 do { player addItemToBackpack "rhs_mag_maaws_HEDP"};
+		for "_i" from 1 to 3 do { player addItemToBackpack "rhs_rpg7_PG7V_mag"};
+		for "_i" from 1 to 3 do { player addItemToBackpack "rhs_rpg7_OG7V_mag"};
 	};
 	case "sup_hat_l": {
-		for "_i" from 1 to 1 do { player addItemToBackpack "rhs_fgm148_magazine_AT"};
+		for "_i" from 1 to 2 do { player addItemToBackpack "ace_compat_rhs_afrf3_mag_9m1331"};
+		for "_i" from 1 to 2 do { player addItemToBackpack "ace_compat_rhs_afrf3_mag_9m133f"};
 	};
 	case "sup_aa_l": {
-		for "_i" from 1 to 2 do { player addItemToBackpack "rhs_fim92_mag"};
+		for "_i" from 1 to 2 do { player addItemToBackpack "rhs_mag_9k38_rocket"};
+	};
+	case "sup_mor_l": {
+		for "_i" from 1 to 4 do { player addItemToBackpack "ACE_1Rnd_82mm_Mo_HE"};
+		for "_i" from 1 to 1 do { player addItemToBackpack "ACE_1Rnd_82mm_Mo_Smoke"};
 	};
 };
 
 // add other ammo 
 switch (_loadout) do {
 	default {};
+	case "sup_hmg_g": {
+		for "_i" from 1 to 6 do { player addItemToBackpack "ace_csw_50Rnd_127x108_mag"};
+	};
 	case "sup_mat_g": {
-		for "_i" from 1 to 3 do { player addItemToBackpack "rhs_mag_maaws_HEAT"};
+		for "_i" from 1 to 3 do { player addItemToBackpack "rhs_rpg7_PG7V_mag"};
+		for "_i" from 1 to 2 do { player addItemToBackpack "rhs_rpg7_OG7V_mag"};
+		for "_i" from 1 to 2 do { player addItemToBackpack "rhs_rpg7_PG7VL_mag"};
 	};
 	case "sup_hat_g": {
-		for "_i" from 1 to 1 do { player addItemToBackpack "rhs_fgm148_magazine_AT"};
+		for "_i" from 1 to 3 do { player addItemToBackpack "ace_compat_rhs_afrf3_mag_9m1331"};
+		for "_i" from 1 to 2 do { player addItemToBackpack "ace_compat_rhs_afrf3_mag_9m133f"};
 	};
 	case "sup_aa_g": {
-		for "_i" from 1 to 2 do { player addItemToBackpack "rhs_fim92_mag"};
+		for "_i" from 1 to 2 do { player addItemToBackpack "rhs_mag_9k38_rocket"};
+	};
+	case "sup_mor_g": {
+		for "_i" from 1 to 5 do { player addItemToBackpack "ACE_1Rnd_82mm_Mo_HE"};
+		for "_i" from 1 to 1 do { player addItemToBackpack "ACE_1Rnd_82mm_Mo_Smoke"};
 	};
 };
 
@@ -131,7 +142,7 @@ switch (_loadout) do {
 		for "_i" from 1 to 2 do { player addItemToVest "SmokeShell"};
 		for "_i" from 1 to 1 do { player addItemToVest "SmokeShellBlue"};
 		for "_i" from 1 to 1 do { player addItemToVest "SmokeShellRed"};
-		for "_i" from 1 to 2 do { player addItemToVest "HandGrenade"};
+		for "_i" from 1 to 2 do { player addItemToVest "rhs_mag_rgd5"};
 	};
 	case "sqd_ld";
 	case "rcn_ld";
@@ -141,7 +152,7 @@ switch (_loadout) do {
 		for "_i" from 1 to 2 do { player addItemToVest "SmokeShell"};
 		for "_i" from 1 to 1 do { player addItemToVest "SmokeShellBlue"};
 		for "_i" from 1 to 1 do { player addItemToVest "SmokeShellRed"};
-		for "_i" from 1 to 2 do { player addItemToVest "HandGrenade"};
+		for "_i" from 1 to 2 do { player addItemToVest "rhs_mag_rgd5"};
 	};
 };
 
@@ -155,32 +166,24 @@ switch (_loadout) do {
 	case "sup_mmg_l";
 	case "sup_hmg_l";
 	case "sup_mat_l";
+	case "sup_hat_l";
 	case "sup_mor_l";
 	case "sup_aa_l";
 	case "plt": {
-		for "_i" from 1 to 5 do {player addItemToBackpack "1Rnd_HE_Grenade_shell"}; 
-		for "_i" from 1 to 2 do {player addItemToBackpack "1Rnd_Smoke_Grenade_shell"};
-		for "_i" from 1 to 2 do {player addItemToBackpack "1Rnd_SmokeRed_Grenade_shell"};
-		for "_i" from 1 to 2 do {player addItemToBackpack "1Rnd_SmokeBlue_Grenade_shell"};
-	};
-
-	case "sup_hat_l": {
-		for "_i" from 1 to 2 do {player addItemToBackpack "1Rnd_HE_Grenade_shell"}; 
-		for "_i" from 1 to 2 do {player addItemToBackpack "1Rnd_Smoke_Grenade_shell"};
+		for "_i" from 1 to 5 do {player addItemToBackpack "rhs_VOG25"}; 
+		for "_i" from 1 to 2 do {player addItemToBackpack "rhs_GRD40_White"};
+		for "_i" from 1 to 2 do {player addItemToBackpack "rhs_GRD40_Red"};
 	};
 
 	case "rcn_drone": {
-		for "_i" from 1 to 5 do {player addItemToBackpack "1Rnd_HE_Grenade_shell"}; 
-		for "_i" from 1 to 2 do {player addItemToBackpack "1Rnd_Smoke_Grenade_shell"};
-		for "_i" from 1 to 2 do {player addItemToBackpack "1Rnd_SmokeRed_Grenade_shell"};
-		for "_i" from 1 to 2 do {player addItemToBackpack "1Rnd_SmokeBlue_Grenade_shell"};
-		for "_i" from 1 to 8 do {player addItemToBackpack "ACE_HuntIR_M203"};
+		for "_i" from 1 to 5 do {player addItemToBackpack "rhs_VOG25"}; 
+		for "_i" from 1 to 2 do {player addItemToBackpack "rhs_GRD40_White"};
+		for "_i" from 1 to 2 do {player addItemToBackpack "rhs_GRD40_Red"};
 	};
 	
 	case "sqd_gre": {
-		for "_i" from 1 to 10 do {player addItemToBackpack "1Rnd_HE_Grenade_shell"};
-		for "_i" from 1 to 2 do {player addItemToBackpack "1Rnd_Smoke_Grenade_shell"};
-		for "_i" from 1 to 2 do {player addItemToBackpack "1Rnd_SmokeRed_Grenade_shell"};
-		for "_i" from 1 to 2 do {player addItemToBackpack "1Rnd_SmokeBlue_Grenade_shell"};
+		for "_i" from 1 to 10 do {player addItemToBackpack "rhs_VOG25"};
+		for "_i" from 1 to 2 do {player addItemToBackpack "rhs_GRD40_White"};
+		for "_i" from 1 to 2 do {player addItemToBackpack "rhs_GRD40_Red"};
 	};
 };

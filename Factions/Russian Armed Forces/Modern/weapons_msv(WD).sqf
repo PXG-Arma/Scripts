@@ -15,9 +15,6 @@ params["_side","_faction","_variant", "_loadout", ["_mode", "WEAPASSIGN"], ["_we
 if (_mode == "SLOTGROUP") exitWith {
 	_group = switch (_loadout) do {
 		case "plt";
-		case "logi";
-		case "plt_eod";
-		case "plt_med";
 		case "tacp";
 		case "sqd_ld";
 		case "sup_mmg_l";
@@ -32,6 +29,9 @@ if (_mode == "SLOTGROUP") exitWith {
 		case "rcn_amr"; //X
 		case "rcn_drone": { "Recon" }; //X
 
+		case "logi";
+		case "plt_eod";
+		case "plt_med";
 		case "sqd_med";
 		case "sqd_eng";
 		case "sqd_lat"; //X
@@ -128,6 +128,7 @@ if (_mode == "SCOPES") exitWith {
 				case "Assault Rifles";
 				case "Lead Rifles": { ["rhs_acc_pkas", "rhs_acc_ekp1"] };
 				case "Machine Guns": { ["rhs_acc_pkas", "rhs_acc_ekp1"] };
+				case "Shotguns": { ["rhs_acc_ekp1"] };
 				case "MMG": { ["rhs_acc_1p78"] };
 				default { [] };
 			};
@@ -216,7 +217,7 @@ if (_mode == "LAUNCHER") exitWith {
 		//HAT
 		case "sup_hat_g": { ["ace_compat_rhs_afrf3_kornet_carry", [""]] };
 		//AA
-		case "sup_aa_g": { ["rhs_weap_fim92", [""]] };
+		case "sup_aa_g": { ["rhs_weap_igla", [""]] };
 		//HMG
 		case "sup_hmg_l": {	["ace_csw_kordCarryTripod", [""]] };	
 		case "sup_hmg_g": {	["ace_compat_rhs_afrf3_kord_carry", [""]] };

@@ -15,9 +15,6 @@ params["_side","_faction","_variant", "_loadout", ["_mode", "WEAPASSIGN"], ["_we
 if (_mode == "SLOTGROUP") exitWith {
 	_group = switch (_loadout) do {
 		case "plt";
-		case "logi";
-		case "plt_eod";
-		case "plt_med";
 		case "tacp";
 		case "sqd_ld";
 		case "sup_mmg_l";
@@ -32,6 +29,9 @@ if (_mode == "SLOTGROUP") exitWith {
 		case "rcn_amr"; //X
 		case "rcn_drone": { "Recon" }; //X
 
+		case "logi";
+		case "plt_eod";
+		case "plt_med";
 		case "sqd_med";
 		case "sqd_eng";
 		case "sqd_lat"; //X

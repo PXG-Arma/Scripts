@@ -1,56 +1,86 @@
 // Welcome to the Faction Supplies file, This should be called "Supplies_FactionName"
-// In this file you assign which resupply appears in the Resupply Menu.
-// When assigning resupply you do so by "[AmmoType, Quantity],". The last ammo in a group should not have a "," at the end. Crate types get changed by the -"name" Resupply, try not to deviate from the ones below
-// FOBs, FARPs, Wheels, Tracks and Loadable Crates get added automatically
+//
+// This file has two sections:
+//
+// SECTION 1 - _suppliesConfig
+//   Define each supply package: its name and what items go in the crate.
+//   Format: ["Supply Name", [ ["classname", quantity], ... ]]
+//
+// SECTION 2 - _supplyCategories
+//   Sort those supply names into UI categories for the resupply tree.
+//   Format: ["Category Name", ["Supply Name 1", "Supply Name 2", ...]]
+//   A supply name can appear under multiple categories without duplicating its contents.
+//
+// FOBs, FARPs, Wheels, Tracks and Slingload Crates are added automatically by the engine.
 
-_resupplyAvailable = [
+// ===========================================================================================
+// SECTION 1: Supply Definitions
+// ===========================================================================================
+
+_suppliesConfig = [
 	["Primary Resupply",
 		[
-			["rhs_mag_30Rnd_556x45_M855_Stanag",40],
-			["rhs_mag_30Rnd_556x45_M855_Stanag_Tracer_Red",40],
-			["rhsusf_mag_15Rnd_9x19_FMJ",40]
+			["rhs_30Rnd_762x39mm",40],
+			["rhs_30Rnd_762x39mm_tracer",40],
+			["rhsusf_8Rnd_00Buck",40],
+			["rhsusf_8Rnd_Slug",40],
+			["UK3CB_BHP_9_13Rnd",40]
 		]
 	],
 	["AR Resupply",
 		[
-			["rhsusf_200rnd_556x45_mixed_box",20]
-		]
-	],
-	["MMG Resupply",
-		[
-			["rhsusf_100Rnd_762x51_m61_ap",20],
-			["rhsusf_100Rnd_762x51_m62_tracer",20]
+			["rhs_75Rnd_762x39mm",20],
+			["rhs_75Rnd_762x39mm_tracer",20]
 		]
 	],
 	["Marksman Resupply",
 		[
-			["rhsusf_20Rnd_762x51_m62_Mag",20],
-			["rhsusf_20Rnd_762x51_m993_Mag",20],
-			["rhsusf_10Rnd_762x51_m62_Mag",20],
-			["rhsusf_20Rnd_762x51_m993_Mag",20],
-			["ACE_10Rnd_127x99_AMAX_Mag",20],
-			["ACE_10Rnd_127x99_API_Mag",20]
+			["UK3CB_SVD_10rnd_762x54",30],
+			["UK3CB_SVD_10rnd_762x54_GT",30],
+			["rhs_5Rnd_338lapua_t5000",40]
+		]
+	],
+	["MMG Resupply",
+		[
+			["rhs_100Rnd_762x54mmR_green",20],
+			["rhs_100Rnd_762x54mmR_7N13",20]
+		]
+	],
+	["HMG Resupply",
+		[
+			["ace_csw_50Rnd_127x108_mag",20]
 		]
 	],
 	["LAT Resupply",
 		[
-			["rhs_weap_M136",8]
+			["rhs_weap_rpg26",8]
 		]
 	],
 	["MAT Resupply",
 		[
-			["rhs_mag_maaws_HEAT",8],
-			["rhs_mag_maaws_HEDP",8]
+			["rhs_rpg7_PG7V_mag",8],
+			["rhs_rpg7_OG7V_mag",8],
+			["rhs_rpg7_PG7VL_mag",8],
+			["rhs_rpg7_PG7VR_mag",4],
+			["rhs_rpg7_TBG7V_mag",4]
 		]
 	],
 	["HAT Resupply",
 		[
-			["rhs_fgm148_magazine_AT",8]
+			["ace_compat_rhs_afrf3_mag_9m1331",10],
+			["ace_compat_rhs_afrf3_mag_9m133f",10]
 		]
 	],
 	["AA Resupply",
 		[
-			["rhs_fim92_mag",8]
+			["rhs_mag_9k38_rocket",8]
+		]
+	],
+	["Mortar Resupply",
+		[
+			["ACE_1Rnd_82mm_Mo_HE",20],
+			["ACE_1Rnd_82mm_Mo_Illum",20],
+			["ACE_1Rnd_82mm_Mo_Smoke",20]
 		]
 	],
 	["Grenades",
@@ -59,29 +89,19 @@ _resupplyAvailable = [
 			["SmokeShellRed",10],
 			["SmokeShellYellow",10],
 			["SmokeShellBlue",10],
-			["HandGrenade",20]
+			["rhs_mag_rgd5",20]
 		]
 	],
 	["40mm Grenades",
 		[
-			["1Rnd_HE_Grenade_Shell",30],
-			["1Rnd_Smoke_Grenade_Shell",20],
-			["1Rnd_SmokeRed_Grenade_Shell",10],
-			["1Rnd_SmokeYellow_Grenade_Shell",10],
-			["1Rnd_SmokeBlue_Grenade_Shell",10]
-		]
-	],
-	["40mm Heavy",
-		[
-			["rhsusf_mag_6Rnd_M441_HE",10],
-			["rhsusf_mag_6Rnd_M714_white",4],
-			["rhsusf_mag_6Rnd_M713_red",4]
+			["rhs_VOG25",30],
+			["rhs_GRD40_White",20],
+			["rhs_GRD40_Red",10]
 		]
 	],
 	["Flares",
 		[
-			["UGL_FlareWhite_F",30],
-			["UGL_FlareCIR_F",20]
+			["rhs_VG40OP_white",30]
 		]
 	],		
 	["Explosives",
@@ -137,17 +157,26 @@ _resupplyAvailable = [
 	],
 	["Squad Resupply",
 		[
-			["rhs_mag_30Rnd_556x45_M855_Stanag", 24],
-			["rhsusf_200rnd_556x45_mixed_box", 6],
-			["rhs_weap_M136", 2],
-			["1Rnd_HE_Grenade_Shell", 12],
-			["rhsusf_mag_6Rnd_M441_HE", 2],
-			["HandGrenade", 6],
+			["rhs_30Rnd_762x39mm", 24],
+			["rhs_75Rnd_762x39mm", 6],
+			["rhs_weap_rpg26", 2],
+			["rhs_VOG25", 12],
+			["rhs_mag_rgd5", 6],
 			["SmokeShell", 6],
 			["ACE_elasticBandage", 12],
 			["ACE_packingBandage", 12],
 			["ACE_quikclot", 12],
 			["kat_bloodIV_O_N_500", 6]
+		]
+	],
+	["Recon Drones",
+	[
+			["Rev_darter", 2]
+		]
+	],
+	["EOD Drones",
+	[
+			["Rev_Pelter", 2]
 		]
 	],
 	["Parachutes",
@@ -156,6 +185,21 @@ _resupplyAvailable = [
 			["ACE_Altimeter", 20]
 		]
 	]
-	
 ];
-_resupplyAvailable
+
+// ===========================================================================================
+// SECTION 2: Supply Categories
+// ===========================================================================================
+
+_supplyCategories = [
+	["Ammo",              ["Primary Resupply", "AR Resupply", "Marksman Resupply", "MMG Resupply", "HMG Resupply"]],
+	["Anti-Tank",         ["LAT Resupply", "MAT Resupply", "HAT Resupply"]],
+	["Anti-Air",          ["AA Resupply"]],
+	["Fire Support",      ["Mortar Resupply"]],
+	["Grenades & 40mm",   ["Grenades", "40mm Grenades", "40mm Heavy", "Flares"]],
+	["Medical",           ["Basic Medical Supplies", "Advanced Medical Supplies", "Misc. Medical Supplies"]],
+	["Explosives",        ["Explosives"]],
+	["Support & Utility", ["Recon Drones", "EOD Drones", "Parachutes", "CBRN Defense Supplies", "Squad Resupply"]]
+];
+
+[_suppliesConfig, _supplyCategories]

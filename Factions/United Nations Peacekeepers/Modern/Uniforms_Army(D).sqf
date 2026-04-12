@@ -45,6 +45,15 @@ params["_side","_faction","_variant", "_loadout"];
 // add uniform
 switch (_loadout) do {
 	default {player forceAddUniform "UK3CB_UN_I_U_CombatUniform_TTSKO"};
+	case "logi": { player forceAddUniform "UK3CB_UN_I_U_Field_Operative"};
+	case "sf_med";
+	case "sf_dmr";
+	case "sf_ld";
+	case "sf_eng";
+	case "rcn_drone";
+	case "rcn_ld";
+	case "rcn_sni";
+	case "rcn_amr": { player forceAddUniform "UK3CB_UN_B_U_H_Pilot_TTSKO"};
 	case "r_pil": {player forceAddUniform "UK3CB_UN_B_U_H_Pilot_TTSKO"};
 	case "f_pil": {player forceAddUniform "U_B_PilotCoveralls"};
 };
@@ -68,9 +77,7 @@ switch (_loadout) do {
 switch (_loadout) do {
 	default {player addVest "UK3CB_UN_I_V_6b23_ml_02"};
 	case "sup_mmg_l";
-	case "sup_hat_l";
 	case "sup_aa_l";
-	case "sup_mor_l";
 	case "rcn_ld";
 	case "logi";
 	case "plt";
@@ -81,6 +88,12 @@ switch (_loadout) do {
 	case "sf_med";
 	case "plt_med";
 	case "sqd_med": {player addVest "UK3CB_UN_B_V_6b23_medic"};
+	case "sup_hmg_l";
+	case "sup_hmg_g";
+	case "sup_hat_l";
+	case "sup_hat_g";
+	case "sup_mor_l";
+	case "sup_mor_g": {player addVest "UK3CB_UN_B_V_6b23_ml_6sh92_vog"};
 	case "r_pil": {player addVest "UK3CB_UN_B_V_6b23_vydra_3m"};
 	case "f_pil": {player addVest "UK3CB_V_Invisible"};
 };
@@ -94,10 +107,6 @@ switch (_loadout) do {
 // add backpack 
 switch (_loadout) do {
 	default {player addBackpack "UK3CB_UN_B_B_ASS"};
-	case "sup_mor_l": {player addBackpack "I_Mortar_01_support_F"};
-	case "sup_mor_g": {player addBackpack "I_Mortar_01_weapon_F"};
-	case "sup_hmg_l": {player addBackpack "RHS_M2_Tripod_Bag"};
-	case "sup_hmg_g": {player addBackpack "RHS_M2_Gun_Bag"};
 	case "plt_med";
 	case "sqd_med";
 	case "sf_med";
@@ -106,9 +115,14 @@ switch (_loadout) do {
 	case "sup_mmg_l";
 	case "sup_mmg_g";
 	case "sup_aa_l";
-	case "sup_aa_g";
+	case "sup_aa_g": {player addBackpack "B_Carryall_cbr"};
+	case "sup_mor_l";
+	case "sup_mor_g";
 	case "sup_hat_l";
-	case "sup_hat_g": {player addBackpack "B_Carryall_cbr"};
+	case "sup_hat_g";
+	case "sup_hmg_l";
+	case "sup_hmg_g";
+	case "logi";
 	case "rcn_ld";
 	case "rcn_sni";
 	case "rcn_amr";

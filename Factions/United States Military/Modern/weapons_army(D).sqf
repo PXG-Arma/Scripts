@@ -162,9 +162,10 @@ if (_mode == "ATTACHMENTS") exitWith {
 		case "Special Forces";
 		case "Recon": {
 			switch (_weaponGroup) do {
-				case "Lead Rifles": { ["BWA3_muzzle_snds_Rotex_IIIC", "rhsusf_acc_anpeq15side_bk", "rhsusf_acc_grip_m203_blk"] };
-				case "SF Rifles";
-				case "Assault Rifles": { ["BWA3_muzzle_snds_Rotex_IIIC", "rhsusf_acc_anpeq15_bk_top", "rhsusf_acc_grip3"] };
+				case "SF Lead Rifles": { ["BWA3_muzzle_snds_Rotex_IIIC", "rhsusf_acc_anpeq15side_bk", "rhsusf_acc_grip_m203_blk"] };
+				case "SF Rifles": { ["BWA3_muzzle_snds_Rotex_IIIC", "rhsusf_acc_anpeq15_bk_top", "rhsusf_acc_grip3"] };
+				case "Lead Rifles": { ["", "rhsusf_acc_anpeq15side_bk", "rhsusf_acc_grip_m203_blk"] };
+				case "Assault Rifles": { ["", "rhsusf_acc_anpeq15_bk_top", "rhsusf_acc_grip3"] };
 				case "Machine Guns": { ["BWA3_muzzle_snds_Rotex_IIIC", "", "rhsusf_acc_saw_bipod"] };
 				case "DMR": { ["rhsusf_acc_aac_762sdn6_silencer", "rhsusf_acc_anpeq15side_bk", "rhsusf_acc_harris_bipod"] };
 				case "Snipers": { ["", "", "rhsusf_acc_harris_swivel"] };
@@ -179,11 +180,6 @@ if (_mode == "ATTACHMENTS") exitWith {
 				case "Assault Rifles": { ["", "rhsusf_acc_anpeq15_bk_top", "rhsusf_acc_grip3"] };
 				case "Machine Guns": { ["", "", "rhsusf_acc_saw_bipod"] };
 				case "SF Rifles": { ["BWA3_muzzle_snds_Rotex_IIIC", "rhsusf_acc_anpeq15_bk_top", "rhsusf_acc_grip3"] };
-				
-				// --- Individual Classname Overrides ---
-				// case "rhs_weap_m4a1_carryhandle_m203S": { ["", "rhsusf_acc_anpeq15side_bk", "rhsusf_acc_grip_m203_blk"] };
-				// case "rhs_weap_m14ebrri": { ["", "rhsusf_acc_anpeq15side_bk", "rhsusf_acc_harris_bipod"] };
-				// case "rhs_weap_m40a5_d": { ["", "rhsusf_acc_harris_swivel", ""] };
 				default { ["", "", ""] };
 			};
 		};
@@ -222,7 +218,8 @@ if (_mode == "LAUNCHER") exitWith {
 		//MAT
 		case "sup_mat_g": { ["rhs_weap_maaws", ["rhs_optic_maaws"]] };
 		//HAT
-		case "sup_hat_g": { ["rhs_weap_fgm148", ["rhs_fgm148_magazine_AT"]] };
+		case "sup_hat_l";
+		case "sup_hat_g": { ["UK3CB_BAF_Javelin_Slung_Tube", [""]] };
 		//AA
 		case "sup_aa_g": { ["rhs_weap_fim92", [""]] };
 		//HMG

@@ -2,19 +2,11 @@
 // To list your faction you put down the Name + Era. Due to current limitations the Subfaction name can't have spaces. Our current Eras are Early, Late and Modern
 // The last faction in the list can not have a comma.
 
-_avialableVariants = [//"------- Airborne -------",
-					  //"Airborne(D) Modern",
+_avialableVariants = [
 					  "--------- Army ---------",
-					  //"Army(WD) Early",
-					  //"Army(D) Late",
 					  "Army(MTP) Modern",
 					  "---- Royal Marines ----",
-					  //"Marine(WD) Modern",
 					  "Marines(D) Modern"
-					  //"--- Special Forces ---", 
-					  //"Delta(Mix) Late",
-					  //"GreenBerets(D) Modern",
-					  //"Raiders(WD) Modern"
 					  ];
 
 _avialableVariants

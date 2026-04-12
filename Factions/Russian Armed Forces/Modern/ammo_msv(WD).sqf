@@ -87,25 +87,47 @@ switch (_loadout) do {
 	case "sup_mmg_l": {
 		for "_i" from 1 to 3 do { player addItemToBackpack "rhs_100Rnd_762x54mmR_green"};
 	};
+	case "sup_hmg_l": {
+		for "_i" from 1 to 4 do { player addItemToBackpack "ace_csw_50Rnd_127x108_mag"};
+	};
 	case "sup_mat_l": {
 		for "_i" from 1 to 3 do { player addItemToBackpack "rhs_rpg7_PG7V_mag"};
 		for "_i" from 1 to 3 do { player addItemToBackpack "rhs_rpg7_OG7V_mag"};
 	};
+	case "sup_hat_l": {
+		for "_i" from 1 to 2 do { player addItemToBackpack "ace_compat_rhs_afrf3_mag_9m1331"};
+		for "_i" from 1 to 2 do { player addItemToBackpack "ace_compat_rhs_afrf3_mag_9m133f"};
+	};
 	case "sup_aa_l": {
 		for "_i" from 1 to 2 do { player addItemToBackpack "rhs_mag_9k38_rocket"};
+	};
+	case "sup_mor_l": {
+		for "_i" from 1 to 4 do { player addItemToBackpack "ACE_1Rnd_82mm_Mo_HE"};
+		for "_i" from 1 to 1 do { player addItemToBackpack "ACE_1Rnd_82mm_Mo_Smoke"};
 	};
 };
 
 // add other ammo 
 switch (_loadout) do {
 	default {};
+	case "sup_hmg_g": {
+		for "_i" from 1 to 6 do { player addItemToBackpack "ace_csw_50Rnd_127x108_mag"};
+	};
 	case "sup_mat_g": {
 		for "_i" from 1 to 3 do { player addItemToBackpack "rhs_rpg7_PG7V_mag"};
 		for "_i" from 1 to 3 do { player addItemToBackpack "rhs_rpg7_OG7V_mag"};
 		for "_i" from 1 to 2 do { player addItemToBackpack "rhs_rpg7_PG7VL_mag"};
 	};
+	case "sup_hat_g": {
+		for "_i" from 1 to 3 do { player addItemToBackpack "ace_compat_rhs_afrf3_mag_9m1331"};
+		for "_i" from 1 to 2 do { player addItemToBackpack "ace_compat_rhs_afrf3_mag_9m133f"};
+	};
 	case "sup_aa_g": {
 		for "_i" from 1 to 2 do { player addItemToBackpack "rhs_mag_9k38_rocket"};
+	};
+	case "sup_mor_g": {
+		for "_i" from 1 to 5 do { player addItemToBackpack "ACE_1Rnd_82mm_Mo_HE"};
+		for "_i" from 1 to 1 do { player addItemToBackpack "ACE_1Rnd_82mm_Mo_Smoke"};
 	};
 };
 
@@ -139,6 +161,7 @@ switch (_loadout) do {
 	case "sup_mmg_l";
 	case "sup_hmg_l";
 	case "sup_mat_l";
+	case "sup_hat_l";
 	case "sup_mor_l";
 	case "sup_aa_l";
 	case "plt": {

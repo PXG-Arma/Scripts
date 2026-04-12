@@ -69,6 +69,7 @@ if (_mode == "GUNGROUP") exitWith {
 	_guns = switch (_loadout) do {
 		case "Assault Rifles": { ["rhs_weap_m4a1_carryhandle", "rhs_weap_m4"] };
 		case "SF Rifles": { ["rhs_weap_m4a1_carryhandle", "rhs_weap_m4"] };
+		case "SF Lead Rifles": { ["rhs_weap_m4a1_carryhandle_m203S","rhs_weap_m4_carryhandle_m203"] };
 		case "Lead Rifles": { ["rhs_weap_m4a1_carryhandle_m203S","rhs_weap_m4_carryhandle_m203"] };
 		case "Machine Guns": { ["rhs_weap_m249_pip_L_para"] };
 		case "DMR": { ["rhs_weap_m14ebrri"] };
@@ -104,8 +105,8 @@ if (_mode == "WEAPASSIGN") exitWith {
 		case "sqd_brc": { ["Shotguns"] };
 		case "rcn_ld";
 		case "rcn_drone";
-		case "sf_ld";
 		case "sqd_gre": { ["Lead Rifles"] };
+		case "sf_ld": { ["SF Lead Rifles"] };
 		case "sf_dmr": { ["DMR"] };
 
 		//Support Elements
@@ -137,7 +138,8 @@ if (_mode == "SCOPES") exitWith {
 		case "Special Forces": {
 			switch (_weaponGroup) do {
 				case "Assault Rifles";
-				case "Lead Rifles";
+				case "Lead Rifles": { ["rhsusf_acc_ACOG_RMR", "rhsusf_acc_compm4", "rhsusf_acc_eotech_552", "rhsusf_acc_eotech_xps3"] };
+				case "SF Lead Rifles";
 				case "SF Rifles": { ["rhsusf_acc_ACOG_RMR", "rhsusf_acc_compm4", "rhsusf_acc_eotech_552", "rhsusf_acc_eotech_xps3"] };
 				case "AMR": { ["rhsusf_acc_premier_low"] };
 				case "DMR": { ["rhsusf_acc_ACOG_RMR", "rhsusf_acc_premier_low"] };

@@ -206,7 +206,7 @@ if (_mode == "SECONDARY") exitWith {
 		// ---SLOTGROUP mapping---
 			switch (_roleGroup) do {
 //				case "Lead Elements": { "rhs_weap_pb_6p9" };	//UNCOMMENT FOR GROUPS
-				default { "rhsusf_weap_m9" };
+				default { "UK3CB_BAF_L131A1" };
 			};
 		};
 	};

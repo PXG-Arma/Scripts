@@ -96,16 +96,30 @@ switch (_loadout) do {
 	case "sup_mmg_l": {
 		for "_i" from 1 to 2 do { player addItemToBackpack "UK3CB_BAF_762_200Rnd_T"};
 	};
+	case "sup_hmg_l": {
+		for "_i" from 1 to 2 do { player addItemToBackpack "ace_csw_100Rnd_127x99_mag_red"};
+	};
 	case "sup_aa_l": {
 		for "_i" from 1 to 2 do { player addItemToBackpack "rhs_fim92_mag"};
+	};
+	case "sup_mor_l": {
+		for "_i" from 1 to 4 do { player addItemToBackpack "ACE_1Rnd_82mm_Mo_HE"};
+		for "_i" from 1 to 1 do { player addItemToBackpack "ACE_1Rnd_82mm_Mo_Smoke"};
 	};
 };
 
 // add other ammo 
 switch (_loadout) do {
 	default {};
+	case "sup_hmg_g": {
+		for "_i" from 1 to 3 do { player addItemToBackpack "ace_csw_100Rnd_127x99_mag_red"};
+	};
 	case "sup_aa_g": {
 		for "_i" from 1 to 2 do { player addItemToBackpack "rhs_fim92_mag"};
+	};
+	case "sup_mor_g": {
+		for "_i" from 1 to 5 do { player addItemToBackpack "ACE_1Rnd_82mm_Mo_HE"};
+		for "_i" from 1 to 1 do { player addItemToBackpack "ACE_1Rnd_82mm_Mo_Smoke"};
 	};
 };
 

@@ -112,14 +112,11 @@ switch (_loadout) do {
 // add backpack 
 switch (_loadout) do {
 	default {player addBackpack "UK3CB_BAF_B_Bergen_MTP_Rifleman_L_D"};
-	case "sup_mor_l": {player addBackpack "I_Mortar_01_support_F"};
-	case "sup_mor_g": {player addBackpack "I_Mortar_01_weapon_F"};
-	case "sup_hmg_l": {player addBackpack "RHS_M2_Tripod_Bag"};
-	case "sup_hmg_g": {player addBackpack "RHS_M2_Gun_Bag"};
 	case "tacp": {player addBackpack "UK3CB_BAF_B_Bergen_MTP_JTAC_L_A"};
 	case "plt_med";
 	case "sqd_med";
 	case "sf_med": {player addBackpack "UK3CB_BAF_B_Bergen_MTP_Medic_L_B"};
+	case "plt_eod";
 	case "sqd_eng": {player addBackpack "UK3CB_BAF_B_Bergen_MTP_Sapper_L_A"};
 	case "logi": {player addBackpack "UK3CB_BAF_B_Bergen_MTP_Engineer_L_A"};
 	case "sqd_brc": {player addBackpack "UK3CB_BAF_B_Bergen_MTP_PointMan_L_A"};
@@ -131,6 +128,10 @@ switch (_loadout) do {
 	case "sup_aa_g";
 	case "sup_hat_l";
 	case "sup_hat_g": {player addBackpack "UK3CB_BAF_B_Bergen_MTP_Rifleman_H_B"};
+	case "sup_mor_l";
+	case "sup_mor_g";
+	case "sup_hmg_l";
+	case "sup_hmg_g";
     case "ar_ld";
 	case "ar_c";
 	case "r_pil";

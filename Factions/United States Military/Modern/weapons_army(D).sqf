@@ -69,15 +69,15 @@ if (_mode == "GUNGROUP") exitWith {
 	_guns = switch (_loadout) do {
 		case "Assault Rifles": { ["rhs_weap_m4a1_carryhandle", "rhs_weap_m4"] };
 		case "SF Rifles": { ["rhs_weap_m4a1_carryhandle", "rhs_weap_m4"] };
+		case "SF Lead Rifles": { ["rhs_weap_m4a1_carryhandle_m203S","rhs_weap_m4_carryhandle_m203"] };
 		case "Lead Rifles": { ["rhs_weap_m4a1_carryhandle_m203S","rhs_weap_m4_carryhandle_m203"] };
 		case "Machine Guns": { ["rhs_weap_m249_pip_L_para"] };
-		case "Snipers": { ["rhs_weap_m40a5_d", "rhs_weap_m14ebrri", "rhs_weap_M107"] };
-		case "Standard Snipers": { ["rhs_weap_m40a5_d"] };
-		case "Anti Material Rifles": { ["rhs_weap_M107"] };
+		case "DMR": { ["rhs_weap_m14ebrri"] };
+		case "Snipers": { ["rhs_weap_m40a5_d"] };
+		case "AMR": { ["rhs_weap_M107"] };
 		case "Heavy Weapons": { ["rhs_weap_m32"] };
 		case "Cavalry Rifles": { ["rhs_weap_m4"] };
 		case "Shotguns": { ["rhs_weap_M590_8RD"] };
-		case "DMR": { ["rhs_weap_m14ebrri"] };
 
 		//Support Elements
 		case "MMG": { ["rhs_weap_m240G"] };
@@ -99,14 +99,14 @@ if (_mode == "WEAPASSIGN") exitWith {
         
 		case "sf_med";
 		case "sqd_ar": { ["Machine Guns"] };
-		case "rcn_sni": { ["Standard Snipers"] };
-		case "rcn_amr": { ["Anti Material Rifles"] };
+		case "rcn_sni": { ["Snipers"] };
+		case "rcn_amr": { ["AMR"] };
 		case "sqd_hgre": { ["Heavy Weapons"] };
 		case "sqd_brc": { ["Shotguns"] };
 		case "rcn_ld";
 		case "rcn_drone";
-		case "sf_ld";
 		case "sqd_gre": { ["Lead Rifles"] };
+		case "sf_ld": { ["SF Lead Rifles"] };
 		case "sf_dmr": { ["DMR"] };
 
 		//Support Elements
@@ -138,10 +138,12 @@ if (_mode == "SCOPES") exitWith {
 		case "Special Forces": {
 			switch (_weaponGroup) do {
 				case "Assault Rifles";
-				case "Lead Rifles";
+				case "Lead Rifles": { ["rhsusf_acc_ACOG_RMR", "rhsusf_acc_compm4", "rhsusf_acc_eotech_552", "rhsusf_acc_eotech_xps3"] };
+				case "SF Lead Rifles";
 				case "SF Rifles": { ["rhsusf_acc_ACOG_RMR", "rhsusf_acc_compm4", "rhsusf_acc_eotech_552", "rhsusf_acc_eotech_xps3"] };
-				case "DMR";
-				case "Snipers": { ["rhsusf_acc_ACOG_RMR", "rhsusf_acc_premier_low"] };
+				case "AMR": { ["rhsusf_acc_premier_low"] };
+				case "DMR": { ["rhsusf_acc_ACOG_RMR", "rhsusf_acc_premier_low"] };
+				case "Snipers": { ["rhsusf_acc_M8541_d", "rhsusf_acc_M8541_low_d"] };
 				case "Machine Guns": { ["rhsusf_acc_elcan", "rhsusf_acc_eotech_xps3"] };
 				default { [] };
 			};
@@ -162,9 +164,14 @@ if (_mode == "ATTACHMENTS") exitWith {
 		case "Special Forces";
 		case "Recon": {
 			switch (_weaponGroup) do {
-				case "SF Rifles";
-				case "Assault Rifles": { ["BWA3_muzzle_snds_Rotex_IIIC", "rhsusf_acc_anpeq15_bk_top", "rhsusf_acc_grip3"] };
-				case "Snipers": { ["", "rhsusf_acc_anpeq15side_bk", "rhsusf_acc_harris_bipod"] };
+				case "SF Lead Rifles": { ["BWA3_muzzle_snds_Rotex_IIIC", "rhsusf_acc_anpeq15side_bk", "rhsusf_acc_grip_m203_blk"] };
+				case "SF Rifles": { ["BWA3_muzzle_snds_Rotex_IIIC", "rhsusf_acc_anpeq15_bk_top", "rhsusf_acc_grip3"] };
+				case "Lead Rifles": { ["", "rhsusf_acc_anpeq15side_bk", "rhsusf_acc_grip_m203_blk"] };
+				case "Assault Rifles": { ["", "rhsusf_acc_anpeq15_bk_top", "rhsusf_acc_grip3"] };
+				case "Machine Guns": { ["BWA3_muzzle_snds_Rotex_IIIC", "", "rhsusf_acc_saw_bipod"] };
+				case "DMR": { ["rhsusf_acc_aac_762sdn6_silencer", "rhsusf_acc_anpeq15side_bk", "rhsusf_acc_harris_bipod"] };
+				case "Snipers": { ["", "", "rhsusf_acc_harris_swivel"] };
+				case "AMR": { ["", "", ""] };
 				default { ["", "", ""] };
 			};
 		};
@@ -174,16 +181,7 @@ if (_mode == "ATTACHMENTS") exitWith {
 				case "Lead Rifles": { ["", "rhsusf_acc_anpeq15side_bk", "rhsusf_acc_grip_m203_blk"] };
 				case "Assault Rifles": { ["", "rhsusf_acc_anpeq15_bk_top", "rhsusf_acc_grip3"] };
 				case "Machine Guns": { ["", "", "rhsusf_acc_saw_bipod"] };
-				case "Standard Snipers": { ["", "rhsusf_acc_harris_swivel", ""] };
-				case "Anti Material Rifles": { ["", "", ""] };
-				case "Snipers": { ["", "rhsusf_acc_anpeq15side_bk", "rhsusf_acc_harris_bipod"] };
-				case "Cavalry Rifles": { ["", "rhsusf_acc_anpeq15_bk_top", ""] };
 				case "SF Rifles": { ["BWA3_muzzle_snds_Rotex_IIIC", "rhsusf_acc_anpeq15_bk_top", "rhsusf_acc_grip3"] };
-				
-				// --- Individual Classname Overrides ---
-				case "rhs_weap_m4a1_carryhandle_m203S": { ["", "rhsusf_acc_anpeq15side_bk", "rhsusf_acc_grip_m203_blk"] };
-				case "rhs_weap_m14ebrri": { ["", "rhsusf_acc_anpeq15side_bk", "rhsusf_acc_harris_bipod"] };
-				case "rhs_weap_m40a5_d": { ["", "rhsusf_acc_harris_swivel", ""] };
 				default { ["", "", ""] };
 			};
 		};
@@ -222,7 +220,8 @@ if (_mode == "LAUNCHER") exitWith {
 		//MAT
 		case "sup_mat_g": { ["rhs_weap_maaws", ["rhs_optic_maaws"]] };
 		//HAT
-		case "sup_hat_g": { ["rhs_weap_fgm148", ["rhs_fgm148_magazine_AT"]] };
+		case "sup_hat_l";
+		case "sup_hat_g": { ["UK3CB_BAF_Javelin_Slung_Tube", [""]] };
 		//AA
 		case "sup_aa_g": { ["rhs_weap_fim92", [""]] };
 		//HMG

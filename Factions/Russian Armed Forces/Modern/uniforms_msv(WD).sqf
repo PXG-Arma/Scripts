@@ -107,12 +107,6 @@ switch (_loadout) do {
 // add backpack 
 switch (_loadout) do {
 	default {player addBackpack "rhs_rk_sht_30_emr"};
-	case "sup_mor_l": {player addBackpack "I_Mortar_01_support_F"};
-	case "sup_mor_g": {player addBackpack "I_Mortar_01_weapon_F"};
-	case "sup_hmg_l": {player addBackpack "RHS_Kord_Tripod_Bag"};
-	case "sup_hmg_g": {player addBackpack "RHS_Kord_Gun_Bag"};
-	case "sup_hat_l": {player addBackpack "RHS_Kornet_Tripod_Bag"};
-	case "sup_hat_g": {player addBackpack "RHS_Kornet_Gun_Bag"};
 	case "plt_med";
 	case "sqd_med";
 	case "sf_med";
@@ -121,11 +115,16 @@ switch (_loadout) do {
 	case "sup_mmg_l";
 	case "sup_mmg_g";
 	case "sup_aa_l";
-	case "sup_aa_g";
-	case "sup_hat_l";
-	case "sup_hat_g": {player addBackpack "rhs_tortila_emr"};
+	case "sup_aa_g": {player addBackpack "rhs_tortila_emr"};
+	case "plt_eod";
 	case "sqd_eng";
 	case "logi": {player addBackpack "rhs_rk_sht_30_emr_engineer_empty"};
+	case "sup_mor_l";
+	case "sup_mor_g";
+	case "sup_hat_l";
+	case "sup_hat_g";
+	case "sup_hmg_l";
+	case "sup_hmg_g";
 	case "rcn_sni";
 	case "rcn_amr";
 	case "rcn_drone";

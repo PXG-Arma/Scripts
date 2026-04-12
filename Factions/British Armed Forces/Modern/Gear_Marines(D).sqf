@@ -12,7 +12,7 @@ switch (_loadout) do {
 	default {};
 	case "tacp": {player linkItem "B_UavTerminal"};
 	case "rcn_drone": {player linkItem "B_UavTerminal";
-		player addItemToBackpack "DRNP_AR2P";
+		player addItemToBackpack "Rev_darter";
 		player addItemToBackpack "ACE_HuntIR_monitor";
 		for "_i" from 1 to 3 do { player addItemToBackpack "ACE_UAVBattery"};
 	};

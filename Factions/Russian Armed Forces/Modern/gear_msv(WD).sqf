@@ -10,8 +10,8 @@ params["_side","_faction","_variant", "_loadout"];
 // add UAV terminal
 switch (_loadout) do {
 	default {};
-	case "tacp": {player linkItem "B_UavTerminal"};
-	case "rcn_drone": {player linkItem "B_UavTerminal";
+	case "tacp": {player linkItem "O_UavTerminal"};
+	case "rcn_drone": {player linkItem "O_UavTerminal";
 		player addItemToBackpack "DRNP_AR2P";
 		player addItemToBackpack "ACE_HuntIR_monitor";
 		for "_i" from 1 to 3 do { player addItemToBackpack "ACE_UAVBattery"};

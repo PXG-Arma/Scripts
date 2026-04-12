@@ -70,6 +70,7 @@ switch (_loadout) do {
 	default {player addVest "UK3CB_BAF_V_Osprey_DDPM2"};
 	case "sup_mmg_l";
 	case "sup_hmg_l";
+	case "sup_gmg_l";
 	case "sup_mat_l";
 	case "sup_hat_l";
 	case "sup_aa_l";
@@ -116,6 +117,8 @@ switch (_loadout) do {
 	case "sup_mor_g";
 	case "sup_hmg_l";
 	case "sup_hmg_g";
+	case "sup_gmg_l";
+	case "sup_gmg_g";
     case "ar_ld";
 	case "ar_c";
 	case "r_pil";

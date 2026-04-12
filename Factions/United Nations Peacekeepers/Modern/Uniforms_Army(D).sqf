@@ -122,6 +122,8 @@ switch (_loadout) do {
 	case "sup_hat_g";
 	case "sup_hmg_l";
 	case "sup_hmg_g";
+	case "sup_gmg_l";
+	case "sup_gmg_g";
 	case "logi";
 	case "rcn_ld";
 	case "rcn_sni";

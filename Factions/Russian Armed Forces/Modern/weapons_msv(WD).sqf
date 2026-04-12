@@ -19,6 +19,7 @@ if (_mode == "SLOTGROUP") exitWith {
 		case "sqd_ld";
 		case "sup_mmg_l";
 		case "sup_hmg_l";
+		case "sup_gmg_l";
 		case "sup_mat_l";
 		case "sup_hat_l";
 		case "sup_aa_l";
@@ -48,6 +49,7 @@ if (_mode == "SLOTGROUP") exitWith {
 
 		case "sup_mmg_g";
 		case "sup_hmg_g";
+		case "sup_gmg_g";
 		case "sup_mat_g";
 		case "sup_hat_g";
 		case "sup_aa_g";
@@ -221,6 +223,9 @@ if (_mode == "LAUNCHER") exitWith {
 		//HMG
 		case "sup_hmg_l": {	["ace_csw_kordCarryTripod", [""]] };	
 		case "sup_hmg_g": {	["ace_compat_rhs_afrf3_kord_carry", [""]] };
+		//GMG
+		case "sup_gmg_l": {	["ace_csw_sag30CarryTripod", [""]] };	
+		case "sup_gmg_g": {	["ace_compat_rhs_afrf3_ags30_carry", [""]] };
 		//Mortar
 		case "sup_mor_l": { ["ace_csw_carryMortarBaseplate", [""]] };
 		case "sup_mor_g": { ["ace_csw_staticMortarCarry", [""]] };

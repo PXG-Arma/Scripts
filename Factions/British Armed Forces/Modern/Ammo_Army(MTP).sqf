@@ -63,6 +63,8 @@ switch (_loadout) do {
 	};
 	case "sup_hmg_l";
 	case "sup_hmg_g";
+	case "sup_gmg_l";
+	case "sup_gmg_g";
 	case "sup_hat_l";
 	case "sup_hat_g";
 	case "sup_mor_l";
@@ -99,6 +101,10 @@ switch (_loadout) do {
 	case "sup_hmg_l": {
 		for "_i" from 1 to 2 do { player addItemToBackpack "ace_csw_100Rnd_127x99_mag_red"};
 	};
+	case "sup_gmg_l": {
+		for "_i" from 1 to 2 do { player addItemToBackpack "ace_compat_rhs_usf3_48Rnd_40mm_MK19"};
+		for "_i" from 1 to 3 do { player addItemToBackpack "ace_compat_rhs_usf3_48Rnd_40mm_MK19_M430A1"};
+	};
 	case "sup_aa_l": {
 		for "_i" from 1 to 2 do { player addItemToBackpack "rhs_fim92_mag"};
 	};
@@ -113,6 +119,10 @@ switch (_loadout) do {
 	default {};
 	case "sup_hmg_g": {
 		for "_i" from 1 to 3 do { player addItemToBackpack "ace_csw_100Rnd_127x99_mag_red"};
+	};
+	case "sup_gmg_g": {
+		for "_i" from 1 to 4 do { player addItemToBackpack "ace_compat_rhs_usf3_48Rnd_40mm_MK19"};
+		for "_i" from 1 to 3 do { player addItemToBackpack "ace_compat_rhs_usf3_48Rnd_40mm_MK19_M430A1"};
 	};
 	case "sup_aa_g": {
 		for "_i" from 1 to 2 do { player addItemToBackpack "rhs_fim92_mag"};
@@ -152,6 +162,7 @@ switch (_loadout) do {
 	case "tacp";
 	case "sup_mmg_l";
 	case "sup_hmg_l";
+	case "sup_gmg_l";
 	case "sup_mat_l";
 	case "sup_hat_l";
 	case "sup_mor_l";

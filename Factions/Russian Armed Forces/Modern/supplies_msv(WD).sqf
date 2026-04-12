@@ -51,6 +51,11 @@ _suppliesConfig = [
 			["ace_csw_50Rnd_127x108_mag",20]
 		]
 	],
+	["GMG Resupply",
+		[
+			["ace_compat_rhs_afrf3_mag_VOG30_30",20]
+		]
+	],
 	["LAT Resupply",
 		[
 			["rhs_weap_rpg26",8]
@@ -196,7 +201,7 @@ _supplyCategories = [
 	["Anti-Tank",         ["LAT Resupply", "MAT Resupply", "HAT Resupply"]],
 	["Anti-Air",          ["AA Resupply"]],
 	["Fire Support",      ["Mortar Resupply"]],
-	["Grenades & 40mm",   ["Grenades", "40mm Grenades", "40mm Heavy", "Flares"]],
+	["Grenades & 40mm",   ["Grenades", "40mm Grenades", "40mm Heavy", "GMG Resupply", "Flares"]],
 	["Medical",           ["Basic Medical Supplies", "Advanced Medical Supplies", "Misc. Medical Supplies"]],
 	["Explosives",        ["Explosives"]],
 	["Support & Utility", ["Recon Drones", "EOD Drones", "Parachutes", "CBRN Defense Supplies", "Squad Resupply"]]

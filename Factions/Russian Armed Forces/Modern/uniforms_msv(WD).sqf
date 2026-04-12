@@ -76,6 +76,7 @@ switch (_loadout) do {
 		     player addVest selectRandom randomOfficerVestArray;};
 	case "sup_mmg_l";
 	case "sup_hmg_l";
+	case "sup_gmg_l";
 	case "sup_mat_l";
 	case "sup_hat_l";
 	case "sup_aa_l";
@@ -125,6 +126,8 @@ switch (_loadout) do {
 	case "sup_hat_g";
 	case "sup_hmg_l";
 	case "sup_hmg_g";
+	case "sup_gmg_l";
+	case "sup_gmg_g";
 	case "rcn_sni";
 	case "rcn_amr";
 	case "rcn_drone";

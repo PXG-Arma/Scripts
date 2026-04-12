@@ -5,6 +5,7 @@
 _availableFactions = [
 	"British Armed Forces",
 	"United States Military"
+	"Bundespolizei",
 ];
 
 _availableFactions 

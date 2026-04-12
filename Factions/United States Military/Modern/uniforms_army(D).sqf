@@ -123,6 +123,8 @@ switch (_loadout) do {
 	case "sup_mor_g";
 	case "sup_hmg_l";
 	case "sup_hmg_g";
+	case "sup_gmg_l";
+	case "sup_gmg_g";
     case "ar_ld";
 	case "ar_c";
 	case "r_pil";

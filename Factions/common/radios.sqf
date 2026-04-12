@@ -19,6 +19,7 @@ if (_variantEra == "Early") then {
 		case "ar_ld";
 		case "sup_mmg_l";
 		case "sup_hmg_l";
+		case "sup_gmg_l";
 		case "sup_mat_l";
 		case "sup_hat_l";
 		case "sup_aa_l";
@@ -40,6 +41,7 @@ if (_variantEra == "Insurgency") then {
 		case "ar_ld";
 		case "sup_mmg_l";
 		case "sup_hmg_l";
+		case "sup_gmg_l";
 		case "sup_mat_l";
 		case "sup_hat_l";
 		case "sup_aa_l";
@@ -72,6 +74,7 @@ if (_variantEra == "Late") then {
 		case "ar_ld";
 		case "sup_mmg_l";
 		case "sup_hmg_l";
+		case "sup_gmg_l";
 		case "sup_mat_l";
 		case "sup_hat_l";
 		case "sup_aa_l";
@@ -104,6 +107,7 @@ if (_variantEra == "Modern" || _variantEra == "Future") then {
 		case "ar_ld";
 		case "sup_mmg_l";
 		case "sup_hmg_l";
+		case "sup_gmg_l";
 		case "sup_mat_l";
 		case "sup_hat_l";
 		case "sup_aa_l";

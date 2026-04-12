@@ -25,10 +25,11 @@ switch (_slotGroup) do {
 	case "sup4": {_srCh = 8};
 	case "sup5": {_srCh = 9};
 	case "sup6": {_srCh = 10};
-	case "sf1": {_srCh = 11};
-	case "sf2": {_srCh = 12};
-	case "rcn1": {_srCh = 13};
-	case "rcn2": {_srCh = 14};
+	case "sup7": {_srCh = 11};
+	case "sf1": {_srCh = 12};
+	case "sf2": {_srCh = 13};
+	case "rcn1": {_srCh = 14};
+	case "rcn2": {_srCh = 15};
 	case "ar1": {_srCh = 16};
 	case "ar2": {_srCh = 17};
 	case "ar3": {_srCh = 18};

@@ -14,54 +14,12 @@ for "_i" from 1 to 4 do {player addItemToVest "ACE_CableTie"};
 
 // add Entrenching Tool & Fortify Hammer
 switch (_loadout) do {
-	default {};
+	default {player addItemToBackpack "ACE_EntrenchingTool";};
 	case "logi";
 	case "sf_eng";
 	case "sqd_eng": {
 		player addItemToBackpack "ACE_Fortify";
 		player addItemToBackpack "ACE_EntrenchingTool";
-	};
-    case "sup_aa_l";
-    case "sup_aa_g";
-    case "ar_ld";
-    case "ar_c";
-    case "r_pil";
-    case "f_pil";
-	case "sf_ld";
-	case "sf_med";
-	case "sf_dmr";
-	case "rcn_ld";
-	case "rcn_sni";
-	case "rcn_amr";
-	case "rcn_drone";
-	case "sup_mmg_g";
-    case "sup_mmg_l";
-	case "sup_mat_g";
-	case "sup_mat_l";
-	case "sup_aa_g";
-	case "sup_aa_l";
-	case "plt";
-	case "logi";
-	case "plt_eod";
-	case "plt_med";
-	case "tacp";
-	case "sqd_ld";
-	case "sqd_med";
-	case "sqd_lat";
-	case "sqd_brc";
-	case "sqd_gre";
-	case "sqd_hgre";
-	case "sqd_ar";
-	case "sqd_aar": {
-		player addItemToBackpack "ACE_EntrenchingTool";
-	};
-	case "sup_hmg_l";
-	case "sup_hmg_g";
-	case "sup_mor_l";
-	case "sup_mor_g";
-	case "sup_hat_l";
-	case "sup_hat_g": {
-		player addItemToVest "ACE_EntrenchingTool";
 	};
 };
 
@@ -175,6 +133,7 @@ if (_variantEra == "Late") then {
 		case "rcn_ld";
 		case "sup_mmg_l";
 		case "sup_hmg_l";
+		case "sup_gmg_l";
 		case "sup_mat_l";
 		case "sup_hat_l";
 		case "sup_aa_l";
@@ -194,6 +153,7 @@ if (_variantEra == "Late") then {
 		case "sf_eng";
 		case "sup_mmg_l";
 		case "sup_hmg_l";	
+		case "sup_gmg_l";
 		case "sup_mat_l";
 		case "sup_hat_l";
 		case "sup_aa_l";
@@ -252,7 +212,8 @@ if (_variantEra == "Modern") then {
 		case "sf_dmr";
 		case "sf_eng";
 		case "sup_mmg_l";
-		case "sup_hmg_l";	
+		case "sup_hmg_l";
+		case "sup_gmg_l";	
 		case "sup_mat_l";
 		case "sup_hat_l";
 		case "sup_aa_l";

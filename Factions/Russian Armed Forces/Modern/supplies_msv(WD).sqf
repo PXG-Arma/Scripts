@@ -201,7 +201,7 @@ _supplyCategories = [
 	["Anti-Tank",         ["LAT Resupply", "MAT Resupply", "HAT Resupply"]],
 	["Anti-Air",          ["AA Resupply"]],
 	["Fire Support",      ["Mortar Resupply"]],
-	["Grenades & 40mm",   ["Grenades", "40mm Grenades", "40mm Heavy", "GMG Resupply", "Flares"]],
+	["Grenades & 40mm",   ["Grenades", "40mm Grenades", "GMG Resupply", "Flares"]],
 	["Medical",           ["Basic Medical Supplies", "Advanced Medical Supplies", "Misc. Medical Supplies"]],
 	["Explosives",        ["Explosives"]],
 	["Support & Utility", ["Recon Drones", "EOD Drones", "Parachutes", "CBRN Defense Supplies", "Squad Resupply"]]

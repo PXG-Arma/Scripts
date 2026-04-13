@@ -98,7 +98,7 @@ _suppliesConfig = [
 			["1Rnd_SmokeBlue_Grenade_Shell",10]
 		]
 	],
-	["Mortar Rounds",
+	["Light Mortar Resupply",
 		[
 			["UK3CB_BAF_1Rnd_60mm_Mo_Shells",12],
 			["UK3CB_BAF_1Rnd_60mm_Mo_AB_Shells",12],
@@ -212,8 +212,8 @@ _supplyCategories = [
 	["Ammo",              ["Primary Resupply", "AR Resupply", "Marksman Resupply", "MMG Resupply", "HMG Resupply"]],
 	["Anti-Tank",         ["LAT Resupply", "MAT Resupply", "HAT Resupply"]],
 	["Anti-Air",          ["AA Resupply"]],
-	["Fire Support",      ["Mortar Resupply"]],
-	["Grenades & 40mm",   ["Grenades", "40mm Grenades", "40mm Heavy", "GMG Resupply", "Flares"]],
+	["Fire Support",      ["Light Mortar Resupply", "Mortar Resupply"]],
+	["Grenades & 40mm",   ["Grenades", "40mm Grenades", "GMG Resupply", "Flares"]],
 	["Medical",           ["Basic Medical Supplies", "Advanced Medical Supplies", "Misc. Medical Supplies"]],
 	["Explosives",        ["Explosives"]],
 	["Vehicle Resupply",  ["Vehicle Resupply"]],

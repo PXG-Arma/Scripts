@@ -78,6 +78,16 @@ if (count _nearVehicles > 0) then {
 			};
 		};
 
+    case "Vehicle Ressuply":
+		{
+			if (((_vehicle getVariable "ace_cargo_space") - 4) >= 0) then {
+				[_supplyData, "Box_NATO_AmmoVeh_F", 2, _vehicle, _spawnPosition] call compile preprocessFileLineNumbers "Scripts\Resupply\Functions\PXG_Crate_Spawn_VehicleLoad.sqf";
+				hint "Loaded crate into vehicle";
+			} else {
+				hint "Could not load crate into vehicle";
+			};
+		};
+
 		case "LAT Resupply";
 		case "MAT Resupply";
 		case "MAT Resupply (HEAT)";
@@ -245,6 +255,25 @@ if (count _nearVehicles > 0) then {
 		[_crate, 7] call ace_cargo_fnc_setSize;
 		[_crate, 8] call ace_cargo_fnc_setSpace;
 		_crate setVariable ["ace_cargo_customName", "Slingload Crate", true];
+		[_crate, true, [0,1,1], 0, true] remoteExec ["ace_dragging_fnc_setCarryable"];
+	};
+
+    case "Vehicle Resupply":
+	{
+		private _crate = createVehicle["Box_NATO_AmmoVeh_F", getPosATL _spawnPosition, [], 0, "CAN_COLLIDE"];
+		_crate setDir getDir _spawnPosition;
+		_crate addEventHandler ["HandleDamage", {0}];
+		_crate allowDamage false;
+		_crate setDamage 0;
+		
+		//Remove default contents from crate
+		clearItemCargoGlobal _crate;
+		clearMagazineCargoGlobal _crate;
+		clearWeaponCargoGlobal _crate;
+		clearBackpackCargoGlobal _crate;
+
+		[_crate] call compile preprocessFile "Scripts\Resupply\Functions\PXG_Crate_Fill.sqf";
+		[_crate, 4] call ace_cargo_fnc_setSize;
 		[_crate, true, [0,1,1], 0, true] remoteExec ["ace_dragging_fnc_setCarryable"];
 	};
 

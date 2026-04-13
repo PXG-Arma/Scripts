@@ -55,6 +55,14 @@ tvAdd [451502, [_logisticsCatIdx], "Spare Track"];
 tvSetData [451502, [_logisticsCatIdx, _logIdx], "Track"];
 _logIdx = _logIdx + 1;
 
+tvAdd [451502, [_logisticsCatIdx], "Slingloadable Crate (8)"];
+tvSetData [451502, [_logisticsCatIdx, _logIdx], "Slingloadable Crate (8)"];
+_logIdx = _logIdx + 1;
+
+tvAdd [451502, [_logisticsCatIdx], "Vehicle Resupply"];
+tvSetData [451502, [_logisticsCatIdx, _logIdx], "Vehicle Resupply"];
+_logIdx = _logIdx + 1;
+
 _calledFromFOB = player getVariable ["PXG_IsCalledFromFOB", false];
 if (!_calledFromFOB) then {
 	tvAdd [451502, [_logisticsCatIdx], "FOB Crate"];
@@ -64,9 +72,6 @@ if (!_calledFromFOB) then {
 	tvAdd [451502, [_logisticsCatIdx], "FARP Crate"];
 	tvSetData [451502, [_logisticsCatIdx, _logIdx], "FARP"];
 	_logIdx = _logIdx + 1;
-
-	tvAdd [451502, [_logisticsCatIdx], "Slingloadable Crate (8)"];
-	tvSetData [451502, [_logisticsCatIdx, _logIdx], "Slingloadable Crate (8)"];
 };
 
 // Restore memory (stored as [catIdx, supplyIdx] array)

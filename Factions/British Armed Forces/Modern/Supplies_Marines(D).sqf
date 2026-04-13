@@ -216,7 +216,6 @@ _supplyCategories = [
 	["Grenades & 40mm",   ["Grenades", "40mm Grenades", "GMG Resupply", "Flares"]],
 	["Medical",           ["Basic Medical Supplies", "Advanced Medical Supplies", "Misc. Medical Supplies"]],
 	["Explosives",        ["Explosives"]],
-	["Vehicle Resupply",  ["Vehicle Resupply"]],
 	["Support & Utility", ["Recon Drones", "EOD Drones", "Parachutes", "CBRN Defense Supplies", "Squad Resupply"]]
 ];
 

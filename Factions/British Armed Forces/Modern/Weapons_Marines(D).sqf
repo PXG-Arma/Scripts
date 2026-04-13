@@ -191,6 +191,7 @@ if (_mode == "ATTACHMENTS") exitWith {
 			switch (_weaponGroup) do {
 				// --- Gun Group Standards ---
 				case "Lead Rifles": { ["", "UK3CB_BAF_LLM_IR_Black", ""] };
+				default { ["", "", ""] };
 			};
 		};
 	};

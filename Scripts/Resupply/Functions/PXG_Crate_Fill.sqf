@@ -8,14 +8,10 @@ _variantData = tvData [451501, _indexFaction];
 if (_variantData == "") exitWith {};
 
 _metadata = call compile _variantData;
-_sideFolder = _metadata select 0;
-_faction = _metadata select 1;
-_variantEra = _metadata select 2;
-_variantCamo = _metadata select 3;
 
-// Path for supplies list (Handles empty era correctly)
-_eraPath = ""; if (_variantEra != "") then { _eraPath = _variantEra + "\" };
-_suppliesScriptPath = "Scripts\Factions\" + _sideFolder + "\" + _faction + "\" + _eraPath + _variantCamo + "\Supplies.sqf";
+// Construct path utilizing the GetFactionPath utility
+_basePath = [_variantData] call compile preprocessFile "Scripts\Factions\PXG_GetFactionPath.sqf";
+_suppliesScriptPath = _basePath + "Supplies.sqf";
 
 _suppliesArray = call compile preprocessfile _suppliesScriptPath;
 if (isNil "_suppliesArray") exitWith {};

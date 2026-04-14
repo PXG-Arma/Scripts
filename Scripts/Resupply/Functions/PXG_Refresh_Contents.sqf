@@ -3,7 +3,10 @@
 // Get selected item from faction tree and supply list
 private _indexFaction = tvCurSel IDC_RESUPPLY_FACTION_TREE;
 private _indexSupplies = lbCurSel IDC_RESUPPLY_SUPPLIES_LB;
-if (count _indexFaction < 4) exitwith {};
+if (count _indexFaction < 3) exitwith {};
+
+// Feature Restoration: Save supply selection to memory
+player setVariable ["PXG_Resupply_Memory_Supply", _indexSupplies];
 
 private _variantData = tvData [IDC_RESUPPLY_FACTION_TREE, _indexFaction];
 if (_variantData == "") exitWith {};
@@ -37,5 +40,5 @@ switch (lbData [IDC_RESUPPLY_SUPPLIES_LB, _indexSupplies]) do
 	};
 };
 
-lbClear IDC_RESUPPLY_CONTENTS_TEXT;
+
 ctrlSetText [IDC_RESUPPLY_CONTENTS_TEXT, _crateContentsText];

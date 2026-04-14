@@ -4,6 +4,9 @@
 private _indexFaction = tvCurSel IDC_RESUPPLY_FACTION_TREE;
 if (count _indexFaction < 3) exitwith {};
 
+// Feature Restoration: Save faction selection to memory
+player setVariable ["PXG_Resupply_Memory_Faction", _indexFaction];
+
 private _variantData = tvData [IDC_RESUPPLY_FACTION_TREE, _indexFaction];
 if (_variantData == "") exitWith {};
 

@@ -9,9 +9,9 @@ class dialog_motorpool
 			idc = -1;
 			colorBackground[] = {0.1, 0.1, 0.1, 0.8}; // Added 80% opacity background
 
-			x = 0.29 * safezoneW + safezoneX;
+			x = 0.185 * safezoneW + safezoneX;
 			y = 0.25 * safezoneH + safezoneY;
-			w = 0.42 * safezoneW;
+			w = 0.63 * safezoneW;
 			h = 0.51 * safezoneH;
 		};
 		
@@ -19,9 +19,9 @@ class dialog_motorpool
 		{
 			idc = 1100;
 			text = "Vehicle Spawn"; //--- ToDo: Localize;
-			x = 0.29 * safezoneW + safezoneX;
+			x = 0.185 * safezoneW + safezoneX;
 			y = 0.227 * safezoneH + safezoneY;
-			w = 0.42 * safezoneW;
+			w = 0.63 * safezoneW;
 			h = 0.022 * safezoneH;
 			sizeEx = 1 * GUI_GRID_H * GUI_GRID_H;
 		};
@@ -30,9 +30,9 @@ class dialog_motorpool
 			idc = -1;
 
 			text = "1. Side";
-			x = 0.30 * safezoneW + safezoneX;
+			x = 0.195 * safezoneW + safezoneX;
 			y = 0.26 * safezoneH + safezoneY;
-			w = 0.06 * safezoneW;
+			w = 0.10 * safezoneW;
 			h = 0.04 * safezoneH;
 		};
 		class motorpoolFactionText: PxgGuiRscText
@@ -40,9 +40,9 @@ class dialog_motorpool
 			idc = -1; 
 
 			text = "2. Faction";
-			x = 0.30 * safezoneW + safezoneX;
+			x = 0.195 * safezoneW + safezoneX;
 			y = 0.3835 * safezoneH + safezoneY;
-			w = 0.06 * safezoneW;
+			w = 0.10 * safezoneW;
 			h = 0.04 * safezoneH;
 		};
 
@@ -51,9 +51,9 @@ class dialog_motorpool
 			idc = -1; 
 
 			text = "3. Vehicle";
-			x = 0.44 * safezoneW + safezoneX;
+			x = 0.40 * safezoneW + safezoneX;
 			y = 0.26 * safezoneH + safezoneY;
-			w = 0.06 * safezoneW;
+			w = 0.10 * safezoneW;
 			h = 0.04 * safezoneH;
 		};
 		class motorpoolSpawnText: PxgGuiRscText
@@ -61,18 +61,18 @@ class dialog_motorpool
 			idc = -1; 
 
 			text = "4. Spawn Point";
-			x = 0.58 * safezoneW + safezoneX;
+			x = 0.605 * safezoneW + safezoneX;
 			y = 0.26 * safezoneH + safezoneY;
-			w = 0.07 * safezoneW;
+			w = 0.10 * safezoneW;
 			h = 0.04 * safezoneH;
 		};
 		class dim_vehicle_spawnpoint_list: PxgGuiRscListBox
 		{
 			idc = 461500;
 
-			x = 0.58 * safezoneW + safezoneX;
+			x = 0.605 * safezoneW + safezoneX;
 			y = 0.31 * safezoneH + safezoneY;
-			w = 0.12 * safezoneW;
+			w = 0.20 * safezoneW;
 			h = 0.20 * safezoneH;
 
 		};
@@ -82,9 +82,9 @@ class dialog_motorpool
 			idc = 461502;
 			onTreeSelChanged = "call compile preprocessfile 'Scripts\Motorpool\Functions\PXG_Refresh_Preview.sqf'";
 
-			x = 0.44 * safezoneW + safezoneX;
+			x = 0.40 * safezoneW + safezoneX;
 			y = 0.31 * safezoneH + safezoneY;
-			w = 0.12 * safezoneW;
+			w = 0.20 * safezoneW;
 			h = 0.43 * safezoneH;
 		};
 	
@@ -94,9 +94,9 @@ class dialog_motorpool
 			onTreeSelChanged = "call compile preprocessfile 'Scripts\Motorpool\Functions\PXG_Refresh_Vehicles.sqf'";
 			onTreeExpanded = "_this spawn { params ['_ctrl', '_path']; sleep 0.05; if (count _path == 1) then { private _sel = tvCurSel _ctrl; _ctrl tvSetCurSel [-1]; for '_i' from 0 to ((_ctrl tvCount _path) - 1) do { _ctrl tvCollapse (_path + [_i]); _ctrl tvExpand (_path + [_i]); }; if (count _sel > 0) then { _ctrl tvSetCurSel _sel; }; }; };";
 
-			x = 0.30 * safezoneW + safezoneX;
+			x = 0.195 * safezoneW + safezoneX;
 			y = 0.43 * safezoneH + safezoneY;
-			w = 0.12 * safezoneW;
+			w = 0.20 * safezoneW;
 			h = 0.31 * safezoneH;
 		};
 		
@@ -105,9 +105,9 @@ class dialog_motorpool
 			idc = 461504;
 			onLBSelChanged = "call compile preprocessfile 'Scripts\Motorpool\Functions\PXG_Refresh_Factions.sqf'";
 			
-			x = 0.30 * safezoneW + safezoneX;
+			x = 0.195 * safezoneW + safezoneX;
 			y = 0.31 * safezoneH + safezoneY;
-			w = 0.12 * safezoneW;
+			w = 0.20 * safezoneW;
 			h = 0.067 * safezoneH;
 		};
 		class motorpoolPreviewPicture: PxgGuiRscPicture
@@ -115,19 +115,19 @@ class dialog_motorpool
 			idc = 461505; 
 
 			text = "\A3\EditorPreviews_F\Data\CfgVehicles\Land_InvisibleBarrier_F.jpg";
-			x = 0.58 * safezoneW + safezoneX;
-			y = 0.57 * safezoneH + safezoneY;
-			w = 0.12 * safezoneW;
-			h = 0.17 * safezoneH;
+			x = 0.605 * safezoneW + safezoneX;
+			y = 0.56 * safezoneH + safezoneY;
+			w = 0.20 * safezoneW;
+			h = 0.19 * safezoneH;
 		};
 		class motorpoolCargoText: PxgGuiRscText
 		{
 			idc = 461499;
 
 			text = "Cargo Capacity: 0";
-			x = 0.58 * safezoneW + safezoneX;
+			x = 0.605 * safezoneW + safezoneX;
 			y = 0.52 * safezoneH + safezoneY;
-			w = 0.12 * safezoneW;
+			w = 0.20 * safezoneW;
 			h = 0.02 * safezoneH;
 		};
 		class motorpoolSeatsText: PxgGuiRscText
@@ -135,9 +135,9 @@ class dialog_motorpool
 			idc = 461498;
 
 			text = "Crew: 0 Passengers: 0";
-			x = 0.58 * safezoneW + safezoneX;
+			x = 0.605 * safezoneW + safezoneX;
 			y = 0.54 * safezoneH + safezoneY;
-			w = 0.12 * safezoneW;
+			w = 0.20 * safezoneW;
 			h = 0.02 * safezoneH;
 		};
 	
@@ -148,7 +148,7 @@ class dialog_motorpool
 
 			text = "Spawn"; //--- ToDo: Localize;
 			
-			x = 0.65 * safezoneW + safezoneX;
+			x = 0.745 * safezoneW + safezoneX;
 			y = 0.76 * safezoneH + safezoneY;
 			w = 0.06 * safezoneW;
 			h = 0.02 * safezoneH;
@@ -160,7 +160,7 @@ class dialog_motorpool
 
 			text = "Close";
 
-			x = 0.29 * safezoneW + safezoneX;
+			x = 0.185 * safezoneW + safezoneX;
 			y = 0.76 * safezoneH + safezoneY;
 			w = 0.06 * safezoneW;
 			h = 0.02 * safezoneH;

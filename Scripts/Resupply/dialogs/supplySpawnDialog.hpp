@@ -12,9 +12,9 @@ class dialog_supply_spawn
 			idc = -1;
 			colorBackground[] = {0.1, 0.1, 0.1, 0.8}; // Added 80% opacity background
 
-			x = 0.29 * safezoneW + safezoneX;
+			x = 0.185 * safezoneW + safezoneX;
 			y = 0.25 * safezoneH + safezoneY;
-			w = 0.42 * safezoneW;
+			w = 0.63 * safezoneW;
 			h = 0.49 * safezoneH;
 		};
 		
@@ -23,9 +23,9 @@ class dialog_supply_spawn
 			idc = -1;
 
 			text = "Supply Spawn"; //--- ToDo: Localize;
-			x = 0.29 * safezoneW + safezoneX;
+			x = 0.185 * safezoneW + safezoneX;
 			y = 0.227 * safezoneH + safezoneY;
-			w = 0.42 * safezoneW;
+			w = 0.63 * safezoneW;
 			h = 0.022 * safezoneH;
 			sizeEx = 1 * GUI_GRID_H * GUI_GRID_H;
 		};
@@ -34,9 +34,9 @@ class dialog_supply_spawn
 			idc = -1;
 
 			text = "1. Side";
-			x = 0.30 * safezoneW + safezoneX;
+			x = 0.195 * safezoneW + safezoneX;
 			y = 0.26 * safezoneH + safezoneY;
-			w = 0.06 * safezoneW;
+			w = 0.10 * safezoneW;
 			h = 0.04 * safezoneH;
 		};
 		class supplyFactionText: PxgGuiRscText
@@ -44,9 +44,9 @@ class dialog_supply_spawn
 			idc = -1; 
 
 			text = "2. Faction";
-			x = 0.30 * safezoneW + safezoneX;
+			x = 0.195 * safezoneW + safezoneX;
 			y = 0.382 * safezoneH + safezoneY;
-			w = 0.06 * safezoneW;
+			w = 0.10 * safezoneW;
 			h = 0.04 * safezoneH;
 		};
 		class supplyCrateText: PxgGuiRscText
@@ -54,9 +54,9 @@ class dialog_supply_spawn
 			idc = -1; 
 
 			text = "3. Supply";
-			x = 0.44 * safezoneW + safezoneX;
+			x = 0.40 * safezoneW + safezoneX;
 			y = 0.26 * safezoneH + safezoneY;
-			w = 0.06 * safezoneW;
+			w = 0.10 * safezoneW;
 			h = 0.04 * safezoneH;
 		};
 		class supplySpawnText: PxgGuiRscText
@@ -64,9 +64,9 @@ class dialog_supply_spawn
 			idc = -1; 
 
 			text = "4. Spawn Point";
-			x = 0.58 * safezoneW + safezoneX;
+			x = 0.605 * safezoneW + safezoneX;
 			y = 0.26 * safezoneH + safezoneY;
-			w = 0.06 * safezoneW;
+			w = 0.10 * safezoneW;
 			h = 0.04 * safezoneH;
 		};
 		class supplyContentsText: PxgGuiRscText
@@ -74,27 +74,27 @@ class dialog_supply_spawn
 			idc = -1; 
 
 			text = "Crate Contents";
-			x = 0.58 * safezoneW + safezoneX;
+			x = 0.605 * safezoneW + safezoneX;
 			y = 0.43 * safezoneH + safezoneY;
-			w = 0.06 * safezoneW;
+			w = 0.10 * safezoneW;
 			h = 0.04 * safezoneH;
 		};
 		class dim_supply_spawnpoint_list: PxgGuiRscListBox
 		{
 			idc = 451500;
 
-			x = 0.58 * safezoneW + safezoneX;
+			x = 0.605 * safezoneW + safezoneX;
 			y = 0.31 * safezoneH + safezoneY;
-			w = 0.12 * safezoneW;
+			w = 0.20 * safezoneW;
 			h = 0.11 * safezoneH;
 		};		
 		class dim_supply_cratecontent_list: PxgGuiRscListbox
 		{
 			idc = 451502;
 
-			x = 0.44 * safezoneW + safezoneX;
+			x = 0.400 * safezoneW + safezoneX;
 			y = 0.31 * safezoneH + safezoneY;
-			w = 0.12 * safezoneW;
+			w = 0.20 * safezoneW;
 			h = 0.41 * safezoneH;
 
 			onLBSelChanged = "call compile preprocessfile 'Scripts\Resupply\Functions\PXG_Refresh_Contents.sqf'";
@@ -106,9 +106,9 @@ class dialog_supply_spawn
 			onTreeSelChanged = "call compile preprocessfile 'Scripts\Resupply\Functions\PXG_Refresh_Supplies.sqf'";
 			onTreeExpanded = "_this spawn { params ['_ctrl', '_path']; sleep 0.05; if (count _path == 1) then { private _sel = tvCurSel _ctrl; _ctrl tvSetCurSel [-1]; for '_i' from 0 to ((_ctrl tvCount _path) - 1) do { _ctrl tvCollapse (_path + [_i]); _ctrl tvExpand (_path + [_i]); }; if (count _sel > 0) then { _ctrl tvSetCurSel _sel; }; }; };";
 
-			x = 0.30 * safezoneW + safezoneX;
+			x = 0.195 * safezoneW + safezoneX;
 			y = 0.43 * safezoneH + safezoneY;
-			w = 0.12 * safezoneW;
+			w = 0.20 * safezoneW;
 			h = 0.29 * safezoneH;
 		};
 		
@@ -117,18 +117,18 @@ class dialog_supply_spawn
 			idc = 451504;
 			onLBSelChanged = "call compile preprocessfile 'Scripts\Resupply\Functions\PXG_Refresh_Factions.sqf'";
 			
-			x = 0.30 * safezoneW + safezoneX;
+			x = 0.195 * safezoneW + safezoneX;
 			y = 0.31 * safezoneH + safezoneY;
-			w = 0.12 * safezoneW;
+			w = 0.20 * safezoneW;
 			h = 0.067 * safezoneH;
 		};
 		class supplyContentsList: PxgGuiRscStructuredText
 		{
 			idc = 451505; 
 
-			x = 0.58 * safezoneW + safezoneX;
+			x = 0.605 * safezoneW + safezoneX;
 			y = 0.48 * safezoneH + safezoneY;
-			w = 0.12 * safezoneW;
+			w = 0.20 * safezoneW;
 			h = 0.24 * safezoneH;
 
 			colorBackground[] = {0,0,0,0.3};
@@ -141,7 +141,7 @@ class dialog_supply_spawn
 
 			text = "Spawn Box"; //--- ToDo: Localize;
 			
-			x = 0.65 * safezoneW + safezoneX;
+			x = 0.745 * safezoneW + safezoneX;
 			y = 0.74 * safezoneH + safezoneY;
 			w = 0.06 * safezoneW;
 			h = 0.02 * safezoneH;
@@ -155,7 +155,7 @@ class dialog_supply_spawn
 			text = "Close";
 
 
-			x = 0.29 * safezoneW + safezoneX;
+			x = 0.185 * safezoneW + safezoneX;
 			y = 0.74 * safezoneH + safezoneY;
 			w = 0.06 * safezoneW;
 			h = 0.02 * safezoneH;

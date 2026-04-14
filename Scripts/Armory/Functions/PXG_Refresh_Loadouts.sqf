@@ -6,6 +6,9 @@ private _factionNodeIdx = [_indexFaction select 0];
 
 if (count _indexFaction < 3) exitwith {};
 
+// Feature Restoration: Save faction selection to memory
+player setVariable ["PXG_Armory_Memory_Faction", _indexFaction];
+
 private _variantData = tvData [IDC_ARMORY_FACTION_TREE, _indexFaction];
 if (_variantData == "") exitWith {};
 

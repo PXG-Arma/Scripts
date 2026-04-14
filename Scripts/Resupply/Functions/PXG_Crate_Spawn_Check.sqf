@@ -1,16 +1,18 @@
-_indexSpawn = lbCurSel 451500;
-_indexSide = lbCurSel 451504;
-_indexFaction = tvCurSel 451501;
-_indexSupply = lbCurSel 451502;
-_supplyData = lbData [451502, _indexSupply];
+#include "..\..\macros.hpp"
+
+private _indexSpawn = lbCurSel IDC_RESUPPLY_SPAWNPOINTS;
+private _indexSide = lbCurSel IDC_RESUPPLY_SIDE;
+private _indexFaction = tvCurSel IDC_RESUPPLY_FACTION_TREE;
+private _indexSupply = lbCurSel IDC_RESUPPLY_SUPPLIES_LB;
+private _supplyData = lbData [IDC_RESUPPLY_SUPPLIES_LB, _indexSupply];
 
 if (_indexSide == -1) exitWith { hint "Please select side."};
 if (count _indexFaction == 0) exitWith { hint "Please select faction."};
-if (count _indexFaction == 1) exitWith { hint "Please select faction variant."};
+if (count _indexFaction < 3) exitWith { hint "Please select faction variant."};
 if (_indexSupply == -1) exitWith { hint "Please select supply crate."};
 if (_indexSpawn == -1) exitWith {hint "Please select spawn point."};
 
-_spawnPosition = synchronizedObjects (player getVariable "PXG_Resupply_Master") select _indexSpawn;
+private _spawnPosition = synchronizedObjects (player getVariable "PXG_Resupply_Master") select _indexSpawn;
 
 player setVariable ["PXG_Resupply_Memory_Side", _indexSide];
 player setVariable ["PXG_Resupply_Memory_Faction", _indexFaction];

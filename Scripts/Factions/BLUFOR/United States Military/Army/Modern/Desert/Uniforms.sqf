@@ -18,8 +18,8 @@ switch (_loadout) do {
 	
 // add helmet
 switch (_loadout) do {
-	default {randomOfficerHelmetArray = ["rhsusf_ach_helmet_headset_ocp_alt","rhsusf_ach_helmet_headset_ocp"];
-		     player addHeadgear selectRandom randomOfficerHelmetArray;};
+	default {private _helmetPool = ["rhsusf_ach_helmet_headset_ocp_alt","rhsusf_ach_helmet_headset_ocp"];
+		     player addHeadgear selectRandom _helmetPool;};
 	case "rcn_sni";
 	case "rcn_amr";
 	case "rcn_drone";
@@ -30,8 +30,8 @@ switch (_loadout) do {
 	case "sf_eng": {player addHeadgear "rhsusf_ach_helmet_camo_ocp"};
     case "ar_ld";
 	case "ar_c": {player addHeadgear "rhsusf_cvc_ess"};
-	case "r_pil": {randomOfficerHelmetArray1 = ["rhsusf_hgu56p_visor_mask_Empire_black","rhsusf_hgu56p_visor_black","rhsusf_hgu56p_visor_mask_black_skull"];
-		           player addHeadgear selectRandom randomOfficerHelmetArray1;};
+	case "r_pil": {private _pilotHelmetPool = ["rhsusf_hgu56p_visor_mask_Empire_black","rhsusf_hgu56p_visor_black","rhsusf_hgu56p_visor_mask_black_skull"];
+		           player addHeadgear selectRandom _pilotHelmetPool;};
 	case "f_pil": {player addHeadgear "H_PilotHelmetFighter_B"};
 };
 

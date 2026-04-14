@@ -7,24 +7,24 @@ params["_side","_faction","_variant", "_loadout"];
 
 // add uniform
 switch (_loadout) do {
-	default {randomOfficerUniformArray = ["UK3CB_BAF_U_CombatUniform_DDPM_RM","UK3CB_BAF_U_CombatUniform_DDPM_ShortSleeve_RM"];
-		     player forceAddUniform selectRandom randomOfficerUniformArray;};
+	default {private _uniformPool = ["UK3CB_BAF_U_CombatUniform_DDPM_RM","UK3CB_BAF_U_CombatUniform_DDPM_ShortSleeve_RM"];
+		     player forceAddUniform selectRandom _uniformPool;};
 	case "r_pil": {player forceAddUniform "UK3CB_BAF_U_HeliPilotCoveralls_Army"};
 	case "f_pil": {player forceAddUniform "U_B_PilotCoveralls"};
 };
 	
 // add helmet
 switch (_loadout) do {
-	default {randomOfficerHelmetArray = ["UK3CB_BAF_H_Mk6_DDPM_C","UK3CB_BAF_H_Mk6_DDPM_B"];
-		     player addHeadgear selectRandom randomOfficerHelmetArray;};
+	default {private _helmetPool = ["UK3CB_BAF_H_Mk6_DDPM_C","UK3CB_BAF_H_Mk6_DDPM_B"];
+		     player addHeadgear selectRandom _helmetPool;};
 	case "rcn_sni";
 	case "rcn_amr";
 	case "rcn_drone": {player addHeadgear "UK3CB_BAF_H_Boonie_DDPM"};
 	case "rcn_ld": {player addHeadgear "UK3CB_BAF_H_Boonie_DDPM_PRR"};
 	case "ar_ld";
 	case "ar_c": {player addHeadgear "UK3CB_BAF_H_CrewHelmet_DDPM_A"};
-	case "r_pil": {randomOfficerHelmetArray2 = ["rhsusf_hgu56p_visor_tan","rhsusf_hgu56p_visor_mask_tan"];
-		           player addHeadgear selectRandom randomOfficerHelmetArray2;};
+	case "r_pil": {private _pilotHelmetPool = ["UK3CB_BAF_H_HelmetPilot_A","UK3CB_BAF_H_HelmetPilot_B"];
+		           player addHeadgear selectRandom _pilotHelmetPool;};
 	case "f_pil": {player addHeadgear "H_PilotHelmetFighter_B"};
 };
 

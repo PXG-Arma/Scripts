@@ -17,7 +17,8 @@
 // };
 // This can be put directly into the -default {}			
 
-sleep 0.5 // for some reason it might randomly assign a mag to the uniform without this
+// Wait for uniform initialization to prevent race conditions on mag assignment
+waitUntil { uniform player != "" };
 params["_side","_faction","_variant", "_loadout"]; 
 
 // add primary ammo 
@@ -31,7 +32,7 @@ switch (_loadout) do {
 		for "_i" from 1 to 2 do { player addItemToVest "rhsusf_mag_6Rnd_M441_HE"};
 		for "_i" from 1 to 4 do { player addItemToBackpack "rhsusf_mag_6Rnd_M441_HE"};
 		for "_i" from 1 to 1 do { player addItemToBackpack "rhsusf_mag_6Rnd_M713_red"};
-		for "_i" from 1 to 1 do { player addItemToBackpack "rhsusf_mag_6Rnd_M714_white"}
+		for "_i" from 1 to 1 do { player addItemToBackpack "rhsusf_mag_6Rnd_M714_white"};
 	};
 	case "sqd_ar": {
 		for "_i" from 1 to 2 do { player addItemToVest "rhsusf_200Rnd_556x45_M855_soft_pouch_coyote"};
@@ -85,8 +86,6 @@ switch (_loadout) do {
 		for "_i" from 1 to 4 do { player addItemToVest "rhsusf_mag_15Rnd_9x19_FMJ"};
 		for "_i" from 1 to 2 do { player addItemToUniform "rhsusf_mag_15Rnd_9x19_FMJ"};
 	};
-	case "sqd_eng";
-	case "sf_eng": {};
 };
 
 // add assistant ammo 

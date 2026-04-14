@@ -7,8 +7,8 @@ params["_side","_faction","_variant", "_loadout"];
 
 // add uniform
 switch (_loadout) do {
-	default {randomOfficerUniformArray = ["UK3CB_BAF_U_CombatUniform_MTP","UK3CB_BAF_U_CombatUniform_MTP_ShortSleeve"];
-		     player forceAddUniform selectRandom randomOfficerUniformArray;};
+	default {private _uniformPool = ["UK3CB_BAF_U_CombatUniform_MTP","UK3CB_BAF_U_CombatUniform_MTP_ShortSleeve"];
+		     player forceAddUniform selectRandom _uniformPool;};
 	case "rcn_sni";
 	case "rcn_amr";
 	case "rcn_drone";
@@ -19,8 +19,8 @@ switch (_loadout) do {
 	
 // add helmet
 switch (_loadout) do {
-	default {randomOfficerHelmetArray = ["UK3CB_BAF_H_Mk7_Camo_A","UK3CB_BAF_H_Mk7_Camo_B","UK3CB_BAF_H_Mk7_Camo_C","UK3CB_BAF_H_Mk7_Camo_D","UK3CB_BAF_H_Mk7_Camo_E","UK3CB_BAF_H_Mk7_Camo_F"];
-		     player addHeadgear selectRandom randomOfficerHelmetArray;};
+	default {private _helmetPool = ["UK3CB_BAF_H_Mk7_Camo_A","UK3CB_BAF_H_Mk7_Camo_B","UK3CB_BAF_H_Mk7_Camo_C","UK3CB_BAF_H_Mk7_Camo_D","UK3CB_BAF_H_Mk7_Camo_E","UK3CB_BAF_H_Mk7_Camo_F"];
+		     player addHeadgear selectRandom _helmetPool;};
 	case "rcn_sni";
 	case "rcn_amr";
 	case "rcn_drone";
@@ -28,12 +28,12 @@ switch (_loadout) do {
 	case "sf_dmr";
 	case "sf_ld";
 	case "sf_med";
-	case "sf_eng": {randomOfficerHelmetArray1 = ["UK3CB_BAF_H_Mk7_Scrim_A","UK3CB_BAF_H_Mk7_Scrim_B","UK3CB_BAF_H_Mk7_Scrim_C","UK3CB_BAF_H_Mk7_Scrim_D","UK3CB_BAF_H_Mk7_Scrim_E","UK3CB_BAF_H_Mk7_Scrim_F"];
-		     player addHeadgear selectRandom randomOfficerHelmetArray1;};
+	case "sf_eng": {private _sfHelmetPool = ["UK3CB_BAF_H_Mk7_Scrim_A","UK3CB_BAF_H_Mk7_Scrim_B","UK3CB_BAF_H_Mk7_Scrim_C","UK3CB_BAF_H_Mk7_Scrim_D","UK3CB_BAF_H_Mk7_Scrim_E","UK3CB_BAF_H_Mk7_Scrim_F"];
+		     player addHeadgear selectRandom _sfHelmetPool;};
     case "ar_ld";
 	case "ar_c": {player addHeadgear "UK3CB_BAF_H_CrewHelmet_A"};
-	case "r_pil": {randomOfficerHelmetArray2 = ["rhsusf_hgu56p_visor_mask_green_mo","rhsusf_hgu56p_visor_green"];
-		           player addHeadgear selectRandom randomOfficerHelmetArray2;};
+	case "r_pil": {private _pilotHelmetPool = ["UK3CB_BAF_H_HelmetPilot_A","UK3CB_BAF_H_HelmetPilot_B"];
+		           player addHeadgear selectRandom _pilotHelmetPool;};
 	case "f_pil": {player addHeadgear "H_PilotHelmetFighter_B"};
 };
 

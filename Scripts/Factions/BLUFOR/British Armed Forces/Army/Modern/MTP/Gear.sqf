@@ -33,5 +33,4 @@ switch (_loadout) do {
 // NVG swap
  switch (_loadout) do {
      default {player linkItem "UK3CB_BAF_HMNVS"};
-	 case "f_pil": {player addHeadgear "H_PilotHelmetFighter_B"};
  };

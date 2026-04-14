@@ -17,7 +17,8 @@
 // };
 // This can be put directly into the -default {}			
 
-sleep 0.5 // for some reason it might randomly assign a mag to the uniform without this
+// Wait for uniform initialization to prevent race conditions on mag assignment
+waitUntil { uniform player != "" };
 params["_side","_faction","_variant", "_loadout"]; 
 
 // add primary ammo 
@@ -78,8 +79,6 @@ switch (_loadout) do {
 // add secondary ammo
 switch (_loadout) do {
 	default {for "_i" from 1 to 2 do { player addItemToUniform "UK3CB_BHP_9_13Rnd"};};
-	case "sqd_eng";
-	case "sf_eng": {};
 };
 
 // add assistant ammo 

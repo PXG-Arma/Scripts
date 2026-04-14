@@ -58,44 +58,44 @@ _availableVehicles =
 		]
 	],
 
-	['Artillery', 
+	["Artillery", 
 		[
-			['UK3CB_UN_I_D30', -1]
+			["UK3CB_UN_I_D30", -1]
 		]
 	],
 
-	['Rotary Transport', 
+	["Rotary Transport", 
 		[
 			["UK3CB_UN_I_Bell412_Utility", 4], 
 	        ["UK3CB_UN_I_Mi8AMT", 8]
 		]
 	],
 
-	['Rotary Attack', 
+	["Rotary Attack", 
 		[
 			["UK3CB_UN_I_Bell412_Armed", 4], 
 	        ["UK3CB_UN_I_Mi_24V", 4]
 		]
 	],
 
-	['Fixed Wing Transport', 
+	["Fixed Wing Transport", 
 		[
 			["UK3CB_UN_I_C130J", 24], 
 	        ["UK3CB_UN_I_C130J_CARGO", 24]
 		]
 	],
 
-	['Fixed Wing Attack', 
+	["Fixed Wing Attack", 
 		[
 			["UK3CB_UN_I_Cessna_T41_Armed", 4]
 		]
 	],
 
-	['Boat', 
+	["Boat", 
 		[
-			['UK3CB_BAF_RHIB_HMG', 8],
-			['B_Boat_Transport_01_F', 4],
-			['B_SDV_01_F', 4]
+			["UK3CB_BAF_RHIB_HMG", 8],
+			["B_Boat_Transport_01_F", 4],
+			["B_SDV_01_F", 4]
 		]
 	],
 

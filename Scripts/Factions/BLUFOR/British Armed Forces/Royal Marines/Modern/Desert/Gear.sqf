@@ -37,5 +37,4 @@ switch (_loadout) do {
 	 case "rcn_amr";
 	 case "rcn_ld";
 	 case "rcn_drone": {player linkItem "UK3CB_PVS5A"};
-	 case "f_pil": {player addHeadgear "H_PilotHelmetFighter_B"};
  };

@@ -2,8 +2,8 @@
 
 params["_side","_faction","_variant", "_loadout"]; 
 
-_variantArray = _variant splitString " ";
-_variantEra = _variantArray #1;
+private _metadata = call compile _variant;
+private _variantEra = _metadata select 3;
 
 player linkItem "ItemMap";
 player linkItem "ItemCompass";

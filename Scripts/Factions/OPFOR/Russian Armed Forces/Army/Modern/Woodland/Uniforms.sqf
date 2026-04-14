@@ -7,16 +7,16 @@ params["_side","_faction","_variant", "_loadout"];
 
 // add uniform
 switch (_loadout) do {
-	default {randomOfficerUniformArray = ["rhs_uniform_vkpo","rhs_uniform_vkpo_gloves"];
-		     player forceaddUniform selectRandom randomOfficerUniformArray;};
+	default {private _uniformPool = ["rhs_uniform_vkpo","rhs_uniform_vkpo_gloves"];
+		     player forceaddUniform selectRandom _uniformPool;};
 	case "r_pil": {player forceAddUniform "rhs_uniform_df15"};
 	case "f_pil": {player forceAddUniform "rhs_uniform_df15_tan"};
 };
 	
 // add helmet
 switch (_loadout) do {
-	default {randomOfficerHelmetArray = ["rhs_6b47_emr","rhs_6b47_emr_1"];
-		     player addHeadgear selectRandom randomOfficerHelmetArray;};
+	default {private _helmetPool = ["rhs_6b47_emr","rhs_6b47_emr_1"];
+		     player addHeadgear selectRandom _helmetPool;};
 	case "rcn_sni";
 	case "rcn_amr";
 	case "rcn_drone";
@@ -24,19 +24,19 @@ switch (_loadout) do {
 	case "sf_dmr";
 	case "sf_ld";
 	case "sf_med";
-	case "sf_eng": {randomOfficerHelmetArray1 = ["rhs_altyn_bala","rhs_altyn","rhs_altyn_visordown"];
-		           player addHeadgear selectRandom randomOfficerHelmetArray1;};
+	case "sf_eng": {private _helmetPoolSF = ["rhs_altyn_bala","rhs_altyn","rhs_altyn_visordown"];
+		           player addHeadgear selectRandom _helmetPoolSF;};
     case "ar_ld";
 	case "ar_c": {player addHeadgear "rhs_6b48"};
-	case "r_pil": {randomOfficerHelmetArray2 = ["rhs_zsh7a_mike_green","rhs_zsh7a_mike_green_alt"];
-		           player addHeadgear selectRandom randomOfficerHelmetArray2;};
+	case "r_pil": {private _helmetPoolPilot = ["rhs_zsh7a_mike_green","rhs_zsh7a_mike_green_alt"];
+		           player addHeadgear selectRandom _helmetPoolPilot;};
 	case "f_pil": {player addHeadgear "rhs_zsh7a_alt"};
 };
 
 // add vest
 switch (_loadout) do {
-	default {randomOfficerVestArray = ["rhs_6b45_rifleman","rhs_6b45_rifleman_2"];
-		     player addVest selectRandom randomOfficerVestArray;};
+	default {private _vestPool = ["rhs_6b45_rifleman","rhs_6b45_rifleman_2"];
+		     player addVest selectRandom _vestPool;};
 	case "sup_mmg_l";
 	case "sup_hmg_l";
 	case "sup_mat_l";

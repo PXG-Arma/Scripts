@@ -9,8 +9,8 @@ params["_side","_faction","_variant", "_loadout"];
 // add primary weapon
 switch (_loadout) do {
 	default { player addWeapon "rhs_weap_m4a1_carryhandle";
-			  PrimaryWeaponItemArray = ["rhsusf_acc_compm4","rhsusf_acc_eotech_xps3"]; 
-		      player addPrimaryWeaponItem selectRandom PrimaryWeaponItemArray;
+			  private _primaryWeaponItemPool = ["rhsusf_acc_compm4","rhsusf_acc_eotech_xps3"]; 
+		      player addPrimaryWeaponItem selectRandom _primaryWeaponItemPool;
 			  player addPrimaryWeaponItem "rhsusf_acc_grip3";
 			  player addPrimaryWeaponItem "rhsusf_acc_anpeq15_bk_top";
 	};
@@ -26,8 +26,8 @@ switch (_loadout) do {
 	case "sf_ld";
 	case "sqd_gre";
 	case "sqd_ld":{ player addWeapon "rhs_weap_m4a1_carryhandle_m203S";
-	                PrimaryWeaponItemArray1 = ["rhsusf_acc_compm4","rhsusf_acc_eotech_xps3"];
-					player addPrimaryWeaponItem selectRandom PrimaryWeaponItemArray1;
+	                private _primaryWeaponItemPool1 = ["rhsusf_acc_compm4","rhsusf_acc_eotech_xps3"];
+					player addPrimaryWeaponItem selectRandom _primaryWeaponItemPool1;
 					player addPrimaryWeaponItem "rhsusf_acc_anpeq15side_bk";
 					player addPrimaryWeaponItem "rhsusf_acc_grip_m203_blk";
 	};

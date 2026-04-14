@@ -9,8 +9,8 @@ params["_side","_faction","_variant", "_loadout"];
 // add primary weapon
 switch (_loadout) do {
 	default { player addWeapon "rhs_weap_ak74m";
-			  PrimaryWeaponItemArray = ["rhs_acc_pkas","rhs_acc_ekp1"]; 
-		      player addPrimaryWeaponItem selectRandom PrimaryWeaponItemArray;
+			  private _primaryWeaponItemPool = ["rhs_acc_pkas","rhs_acc_ekp1"]; 
+		      player addPrimaryWeaponItem selectRandom _primaryWeaponItemPool;
 			  player addPrimaryWeaponItem "rhs_acc_perst1ik";
 			  player addPrimaryWeaponItem "rhs_acc_dtk";
 	};
@@ -26,15 +26,15 @@ switch (_loadout) do {
 	case "sf_ld";
 	case "sqd_gre";
 	case "sqd_ld":{ player addWeapon "rhs_weap_ak74m_gp25";
-			  PrimaryWeaponItemArray = ["rhs_acc_pkas","rhs_acc_ekp1"]; 
-		      player addPrimaryWeaponItem selectRandom PrimaryWeaponItemArray;
+			  private _primaryWeaponItemPool = ["rhs_acc_pkas","rhs_acc_ekp1"]; 
+		      player addPrimaryWeaponItem selectRandom _primaryWeaponItemPool;
 			  player addPrimaryWeaponItem "rhs_acc_perst1ik";
 			  player addPrimaryWeaponItem "rhs_acc_dtk";
 	};
 	case "sf_med";
 	case "sqd_ar": {player addWeapon "rhs_weap_rpk74m";
-			  PrimaryWeaponItemArray = ["rhs_acc_pkas","rhs_acc_ekp1"]; 
-		      player addPrimaryWeaponItem selectRandom PrimaryWeaponItemArray;
+			  private _primaryWeaponItemPool = ["rhs_acc_pkas","rhs_acc_ekp1"]; 
+		      player addPrimaryWeaponItem selectRandom _primaryWeaponItemPool;
 			  player addPrimaryWeaponItem "rhs_acc_perst1ik";
 			  player addPrimaryWeaponItem "rhs_acc_dtkrpk";
 	};

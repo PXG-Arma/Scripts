@@ -17,7 +17,8 @@
 // };
 // This can be put directly into the -default {}			
 
-sleep 0.5 // for some reason it might randomly assign a mag to the uniform without this
+// Wait for uniform initialization to prevent race conditions on mag assignment
+waitUntil { uniform player != "" };
 params["_side","_faction","_variant", "_loadout"]; 
 
 // add primary ammo 
@@ -31,7 +32,7 @@ switch (_loadout) do {
 		for "_i" from 1 to 4 do { player addItemToVest "rhs_mag_30Rnd_556x45_M855_Stanag"};
 		for "_i" from 1 to 4 do { player addItemToVest "rhs_mag_30Rnd_556x45_M855_Stanag_Tracer_Red"};
 		for "_i" from 1 to 6 do { player addItemToBackpack "UK3CB_BAF_1Rnd_60mm_Mo_Shells"};
-		for "_i" from 1 to 2 do { player addItemToBackpack "UK3CB_BAF_1Rnd_60mm_Mo_Smoke_White"}
+		for "_i" from 1 to 2 do { player addItemToBackpack "UK3CB_BAF_1Rnd_60mm_Mo_Smoke_White"};
 	};
 	case "sqd_ar": {
 		for "_i" from 1 to 2 do { player addItemToVest "UK3CB_BAF_556_200Rnd"};
@@ -83,7 +84,6 @@ switch (_loadout) do {
 // add secondary ammo
 switch (_loadout) do {
 	default {for "_i" from 1 to 2 do { player addItemToUniform "UK3CB_BAF_9_17Rnd"};};
-	case "sqd_eng";
 	case "sf_eng": {};
 };
 
@@ -91,7 +91,7 @@ switch (_loadout) do {
 switch (_loadout) do {
 	default {};
 	case "sqd_aar": {
-		for "_i" from 1 to 4 do { player addItemToBackpack "rhsusf_200rnd_556x45_mixed_box"};
+		for "_i" from 1 to 4 do { player addItemToBackpack "UK3CB_BAF_556_200Rnd"};
 	};
 	case "sup_mmg_l": {
 		for "_i" from 1 to 2 do { player addItemToBackpack "UK3CB_BAF_762_200Rnd_T"};
@@ -138,9 +138,7 @@ switch (_loadout) do {
 	case "tacp";
 	case "sup_mmg_l";
 	case "sup_hmg_l";
-	case "sup_mat_l";
 	case "sup_hat_l";
-	case "sup_mor_l";
 	case "sup_aa_l";
 	case "plt": {
 		for "_i" from 1 to 5 do {player addItemToBackpack "1Rnd_HE_Grenade_shell"}; 

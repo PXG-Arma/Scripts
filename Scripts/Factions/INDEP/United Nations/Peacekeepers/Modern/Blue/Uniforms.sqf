@@ -23,16 +23,16 @@ switch (_loadout) do {
 	
 // add helmet
 switch (_loadout) do {
-	default {randomOfficerHelmetArray = ["UK3CB_UN_B_H_6b27m","UK3CB_UN_B_H_6b27m_Cov"];
-		     player addHeadgear selectRandom randomOfficerHelmetArray;};
+	default {private _helmetPool = ["UK3CB_UN_B_H_6b27m","UK3CB_UN_B_H_6b27m_Cov"];
+		     player addHeadgear selectRandom _helmetPool;};
 	case "rcn_sni";
 	case "rcn_amr";
 	case "rcn_drone": {player addHeadgear "UK3CB_BAF_H_Beret_UN"};
 	case "rcn_ld": {player addHeadgear "UK3CB_BAF_H_Beret_UN_Officer_PRR"};
     case "ar_ld";
 	case "ar_c": {player addHeadgear "rhs_tsh4"};
-	case "r_pil": {randomOfficerHelmetArray1 = ["rhs_zsh7a_mike_alt","rhs_zsh7a_mike"];
-		           player addHeadgear selectRandom randomOfficerHelmetArray1;};
+	case "r_pil": {private _helmetPoolPilot = ["rhs_zsh7a_mike_alt","rhs_zsh7a_mike"];
+		           player addHeadgear selectRandom _helmetPoolPilot;};
 	case "f_pil": {player addHeadgear "H_PilotHelmetFighter_B"};
 };
 

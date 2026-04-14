@@ -6,101 +6,100 @@ _availableVehicles =
 
 [
 
-	['Utility', 
+	["Utility", 
 		[
-			['rhsusf_M977A4_AMMO_BKIT_usarmy_d', 4], 
-			['rhsusf_M978A4_BKIT_usarmy_d', 4], 
-			['rhsusf_M1083A1P2_B_D_fmtv_usarmy', 12], 
-			["rhsusf_M1085A1P2_B_D_Medical_fmtv_usarmy",8],
-			['rhsusf_m1152_rsv_usarmy_d', 4], 
-			['rhsusf_m1151_usarmy_d', 4]
+			["rhsusf_M977A4_AMMO_BKIT_usarmy_d", 4], 
+			["rhsusf_M978A4_BKIT_usarmy_d", 4], 
+			["rhsusf_M1083A1P2_B_D_fmtv_usarmy", 12], 
+			["rhsusf_M1085A1P2_B_D_Medical_fmtv_usarmy", 8],
+			["rhsusf_m1152_rsv_usarmy_d", 4], 
+			["rhsusf_m1151_usarmy_d", 4]
 		]
 	],
 
-	['Armed Car/MRAP', 
+	["Armed Car/MRAP", 
 		[
-			['rhsusf_m1151_m2_v2_usarmy_d', 4], 
-			['rhsusf_m1240a1_m2_uik_usarmy_d', 4], 
-			['rhsusf_M1230_M2_usarmy_d', 4]
+			["rhsusf_m1151_m2_v2_usarmy_d", 4], 
+			["rhsusf_m1240a1_m2_uik_usarmy_d", 4], 
+			["rhsusf_M1230_M2_usarmy_d", 4]
 		]
 	],
 
-	['APC', 
+	["APC", 
 		[
-			['rhsusf_stryker_m1132_m2_d', 6], 
-			['rhsusf_stryker_m1126_m2_d', 6], 
-			['rhsusf_stryker_m1126_mk19_d', 6], 
-			['rhsusf_stryker_m1134_d', 6]
+			["rhsusf_stryker_m1132_m2_d", 6], 
+			["rhsusf_stryker_m1126_m2_d", 6], 
+			["rhsusf_stryker_m1126_mk19_d", 6], 
+			["rhsusf_stryker_m1134_d", 6]
 		]
 	],
 
-	['IFV', 
+	["IFV", 
 		[
-			['RHS_M2A3_BUSKIII', 4],
-			['RHS_M6', 4]
+			["RHS_M2A3_BUSKIII", 4],
+			["RHS_M6", 4]
 		]
 	],
 
-	['MBT', 
+	["MBT", 
 		[
-			['rhsusf_m1a2sep1tuskiid_usarmy', 4]
+			["rhsusf_m1a2sep1tuskiid_usarmy", 4]
 		]
 	],
 
-	['Artillery', 
+	["Artillery", 
 		[
-			['rhsusf_m109d_usarmy', 4],
-			['rhsusf_M142_usarmy_D', 4], 
-			['RHS_M119_D', -1]
+			["rhsusf_m109d_usarmy", 4],
+			["rhsusf_M142_usarmy_D", 4], 
+			["RHS_M119_D", -1]
 		]
 	],
 
-	['Rotary Transport', 
+	["Rotary Transport", 
 		[
-			['RHS_MELB_MH6M', 4], 
-			['vtx_UH60M', 6], 
-			['RHS_CH_47F_10', 8], 
-			['RHS_CH_47F_10_cargo', 8]
+			["RHS_MELB_MH6M", 4], 
+			["vtx_UH60M", 6], 
+			["RHS_CH_47F_10", 8], 
+			["RHS_CH_47F_10_cargo", 8]
 		]
 	],
 
-	['Rotary Attack', 
+	["Rotary Attack", 
 		[
-			['RHS_MELB_AH6M', 0], 
-			['vtx_MH60M_DAP_MLASS', 4], 
-			['RHS_AH64D', 0]
+			["RHS_MELB_AH6M", 0], 
+			["vtx_MH60M_DAP_MLASS", 4], 
+			["RHS_AH64D", 0]
 		]
 	],
 
-	['Fixed Wing Transport', 
+	["Fixed Wing Transport", 
 		[
-			['RHS_C130J', 24], 
-			['RHS_C130J_Cargo', 24]
+			["RHS_C130J", 24], 
+			["RHS_C130J_Cargo", 24]
 		]
 	],
 
-	['Fixed Wing Attack', 
+	["Fixed Wing Attack", 
 		[
-			['UK3CB_BAF_MQ9_Reaper_Generic_DPMW_RM', -1],
-			['FIR_A10C_47FS_Tigress', -1],
-			['FIR_F16C', -1],
-			['FIR_F16D', -1]
+			["UK3CB_BAF_MQ9_Reaper_Generic_DPMW_RM", -1],
+			["FIR_A10C_47FS_Tigress", -1],
+			["FIR_F16C", -1],
+			["FIR_F16D", -1]
 		]
 	],
 
-	['Boat', 
+	["Boat", 
 		[
-			['rhsusf_mkvsoc', 12],
-			['UK3CB_BAF_RHIB_HMG', 8],
-			['B_Boat_Transport_01_F', 4],
-			['B_SDV_01_F', 4]
+			["rhsusf_mkvsoc", 12],
+			["B_Boat_Transport_01_F", 4],
+			["B_SDV_01_F", 4]
 		]
 	],
 
-	['Misc.', 
+	["Misc.", 
 		[
-			['UK3CB_KRG_B_Quadbike', 4],
-			['rhsusf_mrzr4_d', 4]
+			["UK3CB_KRG_B_Quadbike", 4],
+			["rhsusf_mrzr4_d", 4]
 		]
 	]
 ];

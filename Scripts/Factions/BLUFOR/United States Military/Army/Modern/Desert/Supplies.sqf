@@ -66,11 +66,11 @@ _resupplyAvailable = [
 	],
 	["40mm Grenades",
 		[
-			["1Rnd_HE_Grenade_Shell",30],
-			["1Rnd_Smoke_Grenade_Shell",20],
-			["1Rnd_SmokeRed_Grenade_Shell",10],
-			["1Rnd_SmokeYellow_Grenade_Shell",10],
-			["1Rnd_SmokeBlue_Grenade_Shell",10]
+			["1Rnd_HE_Grenade_shell",30],
+			["1Rnd_Smoke_Grenade_shell",20],
+			["1Rnd_SmokeRed_Grenade_shell",10],
+			["1Rnd_SmokeYellow_Grenade_shell",10],
+			["1Rnd_SmokeBlue_Grenade_shell",10]
 		]
 	],
 	["40mm Heavy",
@@ -142,7 +142,7 @@ _resupplyAvailable = [
 			["rhs_mag_30Rnd_556x45_M855_Stanag", 24],
 			["rhsusf_200rnd_556x45_mixed_box", 6],
 			["rhs_weap_M136", 2],
-			["1Rnd_HE_Grenade_Shell", 12],
+			["1Rnd_HE_Grenade_shell", 12],
 			["rhsusf_mag_6Rnd_M441_HE", 2],
 			["HandGrenade", 6],
 			["SmokeShell", 6],

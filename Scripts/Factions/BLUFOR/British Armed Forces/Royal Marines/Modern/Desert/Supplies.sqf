@@ -59,11 +59,11 @@ _resupplyAvailable = [
 	],
 	["40mm Grenades",
 		[
-			["1Rnd_HE_Grenade_Shell",30],
-			["1Rnd_Smoke_Grenade_Shell",20],
-			["1Rnd_SmokeRed_Grenade_Shell",10],
-			["1Rnd_SmokeYellow_Grenade_Shell",10],
-			["1Rnd_SmokeBlue_Grenade_Shell",10]
+			["1Rnd_HE_Grenade_shell",30],
+			["1Rnd_Smoke_Grenade_shell",20],
+			["1Rnd_SmokeRed_Grenade_shell",10],
+			["1Rnd_SmokeYellow_Grenade_shell",10],
+			["1Rnd_SmokeBlue_Grenade_shell",10]
 		]
 	],
 	["Mortar Rounds",
@@ -136,7 +136,7 @@ _resupplyAvailable = [
 			["UK3CB_BAF_556_200Rnd", 6],
 			["UK3CB_BAF_NLAW_Launcher", 2],
 			["UK3CB_BAF_1Rnd_60mm_Mo_Shells", 6],
-			["rhsusf_mag_6Rnd_M441_HE", 2],
+			["1Rnd_HE_Grenade_shell", 2],
 			["HandGrenade", 6],
 			["SmokeShell", 6],
 			["ACE_elasticBandage", 12],

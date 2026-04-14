@@ -4,7 +4,7 @@
 private _indexFaction = tvCurSel IDC_ARMORY_FACTION_TREE;
 private _factionNodeIdx = [_indexFaction select 0];
 
-if (count _indexFaction < 4) exitwith {};
+if (count _indexFaction < 3) exitwith {};
 
 private _variantData = tvData [IDC_ARMORY_FACTION_TREE, _indexFaction];
 if (_variantData == "") exitWith {};

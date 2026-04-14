@@ -44,6 +44,7 @@ class PxgGuiBackground: RscFrame
 class PxgGuiRscTree: RscTree
 {
 	colorBackground[] = {0,0,0,0.3};
+	rowHeight = 0.028;
 };
 
 class PxgGuiRscButton: RscButton

@@ -2,7 +2,7 @@
 
 // Get selected item from faction list
 private _indexFaction = tvCurSel IDC_RESUPPLY_FACTION_TREE;
-if (count _indexFaction < 4) exitwith {};
+if (count _indexFaction < 3) exitwith {};
 
 private _variantData = tvData [IDC_RESUPPLY_FACTION_TREE, _indexFaction];
 if (_variantData == "") exitWith {};

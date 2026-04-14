@@ -9,7 +9,7 @@ private _savedFaction = tvCurSel IDC_ARMORY_FACTION_TREE;
 // Gives hints if user does not select all items from UI, prevents errors
 if (_indexSide == -1) exitWith { hint "Please select side."};
 if (count _indexFaction == 0 ) exitWith { hint "Please select faction."};
-if (count _indexFaction < 4 ) exitWith { hint "Please select faction variant."};
+if (count _indexFaction < 3 ) exitWith { hint "Please select faction variant."};
 if (count _indexLoadout < 2 ) exitWith { hint "Please select loadout."};
 
 player setVariable ["PXG_Armory_Memory_Side", _indexSide];

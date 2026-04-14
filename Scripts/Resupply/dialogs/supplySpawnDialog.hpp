@@ -10,6 +10,7 @@ class dialog_supply_spawn
 		class RscFrame_1: PxgGuiBackground
 		{
 			idc = -1;
+			colorBackground[] = {0.1, 0.1, 0.1, 0.8}; // Added 80% opacity background
 
 			x = 0.29 * safezoneW + safezoneX;
 			y = 0.25 * safezoneH + safezoneY;
@@ -103,6 +104,7 @@ class dialog_supply_spawn
 		{
 			idc = 451501;
 			onTreeSelChanged = "call compile preprocessfile 'Scripts\Resupply\Functions\PXG_Refresh_Supplies.sqf'";
+			onTreeExpanded = "_this spawn { params ['_ctrl', '_path']; sleep 0.05; if (count _path == 1) then { private _sel = tvCurSel _ctrl; _ctrl tvSetCurSel [-1]; for '_i' from 0 to ((_ctrl tvCount _path) - 1) do { _ctrl tvCollapse (_path + [_i]); _ctrl tvExpand (_path + [_i]); }; if (count _sel > 0) then { _ctrl tvSetCurSel _sel; }; }; };";
 
 			x = 0.30 * safezoneW + safezoneX;
 			y = 0.43 * safezoneH + safezoneY;

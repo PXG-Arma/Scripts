@@ -160,7 +160,7 @@ switch (_mode) do {
 			// 1. Zoom - consume scroll delta
 			private _zDelta = missionNamespace getVariable ["PXG_Cam_ZDelta", 0];
 			if (_zDelta != 0) then {
-				PXG_Cam_Dist = (_dist - (_zDelta / 10)) max 5 min 100;
+				PXG_Cam_Dist = (_dist - (_zDelta / 2)) max 5 min 100;
 				_dist = PXG_Cam_Dist;
 				missionNamespace setVariable ["PXG_Cam_ZDelta", 0];
 			};

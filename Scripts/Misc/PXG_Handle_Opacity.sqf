@@ -38,10 +38,10 @@ if (_mode == "init") then {
     
     // Update button visual state
     if (_alpha == 1.0) then {
-        _toggleBtn ctrlSetText "[ # ]";
+        _toggleBtn ctrlSetText "%";
         _toggleBtn ctrlSetTooltip "Background: Solid (Click for Soft)";
     } else {
-        _toggleBtn ctrlSetText "[ * ]";
+        _toggleBtn ctrlSetText "%";
         _toggleBtn ctrlSetTooltip "Background: Soft (Click for Solid)";
     };
 };
@@ -59,10 +59,10 @@ if (_mode == "toggle") then {
     
     // Update button visual state
     if (_newAlpha == 1.0) then {
-        _toggleBtn ctrlSetText "[ # ]";
+        _toggleBtn ctrlSetText "%";
         _toggleBtn ctrlSetTooltip "Background: Solid (Click for Soft)";
     } else {
-        _toggleBtn ctrlSetText "[ * ]";
+        _toggleBtn ctrlSetText "%";
         _toggleBtn ctrlSetTooltip "Background: Soft (Click for Solid)";
     };
 };

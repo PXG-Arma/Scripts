@@ -46,14 +46,13 @@ switch (_mode) do {
 		PXG_Cam_Active_LB_IDC   = _lbIDC;
 		PXG_Cam_Active_Orbit_IDC = _orbitBtnIDC;
 
-		// Camera state scalars - three independent globals, no shared array reference.
-		// Using separate scalars eliminates the race where Draw3D and MouseMoving
-		// both hold a reference to the same array and overwrite each other's writes.
-		PXG_Cam_Dist = 35;
-		PXG_Cam_Az   = 180;  // azimuth (degrees)
-		PXG_Cam_El   = 25;   // elevation (degrees)
-		missionNamespace setVariable ["PXG_Cam_ZDelta", 0];
-		missionNamespace setVariable ["PXG_Cam_AutoOrbit", true];
+		// Camera state scalars - Persistence check
+		if (isNil "PXG_Cam_Dist") then { PXG_Cam_Dist = 35; };
+		if (isNil "PXG_Cam_Az")   then { PXG_Cam_Az   = 180; };
+		if (isNil "PXG_Cam_El")   then { PXG_Cam_El   = 25; };
+		
+		if (isNil {missionNamespace getVariable "PXG_Cam_ZDelta"})    then { missionNamespace setVariable ["PXG_Cam_ZDelta", 0]; };
+		if (isNil {missionNamespace getVariable "PXG_Cam_AutoOrbit"}) then { missionNamespace setVariable ["PXG_Cam_AutoOrbit", true]; };
 
 		// ACE3 mouseButtonState: [LMBanchor, RMBanchor]. [] = not held.
 		missionNamespace setVariable ["PXG_Cam_MBS", [[], []]];
@@ -61,15 +60,13 @@ switch (_mode) do {
 		// -----------------------------------------------------------------------
 		// Create camera object (ACE: GVAR(camera) = "camera" camCreate ...)
 		// -----------------------------------------------------------------------
-		if (!isNil "PXG_Motorpool_Camera" && {!isNull PXG_Motorpool_Camera}) then {
-			PXG_Motorpool_Camera cameraEffect ["terminate", "back"];
-			camDestroy PXG_Motorpool_Camera;
+		if (isNil "PXG_Motorpool_Camera" || {isNull PXG_Motorpool_Camera}) then {
+			PXG_Motorpool_Camera = "camera" camCreate (getPos player);
+			PXG_Motorpool_Camera camPrepareFocus [-1, -1];
+			PXG_Motorpool_Camera camPrepareFov 0.65;
+			PXG_Motorpool_Camera camCommitPrepared 0;
 		};
-		PXG_Motorpool_Camera = "camera" camCreate (getPos player);
 		PXG_Motorpool_Camera cameraEffect ["internal", "back"];
-		PXG_Motorpool_Camera camPrepareFocus [-1, -1];
-		PXG_Motorpool_Camera camPrepareFov 0.65;
-		PXG_Motorpool_Camera camCommitPrepared 0;
 		showCinemaBorder false;
 
 		// -----------------------------------------------------------------------
@@ -197,6 +194,7 @@ switch (_mode) do {
 			PXG_Motorpool_Camera setVectorDirAndUp [vectorDir PXG_Cam_Helper, vectorUp PXG_Cam_Helper];
 		}];
 
+		// 6. Explicitly run one update to ensure immediate focus on target
 		[[], "update"] execVM "Scripts\Misc\PXG_Handle_Camera.sqf";
 	};
 
@@ -250,11 +248,37 @@ switch (_mode) do {
 	};
 
 	case "destroy": {
-		if (!isNil "PXG_Cam_Draw3D") then {
-			removeMissionEventHandler ["Draw3D", PXG_Cam_Draw3D];
-			PXG_Cam_Draw3D = nil;
+		private _isSwapping = missionNamespace getVariable ["PXG_Cam_IsSwapping", false];
+		// Force cleanup if not swapping
+		if (!_isSwapping) then {
+			if (!isNil "PXG_Cam_Draw3D") then {
+				removeMissionEventHandler ["Draw3D", PXG_Cam_Draw3D];
+				PXG_Cam_Draw3D = nil;
+			};
+
+			if (!isNil "PXG_Cam_Helper" && {!isNull PXG_Cam_Helper}) then {
+				deleteVehicle PXG_Cam_Helper;
+				PXG_Cam_Helper = nil;
+			};
+
+			if (!isNil "PXG_Motorpool_Camera" && {!isNull PXG_Motorpool_Camera}) then {
+				PXG_Motorpool_Camera cameraEffect ["terminate", "back"];
+				camDestroy PXG_Motorpool_Camera;
+				PXG_Motorpool_Camera = nil;
+			};
+			
+			uiNamespace setVariable ["PXG_Cam_Active_Display", nil];
+			PXG_Cam_Active_Source = nil; PXG_Cam_Active_Mode = nil;
+			PXG_Cam_Active_LB_IDC = nil; PXG_Cam_Active_Orbit_IDC = nil;
+			
+			{ missionNamespace setVariable [_x, nil]; } forEach [
+				"PXG_Cam_TargetObj", "PXG_Cam_AutoOrbit",
+				"PXG_Cam_MBS", "PXG_Cam_ZDelta"
+			];
+			PXG_Cam_Dist = nil; PXG_Cam_Az = nil; PXG_Cam_El = nil;
 		};
-		
+
+		// Always remove UI handlers from the (closing) display
 		private _display = uiNamespace getVariable ["PXG_Cam_Active_Display", displayNull];
 		if (!isNull _display) then {
 			if (!isNil "PXG_Cam_EH_Moving") then { _display displayRemoveEventHandler ["MouseMoving",    PXG_Cam_EH_Moving]; };
@@ -263,26 +287,5 @@ switch (_mode) do {
 			if (!isNil "PXG_Cam_EH_Wheel")  then { _display displayRemoveEventHandler ["MouseZChanged",   PXG_Cam_EH_Wheel]; };
 			PXG_Cam_EH_Moving = nil; PXG_Cam_EH_Down = nil; PXG_Cam_EH_Up = nil; PXG_Cam_EH_Wheel = nil;
 		};
-
-		if (!isNil "PXG_Cam_Helper" && {!isNull PXG_Cam_Helper}) then {
-			deleteVehicle PXG_Cam_Helper;
-			PXG_Cam_Helper = nil;
-		};
-
-		if (!isNil "PXG_Motorpool_Camera" && {!isNull PXG_Motorpool_Camera}) then {
-			PXG_Motorpool_Camera cameraEffect ["terminate", "back"];
-			camDestroy PXG_Motorpool_Camera;
-			PXG_Motorpool_Camera = nil;
-		};
-		
-		uiNamespace setVariable ["PXG_Cam_Active_Display", nil];
-		PXG_Cam_Active_Source = nil; PXG_Cam_Active_Mode = nil;
-		PXG_Cam_Active_LB_IDC = nil; PXG_Cam_Active_Orbit_IDC = nil;
-		
-		{ missionNamespace setVariable [_x, nil]; } forEach [
-			"PXG_Cam_TargetObj", "PXG_Cam_AutoOrbit",
-			"PXG_Cam_MBS", "PXG_Cam_ZDelta"
-		];
-		PXG_Cam_Dist = nil; PXG_Cam_Az = nil; PXG_Cam_El = nil;
 	};
 };

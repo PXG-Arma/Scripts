@@ -1,3 +1,5 @@
+#include "..\..\macros.hpp"
+
 class armoryDialog
 {
 	idd = 431234;
@@ -10,16 +12,16 @@ class armoryDialog
 			colorBackground[] = {0.1, 0.1, 0.1, 0.8}; 
 
 			x = 0.185 * safezoneW + safezoneX;
-			y = 0.1815 * safezoneH + safezoneY; // Centered
+			y = 0.1815 * safezoneH + safezoneY; // Global UI Standard
 			w = 0.63 * safezoneW;
-			h = 0.637 * safezoneH; // +30% Height
+			h = 0.637 * safezoneH; // Global UI Standard
 		};
 		class armoryStructuredText: PxgGuiRscStructuredText
 		{
 			idc = -1;
 			text = "<t align='center'>ARMORY</t>"; // Centered and All Caps
 			x = 0.185 * safezoneW + safezoneX;
-			y = 0.1585 * safezoneH + safezoneY; // y - 0.023
+			y = 0.1585 * safezoneH + safezoneY; // Global UI Standard
 			w = 0.63 * safezoneW;
 			h = 0.022 * safezoneH;
 			sizeEx = 1 * GUI_GRID_H * GUI_GRID_H;
@@ -59,7 +61,7 @@ class armoryDialog
 
 			text = "4. Loadout"; //--- ToDo: Localize;
 			x = 0.51 * safezoneW + safezoneX;
-			y = 0.1915 * safezoneH + safezoneY; // 0.26 - 0.0685
+			y = 0.1915 * safezoneH + safezoneY; 
 			w = 0.10 * safezoneW;
 			h = 0.04 * safezoneH;
 
@@ -116,10 +118,10 @@ class armoryDialog
 
 			text = "Get Loadout"; //--- ToDo: Localize;
 
-			x = 0.725 * safezoneW + safezoneX;
-			y = 0.8185 * safezoneH + safezoneY; // 0.887 - 0.0685
-			w = 0.09 * safezoneW;
-			h = 0.02 * safezoneH;
+			x = 0.755 * safezoneW + safezoneX;
+			y = 0.8185 * safezoneH + safezoneY; // Global UI Standard
+			w = GUI_W_BTN_M;
+			h = GUI_H_BTN;
 		};
 		class armoryButtonCloseDialog: PxgGuiRscButton
 		{
@@ -129,20 +131,21 @@ class armoryDialog
 			text = "Close";
 
 			x = 0.185 * safezoneW + safezoneX;
-			y = 0.8185 * safezoneH + safezoneY; // 0.887 - 0.0685
-			w = 0.09 * safezoneW;
-			h = 0.02 * safezoneH;
+			y = 0.8185 * safezoneH + safezoneY; // Global UI Standard
+			w = GUI_W_BTN_M;
+			h = GUI_H_BTN;
 		};
 		class armoryButtonOpacity: PxgGuiRscButton
 		{
 			idc = 400001;
 			action = "[ctrlParent (_this select 0), 'toggle'] execVM 'Scripts\Misc\PXG_Handle_Opacity.sqf';";
-			text = "[ * ]";
+			text = GUI_STR_OPACITY;
 			tooltip = "Toggle Background Opacity";
-			x = 0.280 * safezoneW + safezoneX;
-			y = 0.8185 * safezoneH + safezoneY;
-			w = 0.04 * safezoneW;
-			h = 0.02 * safezoneH;
+			colorText[] = GUI_COLOR_UI_GREY;
+			x = 0.250 * safezoneW + safezoneX;
+			y = 0.8185 * safezoneH + safezoneY; // Global UI Standard
+			w = GUI_W_BTN_S;
+			h = GUI_H_BTN;
 		};
 	};
 };

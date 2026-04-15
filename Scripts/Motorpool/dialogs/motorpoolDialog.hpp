@@ -1,3 +1,5 @@
+#include "..\..\macros.hpp"
+
 class dialog_motorpool
 {
 	idd = 461922;
@@ -12,9 +14,9 @@ class dialog_motorpool
 			colorBackground[] = {0.1, 0.1, 0.1, 0.8}; 
 
 			x = 0.185 * safezoneW + safezoneX;
-			y = 0.1685 * safezoneH + safezoneY; // Centered
+			y = 0.1815 * safezoneH + safezoneY; // Global UI Standard
 			w = 0.63 * safezoneW;
-			h = 0.663 * safezoneH; // +30% Height
+			h = 0.637 * safezoneH; // Global UI Standard
 		};
 		
 		class RscStructuredText_1: PxgGuiRscStructuredText
@@ -22,7 +24,7 @@ class dialog_motorpool
 			idc = 1100;
 			text = "<t align='center'>VEHICLE SPAWN</t>"; // Centered and All Caps
 			x = 0.185 * safezoneW + safezoneX;
-			y = 0.1455 * safezoneH + safezoneY; // y - 0.023
+			y = 0.1585 * safezoneH + safezoneY; // Global UI Standard
 			w = 0.63 * safezoneW;
 			h = 0.022 * safezoneH;
 			sizeEx = 1 * GUI_GRID_H * GUI_GRID_H;
@@ -172,12 +174,12 @@ class dialog_motorpool
 			idc = 461600;
 			action = "execVM 'Scripts\Motorpool\Functions\PXG_Spawn_Vehicle.sqf'";
 
-			text = "Spawn"; //--- ToDo: Localize;
+			text = "Spawn"; 
 			
 			x = 0.755 * safezoneW + safezoneX;
-			y = 0.8315 * safezoneH + safezoneY; // 0.913 - 0.0815
-			w = 0.06 * safezoneW;
-			h = 0.02 * safezoneH;
+			y = 0.8185 * safezoneH + safezoneY; 
+			w = GUI_W_BTN_M;
+			h = GUI_H_BTN;
 		};
 		class motorpoolButtonCloseDialog: PxgGuiRscButton
 		{
@@ -187,31 +189,44 @@ class dialog_motorpool
 			text = "Close";
 
 			x = 0.185 * safezoneW + safezoneX;
-			y = 0.8315 * safezoneH + safezoneY; // 0.913 - 0.0815
-			w = 0.06 * safezoneW;
-			h = 0.02 * safezoneH;
+			y = 0.8185 * safezoneH + safezoneY; 
+			w = GUI_W_BTN_M;
+			h = GUI_H_BTN;
 		};
 		class motorpoolButtonOpacity: PxgGuiRscButton
 		{
 			idc = 400001;
 			action = "[ctrlParent (_this select 0), 'toggle'] execVM 'Scripts\Misc\PXG_Handle_Opacity.sqf';";
-			text = "[ * ]";
+			text = GUI_STR_OPACITY;
 			tooltip = "Toggle Background Opacity";
+			colorText[] = GUI_COLOR_UI_GREY;
 			x = 0.250 * safezoneW + safezoneX;
-			y = 0.8315 * safezoneH + safezoneY;
-			w = 0.03 * safezoneW;
-			h = 0.02 * safezoneH;
+			y = 0.8185 * safezoneH + safezoneY; 
+			w = GUI_W_BTN_S;
+			h = GUI_H_BTN;
 		};
 		class motorpoolButtonOrbit: PxgGuiRscButton
 		{
 			idc = 400002;
 			action = "[[], 'orbit_toggle'] execVM 'Scripts\Misc\PXG_Handle_Camera.sqf';";
-			text = "<>";
+			text = GUI_STR_ORBIT;
 			tooltip = "Toggle Camera Orbit";
+			colorText[] = GUI_COLOR_UI_GREY;
 			x = 0.285 * safezoneW + safezoneX;
-			y = 0.8315 * safezoneH + safezoneY;
-			w = 0.03 * safezoneW;
-			h = 0.02 * safezoneH;
+			y = 0.8185 * safezoneH + safezoneY; 
+			w = GUI_W_BTN_S;
+			h = GUI_H_BTN;
+		};
+		class motorpoolButtonSwitch: PxgGuiRscButton
+		{
+			idc = 400003;
+			action = "['motorpool'] execVM 'Scripts\Misc\PXG_Swap_Dialog.sqf';";
+			text = "Resupply";
+			tooltip = "Switch to Resupply Menu";
+			x = 0.705 * safezoneW + safezoneX; 
+			y = 0.8185 * safezoneH + safezoneY; 
+			w = GUI_W_BTN_L;
+			h = GUI_H_BTN;
 		};
 	};
 };

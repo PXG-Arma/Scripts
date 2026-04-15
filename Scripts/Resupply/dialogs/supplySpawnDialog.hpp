@@ -1,3 +1,5 @@
+#include "..\..\macros.hpp"
+
 class dialog_supply_spawn
 {
 	idd = 451922;
@@ -5,19 +7,15 @@ class dialog_supply_spawn
 	onUnload = "[[], 'destroy'] execVM 'Scripts\Misc\PXG_Handle_Camera.sqf';";
 	class controls
 	{
-		////////////////////////////////////////////////////////
-		// GUI EDITOR OUTPUT START (by J. Dimlight, v1.063, #Xinebe)
-		////////////////////////////////////////////////////////
-
 		class RscFrame_1: PxgGuiBackground
 		{
 			idc = 451006;
 			colorBackground[] = {0.1, 0.1, 0.1, 0.8}; 
 
 			x = 0.185 * safezoneW + safezoneX;
-			y = 0.1815 * safezoneH + safezoneY; // Centered
+			y = 0.1815 * safezoneH + safezoneY; // Global UI Standard
 			w = 0.63 * safezoneW;
-			h = 0.637 * safezoneH; // +30% Height
+			h = 0.637 * safezoneH; // Global UI Standard
 		};
 		
 		class RscStructuredText_1: PxgGuiRscStructuredText
@@ -26,7 +24,7 @@ class dialog_supply_spawn
 
 			text = "<t align='center'>SUPPLY SPAWN</t>"; // Centered and All Caps
 			x = 0.185 * safezoneW + safezoneX;
-			y = 0.1585 * safezoneH + safezoneY; // y - 0.023
+			y = 0.1585 * safezoneH + safezoneY; // Global UI Standard
 			w = 0.63 * safezoneW;
 			h = 0.022 * safezoneH;
 			sizeEx = 1 * GUI_GRID_H * GUI_GRID_H;
@@ -67,7 +65,7 @@ class dialog_supply_spawn
 
 			text = "4. Supply";
 			x = 0.40 * safezoneW + safezoneX;
-			y = 0.1915 * safezoneH + safezoneY; // 0.26 - 0.0685
+			y = 0.1915 * safezoneH + safezoneY; 
 			w = 0.10 * safezoneW;
 			h = 0.04 * safezoneH;
 		};
@@ -77,7 +75,7 @@ class dialog_supply_spawn
 
 			text = "5. Spawn Point";
 			x = 0.605 * safezoneW + safezoneX;
-			y = 0.1915 * safezoneH + safezoneY; // 0.26 - 0.0685
+			y = 0.1915 * safezoneH + safezoneY; 
 			w = 0.10 * safezoneW;
 			h = 0.04 * safezoneH;
 		};
@@ -105,7 +103,7 @@ class dialog_supply_spawn
 		class dim_supply_spawnpoint_list: PxgGuiRscListBox
 		{
 			idc = 451500;
-			onLBSelChanged = "call compile preprocessfile 'Scripts\Resupply\Functions\PXG_Resupply_Refresh_Vehicle_Panel.sqf'";
+			onLBSelChanged = "[_this, 'update'] execVM 'Scripts\Misc\PXG_Handle_Camera.sqf'; call compile preprocessfile 'Scripts\Resupply\Functions\PXG_Resupply_Refresh_Vehicle_Panel.sqf'";
 
 			x = 0.605 * safezoneW + safezoneX;
 			y = 0.2315 * safezoneH + safezoneY; 
@@ -119,7 +117,7 @@ class dialog_supply_spawn
 			x = 0.400 * safezoneW + safezoneX;
 			y = 0.2315 * safezoneH + safezoneY; 
 			w = 0.20 * safezoneW;
-			h = 0.567 * safezoneH; // Adjusted to keep bottom
+			h = 0.567 * safezoneH; 
 
 			onLBSelChanged = "call compile preprocessfile 'Scripts\Resupply\Functions\PXG_Resupply_Refresh_Contents.sqf'";
 		};
@@ -176,12 +174,12 @@ class dialog_supply_spawn
 			idc = 451600;
 			action = "execVM 'Scripts\Resupply\Functions\PXG_Resupply_Crate_Spawn_Check.sqf'";
 
-			text = "Spawn Crate"; //--- ToDo: Localize;
+			text = "Spawn Crate"; 
 			
 			x = 0.755 * safezoneW + safezoneX;
-			y = 0.8185 * safezoneH + safezoneY; // 0.887 - 0.0685
-			w = 0.06 * safezoneW;
-			h = 0.02 * safezoneH;
+			y = 0.8185 * safezoneH + safezoneY; 
+			w = GUI_W_BTN_M;
+			h = GUI_H_BTN;
 		};
 
 		class dim_supply_clean_button: PxgGuiRscButton
@@ -191,10 +189,10 @@ class dialog_supply_spawn
 
 			text = "Clean Pad";
 			
-			x = 0.690 * safezoneW + safezoneX;
-			y = 0.8185 * safezoneH + safezoneY; // 0.887 - 0.0685
-			w = 0.06 * safezoneW;
-			h = 0.02 * safezoneH;
+			x = 0.640 * safezoneW + safezoneX; 
+			y = 0.8185 * safezoneH + safezoneY; 
+			w = GUI_W_BTN_M;
+			h = GUI_H_BTN;
 		};
 
 		class supplyButtonCloseDialog: PxgGuiRscButton
@@ -206,31 +204,44 @@ class dialog_supply_spawn
 
 
 			x = 0.185 * safezoneW + safezoneX;
-			y = 0.8185 * safezoneH + safezoneY; // 0.887 - 0.0685
-			w = 0.06 * safezoneW;
-			h = 0.02 * safezoneH;
+			y = 0.8185 * safezoneH + safezoneY; 
+			w = GUI_W_BTN_M;
+			h = GUI_H_BTN;
 		};
 		class supplyButtonOpacity: PxgGuiRscButton
 		{
 			idc = 400001;
 			action = "[ctrlParent (_this select 0), 'toggle'] execVM 'Scripts\Misc\PXG_Handle_Opacity.sqf';";
-			text = "[ * ]";
+			text = GUI_STR_OPACITY;
 			tooltip = "Toggle Background Opacity";
+			colorText[] = GUI_COLOR_UI_GREY;
 			x = 0.250 * safezoneW + safezoneX;
 			y = 0.8185 * safezoneH + safezoneY;
-			w = 0.04 * safezoneW;
-			h = 0.02 * safezoneH;
+			w = GUI_W_BTN_S;
+			h = GUI_H_BTN;
 		};
 		class supplyButtonOrbit: PxgGuiRscButton
 		{
 			idc = 400002;
 			action = "[[], 'orbit_toggle'] execVM 'Scripts\Misc\PXG_Handle_Camera.sqf';";
-			text = "[ O ]";
+			text = GUI_STR_ORBIT;
 			tooltip = "Toggle Camera Orbit";
-			x = 0.295 * safezoneW + safezoneX;
+			colorText[] = GUI_COLOR_UI_GREY;
+			x = 0.285 * safezoneW + safezoneX;
 			y = 0.8185 * safezoneH + safezoneY;
-			w = 0.04 * safezoneW;
-			h = 0.02 * safezoneH;
+			w = GUI_W_BTN_S;
+			h = GUI_H_BTN;
+		};
+		class supplyButtonSwitch: PxgGuiRscButton
+		{
+			idc = 400003;
+			action = "['resupply'] execVM 'Scripts\Misc\PXG_Swap_Dialog.sqf';";
+			text = "Motorpool";
+			tooltip = "Switch to Motorpool Menu";
+			x = 0.705 * safezoneW + safezoneX; 
+			y = 0.8185 * safezoneH + safezoneY;
+			w = GUI_W_BTN_L;
+			h = GUI_H_BTN;
 		};
 
 		// --- CARGO PANEL EXTENSION ---
@@ -241,9 +252,9 @@ class dialog_supply_spawn
 			colorBackground[] = {0.1, 0.1, 0.1, 0.8};
 
 			x = 0.815 * safezoneW + safezoneX; // No padding
-			y = 0.1815 * safezoneH + safezoneY; // Centered
+			y = 0.1815 * safezoneH + safezoneY; // Global UI Standard
 			w = 0.18 * safezoneW;
-			h = 0.637 * safezoneH;
+			h = 0.637 * safezoneH; // Global UI Standard
 		};
 		class resupplyCargoHeader: PxgGuiRscStructuredText
 		{
@@ -251,7 +262,7 @@ class dialog_supply_spawn
 			show = 0;
 			text = "<t align='center' color='#FFFFFF'>VEHICLE CARGO</t>";
 			x = 0.815 * safezoneW + safezoneX;
-			y = 0.1585 * safezoneH + safezoneY;
+			y = 0.1585 * safezoneH + safezoneY; // Global UI Standard
 			w = 0.18 * safezoneW;
 			h = 0.022 * safezoneH;
 		};
@@ -317,12 +328,9 @@ class dialog_supply_spawn
 			text = "Unload";
 			
 			x = 0.935 * safezoneW + safezoneX; // End of expanded panel
-			y = 0.8185 * safezoneH + safezoneY; // Centered
-			w = 0.06 * safezoneW;
-			h = 0.02 * safezoneH;
+			y = 0.8185 * safezoneH + safezoneY; // Global UI Standard
+			w = GUI_W_BTN_M;
+			h = GUI_H_BTN;
 		};
-		////////////////////////////////////////////////////////
-		// GUI EDITOR OUTPUT END
-		////////////////////////////////////////////////////////
 	};
 };

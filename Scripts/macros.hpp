@@ -59,3 +59,12 @@
 // Config IDCs
 #define IDC_UI_OPACITY_TOGGLE 400001
 #define IDC_UI_ORBIT_TOGGLE 400002
+
+// GUI Styling
+#define GUI_COLOR_UI_GREY {0.7, 0.7, 0.7, 1}
+#define GUI_STR_OPACITY "%"
+#define GUI_STR_ORBIT "<"
+#define GUI_W_BTN_S (0.03 * safezoneW)    // Small (Opacity/Orbit)
+#define GUI_W_BTN_M (0.06 * safezoneW)    // Medium (Close/Spawn)
+#define GUI_W_BTN_L (0.045 * safezoneW)   // Switch (Motorpool/Resupply)
+#define GUI_H_BTN (0.02 * safezoneH)

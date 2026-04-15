@@ -13,18 +13,18 @@ class dialog_supply_spawn
 			colorBackground[] = {0.1, 0.1, 0.1, 0.8}; // Added 80% opacity background
 
 			x = 0.185 * safezoneW + safezoneX;
-			y = 0.25 * safezoneH + safezoneY;
+			y = 0.1815 * safezoneH + safezoneY; // Centered
 			w = 0.63 * safezoneW;
-			h = 0.49 * safezoneH;
+			h = 0.637 * safezoneH; // +30% Height
 		};
 		
 		class RscStructuredText_1: PxgGuiRscStructuredText
 		{
 			idc = -1;
 
-			text = "Supply Spawn"; //--- ToDo: Localize;
+			text = "<t align='center'>SUPPLY SPAWN</t>"; // Centered and All Caps
 			x = 0.185 * safezoneW + safezoneX;
-			y = 0.227 * safezoneH + safezoneY;
+			y = 0.1585 * safezoneH + safezoneY; // y - 0.023
 			w = 0.63 * safezoneW;
 			h = 0.022 * safezoneH;
 			sizeEx = 1 * GUI_GRID_H * GUI_GRID_H;
@@ -35,7 +35,7 @@ class dialog_supply_spawn
 
 			text = "1. Side";
 			x = 0.195 * safezoneW + safezoneX;
-			y = 0.26 * safezoneH + safezoneY;
+			y = 0.1915 * safezoneH + safezoneY; // 0.26 - 0.0685
 			w = 0.10 * safezoneW;
 			h = 0.04 * safezoneH;
 		};
@@ -45,7 +45,7 @@ class dialog_supply_spawn
 
 			text = "2. Faction";
 			x = 0.195 * safezoneW + safezoneX;
-			y = 0.382 * safezoneH + safezoneY;
+			y = 0.3135 * safezoneH + safezoneY; // 0.382 - 0.0685
 			w = 0.10 * safezoneW;
 			h = 0.04 * safezoneH;
 		};
@@ -55,7 +55,7 @@ class dialog_supply_spawn
 
 			text = "3. Supply";
 			x = 0.40 * safezoneW + safezoneX;
-			y = 0.26 * safezoneH + safezoneY;
+			y = 0.1915 * safezoneH + safezoneY; // 0.26 - 0.0685
 			w = 0.10 * safezoneW;
 			h = 0.04 * safezoneH;
 		};
@@ -65,7 +65,7 @@ class dialog_supply_spawn
 
 			text = "4. Spawn Point";
 			x = 0.605 * safezoneW + safezoneX;
-			y = 0.26 * safezoneH + safezoneY;
+			y = 0.1915 * safezoneH + safezoneY; // 0.26 - 0.0685
 			w = 0.10 * safezoneW;
 			h = 0.04 * safezoneH;
 		};
@@ -75,16 +75,17 @@ class dialog_supply_spawn
 
 			text = "Crate Contents";
 			x = 0.605 * safezoneW + safezoneX;
-			y = 0.43 * safezoneH + safezoneY;
+			y = 0.3615 * safezoneH + safezoneY; // 0.43 - 0.0685
 			w = 0.10 * safezoneW;
 			h = 0.04 * safezoneH;
 		};
 		class dim_supply_spawnpoint_list: PxgGuiRscListBox
 		{
 			idc = 451500;
+			onLBSelChanged = "call compile preprocessfile 'Scripts\Resupply\Functions\PXG_Resupply_Refresh_Vehicle_Panel.sqf'";
 
 			x = 0.605 * safezoneW + safezoneX;
-			y = 0.31 * safezoneH + safezoneY;
+			y = 0.2415 * safezoneH + safezoneY; // 0.31 - 0.0685
 			w = 0.20 * safezoneW;
 			h = 0.11 * safezoneH;
 		};		
@@ -93,32 +94,32 @@ class dialog_supply_spawn
 			idc = 451502;
 
 			x = 0.400 * safezoneW + safezoneX;
-			y = 0.31 * safezoneH + safezoneY;
+			y = 0.2415 * safezoneH + safezoneY; // 0.31 - 0.0685
 			w = 0.20 * safezoneW;
-			h = 0.41 * safezoneH;
+			h = 0.557 * safezoneH; // Stretched
 
-			onLBSelChanged = "call compile preprocessfile 'Scripts\Resupply\Functions\PXG_Refresh_Contents.sqf'";
+			onLBSelChanged = "call compile preprocessfile 'Scripts\Resupply\Functions\PXG_Resupply_Refresh_Contents.sqf'";
 		};
 		
 		class dim_supply_faction_list: PxgGuiRscTree
 		{
 			idc = 451501;
-			onTreeSelChanged = "call compile preprocessfile 'Scripts\Resupply\Functions\PXG_Refresh_Supplies.sqf'";
+			onTreeSelChanged = "call compile preprocessfile 'Scripts\Resupply\Functions\PXG_Resupply_Refresh_Supplies.sqf'";
 			onTreeExpanded = "_this spawn { params ['_ctrl', '_path']; sleep 0.05; if (count _path == 1) then { private _sel = tvCurSel _ctrl; _ctrl tvSetCurSel [-1]; for '_i' from 0 to ((_ctrl tvCount _path) - 1) do { _ctrl tvCollapse (_path + [_i]); _ctrl tvExpand (_path + [_i]); }; if (count _sel > 0) then { _ctrl tvSetCurSel _sel; }; }; };";
 
 			x = 0.195 * safezoneW + safezoneX;
-			y = 0.43 * safezoneH + safezoneY;
+			y = 0.3615 * safezoneH + safezoneY; // 0.43 - 0.0685
 			w = 0.20 * safezoneW;
-			h = 0.29 * safezoneH;
+			h = 0.437 * safezoneH; // Stretched
 		};
 		
 		class dim_supply_faction_side_list: PxgGuiRscListbox
 		{
 			idc = 451504;
-			onLBSelChanged = "call compile preprocessfile 'Scripts\Resupply\Functions\PXG_Refresh_Factions.sqf'";
+			onLBSelChanged = "call compile preprocessfile 'Scripts\Resupply\Functions\PXG_Resupply_Refresh_Factions.sqf'";
 			
 			x = 0.195 * safezoneW + safezoneX;
-			y = 0.31 * safezoneH + safezoneY;
+			y = 0.2415 * safezoneH + safezoneY; // 0.31 - 0.0685
 			w = 0.20 * safezoneW;
 			h = 0.067 * safezoneH;
 		};
@@ -127,9 +128,9 @@ class dialog_supply_spawn
 			idc = 451505; 
 
 			x = 0.605 * safezoneW + safezoneX;
-			y = 0.48 * safezoneH + safezoneY;
+			y = 0.4115 * safezoneH + safezoneY; // 0.48 - 0.0685
 			w = 0.20 * safezoneW;
-			h = 0.24 * safezoneH;
+			h = 0.387 * safezoneH; // Stretched
 
 			colorBackground[] = {0,0,0,0.3};
 			size = 0.03;
@@ -137,12 +138,25 @@ class dialog_supply_spawn
 		class dim_supply_spawn_button: PxgGuiRscButton
 		{
 			idc = 451600;
-			action = "execVM 'Scripts\Resupply\Functions\PXG_Crate_Spawn_Check.sqf'";
+			action = "execVM 'Scripts\Resupply\Functions\PXG_Resupply_Crate_Spawn_Check.sqf'";
 
-			text = "Spawn Box"; //--- ToDo: Localize;
+			text = "Spawn Crate"; //--- ToDo: Localize;
 			
 			x = 0.745 * safezoneW + safezoneX;
-			y = 0.74 * safezoneH + safezoneY;
+			y = 0.8185 * safezoneH + safezoneY; // 0.887 - 0.0685
+			w = 0.06 * safezoneW;
+			h = 0.02 * safezoneH;
+		};
+
+		class dim_supply_clean_button: PxgGuiRscButton
+		{
+			idc = 451602;
+			action = "execVM 'Scripts\Resupply\Functions\PXG_Resupply_Clean_Pad.sqf'";
+
+			text = "Clean Pad";
+			
+			x = 0.680 * safezoneW + safezoneX;
+			y = 0.8185 * safezoneH + safezoneY; // 0.887 - 0.0685
 			w = 0.06 * safezoneW;
 			h = 0.02 * safezoneH;
 		};
@@ -156,7 +170,84 @@ class dialog_supply_spawn
 
 
 			x = 0.185 * safezoneW + safezoneX;
-			y = 0.74 * safezoneH + safezoneY;
+			y = 0.8185 * safezoneH + safezoneY; // 0.887 - 0.0685
+			w = 0.06 * safezoneW;
+			h = 0.02 * safezoneH;
+		};
+
+		// --- CARGO PANEL EXTENSION ---
+		class resupplyCargoPanelBackground: PxgGuiBackground
+		{
+			idc = 451700;
+			show = 0;
+			colorBackground[] = {0.1, 0.1, 0.1, 0.8};
+
+			x = 0.815 * safezoneW + safezoneX; // No padding
+			y = 0.1815 * safezoneH + safezoneY; // Centered
+			w = 0.18 * safezoneW;
+			h = 0.637 * safezoneH;
+		};
+		class resupplyCargoHeader: PxgGuiRscStructuredText
+		{
+			idc = 451706;
+			show = 0;
+			text = "<t align='center' color='#FFFFFF'>VEHICLE CARGO</t>";
+			x = 0.815 * safezoneW + safezoneX;
+			y = 0.1585 * safezoneH + safezoneY;
+			w = 0.18 * safezoneW;
+			h = 0.022 * safezoneH;
+		};
+		class resupplyCargoVehicleName: PxgGuiRscText
+		{
+			idc = 451701;
+			show = 0;
+			text = "VEHICLE INFO";
+			x = 0.820 * safezoneW + safezoneX;
+			y = 0.1915 * safezoneH + safezoneY;
+			w = 0.170 * safezoneW;
+			h = 0.03 * safezoneH;
+			colorText[] = {1, 0.8, 0, 1};
+		};
+		class resupplyCargoVehiclePicture: PxgGuiRscPicture
+		{
+			idc = 451702;
+			show = 0;
+			text = "";
+			x = 0.820 * safezoneW + safezoneX;
+			y = 0.2315 * safezoneH + safezoneY;
+			w = 0.170 * safezoneW;
+			h = 0.15 * safezoneH;
+		};
+		class resupplyCargoCapacityText: PxgGuiRscStructuredText
+		{
+			idc = 451703;
+			show = 0;
+			text = "Capacity: 0/0";
+			colorBackground[] = {0,0,0,0}; // Removed yellow background
+			x = 0.820 * safezoneW + safezoneX;
+			y = 0.3915 * safezoneH + safezoneY;
+			w = 0.170 * safezoneW;
+			h = 0.02 * safezoneH;
+		};
+		class resupplyCargoManifestList: PxgGuiRscListBox
+		{
+			idc = 451704;
+			show = 0;
+			x = 0.820 * safezoneW + safezoneX;
+			y = 0.4215 * safezoneH + safezoneY;
+			w = 0.170 * safezoneW;
+			h = 0.39 * safezoneH; // Shrunk slightly for button
+			sizeEx = 0.03;
+		};
+		class resupplyCargoDeleteButton: PxgGuiRscButton
+		{
+			idc = 451705;
+			show = 0;
+			action = "call compile preprocessFile 'Scripts\Resupply\Functions\PXG_Resupply_Crate_Unload.sqf'";
+			text = "Unload";
+			
+			x = 0.93 * safezoneW + safezoneX; // End of expanded panel
+			y = 0.8185 * safezoneH + safezoneY; // Centered
 			w = 0.06 * safezoneW;
 			h = 0.02 * safezoneH;
 		};

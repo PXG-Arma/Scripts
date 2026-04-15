@@ -9,16 +9,16 @@ class armoryDialog
 			colorBackground[] = {0.1, 0.1, 0.1, 0.8}; // Added 80% opacity background
 
 			x = 0.185 * safezoneW + safezoneX;
-			y = 0.25 * safezoneH + safezoneY;
+			y = 0.1815 * safezoneH + safezoneY; // Centered
 			w = 0.63 * safezoneW;
-			h = 0.49 * safezoneH;
+			h = 0.637 * safezoneH; // +30% Height
 		};
 		class armoryStructuredText: PxgGuiRscStructuredText
 		{
 			idc = -1;
-			text = "Armory"; //--- ToDo: Localize;
+			text = "<t align='center'>ARMORY</t>"; // Centered and All Caps
 			x = 0.185 * safezoneW + safezoneX;
-			y = 0.227 * safezoneH + safezoneY;
+			y = 0.1585 * safezoneH + safezoneY; // y - 0.023
 			w = 0.63 * safezoneW;
 			h = 0.022 * safezoneH;
 			sizeEx = 1 * GUI_GRID_H * GUI_GRID_H;
@@ -28,7 +28,7 @@ class armoryDialog
 			idc = 431004;
 			text = "1. Side"; //--- ToDo: Localize;
 			x = 0.20 * safezoneW + safezoneX;
-			y = 0.26 * safezoneH + safezoneY;
+			y = 0.1915 * safezoneH + safezoneY; // 0.26 - 0.0685
 			w = 0.10 * safezoneW;
 			h = 0.04 * safezoneH;
 		};
@@ -38,7 +38,7 @@ class armoryDialog
 
 			text = "2. Faction"; //--- ToDo: Localize;
 			x = 0.20 * safezoneW + safezoneX;
-			y = 0.382 * safezoneH + safezoneY;
+			y = 0.3135 * safezoneH + safezoneY; // 0.382 - 0.0685
 			w = 0.10 * safezoneW;
 			h = 0.04 * safezoneH;
 		};
@@ -48,7 +48,7 @@ class armoryDialog
 
 			text = "3. Loadout"; //--- ToDo: Localize;
 			x = 0.51 * safezoneW + safezoneX;
-			y = 0.26 * safezoneH + safezoneY;
+			y = 0.1915 * safezoneH + safezoneY; // 0.26 - 0.0685
 			w = 0.10 * safezoneW;
 			h = 0.04 * safezoneH;
 
@@ -57,7 +57,7 @@ class armoryDialog
 		{
 			idc = 431500;
 			x = 0.20 * safezoneW + safezoneX;
-			y = 0.31 * safezoneH + safezoneY;
+			y = 0.2415 * safezoneH + safezoneY; // 0.31 - 0.0685
 			w = 0.29 * safezoneW;
 			h = 0.067 * safezoneH;
 
@@ -68,9 +68,9 @@ class armoryDialog
 			idc = 431501;
 
 			x = 0.20 * safezoneW + safezoneX;
-			y = 0.43 * safezoneH + safezoneY;
+			y = 0.3615 * safezoneH + safezoneY; // 0.43 - 0.0685
 			w = 0.29 * safezoneW;
-			h = 0.29 * safezoneH;
+			h = 0.437 * safezoneH; // Stretched
 
 			onTreeSelChanged = "call compile preprocessfile 'Scripts\Armory\Functions\PXG_Refresh_Loadouts.sqf'";
 			onTreeExpanded = "_this spawn { params ['_ctrl', '_path']; sleep 0.05; if (count _path == 1) then { private _sel = tvCurSel _ctrl; _ctrl tvSetCurSel [-1]; for '_i' from 0 to ((_ctrl tvCount _path) - 1) do { _ctrl tvCollapse (_path + [_i]); _ctrl tvExpand (_path + [_i]); }; if (count _sel > 0) then { _ctrl tvSetCurSel _sel; }; }; };";
@@ -80,9 +80,9 @@ class armoryDialog
 			idc = 431503;
 
 			x = 0.51 * safezoneW + safezoneX;
-			y = 0.31 * safezoneH + safezoneY;
+			y = 0.2415 * safezoneH + safezoneY; // 0.31 - 0.0685
 			w = 0.29 * safezoneW;
-			h = 0.41 * safezoneH;
+			h = 0.557 * safezoneH; // Stretched
 
 		};
 		class armoryButtonGetLoadout: PxgGuiRscButton
@@ -93,7 +93,7 @@ class armoryDialog
 			text = "Get Loadout"; //--- ToDo: Localize;
 
 			x = 0.71 * safezoneW + safezoneX;
-			y = 0.74 * safezoneH + safezoneY;
+			y = 0.8185 * safezoneH + safezoneY; // 0.887 - 0.0685
 			w = 0.09 * safezoneW;
 			h = 0.02 * safezoneH;
 		};
@@ -105,7 +105,7 @@ class armoryDialog
 			text = "Close";
 
 			x = 0.185 * safezoneW + safezoneX;
-			y = 0.74 * safezoneH + safezoneY;
+			y = 0.8185 * safezoneH + safezoneY; // 0.887 - 0.0685
 			w = 0.09 * safezoneW;
 			h = 0.02 * safezoneH;
 		};

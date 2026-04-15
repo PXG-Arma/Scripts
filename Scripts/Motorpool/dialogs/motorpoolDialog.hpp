@@ -1,13 +1,14 @@
 class dialog_motorpool
 {
 	idd = 461922;
+	onLoad = "[_this select 0, 'init'] execVM 'Scripts\Misc\PXG_Handle_Opacity.sqf';";
 	class controls
 	{
 		
 		class RscFrame_1: PxgGuiBackground
 		{
-			idc = -1;
-			colorBackground[] = {0.1, 0.1, 0.1, 0.8}; // Added 80% opacity background
+			idc = 461006;
+			colorBackground[] = {0.1, 0.1, 0.1, 0.8}; 
 
 			x = 0.185 * safezoneW + safezoneX;
 			y = 0.1685 * safezoneH + safezoneY; // Centered
@@ -31,7 +32,7 @@ class dialog_motorpool
 
 			text = "1. Side";
 			x = 0.195 * safezoneW + safezoneX;
-			y = 0.1785 * safezoneH + safezoneY; // 0.26 - 0.0815
+			y = 0.1915 * safezoneH + safezoneY; 
 			w = 0.10 * safezoneW;
 			h = 0.04 * safezoneH;
 		};
@@ -41,18 +42,28 @@ class dialog_motorpool
 
 			text = "2. Faction";
 			x = 0.195 * safezoneW + safezoneX;
-			y = 0.302 * safezoneH + safezoneY; // 0.3835 - 0.0815
+			y = 0.3085 * safezoneH + safezoneY; 
 			w = 0.10 * safezoneW;
-			h = 0.04 * safezoneH;
+			h = 0.02 * safezoneH;
+		};
+		class motorpoolCamoText: PxgGuiRscText
+		{
+			idc = 461506;
+
+			text = "3. Camo [Era]";
+			x = 0.195 * safezoneW + safezoneX;
+			y = 0.5585 * safezoneH + safezoneY; 
+			w = 0.10 * safezoneW;
+			h = 0.02 * safezoneH;
 		};
 
 		class motorpoolVehicleText: PxgGuiRscText
 		{
 			idc = -1; 
 
-			text = "3. Vehicle";
+			text = "4. Vehicle";
 			x = 0.40 * safezoneW + safezoneX;
-			y = 0.1785 * safezoneH + safezoneY; // 0.26 - 0.0815
+			y = 0.1915 * safezoneH + safezoneY; 
 			w = 0.10 * safezoneW;
 			h = 0.04 * safezoneH;
 		};
@@ -60,9 +71,9 @@ class dialog_motorpool
 		{
 			idc = -1; 
 
-			text = "4. Spawn Point";
+			text = "5. Spawn Point";
 			x = 0.605 * safezoneW + safezoneX;
-			y = 0.1785 * safezoneH + safezoneY; // 0.26 - 0.0815
+			y = 0.1915 * safezoneH + safezoneY; 
 			w = 0.10 * safezoneW;
 			h = 0.04 * safezoneH;
 		};
@@ -71,10 +82,9 @@ class dialog_motorpool
 			idc = 461500;
 
 			x = 0.605 * safezoneW + safezoneX;
-			y = 0.2285 * safezoneH + safezoneY; // 0.31 - 0.0815
+			y = 0.2315 * safezoneH + safezoneY; 
 			w = 0.20 * safezoneW;
-			h = 0.20 * safezoneH;
-
+			h = 0.15 * safezoneH;
 		};
 	
 		class dim_vehicle_list: PxgGuiRscTree
@@ -83,21 +93,35 @@ class dialog_motorpool
 			onTreeSelChanged = "call compile preprocessfile 'Scripts\Motorpool\Functions\PXG_Refresh_Preview.sqf'";
 
 			x = 0.40 * safezoneW + safezoneX;
-			y = 0.2285 * safezoneH + safezoneY; // 0.31 - 0.0815
+			y = 0.2315 * safezoneH + safezoneY; 
 			w = 0.20 * safezoneW;
-			h = 0.583 * safezoneH; // Stretched
+			h = 0.567 * safezoneH; 
 		};
 	
 		class dim_vehicle_faction_list: PxgGuiRscTree
 		{
 			idc = 461501;
-			onTreeSelChanged = "call compile preprocessfile 'Scripts\Motorpool\Functions\PXG_Refresh_Vehicles.sqf'";
+			onTreeSelChanged = "[_this select 0, 461507, 'Scripts\Motorpool\Functions\PXG_Refresh_Vehicles.sqf', 'PXG_Motorpool_Memory_Camo'] call compile preprocessfile 'Scripts\Factions\PXG_Refresh_Camos.sqf'";
 			onTreeExpanded = "_this spawn { params ['_ctrl', '_path']; sleep 0.05; if (count _path == 1) then { private _sel = tvCurSel _ctrl; _ctrl tvSetCurSel [-1]; for '_i' from 0 to ((_ctrl tvCount _path) - 1) do { _ctrl tvCollapse (_path + [_i]); _ctrl tvExpand (_path + [_i]); }; if (count _sel > 0) then { _ctrl tvSetCurSel _sel; }; }; };";
 
 			x = 0.195 * safezoneW + safezoneX;
-			y = 0.3485 * safezoneH + safezoneY; // 0.43 - 0.0815
+			y = 0.3385 * safezoneH + safezoneY; 
 			w = 0.20 * safezoneW;
-			h = 0.463 * safezoneH; // Stretched
+			h = 0.210 * safezoneH; 
+		};
+
+		class motorpoolCamoList: PxgGuiRscListbox
+		{
+			idc = 461507;
+			onLBSelChanged = "call compile preprocessfile 'Scripts\Motorpool\Functions\PXG_Refresh_Vehicles.sqf'";
+			
+			x = 0.195 * safezoneW + safezoneX;
+			y = 0.5885 * safezoneH + safezoneY; 
+			w = 0.20 * safezoneW;
+			h = 0.210 * safezoneH;
+
+			sizeEx = 0.018 * safezoneH;
+			rowHeight = 1.8 * 0.018 * safezoneH;
 		};
 		
 		class dim_vehicle_faction_side_list: PxgGuiRscListbox
@@ -106,7 +130,7 @@ class dialog_motorpool
 			onLBSelChanged = "call compile preprocessfile 'Scripts\Motorpool\Functions\PXG_Refresh_Factions.sqf'";
 			
 			x = 0.195 * safezoneW + safezoneX;
-			y = 0.2285 * safezoneH + safezoneY; // 0.31 - 0.0815
+			y = 0.2315 * safezoneH + safezoneY; 
 			w = 0.20 * safezoneW;
 			h = 0.067 * safezoneH;
 		};
@@ -116,9 +140,9 @@ class dialog_motorpool
 
 			text = "\A3\EditorPreviews_F\Data\CfgVehicles\Land_InvisibleBarrier_F.jpg";
 			x = 0.605 * safezoneW + safezoneX;
-			y = 0.6315 * safezoneH + safezoneY; // 0.713 - 0.0815
+			y = 0.4215 * safezoneH + safezoneY; 
 			w = 0.20 * safezoneW;
-			h = 0.19 * safezoneH;
+			h = 0.377 * safezoneH;
 		};
 		class motorpoolCargoText: PxgGuiRscText
 		{
@@ -126,8 +150,8 @@ class dialog_motorpool
 
 			text = "Cargo Capacity: 0";
 			x = 0.605 * safezoneW + safezoneX;
-			y = 0.5915 * safezoneH + safezoneY; // 0.673 - 0.0815
-			w = 0.20 * safezoneW;
+			y = 0.3915 * safezoneH + safezoneY; 
+			w = 0.10 * safezoneW;
 			h = 0.02 * safezoneH;
 		};
 		class motorpoolSeatsText: PxgGuiRscText
@@ -135,9 +159,9 @@ class dialog_motorpool
 			idc = 461498;
 
 			text = "Crew: 0 Passengers: 0";
-			x = 0.605 * safezoneW + safezoneX;
-			y = 0.6115 * safezoneH + safezoneY; // 0.693 - 0.0815
-			w = 0.20 * safezoneW;
+			x = 0.705 * safezoneW + safezoneX;
+			y = 0.3915 * safezoneH + safezoneY; 
+			w = 0.10 * safezoneW;
 			h = 0.02 * safezoneH;
 		};
 	
@@ -148,7 +172,7 @@ class dialog_motorpool
 
 			text = "Spawn"; //--- ToDo: Localize;
 			
-			x = 0.745 * safezoneW + safezoneX;
+			x = 0.755 * safezoneW + safezoneX;
 			y = 0.8315 * safezoneH + safezoneY; // 0.913 - 0.0815
 			w = 0.06 * safezoneW;
 			h = 0.02 * safezoneH;
@@ -163,6 +187,17 @@ class dialog_motorpool
 			x = 0.185 * safezoneW + safezoneX;
 			y = 0.8315 * safezoneH + safezoneY; // 0.913 - 0.0815
 			w = 0.06 * safezoneW;
+			h = 0.02 * safezoneH;
+		};
+		class motorpoolButtonOpacity: PxgGuiRscButton
+		{
+			idc = 400001;
+			action = "[ctrlParent (_this select 0), 'toggle'] execVM 'Scripts\Misc\PXG_Handle_Opacity.sqf';";
+			text = "[ * ]";
+			tooltip = "Toggle Background Opacity";
+			x = 0.250 * safezoneW + safezoneX;
+			y = 0.8315 * safezoneH + safezoneY;
+			w = 0.04 * safezoneW;
 			h = 0.02 * safezoneH;
 		};
 	};

@@ -9,7 +9,8 @@ private _savedFaction = tvCurSel IDC_ARMORY_FACTION_TREE;
 // Gives hints if user does not select all items from UI, prevents errors
 if (_indexSide == -1) exitWith { hint "Please select side."};
 if (count _indexFaction == 0 ) exitWith { hint "Please select faction."};
-if (count _indexFaction < 3 ) exitWith { hint "Please select faction variant."};
+if (count _indexFaction < 2 ) exitWith { hint "Please select branch."};
+if (lbCurSel IDC_ARMORY_CAMO_LIST == -1) exitWith { hint "Please select faction variant."};
 if (count _indexLoadout < 2 ) exitWith { hint "Please select loadout."};
 
 player setVariable ["PXG_Armory_Memory_Side", _indexSide];
@@ -18,7 +19,7 @@ player setVariable ["PXG_Armory_Memory_Loadout", _indexLoadout];
 
 // Gets text and data from UI 
 private _side = str _indexSide;
-private _variant = tvData [IDC_ARMORY_FACTION_TREE, _indexFaction]; // Using tvData to get serialized metadata [Side, Faction, SubFaction, Era, Camo]
+private _variant = lbData [IDC_ARMORY_CAMO_LIST, lbCurSel IDC_ARMORY_CAMO_LIST];
 _indexFaction deleteAt 1; 
 private _faction = tvText [IDC_ARMORY_FACTION_TREE, _indexFaction];
 private _loadout = tvData [IDC_ARMORY_LOADOUT_TREE, _indexLoadout];

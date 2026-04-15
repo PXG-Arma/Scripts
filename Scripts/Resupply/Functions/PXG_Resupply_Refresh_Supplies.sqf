@@ -1,13 +1,18 @@
 #include "..\..\macros.hpp"
 
-// Get selected item from faction list
+// Get selected item from faction tree (Level 2 Branch)
 private _indexFaction = tvCurSel IDC_RESUPPLY_FACTION_TREE;
-if (count _indexFaction < 3) exitwith {};
+if (count _indexFaction < 2) exitwith {};
 
-// Save faction selection to memory
+// Get selected item from camo list
+private _indexCamo = lbCurSel IDC_RESUPPLY_CAMO_LIST;
+if (_indexCamo == -1) exitWith { lbClear IDC_RESUPPLY_SUPPLIES_LB; };
+
+// Save selections to memory
 player setVariable ["PXG_Resupply_Memory_Faction", _indexFaction];
+player setVariable ["PXG_Resupply_Memory_Camo", _indexCamo];
 
-private _variantData = tvData [IDC_RESUPPLY_FACTION_TREE, _indexFaction];
+private _variantData = lbData [IDC_RESUPPLY_CAMO_LIST, _indexCamo];
 if (_variantData == "") exitWith {};
 
 // Construct path utilizing the GetFactionPath utility

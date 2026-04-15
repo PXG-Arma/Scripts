@@ -44,12 +44,20 @@ class PxgGuiBackground: RscFrame
 class PxgGuiRscTree: RscTree
 {
 	colorBackground[] = {0,0,0,0.3};
-	rowHeight = 0.028;
+	rowHeight = 0.05;
 };
 
 class PxgGuiRscButton: RscButton
 {
 
+};
+
+class PxgGuiRscButtonPicture: RscButton
+{
+	style = 48; // ST_PICTURE
+	colorText[] = {1,1,1,1};
+	colorBackground[] = {0,0,0,0};
+	colorBackgroundActive[] = {1,1,1,0.1};
 };
 
 class PxgGuiRscText: RscText

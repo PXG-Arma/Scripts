@@ -1,15 +1,18 @@
 #include "..\..\macros.hpp"
 
-// Get selected item from faction list
+// Get selected item from faction tree (Level 2 Branch)
 private _indexFaction = tvCurSel IDC_ARMORY_FACTION_TREE;
-private _factionNodeIdx = [_indexFaction select 0];
+if (count _indexFaction < 2) exitWith {};
 
-if (count _indexFaction < 3) exitwith {};
+// Get selected item from camo list
+private _indexCamo = lbCurSel IDC_ARMORY_CAMO_LIST;
+if (_indexCamo == -1) exitWith { tvClear IDC_ARMORY_LOADOUT_TREE; };
 
-// Feature Restoration: Save faction selection to memory
+// Feature Restoration: Save selections to memory
 player setVariable ["PXG_Armory_Memory_Faction", _indexFaction];
+player setVariable ["PXG_Armory_Memory_Camo", _indexCamo];
 
-private _variantData = tvData [IDC_ARMORY_FACTION_TREE, _indexFaction];
+private _variantData = lbData [IDC_ARMORY_CAMO_LIST, _indexCamo];
 if (_variantData == "") exitWith {};
 
 // Construct Path utilizing the GetFactionPath utility

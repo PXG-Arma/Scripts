@@ -1,9 +1,9 @@
 #include "..\..\macros.hpp"
 
-// Get metadata from tvData
-private _indexFaction = tvCurSel IDC_MOTORPOOL_FACTION_TREE;
-private _variantData = tvData [IDC_MOTORPOOL_FACTION_TREE, _indexFaction];
-if (_variantData == "") exitWith {};
+// Get metadata from Camo ListBox
+private _indexCamo = lbCurSel IDC_MOTORPOOL_CAMO_LIST;
+private _variantData = lbData [IDC_MOTORPOOL_CAMO_LIST, _indexCamo];
+if (_variantData == "") exitWith { hint "Please select faction variant." };
 
 private _metadata = call compile _variantData;
 

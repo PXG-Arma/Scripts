@@ -2,12 +2,17 @@
 
 params["_crate"];
 
-private _indexFaction = tvCurSel IDC_RESUPPLY_FACTION_TREE;
-private _indexSupplies = lbCurSel IDC_RESUPPLY_SUPPLIES_LB;
-if (count _indexFaction < 3) exitwith {};
+private _display = findDisplay IDD_RESUPPLY;
+private _indexFaction = tvCurSel (_display displayCtrl IDC_RESUPPLY_FACTION_TREE);
+private _camoList = _display displayCtrl IDC_RESUPPLY_CAMO_LIST;
+private _indexCamo = lbCurSel _camoList;
+private _indexSupplies = lbCurSel (_display displayCtrl IDC_RESUPPLY_SUPPLIES_LB);
+
+if (count _indexFaction < 2) exitwith {};
+if (_indexCamo == -1) exitwith {};
 if (_indexSupplies == -1) exitWith {};
 
-private _variantData = tvData [IDC_RESUPPLY_FACTION_TREE, _indexFaction];
+private _variantData = lbData [_camoList, _indexCamo];
 if (_variantData == "") exitWith {};
 
 // Construct path utilizing the GetFactionPath utility

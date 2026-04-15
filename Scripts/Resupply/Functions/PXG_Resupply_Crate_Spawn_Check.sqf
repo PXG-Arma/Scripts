@@ -6,13 +6,20 @@ private _indexSide = lbCurSel IDC_RESUPPLY_SIDE;
 private _indexFaction = tvCurSel IDC_RESUPPLY_FACTION_TREE;
 private _indexSupply = lbCurSel IDC_RESUPPLY_SUPPLIES_LB;
 
+private _display = findDisplay IDD_RESUPPLY;
 if (_indexSide == -1) exitWith { hint "Please select side."};
-if (count _indexFaction < 3) exitWith { hint "Please select faction variant."};
 if (_indexSupply == -1) exitWith { hint "Please select supply crate."};
 if (_indexSpawn == -1) exitWith {hint "Please select spawn point."};
 
 // 2. Lookup Registry Data
 private _supplyName = lbData [IDC_RESUPPLY_SUPPLIES_LB, _indexSupply];
+
+// Generic items do not require faction/camo selection
+private _isGeneric = _supplyName in ["FOB", "FARP", "Wheel", "Track", "Slingloadable Crate (8)"];
+if (!_isGeneric) then {
+	if (count _indexFaction < 2) exitWith { hint "Please select branch."};
+	if (lbCurSel (_display displayCtrl IDC_RESUPPLY_CAMO_LIST) == -1) exitWith { hint "Please select faction variant."};
+};
 private _registryData = PXG_Resupply_Crate_Registry getOrDefault [_supplyName, PXG_Resupply_Crate_Registry get "Default"];
 _registryData params ["_classname", "_cargoSize", "_specialScript"];
 
@@ -45,7 +52,7 @@ if (count _nearVehicles > 0) then {
 		// Load into vehicle
 		[_crate, _vehicle] call compile preprocessFile "Scripts\Resupply\Functions\PXG_Resupply_Crate_Spawn_VehicleLoad.sqf";
 	} else {
-		hint format ["Not enough space in %1. (Needs %2, has %3)", getText(configFile >> "CfgVehicles" >> typeOf _vehicle >> "displayName"), _cargoSize, _currentSpace];
+		hint format ["Not enough space in %1. (Needs %2, has %3 available)", getText(configFile >> "CfgVehicles" >> typeOf _vehicle >> "displayName"), _cargoSize, _currentSpace];
 	};
 } else {
 	// SPAWN ON GROUND (with Alternating Displacement)

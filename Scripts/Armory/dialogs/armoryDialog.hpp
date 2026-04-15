@@ -1,12 +1,13 @@
 class armoryDialog
 {
 	idd = 431234;
+	onLoad = "[_this select 0, 'init'] execVM 'Scripts\Misc\PXG_Handle_Opacity.sqf';";
 	class controls
 	{
 		class armoryBaseFrame: PxgGuiBackground
 		{
-			idc = -1;
-			colorBackground[] = {0.1, 0.1, 0.1, 0.8}; // Added 80% opacity background
+			idc = 431006;
+			colorBackground[] = {0.1, 0.1, 0.1, 0.8}; 
 
 			x = 0.185 * safezoneW + safezoneX;
 			y = 0.1815 * safezoneH + safezoneY; // Centered
@@ -26,9 +27,9 @@ class armoryDialog
 		class armorySideText: PxgGuiRscText
 		{
 			idc = 431004;
-			text = "1. Side"; //--- ToDo: Localize;
+			text = "1. Side"; 
 			x = 0.20 * safezoneW + safezoneX;
-			y = 0.1915 * safezoneH + safezoneY; // 0.26 - 0.0685
+			y = 0.1915 * safezoneH + safezoneY; 
 			w = 0.10 * safezoneW;
 			h = 0.04 * safezoneH;
 		};
@@ -36,17 +37,27 @@ class armoryDialog
 		{
 			idc = 431000;
 
-			text = "2. Faction"; //--- ToDo: Localize;
+			text = "2. Faction"; 
 			x = 0.20 * safezoneW + safezoneX;
-			y = 0.3135 * safezoneH + safezoneY; // 0.382 - 0.0685
+			y = 0.3085 * safezoneH + safezoneY; 
 			w = 0.10 * safezoneW;
-			h = 0.04 * safezoneH;
+			h = 0.02 * safezoneH;
+		};
+		class armoryCamoText: PxgGuiRscText
+		{
+			idc = 431005;
+
+			text = "3. Camo [Era]"; 
+			x = 0.20 * safezoneW + safezoneX;
+			y = 0.5585 * safezoneH + safezoneY; 
+			w = 0.10 * safezoneW;
+			h = 0.02 * safezoneH;
 		};
 		class armoryLoadoutsText: PxgGuiRscText
 		{
 			idc = 431001;
 
-			text = "3. Loadout"; //--- ToDo: Localize;
+			text = "4. Loadout"; //--- ToDo: Localize;
 			x = 0.51 * safezoneW + safezoneX;
 			y = 0.1915 * safezoneH + safezoneY; // 0.26 - 0.0685
 			w = 0.10 * safezoneW;
@@ -57,7 +68,7 @@ class armoryDialog
 		{
 			idc = 431500;
 			x = 0.20 * safezoneW + safezoneX;
-			y = 0.2415 * safezoneH + safezoneY; // 0.31 - 0.0685
+			y = 0.2315 * safezoneH + safezoneY; 
 			w = 0.29 * safezoneW;
 			h = 0.067 * safezoneH;
 
@@ -68,21 +79,34 @@ class armoryDialog
 			idc = 431501;
 
 			x = 0.20 * safezoneW + safezoneX;
-			y = 0.3615 * safezoneH + safezoneY; // 0.43 - 0.0685
+			y = 0.3385 * safezoneH + safezoneY; 
 			w = 0.29 * safezoneW;
-			h = 0.437 * safezoneH; // Stretched
+			h = 0.210 * safezoneH; 
 
-			onTreeSelChanged = "call compile preprocessfile 'Scripts\Armory\Functions\PXG_Refresh_Loadouts.sqf'";
+			onTreeSelChanged = "[_this select 0, 431504, 'Scripts\Armory\Functions\PXG_Refresh_Loadouts.sqf', 'PXG_Armory_Memory_Camo'] call compile preprocessfile 'Scripts\Factions\PXG_Refresh_Camos.sqf'";
 			onTreeExpanded = "_this spawn { params ['_ctrl', '_path']; sleep 0.05; if (count _path == 1) then { private _sel = tvCurSel _ctrl; _ctrl tvSetCurSel [-1]; for '_i' from 0 to ((_ctrl tvCount _path) - 1) do { _ctrl tvCollapse (_path + [_i]); _ctrl tvExpand (_path + [_i]); }; if (count _sel > 0) then { _ctrl tvSetCurSel _sel; }; }; };";
+		};
+		class armoryCamoList: PxgGuiRscListBox
+		{
+			idc = 431504;
+			x = 0.20 * safezoneW + safezoneX;
+			y = 0.5885 * safezoneH + safezoneY; 
+			w = 0.29 * safezoneW;
+			h = 0.210 * safezoneH; 
+
+			sizeEx = 0.018 * safezoneH;
+			rowHeight = 1.8 * 0.018 * safezoneH;
+
+			onLBSelChanged = "call compile preprocessfile 'Scripts\Armory\Functions\PXG_Refresh_Loadouts.sqf'";
 		};
 		class armoryLoadoutList: PxgGuiRscTree
 		{
 			idc = 431503;
 
 			x = 0.51 * safezoneW + safezoneX;
-			y = 0.2415 * safezoneH + safezoneY; // 0.31 - 0.0685
+			y = 0.2315 * safezoneH + safezoneY; 
 			w = 0.29 * safezoneW;
-			h = 0.557 * safezoneH; // Stretched
+			h = 0.567 * safezoneH; 
 
 		};
 		class armoryButtonGetLoadout: PxgGuiRscButton
@@ -92,7 +116,7 @@ class armoryDialog
 
 			text = "Get Loadout"; //--- ToDo: Localize;
 
-			x = 0.71 * safezoneW + safezoneX;
+			x = 0.725 * safezoneW + safezoneX;
 			y = 0.8185 * safezoneH + safezoneY; // 0.887 - 0.0685
 			w = 0.09 * safezoneW;
 			h = 0.02 * safezoneH;
@@ -107,6 +131,17 @@ class armoryDialog
 			x = 0.185 * safezoneW + safezoneX;
 			y = 0.8185 * safezoneH + safezoneY; // 0.887 - 0.0685
 			w = 0.09 * safezoneW;
+			h = 0.02 * safezoneH;
+		};
+		class armoryButtonOpacity: PxgGuiRscButton
+		{
+			idc = 400001;
+			action = "[ctrlParent (_this select 0), 'toggle'] execVM 'Scripts\Misc\PXG_Handle_Opacity.sqf';";
+			text = "[ * ]";
+			tooltip = "Toggle Background Opacity";
+			x = 0.280 * safezoneW + safezoneX;
+			y = 0.8185 * safezoneH + safezoneY;
+			w = 0.04 * safezoneW;
 			h = 0.02 * safezoneH;
 		};
 	};

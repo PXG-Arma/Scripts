@@ -23,6 +23,13 @@ switch (_mode) do {
 		diag_log "[PXG Camera] Initializing...";
 		_params params ["_display", "_targetSource", ["_targetMode", "SYNC"], ["_lbIDC", -1], ["_orbitBtnIDC", -1]];
 		
+		// Security Handler: Armory (IDD 431234) does not support the 3D orbit camera logic.
+		// Explicitly hide the orbit button and exit if called from Armory.
+		if (!isNull _display && {ctrlIDD _display == 431234}) exitWith {
+			if (_orbitBtnIDC != -1) then { (_display displayCtrl _orbitBtnIDC) ctrlShow false; };
+			diag_log "[PXG Camera] Init Aborted: Armory security check triggered.";
+		};
+
 		if (isNull _display) exitWith { diag_log "[PXG Camera] Init Failed: Display is null"; };
 		if (isNull _targetSource && _targetMode == "SYNC") exitWith { 
 			diag_log "[PXG Camera] Init Aborted: Target Source is null.";

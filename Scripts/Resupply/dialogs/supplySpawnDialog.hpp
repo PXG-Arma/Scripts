@@ -1,7 +1,8 @@
 class dialog_supply_spawn
 {
 	idd = 451922;
-	onLoad = "[_this select 0, 'init'] execVM 'Scripts\Misc\PXG_Handle_Opacity.sqf';";
+	onLoad = "[_this select 0, 'init'] execVM 'Scripts\Misc\PXG_Handle_Opacity.sqf'; if (fileExists 'Scripts\Misc\PXG_Handle_Camera.sqf') then { [[(_this select 0), (player getVariable ['PXG_Resupply_Master', objNull]), 'SYNC', 451500, 400002], 'init'] execVM 'Scripts\Misc\PXG_Handle_Camera.sqf'; };";
+	onUnload = "[[], 'destroy'] execVM 'Scripts\Misc\PXG_Handle_Camera.sqf';";
 	class controls
 	{
 		////////////////////////////////////////////////////////
@@ -216,6 +217,17 @@ class dialog_supply_spawn
 			text = "[ * ]";
 			tooltip = "Toggle Background Opacity";
 			x = 0.250 * safezoneW + safezoneX;
+			y = 0.8185 * safezoneH + safezoneY;
+			w = 0.04 * safezoneW;
+			h = 0.02 * safezoneH;
+		};
+		class supplyButtonOrbit: PxgGuiRscButton
+		{
+			idc = 400002;
+			action = "[[], 'orbit_toggle'] execVM 'Scripts\Misc\PXG_Handle_Camera.sqf';";
+			text = "[ O ]";
+			tooltip = "Toggle Camera Orbit";
+			x = 0.295 * safezoneW + safezoneX;
 			y = 0.8185 * safezoneH + safezoneY;
 			w = 0.04 * safezoneW;
 			h = 0.02 * safezoneH;

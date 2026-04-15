@@ -1,7 +1,8 @@
 class dialog_motorpool
 {
 	idd = 461922;
-	onLoad = "[_this select 0, 'init'] execVM 'Scripts\Misc\PXG_Handle_Opacity.sqf';";
+	onLoad = "[_this select 0, 'init'] execVM 'Scripts\Misc\PXG_Handle_Opacity.sqf'; if (fileExists 'Scripts\Misc\PXG_Handle_Camera.sqf') then { [[(_this select 0), (player getVariable ['PXG_Vehicle_Master', objNull]), 'SYNC', 461500, 400002], 'init'] execVM 'Scripts\Misc\PXG_Handle_Camera.sqf'; };";
+	onUnload = "[[], 'destroy'] execVM 'Scripts\Misc\PXG_Handle_Camera.sqf';";
 	class controls
 	{
 		
@@ -80,6 +81,7 @@ class dialog_motorpool
 		class dim_vehicle_spawnpoint_list: PxgGuiRscListBox
 		{
 			idc = 461500;
+			onLBSelChanged = "[_this, 'update'] execVM 'Scripts\Misc\PXG_Handle_Camera.sqf';";
 
 			x = 0.605 * safezoneW + safezoneX;
 			y = 0.2315 * safezoneH + safezoneY; 
@@ -197,7 +199,18 @@ class dialog_motorpool
 			tooltip = "Toggle Background Opacity";
 			x = 0.250 * safezoneW + safezoneX;
 			y = 0.8315 * safezoneH + safezoneY;
-			w = 0.04 * safezoneW;
+			w = 0.03 * safezoneW;
+			h = 0.02 * safezoneH;
+		};
+		class motorpoolButtonOrbit: PxgGuiRscButton
+		{
+			idc = 400002;
+			action = "[[], 'orbit_toggle'] execVM 'Scripts\Misc\PXG_Handle_Camera.sqf';";
+			text = "<>";
+			tooltip = "Toggle Camera Orbit";
+			x = 0.285 * safezoneW + safezoneX;
+			y = 0.8315 * safezoneH + safezoneY;
+			w = 0.03 * safezoneW;
 			h = 0.02 * safezoneH;
 		};
 	};

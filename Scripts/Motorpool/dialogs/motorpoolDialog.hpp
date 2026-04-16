@@ -228,5 +228,41 @@ class dialog_motorpool
 			w = GUI_W_BTN_L;
 			h = GUI_H_BTN;
 		};
+
+		// --- PYLON MANAGER PANEL ---
+		class motorpoolPylonPanelBackground: PxgGuiBackground
+		{
+			idc = IDC_MOTORPOOL_PYLON_PANEL;
+			show = 0;
+			colorBackground[] = {0.1, 0.1, 0.1, 0.8};
+
+			x = 0.815 * safezoneW + safezoneX;
+			y = 0.1815 * safezoneH + safezoneY;
+			w = 0.18 * safezoneW;
+			h = 0.637 * safezoneH;
+		};
+		class motorpoolPylonHeader: PxgGuiRscStructuredText
+		{
+			idc = 461706; 
+			show = 0;
+			text = "<t align='center' color='#FFFFFF'>PYLON MANAGER</t>";
+			x = 0.815 * safezoneW + safezoneX;
+			y = 0.1585 * safezoneH + safezoneY;
+			w = 0.18 * safezoneW;
+			h = 0.022 * safezoneH;
+		};
+
+		// Dynamic Scrollable Container
+		class motorpoolPylonContainer: PxgGuiRscControlsGroup
+		{
+			idc = IDC_MOTORPOOL_PYLON_CONTAINER;
+			show = 0;
+			x = 0.815 * safezoneW + safezoneX;
+			y = 0.1815 * safezoneH + safezoneY;
+			w = 0.18 * safezoneW;
+			h = 0.637 * safezoneH;
+
+			class Controls {}; // Content populated via ctrlCreate
+		};
 	};
 };

@@ -68,3 +68,7 @@
 #define GUI_W_BTN_M (0.06 * safezoneW)    // Medium (Close/Spawn)
 #define GUI_W_BTN_L (0.045 * safezoneW)   // Switch (Motorpool/Resupply)
 #define GUI_H_BTN (0.02 * safezoneH)
+
+// Motorpool Pylon Manager IDCs
+#define IDC_MOTORPOOL_PYLON_PANEL 461700
+#define IDC_MOTORPOOL_PYLON_CONTAINER 461710

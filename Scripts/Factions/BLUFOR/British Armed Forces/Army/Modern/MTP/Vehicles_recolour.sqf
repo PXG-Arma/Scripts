@@ -1,12 +1,26 @@
-// Welcome to the Faction Vehicles recolour file, This should be called "Vehicles_recolour_FactionName"
-// In this file you assign which Vehicle skin appears when spawning through the Motorpool Menu.
-// The "switch(_vehicleType) do" can be left empty if randomisation is, or customization is not wanted.
-// To get these parameters, Ctrl+C when in the garage with the wanted customization and paste at the bottom, note that this does not give the exact script and needs some manual labour to work
-// by copying the camo and customization out of what you just pasted, and then pasting it in a copy of the already existing cases. Don't forget to rename the case either!
-
 params["_vehicle","_vehicleType"];
+
+/*
+    Vehicles_recolour.sqf (UK Armed Forces - MTP)
+    -------------------------------------------
+    Hardened version with mod-compatibility patches.
+*/
+
+// --- 3CB MOD COMPATIBILITY PATCH ---
+// UK3CB BAF vehicles often have internal setup scripts (fn_init_EH.sqf) that crash 
+// if they cannot find specific texture indices (0, 1, or 2). 
+// For PREVIEW vehicles, the crash is prevented by 'removeAllEventHandlers' in Refresh_Preview.sqf.
+// For LIVE vehicles, we attempt to expand the array here to mitigate issues.
+{
+    if (count (getObjectTextures _vehicle) < (_x + 1)) then {
+        _vehicle setObjectTextureGlobal [_x, ""]; 
+    };
+} forEach [0, 1, 2];
 
 switch(_vehicleType) do
 {
+	case "UK3CB_BAF_Warrior_A3_W_Cage_Camo_MTP": {
+        // Specific woodland configuration for Warrior if needed
+    };
 	default {};
 };

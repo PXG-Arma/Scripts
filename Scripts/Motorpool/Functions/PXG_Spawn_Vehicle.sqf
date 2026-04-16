@@ -24,21 +24,42 @@ private _spawnCoords = getPosATL _spawnPosition;
 if (player getVariable ["PXG_Motorpool_Spawning", false]) exitWith { hint "Spawning in progress..." };
 player setVariable ["PXG_Motorpool_Spawning", true];
 
-// Restore debouncing after a short delay (Increased to 2s to prevent rapid spam and mod init race conditions)
+// Restore debouncing after a short delay
 [] spawn { sleep 0.5; player setVariable ["PXG_Motorpool_Spawning", false] };
 
-// Feature Restoration: Auto-despawn existing vehicle at pad to prevent clipping/explosions
+// Feature Restoration: Auto-despawn existing vehicle at pad
 private _existingVehicles = nearestObjects [_spawnCoords, ["LandVehicle", "Air", "Ship"], 5];
 { 
-	_x setPos [0,0,0]; // Move instantly to avoid collision race condition
-	[_x] spawn { sleep 6; deleteVehicle (_this select 0) }; // Delay deletion by 6s to silence 3CB Warrior init errors (modfn_init_EH.sqf sleeps 5s before texture check)
+	_x setPos [0,0,0]; 
+	[_x] spawn { sleep 6; deleteVehicle (_this select 0) }; 
 } forEach _existingVehicles;
+
+// Cleanup preview vehicle if it exists at this location
+private _previewVic = missionNamespace getVariable ["PXG_Motorpool_Preview_Vic", objNull];
+if (!isNull _previewVic) then { 
+	deleteVehicle _previewVic; 
+	missionNamespace setVariable ["PXG_Motorpool_Preview_Vic", objNull]; 
+	sleep 0.1; // Stabilization delay to prevent networking race conditions
+};
 
 private _vehicle = createVehicle[_vehicleType, _spawnCoords, [], 0, "CAN_COLLIDE"];
 _vehicle setDir getDir _spawnPosition;
 
-// Path for recolour script (Handles empty era correctly)
+// Path for recolour script
 private _recolourScriptPath = _basePath + "Vehicles_recolour.sqf";
 if (fileExists _recolourScriptPath) then {
 	[_vehicle, _vehicleType] call compile preprocessfile _recolourScriptPath;
 };
+
+// --- PYLON PERSISTENCE ---
+player setVariable ["PXG_Motorpool_Active_Vehicle", _vehicle];
+
+// Apply custom pylons configured during preview
+private _customPylons = player getVariable ["PXG_Motorpool_CustomPylons", []];
+{
+	_x params ["_pylonIdx", "_mag"];
+	_vehicle setPylonLoadout [_pylonIdx, _mag, true];
+} forEach _customPylons;
+
+// Refresh Pylon Manager UI for the live vehicle
+[_vehicle] call compile preprocessFile "Scripts\Motorpool\Functions\PXG_Motorpool_Pylon_Update_Panel.sqf";

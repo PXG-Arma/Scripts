@@ -70,6 +70,12 @@ class PxgGuiRscListBox: RscListBox
 
 };
 
+class PxgGuiRscCombo: RscCombo
+{
+	wholeHeight = 0.45;
+	colorSelectBackground[] = {1, 1, 1, 0.25};
+};
+
 class PxgGuiRscStructuredText: RscStructuredText
 {
 	colorBackground[] = 			
@@ -79,10 +85,22 @@ class PxgGuiRscStructuredText: RscStructuredText
 		"(profilenamespace getvariable ['GUI_BCG_RGB_B',0.21])",
 		"(profilenamespace getvariable ['GUI_BCG_RGB_A',0.8])"
 	};
-	sizeEx = 1 * GUI_GRID_H * GUI_GRID_H;
 };
 
 class PxgGuiRscPicture: RscPictureKeepAspect
 {
 	    colorText[] = {1,1,1,1};
+};
+
+class PxgGuiRscControlsGroup: RscControlsGroup
+{
+    class VScrollbar {
+        color[] = {1, 1, 1, 1};
+        width = 0.021 * safezoneW;
+        autoScrollEnabled = 1;
+    };
+    class HScrollbar {
+        color[] = {1, 1, 1, 0}; // Transparent to remove white bar
+        height = 0;             // 0 height to ensure no space is taken
+    };
 };

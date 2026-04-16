@@ -61,7 +61,7 @@ private _contentsText = "<t color='#FFFFFF'>";
 		_displayName = _itemClassname; // Fallback
 	};
 
-	_contentsText = _contentsText + format ["<img image='%1' size='1.8' verticalAlign='middle' /> %2 x %3<br/>", _itemPicture, _itemAmount, _displayName];
+	_contentsText = _contentsText + format ["<img image='%1' size='1.8' /> %2 x %3<br/>", _itemPicture, _itemAmount, _displayName];
 } forEach _foundContents;
 _contentsText = _contentsText + "</t>";
 

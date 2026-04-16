@@ -137,8 +137,15 @@ switch (_mode) do {
 
 		PXG_Cam_EH_Wheel = _display displayAddEventHandler ["MouseZChanged", {
 			params ["_display", "_zDelta"];
-			missionNamespace setVariable ["PXG_Cam_ZDelta",
-				(missionNamespace getVariable ["PXG_Cam_ZDelta", 0]) + _zDelta];
+			
+			// Only allow zoom if RMB is held (to avoid conflict with pylon list scroll)
+			private _mbs = missionNamespace getVariable ["PXG_Cam_MBS", [[], []]];
+			private _isRmbHeld = (count (_mbs select 1) > 0);
+			
+			if (_isRmbHeld) then {
+				missionNamespace setVariable ["PXG_Cam_ZDelta",
+					(missionNamespace getVariable ["PXG_Cam_ZDelta", 0]) + _zDelta];
+			};
 			true
 		}];
 
@@ -276,6 +283,13 @@ switch (_mode) do {
 				"PXG_Cam_MBS", "PXG_Cam_ZDelta"
 			];
 			PXG_Cam_Dist = nil; PXG_Cam_Az = nil; PXG_Cam_El = nil;
+
+			// Cleanup Preview Vehicle
+			private _previewVic = missionNamespace getVariable ["PXG_Motorpool_Preview_Vic", objNull];
+			if (!isNull _previewVic) then { deleteVehicle _previewVic; };
+			missionNamespace setVariable ["PXG_Motorpool_Preview_Vic", nil];
+			player setVariable ["PXG_Motorpool_Active_Vehicle", nil];
+			player setVariable ["PXG_Motorpool_CustomPylons", nil];
 		};
 
 		// Always remove UI handlers from the (closing) display

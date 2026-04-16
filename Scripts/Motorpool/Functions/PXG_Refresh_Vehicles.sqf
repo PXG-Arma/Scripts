@@ -17,17 +17,23 @@ if (_variantData == "") exitWith {};
 
 // Construct path utilizing the GetFactionPath utility
 private _basePath = [_variantData] call compile preprocessFile "Scripts\Factions\PXG_GetFactionPath.sqf";
-private _vehiclesScriptPath = _basePath + "Vehicles.sqf";
+private _vehiclesArray = [];
 
-if !(fileExists _vehiclesScriptPath) exitWith {
-	tvClear IDC_MOTORPOOL_VEHICLE_LB;
+if (fileExists (_basePath + "Faction_Core.sqf")) then {
+	private _factionData = call compile preprocessFile (_basePath + "Faction_Core.sqf");
+	if (!isNil "_factionData" && {typeName _factionData == "HASHMAP"}) then {
+		_vehiclesArray = _factionData getOrDefault ["vehicles", []];
+	};
+} else {
+	private _vehiclesScriptPath = _basePath + "Vehicles.sqf";
+	if (fileExists _vehiclesScriptPath) then {
+		_vehiclesArray = call compile preprocessfile _vehiclesScriptPath;
+	};
+	if (isNil "_vehiclesArray") then { _vehiclesArray = []; };
 };
 
-private _vehiclesArray = call compile preprocessfile _vehiclesScriptPath;
-
-if (isNil "_vehiclesArray") exitWith {
+if (count _vehiclesArray == 0) exitWith {
 	tvClear IDC_MOTORPOOL_VEHICLE_LB;
-	diag_log format ["[PXG Error] Could not load vehicle list at: %1", _vehiclesScriptPath];
 };
 
 // Populate TreeView using nested loop for categories

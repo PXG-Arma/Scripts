@@ -4,6 +4,7 @@
 #include "Scripts\Armory\dialogs\armoryDialog.hpp"
 #include "Scripts\Resupply\dialogs\supplySpawnDialog.hpp" 
 #include "Scripts\Motorpool\dialogs\motorpoolDialog.hpp"
+#include "Scripts\Faction_Builder_Tool\dialogs\builderDialog.hpp"
 #include "Scripts\config.cpp"
 
 // On Load

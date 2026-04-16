@@ -29,12 +29,20 @@ removeVest player;
 removeBackpack player;
 removeHeadgear player;
 
-[_side, _faction, _variant, _loadout] call compile preprocessFile "scripts\Armory\Functions\PXG_Set_ACEPerms.sqf";
-if (fileExists (_basePath + "Uniforms.sqf")) then { [_side, _faction, _variant, _loadout] call compile preprocessFile (_basePath + "Uniforms.sqf") };
-if (fileExists (_basePath + "Weapons.sqf")) then { [_side, _faction, _variant, _loadout] call compile preprocessFile (_basePath + "Weapons.sqf") };
-if (fileExists (_basePath + "Ammo.sqf")) then { [_side, _faction, _variant, _loadout] call compile preprocessFile (_basePath + "Ammo.sqf") };
-[_side, _faction, _variant, _loadout] call compile preprocessFile "Scripts\Factions\common\radios.sqf";
-[_side, _faction, _variant, _loadout] call compile preprocessFile "Scripts\Factions\common\gear.sqf";
-if (fileExists (_basePath + "Gear.sqf")) then { [_side, _faction, _variant, _loadout] call compile preprocessFile (_basePath + "Gear.sqf") };
-[_side, _faction, _variant, _loadout] call compile preprocessFile "Scripts\Factions\common\medical.sqf";
-[_side, _faction, _variant, _loadout] call compile preprocessFile "scripts\Armory\Functions\PXG_Configure_RadioChannels.sqf";
+[_side, _faction, _variant, _loadout] call compile preprocessFile "Scripts\Armory\Functions\PXG_Set_ACEPerms.sqf";
+if (fileExists (_basePath + "Faction_Core.sqf")) then {
+	[_side, _faction, _variant, _loadout, _basePath] call compile preprocessFile "Scripts\Armory\Functions\PXG_ApplyFactionData.sqf";
+	
+	[_side, _faction, _variant, _loadout] call compile preprocessFile "Scripts\Factions\common\radios.sqf";
+	[_side, _faction, _variant, _loadout] call compile preprocessFile "Scripts\Factions\common\gear.sqf";
+	[_side, _faction, _variant, _loadout] call compile preprocessFile "Scripts\Factions\common\medical.sqf";
+} else {
+	if (fileExists (_basePath + "Uniforms.sqf")) then { [_side, _faction, _variant, _loadout] call compile preprocessFile (_basePath + "Uniforms.sqf") };
+	if (fileExists (_basePath + "Weapons.sqf")) then { [_side, _faction, _variant, _loadout] call compile preprocessFile (_basePath + "Weapons.sqf") };
+	if (fileExists (_basePath + "Ammo.sqf")) then { [_side, _faction, _variant, _loadout] call compile preprocessFile (_basePath + "Ammo.sqf") };
+	[_side, _faction, _variant, _loadout] call compile preprocessFile "Scripts\Factions\common\radios.sqf";
+	[_side, _faction, _variant, _loadout] call compile preprocessFile "Scripts\Factions\common\gear.sqf";
+	if (fileExists (_basePath + "Gear.sqf")) then { [_side, _faction, _variant, _loadout] call compile preprocessFile (_basePath + "Gear.sqf") };
+	[_side, _faction, _variant, _loadout] call compile preprocessFile "Scripts\Factions\common\medical.sqf";
+};
+[_side, _faction, _variant, _loadout] call compile preprocessFile "Scripts\Armory\Functions\PXG_Configure_RadioChannels.sqf";

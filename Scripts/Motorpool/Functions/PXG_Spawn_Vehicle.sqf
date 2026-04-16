@@ -45,10 +45,17 @@ if (!isNull _previewVic) then {
 private _vehicle = createVehicle[_vehicleType, _spawnCoords, [], 0, "CAN_COLLIDE"];
 _vehicle setDir getDir _spawnPosition;
 
-// Path for recolour script
-private _recolourScriptPath = _basePath + "Vehicles_recolour.sqf";
-if (fileExists _recolourScriptPath) then {
-	[_vehicle, _vehicleType] call compile preprocessfile _recolourScriptPath;
+if (fileExists (_basePath + "Faction_Core.sqf")) then {
+	private _factionData = call compile preprocessFile (_basePath + "Faction_Core.sqf");
+	private _recolourCodeStr = _factionData getOrDefault ["recolour_script", ""];
+	if (_recolourCodeStr != "") then {
+		[_vehicle, _vehicleType] call compile _recolourCodeStr;
+	};
+} else {
+	private _recolourScriptPath = _basePath + "Vehicles_recolour.sqf";
+	if (fileExists _recolourScriptPath) then {
+		[_vehicle, _vehicleType] call compile preprocessfile _recolourScriptPath;
+	};
 };
 
 // --- PYLON PERSISTENCE ---

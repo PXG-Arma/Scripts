@@ -17,17 +17,23 @@ if (_variantData == "") exitWith {};
 
 // Construct path utilizing the GetFactionPath utility
 private _basePath = [_variantData] call compile preprocessFile "Scripts\Factions\PXG_GetFactionPath.sqf";
-private _suppliesScriptPath = _basePath + "Supplies.sqf";
+private _suppliesArray = [];
 
-if !(fileExists _suppliesScriptPath) exitWith {
-	lbClear IDC_RESUPPLY_SUPPLIES_LB;
+if (fileExists (_basePath + "Faction_Core.sqf")) then {
+	private _factionData = call compile preprocessFile (_basePath + "Faction_Core.sqf");
+	if (!isNil "_factionData" && {typeName _factionData == "HASHMAP"}) then {
+		_suppliesArray = _factionData getOrDefault ["supplies", []];
+	};
+} else {
+	private _suppliesScriptPath = _basePath + "Supplies.sqf";
+	if (fileExists _suppliesScriptPath) then {
+		_suppliesArray = call compile preprocessfile _suppliesScriptPath;
+	};
+	if (isNil "_suppliesArray") then { _suppliesArray = []; };
 };
 
-private _suppliesArray = call compile preprocessfile _suppliesScriptPath;
-
-if (isNil "_suppliesArray") exitWith {
+if (count _suppliesArray == 0) exitWith {
 	lbClear IDC_RESUPPLY_SUPPLIES_LB;
-	diag_log format ["[PXG Error] Could not load supply list at: %1", _suppliesScriptPath];
 };
 
 lbClear IDC_RESUPPLY_SUPPLIES_LB;

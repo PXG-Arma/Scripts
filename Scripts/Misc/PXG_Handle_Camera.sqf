@@ -51,11 +51,18 @@ switch (_mode) do {
 		if (isNil "PXG_Cam_Az")   then { PXG_Cam_Az   = 180; };
 		if (isNil "PXG_Cam_El")   then { PXG_Cam_El   = 25; };
 		
+		// Initialize Active/Target states for smoothing
+		missionNamespace setVariable ["PXG_Cam_Active_Dist",      PXG_Cam_Dist];
+		missionNamespace setVariable ["PXG_Cam_Active_Az",        PXG_Cam_Az];
+		missionNamespace setVariable ["PXG_Cam_Active_El",        PXG_Cam_El];
+		missionNamespace setVariable ["PXG_Cam_Active_PanOffset", if (isNil "PXG_Cam_PanOffset") then {[0,0,0]} else {PXG_Cam_PanOffset}];
+
 		if (isNil {missionNamespace getVariable "PXG_Cam_ZDelta"})    then { missionNamespace setVariable ["PXG_Cam_ZDelta", 0]; };
 		if (isNil {missionNamespace getVariable "PXG_Cam_AutoOrbit"}) then { missionNamespace setVariable ["PXG_Cam_AutoOrbit", true]; };
 
 		// ACE3 mouseButtonState: [LMBanchor, RMBanchor]. [] = not held.
 		missionNamespace setVariable ["PXG_Cam_MBS", [[], []]];
+		if (isNil "PXG_Cam_PanOffset") then { PXG_Cam_PanOffset = [0, 0, 0]; };
 
 		// -----------------------------------------------------------------------
 		// Create camera object (ACE: GVAR(camera) = "camera" camCreate ...)
@@ -92,21 +99,55 @@ switch (_mode) do {
 
 		PXG_Cam_EH_Moving = _display displayAddEventHandler ["MouseMoving", {
 			private _mbs = missionNamespace getVariable ["PXG_Cam_MBS", [[], []]];
-			private _RMB = _mbs select 1;
-			if (count _RMB > 0) then {
-				// Use getMousePosition to bypass Display coordinate pollution over active UI controls
-				private _mousePos = getMousePosition;
-				private _mouseX = _mousePos select 0;
-				private _mouseY = _mousePos select 1;
+			private _mousePos = getMousePosition;
+			private _mouseX = _mousePos select 0;
+			private _mouseY = _mousePos select 1;
 
+			private _LMB = _mbs select 0;
+			private _RMB = _mbs select 1;
+
+			// Handle DUAL DRAG (Panning)
+			if (count _LMB > 0 && count _RMB > 0) then {
 				private _dX = (_RMB select 0) - _mouseX;
 				private _dY = (_RMB select 1) - _mouseY;
-				// Adjusted multiplier for absolute safezone coordinates
-				PXG_Cam_Az = (PXG_Cam_Az - (_dX * 150)) % 360;
-				PXG_Cam_El = (PXG_Cam_El - (_dY * 100)) max -85 min 85;
+
+				// DYNAMIC SENSITIVITY: Scale pan speed by distance
+				private _dist = missionNamespace getVariable ["PXG_Cam_Active_Dist", 35];
+				private _scale = (_dist * 0.1) max 1.5; 
+				private _az = missionNamespace getVariable ["PXG_Cam_Active_Az", 180];
+
+				// Horizontal Pan (Relative to Camera Azimuth)
+				private _dirX = sin(_az + 90);
+				private _dirY = cos(_az + 90);
+				private _hPan = [_dirX * _dX * _scale, _dirY * _dX * _scale, 0];
 				
+				// Vertical Pan (World Height)
+				private _vPan = [0, 0, _dY * _scale];
+
+				PXG_Cam_PanOffset = PXG_Cam_PanOffset vectorAdd _hPan vectorAdd _vPan;
+
+				// USER MOVEMENT: Snap active state to target (Instant response)
+				missionNamespace setVariable ["PXG_Cam_Active_PanOffset", PXG_Cam_PanOffset];
+
+				_mbs set [0, [_mouseX, _mouseY]];
 				_mbs set [1, [_mouseX, _mouseY]];
 				missionNamespace setVariable ["PXG_Cam_MBS", _mbs];
+			} else {
+				// Handle SINGLE RMB DRAG (Orbit)
+				if (count _RMB > 0) then {
+					private _dX = (_RMB select 0) - _mouseX;
+					private _dY = (_RMB select 1) - _mouseY;
+					
+					PXG_Cam_Az = (PXG_Cam_Az - (_dX * 150)) % 360;
+					PXG_Cam_El = (PXG_Cam_El - (_dY * 100)) max -85 min 85;
+
+					// USER MOVEMENT: Snap active state to target (Instant response)
+					missionNamespace setVariable ["PXG_Cam_Active_Az", PXG_Cam_Az];
+					missionNamespace setVariable ["PXG_Cam_Active_El", PXG_Cam_El];
+					
+					_mbs set [1, [_mouseX, _mouseY]];
+					missionNamespace setVariable ["PXG_Cam_MBS", _mbs];
+				};
 			};
 			false
 		}];
@@ -114,11 +155,12 @@ switch (_mode) do {
 		PXG_Cam_EH_Down = _display displayAddEventHandler ["MouseButtonDown", {
 			params ["_display", "_button"];
 			private _handled = false;
-			if (_button in [1, 2]) then {
+			if (_button in [0, 1, 2]) then {
 				private _mbs = missionNamespace getVariable ["PXG_Cam_MBS", [[], []]];
-				_mbs set [1, getMousePosition]; // Anchor in absolute coordinates
+				private _idx = if (_button == 0) then {0} else {1};
+				_mbs set [_idx, getMousePosition];
 				missionNamespace setVariable ["PXG_Cam_MBS", _mbs];
-				_handled = true; // Consume event to prevent engine freelook
+				_handled = true;
 			};
 			_handled
 		}];
@@ -126,9 +168,10 @@ switch (_mode) do {
 		PXG_Cam_EH_Up = _display displayAddEventHandler ["MouseButtonUp", {
 			params ["_display", "_button"];
 			private _handled = false;
-			if (_button in [1, 2]) then {
+			if (_button in [0, 1, 2]) then {
 				private _mbs = missionNamespace getVariable ["PXG_Cam_MBS", [[], []]];
-				_mbs set [1, []];
+				private _idx = if (_button == 0) then {0} else {1};
+				_mbs set [_idx, []];
 				missionNamespace setVariable ["PXG_Cam_MBS", _mbs];
 				_handled = true;
 			};
@@ -164,40 +207,71 @@ switch (_mode) do {
 			private _targetObj = missionNamespace getVariable ["PXG_Cam_TargetObj", objNull];
 			if (isNull _targetObj) exitWith {};
 
-			private _dist = if (isNil "PXG_Cam_Dist") then {35}  else {PXG_Cam_Dist};
-			private _az   = if (isNil "PXG_Cam_Az")   then {180} else {PXG_Cam_Az};
-			private _el   = if (isNil "PXG_Cam_El")   then {25}  else {PXG_Cam_El};
+			// --- THE ENGINE: Get Target States ---
+			private _targetDist = if (isNil "PXG_Cam_Dist") then {35}  else {PXG_Cam_Dist};
+			private _targetAz   = if (isNil "PXG_Cam_Az")   then {180} else {PXG_Cam_Az};
+			private _targetEl   = if (isNil "PXG_Cam_El")   then {25}  else {PXG_Cam_El};
+			private _targetPan  = if (isNil "PXG_Cam_PanOffset") then {[0,0,0]} else {PXG_Cam_PanOffset};
 
-			// 1. Zoom - consume scroll delta
+			// --- ZOOM SENSITIVITY ---
 			private _zDelta = missionNamespace getVariable ["PXG_Cam_ZDelta", 0];
 			if (_zDelta != 0) then {
-				PXG_Cam_Dist = (_dist - (_zDelta / 2)) max 5 min 100;
-				_dist = PXG_Cam_Dist;
+				// DYNAMIC SENSITIVITY: Scale zoom speed by distance
+				private _zoomScale = (_targetDist / 10) max 1.5;
+				PXG_Cam_Dist = (_targetDist - (_zDelta * _zoomScale)) max 1 min 150;
+				_targetDist = PXG_Cam_Dist;
+
+				// USER MOVEMENT: Snap active state to target (Instant response)
+				missionNamespace setVariable ["PXG_Cam_Active_Dist", _targetDist];
+
 				missionNamespace setVariable ["PXG_Cam_ZDelta", 0];
 			};
 
-			// 2. Auto-orbit (only when RMB not held)
+			// --- AUTO-ORBIT ---
 			private _rmbHeld = count ((missionNamespace getVariable ["PXG_Cam_MBS", [[], []]]) select 1) > 0;
 			if (missionNamespace getVariable ["PXG_Cam_AutoOrbit", false] && !_rmbHeld) then {
-				PXG_Cam_Az = (_az + (diag_deltaTime * 1.0)) % 360;
-				_az = PXG_Cam_Az;
+				PXG_Cam_Az = (_targetAz + (diag_deltaTime * 1.0)) % 360;
+				_targetAz = PXG_Cam_Az;
 			};
 
-			// 3. Position camera helper at target's ASL center without 'attachTo'
-			// attachTo on a PhysX object every frame fights the physics interpolation loop and causes bounces.
+			// --- INTERPOLATION (SMOOTHING) ---
+			private _activeDist = missionNamespace getVariable ["PXG_Cam_Active_Dist", _targetDist];
+			private _activeAz   = missionNamespace getVariable ["PXG_Cam_Active_Az",   _targetAz];
+			private _activeEl   = missionNamespace getVariable ["PXG_Cam_Active_El",   _targetEl];
+			private _activePan  = missionNamespace getVariable ["PXG_Cam_Active_PanOffset", _targetPan];
+
+			// Smooth Factor: 0.15 (Glide) vs 0.5 (Quick)
+			private _interpFactor = 0.15; 
+			
+			_activeDist = _activeDist + ((_targetDist - _activeDist) * _interpFactor);
+			_activeEl   = _activeEl   + ((_targetEl - _activeEl) * _interpFactor);
+			_activePan  = _activePan vectorAdd ((_targetPan vectorDiff _activePan) vectorMultiply _interpFactor);
+
+			// Azimuth shortest-path interpolation (fixes 360->0 flip)
+			private _azDiff = (_targetAz - _activeAz);
+			if (abs _azDiff > 180) then {
+				if (_azDiff > 0) then { _azDiff = _azDiff - 360; } else { _azDiff = _azDiff + 360; };
+			};
+			_activeAz = (_activeAz + (_azDiff * _interpFactor)) % 360;
+
+			// Store updated active states
+			missionNamespace setVariable ["PXG_Cam_Active_Dist", _activeDist];
+			missionNamespace setVariable ["PXG_Cam_Active_Az",   _activeAz];
+			missionNamespace setVariable ["PXG_Cam_Active_El",   _activeEl];
+			missionNamespace setVariable ["PXG_Cam_Active_PanOffset", _activePan];
+
+			// --- POSITIONING ---
 			private _targetPosASL = getPosASL _targetObj;
+			_targetPosASL = _targetPosASL vectorAdd _activePan;
+
 			private _bb = boundingBoxReal _targetObj;
-			private _centerZ = ((_bb select 1) select 2) / 2; // Approximate visual center height
+			private _centerZ = ((_bb select 1) select 2) / 2;
 			_targetPosASL set [2, (_targetPosASL select 2) + _centerZ];
 
 			PXG_Cam_Helper setPosASL _targetPosASL;
-			// Unattached objects use pure world rotation, avoiding parent-relative physics jitter
-			[PXG_Cam_Helper, [_az + 180, -_el, 0]] call BIS_fnc_setObjectRotation;
+			[PXG_Cam_Helper, [_activeAz + 180, -_activeEl, 0]] call BIS_fnc_setObjectRotation;
 
-			// 4. Place camera behind helper at _dist (using ASL pure math to avoid terrain heightmap stutters)
-			PXG_Motorpool_Camera setPosASL (PXG_Cam_Helper modelToWorldWorld [0, -_dist, 0]);
-
-			// 5. Camera copies helper's orientation
+			PXG_Motorpool_Camera setPosASL (PXG_Cam_Helper modelToWorldWorld [0, -_activeDist, 0]);
 			PXG_Motorpool_Camera setVectorDirAndUp [vectorDir PXG_Cam_Helper, vectorUp PXG_Cam_Helper];
 		}];
 
@@ -236,6 +310,7 @@ switch (_mode) do {
 
 		if (isNull _targetObj) exitWith {};
 		missionNamespace setVariable ["PXG_Cam_TargetObj", _targetObj];
+		PXG_Cam_PanOffset = [0, 0, 0]; // Reset pan when target changes
 	};
 
 	case "orbit_toggle": {
@@ -283,11 +358,17 @@ switch (_mode) do {
 				"PXG_Cam_MBS", "PXG_Cam_ZDelta"
 			];
 			PXG_Cam_Dist = nil; PXG_Cam_Az = nil; PXG_Cam_El = nil;
+			PXG_Cam_PanOffset = nil;
 
 			// Cleanup Preview Vehicle
 			private _previewVic = missionNamespace getVariable ["PXG_Motorpool_Preview_Vic", objNull];
 			if (!isNull _previewVic) then { deleteVehicle _previewVic; };
 			missionNamespace setVariable ["PXG_Motorpool_Preview_Vic", nil];
+
+			// Cleanup Builder Preview Unit
+			private _builderUnit = missionNamespace getVariable ["PXG_Builder_Preview_Unit", objNull];
+			if (!isNull _builderUnit) then { deleteVehicle _builderUnit; };
+			missionNamespace setVariable ["PXG_Builder_Preview_Unit", nil];
 			player setVariable ["PXG_Motorpool_Active_Vehicle", nil];
 			player setVariable ["PXG_Motorpool_CustomPylons", nil];
 		};

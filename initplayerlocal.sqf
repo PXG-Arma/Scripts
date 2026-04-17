@@ -40,4 +40,9 @@ _deploymentInit = execVM "scripts\Deployment\Init\deploymentinitPlayer.sqf";
 execVM "scripts\Armory\Functions\PXG_Set_SlotID.sqf";
 player addEventHandler ["Respawn", {  execVM "scripts\Armory\Functions\PXG_Respawn_Loadout.sqf" } ];
 
+// Faction Builder Prototype Bootstrapper
+if (!isNil "PXG_Anchor") then {
+	PXG_Anchor addAction ["<t color='#00FF00'>[Launch Faction Builder]</t>", "Scripts\Faction_Builder_Tool\init_Builder.sqf", nil, 1.5, true, true, "", "true", 5];
+};
+
 

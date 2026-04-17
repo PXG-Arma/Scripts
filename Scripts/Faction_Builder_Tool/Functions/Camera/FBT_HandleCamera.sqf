@@ -87,26 +87,8 @@ switch (_mode) do {
 				_mbs set [0, [_mouseX, _mouseY]];
 				_mbs set [1, [_mouseX, _mouseY]];
 			} else {
-				// --- CASE 2: SINGLE LMB (Planar Pan) ---
-				if (count _LMB > 0) then {
-					private _dX = (_LMB select 0) - _mouseX;
-					private _dY = (_LMB select 1) - _mouseY;
-
-					private _dist = missionNamespace getVariable ["FBT_Cam_Active_Dist", 12];
-					private _scale = (_dist * 0.1) max 0.5;
-
-					private _cam = missionNamespace getVariable ["FBT_Camera", objNull];
-					if (!isNull _cam) then {
-						private _fwd = vectorDir _cam; _fwd set [2,0]; _fwd = vectorNormalized _fwd;
-						private _side = _fwd vectorCrossProduct [0,0,1];
-						private _moveVec = (_side vectorMultiply (_dX * _scale * 10)) vectorAdd (_fwd vectorMultiply (-_dY * _scale * 10));
-						
-						private _offset = missionNamespace getVariable ["FBT_Cam_PanOffset", [0,0,0]];
-						FBT_Cam_PanOffset = _offset vectorAdd _moveVec;
-						missionNamespace setVariable ["FBT_Cam_Active_PanOffset", FBT_Cam_PanOffset];
-					};
-					_mbs set [0, [_mouseX, _mouseY]];
-				};
+				// --- CASE 2: SINGLE LMB (DISABLED to avoid scrollbar conflict) ---
+				// Panning now requires RMB + LMB as requested.
 
 				// --- CASE 3: SINGLE RMB (Orbit) ---
 				if (count _RMB > 0) then {
@@ -149,10 +131,13 @@ switch (_mode) do {
 			params ["", "_zDelta"];
 			private _mbs = missionNamespace getVariable ["FBT_Cam_MBS", [[], []]];
 			private _isRmbHeld = (count (_mbs select 1) > 0);
+			
 			if (_isRmbHeld) then {
 				missionNamespace setVariable ["FBT_Cam_ZDelta", (missionNamespace getVariable ["FBT_Cam_ZDelta", 0]) + _zDelta];
+				true // Consume event only when zooming
+			} else {
+				false // Allow scrollbar interaction
 			};
-			true
 		}];
 
 		if (!isNil "FBT_Cam_Draw3D") then { removeMissionEventHandler ["Draw3D", FBT_Cam_Draw3D]; };
@@ -232,7 +217,7 @@ switch (_mode) do {
 	};
 
 	case "update": {
-		params ["_targetObj"];
+		_params params [["_targetObj", objNull]];
 		if (isNil "_targetObj" || {isNull _targetObj}) exitWith {};
 		missionNamespace setVariable ["FBT_Cam_TargetObj", _targetObj];
 		FBT_Cam_PanOffset = [0,0,0];

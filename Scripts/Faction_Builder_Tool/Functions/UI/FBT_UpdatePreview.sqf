@@ -43,20 +43,11 @@ private _selectedAgent = objNull;
     };
 } forEach _paradeUnits;
 
-// 2. Camera Focus Glide
-if (!isNull _selectedAgent) then {
-    // Invoke modular camera update for smooth transition and pan reset
-    [[_selectedAgent], "update"] execVM "Scripts\Faction_Builder_Tool\Functions\Camera\FBT_HandleCamera.sqf";
-    
-    // Set situational zoom
-    if (_tab == "Armory") then {
-        FBT_Cam_Dist = 3.5;
-        FBT_Cam_El = 20;
-    } else {
-        // Overview settings
-        FBT_Cam_Dist = 12;
+    // 2. Camera Focus Glide
+    if (!isNull _selectedAgent) then {
+        // Invoke modular camera update for smooth transition and pan reset
+        [[_selectedAgent], "update"] execVM "Scripts\Faction_Builder_Tool\Functions\Camera\FBT_HandleCamera.sqf";
     };
-};
 
 // 3. Fallback for "Custom/Unassigned" Roles (If not in parade)
 if (isNull _selectedAgent && _tab == "Armory") then {

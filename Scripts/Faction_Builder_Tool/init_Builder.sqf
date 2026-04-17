@@ -29,11 +29,13 @@ createDialog "FBT_Dialog"; // Updated dialog class name
 // Wait for display to be ready
 waitUntil {!isNull (findDisplay 456000)};
 private _display = findDisplay 456000;
+_display setVariable ["FBT_Inventory_Collapsed", true];
 
 // 1. Scan the Spawn Set (Markers)
 [] call compile preprocessFileLineNumbers "Scripts\Faction_Builder_Tool\Functions\Staging\FBT_GetSpawnSet.sqf";
 
 // 2. Init Camera Values
+missionNamespace setVariable ["FBT_Cam_AutoOrbit", false];
 private _initBearing = missionNamespace getVariable ["FBT_Field_Bearing", _anchorDir];
 FBT_Cam_Dist = 10;
 FBT_Cam_El = 30; 

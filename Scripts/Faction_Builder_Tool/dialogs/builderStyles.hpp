@@ -25,7 +25,6 @@ class FBT_ToggleButton: FBT_BaseButton {
 };
 
 class FBT_BaseTree: PxgGuiRscTree {
-	font = "EtelkaMonospacePro"; 
 };
 
 class FBT_BaseList: PxgGuiRscListBox {

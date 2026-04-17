@@ -33,9 +33,9 @@ class FBT_Dialog {
 		class BottomPanel_Background: PxgGuiBackground {
 			idc = 456032;
 			x = safezoneX + (safezoneW * 0.25);
-			y = safezoneY + (safezoneH * 0.75);
+			y = safezoneY + (safezoneH * 0.96);
 			w = safezoneW * 0.5;
-			h = safezoneH * 0.25;
+			h = safezoneH * 0.04;
 			colorBackground[] = {0.1, 0.1, 0.1, 0.8};
 		};
 		class ExtendedPanel_Background: PxgGuiBackground {
@@ -301,13 +301,13 @@ class FBT_Dialog {
 		class Inventory_Text: FBT_BaseText {
 			idc = 456030;
 			text = "INVENTORY PREVIEW";
-			x = safezoneX + (safezoneW * 0.26); y = safezoneY + (safezoneH * 0.77); w = safezoneW * 0.40; h = safezoneH * 0.03;
+			x = safezoneX + (safezoneW * 0.26); y = safezoneY + (safezoneH * 0.965); w = safezoneW * 0.40; h = safezoneH * 0.03;
 		};
 		class Button_Collapse_Inventory: FBT_BaseButton {
 			idc = 456031;
-			text = "[-]";
-			x = safezoneX + (safezoneW * 0.72); y = safezoneY + (safezoneH * 0.77); w = safezoneW * 0.02; h = safezoneH * 0.03;
-			colorBackground[] = {0, 0, 0, 0};
+			text = "[+]";
+			x = safezoneX + (safezoneW * 0.72); y = safezoneY + (safezoneH * 0.965); w = safezoneW * 0.02; h = safezoneH * 0.03;
+			colorBackground[] = {0.35, 0.45, 0.45, 0.9};
 			action = "execVM 'Scripts\Faction_Builder_Tool\Functions\UI\FBT_ToggleInventory.sqf';";
 		};
 	};

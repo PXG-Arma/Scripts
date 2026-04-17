@@ -21,7 +21,7 @@ _anchor setPosWorld _centroid;
 // 2. Snap Camera to the Centroid
 missionNamespace setVariable ["FBT_Cam_TargetObj", _anchor];
 FBT_Cam_Dist = _zoom;
-FBT_Cam_Az = _bearing;
+FBT_Cam_Az = (_bearing + 180) % 360;
 
 // Reset PanOffset for a clean snap to the platoon overview
 FBT_Cam_PanOffset = [0,0,0];

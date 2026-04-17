@@ -5,6 +5,7 @@
 */
 params ["_tabName"];
 disableSerialization;
+missionNamespace setVariable ["FBT_ActiveTab", _tabName];
 
 private _display = findDisplay 456000;
 if (isNull _display) exitWith {};
@@ -24,11 +25,18 @@ if (_tabName == "Overview") then {
 	_tree ctrlShow false;
 	_overviewGroup ctrlShow true;
     _rightPanel ctrlShow false; // Keep right side clean in Overview
+    missionNamespace setVariable ["FBT_ActiveTab_Old", "Overview"];
 	// Populate dropdowns for the first time
 	["Init"] execVM "Scripts\Faction_Builder_Tool\Functions\UI\FBT_UpdateDropdowns.sqf";
 
     // Visibility Reset for Phantom Agents
     { _x hideObject false; } forEach (missionNamespace getVariable ["FBT_ParadeUnits", []]);
+
+    // Set Overview Camera Default (Bird's Eye / 2.5x factor) if not booting
+    if (!(missionNamespace getVariable ["FBT_SuppressEvents", false])) then {
+        FBT_Cam_Dist = missionNamespace getVariable ["FBT_Field_Zoom", 12];
+        FBT_Cam_El = 30;
+    };
 } else {
 	_tree ctrlShow true;
 	_overviewGroup ctrlShow false;
@@ -49,17 +57,42 @@ switch (_tabName) do {
         _tree tvExpand [_main];
     };
     case "Armory": {
-        private _hq = _tree tvAdd [[], "Platoon HQ"];
-        _tree tvAdd [[_hq], "Platoon Leader"];
-        _tree tvAdd [[_hq], "Medic"];
+        private _masterHash = missionNamespace getVariable ["FBT_MasterHash", createHashMap];
+        private _groups = _masterHash getOrDefault ["ArmoryGroups", []];
+        private _roles  = _masterHash getOrDefault ["ArmoryRoles", []];
+        private _ids    = _masterHash getOrDefault ["ArmoryIDs", []];
+
+        {
+            private _gIdx = _forEachIndex;
+            private _parentIdx = _tree tvAdd [[], _x];
+            
+            private _groupRoles = _roles select _gIdx;
+            private _groupIDs   = _ids select _gIdx;
+
+            {
+                private _rIdx = _tree tvAdd [[_parentIdx], _x];
+                _tree tvSetData [[_parentIdx, _rIdx], _groupIDs select _forEachIndex];
+            } forEach _groupRoles;
+
+            _tree tvExpand [_parentIdx];
+        } forEach _groups;
+
+        // Set Armory Camera Default (4m as requested)
+        FBT_Cam_Dist = 4;
+        FBT_Cam_El = 20;
         
-        private _sq1 = _tree tvAdd [[], "Squad 1"];
-        _tree tvAdd [[_sq1], "Squad Leader"];
-        _tree tvAdd [[_sq1], "Rifleman"];
-        _tree tvAdd [[_sq1], "Grenadier"];
-		
-		_tree tvExpand [_hq];
-		_tree tvExpand [_sq1];
+        // Add +30 clockwise offset once upon entry from another tab
+        if (missionNamespace getVariable ["FBT_ActiveTab_Old", ""] != "Armory") then {
+            FBT_Cam_Az = (FBT_Cam_Az + 30) % 360;
+            missionNamespace setVariable ["FBT_ActiveTab_Old", "Armory"];
+        };
+
+        // Autoselect first role (if exists) to trigger initial focus and UI logic
+        if (_tree tvCount [] > 0) then {
+            if (_tree tvCount [0] > 0) then {
+                _tree tvSetCurSel [0, 0];
+            };
+        };
     };
     case "Motorpool": {
         _tree tvAdd [[], "Land Vehicles"];

@@ -101,7 +101,9 @@ private _newLeads = [];
 missionNamespace setVariable ["FBT_ParadeUnits", _newUnits];
 missionNamespace setVariable ["FBT_ParadeLeads", _newLeads];
 
-// 5. SYNCHRONIZED REVEAL
+// 5. SYNCHRONIZED REVEAL (Pre-load Assets)
+uiSleep 0.5; // Brief wait to allow gear textures/models to settle
+
 private _activeTab = missionNamespace getVariable ["FBT_ActiveTab", "Overview"];
 private _selectedPath = tvCurSel (findDisplay 456000 displayCtrl 456010);
 private _selectedID = (findDisplay 456000 displayCtrl 456010) tvData _selectedPath;

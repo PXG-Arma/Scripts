@@ -1,5 +1,5 @@
 /*
-    PXG_Builder_InitArmoryCategories.sqf
+    FBT_InitArmoryCategories.sqf
     -------------------------------
     Populates the vertical icon sidebar in the Armory Right Panel.
 */

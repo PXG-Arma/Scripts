@@ -1,5 +1,5 @@
 /*
-    PXG_Builder_TabSwitch.sqf
+    FBT_TabSwitch.sqf
     -------------------------------
     Handles switching Left and Right context panels based on the selected Tab.
 */
@@ -25,16 +25,16 @@ if (_tabName == "Overview") then {
 	_overviewGroup ctrlShow true;
     _rightPanel ctrlShow false; // Keep right side clean in Overview
 	// Populate dropdowns for the first time
-	["Init"] execVM "Scripts\Faction_Builder_Tool\Functions\PXG_Builder_UpdateDropdowns.sqf";
+	["Init"] execVM "Scripts\Faction_Builder_Tool\Functions\UI\FBT_UpdateDropdowns.sqf";
 
     // Visibility Reset for Phantom Agents
-    { _x hideObject false; } forEach (missionNamespace getVariable ["PXG_Builder_ParadeUnits", []]);
+    { _x hideObject false; } forEach (missionNamespace getVariable ["FBT_ParadeUnits", []]);
 } else {
 	_tree ctrlShow true;
 	_overviewGroup ctrlShow false;
     _rightPanel ctrlShow true; // Show for configuration tabs (Armory, etc)
     // Ensure extended panel is closed when switching away
-    [false] execVM "Scripts\Faction_Builder_Tool\Functions\PXG_Builder_ToggleExtended.sqf";
+    [false] execVM "Scripts\Faction_Builder_Tool\Functions\UI\FBT_ToggleExtended.sqf";
 };
 
 switch (_tabName) do {

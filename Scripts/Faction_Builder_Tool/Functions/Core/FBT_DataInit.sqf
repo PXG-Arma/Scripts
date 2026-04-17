@@ -1,5 +1,5 @@
 /*
-    PXG_Builder_DataInit.sqf
+    FBT_DataInit.sqf
     -------------------------------
     Initializes the master Hashmap used to store the faction configuration.
 */
@@ -8,7 +8,7 @@ private _masterHash = createHashMap;
 
 // 1. Metadata
 private _metadata = createHashMap;
-_metadata set ["FactionName", "New PXG Faction"];
+_metadata set ["FactionName", "New FBT Faction"];
 _metadata set ["Side", "BLUFOR"];
 _metadata set ["Camo", "Desert"];
 _metadata set ["Era", "Modern"];
@@ -28,6 +28,6 @@ _masterHash set ["MotorpoolSequence", []]; // Ordered list of [VehicleClass, Cat
 private _resupply = createHashMap;
 _masterHash set ["Resupply", _resupply];
 
-missionNamespace setVariable ["PXG_Builder_MasterHash", _masterHash];
+missionNamespace setVariable ["FBT_MasterHash", _masterHash];
 
-diag_log "[PXG Builder] Master Data Store Initialized.";
+diag_log "[FBT] Master Data Store Initialized.";

@@ -1,12 +1,12 @@
 /*
-    PXG_Builder_ScrapeConfig.sqf
+    FBT_ScrapeConfig.sqf
     -------------------------------
     Scans game configs for gear based on category.
     Returns: Array of [[DisplayName, ClassName, Picture, Bio], ...]
 */
 params [["_category", "PRIMARY"]];
 
-private _cache = missionNamespace getVariable ["PXG_Builder_ConfigCache", createHashMap];
+private _cache = missionNamespace getVariable ["FBT_ConfigCache", createHashMap];
 if (_category in _cache) exitWith { _cache get _category };
 
 private _results = [];
@@ -38,7 +38,7 @@ switch (_category) do {
             };
         } forEach (configProperties [configFile >> "CfgWeapons", "isClass _x"]);
     };
-case "UNIFORM":
+    case "UNIFORM":
     case "VEST":
     case "HEADGEAR": {
         private _cfgType = configFile >> "CfgWeapons";
@@ -66,9 +66,9 @@ case "UNIFORM":
         } forEach _variants;
         
         // Store variants globally for the selector
-        private _masterVariants = missionNamespace getVariable ["PXG_Builder_VariantsCache", createHashMap];
+        private _masterVariants = missionNamespace getVariable ["FBT_VariantsCache", createHashMap];
         _masterVariants set [_category, _variants];
-        missionNamespace setVariable ["PXG_Builder_VariantsCache", _masterVariants];
+        missionNamespace setVariable ["FBT_VariantsCache", _masterVariants];
     };
 
     case "GOGGLES": {
@@ -96,6 +96,6 @@ case "UNIFORM":
 };
 
 _cache set [_category, _results];
-missionNamespace setVariable ["PXG_Builder_ConfigCache", _cache];
+missionNamespace setVariable ["FBT_ConfigCache", _cache];
 
 _results

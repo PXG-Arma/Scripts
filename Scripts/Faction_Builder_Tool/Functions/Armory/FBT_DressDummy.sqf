@@ -1,7 +1,7 @@
 /*
-    PXG_Builder_DressDummy.sqf
+    FBT_DressDummy.sqf
     -------------------------------
-    Applies gear from a PXG Role Hashmap to a specific unit.
+    Applies gear from a FBT Role Hashmap to a specific unit.
     Params: [_unit, _roleData]
 */
 params ["_unit", ["_roleData", createHashMap]];
@@ -29,14 +29,13 @@ private _backpack = _roleData getOrDefault ["BACKPACK", ""];
 if (_backpack != "") then { _unit addBackpackGlobal _backpack; };
 
 private _helmet = _roleData getOrDefault ["HEADGEAR", ""];
-if (_helmet == "") then { _roleData getOrDefault ["helmet", ""]; }; // Handle legacy key if needed
+if (_helmet == "") then { _roleData getOrDefault ["helmet", ""]; };
 if (_helmet != "") then { _unit addHeadgear _helmet; };
 
 private _goggles = _roleData getOrDefault ["GOGGLES", ""];
 if (_goggles != "") then { _unit addGoggles _goggles; };
 
 // --- Weapons & Attachments ---
-// Note: Roles in hashmap often store weapons as strings OR arrays [class, [attachments]]
 private _fnc_addWep = {
     params ["_u", "_data", "_type"];
     if (typeName _data == "STRING") then {
@@ -74,7 +73,6 @@ if (_binoc != "") then { _unit addWeaponGlobal _binoc; };
 // Containers
 private _items = _roleData getOrDefault ["ITEMS", []];
 {
-    // Items are usually stored as [class, count] or just class
     if (typeName _x == "ARRAY") then {
         for "_i" from 1 to (_x select 1) do { _unit addItem (_x select 0); };
     } else {
@@ -82,4 +80,4 @@ private _items = _roleData getOrDefault ["ITEMS", []];
     };
 } forEach _items;
 
-diag_log format ["[PXG Builder] Dummy dressed: %1", _unit];
+diag_log format ["[FBT] Dummy dressed: %1", _unit];

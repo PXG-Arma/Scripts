@@ -1,5 +1,5 @@
 /*
-    PXG_Builder_UpdateDropdowns.sqf
+    FBT_UpdateDropdowns.sqf
     -------------------------------
     Handles population and filtering of the cascading metadata dropdowns.
 */
@@ -19,7 +19,7 @@ private _idcCamo     = 456054;
 private _idcEra      = 456055;
 
 // Prevent recursive chain reactions during initialization
-private _isSuppressed = missionNamespace getVariable ["PXG_Builder_SuppressEvents", false];
+private _isSuppressed = missionNamespace getVariable ["FBT_SuppressEvents", false];
 
 private _fnc_addOptions = {
     params ["_ctrlIDC", "_list", ["_addOption", true]];
@@ -39,9 +39,9 @@ switch (_mode) do {
     case "Init": {
         // Populate Sides
         [_idcSide, ["BLUFOR", "OPFOR", "INDEP"], false] call _fnc_addOptions;
-        missionNamespace setVariable ["PXG_Builder_Cached_Side", lbText [_idcSide, 0]];
+        missionNamespace setVariable ["FBT_Cached_Side", lbText [_idcSide, 0]];
         if (!_isSuppressed) then { 
-            ["Side"] call (compile preprocessFile "Scripts\Faction_Builder_Tool\Functions\PXG_Builder_UpdateDropdowns.sqf");
+            ["Side"] call (compile preprocessFile "Scripts\Faction_Builder_Tool\Functions\UI\FBT_UpdateDropdowns.sqf");
         };
     };
 
@@ -50,8 +50,8 @@ switch (_mode) do {
         private _factions = [];
         { if ((_x select 0) == _selSide && !((_x select 1) in _factions)) then { _factions pushBack (_x select 1); }; } forEach _registry;
         [_idcFaction, _factions] call _fnc_addOptions;
-        missionNamespace setVariable ["PXG_Builder_Cached_Faction", lbText [_idcFaction, 0]];
-        ["Faction"] call (compile preprocessFile "Scripts\Faction_Builder_Tool\Functions\PXG_Builder_UpdateDropdowns.sqf");
+        missionNamespace setVariable ["FBT_Cached_Faction", lbText [_idcFaction, 0]];
+        ["Faction"] call (compile preprocessFile "Scripts\Faction_Builder_Tool\Functions\UI\FBT_UpdateDropdowns.sqf");
     };
 
     case "Faction": {
@@ -61,8 +61,8 @@ switch (_mode) do {
         // Handle "Base" displays as empty string in registry often
         private _displaySubs = _subs apply { if (_x == "") then { "Base" } else { _x } };
         [_idcSub, _displaySubs] call _fnc_addOptions;
-        missionNamespace setVariable ["PXG_Builder_Cached_Sub", _subs select 0];
-        ["Subfaction"] call (compile preprocessFile "Scripts\Faction_Builder_Tool\Functions\PXG_Builder_UpdateDropdowns.sqf");
+        missionNamespace setVariable ["FBT_Cached_Sub", _subs select 0];
+        ["Subfaction"] call (compile preprocessFile "Scripts\Faction_Builder_Tool\Functions\UI\FBT_UpdateDropdowns.sqf");
     };
 
     case "Subfaction": {
@@ -73,8 +73,8 @@ switch (_mode) do {
         private _camos = [];
         { if ((_x select 0) == _selSide && (_x select 1) == _selFaction && (_x select 2) == _selSub && !((_x select 4) in _camos)) then { _camos pushBack (_x select 4); }; } forEach _registry;
         [_idcCamo, _camos] call _fnc_addOptions;
-        missionNamespace setVariable ["PXG_Builder_Cached_Camo", lbText [_idcCamo, 0]];
-        ["Camo"] call (compile preprocessFile "Scripts\Faction_Builder_Tool\Functions\PXG_Builder_UpdateDropdowns.sqf");
+        missionNamespace setVariable ["FBT_Cached_Camo", lbText [_idcCamo, 0]];
+        ["Camo"] call (compile preprocessFile "Scripts\Faction_Builder_Tool\Functions\UI\FBT_UpdateDropdowns.sqf");
     };
 
     case "Camo": {
@@ -97,7 +97,7 @@ switch (_mode) do {
 
         private _factionPath = ["Scripts\Factions\", _selSide, "\", _selFaction, "\", (if(_selSub != "")then{_selSub+"\"}else{""}), (if(_selEra != "")then{_selEra+"\"}else{""}), _selCamo, "\"] joinString "";
         
-        private _masterHash = missionNamespace getVariable ["PXG_Builder_MasterHash", createHashMap];
+        private _masterHash = missionNamespace getVariable ["FBT_MasterHash", createHashMap];
         
         // 1. Load Armory Sequence
         private _armorySeq = [];
@@ -129,8 +129,7 @@ switch (_mode) do {
         _masterHash set ["MotorpoolSequence", _motorSeq];
 
         // 2.5 Prepare Framework Proxy (Strong Logic)
-        // Ensure this logic is available globally
-        private _fnc_prep = missionNamespace getVariable ["PXG_Builder_Fnc_PrepareFramework", {params ["_p"]; [_p] call (compile preprocessFile "Scripts\Faction_Builder_Tool\Functions\PXG_Builder_PrepareFramework.sqf")}];
+        private _fnc_prep = missionNamespace getVariable ["FBT_Fnc_PrepareFramework", {params ["_p"]; [_p] call (compile preprocessFile "Scripts\Faction_Builder_Tool\Functions\Core\FBT_PrepareFramework.sqf")}];
         [_factionPath] call _fnc_prep;
 
         // 3. Process Sequence into Flat Arrays for Spawner
@@ -158,9 +157,9 @@ switch (_mode) do {
         // Final Debounced Spawn
         if (!_isSuppressed) then {
             [] spawn { 
-                systemChat "[PXG Builder] Refreshing Staging Area...";
-                uiSleep 0.05; // Tightened debounce for responsive feel
-                execVM "Scripts\Faction_Builder_Tool\Functions\PXG_Builder_SpawnParade.sqf"; 
+                systemChat "[FBT] Refreshing Staging Area...";
+                uiSleep 0.05;
+                execVM "Scripts\Faction_Builder_Tool\Functions\Staging\FBT_SpawnParade.sqf"; 
             };
         };
     };

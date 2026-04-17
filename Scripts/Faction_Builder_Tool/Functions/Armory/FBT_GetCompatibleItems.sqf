@@ -1,5 +1,5 @@
 /*
-    PXG_Builder_GetCompatibleItems.sqf
+    FBT_GetCompatibleItems.sqf
     -------------------------------
     Identifies compatible attachments for the currently equipped weapon.
 */

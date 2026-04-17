@@ -1,46 +1,45 @@
 /*
 	builderStyles.hpp
-	Custom base classes for the Faction Builder to ensure a premium tactical look.
-	Overrides fonts, hover states, and focus colors.
+	Custom base classes for the Faction Builder Tool (FBT) to ensure a premium tactical look.
 */
 
-class PXG_Builder_BaseText: PxgGuiRscText {
+class FBT_BaseText: PxgGuiRscText {
 	font = "RobotoCondensed";
 	shadow = 1;
 };
 
-class PXG_Builder_BaseButton: PxgGuiRscButton {
+class FBT_BaseButton: PxgGuiRscButton {
 	font = "RobotoCondensed";
 	shadow = 0;
 };
 
-class PXG_Builder_TabButton: PXG_Builder_BaseButton {
-	colorBackgroundActive[] = {0.35, 0.45, 0.45, 1}; // Slightly brighter/greyer highlight
+class FBT_TabButton: FBT_BaseButton {
+	colorBackgroundActive[] = {0.35, 0.45, 0.45, 1}; 
 	colorFocused[] = {0.35, 0.45, 0.45, 1};
 };
 
-class PXG_Builder_ToggleButton: PXG_Builder_BaseButton {
-	colorBackground[] = {0.2, 0.25, 0.25, 0.6}; // Darker, muted base
-	colorBackgroundActive[] = {0.29, 0.42, 0.42, 0.9}; // Teal highlight on hover
+class FBT_ToggleButton: FBT_BaseButton {
+	colorBackground[] = {0.2, 0.25, 0.25, 0.6}; 
+	colorBackgroundActive[] = {0.29, 0.42, 0.42, 0.9}; 
 	colorFocused[] = {0.29, 0.42, 0.42, 1};
 };
 
-class PXG_Builder_BaseTree: PxgGuiRscTree {
-	font = "EtelkaMonospacePro"; // Monospace for data trees
+class FBT_BaseTree: PxgGuiRscTree {
+	font = "EtelkaMonospacePro"; 
 };
 
-class PXG_Builder_BaseList: PxgGuiRscListBox {
-	font = "EtelkaMonospacePro"; // Monospace for data lists
+class FBT_BaseList: PxgGuiRscListBox {
+	font = "EtelkaMonospacePro"; 
 };
 
-class PXG_Builder_BaseCombo: PxgGuiRscCombo {
+class FBT_BaseCombo: PxgGuiRscCombo {
 	font = "RobotoCondensed";
 	sizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.8)";
 	colorBackground[] = {0.1, 0.1, 0.1, 1};
-	colorSelectBackground[] = {0.29, 0.42, 0.42, 1}; // Teal highlight
+	colorSelectBackground[] = {0.29, 0.42, 0.42, 1}; 
 };
 
-class PXG_Builder_BaseEdit: RscEdit {
+class FBT_BaseEdit: RscEdit {
 	font = "RobotoCondensed";
 	sizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.8)";
 	colorBackground[] = {0, 0, 0, 0.5};

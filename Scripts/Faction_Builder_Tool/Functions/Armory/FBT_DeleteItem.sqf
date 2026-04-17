@@ -1,5 +1,5 @@
 /*
-    PXG_Builder_DeleteItem.sqf
+    FBT_DeleteItem.sqf
     -------------------------------
     Handles removal of Roles, Attachments, or Items.
 */
@@ -7,19 +7,15 @@ disableSerialization;
 private _display = findDisplay 456000;
 if (isNull _display) exitWith {};
 
-private _dummy = missionNamespace getVariable ["PXG_Builder_Preview_Unit", objNull];
-private _masterHash = missionNamespace getVariable ["PXG_Builder_MasterHash", createHashMap];
+private _dummy = missionNamespace getVariable ["FBT_Preview_Unit", objNull];
+private _masterHash = missionNamespace getVariable ["FBT_MasterHash", createHashMap];
 
 // 1. Check if a Slot/Content is selected in Column 3
 private _ctrlSlots = _display displayCtrl 456080;
 private _slotIdx = lbCurSel _ctrlSlots;
 
 if (_slotIdx != -1) then {
-    // We are deleting a specific attachment or content type? 
-    // Actually, user said: "click item and press delete". 
-    // If the item browser (Col 2) has a selection that is already EQUIPPED, remove it.
-    
-    private _activeSlot = _display getVariable ["PXG_Builder_ActiveSlot", ""];
+    private _activeSlot = _display getVariable ["FBT_ActiveSlot", ""];
     private _activeCat  = (lbData [456070, lbCurSel 456070]);
 
     if (_activeSlot != "" && !isNull _dummy) then {
@@ -54,10 +50,20 @@ if (_slotIdx != -1) then {
             
             systemChat "Role removed from hierarchy.";
             // Refresh
-            [] spawn { uiSleep 0.1; execVM "Scripts\Faction_Builder_Tool\Functions\PXG_Builder_SpawnParade.sqf"; };
+            [] spawn { uiSleep 0.1; execVM "Scripts\Faction_Builder_Tool\Functions\Staging\FBT_SpawnParade.sqf"; };
         };
     };
 } else {
     // Standard Role Deletion if no slot is focused
-    // ... (same as above)
+    private _tree = _display displayCtrl 456010;
+    private _path = tvCurSel _tree;
+    if (count _path > 0) then {
+        private _roleId = _tree tvData _path;
+        private _seq = _masterHash getOrDefault ["ArmorySequence", []];
+        private _newSeq = _seq select { (_x select 0) != _roleId };
+        _masterHash set ["ArmorySequence", _newSeq];
+        (_masterHash get "Armory") deleteAt _roleId;
+        systemChat "Role removed from hierarchy.";
+        [] spawn { uiSleep 0.1; execVM "Scripts\Faction_Builder_Tool\Functions\Staging\FBT_SpawnParade.sqf"; };
+    };
 };

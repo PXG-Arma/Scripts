@@ -1,5 +1,5 @@
 /*
-    PXG_Builder_UpdatePreview.sqf
+    FBT_UpdatePreview.sqf
     -------------------------------
     Fired when a user selects a role in the context tree.
     Coordinates the focus and visibility of the Phantom Agents.
@@ -14,19 +14,19 @@ private _id = _control tvData _path;
 private _text = _control tvText _path;
 if (_text == "") exitWith {};
 
-private _tab = _display getVariable ["PXG_Builder_ActiveTab", "Overview"];
+private _tab = missionNamespace getVariable ["FBT_ActiveTab", "Overview"];
 
 // If in Armory, initialize the Category icons
 if (_tab == "Armory") then {
-    execVM "Scripts\Faction_Builder_Tool\Functions\PXG_Builder_InitArmoryCategories.sqf";
+    execVM "Scripts\Faction_Builder_Tool\Functions\UI\FBT_InitArmoryCategories.sqf";
 };
 
 // 1. Visibility Logic (Focus on Selected Role)
-private _paradeUnits = missionNamespace getVariable ["PXG_Builder_ParadeUnits", []];
+private _paradeUnits = missionNamespace getVariable ["FBT_ParadeUnits", []];
 private _selectedAgent = objNull;
 
 {
-    private _unitRoleID = _x getVariable ["PXG_Builder_RoleID", ""];
+    private _unitRoleID = _x getVariable ["FBT_RoleID", ""];
     
     if (_tab == "Armory") then {
         // Only show the unit being edited
@@ -45,29 +45,32 @@ private _selectedAgent = objNull;
 
 // 2. Camera Focus Glide
 if (!isNull _selectedAgent) then {
-    missionNamespace setVariable ["PXG_Builder_Cam_TargetObj", _selectedAgent];
-    // Set a closer zoom for Armory
+    // Invoke modular camera update for smooth transition and pan reset
+    [[_selectedAgent], "update"] execVM "Scripts\Faction_Builder_Tool\Functions\Camera\FBT_HandleCamera.sqf";
+    
+    // Set situational zoom
     if (_tab == "Armory") then {
-        PXG_Builder_Cam_Dist = 3.5;
-        PXG_Builder_Cam_El = 20;
+        FBT_Cam_Dist = 3.5;
+        FBT_Cam_El = 20;
     } else {
-        // Overview settings (Do not override elevation, just ensure target is set)
-        PXG_Builder_Cam_Dist = 12;
+        // Overview settings
+        FBT_Cam_Dist = 12;
     };
 };
 
 // 3. Fallback for "Custom/Unassigned" Roles (If not in parade)
 if (isNull _selectedAgent && _tab == "Armory") then {
-    // Legacy logic for "Fresh Dummy" if no marker exists for this role
-    private _anchorPos = missionNamespace getVariable ["PXG_Builder_AnchorPos", [0,0,0]];
-    private _dummy = missionNamespace getVariable ["PXG_Builder_Preview_Unit", objNull];
+    // Logic for "Fresh Dummy" if no marker exists for this role
+    private _anchorPos = missionNamespace getVariable ["FBT_AnchorPos", [0,0,0]];
+    private _dummy = missionNamespace getVariable ["FBT_Preview_Unit", objNull];
     if (isNull _dummy) then {
         _dummy = createAgent ["B_RangeMaster_F", _anchorPos, [], 0, "CAN_COLLIDE"];
-        missionNamespace setVariable ["PXG_Builder_Preview_Unit", _dummy];
+        missionNamespace setVariable ["FBT_Preview_Unit", _dummy];
         _dummy enableSimulation false;
         _dummy allowDamage false;
     };
     _dummy setPosWorld (_anchorPos vectorAdd [0, 5, 0]);
     _dummy hideObject false;
-    missionNamespace setVariable ["PXG_Builder_Cam_TargetObj", _dummy];
+    
+    [[_dummy], "update"] execVM "Scripts\Faction_Builder_Tool\Functions\Camera\FBT_HandleCamera.sqf";
 };

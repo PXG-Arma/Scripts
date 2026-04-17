@@ -1,5 +1,5 @@
 /*
-    PXG_Builder_CalcMass.sqf
+    FBT_CalcMass.sqf
     -------------------------------
     Calculates the total mass of the selected 'Stack' (Item * Amount).
 */

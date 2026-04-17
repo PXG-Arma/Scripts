@@ -1,5 +1,5 @@
 /*
-    PXG_Builder_PrepareFramework.sqf
+    FBT_PrepareFramework.sqf
     -------------------------------
     Loads and compiles the Faction Framework scripts (Uniforms, Weapons, etc)
     by replacing 'player' with '_unit'. This allows native PXG gear scripts
@@ -7,11 +7,9 @@
 */
 params [["_factionPath", ""]];
 
-if (_factionPath == "") exitWith { diag_log "[PXG Builder] Error: No faction path for framework preparation."; };
+if (_factionPath == "") exitWith { diag_log "[FBT] Error: No faction path for framework preparation."; };
 
 private _scripts = ["Uniforms.sqf", "Weapons.sqf", "Gear.sqf", "Ammo.sqf"];
-private _compiledBlocks = createHashMap;
-
 private _compiledBlocks = createHashMap;
 
 // Helper to replace ALL occurrences of a substring (case-insensitive find)
@@ -45,9 +43,9 @@ private _fnc_replace = {
         
         private _code = compile _fullScript;
         _compiledBlocks set [_fileName, _code];
-        diag_log format ["[PXG Builder] Proxy Compiled: %1", _fileName];
+        diag_log format ["[FBT] Proxy Compiled: %1", _fileName];
     };
 } forEach _scripts;
 
-missionNamespace setVariable ["PXG_Builder_FrameworkProxy", _compiledBlocks];
+missionNamespace setVariable ["FBT_FrameworkProxy", _compiledBlocks];
 true

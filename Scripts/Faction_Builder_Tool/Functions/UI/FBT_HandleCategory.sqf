@@ -1,5 +1,5 @@
 /*
-    PXG_Builder_HandleCategory.sqf
+    FBT_HandleCategory.sqf
     -------------------------------
     Fired when:
     - User clicks a category icon
@@ -22,11 +22,11 @@ if (_category == "") then { _category = "PRIMARY"; };
 private _searchText = toLower (ctrlText _ctrlSearch);
 
 // 2. Fetch Base Items
-private _items = [_category] call (compile preprocessFile "Scripts\Faction_Builder_Tool\Functions\PXG_Builder_ScrapeConfig.sqf");
+private _items = [_category] call (compile preprocessFile "Scripts\Faction_Builder_Tool\Functions\Core\FBT_ScrapeConfig.sqf");
 
 // 3. Filter and Sort
 private _filtered = [];
-private _factionCamo = missionNamespace getVariable ["PXG_Builder_CurrentCamo", ""];
+private _factionCamo = missionNamespace getVariable ["FBT_CurrentCamo", ""];
 private _tokens = (toLower _searchText) splitString " ";
 
 {
@@ -84,4 +84,3 @@ switch (_category) do {
 };
 
 if (lbSize _ctrlList > 0) then { _ctrlList lbSetCurSel 0; };
-

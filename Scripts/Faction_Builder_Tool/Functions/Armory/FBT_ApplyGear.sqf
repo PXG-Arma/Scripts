@@ -1,5 +1,5 @@
 /*
-    PXG_Builder_ApplyGear.sqf
+    FBT_ApplyGear.sqf
     -------------------------------
     Fired when: User clicks an item in the middle browser.
 */
@@ -14,22 +14,22 @@ private _ctrlCat = _display displayCtrl 456070;
 private _category = _ctrlCat lbData (lbCurSel _ctrlCat);
 
 // 1. Get States
-private _activeSlot = _display getVariable ["PXG_Builder_ActiveSlot", ""];
-private _dummy = missionNamespace getVariable ["PXG_Builder_Preview_Unit", objNull];
+private _activeSlot = _display getVariable ["FBT_ActiveSlot", ""];
+private _dummy = missionNamespace getVariable ["FBT_Preview_Unit", objNull];
 private _amount = parseNumber (ctrlText (_display displayCtrl 456081));
 if (_amount <= 0) then { _amount = 1; };
 
 // 2. Variant Folding Check (Handover to Variant Selector)
 if (ctrlIDC _ctrl == 456020 && _category in ["UNIFORM", "VEST", "HEADGEAR"]) then {
-    private _vars = missionNamespace getVariable ["PXG_Builder_VariantsCache", createHashMap];
+    private _vars = missionNamespace getVariable ["FBT_VariantsCache", createHashMap];
     private _catTable = _vars getOrDefault [_category, createHashMap];
     if (_className in _catTable) exitWith {
-        _this execVM "Scripts\Faction_Builder_Tool\Functions\PXG_Builder_HandleVariants.sqf";
+        _this execVM "Scripts\Faction_Builder_Tool\Functions\Armory\FBT_HandleVariants.sqf";
     };
 };
 
 // 3. Identify Category/Class and Update Mass UI
-[] execVM "Scripts\Faction_Builder_Tool\Functions\PXG_Builder_CalcMass.sqf";
+[] execVM "Scripts\Faction_Builder_Tool\Functions\Armory\FBT_CalcMass.sqf";
 
 
 // 3. Apply Physical Change
@@ -68,7 +68,7 @@ if (_activeSlot == "") then {
 
 
 // 3. Update Master Hash
-private _masterHash = missionNamespace getVariable ["PXG_Builder_MasterHash", createHashMap];
+private _masterHash = missionNamespace getVariable ["FBT_MasterHash", createHashMap];
 private _armory = _masterHash getOrDefault ["Armory", createHashMap];
 
 private _tree = _display displayCtrl 456010;
@@ -88,4 +88,4 @@ if (count _path > 0) then {
 };
 
 
-diag_log format ["[PXG Builder] Applied %1 to slot %2", _className, _category];
+diag_log format ["[FBT] Applied %1 to slot %2", _className, _category];

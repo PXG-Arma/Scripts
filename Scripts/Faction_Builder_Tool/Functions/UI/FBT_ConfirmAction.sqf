@@ -1,5 +1,5 @@
 /*
-    PXG_Builder_ConfirmAction.sqf
+    FBT_ConfirmAction.sqf
     -------------------------------
     Processes the confirmed changes from the Extended Panel.
 */
@@ -7,13 +7,13 @@ disableSerialization;
 private _display = findDisplay 456000;
 if (isNull _display) exitWith {};
 
-private _action = _display getVariable ["PXG_Builder_PendingAction", ""];
-private _tab    = _display getVariable ["PXG_Builder_PendingTab", ""];
+private _action = _display getVariable ["FBT_PendingAction", ""];
+private _tab    = _display getVariable ["FBT_PendingTab", ""];
 private _newName = ctrlText (_display displayCtrl 456061);
 
 if (_newName == "") exitWith { systemChat "Error: Name cannot be empty."; };
 
-private _masterHash = missionNamespace getVariable ["PXG_Builder_MasterHash", createHashMap];
+private _masterHash = missionNamespace getVariable ["FBT_MasterHash", createHashMap];
 
 if (_action == "AddItem") then {
     if (_tab == "Armory") then {
@@ -37,12 +37,12 @@ if (_action == "AddItem") then {
 // Refresh the entire physical world
 [] spawn {
     uiSleep 0.1;
-    execVM "Scripts\Faction_Builder_Tool\Functions\PXG_Builder_SpawnParade.sqf";
+    execVM "Scripts\Faction_Builder_Tool\Functions\Staging\FBT_SpawnParade.sqf";
     // Also refresh the tree in the UI
-    private _tab = (findDisplay 456000) getVariable ["PXG_Builder_ActiveTab", "Overview"];
-    [_tab] execVM "Scripts\Faction_Builder_Tool\Functions\PXG_Builder_TabSwitch.sqf";
+    private _tab = (findDisplay 456000) getVariable ["FBT_ActiveTab", "Overview"];
+    [_tab] execVM "Scripts\Faction_Builder_Tool\Functions\UI\FBT_TabSwitch.sqf";
 };
 
 // Close panel
-[false] execVM "Scripts\Faction_Builder_Tool\Functions\PXG_Builder_ToggleExtended.sqf";
+[false] execVM "Scripts\Faction_Builder_Tool\Functions\UI\FBT_ToggleExtended.sqf";
 systemChat format ["Added %1 to the faction.", _newName];

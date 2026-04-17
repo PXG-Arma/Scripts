@@ -1,5 +1,5 @@
 /*
-    PXG_Builder_HandleVariants.sqf
+    FBT_HandleVariants.sqf
     -------------------------------
     Fired when:
     - User expands a base item list
@@ -17,7 +17,7 @@ private _className = _ctrl lbData _index;
 private _category  = _ctrlCat lbData (lbCurSel _ctrlCat);
 
 // 1. Fetch Variants from Cache
-private _masterVar = missionNamespace getVariable ["PXG_Builder_VariantsCache", createHashMap];
+private _masterVar = missionNamespace getVariable ["FBT_VariantsCache", createHashMap];
 private _catVar = _masterVar getOrDefault [_category, createHashMap];
 private _variants = _catVar getOrDefault [_className, []]; // [[Name, Class, Pic], ...]
 
@@ -28,7 +28,7 @@ if (ctrlIDC _ctrl == 456020) then {
     lbClear _ctrlCombo;
     _ctrlCombo ctrlShow true;
     
-    private _stickyCamo = missionNamespace getVariable ["PXG_Builder_LastSelectedCamo", ""];
+    private _stickyCamo = missionNamespace getVariable ["FBT_LastSelectedCamo", ""];
     private _bestMatch = 0;
 
     {
@@ -48,14 +48,14 @@ if (ctrlIDC _ctrl == 456020) then {
 private _finalClass = _ctrlCombo lbData (lbCurSel _ctrlCombo);
 if (_finalClass == "") exitWith {};
 
-// Update Sticky Memory (Extract camo keyword from name, e.g. "Tan" from "Vest (Tan)")
+// Update Sticky Memory
 private _fullName = _ctrlCombo lbText (lbCurSel _ctrlCombo);
 private _keywords = ["Black", "Tan", "Coyote", "Olive", "Green", "Woodland", "Desert", "MTP", "MultiCam", "Gray", "Grey"];
 {
     if (toLower _fullName find (toLower _x) > -1) exitWith {
-        missionNamespace setVariable ["PXG_Builder_LastSelectedCamo", _x];
+        missionNamespace setVariable ["FBT_LastSelectedCamo", _x];
     };
 } forEach _keywords;
 
 // Trigger Apply logic for the specific variant
-[_ctrlCombo, lbCurSel _ctrlCombo] execVM "Scripts\Faction_Builder_Tool\Functions\PXG_Builder_ApplyGear.sqf";
+[_ctrlCombo, lbCurSel _ctrlCombo] execVM "Scripts\Faction_Builder_Tool\Functions\Armory\FBT_ApplyGear.sqf";

@@ -1,5 +1,5 @@
 /*
-    PXG_Builder_ToggleExtended.sqf
+    FBT_ToggleExtended.sqf
     -------------------------------
     Animates the Extended Panel sliding out to the right of the Left Panel.
 */

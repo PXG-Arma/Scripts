@@ -1,5 +1,5 @@
 /*
-    PXG_Builder_GetCompatibleMags.sqf
+    FBT_GetCompatibleMags.sqf
     -------------------------------
     Identifies every magazine compatible with the given unit's primary weapon.
     Returns: [[Name, Class, Pic], ...]
@@ -30,7 +30,6 @@ private _extraMuzzles = getArray (_cfgWeapon >> "muzzles");
     {
         private _wellCfg = configFile >> "CfgMagazineWells" >> _x;
         if (isClass _wellCfg) then {
-            // Each well has sub-classes (e.g. NATO_556) containing mag arrays
             {
                 private _wellArr = getArray _x;
                 { if !(_x in _masterList) then { _masterList pushBack _x; }; } forEach _wellArr;

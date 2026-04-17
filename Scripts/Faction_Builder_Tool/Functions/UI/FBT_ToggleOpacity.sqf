@@ -1,5 +1,5 @@
 /*
-    PXG_Builder_ToggleOpacity.sqf
+    FBT_ToggleOpacity.sqf
     -------------------------------
     Toggles the opacity for all backgrounds in the Faction Builder.
 */
@@ -11,7 +11,7 @@ if (isNull _display) exitWith {};
 private _bgs = [456011, 456021, 456032, 456040]; // Left, Right, Bottom, Extended
 private _opacBtn = _display displayCtrl 456006;
 
-private _isSolid = _display getVariable ["PXG_Opacity_Solid", false];
+private _isSolid = _display getVariable ["FBT_Opacity_Solid", false];
 
 if (_isSolid) then {
 	// Revert to 80% opacity
@@ -23,7 +23,7 @@ if (_isSolid) then {
 	
 	_opacBtn ctrlSetBackgroundColor [0.2, 0.25, 0.25, 0.6];
 	_opacBtn ctrlCommit 0.2;
-	_display setVariable ["PXG_Opacity_Solid", false];
+	_display setVariable ["FBT_Opacity_Solid", false];
 } else {
 	// Make 100% Solid
     {
@@ -34,5 +34,5 @@ if (_isSolid) then {
 	
 	_opacBtn ctrlSetBackgroundColor [0.35, 0.45, 0.45, 0.9];
 	_opacBtn ctrlCommit 0.2;
-	_display setVariable ["PXG_Opacity_Solid", true];
+	_display setVariable ["FBT_Opacity_Solid", true];
 };

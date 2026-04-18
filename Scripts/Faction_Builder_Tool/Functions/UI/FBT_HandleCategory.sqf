@@ -5,82 +5,76 @@
     - User clicks a category icon
     - User types in the search box
 */
-params [["_mode", "CategoryChanged"]];
+params ["_input"];
 disableSerialization;
+
+private _mode = "CategoryChanged";
+if (typeName _input == "ARRAY") then {
+    if (typeName (_input select 0) == "STRING") then { _mode = _input select 0; };
+};
 
 private _display = findDisplay 456000;
 if (isNull _display) exitWith {};
 
-private _ctrlCat    = _display displayCtrl 456070;
-private _ctrlSearch = _display displayCtrl 456022;
-private _ctrlList   = _display displayCtrl 456020;
+private _ctrlLoadout = _display displayCtrl 456020; // Top List
+private _ctrlPicker  = _display displayCtrl 456090; // Bottom List (Selector)
+private _ctrlSearch  = _display displayCtrl 456022; // Top Search (Now filters the picker)
 
-// 1. Get State
-private _category = _ctrlCat lbData (lbCurSel _ctrlCat);
-if (_category == "") then { _category = "PRIMARY"; };
+// 1. Resolve Category
+private _category = "";
+if (_mode == "CategorySelected") then {
+    _category = _ctrlLoadout lbData (lbCurSel _ctrlLoadout);
+} else {
+    // If fired from category icon list
+    private _ctrlCat = _display displayCtrl 456070;
+    _category = _ctrlCat lbData (lbCurSel _ctrlCat);
+};
 
-private _searchText = toLower (ctrlText _ctrlSearch);
+if (_category == "") exitWith {};
+_display setVariable ["FBT_ActiveCategory", _category];
 
-// 2. Fetch Base Items
+// 2. Fetch Items via Config Scraper
 private _items = [_category] call (compile preprocessFile "Scripts\Faction_Builder_Tool\Functions\Core\FBT_ScrapeConfig.sqf");
 
-// 3. Filter and Sort
+// 3. Filter Search
+private _searchText = toLower (ctrlText _ctrlSearch);
+private _tokens = _searchText splitString " ";
 private _filtered = [];
-private _factionCamo = missionNamespace getVariable ["FBT_CurrentCamo", ""];
-private _tokens = (toLower _searchText) splitString " ";
 
 {
     private _name = _x select 0;
     private _class = _x select 1;
-    private _pic = _x select 2;
-    private _lowerName = toLower _name;
-    private _lowerClass = toLower _class;
-    
-    // Tokenized Search (All tokens must match)
     private _match = true;
-    {
-        if (_lowerName find _x == -1 && _lowerClass find _x == -1) exitWith { _match = false; };
-    } forEach _tokens;
-
-    if (_match) then {
-        private _priority = 0;
-        if (_factionCamo != "" && (_lowerName find (toLower _factionCamo) > -1)) then { _priority = 10; };
-        _filtered pushBack [_priority, _name, _class, _pic];
-    };
+    { if ((toLower _name) find _x == -1 && (toLower _class) find _x == -1) exitWith { _match = false; }; } forEach _tokens;
+    if (_match) then { _filtered pushBack _x; };
 } forEach _items;
 
-
-// Sort by Priority (Descending)
-_filtered sort false;
-
-// 4. Update Main Item List
-lbClear _ctrlList;
+// 4. Update Picker (Bottom)
+lbClear _ctrlPicker;
 {
-    private _idx = _ctrlList lbAdd (_x select 1);
-    _ctrlList lbSetPicture [_idx, _x select 3];
-    _ctrlList lbSetData [_idx, _x select 2]; // ClassName
-    if ((_x select 0) > 0) then { _ctrlList lbSetColor [_idx, [0.4, 0.8, 0.4, 1]]; };
+    private _idx = _ctrlPicker lbAdd (_x select 0);
+    _ctrlPicker lbSetPicture [_idx, _x select 2];
+    _ctrlPicker lbSetData [_idx, _x select 1];
+    _ctrlPicker lbSetTooltip [_idx, _x select 1];
 } forEach _filtered;
 
-// 5. Update Slot Manager (Column 3)
+// 5. Update Slot List (Bottom Left) if necessary
 private _ctrlSlots = _display displayCtrl 456080;
 lbClear _ctrlSlots;
-
-switch (_category) do {
-    case "PRIMARY": {
-        { 
-            private _idx = _ctrlSlots lbAdd (_x select 0); 
-            _ctrlSlots lbSetData [_idx, _x select 1];
-        } forEach [["Optic Slot", "optic"], ["Muzzle Slot", "muzzle"], ["Pointer Slot", "acc"], ["Bipod Slot", "bipod"]];
-    };
-    case "UNIFORM";
-    case "VEST";
-    case "BACKPACK": {
-        {
-            private _idx = _ctrlSlots lbAdd (_x select 0);
-            _ctrlSlots lbSetData [_idx, _x select 1];
-        } forEach [["Medical", "medic"], ["Ammo", "ammo"], ["Grenades", "grenade"], ["Misc", "misc"]];
-    };
+if (_category in ["UNIFORM", "VEST", "BACKPACK"]) then {
+    {
+        private _idx = _ctrlSlots lbAdd (_x select 0);
+        _ctrlSlots lbSetPicture [_idx, _path + (_x select 2)];
+        _ctrlSlots lbSetData [_idx, _x select 1];
+        _ctrlSlots lbSetTooltip [_idx, _x select 0];
+    } forEach [
+        ["Medical", "medic", "firstaidkit_ca.paa"], 
+        ["Ammo", "ammo", "magazine_ca.paa"], 
+        ["Grenades", "grenade", "grenade_ca.paa"], 
+        ["Misc", "misc", "items_ca.paa"]
+    ];
 };
 
-if (lbSize _ctrlList > 0) then { _ctrlList lbSetCurSel 0; };
+
+if (lbSize _ctrlLoadout > 0) then { _ctrlLoadout lbSetCurSel 0; };
+if (lbSize _ctrlSlots > 0) then { _ctrlSlots lbSetCurSel 0; };

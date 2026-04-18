@@ -10,8 +10,15 @@ missionNamespace setVariable ["FBT_ActiveTab", _tabName];
 private _display = findDisplay 456000;
 if (isNull _display) exitWith {};
 
+// Reset focus offset by default
+missionNamespace setVariable ["FBT_Cam_FocusOffsetZ", 0];
+
 private _tree = _display displayCtrl 456010;
 private _overviewGroup = _display displayCtrl 456050;
+private _isoBtn = _display displayCtrl 456008;
+
+// Show/Hide Isolation button (Armory only)
+_isoBtn ctrlShow (_tabName == "Armory");
 
 // Wipe the tree
 tvClear _tree;
@@ -80,7 +87,12 @@ switch (_tabName) do {
         // Set Armory Camera Default (4m as requested)
         FBT_Cam_Dist = 4;
         FBT_Cam_El = 20;
+        missionNamespace setVariable ["FBT_Cam_FocusOffsetZ", -0.5];
+        if (isNil {missionNamespace getVariable "FBT_Armory_IsolateUnit"}) then { missionNamespace setVariable ["FBT_Armory_IsolateUnit", true]; };
         
+        // Populate Right Panel Categories
+        execVM "Scripts\Faction_Builder_Tool\Functions\UI\FBT_InitArmoryCategories.sqf";
+
         // Add +30 clockwise offset once upon entry from another tab
         if (missionNamespace getVariable ["FBT_ActiveTab_Old", ""] != "Armory") then {
             FBT_Cam_Az = (FBT_Cam_Az + 30) % 360;

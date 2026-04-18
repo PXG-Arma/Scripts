@@ -32,6 +32,7 @@ switch (_mode) do {
 		missionNamespace setVariable ["FBT_Cam_Active_PanOffset", FBT_Cam_PanOffset];
 		
 		missionNamespace setVariable ["FBT_Cam_ZDelta", 0];
+		if (isNil {missionNamespace getVariable "FBT_Cam_FocusOffsetZ"}) then { missionNamespace setVariable ["FBT_Cam_FocusOffsetZ", 0]; };
 		if (isNil {missionNamespace getVariable "FBT_Cam_AutoOrbit"}) then { missionNamespace setVariable ["FBT_Cam_AutoOrbit", true]; };
 
 		// ACE3 mouseButtonState: [LMBanchor, RMBanchor]
@@ -201,7 +202,8 @@ switch (_mode) do {
 			private _rawTargetPos = getPosASL _targetObj;
 			private _bb = boundingBoxReal _targetObj;
 			private _centerZ = ((_bb select 1) select 2) / 2;
-			_rawTargetPos set [2, (_rawTargetPos select 2) + _centerZ];
+			private _zOffset = missionNamespace getVariable ["FBT_Cam_FocusOffsetZ", 0];
+			_rawTargetPos set [2, (_rawTargetPos select 2) + _centerZ + _zOffset];
 
 			private _actualFocalPos = missionNamespace getVariable ["FBT_Cam_ActualFocalPos", _rawTargetPos];
 			_actualFocalPos = _actualFocalPos vectorAdd ((_rawTargetPos vectorDiff _actualFocalPos) vectorMultiply 0.1); 
@@ -247,7 +249,8 @@ switch (_mode) do {
 		{ missionNamespace setVariable [_x, nil]; } forEach [
 			"FBT_Cam_TargetObj", "FBT_Cam_MBS", "FBT_Cam_ZDelta", "FBT_Cam_AutoOrbit",
 			"FBT_Cam_Active_Dist", "FBT_Cam_Active_Az", "FBT_Cam_Active_El", 
-			"FBT_Cam_Active_PanOffset", "FBT_Cam_PanOffset", "FBT_Cam_ActualFocalPos"
+			"FBT_Cam_Active_PanOffset", "FBT_Cam_PanOffset", "FBT_Cam_ActualFocalPos",
+			"FBT_Cam_FocusOffsetZ"
 		];
 		FBT_Cam_Dist = nil; FBT_Cam_Az = nil; FBT_Cam_El = nil;
 	};

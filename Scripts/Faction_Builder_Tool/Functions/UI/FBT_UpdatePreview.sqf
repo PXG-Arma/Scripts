@@ -16,11 +16,6 @@ if (_text == "") exitWith {};
 
 private _tab = missionNamespace getVariable ["FBT_ActiveTab", "Overview"];
 
-// If in Armory, initialize the Category icons
-if (_tab == "Armory") then {
-    execVM "Scripts\Faction_Builder_Tool\Functions\UI\FBT_InitArmoryCategories.sqf";
-};
-
 // 1. Visibility Logic (Focus on Selected Role)
 private _paradeUnits = missionNamespace getVariable ["FBT_ParadeUnits", []];
 private _selectedAgent = objNull;
@@ -29,24 +24,27 @@ private _selectedAgent = objNull;
     private _unitRoleID = _x getVariable ["FBT_RoleID", ""];
     
     if (_tab == "Armory") then {
-        // Only show the unit being edited
-        if (_unitRoleID == _id) then {
+        private _isolate = missionNamespace getVariable ["FBT_Armory_IsolateUnit", true];
+        // Only hide other units if isolation is active
+        if (!_isolate || _unitRoleID == _id) then {
             _x hideObject false;
-            _selectedAgent = _x;
+            if (_unitRoleID == _id) then { _selectedAgent = _x; };
         } else {
             _x hideObject true;
         };
     } else {
-        // Show everything in Overview
+        // Show everything in Overview or other tabs
         _x hideObject false;
         if (_unitRoleID == _id) then { _selectedAgent = _x; };
     };
 } forEach _paradeUnits;
 
     // 2. Camera Focus Glide
-    if (!isNull _selectedAgent) then {
-        // Invoke modular camera update for smooth transition and pan reset
-        [[_selectedAgent], "update"] execVM "Scripts\Faction_Builder_Tool\Functions\Camera\FBT_HandleCamera.sqf";
+    [[_selectedAgent], "update"] execVM "Scripts\Faction_Builder_Tool\Functions\Camera\FBT_HandleCamera.sqf";
+    
+    // Refresh Sidebar to show Loadout
+    if (_tab == "Armory") then {
+        execVM "Scripts\Faction_Builder_Tool\Functions\UI\FBT_UpdateLoadoutUI.sqf";
     };
 
 // 3. Fallback for "Custom/Unassigned" Roles (If not in parade)

@@ -22,8 +22,8 @@ private _categories = [
     ["Headgear", _path + "headgear_ca.paa", "HEADGEAR"],
     ["Goggles", _path + "goggles_ca.paa", "GOGGLES"],
     ["Night Vision", _path + "nvgs_ca.paa", "NVG"],
-    ["Binoculars", _path + "binoc_ca.paa", "BINOC"],
-    ["Inventory Items", _path + "itemmap_ca.paa", "ITEMS"]
+    ["Binoculars", _path + "binoculars_ca.paa", "BINOC"],
+    ["Inventory Items", _path + "map_ca.paa", "ITEMS"]
 ];
 
 {
@@ -32,8 +32,8 @@ private _categories = [
     _ctrl lbSetData [_idx, _x select 2]; // Store category tag
     _ctrl lbSetTooltip [_idx, _x select 0];
     
-    // Aesthetic: Muted color for static icons
-    _ctrl lbSetPictureColor [_idx, [0.8, 0.8, 0.8, 0.8]];
+    // Aesthetic: Muted color for static icons (Opaque for visibility)
+    _ctrl lbSetPictureColor [_idx, [1, 1, 1, 1]];
     _ctrl lbSetPictureColorSelected [_idx, [0.29, 0.42, 0.42, 1]]; // Teal highlight on selection
 } forEach _categories;
 

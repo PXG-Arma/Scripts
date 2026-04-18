@@ -28,7 +28,7 @@ class FBT_BaseTree: PxgGuiRscTree {
 };
 
 class FBT_BaseList: PxgGuiRscListBox {
-	font = "EtelkaMonospacePro"; 
+	font = "RobotoCondensed"; 
 };
 
 class FBT_BaseCombo: PxgGuiRscCombo {

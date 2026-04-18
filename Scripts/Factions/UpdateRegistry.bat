@@ -9,7 +9,7 @@
 
 ::: $root = Get-Item "."
 ::: $registryFile = "Factions_Registry.sqf"
-::: $factionFiles = @('Loadoutlist.sqf', 'Supplies.sqf', 'Weapons.sqf', 'Ammo.sqf', 'Uniforms.sqf', 'Gear.sqf', 'Vehicles.sqf', 'Vehicles_recolour.sqf')
+::: $factionFiles = @('Faction_Core.sqf', 'Loadoutlist.sqf', 'Supplies.sqf', 'Weapons.sqf', 'Ammo.sqf', 'Uniforms.sqf', 'Gear.sqf', 'Vehicles.sqf', 'Vehicles_recolour.sqf')
 ::: 
 ::: # Pre-Read Registry for Delta Analysis
 ::: $legacy = @{}

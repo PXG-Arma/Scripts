@@ -10,14 +10,19 @@ private _className = _ctrl lbData _index;
 if (_className == "") exitWith {};
 
 private _display = findDisplay 456000;
-private _ctrlCat = _display displayCtrl 456070;
-private _category = _ctrlCat lbData (lbCurSel _ctrlCat);
+private _category = _display getVariable ["FBT_ActiveCategory", ""];
 
 // 1. Get States
+// If clicked from main browser (Top), we clear the active slot selection to ensure it equips to the base category
+if (ctrlIDC _ctrl == 456020) then {
+    _display setVariable ["FBT_ActiveSlot", ""];
+};
+
 private _activeSlot = _display getVariable ["FBT_ActiveSlot", ""];
 private _dummy = missionNamespace getVariable ["FBT_Preview_Unit", objNull];
 private _amount = parseNumber (ctrlText (_display displayCtrl 456081));
 if (_amount <= 0) then { _amount = 1; };
+
 
 // 2. Variant Folding Check (Handover to Variant Selector)
 if (ctrlIDC _ctrl == 456020 && _category in ["UNIFORM", "VEST", "HEADGEAR"]) then {
@@ -85,6 +90,12 @@ if (count _path > 0) then {
         _roleData set [_key, _className];
     };
     _armory set [_roleId, _roleData];
+    
+    // --- PERSISTENCE: Sync to Disk via Pythia ---
+    execVM "Scripts\Faction_Builder_Tool\Functions\Core\FBT_Pythia_Sync.sqf";
+    
+    // --- UI: Refresh Loadout List ---
+    execVM "Scripts\Faction_Builder_Tool\Functions\UI\FBT_UpdateLoadoutUI.sqf";
 };
 
 

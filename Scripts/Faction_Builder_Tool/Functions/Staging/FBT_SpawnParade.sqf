@@ -70,6 +70,12 @@ private _newLeads = [];
 
         if (count _spot > 0) then {
             private _agent = createAgent ["B_RangeMaster_F", _spot select 0, [], 0, "CAN_COLLIDE"];
+            
+            // --- ITERATIVE REGISTRATION (Safety) ---
+            private _reg = missionNamespace getVariable ["FBT_ParadeUnits", []];
+            _reg pushBack _agent;
+            missionNamespace setVariable ["FBT_ParadeUnits", _reg];
+
             _agent hideObject true; 
             
             private _baseDir = missionNamespace getVariable ["FBT_AnchorRotation", 0];
@@ -86,9 +92,25 @@ private _newLeads = [];
             if (!isNil "FBT_Anchor") then { _agent disableCollisionWith FBT_Anchor; };
             
             // DRESS AGENT
+        private _armory = _masterHash getOrDefault ["Armory", createHashMap];
+        private _roleSave = _armory getOrDefault [_roleID, createHashMap];
+
+        if (count _roleSave > 0) then {
+            // Apply saved session data
+            [_agent, _roleSave] call (compile preprocessFile "Scripts\Faction_Builder_Tool\Functions\Armory\FBT_DressDummy.sqf");
+        } else {
+            // Fallback to framework proxies (Defaults)
             [_selSide, _selFaction, _selCamo, _roleID, _agent] call _uniCode;
             [_selSide, _selFaction, _selCamo, _roleID, _agent] call _wepCode;
             [_selSide, _selFaction, _selCamo, _roleID, _agent] call _geaCode;
+
+            // SCRAPE IMMEDIATELY: If this was a legacy unit, capture its gear into the tool's session
+            // This enables "Instant Duplication" and "Instant Editing" of legacy 8-file factions.
+            private _scraped = [_agent] call (compile preprocessFile "Scripts\Faction_Builder_Tool\Functions\Core\FBT_ScrapeUnit.sqf");
+            _armory set [_roleID, _scraped];
+            _masterHash set ["Armory", _armory];
+            diag_log format ["[FBT Scrape] Captured legacy gear for %1 (%2)", _roleID, _roleName];
+        };
 
             _agent switchMove "AmovPercMstpSlowWrflDnon";
 
@@ -98,8 +120,8 @@ private _newLeads = [];
     } forEach _rolesInGroup;
 } forEach _groupsList;
 
-missionNamespace setVariable ["FBT_ParadeUnits", _newUnits];
 missionNamespace setVariable ["FBT_ParadeLeads", _newLeads];
+
 
 // 5. SYNCHRONIZED REVEAL (Pre-load Assets)
 uiSleep 0.5; // Brief wait to allow gear textures/models to settle

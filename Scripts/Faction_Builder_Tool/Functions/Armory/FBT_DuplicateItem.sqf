@@ -36,11 +36,18 @@ _armory set [_newId, _newData];
 _seq pushBack [_newId, _newName, "Custom"];
 _masterHash set ["ArmorySequence", _seq];
 
+// Trigger Sync & UI Refresh
+execVM "Scripts\Faction_Builder_Tool\Functions\Core\FBT_Pythia_Sync.sqf";
+execVM "Scripts\Faction_Builder_Tool\Functions\UI\FBT_UpdateLoadoutUI.sqf";
+
 // 4. Refresh UI and World
 [] spawn {
     uiSleep 0.1;
     execVM "Scripts\Faction_Builder_Tool\Functions\Staging\FBT_SpawnParade.sqf";
-    ["Armory"] execVM "Scripts\Faction_Builder_Tool\Functions\UI\FBT_TabSwitch.sqf";
+    
+    // Refresh Sidebar Tree
+    private _tab = (findDisplay 456000) getVariable ["FBT_ActiveTab", "Armory"];
+    [_tab] execVM "Scripts\Faction_Builder_Tool\Functions\UI\FBT_TabSwitch.sqf";
 };
 
 systemChat format ["Duplicated %1 as %2", _sourceName, _newName];

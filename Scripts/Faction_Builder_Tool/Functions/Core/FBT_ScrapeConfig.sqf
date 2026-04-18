@@ -11,6 +11,41 @@ if (_category in _cache) exitWith { _cache get _category };
 
 private _results = [];
 
+// Handle Clothing/Gear with specialized variant folding
+if (_category in ["UNIFORM", "VEST", "HEADGEAR"]) exitWith {
+    private _cfgType = configFile >> "CfgWeapons";
+    private _typeId = switch (_category) do { case "UNIFORM": {801}; case "VEST": {701}; case "HEADGEAR": {605}; };
+    
+    private _variants = createHashMap; // BaseClass -> [FullEntry1, FullEntry2]
+    
+    {
+        private _info = _x >> "ItemInfo";
+        if (getNumber(_x >> "scope") == 2 && getNumber(_info >> "type") == _typeId) then {
+            private _className = configName _x;
+            private _baseClass = getText(_x >> "ace_arsenal_uniqueBase");
+            if (_baseClass == "") then { _baseClass = _className; };
+            
+            private _currentVariants = _variants getOrDefault [_baseClass, []];
+            _currentVariants pushBack [getText(_x >> "displayName"), _className, getText(_x >> "picture")];
+            _variants set [_baseClass, _currentVariants];
+        };
+    } forEach (configProperties [_cfgType, "isClass _x"]);
+    
+    {
+        private _vList = _y;
+        _results pushBack [(_vList select 0) select 0, _x, (_vList select 0) select 2, format ["Variants: %1", count _vList]];
+    } forEach _variants;
+    
+    private _masterVariants = missionNamespace getVariable ["FBT_VariantsCache", createHashMap];
+    _masterVariants set [_category, _variants];
+    missionNamespace setVariable ["FBT_VariantsCache", _masterVariants];
+
+    _cache set [_category, _results];
+    missionNamespace setVariable ["FBT_ConfigCache", _cache];
+    _results
+};
+
+
 switch (_category) do {
     case "PRIMARY": {
         private _cfg = configFile >> "CfgWeapons";
@@ -38,39 +73,6 @@ switch (_category) do {
             };
         } forEach (configProperties [configFile >> "CfgWeapons", "isClass _x"]);
     };
-    case "UNIFORM":
-    case "VEST":
-    case "HEADGEAR": {
-        private _cfgType = configFile >> "CfgWeapons";
-        private _typeId = switch (_category) do { case "UNIFORM": {801}; case "VEST": {701}; case "HEADGEAR": {605}; };
-        
-        private _variants = createHashMap; // BaseClass -> [FullEntry1, FullEntry2]
-        
-        {
-            private _info = _x >> "ItemInfo";
-            if (getNumber(_x >> "scope") == 2 && getNumber(_info >> "type") == _typeId) then {
-                private _className = configName _x;
-                private _baseClass = getText(_x >> "ace_arsenal_uniqueBase");
-                if (_baseClass == "") then { _baseClass = _className; }; // If no base, it is the base
-                
-                private _currentVariants = _variants getOrDefault [_baseClass, []];
-                _currentVariants pushBack [getText(_x >> "displayName"), _className, getText(_x >> "picture")];
-                _variants set [_baseClass, _currentVariants];
-            };
-        } forEach (configProperties [_cfgType, "isClass _x"]);
-        
-        // Populate results with only the FIRST variant of each base (as the representative)
-        {
-            private _vList = _y;
-            _results pushBack [(_vList select 0) select 0, _x, (_vList select 0) select 2, format ["Variants: %1", count _vList]];
-        } forEach _variants;
-        
-        // Store variants globally for the selector
-        private _masterVariants = missionNamespace getVariable ["FBT_VariantsCache", createHashMap];
-        _masterVariants set [_category, _variants];
-        missionNamespace setVariable ["FBT_VariantsCache", _masterVariants];
-    };
-
     case "GOGGLES": {
         {
             if (getNumber(_x >> "scope") == 2) then {

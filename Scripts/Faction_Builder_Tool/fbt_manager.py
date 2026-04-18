@@ -25,8 +25,7 @@ def save_faction(mission_root, data_pairs):
     """
     try:
         # Sanitize input: SQF now sends "/" but let's be 100% sure
-        mission_root = mission_root.replace("\\", "/")
-        mission_root = os.path.normpath(mission_root)
+        mission_root = os.path.normpath(mission_root).replace("\\", "/")
         
         # 1. Unpack data to dictionary
         data = {k: v for k, v in data_pairs}

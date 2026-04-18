@@ -42,7 +42,7 @@ private _fullDataPairs = [_masterHash] call _fnc_hashToPairs;
 
 // Sanitize Path: Convert "\" to "/" to prevent Python escape character corruption
 private _missionRoot = (getMissionPath "") splitString "\" joinString "/";
-if !(_missionRoot endsWith "/") then { _missionRoot = _missionRoot + "/"; };
+if ((_missionRoot select [count _missionRoot - 1, 1]) != "/") then { _missionRoot = _missionRoot + "/"; };
 
 // 3. Call Governor via Proxy
 // Arguments: [mission_root, data_pairs]

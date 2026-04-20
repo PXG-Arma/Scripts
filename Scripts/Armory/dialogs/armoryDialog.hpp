@@ -3,7 +3,8 @@
 class armoryDialog
 {
 	idd = IDD_ARMORY;
-	onLoad = "[_this select 0, 'init'] execVM 'Scripts\Misc\PXG_Handle_Opacity.sqf';";
+	onLoad = "[_this select 0, 'init'] execVM 'Scripts\Misc\PXG_Handle_Opacity.sqf'; [_this select 0, 'init'] execVM 'Scripts\Armory\Functions\PXG_Handle_Preview_Camera.sqf';";
+	onUnload = "[findDisplay 431234, 'destroy'] execVM 'Scripts\Armory\Functions\PXG_Handle_Preview_Camera.sqf';";
 	class controls
 	{
 		class armoryBaseFrame: PxgGuiBackground
@@ -162,7 +163,7 @@ class armoryDialog
 			show = 0;
 			text = "Primary Weapon";
 			x = PXG_UI_EXT_X + (0.01 * safezoneW);
-			y = 0.1915 * safezoneH + safezoneY; 
+			y = 0.2015 * safezoneH + safezoneY; 
 			w = PXG_UI_EXT_W - (0.02 * safezoneW);
 			h = 0.02 * safezoneH; 
 		};
@@ -172,7 +173,7 @@ class armoryDialog
 			show = 0;
 			colorBackground[] = PXG_COLOR_BG_DARK;
 			x = PXG_UI_EXT_X + (0.01 * safezoneW);
-			y = 0.2215 * safezoneH + safezoneY; 
+			y = 0.2315 * safezoneH + safezoneY; 
 			w = PXG_UI_EXT_W - (0.02 * safezoneW);
 			h = 0.16 * safezoneH;
 			sizeEx = PXG_UI_LIST_TEXT_SIZE;
@@ -185,7 +186,7 @@ class armoryDialog
 			show = 0;
 			text = "Optics / Sights";
 			x = PXG_UI_EXT_X + (0.01 * safezoneW);
-			y = 0.3915 * safezoneH + safezoneY;
+			y = 0.4015 * safezoneH + safezoneY;
 			w = PXG_UI_EXT_W - (0.02 * safezoneW);
 			h = 0.02 * safezoneH;
 		};
@@ -195,7 +196,7 @@ class armoryDialog
 			show = 0;
 			colorBackground[] = PXG_COLOR_BG_DARK;
 			x = PXG_UI_EXT_X + (0.01 * safezoneW);
-			y = 0.4215 * safezoneH + safezoneY; 
+			y = 0.4315 * safezoneH + safezoneY; 
 			w = PXG_UI_EXT_W - (0.02 * safezoneW);
 			h = 0.15 * safezoneH;
 			sizeEx = PXG_UI_LIST_TEXT_SIZE;
@@ -208,19 +209,20 @@ class armoryDialog
 			show = 0;
 			colorBackground[] = PXG_COLOR_PREVIEW; 
 			x = PXG_UI_EXT_X + (0.01 * safezoneW);
-			y = 0.5915 * safezoneH + safezoneY; 
+			y = 0.6015 * safezoneH + safezoneY; 
 			w = PXG_UI_EXT_W - (0.02 * safezoneW);
-			h = 0.207 * safezoneH; 
+			h = 0.197 * safezoneH; 
 		};
 		class armoryPreviewPicture: PxgGuiRscPicture
 		{
 			idc = IDC_ARMORY_PREVIEW_PICTURE;
+			style = 48; // ST_PICTURE (Force Stretch)
 			show = 0;
-			text = "";
+			text = "#(argb,512,512,1)r2t(pxg_armory_pip,2.2)";
 			x = PXG_UI_EXT_X + (0.01 * safezoneW);
-			y = 0.5915 * safezoneH + safezoneY; 
+			y = 0.6015 * safezoneH + safezoneY; 
 			w = PXG_UI_EXT_W - (0.02 * safezoneW);
-			h = 0.207 * safezoneH;
+			h = 0.197 * safezoneH;
 		};
 	};
 };

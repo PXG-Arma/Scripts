@@ -40,5 +40,8 @@ player setVariable ["PXG_Player_faction", _faction, true];
 player setVariable ["PXG_Player_variant", _variant, true];
 player setVariable ["PXG_player_loadout", _loadout, true];
 
+// Signal that we want to keep the current previewed gear
+missionNamespace setVariable ["PXG_Armory_Apply_Final", true];
+
 // Closes armory dialog 
 closeDialog 2;

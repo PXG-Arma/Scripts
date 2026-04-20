@@ -1,6 +1,6 @@
 params [
     ["_side",""], ["_faction",""], ["_variant",""], ["_loadout", []],
-    ["_overrideWeapon", ""], ["_overrideSight", ""]
+    ["_overrideWeapon", ""], ["_overrideSight", ""], ["_isPreview", false]
 ];
 
 private _basePath = "";
@@ -48,4 +48,8 @@ if (fileExists (_basePath + "Faction_Core.sqf")) then {
 	if (fileExists (_basePath + "Gear.sqf")) then { [_side, _faction, _variant, _loadout] call compile preprocessFile (_basePath + "Gear.sqf") };
 	[_side, _faction, _variant, _loadout] call compile preprocessFile "Scripts\Factions\common\medical.sqf";
 };
-[_side, _faction, _variant, _loadout] call compile preprocessFile "Scripts\Armory\Functions\PXG_Configure_RadioChannels.sqf";
+
+// Only configure radios if this is NOT a preview (to avoid UI-thread suspension errors)
+if (!_isPreview) then {
+	[_side, _faction, _variant, _loadout] call compile preprocessFile "Scripts\Armory\Functions\PXG_Configure_RadioChannels.sqf";
+};

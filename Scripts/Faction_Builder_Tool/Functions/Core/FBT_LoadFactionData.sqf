@@ -23,8 +23,11 @@ if (isNil "_data" || {typeName _data != "HASHMAP"}) exitWith {
 
 private _masterHash = missionNamespace getVariable ["FBT_MasterHash", createHashMap];
 
-// Unpack all top-level keys from the Hashmap (Metadata, Armory, GunGroups, etc.)
-// This ensures that modular metadata is correctly loaded into the session.
+// Reset modular metadata to avoid leakage from previous faction session
+private _modularKeys = ["SlotGroups", "GunGroups", "SightGroups", "Attachment_Standards", "ArmoryGroups", "ArmoryRoles", "ArmoryIDs"];
+{ _masterHash set [_x, if (_x in ["ArmoryGroups", "ArmoryRoles", "ArmoryIDs"]) then { [] } else { createHashMap }]; } forEach _modularKeys;
+
+// Unpack all top-level keys from the Hashmap (Metadata, Armory, etc.)
 {
     _masterHash set [_x, _y];
 } forEach _data;

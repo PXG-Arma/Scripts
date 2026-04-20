@@ -44,11 +44,9 @@ private _selFaction = lbText [456052, lbCurSel 456052];
 private _selCamo = lbText [456054, lbCurSel 456054];
 
 // 4. Iterate through Faction Groups (POOLING & INVISIBLE DRESSING)
-{
-    // Concurrency Check: If a newer spawn started, exit immediately
-    if ((missionNamespace getVariable ["FBT_ActiveSpawn", 0]) != _myID) exitWith {
-        ctrlShow [456999, false];
-    };
+    {
+        // Concurrency Check: If a newer spawn started, exit immediately
+        if ((missionNamespace getVariable ["FBT_ActiveSpawn", 0]) != _myID) exitWith {};
 
     private _groupIdx = _forEachIndex;
     private _groupName = _x;
@@ -63,6 +61,8 @@ private _selCamo = lbText [456054, lbCurSel 456054];
     private _idsInGroup = _idList select _groupIdx;
 
     {
+        if ((missionNamespace getVariable ["FBT_ActiveSpawn", 0]) != _myID) exitWith {};
+
         private _roleName = _x;
         private _roleID = _idsInGroup select _forEachIndex;
         
@@ -86,7 +86,7 @@ private _selCamo = lbText [456054, lbCurSel 456054];
 
             // If no agent in pool or pool agent is dead/null, create new
             if (isNull _agent || !alive _agent) then {
-                _agent = createAgent ["B_RangeMaster_F", _spot select 0, [], 0, "CAN_COLLIDE"];
+                _agent = createAgent ["B_RangeMaster_F", [-5000, -5000, 0], [], 0, "CAN_COLLIDE"];
                 _agent hideObject true; 
                 _agent enableSimulation false;
                 _agent allowDamage false;
@@ -105,8 +105,11 @@ private _selCamo = lbText [456054, lbCurSel 456054];
             if (_forEachIndex == 0) then { _agent setVariable ["FBT_IsLead", true]; } else { _agent setVariable ["FBT_IsLead", nil]; };
 
             private _baseDir = missionNamespace getVariable ["FBT_AnchorRotation", 0];
-            _agent setPosWorld (_spot select 0);
-            _agent setDir (_baseDir + 180); 
+            
+            // Move to staging area to prevent visual pop-in and dropped gear on the parade ground
+            _agent setPosWorld [-5000, -5000, 0];
+            _agent setVariable ["FBT_TargetPos", _spot select 0];
+            _agent setVariable ["FBT_TargetDir", _baseDir + 180]; 
             
             // --- HIGH-PERFORMANCE DRESSING ---
             private _armory = _masterHash getOrDefault ["Armory", createHashMap];
@@ -115,9 +118,37 @@ private _selCamo = lbText [456054, lbCurSel 456054];
             if (count _roleSave > 0) then {
                 [_agent, _roleSave] call _fnc_dress;
             } else {
-                [_selSide, _selFaction, _selCamo, _roleID, _agent] call _uniCode;
-                [_selSide, _selFaction, _selCamo, _roleID, _agent] call _wepCode;
-                [_selSide, _selFaction, _selCamo, _roleID, _agent] call _geaCode;
+                // Clear default/pooled gear to prevent ground drops
+                removeAllWeapons _agent; removeAllItems _agent; removeAllAssignedItems _agent; removeUniform _agent; removeVest _agent; removeBackpack _agent; removeHeadgear _agent; removeGoggles _agent;
+                
+                // 4.1 Dress via Framework (First Run)
+                [_selSide, _selFaction, _selCamo, _roleID, "APPLY", "", "", "", _agent] call _uniCode;
+
+                // Smart Weapon Selection for Parade
+                private _slotGroup = (_masterHash getOrDefault ["SlotGroups", createHashMap]) getOrDefault [_roleID, ""];
+                if (_slotGroup != "") then {
+                    // Modular Discovery: Pick first weapon group and first gun for the parade display
+                    private _weapAssign = [_selSide, _selFaction, _selCamo, _slotGroup, "WEAPASSIGN", "", "", "", objNull] call _wepCode;
+                    if (typeName _weapAssign == "ARRAY" && { count _weapAssign > 0 }) then {
+                        private _selectedGroup = _weapAssign select 0;
+                        private _gunList = (_masterHash getOrDefault ["GunGroups", createHashMap]) getOrDefault [_selectedGroup, []];
+                        if (count _gunList > 0) then {
+                            private _selectedGun = _gunList select 0;
+                            // Call proxy with explicit selection (APPLY mode)
+                            [_selSide, _selFaction, _selCamo, _roleID, "APPLY", _selectedGun, _selectedGroup, _slotGroup, _agent] call _wepCode;
+                        } else {
+                            [_selSide, _selFaction, _selCamo, _roleID, "APPLY", "", "", "", _agent] call _wepCode;
+                        };
+                    } else {
+                        [_selSide, _selFaction, _selCamo, _roleID, "APPLY", "", "", "", _agent] call _wepCode;
+                    };
+                } else {
+                    // Standard weapon application
+                    [_selSide, _selFaction, _selCamo, _roleID, "APPLY", "", "", "", _agent] call _wepCode;
+                };
+
+                [_selSide, _selFaction, _selCamo, _roleID, "APPLY", "", "", "", _agent] call _geaCode;
+                
                 private _scraped = [_agent] call _fnc_scrape;
                 _armory set [_roleID, _scraped];
             };
@@ -155,6 +186,10 @@ private _selectedPath = tvCurSel (findDisplay 456000 displayCtrl 456010);
 private _selectedID = (findDisplay 456000 displayCtrl 456010) tvData _selectedPath;
 
 {
+    // Apply final position and rotation exactly when revealing
+    _x setPosWorld (_x getVariable ["FBT_TargetPos", [0,0,0]]);
+    _x setDir (_x getVariable ["FBT_TargetDir", 0]);
+
     if (_activeTab == "Overview") then {
         _x hideObject false;
     } else {

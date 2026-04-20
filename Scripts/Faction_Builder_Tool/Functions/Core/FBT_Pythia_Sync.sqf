@@ -5,7 +5,7 @@ FBT_fnc_Pythia_Sync = {
         Synchronizes the current FBT state to disk using the Pythia Governor.
         Supports "Sync" (Save during session) and "Commit" (Final disk rebuild).
     */
-    params [["_mode", "Sync"]];
+    params [["_mode", "Sync"], ["_sourcePath", ""]];
 
     if !(missionNamespace getVariable ["FBT_Bridge_Ready", false]) then {
         [] call compile preprocessFileLineNumbers "Scripts\Faction_Builder_Tool\Functions\Core\FBT_Bridge_Init.sqf";
@@ -52,7 +52,7 @@ FBT_fnc_Pythia_Sync = {
 
     // Call Governor via Proxy (run_scan = false for session mode)
     // Arguments: [mission_root, data_pairs, run_scan]
-    private _res = ["FBT.call", ["fbt_manager", "save_faction", [_missionRoot, _fullDataPairs, false]]] call py3_fnc_callExtension;
+    private _res = ["FBT.call", ["fbt_manager", "save_faction", [_missionRoot, _fullDataPairs, false, _sourcePath]]] call py3_fnc_callExtension;
     
     if (_res isEqualType [] && {count _res >= 4} && {_res select 0}) then {
         private _newEntries = _res select 3;

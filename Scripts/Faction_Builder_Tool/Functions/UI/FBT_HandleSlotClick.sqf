@@ -1,13 +1,17 @@
 params ["_input"];
 disableSerialization;
 
+// 0. Re-entrancy Guard
+if (missionNamespace getVariable ["FBT_Busy_HandleSlotClick", false]) exitWith {};
+missionNamespace setVariable ["FBT_Busy_HandleSlotClick", true];
+
 private _mode = "SlotChanged";
 if (typeName _input == "ARRAY") then {
     if (count _input > 0 && {typeName (_input select 0) == "STRING"}) then { _mode = _input select 0; };
 };
 
 private _display = findDisplay 456000;
-if (isNull _display) exitWith {};
+if (isNull _display) exitWith { missionNamespace setVariable ["FBT_Busy_HandleSlotClick", false]; };
 
 private _ctrlSlots = _display displayCtrl 456080; // Bottom Left
 private _ctrlList  = _display displayCtrl 456090; // Bottom Right
@@ -16,9 +20,6 @@ private _dummy = missionNamespace getVariable ["FBT_Preview_Unit", objNull];
 
 // 1. Resolve State
 private _slotType = _ctrlSlots lbData (lbCurSel _ctrlSlots);
-
-// If this is a weapon category, the "Slot" is an attachment slot.
-// If this is a baseline category (Uniform/Vest), the "Slot" is a container category (Medical/Ammo).
 private _activeCategory = _display getVariable ["FBT_ActiveCategory", "PRIMARY"];
 _display setVariable ["FBT_ActiveSlot", _slotType];
 
@@ -27,11 +28,10 @@ private _allItems = [];
 if (_slotType in ["optic", "muzzle", "acc", "bipod"]) then {
     _allItems = [_dummy, _slotType] call (compile preprocessFile "Scripts\Faction_Builder_Tool\Functions\Armory\FBT_GetCompatibleItems.sqf");
 } else {
-    // Basic Item Groups
     if (_slotType == "ammo") then {
-        _allItems = call (compile preprocessFile "Scripts\Faction_Builder_Tool\Functions\Armory\FBT_GetCompatibleMags.sqf");
+        _allItems = [_dummy] call (compile preprocessFile "Scripts\Faction_Builder_Tool\Functions\Armory\FBT_GetCompatibleMags.sqf");
     };
-    // Placeholder for other groups...
+    // Future: Add logic for Medical, Grenades, etc.
 };
 
 // 3. Filter Search
@@ -51,14 +51,34 @@ if (_searchText == "") then {
     } forEach _allItems;
 };
 
-// 4. Update UI
+// 4. Update UI with Highlighting
+missionNamespace setVariable ["FBT_SuppressEvents", true];
 lbClear _ctrlList;
+
+private _equippedItems = [];
+if (_activeCategory in ["PRIMARY", "HANDGUN"]) then {
+    _equippedItems = if (_activeCategory == "PRIMARY") then { primaryWeaponItems _dummy } else { handgunItems _dummy };
+};
+
+private _selectedIdx = -1;
 {
     private _idx = _ctrlList lbAdd (_x select 0);
     _ctrlList lbSetPicture [_idx, _x select 2];
     _ctrlList lbSetData [_idx, _x select 1];
+    _ctrlList lbSetTooltip [_idx, _x select 1];
+    
+    // Highlight if currently equipped
+    if ((_x select 1) in _equippedItems) then {
+        _selectedIdx = _idx;
+        _ctrlList lbSetColor [_idx, [0.4, 0.8, 0.8, 1]];
+    };
 } forEach _filtered;
 
+if (_selectedIdx != -1) then { _ctrlList lbSetCurSel _selectedIdx; };
+missionNamespace setVariable ["FBT_SuppressEvents", false];
+
 if (_mode == "SlotChanged") then {
-    systemChat format ["Slot %1 selected.", _slotType];
+    // systemChat format ["Slot %1 selected.", _slotType];
 };
+
+missionNamespace setVariable ["FBT_Busy_HandleSlotClick", false];

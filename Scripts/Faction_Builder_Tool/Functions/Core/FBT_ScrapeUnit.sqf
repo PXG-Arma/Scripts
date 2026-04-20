@@ -50,9 +50,12 @@ _roleState set ["MAGAZINES", _formattedMags];
 
 // 4. Items (Flat array)
 private _items = (uniformItems _unit) + (vestItems _unit) + (backpackItems _unit);
-// Remove magazines from items list as they are handled above
-private _magClasses = keys _magCounts;
-_items = _items select { !(_x in _magClasses) };
+// Remove magazines from items list as they are handled in the MAGAZINES key
+{
+    private _magClass = _x;
+    private _idx = _items find _magClass;
+    if (_idx != -1) then { _items deleteAt _idx; };
+} forEach (magazines _unit);
 
 _roleState set ["ITEMS", _items];
 

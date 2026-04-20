@@ -86,10 +86,42 @@ FBT_Cam_Az = (_initBearing + 180) % 360;
 // 1. Populate Dropdowns
 ["Init"] execVM "Scripts\Faction_Builder_Tool\Functions\UI\FBT_UpdateDropdowns.sqf";
 
-// 2. Spawn Initial Parade
+// 2. Pre-Spawn Agents & Load Initial Parade
 [] spawn {
+    systemChat "[FBT] Booting Engine: Pre-spawning unit pool...";
+    uiSleep 0.1;
+    
+    private _spawnSet = missionNamespace getVariable ["FBT_SpawnSet", createHashMap];
+    private _totalRequired = 0;
+    
+    {
+        private _groupEntry = _y;
+        private _leadCount = if (count (_groupEntry getOrDefault ["Lead", []]) > 0) then { 1 } else { 0 };
+        private _slotCount = count (_groupEntry getOrDefault ["Slots", []]);
+        _totalRequired = _totalRequired + _leadCount + _slotCount;
+    } forEach _spawnSet;
+    
+    private _unitPool = missionNamespace getVariable ["FBT_UnitPool", []];
+    private _agentsNeeded = _totalRequired - (count _unitPool);
+    
+    if (_agentsNeeded > 0) then {
+        for "_i" from 1 to _agentsNeeded do {
+            private _agent = createAgent ["B_RangeMaster_F", [-5000, -5000, 0], [], 0, "NONE"];
+            _agent hideObject true; 
+            _agent enableSimulation false;
+            _agent allowDamage false;
+            _agent disableCollisionWith player;
+            if (!isNil "FBT_Anchor") then { _agent disableCollisionWith FBT_Anchor; };
+            _unitPool pushBack _agent;
+            
+            // Yield every 5 agents to keep boot smooth
+            if (_i % 5 == 0) then { uiSleep 0.05; };
+        };
+        missionNamespace setVariable ["FBT_UnitPool", _unitPool];
+        systemChat format ["[FBT] Allocated %1 new agents to the pool.", _agentsNeeded];
+    };
+
     systemChat "[FBT] Loading Faction Models...";
     uiSleep 0.5;
-    execVM "Scripts\Faction_Builder_Tool\Functions\Staging\FBT_SpawnParade.sqf";
     systemChat "[FBT] Tool Ready.";
 };

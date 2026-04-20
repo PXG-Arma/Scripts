@@ -36,10 +36,27 @@ private _fnc_replace = {
         private _fileItems = preprocessFile _fullPath;
         
         // --- PROXY REDIRECTION ---
+        // 1. Redirect 'player' to '_unit'
         private _fixedScript = [_fileItems, "player", "_unit"] call _fnc_replace;
         
-        private _header = "params ['_side', '_faction', '_variant', '_loadout', ['_unit', objNull]]; if (isNull _unit) exitWith {}; ";
-        private _fullScript = _header + _fixedScript;
+        // 2. Handle Recursion: Redirect recursive calls to the proxy instead of disk
+        // We replace 'compile preprocessFile _fnc_scriptName' with a wrapper that injects our '_unit' into the args.
+        private _proxySnippet = format ["{ private _recursiveArgs = _this; _recursiveArgs set [8, _unit]; _recursiveArgs call ((missionNamespace getVariable ['FBT_FrameworkProxy', createHashMap]) get '%1') }", _fileName];
+        _fixedScript = [_fixedScript, "compile preprocessFile _fnc_scriptName", _proxySnippet] call _fnc_replace;
+        
+        // 3. Define Header: We follow the standard 8-arg signature and add '_unit' as the 9th.
+        // Signature: _side, _faction, _variant, _loadout, _mode, _weapon, _weaponGroup, _roleGroup, _unit
+        private _header = format ["params ['_side', '_faction', '_variant', '_loadout', ['_mode', 'APPLY'], ['_weapon', ''], ['_weaponGroup', ''], ['_roleGroup', ''], ['_unit', objNull]]; private _fnc_scriptName = '%1'; if (isNull _unit && _mode == 'APPLY') exitWith {}; ", _fileName];
+        
+        // 4. Neutralize original params line
+        private _paramsIdx = (toLower _fixedScript) find "params";
+        if (_paramsIdx != -1) then {
+            private _scriptBefore = _fixedScript select [0, _paramsIdx];
+            private _scriptAfter  = _fixedScript select [_paramsIdx + 6]; 
+            _fixedScript = _scriptBefore + "private _legacyParams = " + _scriptAfter;
+        };
+
+        private _fullScript = _header + _fixedScript + "; ''"; // Ensure it returns something
         
         private _code = compile _fullScript;
         _compiledBlocks set [_fileName, _code];

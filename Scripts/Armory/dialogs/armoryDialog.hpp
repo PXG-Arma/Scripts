@@ -180,19 +180,75 @@ class armoryDialog
 			rowHeight = PXG_UI_LIST_ROW_HEIGHT;
 			onLBSelChanged = "call compile preprocessfile 'Scripts\Armory\Functions\PXG_Refresh_Modular_Lists.sqf'";
 		};
-		class armorySightText: PxgGuiRscText
+		// ATTACHMENT CATEGORY ICONS
+		class armorySightIcon: PxgGuiRscButton
 		{
-			idc = IDC_ARMORY_SIGHT_TEXT;
+			idc = IDC_ARMORY_SIGHT_ICON;
 			show = 0;
-			text = "Optics / Sights";
+			style = 48 + 2048; // ST_PICTURE + ST_KEEP_ASPECT_RATIO
+			text = "\a3\ui_f\data\gui\Rsc\RscDisplayArsenal\itemoptic_ca.paa";
+			tooltip = "Optics / Sights";
 			x = PXG_UI_EXT_X + (0.01 * safezoneW);
-			y = 0.4015 * safezoneH + safezoneY;
-			w = PXG_UI_EXT_W - (0.02 * safezoneW);
-			h = 0.02 * safezoneH;
+			y = 0.3915 * safezoneH + safezoneY;
+			w = 0.04 * safezoneW;
+			h = 0.04 * safezoneH;
+			action = "['optic'] execVM 'Scripts\Armory\Functions\PXG_Handle_Attachment_Category.sqf'";
+			borderSize = 0;
+			colorBackground[] = {0, 0, 0, 0};
+			colorBackgroundActive[] = {0.29, 0.42, 0.42, 1};
 		};
-		class armorySightList: PxgGuiRscListBox
+		class armoryUnderbarrelIcon: PxgGuiRscButton
 		{
-			idc = IDC_ARMORY_SIGHT_LIST;
+			idc = IDC_ARMORY_UNDERBARREL_ICON;
+			show = 0;
+			style = 48 + 2048; // ST_PICTURE + ST_KEEP_ASPECT_RATIO
+			text = "\a3\ui_f\data\gui\Rsc\RscDisplayArsenal\itembipod_ca.paa";
+			tooltip = "Underbarrel (Bipod)";
+			x = PXG_UI_EXT_X + (0.05 * safezoneW);
+			y = 0.3915 * safezoneH + safezoneY;
+			w = 0.04 * safezoneW;
+			h = 0.04 * safezoneH;
+			action = "['bipod'] execVM 'Scripts\Armory\Functions\PXG_Handle_Attachment_Category.sqf'";
+			borderSize = 0;
+			colorBackground[] = {0, 0, 0, 0};
+			colorBackgroundActive[] = {0.29, 0.42, 0.42, 1};
+		};
+		class armoryGripIcon: PxgGuiRscButton
+		{
+			idc = IDC_ARMORY_GRIP_ICON;
+			show = 0;
+			style = 48 + 2048; // ST_PICTURE + ST_KEEP_ASPECT_RATIO
+			text = "\a3\ui_f\data\gui\Rsc\RscDisplayArsenal\itemacc_ca.paa";
+			tooltip = "Side / Rail (Grip/Pointer)";
+			x = PXG_UI_EXT_X + (0.09 * safezoneW);
+			y = 0.3915 * safezoneH + safezoneY;
+			w = 0.04 * safezoneW;
+			h = 0.04 * safezoneH;
+			action = "['acc'] execVM 'Scripts\Armory\Functions\PXG_Handle_Attachment_Category.sqf'";
+			borderSize = 0;
+			colorBackground[] = {0, 0, 0, 0};
+			colorBackgroundActive[] = {0.29, 0.42, 0.42, 1};
+		};
+		class armoryMuzzleIcon: PxgGuiRscButton
+		{
+			idc = IDC_ARMORY_MUZZLE_ICON;
+			show = 0;
+			style = 48 + 2048; // ST_PICTURE + ST_KEEP_ASPECT_RATIO
+			text = "\a3\ui_f\data\gui\Rsc\RscDisplayArsenal\itemmuzzle_ca.paa";
+			tooltip = "Muzzle";
+			x = PXG_UI_EXT_X + (0.13 * safezoneW);
+			y = 0.3915 * safezoneH + safezoneY;
+			w = 0.04 * safezoneW;
+			h = 0.04 * safezoneH;
+			action = "['muzzle'] execVM 'Scripts\Armory\Functions\PXG_Handle_Attachment_Category.sqf'";
+			borderSize = 0;
+			colorBackground[] = {0, 0, 0, 0};
+			colorBackgroundActive[] = {0.29, 0.42, 0.42, 1};
+		};
+
+		class armoryAttachmentList: PxgGuiRscListBox
+		{
+			idc = IDC_ARMORY_ATTACHMENT_LIST;
 			show = 0;
 			colorBackground[] = PXG_COLOR_BG_DARK;
 			x = PXG_UI_EXT_X + (0.01 * safezoneW);

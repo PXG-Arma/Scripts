@@ -27,11 +27,11 @@ private _ideCamo     = 456174;
 private _ideEra      = 456175;
 
 private _fnc_addOptions = {
-    params ["_ctrlIDC", "_list", ["_addOption", true]];
+    params ["_ctrlIDC", "_list", ["_addOption", true], ["_target", ""]];
     private _ctrl = _display displayCtrl _ctrlIDC;
     
-    // Remember current selection by text
-    private _currentVal = lbText [_ctrlIDC, lbCurSel _ctrlIDC];
+    // Remember current selection by text (if no target provided)
+    private _currentVal = if (_target == "") then { lbText [_ctrlIDC, lbCurSel _ctrlIDC] } else { _target };
     
     lbClear _ctrl;
     { _ctrl lbAdd _x; } forEach _list;
@@ -40,7 +40,7 @@ private _fnc_addOptions = {
         _ctrl lbSetColor [_idx, [0.3, 0.8, 0.3, 1]];
     };
     
-    // Restore selection if possible
+    // Restore/Apply selection if possible
     private _newIdx = 0;
     if (_currentVal != "") then {
         {
@@ -70,20 +70,30 @@ _allSubs sort true;
 _allEras sort true;
 _allCamos sort true;
 
-private _selSide = lbText [_idcSide, lbCurSel _idcSide];
-
 switch (_mode) do {
     case "Init": {
         missionNamespace setVariable ["FBT_Extended_Loading", true];
+
+        // --- DUPLICATION PRE-POPULATION ---
+        private _isDuplicate = (_display getVariable ["FBT_PendingAction", ""]) == "DuplicateFaction";
+        private _curSide = ""; private _curFact = ""; private _curSub = ""; private _curCamo = ""; private _curEra = "";
+
+        if (_isDuplicate) then {
+            _curSide = lbText [456051, lbCurSel 456051];
+            _curFact = lbText [456052, lbCurSel 456052];
+            _curSub  = lbText [456053, lbCurSel 456053];
+            _curCamo = lbText [456054, lbCurSel 456054];
+            _curEra  = lbText [456055, lbCurSel 456055];
+        };
         
-        [_idcSide, _allSides, false] call _fnc_addOptions;
-        [_idcFaction, _allFactions, true] call _fnc_addOptions;
+        [_idcSide, _allSides, false, _curSide] call _fnc_addOptions;
+        [_idcFaction, _allFactions, true, _curFact] call _fnc_addOptions;
         
         private _displaySubs = _allSubs apply { if (_x == "") then { "Base" } else { _x } };
-        [_idcSub, _displaySubs, true] call _fnc_addOptions;
+        [_idcSub, _displaySubs, true, _curSub] call _fnc_addOptions;
         
-        [_idcCamo, _allCamos, true] call _fnc_addOptions;
-        [_idcEra, _allEras, true] call _fnc_addOptions;
+        [_idcCamo, _allCamos, true, _curCamo] call _fnc_addOptions;
+        [_idcEra, _allEras, true, _curEra] call _fnc_addOptions;
         
         missionNamespace setVariable ["FBT_Extended_Loading", nil];
         
@@ -122,3 +132,4 @@ switch (_mode) do {
         if (_isNew) then { ctrlSetFocus (_display displayCtrl _ideEra); };
     };
 };
+

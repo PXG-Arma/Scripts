@@ -15,8 +15,10 @@ if (isNull _display) exitWith {};
 private _modularIDCs = [
     IDC_ARMORY_MODULAR_PANEL, IDC_ARMORY_MODULAR_HEADER, 
     IDC_ARMORY_WEAPON_TEXT, IDC_ARMORY_WEAPON_LIST,
-    IDC_ARMORY_SIGHT_TEXT, IDC_ARMORY_SIGHT_LIST,
-    IDC_ARMORY_PREVIEW_PICTURE, IDC_ARMORY_PREVIEW_BACKGROUND
+    IDC_ARMORY_ATTACHMENT_LIST,
+    IDC_ARMORY_PREVIEW_PICTURE, IDC_ARMORY_PREVIEW_BACKGROUND,
+    IDC_ARMORY_SIGHT_ICON, IDC_ARMORY_UNDERBARREL_ICON,
+    IDC_ARMORY_GRIP_ICON, IDC_ARMORY_MUZZLE_ICON
 ];
 private _modularControls = _modularIDCs apply { _display displayCtrl _x };
 
@@ -82,7 +84,7 @@ if (!_weaponUpdateOnly) then {
         [_display, false, _modularIDCs] execVM "Scripts\Misc\PXG_Handle_UI_Expansion.sqf";
     };
 } else {
-    // --- 4. REFRESH SIGHTS (Weapon Selected) ---
+    // --- 4. REFRESH ATTACHMENTS (Weapon Selected or Category Changed) ---
     private _selectionData = _ctrlWeaponList lbData (lbCurSel _ctrlWeaponList);
     private _split = _selectionData splitString "|";
     if (count _split < 1) exitWith {};
@@ -90,19 +92,72 @@ if (!_weaponUpdateOnly) then {
     private _selectedWeapon = _split select 0;
     private _weaponGroup = if (count _split > 1) then { _split select 1 } else { "" };
     private _roleGroup = [_basePath, _loadoutID, "SLOTGROUP", _metadata] call compile preprocessFile _discoveryScript;
-    private _sights = [_basePath, _loadoutID, "SCOPES", _metadata, _selectedWeapon, _weaponGroup, _roleGroup] call compile preprocessFile _discoveryScript;
     
-    private _ctrlSightList = _display displayCtrl IDC_ARMORY_SIGHT_LIST;
-    lbClear _ctrlSightList;
+    // Resolve Active Category
+    private _activeCategory = _display getVariable ["PXG_Armory_Active_Attachment_Slot", "optic"];
+    private _options = [];
+
+    switch (_activeCategory) do {
+        case "optic": {
+             _options = [_basePath, _loadoutID, "SCOPES", _metadata, _selectedWeapon, _weaponGroup, _roleGroup] call compile preprocessFile _discoveryScript;
+        };
+        case "muzzle";
+        case "acc";
+        case "bipod": {
+            // Fetch standards for the selected weapon
+            // Correct mapping: _basePath, _loadout, _mode, _metadata, _weapon
+            private _standards = [_basePath, _loadoutID, "ATTACHMENTS", _metadata, _selectedWeapon] call compile preprocessFile _discoveryScript;
+            
+            // Standards format: [muzzle, pointer, bipod]
+            private _standardItem = "";
+            if (typeName _standards == "ARRAY" && {count _standards >= 3}) then {
+                _standardItem = switch (_activeCategory) do {
+                    case "muzzle": { _standards select 0 };
+                    case "acc":    { _standards select 1 };
+                    case "bipod":  { _standards select 2 };
+                    default { "" };
+                };
+            };
+
+            if (_standardItem != "") then { _options pushBack _standardItem; };
+            // Future: Add discovery for optional/alternative attachments here
+        };
+    };
+    
+    private _ctrlAttachmentList = _display displayCtrl IDC_ARMORY_ATTACHMENT_LIST;
+    lbClear _ctrlAttachmentList;
     {
-        private _displayName = getText (configFile >> "CfgWeapons" >> _x >> "displayName");
-        private _index = _ctrlSightList lbAdd _displayName;
-        _ctrlSightList lbSetData [_index, _x];
-        _ctrlSightList lbSetPicture [_index, getText (configFile >> "CfgWeapons" >> _x >> "picture")];
-    } forEach _sights;
+        private _className = _x;
+        if (isClass (configFile >> "CfgWeapons" >> _className)) then {
+            private _displayName = getText (configFile >> "CfgWeapons" >> _className >> "displayName");
+            private _index = _ctrlAttachmentList lbAdd _displayName;
+            _ctrlAttachmentList lbSetData [_index, _className];
+            _ctrlAttachmentList lbSetPicture [_index, getText (configFile >> "CfgWeapons" >> _className >> "picture")];
+        };
+    } forEach _options;
     
-    if (lbSize _ctrlSightList > 0) then { _ctrlSightList lbSetCurSel 0; };
+    if (lbSize _ctrlAttachmentList > 0) then { 
+        _ctrlAttachmentList lbSetCurSel 0; 
+    };
     
+    // --- 5. UI FEEDBACK (Highlight Active Category) ---
+    private _icons = [
+        ["optic", IDC_ARMORY_SIGHT_ICON],
+        ["bipod", IDC_ARMORY_UNDERBARREL_ICON],
+        ["acc", IDC_ARMORY_GRIP_ICON],
+        ["muzzle", IDC_ARMORY_MUZZLE_ICON]
+    ];
+
+    {
+        _x params ["_catName", "_idc"];
+        private _ctrl = _display displayCtrl _idc;
+        if (_catName == _activeCategory) then {
+            _ctrl ctrlSetBackgroundColor [0.29, 0.42, 0.42, 1]; // Active Highlight
+        } else {
+            _ctrl ctrlSetBackgroundColor [0, 0, 0, 0]; // Transparent
+        };
+    } forEach _icons;
+
     // Trigger Preview Update
     call compile preprocessFile "Scripts\Armory\Functions\PXG_Update_Preview.sqf";
 };

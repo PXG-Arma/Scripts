@@ -24,13 +24,23 @@ if (_variant select [0,1] == "[") then {
 	_basePath = "Scripts\Factions\" + _sideFolder + "\" + _faction + "\" + _eraPath + _variantCamo + "\";
 };
 
-removeAllWeapons player;
-removeAllItems player;
-removeAllAssignedItems player;
-removeUniform player;
-removeVest player;
-removeBackpack player;
-removeHeadgear player;
+private _currentKey = player getVariable ["PXG_Current_Loadout_Key", ["", "", "", ""]];
+private _newKey = [_side, _faction, _variant, _loadout];
+
+// --- SOFT REFRESH CHECK ---
+// If we are in preview mode and the base loadout hasn't changed, skip stripping the unit
+private _isSoftUpdate = (_isPreview && { _currentKey isEqualTo _newKey });
+
+if (!_isSoftUpdate) then {
+    removeAllWeapons player;
+    removeAllItems player;
+    removeAllAssignedItems player;
+    removeUniform player;
+    removeVest player;
+    removeBackpack player;
+    removeHeadgear player;
+    player setVariable ["PXG_Current_Loadout_Key", _newKey];
+};
 
 [_side, _faction, _variant, _loadout] call compile preprocessFile "Scripts\Armory\Functions\PXG_Set_ACEPerms.sqf";
 if (fileExists (_basePath + "Faction_Core.sqf")) then {

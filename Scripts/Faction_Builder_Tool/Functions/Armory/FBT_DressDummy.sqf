@@ -71,10 +71,18 @@ private _binoc = _roleData getOrDefault ["BINOC", ""];
 if (_binoc != "") then { _unit addWeaponGlobal _binoc; };
 
 // Containers
+private _mags = _roleData getOrDefault ["MAGAZINES", []];
+{
+    private _magClass = _x select 0;
+    private _magCount = (_x select 1) min 50;
+    for "_i" from 1 to _magCount do { _unit addMagazineGlobal _magClass; };
+} forEach _mags;
+
 private _items = _roleData getOrDefault ["ITEMS", []];
 {
     if (typeName _x == "ARRAY") then {
-        for "_i" from 1 to (_x select 1) do { _unit addItem (_x select 0); };
+        private _iCount = (_x select 1) min 50;
+        for "_i" from 1 to _iCount do { _unit addItem (_x select 0); };
     } else {
         _unit addItem _x;
     };

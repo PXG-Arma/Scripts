@@ -5,270 +5,310 @@ import time
 import subprocess
 
 def _force_write(mission_root, path, content):
-    """Writes content directly to a file handle (Truncate & Write) for maximum OneDrive/Lock friendliness."""
     path = os.path.normpath(path)
-    
-    for i in range(10):  # Robust retry loop
+    for i in range(10):
         try:
-            # 1. Ensure directory exists
             os.makedirs(os.path.dirname(path), exist_ok=True)
-            
-            # 2. Force-strip the Read-Only flag using Windows 'attrib' (more aggressive than os.chmod)
             if os.path.exists(path):
-                subprocess.run(['attrib', '-r', path], capture_output=True, check=False)
-            
-            # 3. Direct content overwrite (Truncate + Write)
-            with open(path, "w", encoding="utf-8") as f:
+                file_stat = os.stat(path)
+                if not (file_stat.st_mode & stat.S_IWRITE): os.chmod(path, stat.S_IWRITE)
+            with open(path, "w", encoding="utf-8", newline='\n') as f:
                 f.write(content)
-            
+                f.flush()
+                os.fsync(f.fileno())
             return True
-        except (PermissionError, OSError) as e:
-            if i == 9: 
-                _log(mission_root, f"FATAL WRITE ERROR after 10 tries: {str(e)}")
-                return False
-            _log(mission_root, f"Retrying direct write due to lock ({i+1}/10): {str(e)}")
-            time.sleep(0.3)
+        except:
+            if i == 9: return False
+            if os.path.exists(path): subprocess.run(['attrib', '-r', f'"{path}"'], shell=True, capture_output=True, check=False)
+            time.sleep(0.5)
     return False
 
 def _log(mission_root, message):
-    """Simple logger to track in-game behavior."""
     try:
         log_path = os.path.join(mission_root, "fbt_governor.log")
         with open(log_path, "a", encoding="utf-8") as f:
             f.write(f"[{time.strftime('%H:%M:%S')}] {message}\n")
-    except:
-        pass
+    except: pass
 
-def save_faction(mission_root, data_pairs, run_scan=False):
-    """
-    Main entry point for synchronizing a faction to disk.
-    If run_scan is False (Session Mode), it skips the slow mission scan.
-    """
+def _parse_sqf_array(text):
+    if not text: return []
+    text = re.sub(r",\s*([\]\)])", r"\1", text).replace("[", "(").replace("]", ")")
+    text = text.replace("true", "True").replace("false", "False").replace("objNull", "None")
+    try:
+        raw = eval(f"({text})")
+        def _to_list(obj):
+            if isinstance(obj, (list, tuple)): return [_to_list(x) for x in obj]
+            return obj
+        return _to_list(raw)
+    except: return []
+
+def _scrape_legacy_sqf(mission_root, target_dir, var_name, file_name):
+    possible_paths = [os.path.join(target_dir, file_name)]
+    base_dir = os.path.dirname(target_dir)
+    if os.path.exists(base_dir):
+        for sibling in ["Desert", "MTP", "Woodland", "Winter", "Jungle", "Camo"]:
+            sib_path = os.path.join(base_dir, sibling, file_name)
+            if sib_path not in possible_paths: possible_paths.append(sib_path)
+    file_path = next((p for p in possible_paths if os.path.exists(p)), None)
+    if not file_path: return None
+    try:
+        with open(file_path, "r", encoding="utf-8") as f:
+            content = re.sub(r"//.*|/\*.*?\*/", "", f.read(), flags=re.DOTALL)
+        match = re.search(rf"(?:_?){var_name}\s*=\s*\[(.*)\]", content, re.DOTALL | re.IGNORECASE)
+        if not match: return None
+        body = match.group(1).strip()
+        if body.endswith(";"): body = body[:-1].strip()
+        return _parse_sqf_array(body)
+    except: return None
+
+def _scrape_modular_metadata(weapons_content):
+    """Scrapes SlotGroups, GunGroups, and SightGroups from a modular Weapons.sqf."""
+    meta = {"slotgroups": {}, "gungroups": {}, "sightgroups": {}, "attachment_standards": {}}
+    
+    # 1. GUNGROUP Mapping
+    gun_match = re.search(r'_mode\s*==\s*"GUNGROUP".*?switch\s*\(_loadout\)\s*do\s*\{(.*?)\}\s*;', weapons_content, re.DOTALL | re.IGNORECASE)
+    if gun_match:
+        for case_match in re.finditer(r'case\s+"([^"]+)":\s*\{\s*\[(.*?)\]\s*\}', gun_match.group(1), re.DOTALL):
+            meta["gungroups"][case_match.group(1).lower()] = _parse_sqf_array(case_match.group(2))
+
+    # 2. SLOTGROUP Mapping (Roles to Groups)
+    slot_match = re.search(r'_mode\s*==\s*"SLOTGROUP".*?switch\s*\(_loadout\)\s*do\s*\{(.*?)\}\s*;', weapons_content, re.DOTALL | re.IGNORECASE)
+    if slot_match:
+        block = slot_match.group(1)
+        for segment in re.split(r'\}', block):
+            ids = re.findall(r'case\s+"([^"]+)"', segment)
+            group_match = re.search(r'\{\s*"([^"]+)"\s*', segment)
+            if ids and group_match:
+                for rid in ids: meta["slotgroups"][rid.lower()] = group_match.group(1)
+
+    # 3. SCOPES Mapping (SightGroups)
+    scope_match = re.search(r'_mode\s*==\s*"SCOPES".*?switch\s*\(_roleGroup\)\s*do\s*\{(.*?)\}\s*;', weapons_content, re.DOTALL | re.IGNORECASE)
+    if scope_match:
+        block = scope_match.group(1)
+        # This is a nested switch, very complex for regex. We'll look for the most common pattern.
+        for role_seg in re.split(r'case\s+"[^"]+"\s*;', block):
+            roles = re.findall(r'case\s+"([^"]+)"', role_seg)
+            inner_switch = re.search(r'switch\s*\(_weaponGroup\)\s*do\s*\{(.*?)\}', role_seg, re.DOTALL)
+            if inner_switch:
+                for gun_case in re.finditer(r'case\s+"([^"]+)".*?\{\s*\[(.*?)\]\s*\}', inner_switch.group(1), re.DOTALL):
+                    gun_name = gun_case.group(1).lower()
+                    scopes = _parse_sqf_array(gun_case.group(2))
+                    for r in roles:
+                        key = f"{r.lower()}_{gun_name}"
+                        meta["sightgroups"][key] = scopes
+
+    # 4. ATTACHMENTS (Standards)
+    attach_match = re.search(r'_mode\s*==\s*"ATTACHMENTS".*?switch\s*\(_weapon\)\s*do\s*\{(.*?)\}\s*;', weapons_content, re.DOTALL | re.IGNORECASE)
+    if attach_match:
+        for case_match in re.finditer(r'case\s+"([^"]+)":\s*\{\s*\[(.*?)\]\s*\}', attach_match.group(1), re.DOTALL):
+            items = _parse_sqf_array(case_match.group(2))
+            clean_items = [i for i in items if i and i != ""]
+            if clean_items: meta["attachment_standards"][case_match.group(1).lower()] = clean_items
+
+    return meta
+
+def _scrape_universal_common(mission_root, era):
+    common = {"items": [], "linkeditems": []}
+    common_path = os.path.join(mission_root, "Scripts", "Factions", "common")
+    if not os.path.exists(common_path): return {}
+    LINKED = ["ItemMap", "ItemCompass", "ItemWatch", "ItemGPS", "binocular", "Laserdesignator", "Rangefinder"]
+    NVG = r"NVG|PVS|HMNVS"
+    for f_name in ["gear.sqf", "medical.sqf", "radios.sqf"]:
+        p = os.path.join(common_path, f_name)
+        if not os.path.exists(p): continue
+        try:
+            with open(p, "r", encoding="utf-8") as f:
+                c = re.sub(r"//.*|/\*.*?\*/", "", f.read(), flags=re.DOTALL)
+                blocks = [re.sub(r'if\s*\(_variantEra\s*==\s*"[^"]+"\)\s*then\s*\{.*?\}\s*;', "", c, flags=re.DOTALL | re.IGNORECASE)]
+                era_match = re.search(rf'if\s*\(_variantEra\s*==\s*"{era}"(?:\s*\|\|\s*_variantEra\s*==\s*"[^"]+")*\)\s*then\s*\{{(.*?)\}}\s*;', c, re.DOTALL | re.IGNORECASE)
+                if era_match: blocks.append(era_match.group(1))
+                for block in blocks:
+                    clean = re.sub(r'case\s+"[^"]+"\s*(?:[:;]).*?(?=case|default|\})', "", block, flags=re.DOTALL | re.IGNORECASE)
+                    for count, item in re.findall(r'for\s+"_i"\s+from\s+1\s+to\s+(\d+)\s+do\s+\{\s*player\s+(?:\w+)\s+"([^"]+)"\s*\};', clean, re.IGNORECASE):
+                        for _ in range(int(count)): common["items"].append(item)
+                    for m in re.findall(r'(?:addItemToUniform|addItemToVest|addItemToBackpack|linkItem|addWeapon)\s+"([^"]+)"', clean, re.IGNORECASE):
+                        if any(l in m for l in LINKED) or re.search(NVG, m, re.IGNORECASE):
+                            if m not in common["linkeditems"]: common["linkeditems"].append(m)
+                        else:
+                            if m not in common["items"]: common["items"].append(m)
+        except: continue
+    return common
+
+def _scrape_legacy_armory(mission_root, target_dir):
+    armory = {}
+    id_data = _scrape_legacy_sqf(mission_root, target_dir, "availableLoadouts", "Loadoutlist.sqf")
+    if not id_data or len(id_data) < 3: return {}, {}
+    role_ids = [rid for sublist in id_data[2] for rid in sublist] if isinstance(id_data[2][0], list) else id_data[2]
+    files = ["Uniforms.sqf", "Weapons.sqf", "Gear.sqf", "Ammo.sqf"]
+    base_dir = os.path.dirname(target_dir)
+    contents = []
+    weapons_content = ""
+    for f_name in files:
+        p = os.path.join(target_dir, f_name)
+        if not os.path.exists(p): p = os.path.join(base_dir, "Desert", f_name)
+        if os.path.exists(p):
+            with open(p, "r", encoding="utf-8") as f:
+                c = re.sub(r"//.*|/\*.*?\*/", "", f.read(), flags=re.DOTALL)
+                contents.append(c)
+                if f_name == "Weapons.sqf": weapons_content = c
+
+    modular_meta = _scrape_modular_metadata(weapons_content) if "_mode" in weapons_content else {}
+
+    def _extract_gear(segment, gear_map):
+        mappings = [
+            (r'forceAddUniform\s+"([^"]+)"', "uniform"),
+            (r'forceAddUniform\s+selectRandom\s+\["([^"]+)"', "uniform"),
+            (r'addHeadgear\s+"([^"]+)"', "headgear"),
+            (r'addHeadgear\s+selectRandom\s+\["([^"]+)"', "headgear"),
+            (r'addVest\s+"([^"]+)"', "vest"),
+            (r'addBackpack\s+"([^"]+)"', "backpack"),
+            (r'addWeapon\s+"([^"]+)"', "primary"),
+            (r'addPrimaryWeaponItem\s+"([^"]+)"', "optic"),
+            (r'linkItem\s+"([^"]+)"', "nvg"),
+            (r'for\s+"_i"\s+from\s+1\s+to\s+(\d+)\s+do\s+\{\s*player\s+(?:\w+)\s+"([^"]+)"\s*\};', "items_count"),
+            (r'(?:addItemToUniform|addItemToVest|addItemToBackpack)\s+"([^"]+)"', "items")
+        ]
+        for pattern, key in mappings:
+            if key == "items_count":
+                for count, item in re.findall(pattern, segment, re.IGNORECASE):
+                    if "items" not in gear_map: gear_map["items"] = []
+                    for _ in range(int(count)): gear_map["items"].append(item)
+            elif key == "items":
+                for item in re.findall(pattern, segment, re.IGNORECASE):
+                    if "items" not in gear_map: gear_map["items"] = []
+                    gear_map["items"].append(item)
+            else:
+                match = re.search(pattern, segment, re.IGNORECASE)
+                if match:
+                    val = match.group(1)
+                    if key == "primary": gear_map[key] = [val, []]
+                    elif key == "optic":
+                        if "primary" in gear_map: gear_map["primary"][1].append(val)
+                    else: gear_map[key] = val
+
+    default_gear = {}
+    for c in contents:
+        match = re.search(r'default\s*\{(.*?)\}', c, re.DOTALL | re.IGNORECASE)
+        if match: _extract_gear(match.group(1), default_gear)
+    if default_gear: armory["default"] = default_gear
+
+    for rid in role_ids:
+        role_gear = {}
+        # Special check for modular weapons (Apply block)
+        apply_match = re.search(r'_mode\s*==\s*"APPLY".*?switch\s*\(_loadout\)\s*do\s*\{(.*?)\}\s*;', weapons_content, re.DOTALL | re.IGNORECASE)
+        segment_source = apply_match.group(1) if apply_match else weapons_content
+        for c in contents if apply_match else contents: # Use all contents
+            case_pattern = rf'case\s+"{rid}"\s*(?:[:;])'
+            for match in re.finditer(case_pattern, c, re.IGNORECASE):
+                start = match.end()
+                next_match = re.search(r'case\s+"|};', c[start:], re.IGNORECASE)
+                segment = c[start : start + next_match.start() if next_match else len(c)]
+                _extract_gear(segment, role_gear)
+        if role_gear: armory[rid] = role_gear
+    return armory, modular_meta
+
+def save_faction(mission_root, data_pairs, run_scan=False, source_path=None):
     try:
         mission_root = os.path.normpath(mission_root).replace("\\", "/")
-        
-        # 1. Unpack data (Normalize keys for Framework compatibility)
-        raw_data = {k: v for k, v in data_pairs}
-        metadata_pairs = raw_data.get("Metadata", [])
-        metadata = {k.lower(): v for k, v in metadata_pairs}
-        
-        # 2. Resolve Path Structure
-        side = metadata.get("side", "BLUFOR").upper()
-        name = metadata.get("factionname", "New Faction").strip().replace("/", "-")
-        subfaction = metadata.get("subfaction", "").strip().replace("/", "-")
-        era = metadata.get("era", "Modern").strip().replace("/", "-")
-        camo = metadata.get("camo", "Default").strip().replace("/", "-")
-        
+        def _safe_dict(pairs):
+            d = {}
+            if not isinstance(pairs, (list, tuple)): return d
+            for item in pairs:
+                if isinstance(item, (list, tuple)) and len(item) == 2:
+                    k, v = item
+                    if isinstance(k, str): d[k.lower()] = v
+            return d
+
+        raw_data = _safe_dict(data_pairs)
+        metadata = _safe_dict(raw_data.get("metadata", []))
+        side, name, sub, era, camo = metadata.get("side", "BLUFOR").upper(), metadata.get("factionname", "New").replace("/", "-"), metadata.get("subfaction", "").replace("/", "-"), metadata.get("era", "Modern"), metadata.get("camo", "Default")
         parts = ["Scripts", "Factions", side, name]
-        if subfaction and subfaction.lower() != "base": parts.append(subfaction)
+        if sub and sub.lower() != "base": parts.append(sub)
         if era: parts.append(era)
         parts.append(camo)
+        target_dir = os.path.normpath(os.path.join(mission_root, "/".join(parts))).replace("\\", "/")
+        os.makedirs(target_dir, exist_ok=True)
         
-        rel_dir = "/".join(parts)
-        target_dir = os.path.normpath(os.path.join(mission_root, rel_dir)).replace("\\", "/")
+        processed_data = {"metadata": raw_data.get("metadata", [])}
         
-        # 3. Create missing directories
-        if not os.path.exists(target_dir):
-            os.makedirs(target_dir, exist_ok=True)
-            
-        # 4. Process Data (Reconstruct for Framework)
-        processed_data = {"Metadata": metadata_pairs}
+        scrape_dir = source_path if (source_path and os.path.exists(source_path)) else target_dir
+        armory, scraped_meta = _scrape_legacy_armory(mission_root, scrape_dir)
+        universal = _scrape_universal_common(mission_root, era)
+        if universal:
+            if "default" not in armory: armory["default"] = {}
+            for k, v in universal.items():
+                if k not in armory["default"]: armory["default"][k] = []
+                armory["default"][k].extend(v)
         
-        # Armory Processing (Preserve SQF casing for Framework compatibility)
-        raw_armory = raw_data.get("Armory", [])
-        if isinstance(raw_armory, list):
-            armory_dict = {}
-            for role_id, role_gear_pairs in raw_armory:
-                role_gear = {k: v for k, v in role_gear_pairs}
-                armory_dict[role_id] = role_gear
-            processed_data["Armory"] = armory_dict
-            
-        # Explicit Modular Metadata Handling
-        modular_keys = ["SlotGroups", "GunGroups", "Attachment_Standards", "SightGroups", "ArmoryGroups", "ArmoryRoles", "ArmoryIDs"]
-        for key in modular_keys:
-            val = raw_data.get(key, {})
-            # Ensure it's a dict for Hashmap serialization if it's supposed to be
-            if isinstance(val, list) and key not in ["ArmoryGroups", "ArmoryRoles", "ArmoryIDs"]: 
-                val = {k: v for k, v in val}
-            processed_data[key] = val
-            
-        # Motorpool Recat (Framework compatible)
-        motor_seq = raw_data.get("MotorpoolSequence", [])
-        if motor_seq:
-            cat_map = {}
-            for entry in motor_seq:
-                v_class, v_cat = entry[0], entry[1]
-                v_cargo = entry[2] if len(entry) > 2 else 4
-                if v_cat not in cat_map: cat_map[v_cat] = []
-                cat_map[v_cat].append([v_class, v_cargo])
-            # Motorpool MUST remain a list of lists for legacy foreach compatibility
-            processed_data["Motorpool"] = [[cat, vlist] for cat, vlist in cat_map.items()]
-        else:
-            processed_data["Motorpool"] = []
+        raw_armory = raw_data.get("armory", [])
+        if isinstance(raw_armory, (list, tuple)):
+            for rid, pairs in raw_armory:
+                ui_role = _safe_dict(pairs)
+                if not ui_role: continue
+                if rid not in armory: armory[rid] = {}
+                for k, v in ui_role.items():
+                    if isinstance(v, (list, tuple)) and len(v) == 0 and k in armory[rid]: continue
+                    armory[rid][k] = v
+        processed_data["armory"] = armory
 
-        # 5. Serialize Faction_Core.sqf
-        core_file = os.path.join(target_dir, "Faction_Core.sqf").replace("\\", "/")
-        _force_write(mission_root, core_file, _format_as_sqf(processed_data))
-        _log(mission_root, f"Saved: {rel_dir}")
-            
-        # 6. Session Mode: Return the individual entry for the Memory Bridge
-        if not run_scan:
-            new_entry = [side, name, subfaction if subfaction.lower() != "base" else "", era, camo]
-            return [True, "Faction Saved (Session Mode)", metadata_pairs, [new_entry]]
-
-        # 7. Full Rebuild Mode
-        reg_res = update_registry(mission_root)
-        return [True, f"Faction Saved & Indexed ({reg_res[1]})", metadata_pairs, reg_res[2]] if reg_res[0] else [True, f"Saved (Registry Locked: {reg_res[1]})", metadata_pairs, []]
+        for k in ["slotgroups", "gungroups", "attachment_standards", "sightgroups", "armorygroups", "armoryroles", "armoryids"]:
+            val = raw_data.get(k, [])
+            if k in scraped_meta and not val: # Fallback to scraped meta if UI is empty
+                processed_data[k] = scraped_meta[k]
+            elif isinstance(val, (list, tuple)) and k not in ["armorygroups", "armoryroles", "armoryids"]: 
+                processed_data[k] = _safe_dict(val)
+            else:
+                processed_data[k] = val
         
+        processed_data["motorpool"] = raw_data.get("motorpool", []) or _scrape_legacy_sqf(mission_root, scrape_dir, "availableVehicles", "Vehicles.sqf") or []
+        processed_data["resupply"] = raw_data.get("resupply", []) or _scrape_legacy_sqf(mission_root, scrape_dir, "resupplyAvailable", "Supplies.sqf") or []
+
+        _force_write(mission_root, os.path.join(target_dir, "Faction_Core.sqf"), _format_as_sqf(processed_data))
+        if run_scan: update_registry(mission_root)
+        return [True, "Faction Saved", raw_data.get("metadata", []), []]
     except Exception as e:
-        import traceback
-        _log(mission_root, f"SAVE ERROR: {str(e)}\n{traceback.format_exc()}")
         return [False, f"Save Error: {str(e)}", []]
 
 def update_registry(mission_root):
-    """
-    Performs a full recursive scan of Scripts/Factions to rebuild Factions_Registry.sqf.
-    """
     try:
-        # 1. Hard-standardize everything to lowercase for Windows path matching
-        mission_root = os.path.abspath(mission_root).replace("\\", "/").lower()
-        if not mission_root.endswith("/"): mission_root += "/"
-        
-        factions_dir = os.path.join(mission_root, "scripts/factions").replace("\\", "/")
-        registry_path = os.path.join(factions_dir, "factions_registry.sqf").replace("\\", "/")
-        
-        _log(mission_root, f"Starting Registry Scan in: {factions_dir}")
-        
-        # Case-insensitive markers
-        marker_files = ["faction_core.sqf", "loadoutlist.sqf", "weapons.sqf", "uniforms.sqf"]
-        
-        found_entries = []
-        processed_dirs = set()
-
-        if not os.path.exists(factions_dir):
-            _log(mission_root, f"FATAL: Factions dir missing at {factions_dir}")
-            return [False, f"Folder NOT FOUND: {factions_dir}"]
-
-        # Recursive Scan with junction support
-        for root, dirs, files in os.walk(factions_dir, followlinks=True):
-            # Case-insensitive file check
-            files_lower = [f.lower() for f in files]
-            if any(m in files_lower for m in marker_files):
-                # Standardize for duplicate detection
-                root_norm = os.path.abspath(root).replace("\\", "/").lower()
-                if root_norm in processed_dirs: continue
-                processed_dirs.add(root_norm)
-                
-                try:
-                    rel = os.path.relpath(root, factions_dir).replace("\\", "/")
-                    if rel == ".": continue
-                    
-                    parts = rel.split("/")
-                    if len(parts) < 2: continue
-                    if any(p.lower() == "common" for p in parts): continue 
-                    
-                    side = parts[0].upper()
-                    name = parts[1]
-                    sub, era, camo = "", "", ""
-                    
-                    rem = parts[2:]
-                    depth = len(rem)
-                    
-                    if depth >= 3:
-                        sub, era, camo = rem[0], rem[1], rem[2]
-                    elif depth == 2:
-                        era, camo = rem[0], rem[1]
-                    elif depth == 1:
-                        camo = rem[0]
-                    
-                    found_entries.append([side, name, sub, era, camo])
-                except Exception as e:
-                    _log(mission_root, f"Error processing {root}: {str(e)}")
-                    continue
-
-        if not found_entries:
-            _log(mission_root, "Scan finished: 0 factions found.")
-            return [False, f"Scan finished. Found 0 factions in: {factions_dir}"]
-
-        _log(mission_root, f"Scan SUCCESS: {len(found_entries)} factions found.")
-        found_entries.sort(key=lambda x: (x[0], x[1], x[2], x[3], x[4]))
-
-        header = f"/*\n    PXG Faction Master Registry\n    ----------------------------\n    AUTO-GENERATED BY FBT GOVERNOR\n    Last Update: {time.strftime('%Y-%m-%d %H:%M:%S')}\n*/\n\n[\n"
-        
-        rows = []
-        current_side = ""
-        for i, e in enumerate(found_entries):
-            if e[0] != current_side:
-                current_side = e[0]
-                rows.append(f"    //                        --{current_side}--")
-            
-            comma = "," if i < len(found_entries) - 1 else ""
-            line = f'    ["{e[0]}", "{e[1]}", "{e[2]}", "{e[3]}", "{e[4]}"]{comma}'
-            rows.append(line)
-            
-        content = header + "\n".join(rows) + "\n]\n"
-        
-        # FINAL WRITE
-        registry_path = os.path.join(factions_dir, "factions_registry.sqf").replace("\\", "/")
-        
-        if _force_write(mission_root, registry_path, content):
-            _log(mission_root, f"REGISTRY UPDATED: {len(found_entries)} entries indexed.")
-            return [True, f"{len(found_entries)} factions indexed", found_entries]
-        else:
-            _log(mission_root, f"FAILED TO WRITE REGISTRY: {registry_path}")
-            return [False, f"Permission Denied writing to {registry_path}", []]
-        
-    except Exception as e:
-        import traceback
-        _log(mission_root, f"LOGIC ERROR: {str(e)}\n{traceback.format_exc()}")
-        return [False, f"Scanner logic error: {str(e)}"]
-
-def mission_check():
-    return [True, "BRIDGE SUCCESS: Mission-side logic executing!"]
+        mission_root = os.path.normpath(mission_root).lower()
+        factions_dir = os.path.join(mission_root, "scripts", "factions")
+        registry_path = os.path.join(factions_dir, "factions_registry.sqf")
+        found = []
+        for root, _, files in os.walk(factions_dir):
+            if any(f.lower() in ["faction_core.sqf", "loadoutlist.sqf"] for f in files):
+                rel = os.path.relpath(root, factions_dir).replace("\\", "/")
+                parts = rel.split("/")
+                if len(parts) < 2 or any(p.lower() == "common" for p in parts): continue
+                side, name, rem = parts[0].upper(), parts[1], parts[2:]
+                s, e, c = ("", "", "")
+                if len(rem) >= 3: s, e, c = rem[0], rem[1], rem[2]
+                elif len(rem) == 2: e, c = rem[0], rem[1]
+                elif len(rem) == 1: c = rem[0]
+                found.append([side, name, s, e, c])
+        found.sort()
+        header = f"/* PXG Registry - {time.strftime('%Y-%m-%d %H:%M:%S')} */\n\n[\n"
+        rows = [f'    ["{e[0]}", "{e[1]}", "{e[2]}", "{e[3]}", "{e[4]}"]' + ("," if i < len(found)-1 else "") for i, e in enumerate(found)]
+        _force_write(mission_root, registry_path, header + "\n".join(rows) + "\n]\n")
+        return [True, "OK", found]
+    except: return [False, "Error", []]
 
 def _format_as_sqf(data):
-    """Converts the internal dictionary to a clean SQF HashMap format."""
-    output = "/*\n    PXG Faction Core Configuration\n    Generated via Pythia Governor\n*/\n\n"
-    output += "private _factionData = " + _to_sqf_val(data) + ";\n\n"
-    output += "_factionData\n"
-    return output
+    return "/* PXG Faction Core */\n\nprivate _factionData = " + _to_sqf_val(data) + ";\n\n_factionData\n"
 
-# Whitelist of keys that MUST be serialized as Hashmaps (createHashMapFromArray)
-# This prevents accidental conversion of legacy array structures (like Motorpool) into hashmaps.
-HASHMAP_KEYS = ["Armory", "SlotGroups", "GunGroups", "Attachment_Standards", "SightGroups", "Metadata"]
+HASHMAP_KEYS = ["armory", "slotgroups", "gungroups", "attachment_standards", "sightgroups", "metadata", "resupply", "motorpool"]
 
 def _to_sqf_val(val, key_context=None):
+    if isinstance(val, (list, tuple, dict)) and len(val) == 0:
+        return "createHashMapFromArray [ ]" if key_context in HASHMAP_KEYS else "[]"
     if isinstance(val, dict):
-        pairs = [f'["{k}", {_to_sqf_val(v, k)}]' for k, v in val.items()]
-        inner = ',\n    '.join(pairs)
-        return f"createHashMapFromArray [\n    {inner}\n]"
-    elif isinstance(val, list):
-        # Only convert to Hashmap if it's in our whitelist AND looks like a list of pairs
-        if key_context in HASHMAP_KEYS and len(val) > 0 and all(isinstance(x, list) and len(x) == 2 for x in val[:5]):
-             if len(val) > 1 or (len(val) == 1 and isinstance(val[0][0], str)):
-                pairs = [f'["{k}", {_to_sqf_val(v)}]' for k, v in val]
-                inner = ',\n        '.join(pairs)
-                return f"createHashMapFromArray [\n        {inner}\n    ]"
-        
-        items = [_to_sqf_val(i) for i in val]
-        return "[" + ", ".join(items) + "]"
-    elif isinstance(val, str):
-        return '"' + val.replace('"', '""') + '"'
-    elif isinstance(val, bool):
-        return "true" if val else "false"
-    elif val is None:
-        return '""'
-    return str(val)
-
-if __name__ == "__main__":
-    import argparse
-    parser = argparse.ArgumentParser()
-    parser.add_argument("root", help="Mission Root Path")
-    args = parser.parse_args()
-    
-    # CLI Call for UpdateRegistry.bat
-    print(f"--- FBT GOVERNOR CLI ---")
-    print(f"Scanning: {args.root}")
-    res = update_registry(args.root)
-    print(f"Status: {'SUCCESS' if res[0] else 'FAILED'}")
-    print(f"Message: {res[1]}")
+        pairs = [f'["{k.lower()}", {_to_sqf_val(v, k.lower())}]' for k, v in val.items()]
+        return f"createHashMapFromArray [\n    {', '.join(pairs)}\n]"
+    elif isinstance(val, (list, tuple)):
+        if key_context in HASHMAP_KEYS and len(val) > 0 and all(isinstance(x, (list, tuple)) and len(x) == 2 for x in val[:5]):
+            pairs = [f'["{str(k).lower() if isinstance(k, str) else k}", {_to_sqf_val(v)}]' for k, v in val]
+            return f"createHashMapFromArray [\n        {', '.join(pairs)}\n    ]"
+        return "[" + ", ".join([_to_sqf_val(i) for i in val]) + "]"
+    elif isinstance(val, str): return '"' + val.replace('"', '""') + '"'
+    elif isinstance(val, bool): return "true" if val else "false"
+    return str(val) if val is not None else '""'

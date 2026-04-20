@@ -23,17 +23,17 @@ if (isNil "_roleData") exitWith {
 
 // --- Clothing ---
 private _uniform = _roleData getOrDefault ["uniform", ""];
-if (_uniform != "") then { player forceAddUniform _uniform; };
+if (_uniform != "" && {uniform player != _uniform}) then { player forceAddUniform _uniform; };
 
 private _vest = _roleData getOrDefault ["vest", ""];
-if (_vest != "") then { player addVest _vest; };
+if (_vest != "" && {vest player != _vest}) then { player addVest _vest; };
 
 private _backpack = _roleData getOrDefault ["backpack", ""];
-if (_backpack != "") then { player addBackpack _backpack; };
+if (_backpack != "" && {backpack player != _backpack}) then { player addBackpack _backpack; };
 
 private _headgear = _roleData getOrDefault ["headgear", ""];
 if (_headgear == "") then { _headgear = _roleData getOrDefault ["helmet", ""]; }; 
-if (_headgear != "") then { player addHeadgear _headgear; };
+if (_headgear != "" && {headgear player != _headgear}) then { player addHeadgear _headgear; };
 
 // --- Weapons ---
 private _attachmentStandards = _factionData getOrDefault ["Attachment_Standards", createHashMap];
@@ -42,7 +42,7 @@ private _primaryData = _roleData getOrDefault ["primary", []];
 private _primaryGun = if (_overrideWeapon != "") then { _overrideWeapon } else { _primaryData getOrDefault [0, ""] };
 
 if (_primaryGun != "") then {
-    player addWeapon _primaryGun;
+    if (primaryWeapon player != _primaryGun) then { player addWeapon _primaryGun; };
 
     // Smart Attachment Resolution
     private _appliedSights = false;
@@ -75,7 +75,7 @@ private _secondaryData = _roleData getOrDefault ["secondary", []]; // Support fo
 if (count _secondaryData == 0) then { _secondaryData = _roleData getOrDefault ["handgun", []]; }; // Fallback for 'handgun' key
 if (count _secondaryData > 0) then {
     private _gun = _secondaryData select 0;
-	if (_gun != "") then {
+	if (_gun != "" && {handgunWeapon player != _gun}) then {
 		player addWeapon _gun;
 		if (count _secondaryData > 1) then {
 			private _attachments = _secondaryData select 1;
@@ -87,7 +87,7 @@ if (count _secondaryData > 0) then {
 private _launcherData = _roleData getOrDefault ["launcher", []];
 if (count _launcherData > 0) then {
     private _gun = _launcherData select 0;
-	if (_gun != "") then {
+	if (_gun != "" && {secondaryWeapon player != _gun}) then {
 		player addWeapon _gun;
 		if (count _launcherData > 1) then {
 			private _attachments = _launcherData select 1;

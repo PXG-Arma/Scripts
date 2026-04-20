@@ -6,6 +6,9 @@
 params ["_ctrl", "_index"];
 disableSerialization;
 
+// Event suppression for batch operations
+if (missionNamespace getVariable ["FBT_SuppressEvents", false]) exitWith {};
+
 private _className = _ctrl lbData _index;
 if (_className == "") exitWith {};
 
@@ -94,8 +97,11 @@ if (count _path > 0) then {
     // --- PERSISTENCE: Sync to Disk via Pythia ---
     execVM "Scripts\Faction_Builder_Tool\Functions\Core\FBT_Pythia_Sync.sqf";
     
-    // --- UI: Refresh Loadout List ---
-    execVM "Scripts\Faction_Builder_Tool\Functions\UI\FBT_UpdateLoadoutUI.sqf";
+    // --- UI REFRESH ---
+    if (_activeSlot == "") then {
+        // If we changed a base item, we might need to refresh sub-slots
+        ["SlotChanged"] execVM "Scripts\Faction_Builder_Tool\Functions\UI\FBT_HandleSlotClick.sqf";
+    };
 };
 
 

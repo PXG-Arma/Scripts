@@ -44,9 +44,10 @@ if (!isNull _selectedAgent) then {
     [[_selectedAgent], "update"] execVM "Scripts\Faction_Builder_Tool\Functions\Camera\FBT_HandleCamera.sqf";
 };
 
-// Refresh Sidebar to show Loadout
+// Refresh Sidebar to show Loadout for active category
 if (_tab == "Armory") then {
-    execVM "Scripts\Faction_Builder_Tool\Functions\UI\FBT_UpdateLoadoutUI.sqf";
+    missionNamespace setVariable ["FBT_Preview_Unit", _selectedAgent];
+    [] call (compile preprocessFile "Scripts\Faction_Builder_Tool\Functions\UI\FBT_HandleCategory.sqf");
 };
 
 // 3. Fallback for "Custom/Unassigned" Roles (If not in parade)

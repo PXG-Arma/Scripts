@@ -354,7 +354,7 @@ class FBT_Dialog {
 				class Right_Listbox: FBT_BaseList {
 					idc = 456020;
 					x = safezoneW * 0.06; y = safezoneH * 0.045; w = safezoneW * 0.185; h = safezoneH * 0.38;
-					onLBSelChanged = "['CategorySelected'] execVM 'Scripts\Faction_Builder_Tool\Functions\UI\FBT_HandleCategory.sqf';";
+					onLBSelChanged = "if !(missionNamespace getVariable ['FBT_SuppressEvents', false]) then { _this execVM 'Scripts\Faction_Builder_Tool\Functions\Armory\FBT_ApplyGear.sqf'; };";
 				};
 				class Combo_Variants: PxgGuiRscCombo {
 					idc = 456023;
@@ -375,12 +375,12 @@ class FBT_Dialog {
 					x = safezoneW * 0.005; y = safezoneH * 0.52; w = safezoneW * 0.05; h = safezoneH * 0.38; 
 					rowHeight = 0.05 * safezoneH;
 					sizeEx = 0; 
-					onLBSelChanged = "_this execVM 'Scripts\Faction_Builder_Tool\Functions\UI\FBT_HandleSlotClick.sqf';";
+					onLBSelChanged = "if !(missionNamespace getVariable ['FBT_SuppressEvents', false]) then { _this execVM 'Scripts\Faction_Builder_Tool\Functions\UI\FBT_HandleSlotClick.sqf'; };";
 				};
 				class Slot_Items_List: FBT_BaseList {
 					idc = 456090; // New IDC for slot items selection
 					x = safezoneW * 0.06; y = safezoneH * 0.52; w = safezoneW * 0.185; h = safezoneH * 0.38;
-					onLBSelChanged = "_this execVM 'Scripts\Faction_Builder_Tool\Functions\Armory\FBT_ApplyGear.sqf';";
+					onLBSelChanged = "if !(missionNamespace getVariable ['FBT_SuppressEvents', false]) then { _this execVM 'Scripts\Faction_Builder_Tool\Functions\Armory\FBT_ApplyGear.sqf'; };";
 				};
 
 				// --- FOOTER (Stats & Utils) ---

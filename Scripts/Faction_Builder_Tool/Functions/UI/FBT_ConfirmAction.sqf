@@ -53,7 +53,19 @@ if (_action == "DuplicateFaction") then {
     _masterHash set ["Metadata", _newMeta];
 };
 
-private _res = ["Sync"] call FBT_fnc_Pythia_Sync;
+// Calculate source path for duplication/migration if needed
+private _sourcePath = "";
+if (_action == "DuplicateFaction") then {
+    private _sSide = lbText [456051, lbCurSel 456051];
+    private _sFact = lbText [456052, lbCurSel 456052];
+    private _sSub  = lbText [456053, lbCurSel 456053]; if (_sSub == "Base" || _sSub find "SELECT" != -1) then { _sSub = "" };
+    private _sCamo = lbText [456054, lbCurSel 456054]; if (_sCamo find "SELECT" != -1) then { _sCamo = "" };
+    private _sEra  = lbText [456055, lbCurSel 456055]; if (_sEra find "SELECT" != -1) then { _sEra = "" };
+    
+    _sourcePath = ["Scripts\Factions\", _sSide, "\", _sFact, "\", (if(_sSub != "")then{_sSub+"\"}else{""}), (if(_sEra != "")then{_sEra+"\"}else{""}), _sCamo, "\"] joinString "";
+};
+
+private _res = ["Sync", _sourcePath] call FBT_fnc_Pythia_Sync;
 
 if !(_res isEqualType [] && {count _res > 0}) then {
     systemChat "[FBT Error] Backend Crash: Invalid response from Pythia. Check RPT.";
@@ -64,14 +76,34 @@ if !(_res isEqualType [] && {count _res > 0}) then {
         
         // --- UI REFRESH ---
         // We spawn this to allow for a tiny delay ensuring the Memory Bridge and Filesystem are ready
-        [] spawn {
+        [_side, _faction, _sub, _era, _camo] spawn {
+            params ["_side", "_faction", "_sub", "_era", "_camo"];
+            
+            // 1. Manually update the registry cache to avoid re-reading the file (volatile update)
+            private _registry = missionNamespace getVariable ["PXG_MasterRegistry_Cache", []];
+            private _newEntry = [_side, _faction, _sub, _era, _camo];
+            
+            // Check if entry already exists to avoid duplicates in cache
+            private _exists = false;
+            { if (_x isEqualTo _newEntry) exitWith { _exists = true; }; } forEach _registry;
+            if (!_exists) then { _registry pushBack _newEntry; };
+            missionNamespace setVariable ["PXG_MasterRegistry_Cache", _registry];
+
+            // 2. Set targets so the main UI dropdowns automatically select the new faction
+            missionNamespace setVariable ["FBT_Target_Side",    _side];
+            missionNamespace setVariable ["FBT_Target_Faction", _faction];
+            missionNamespace setVariable ["FBT_Target_Sub",     _sub];
+            missionNamespace setVariable ["FBT_Target_Camo",    _camo];
+            missionNamespace setVariable ["FBT_Target_Era",     _era];
+
+            // 3. Ensure events are not suppressed so the cascade can fire
+            missionNamespace setVariable ["FBT_SuppressEvents", false];
+
             // Give Python/Memory a split second to settle
             uiSleep 0.1;
             
-            // Force a clear/refresh of the registry dropdowns using the updated cache
-            ["Init"] call (missionNamespace getVariable ["FBT_Fnc_UpdateDropdowns", {}]);
-            
-            // Switch to Overview tab to reveal the new/duplicated parade
+            // 4. Switch to Overview tab. TabSwitch already calls ["Init"] internally,
+            // which will now use the targets we just set to snap the UI to the new faction.
             ["Overview"] execVM "Scripts\Faction_Builder_Tool\Functions\UI\FBT_TabSwitch.sqf";
         };
 

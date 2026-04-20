@@ -25,6 +25,8 @@ if (_bgIDC == -1) exitWith {};
 // Collector for all background controls in the current display
 private _bgCtrls = [_display displayCtrl _bgIDC];
 if (_idd == IDD_RESUPPLY) then { _bgCtrls pushBack (_display displayCtrl 451700); };
+if (_idd == IDD_ARMORY) then { _bgCtrls pushBack (_display displayCtrl IDC_ARMORY_MODULAR_PANEL); };
+if (_idd == IDD_MOTORPOOL) then { _bgCtrls pushBack (_display displayCtrl IDC_MOTORPOOL_PYLON_PANEL); };
 
 private _toggleBtn = _display displayCtrl IDC_UI_OPACITY_TOGGLE;
 

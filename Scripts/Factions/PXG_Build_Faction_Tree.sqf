@@ -73,6 +73,6 @@ _sortedFactions sort true;
 
 // Restore Memory
 if (_memoryVar != "") then {
-    private _factionMemory = player getVariable [_memoryVar, [-1,-1]];
-    if (_factionMemory select 0 != -1) then { tvSetCurSel [_treeIDC, _factionMemory] };
+    private _factionMemory = player getVariable [_memoryVar, [-1]];
+    if (count _factionMemory > 0 && { _factionMemory select 0 != -1 }) then { tvSetCurSel [_treeIDC, _factionMemory] };
 };

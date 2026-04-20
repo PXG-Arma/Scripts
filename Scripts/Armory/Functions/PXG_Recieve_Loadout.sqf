@@ -1,4 +1,7 @@
-params [["_side",""], ["_faction",""], ["_variant",""], ["_loadout", []]];
+params [
+    ["_side",""], ["_faction",""], ["_variant",""], ["_loadout", []],
+    ["_overrideWeapon", ""], ["_overrideSight", ""]
+];
 
 private _basePath = "";
 
@@ -31,14 +34,14 @@ removeHeadgear player;
 
 [_side, _faction, _variant, _loadout] call compile preprocessFile "Scripts\Armory\Functions\PXG_Set_ACEPerms.sqf";
 if (fileExists (_basePath + "Faction_Core.sqf")) then {
-	[_side, _faction, _variant, _loadout, _basePath] call compile preprocessFile "Scripts\Armory\Functions\PXG_ApplyFactionData.sqf";
-	
-	[_side, _faction, _variant, _loadout] call compile preprocessFile "Scripts\Factions\common\radios.sqf";
-	[_side, _faction, _variant, _loadout] call compile preprocessFile "Scripts\Factions\common\gear.sqf";
-	[_side, _faction, _variant, _loadout] call compile preprocessFile "Scripts\Factions\common\medical.sqf";
+	[_side, _faction, _variant, _loadout, _basePath, _overrideWeapon, _overrideSight] call compile preprocessFile "Scripts\Armory\Functions\PXG_ApplyFactionData.sqf";
 } else {
 	if (fileExists (_basePath + "Uniforms.sqf")) then { [_side, _faction, _variant, _loadout] call compile preprocessFile (_basePath + "Uniforms.sqf") };
-	if (fileExists (_basePath + "Weapons.sqf")) then { [_side, _faction, _variant, _loadout] call compile preprocessFile (_basePath + "Weapons.sqf") };
+	if (fileExists (_basePath + "Weapons.sqf")) then { 
+		private _fnc_scriptName = _basePath + "Weapons.sqf";
+		[_side, _faction, _variant, _loadout, "APPLY", _overrideWeapon, "", ""] call compile preprocessFile _fnc_scriptName; 
+		[_overrideSight] call compile preprocessFile "Scripts\Armory\Functions\PXG_Apply_Legacy_Sight_Override.sqf"; 
+	};
 	if (fileExists (_basePath + "Ammo.sqf")) then { [_side, _faction, _variant, _loadout] call compile preprocessFile (_basePath + "Ammo.sqf") };
 	[_side, _faction, _variant, _loadout] call compile preprocessFile "Scripts\Factions\common\radios.sqf";
 	[_side, _faction, _variant, _loadout] call compile preprocessFile "Scripts\Factions\common\gear.sqf";

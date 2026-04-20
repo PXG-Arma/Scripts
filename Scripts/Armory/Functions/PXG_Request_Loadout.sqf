@@ -24,8 +24,14 @@ _indexFaction deleteAt 1;
 private _faction = tvText [IDC_ARMORY_FACTION_TREE, _indexFaction];
 private _loadout = tvData [IDC_ARMORY_LOADOUT_TREE, _indexLoadout];
 
+// Modular Overrides
+private _overrideWeaponData = lbData [IDC_ARMORY_WEAPON_LIST, lbCurSel IDC_ARMORY_WEAPON_LIST];
+private _split = _overrideWeaponData splitString "|";
+private _overrideWeapon = if (count _split > 0) then { _split select 0 } else { "" };
+private _overrideSight = lbData [IDC_ARMORY_SIGHT_LIST, lbCurSel IDC_ARMORY_SIGHT_LIST];
+
 // Call script for loadouts 
-[_side, _faction, _variant, _loadout] call compile preprocessfile "scripts\Armory\Functions\PXG_Recieve_Loadout.sqf";
+[_side, _faction, _variant, _loadout, _overrideWeapon, _overrideSight] call compile preprocessfile "scripts\Armory\Functions\PXG_Recieve_Loadout.sqf";
 
 
 // Save player side faction and loadout for respawn 

@@ -83,10 +83,10 @@ if (count _path > 0) then {
     private _roleData = _armory getOrDefault [_roleId, createHashMap];
     
     if (_activeSlot == "") then {
-        _roleData set [_category, _className];
+        _roleData set [toLower _category, _className];
     } else {
         // Use a composite key or nested hash for attachments
-        private _key = _category + "_" + _activeSlot;
+        private _key = (toLower _category) + "_" + (toLower _activeSlot);
         _roleData set [_key, _className];
     };
     _armory set [_roleId, _roleData];

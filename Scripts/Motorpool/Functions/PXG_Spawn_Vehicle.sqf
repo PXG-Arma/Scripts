@@ -58,6 +58,13 @@ if (fileExists (_basePath + "Faction_Core.sqf")) then {
 	};
 };
 
+// --- CARGO CAPACITY PERSISTENCE ---
+private _cargoVal = tvValue [IDC_MOTORPOOL_VEHICLE_LB, _indexVehicle];
+if (_cargoVal != -1) then {
+	[_vehicle, _cargoVal] call ace_cargo_fnc_setSpace;
+	_vehicle setVariable ["PXG_Resupply_Cargo_Max", _cargoVal, true];
+};
+
 // --- PYLON PERSISTENCE ---
 player setVariable ["PXG_Motorpool_Active_Vehicle", _vehicle];
 

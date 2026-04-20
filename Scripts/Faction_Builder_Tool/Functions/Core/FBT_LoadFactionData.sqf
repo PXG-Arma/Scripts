@@ -23,11 +23,11 @@ if (isNil "_data" || {typeName _data != "HASHMAP"}) exitWith {
 
 private _masterHash = missionNamespace getVariable ["FBT_MasterHash", createHashMap];
 
-// We extract the gear data. If 'Metadata' is inside, we strip it to keep 'Armory' pure session data.
-private _meta = _data getOrDefault ["Metadata", createHashMap];
-_data deleteAt "Metadata";
+// Unpack all top-level keys from the Hashmap (Metadata, Armory, GunGroups, etc.)
+// This ensures that modular metadata is correctly loaded into the session.
+{
+    _masterHash set [_x, _y];
+} forEach _data;
 
-_masterHash set ["Armory", _data];
-
-diag_log format ["[FBT Load] Success: Loaded %1 roles from %2", count _data, _coreFile];
+diag_log format ["[FBT Load] Success: Loaded %1 data categories from %2", count _data, _coreFile];
 true

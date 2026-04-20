@@ -12,6 +12,8 @@ if (isNil "py3_fnc_callExtension") exitWith {
     missionNamespace setVariable ["FBT_Bridge_Ready", false];
 };
 
+// Registry Sync Bridge is now pre-compiled globally in init_Builder.sqf
+
 private _missionRoot = getMissionPath "";
 private _res = ["FBT.register_mission_path", [_missionRoot]] call py3_fnc_callExtension;
 

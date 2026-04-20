@@ -31,6 +31,16 @@
 #define IDC_ARMORY_CAMO_LIST 431504
 #define IDC_ARMORY_BACKGROUND 431006
 
+// BigArmory Modular IDCs
+#define IDC_ARMORY_MODULAR_PANEL 431700
+#define IDC_ARMORY_MODULAR_HEADER 431704
+#define IDC_ARMORY_WEAPON_TEXT 431705
+#define IDC_ARMORY_WEAPON_LIST 431701
+#define IDC_ARMORY_SIGHT_TEXT 431706
+#define IDC_ARMORY_SIGHT_LIST 431702
+#define IDC_ARMORY_PREVIEW_PICTURE 431703
+#define IDC_ARMORY_PREVIEW_BACKGROUND 431707
+
 // Resupply Dialog IDCs
 #define IDD_RESUPPLY 451922
 #define IDC_RESUPPLY_SIDE 451504
@@ -62,12 +72,37 @@
 
 // GUI Styling
 #define GUI_COLOR_UI_GREY {0.7, 0.7, 0.7, 1}
+#define PXG_COLOR_BG {0.1, 0.1, 0.1, 0.8}
+#define PXG_COLOR_BG_DARK {0, 0, 0, 0.3}
+#define PXG_COLOR_PREVIEW {0.44, 0.47, 0.49, 0.6} // Steel Grey (#71797E)
+
 #define GUI_STR_OPACITY "%"
 #define GUI_STR_ORBIT "<"
 #define GUI_W_BTN_S (0.03 * safezoneW)    // Small (Opacity/Orbit)
 #define GUI_W_BTN_M (0.06 * safezoneW)    // Medium (Close/Spawn)
 #define GUI_W_BTN_L (0.045 * safezoneW)   // Switch (Motorpool/Resupply)
 #define GUI_H_BTN (0.02 * safezoneH)
+
+// Global UI Layout Standards
+#define PXG_UI_MAIN_X (0.185 * safezoneW + safezoneX)
+#define PXG_UI_MAIN_X_CENTERED (0.095 * safezoneW + safezoneX)
+#define PXG_UI_MAIN_Y (0.1815 * safezoneH + safezoneY)
+#define PXG_UI_MAIN_W (0.63 * safezoneW)
+#define PXG_UI_MAIN_H (0.637 * safezoneH)
+
+#define PXG_UI_EXT_X  (0.815 * safezoneW + safezoneX) // Modular/Cargo sidebar X
+#define PXG_UI_EXT_X_CENTERED (0.725 * safezoneW + safezoneX) // Centered Sidebar X
+#define PXG_UI_EXT_W  (0.18 * safezoneW)
+
+#define PXG_UI_HEADER_Y (0.1585 * safezoneH + safezoneY)
+#define PXG_UI_HEADER_H (0.022 * safezoneH)
+#define PXG_UI_FOOTER_Y (0.8185 * safezoneH + safezoneY)
+
+#define PXG_UI_LIST_ROW_HEIGHT (0.05 * safezoneH)
+#define PXG_UI_LIST_TEXT_SIZE  (0.018 * safezoneH)
+
+// Logic & Data Macros
+#define IS_OPTIC(item) (getNumber (configFile >> "CfgWeapons" >> item >> "ItemInfo" >> "type") == 201)
 
 // Motorpool Pylon Manager IDCs
 #define IDC_MOTORPOOL_PYLON_PANEL 461700

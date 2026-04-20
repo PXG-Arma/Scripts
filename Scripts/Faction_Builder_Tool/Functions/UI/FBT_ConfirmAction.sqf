@@ -43,36 +43,69 @@ if (_action == "NewFaction") then {
     _masterHash set ["Metadata", _newMeta];
     _masterHash set ["Armory", createHashMap];
     _masterHash set ["ArmorySequence", []];
+    _masterHash set ["SlotGroups", createHashMap];
+    _masterHash set ["GunGroups", createHashMap];
+    _masterHash set ["Attachment_Standards", createHashMap];
+    _masterHash set ["SightGroups", createHashMap];
 };
 
 if (_action == "DuplicateFaction") then {
     _masterHash set ["Metadata", _newMeta];
 };
 
-private _res = [] call FBT_fnc_Pythia_Sync;
+private _res = ["Sync"] call FBT_fnc_Pythia_Sync;
 
-if (_res select 0) then {
-    systemChat format ["%1", _res select 1];
-    
-    // --- AUTO-SELECT LOGIC ---
-    missionNamespace setVariable ["FBT_Target_Side", _side];
-    missionNamespace setVariable ["FBT_Target_Faction", _faction];
-    missionNamespace setVariable ["FBT_Target_Sub", _sub];
-    missionNamespace setVariable ["FBT_Target_Era", _era];
-    missionNamespace setVariable ["FBT_Target_Camo", _camo];
-
-    // Refresh the Registry dropdowns and trigger cascade
-    ["Init"] execVM "Scripts\Faction_Builder_Tool\Functions\UI\FBT_UpdateDropdowns.sqf";
+if !(_res isEqualType [] && {count _res > 0}) then {
+    systemChat "[FBT Error] Backend Crash: Invalid response from Pythia. Check RPT.";
+    diag_log format ["[FBT Error Details] Invalid Response: %1", _res];
 } else {
-    systemChat format ["[FBT Error] %1", _res select 1];
-    diag_log format ["[FBT Error Details] %1", _res];
+    if (_res select 0) then {
+        systemChat format ["%1", _res select 1];
+        
+        // --- INTELLIGENT MEMORY BRIDGE ---
+        // Get the current session cache
+        private _cache = missionNamespace getVariable ["FBT_MasterRegistry_Cache", []];
+        
+        // If the cache is empty (first time in session), bootstrap it from the disk registry
+        if (count _cache == 0) then {
+            _cache = call compile preprocessFile "Scripts\Factions\Factions_Registry.sqf";
+        };
+
+        // Inject the new entries from Python (usually just 1 entry in Session Mode)
+        private _newEntries = _res select 3;
+        {
+            private _entry = _x;
+            // Check if entry already exists to prevent duplicates
+            private _exists = _cache findIf { _x isEqualTo _entry } != -1;
+            if (!_exists) then { _cache pushBack _entry; };
+        } forEach _newEntries;
+
+        // Alphabetical re-sort to keep dropdowns clean
+        _cache sort true;
+
+        // Commit back to memory
+        missionNamespace setVariable ["FBT_MasterRegistry_Cache", _cache];
+
+        // --- AUTO-SELECT LOGIC ---
+        missionNamespace setVariable ["FBT_Target_Side", _side];
+        missionNamespace setVariable ["FBT_Target_Faction", _faction];
+        missionNamespace setVariable ["FBT_Target_Sub", _sub];
+        missionNamespace setVariable ["FBT_Target_Era", _era];
+        missionNamespace setVariable ["FBT_Target_Camo", _camo];
+
+        // Small delay to ensure Windows file system settles (still helpful for other scripts)
+        uiSleep 0.2;
+
+        // Force a clear/refresh of the registry dropdowns
+        ["Init"] execVM "Scripts\Faction_Builder_Tool\Functions\UI\FBT_UpdateDropdowns.sqf";
+    } else {
+        systemChat format ["[FBT Error] %1", _res select 1];
+        diag_log format ["[FBT Error Details] %1", _res];
+    };
 };
 
 // Refresh the physical world models
 [] spawn {
-    // No sleep needed - Sync is now synchronous
-    execVM "Scripts\Faction_Builder_Tool\Functions\Staging\FBT_SpawnParade.sqf";
-    
     // Switch to Overview tab
     ["Overview"] execVM "Scripts\Faction_Builder_Tool\Functions\UI\FBT_TabSwitch.sqf";
 };

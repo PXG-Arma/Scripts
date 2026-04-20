@@ -21,9 +21,11 @@ private _vehiclesArray = [];
 
 if (fileExists (_basePath + "Faction_Core.sqf")) then {
 	private _factionData = call compile preprocessFile (_basePath + "Faction_Core.sqf");
-	if (!isNil "_factionData" && {typeName _factionData == "HASHMAP"}) then {
-		_vehiclesArray = _factionData getOrDefault ["vehicles", []];
-	};
+    if (!isNil "_factionData" && {typeName _factionData == "HASHMAP"}) then {
+        _vehiclesArray = _factionData getOrDefault ["Motorpool", []];
+        // Fallback for previous iterations
+        if (count _vehiclesArray == 0) then { _vehiclesArray = _factionData getOrDefault ["vehicles", []]; };
+    };
 } else {
 	private _vehiclesScriptPath = _basePath + "Vehicles.sqf";
 	if (fileExists _vehiclesScriptPath) then {

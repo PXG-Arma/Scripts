@@ -11,36 +11,43 @@
 #define IDC_PANEL_LABEL 451707
 
 private _indexSpawn = lbCurSel IDC_RESUPPLY_SPAWNPOINTS;
+private _sideIDCs = [IDC_PANEL_BG, IDC_PANEL_NAME, IDC_PANEL_PIC, IDC_PANEL_CAP, IDC_PANEL_LIST, IDC_PANEL_BTN, IDC_PANEL_HEADER, IDC_PANEL_LABEL];
 if (_indexSpawn == -1) exitWith {
-	{ (findDisplay IDD_RESUPPLY displayCtrl _x) ctrlShow false } forEach [IDC_PANEL_BG, IDC_PANEL_NAME, IDC_PANEL_PIC, IDC_PANEL_CAP, IDC_PANEL_LIST, IDC_PANEL_BTN, IDC_PANEL_HEADER, IDC_PANEL_LABEL];
+	[(findDisplay IDD_RESUPPLY), false, _sideIDCs] execVM "Scripts\Misc\PXG_Handle_UI_Expansion.sqf";
 };
 
 private _spawnMaster = player getVariable ["PXG_Resupply_Master", objNull];
 if (isNull _spawnMaster) exitWith {};
 
 private _spawnLocationObj = (synchronizedObjects _spawnMaster) select _indexSpawn;
+if (isNil "_spawnLocationObj" || {isNull _spawnLocationObj}) exitWith {
+	[(findDisplay IDD_RESUPPLY), false, _sideIDCs] execVM "Scripts\Misc\PXG_Handle_UI_Expansion.sqf";
+};
 private _spawnPos = getPosATL _spawnLocationObj;
+
+private _display = findDisplay IDD_RESUPPLY;
+if (isNull _display) exitWith {};
 
 // Detect vehicle
 private _nearVehicles = nearestObjects [_spawnPos, ["LandVehicle", "Air", "Ship", "Slingload_base_F"], 5];
 
 if (count _nearVehicles == 0) exitWith {
-	{ (findDisplay IDD_RESUPPLY displayCtrl _x) ctrlShow false } forEach [IDC_PANEL_BG, IDC_PANEL_NAME, IDC_PANEL_PIC, IDC_PANEL_CAP, IDC_PANEL_LIST, IDC_PANEL_BTN, IDC_PANEL_HEADER, IDC_PANEL_LABEL];
+	[_display, false, _sideIDCs] execVM "Scripts\Misc\PXG_Handle_UI_Expansion.sqf";
 };
 
 private _vehicle = _nearVehicles select 0;
-private _display = findDisplay IDD_RESUPPLY;
 
 // Show Panel
-{ (_display displayCtrl _x) ctrlShow true } forEach [IDC_PANEL_BG, IDC_PANEL_NAME, IDC_PANEL_PIC, IDC_PANEL_CAP, IDC_PANEL_LIST, IDC_PANEL_BTN, IDC_PANEL_HEADER, IDC_PANEL_LABEL];
+[_display, true, _sideIDCs] execVM "Scripts\Misc\PXG_Handle_UI_Expansion.sqf";
 
 // Update Data
 private _vName = getText (configFile >> "CfgVehicles" >> typeOf _vehicle >> "displayName");
 private _vPicture = getText (configFile >> "CfgVehicles" >> typeOf _vehicle >> "editorPreview");
 if (_vPicture == "") then { _vPicture = getText (configFile >> "CfgVehicles" >> typeOf _vehicle >> "picture") };
 
-private _maxSpace = _vehicle getVariable ["ace_cargo_maxSpace", getNumber (configFile >> "CfgVehicles" >> typeOf _vehicle >> "ace_cargo_space")];
-private _remainingSpace = _vehicle getVariable ["ace_cargo_space", 0];
+private _maxSpace = _vehicle getVariable ["PXG_Resupply_Cargo_Max", getNumber (configFile >> "CfgVehicles" >> typeOf _vehicle >> "ace_cargo_space")];
+private _remainingSpace = _vehicle getVariable ["ace_cargo_space", _maxSpace];
+if (isNil "_remainingSpace") then { _remainingSpace = _maxSpace }; // Extra safety for uninitialized ACE vehicles
 
 (_display displayCtrl IDC_PANEL_NAME) ctrlSetText _vName;
 (_display displayCtrl IDC_PANEL_PIC) ctrlSetText _vPicture;

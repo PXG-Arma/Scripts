@@ -9,6 +9,9 @@ private _targetSide = switch (_selectedSideIdx) do {
 	default {""};
 };
 
+// Feature Restoration: Save side to memory
+player setVariable ["PXG_Motorpool_Memory_Side", _selectedSideIdx];
+
 // Clear dependent lists
 tvClear IDC_MOTORPOOL_VEHICLE_LB;
 

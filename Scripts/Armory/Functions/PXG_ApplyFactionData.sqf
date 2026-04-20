@@ -1,20 +1,24 @@
 // PXG Data-Driven Engine
 // Reads Faction_Core.sqf Hashmap and applies the loadout for the specified role.
-params ["_side", "_faction", "_variant", "_loadout", "_basePath"];
+params [
+    "_side", "_faction", "_variant", "_loadout", "_basePath",
+    ["_overrideWeapon", ""], ["_overrideSight", ""]
+];
 
 private _factionData = call compile preprocessFile (_basePath + "Faction_Core.sqf");
 if (isNil "_factionData" || {typeName _factionData != "HASHMAP"}) exitWith {
 	diag_log format ["[PXG Error] Faction_Core.sqf at %1 is invalid or missing.", _basePath];
 };
 
-private _roleData = _factionData get _loadout;
+private _armoryData = _factionData getOrDefault ["Armory", createHashMap];
+private _roleData = _armoryData get _loadout;
+
 if (isNil "_roleData") then {
-	// Attempt to fallback to a 'default' role if one exists, otherwise exit
-	_roleData = _factionData get "default";
+	_roleData = _armoryData get "default";
 };
 
 if (isNil "_roleData") exitWith {
-	diag_log format ["[PXG Error] Role '%1' not found in Faction_Core.sqf, and no 'default' role exists.", _loadout];
+	diag_log format ["[PXG Error] Role '%1' not found in Faction_Core.sqf 'Armory' map.", _loadout];
 };
 
 // --- Clothing ---
@@ -27,23 +31,48 @@ if (_vest != "") then { player addVest _vest; };
 private _backpack = _roleData getOrDefault ["backpack", ""];
 if (_backpack != "") then { player addBackpack _backpack; };
 
-private _helmet = _roleData getOrDefault ["helmet", ""];
-if (_helmet != "") then { player addHeadgear _helmet; };
+private _headgear = _roleData getOrDefault ["headgear", ""];
+if (_headgear == "") then { _headgear = _roleData getOrDefault ["helmet", ""]; }; 
+if (_headgear != "") then { player addHeadgear _headgear; };
 
 // --- Weapons ---
+private _attachmentStandards = _factionData getOrDefault ["Attachment_Standards", createHashMap];
+
 private _primaryData = _roleData getOrDefault ["primary", []];
-if (count _primaryData > 0) then {
-    private _gun = _primaryData select 0;
-	if (_gun != "") then {
-		player addWeapon _gun;
-		if (count _primaryData > 1) then {
-			private _attachments = _primaryData select 1;
-			{ player addPrimaryWeaponItem _x; } forEach _attachments;
-		};
-	};
+private _primaryGun = if (_overrideWeapon != "") then { _overrideWeapon } else { _primaryData getOrDefault [0, ""] };
+
+if (_primaryGun != "") then {
+    player addWeapon _primaryGun;
+
+    // Smart Attachment Resolution
+    private _appliedSights = false;
+
+    // 1. Apply UI Override Sight
+    if (_overrideSight != "") then {
+        player addPrimaryWeaponItem _overrideSight;
+        _appliedSights = true;
+    };
+
+    // 2. Apply Standards (Suppressors, Lasers, and Sights if not overridden)
+    private _standards = _attachmentStandards getOrDefault [_primaryGun, []];
+    {
+        private _item = _x;
+        private _isOptic = IS_OPTIC(_item); // Standardized optic check macro
+        
+        // Don't apply standard sight if we already applied an override
+        if (_appliedSights && _isOptic) then { continue };
+        
+        player addPrimaryWeaponItem _item;
+    } forEach _standards;
+
+    // 3. Fallback to fixed loadout attachments if no standards/overrides exist
+    if (count _primaryData > 1 && {count _standards == 0} && {_overrideSight == ""}) then {
+        { player addPrimaryWeaponItem _x; } forEach (_primaryData select 1);
+    };
 };
 
-private _secondaryData = _roleData getOrDefault ["secondary", []];
+private _secondaryData = _roleData getOrDefault ["secondary", []]; // Support for 'secondary' key
+if (count _secondaryData == 0) then { _secondaryData = _roleData getOrDefault ["handgun", []]; }; // Fallback for 'handgun' key
 if (count _secondaryData > 0) then {
     private _gun = _secondaryData select 0;
 	if (_gun != "") then {
@@ -68,24 +97,23 @@ if (count _launcherData > 0) then {
 };
 
 // --- Magazines / Inventory ---
+// Standard 1-file format uses flat arrays for magazines and items
 private _magazines = _roleData getOrDefault ["magazines", []];
 {
-	_x params ["_magClass", "_magCount"];
-	for "_i" from 1 to _magCount do {
-		player addItem _magClass;
-	};
+	player addItem _x;
 } forEach _magazines;
 
 private _items = _roleData getOrDefault ["items", []];
 {
-	_x params ["_itemClass", "_itemCount"];
-	for "_i" from 1 to _itemCount do {
-		player addItem _itemClass;
-	};
+	player addItem _x;
 } forEach _items;
 
 // Link items (if defined specifically by the exporter, otherwise common scripts will handle basic maps/compass)
 private _linkedItems = _roleData getOrDefault ["linkedItems", []];
+if (count _linkedItems == 0) then { _linkedItems = _roleData getOrDefault ["nvg", []]; }; // Fallback for singular types
+if (_linkedItems isEqualType "") then { _linkedItems = [_linkedItems]; };
+
 {
-	player linkItem _x;
+	if (_x != "") then { player linkItem _x; };
 } forEach _linkedItems;
+

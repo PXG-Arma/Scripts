@@ -4,17 +4,26 @@
     Cleans up all temporary objects used by the Faction Builder Tool.
 */
 
-// 1. Delete Parade Units (Registered)
-private _existingUnits = missionNamespace getVariable ["FBT_ParadeUnits", []];
-{ if (!isNull _x) then { deleteVehicle _x; }; } forEach _existingUnits;
+// 0. Signal termination for any background spawn scripts
+missionNamespace setVariable ["FBT_ActiveSpawn", -1];
+
+// 1. Delete Pool & Parade Units (Registered)
+private _unitPool = missionNamespace getVariable ["FBT_UnitPool", []];
+{ if (!isNull _x) then { deleteVehicle _x; }; } forEach _unitPool;
+missionNamespace setVariable ["FBT_UnitPool", []];
 missionNamespace setVariable ["FBT_ParadeUnits", []];
 
 // 1.5. FAIL-SAFE SWEEP (Catch Orphans)
-// Look for any Agent within 100m of the anchor that has an FBT ID
 private _anchorPos = if (!isNil "FBT_Anchor") then { getPos FBT_Anchor } else { [0,0,0] };
+private _activeID = missionNamespace getVariable ["FBT_ActiveSpawn", -1];
+
 if (count _anchorPos > 0) then {
     {
-        if (!isNil { _x getVariable "FBT_RoleID" }) then { deleteVehicle _x; };
+        private _unitID = _x getVariable ["FBT_SpawnID", -2];
+        // Only delete if it's an FBT unit AND it's not part of the active spawn session
+        if (!isNil { _x getVariable "FBT_RoleID" } && { _unitID != _activeID }) then { 
+            deleteVehicle _x; 
+        };
     } forEach (nearestObjects [_anchorPos, ["CAManBase"], 100]);
 };
 

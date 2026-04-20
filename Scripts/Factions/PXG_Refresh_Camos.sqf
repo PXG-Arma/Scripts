@@ -95,6 +95,24 @@ lbClear _listIDC;
                 lbSetPictureColorSelected [_listIDC, _lIndex, [1,1,1,1]];
             };
         };
+    } else {
+        // Fallback to Faction_Core.sqf for 1-file architecture
+        private _corePath = (["Scripts\Factions\", _side, "\", _faction, "\", _subFolderPart, _eraFolderPart, _camoName, "\Faction_Core.sqf"] joinString "");
+        if (fileExists _corePath) then {
+            private _coreData = call compile preprocessFile _corePath;
+            if (!isNil "_coreData" && {typeName _coreData == "HASHMAP"}) then {
+                private _armoryData = _coreData getOrDefault ["Armory", createHashMap];
+                private _sqdLd = _armoryData getOrDefault ["sqd_ld", createHashMap];
+                private _uniformClass = _sqdLd getOrDefault ["uniform", ""];
+                if (_uniformClass != "" && {isClass (configFile >> "CfgWeapons" >> _uniformClass)}) then {
+                    private _iconPath = getText (configFile >> "CfgWeapons" >> _uniformClass >> "picture");
+                    if (_iconPath != "") then {
+                        lbSetPicture [_listIDC, _lIndex, _iconPath];
+                        lbSetPictureColorSelected [_listIDC, _lIndex, [1,1,1,1]];
+                    };
+                };
+            };
+        };
     };
 } forEach _variants;
 

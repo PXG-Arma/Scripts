@@ -416,5 +416,21 @@ class FBT_Dialog {
 			colorBackground[] = {0.35, 0.45, 0.45, 0.9};
 			action = "execVM 'Scripts\Faction_Builder_Tool\Functions\UI\FBT_ToggleInventory.sqf';";
 		};
+
+		// --- LOADING INDICATOR ---
+		class FBT_LoadingIndicator: FBT_BaseText {
+			idc = 456999;
+			text = "LOADING FACTION MODELS...";
+			style = 2; // ST_RIGHT
+			x = safezoneX + (safezoneW * 0.75);
+			y = safezoneY + (safezoneH * 0.01);
+			w = safezoneW * 0.24;
+			h = safezoneH * 0.03;
+			sizeEx = 0.04 * safezoneH;
+			colorText[] = {1, 0.8, 0, 1}; // Yellow/Gold status
+			shadow = 2;
+			show = 0; // Hidden by default
+		};
 	};
 };
+

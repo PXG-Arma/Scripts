@@ -34,7 +34,7 @@ if (_tabName == "Overview") then {
     _rightPanel ctrlShow false; // Keep right side clean in Overview
     missionNamespace setVariable ["FBT_ActiveTab_Old", "Overview"];
 	// Populate dropdowns for the first time
-	["Init"] execVM "Scripts\Faction_Builder_Tool\Functions\UI\FBT_UpdateDropdowns.sqf";
+	["Init"] call (missionNamespace getVariable ["FBT_Fnc_UpdateDropdowns", {}]);
 
     // Visibility Reset for Phantom Agents
     { _x hideObject false; } forEach (missionNamespace getVariable ["FBT_ParadeUnits", []]);

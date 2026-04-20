@@ -39,13 +39,15 @@ private _selectedAgent = objNull;
     };
 } forEach _paradeUnits;
 
-    // 2. Camera Focus Glide
+// 2. Camera Focus Glide
+if (!isNull _selectedAgent) then {
     [[_selectedAgent], "update"] execVM "Scripts\Faction_Builder_Tool\Functions\Camera\FBT_HandleCamera.sqf";
-    
-    // Refresh Sidebar to show Loadout
-    if (_tab == "Armory") then {
-        execVM "Scripts\Faction_Builder_Tool\Functions\UI\FBT_UpdateLoadoutUI.sqf";
-    };
+};
+
+// Refresh Sidebar to show Loadout
+if (_tab == "Armory") then {
+    execVM "Scripts\Faction_Builder_Tool\Functions\UI\FBT_UpdateLoadoutUI.sqf";
+};
 
 // 3. Fallback for "Custom/Unassigned" Roles (If not in parade)
 if (isNull _selectedAgent && _tab == "Armory") then {
@@ -61,5 +63,14 @@ if (isNull _selectedAgent && _tab == "Armory") then {
     _dummy setPosWorld (_anchorPos vectorAdd [0, 5, 0]);
     _dummy hideObject false;
     
+    private _masterHash = missionNamespace getVariable ["FBT_MasterHash", createHashMap];
+    private _armory = _masterHash getOrDefault ["Armory", createHashMap];
+    private _roleSave = _armory getOrDefault [_id, createHashMap];
+
+    if (count _roleSave > 0) then {
+        [_dummy, _roleSave] call (missionNamespace getVariable ["FBT_Fnc_DressDummy", {}]);
+    };
+    
     [[_dummy], "update"] execVM "Scripts\Faction_Builder_Tool\Functions\Camera\FBT_HandleCamera.sqf";
 };
+

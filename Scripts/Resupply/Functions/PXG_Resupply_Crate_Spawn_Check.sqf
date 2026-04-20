@@ -44,15 +44,15 @@ if (count _nearVehicles > 0) then {
 	private _vehicle = _nearVehicles select 0;
 	
 	// Check space
-	private _currentSpace = _vehicle getVariable ["ace_cargo_space", 0];
-	if (_currentSpace >= _cargoSize) then {
+	private _currentSpaceLeft = _vehicle getVariable ["ace_cargo_space", 0];
+	if (_currentSpaceLeft >= _cargoSize) then {
 		// Spawn execute (temporary location)
 		private _crate = [_classname, _cargoSize, [3000, 3000, 100], _spawnDir, _specialScript] call compile preprocessFile "Scripts\Resupply\Functions\PXG_Resupply_Crate_Spawn_Execute.sqf";
 		
 		// Load into vehicle
 		[_crate, _vehicle] call compile preprocessFile "Scripts\Resupply\Functions\PXG_Resupply_Crate_Spawn_VehicleLoad.sqf";
 	} else {
-		hint format ["Not enough space in %1. (Needs %2, has %3 available)", getText(configFile >> "CfgVehicles" >> typeOf _vehicle >> "displayName"), _cargoSize, _currentSpace];
+		hint format ["Not enough space in %1. (Needs %2, has %3 available)", getText(configFile >> "CfgVehicles" >> typeOf _vehicle >> "displayName"), _cargoSize, _currentSpaceLeft];
 	};
 } else {
 	// SPAWN ON GROUND (with Alternating Displacement)

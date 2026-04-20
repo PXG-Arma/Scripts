@@ -5,6 +5,7 @@
 */
 
 private _centroid = missionNamespace getVariable ["FBT_Field_Center", [0,0,0]];
+if (isNil "_centroid") then { _centroid = [0,0,0]; }; 
 private _zoom = missionNamespace getVariable ["FBT_Field_Zoom", 20];
 private _bearing = missionNamespace getVariable ["FBT_Field_Bearing", 0];
 

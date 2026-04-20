@@ -9,7 +9,16 @@ disableSerialization;
 private _display = findDisplay 456000;
 if (isNull _display) exitWith {};
 
-private _registry = call compile preprocessFile "Scripts\Factions\Factions_Registry.sqf";
+// Retrieve Functions
+private _fnc_UpdateDropdowns = missionNamespace getVariable ["FBT_Fnc_UpdateDropdowns", {}];
+private _fnc_Prepare        = missionNamespace getVariable ["FBT_Fnc_PrepareFramework", {}];
+private _fnc_LoadData       = missionNamespace getVariable ["FBT_Fnc_LoadFactionData", {}];
+
+private _registry = missionNamespace getVariable ["FBT_MasterRegistry_Cache", []];
+if (count _registry == 0) then {
+    _registry = call compile preprocessFile "Scripts\Factions\Factions_Registry.sqf";
+    missionNamespace setVariable ["FBT_MasterRegistry_Cache", _registry];
+};
 
 // IDCs
 private _idcSide     = 456051;
@@ -20,6 +29,10 @@ private _idcEra      = 456055;
 
 // Prevent recursive chain reactions during initialization
 private _isSuppressed = missionNamespace getVariable ["FBT_SuppressEvents", false];
+
+// Cascade Concurrency: Only the 'Parent' thread (the one the user clicked) is allowed to finish
+private _isCascadeThread = missionNamespace getVariable ["FBT_ActiveCascade", false];
+if (!_isSuppressed && !_isCascadeThread) then { missionNamespace setVariable ["FBT_ActiveCascade", true]; };
 
 private _fnc_addOptions = {
     params ["_ctrlIDC", "_list", ["_addOption", true], ["_target", ""]];
@@ -36,7 +49,11 @@ private _fnc_addOptions = {
     if (_target != "") then {
         { if (_x == _target) exitWith { _selIdx = _forEachIndex; }; } forEach _list;
     };
+    
+    // ATOMIC UI UPDATE (Suppress Event Trigger)
+    missionNamespace setVariable ["FBT_SuppressEvents", true];
     _ctrl lbSetCurSel _selIdx;
+    missionNamespace setVariable ["FBT_SuppressEvents", false];
 };
 
 private _selSide = (lbText [_idcSide, lbCurSel _idcSide]);
@@ -47,9 +64,7 @@ switch (_mode) do {
         private _targetSide = missionNamespace getVariable ["FBT_Target_Side", ""];
         [_idcSide, ["BLUFOR", "OPFOR", "INDEP"], false, _targetSide] call _fnc_addOptions;
         missionNamespace setVariable ["FBT_Cached_Side", lbText [_idcSide, lbCurSel _idcSide]];
-        if (!_isSuppressed) then { 
-            ["Side"] call (compile preprocessFile "Scripts\Faction_Builder_Tool\Functions\UI\FBT_UpdateDropdowns.sqf");
-        };
+        if (!_isSuppressed) then { ["Side"] call _fnc_UpdateDropdowns; };
     };
 
     case "Side": {
@@ -59,7 +74,7 @@ switch (_mode) do {
         private _targetFaction = missionNamespace getVariable ["FBT_Target_Faction", ""];
         [_idcFaction, _factions, true, _targetFaction] call _fnc_addOptions;
         missionNamespace setVariable ["FBT_Cached_Faction", lbText [_idcFaction, lbCurSel _idcFaction]];
-        ["Faction"] call (compile preprocessFile "Scripts\Faction_Builder_Tool\Functions\UI\FBT_UpdateDropdowns.sqf");
+        ["Faction"] call _fnc_UpdateDropdowns;
     };
 
     case "Faction": {
@@ -72,7 +87,7 @@ switch (_mode) do {
         private _displaySubs = _subs apply { if (_x == "") then { "Base" } else { _x } };
         [_idcSub, _displaySubs, true, _displayTarget] call _fnc_addOptions;
         missionNamespace setVariable ["FBT_Cached_Sub", _subs select (lbCurSel _idcSub)];
-        ["Subfaction"] call (compile preprocessFile "Scripts\Faction_Builder_Tool\Functions\UI\FBT_UpdateDropdowns.sqf");
+        ["Subfaction"] call _fnc_UpdateDropdowns;
     };
 
     case "Subfaction": {
@@ -85,7 +100,7 @@ switch (_mode) do {
         private _targetCamo = missionNamespace getVariable ["FBT_Target_Camo", ""];
         [_idcCamo, _camos, true, _targetCamo] call _fnc_addOptions;
         missionNamespace setVariable ["FBT_Cached_Camo", lbText [_idcCamo, lbCurSel _idcCamo]];
-        ["Camo"] call (compile preprocessFile "Scripts\Faction_Builder_Tool\Functions\UI\FBT_UpdateDropdowns.sqf");
+        ["Camo"] call _fnc_UpdateDropdowns;
     };
 
     case "Camo": {
@@ -99,7 +114,9 @@ switch (_mode) do {
         private _targetEra = missionNamespace getVariable ["FBT_Target_Era", ""];
         [_idcEra, _eras, true, _targetEra] call _fnc_addOptions;
         
-        // Clear targets after full cascade
+        ["Era"] call _fnc_UpdateDropdowns;
+        
+        // Clear targets after full cascade trigger
         missionNamespace setVariable ["FBT_Target_Side", nil];
         missionNamespace setVariable ["FBT_Target_Faction", nil];
         missionNamespace setVariable ["FBT_Target_Sub", nil];
@@ -116,11 +133,11 @@ switch (_mode) do {
 
         private _masterHash = missionNamespace getVariable ["FBT_MasterHash", createHashMap];
         private _meta = _masterHash getOrDefault ["Metadata", createHashMap];
-        _meta set ["Side", _selSide];
-        _meta set ["FactionName", _selFaction];
-        _meta set ["Subfaction", _selSub];
-        _meta set ["Camo", _selCamo];
-        _meta set ["Era", _selEra];
+        _meta set ["SIDE", _selSide];
+        _meta set ["FACTIONNAME", _selFaction];
+        _meta set ["SUBFACTION", _selSub];
+        _meta set ["CAMO", _selCamo];
+        _meta set ["ERA", _selEra];
         _masterHash set ["Metadata", _meta];
 
         private _factionPath = ["Scripts\Factions\", _selSide, "\", _selFaction, "\", (if(_selSub != "")then{_selSub+"\"}else{""}), (if(_selEra != "")then{_selEra+"\"}else{""}), _selCamo, "\"] joinString "";
@@ -149,17 +166,16 @@ switch (_mode) do {
             {
                 private _catName = _x select 0;
                 private _vList = _x select 1;
-                { _motorSeq pushBack [_x select 0, _catName]; } forEach _vList;
+                { _motorSeq pushBack [_x select 0, _catName, _x select 1]; } forEach _vList;
             } forEach _vehs;
         };
         _masterHash set ["MotorpoolSequence", _motorSeq];
 
-        // 2.5 Prepare Framework Proxy (Strong Logic)
-        private _fnc_prep = missionNamespace getVariable ["FBT_Fnc_PrepareFramework", {params ["_p"]; [_p] call (compile preprocessFile "Scripts\Faction_Builder_Tool\Functions\Core\FBT_PrepareFramework.sqf")}];
-        [_factionPath] call _fnc_prep;
+        // 2.5 Prepare Framework Proxy
+        [_factionPath] call _fnc_Prepare;
 
         // 2.6 Load physical gear data from disk into Session Hash
-        [_factionPath] call (compile preprocessFile "Scripts\Faction_Builder_Tool\Functions\Core\FBT_LoadFactionData.sqf");
+        [_factionPath] call _fnc_LoadData;
 
         // 3. Process Sequence into Flat Arrays for Spawner
         private _groupsList = [];
@@ -185,11 +201,14 @@ switch (_mode) do {
 
         // Final Debounced Spawn
         if (!_isSuppressed) then {
-            [] spawn { 
-                systemChat "[FBT] Refreshing Staging Area...";
-                uiSleep 0.05;
-                execVM "Scripts\Faction_Builder_Tool\Functions\Staging\FBT_SpawnParade.sqf"; 
-            };
+            private _lastTrigger = missionNamespace getVariable ["FBT_LastSpawnTrigger", 0];
+            if (diag_tickTime - _lastTrigger < 0.05) exitWith {}; // 50ms Debounce
+            missionNamespace setVariable ["FBT_LastSpawnTrigger", diag_tickTime];
+
+            [] spawn (missionNamespace getVariable ["FBT_Fnc_SpawnParade", {}]);
         };
+
+        // Reset Cascade Lock
+        missionNamespace setVariable ["FBT_ActiveCascade", false];
     };
 };

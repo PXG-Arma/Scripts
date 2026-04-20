@@ -88,11 +88,11 @@ if (count _allLeadPositions > 0) then {
         missionNamespace setVariable ["FBT_Field_Center", _centroid];
     };
 
-    private _anchorPos = missionNamespace getVariable ["FBT_AnchorPos", [0,0,0]];
-    private _bearing = [_anchorPos, _centroid] call BIS_fnc_dirTo;
-    missionNamespace setVariable ["FBT_Field_Bearing", _bearing];
-
-    diag_log format ["[FBT] Camera Field Calculated. Center: %1 | Zoom: %2 | Bearing: %3", _centroid, _maxRadius * 2.5, _bearing];
+    diag_log format ["[FBT] Camera Field Calculated. Center: %1 | Zoom: %2 | Bearing: %3", _centroid, (_maxRadius * 2.5) max 12, _bearing];
+} else {
+    missionNamespace setVariable ["FBT_Field_Center", [0,0,0]];
+    missionNamespace setVariable ["FBT_Field_Zoom", 20];
+    missionNamespace setVariable ["FBT_Field_Bearing", 0];
 };
 
 diag_log format ["[FBT] Spawn Set Scanned: %1 marker groups found.", count _spawnMap];

@@ -12,10 +12,11 @@ private _masterHash = createHashMap;
 
 // 1. Metadata
 private _metadata = createHashMap;
-_metadata set ["FactionName", "New FBT Faction"];
-_metadata set ["Side", "BLUFOR"];
-_metadata set ["Camo", "Desert"];
-_metadata set ["Era", "Modern"];
+_metadata set ["SIDE", "BLUFOR"];
+_metadata set ["FACTIONNAME", "New FBT Faction"];
+_metadata set ["SUBFACTION", ""];
+_metadata set ["CAMO", "Desert"];
+_metadata set ["ERA", "Modern"];
 _masterHash set ["Metadata", _metadata];
 
 // 2. Armory (Gear Hashmaps for roles)
@@ -31,6 +32,12 @@ _masterHash set ["MotorpoolSequence", []]; // Ordered list of [VehicleClass, Cat
 // 4. Resupply
 private _resupply = createHashMap;
 _masterHash set ["Resupply", _resupply];
+
+// 5. Modular Metadata (BigArmory Integration)
+_masterHash set ["SlotGroups", createHashMap];
+_masterHash set ["GunGroups", createHashMap];
+_masterHash set ["Attachment_Standards", createHashMap];
+_masterHash set ["SightGroups", createHashMap];
 
 missionNamespace setVariable ["FBT_MasterHash", _masterHash];
 

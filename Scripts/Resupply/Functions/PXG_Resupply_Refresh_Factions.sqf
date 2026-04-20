@@ -9,6 +9,9 @@ private _targetSide = switch (_selectedSideIdx) do {
 	default {""};
 };
 
+// Feature Restoration: Save side to memory
+player setVariable ["PXG_Resupply_Memory_Side", _selectedSideIdx];
+
 // Clear dependent lists
 lbClear IDC_RESUPPLY_SUPPLIES_LB;
 private _displayResupply = findDisplay IDD_RESUPPLY;

@@ -12,6 +12,9 @@ if (_indexCamo == -1) exitWith { tvClear IDC_ARMORY_LOADOUT_TREE; };
 player setVariable ["PXG_Armory_Memory_Faction", _indexFaction];
 player setVariable ["PXG_Armory_Memory_Camo", _indexCamo];
 
+// Cleanup modular panel at start of refresh
+[false] call compile preprocessFile 'Scripts\Armory\Functions\PXG_Refresh_Modular_Lists.sqf';
+
 private _variantData = lbData [IDC_ARMORY_CAMO_LIST, _indexCamo];
 if (_variantData == "") exitWith {};
 
@@ -55,4 +58,8 @@ tvClear IDC_ARMORY_LOADOUT_TREE;
 } forEach _elementsArray;
 
 private _loadoutMemory = player getVariable ["PXG_Armory_Memory_Loadout", [-1,-1]];
-if (_loadoutMemory select 0 != -1) then {tvSetCurSel [IDC_ARMORY_LOADOUT_TREE, _loadoutMemory]};
+if (_loadoutMemory select 0 != -1) then {
+	tvSetCurSel [IDC_ARMORY_LOADOUT_TREE, _loadoutMemory];
+	// Manually trigger modular refresh as tvSetCurSel doesn't fire the event
+	[IDC_ARMORY_LOADOUT_TREE, _loadoutMemory] call compile preprocessfile 'Scripts\Armory\Functions\PXG_Refresh_Modular_Lists.sqf';
+};

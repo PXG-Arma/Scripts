@@ -1,17 +1,22 @@
 /*
     FBT_SpawnParade.sqf
     -------------------------------
-    Spawns PHANTOM AGENTS (No simulation, No collision) onto logic markers.
+    Spawns/Pools PHANTOM AGENTS (No simulation, No collision) onto logic markers.
 */
 
-private _myID = diag_tickTime;
+private _myID = diag_tickTime + (random 1);
 missionNamespace setVariable ["FBT_ActiveSpawn", _myID];
 
-// 1. Cleanup existing agents
-private _existingUnits = missionNamespace getVariable ["FBT_ParadeUnits", []];
-{ deleteVehicle _x; } forEach _existingUnits;
-missionNamespace setVariable ["FBT_ParadeUnits", []];
-uiSleep 0.1;
+// 0. UI Visual Feedback (Top Right Indicator)
+ctrlShow [456999, true]; 
+
+// 1. Setup Local Collection & Pooling
+private _newTmpUnits = [];
+private _newLeads = [];
+
+// Initialize/Retrieve Global Pool
+private _unitPool = missionNamespace getVariable ["FBT_UnitPool", []];
+private _poolIdx = 0;
 
 // 2. Get the Spawn Set (The Markers)
 private _spawnSet = missionNamespace getVariable ["FBT_SpawnSet", createHashMap];
@@ -22,6 +27,10 @@ private _masterHash = missionNamespace getVariable ["FBT_MasterHash", createHash
 private _groupsList = _masterHash getOrDefault ["ArmoryGroups", []];
 private _rolesList  = _masterHash getOrDefault ["ArmoryRoles", []];
 private _idList     = _masterHash getOrDefault ["ArmoryIDs", []];
+
+// Pre-compiled Core Functions
+private _fnc_dress  = missionNamespace getVariable ["FBT_Fnc_DressDummy", {}];
+private _fnc_scrape = missionNamespace getVariable ["FBT_Fnc_ScrapeUnit",  {}];
 
 // Framework Proxies
 private _proxy = missionNamespace getVariable ["FBT_FrameworkProxy", createHashMap];
@@ -34,17 +43,16 @@ private _selSide = lbText [456051, lbCurSel 456051];
 private _selFaction = lbText [456052, lbCurSel 456052];
 private _selCamo = lbText [456054, lbCurSel 456054];
 
-private _newUnits = [];
-private _newLeads = [];
-
-// 4. Iterate through Faction Groups by Index
+// 4. Iterate through Faction Groups (POOLING & INVISIBLE DRESSING)
 {
-    if ((missionNamespace getVariable ["FBT_ActiveSpawn", 0]) != _myID) exitWith {};
+    // Concurrency Check: If a newer spawn started, exit immediately
+    if ((missionNamespace getVariable ["FBT_ActiveSpawn", 0]) != _myID) exitWith {
+        ctrlShow [456999, false];
+    };
 
     private _groupIdx = _forEachIndex;
     private _groupName = _x;
     
-    // MAPPING: Use integer index (+1) to find the Marker Cluster
     private _markerGroupID = _groupIdx + 1;
     private _markerSet = _spawnSet getOrDefault [_markerGroupID, createHashMap];
     
@@ -69,62 +77,78 @@ private _newLeads = [];
         };
 
         if (count _spot > 0) then {
-            private _agent = createAgent ["B_RangeMaster_F", _spot select 0, [], 0, "CAN_COLLIDE"];
-            
-            // --- ITERATIVE REGISTRATION (Safety) ---
-            private _reg = missionNamespace getVariable ["FBT_ParadeUnits", []];
-            _reg pushBack _agent;
-            missionNamespace setVariable ["FBT_ParadeUnits", _reg];
+            // --- UNIT REUSE / POOLING ---
+            private _agent = objNull;
+            if (_poolIdx < count _unitPool) then {
+                _agent = _unitPool select _poolIdx;
+                _poolIdx = _poolIdx + 1;
+            };
 
-            _agent hideObject true; 
+            // If no agent in pool or pool agent is dead/null, create new
+            if (isNull _agent || !alive _agent) then {
+                _agent = createAgent ["B_RangeMaster_F", _spot select 0, [], 0, "CAN_COLLIDE"];
+                _agent hideObject true; 
+                _agent enableSimulation false;
+                _agent allowDamage false;
+                _agent disableCollisionWith player;
+                if (!isNil "FBT_Anchor") then { _agent disableCollisionWith FBT_Anchor; };
+                _unitPool pushBack _agent;
+                _poolIdx = count _unitPool;
+            };
+
+            // Ensure hidden during dressing
+            _agent hideObject true;
             
+            _agent setVariable ["FBT_SpawnID", _myID]; // Tag for safety
+            _agent setVariable ["FBT_RoleID", _roleID];
+            _agent setVariable ["FBT_GroupName", _groupName];
+            if (_forEachIndex == 0) then { _agent setVariable ["FBT_IsLead", true]; } else { _agent setVariable ["FBT_IsLead", nil]; };
+
             private _baseDir = missionNamespace getVariable ["FBT_AnchorRotation", 0];
             _agent setPosWorld (_spot select 0);
             _agent setDir (_baseDir + 180); 
             
-            _agent enableSimulation false;
-            _agent allowDamage false;
-            _agent setVariable ["FBT_RoleID", _roleID];
-            _agent setVariable ["FBT_GroupName", _groupName];
-            if (_forEachIndex == 0) then { _agent setVariable ["FBT_IsLead", true]; };
-            
-            _agent disableCollisionWith player;
-            if (!isNil "FBT_Anchor") then { _agent disableCollisionWith FBT_Anchor; };
-            
-            // DRESS AGENT
-        private _armory = _masterHash getOrDefault ["Armory", createHashMap];
-        private _roleSave = _armory getOrDefault [_roleID, createHashMap];
+            // --- HIGH-PERFORMANCE DRESSING ---
+            private _armory = _masterHash getOrDefault ["Armory", createHashMap];
+            private _roleSave = _armory getOrDefault [_roleID, createHashMap];
 
-        if (count _roleSave > 0) then {
-            // Apply saved session data
-            [_agent, _roleSave] call (compile preprocessFile "Scripts\Faction_Builder_Tool\Functions\Armory\FBT_DressDummy.sqf");
-        } else {
-            // Fallback to framework proxies (Defaults)
-            [_selSide, _selFaction, _selCamo, _roleID, _agent] call _uniCode;
-            [_selSide, _selFaction, _selCamo, _roleID, _agent] call _wepCode;
-            [_selSide, _selFaction, _selCamo, _roleID, _agent] call _geaCode;
-
-            // SCRAPE IMMEDIATELY: If this was a legacy unit, capture its gear into the tool's session
-            // This enables "Instant Duplication" and "Instant Editing" of legacy 8-file factions.
-            private _scraped = [_agent] call (compile preprocessFile "Scripts\Faction_Builder_Tool\Functions\Core\FBT_ScrapeUnit.sqf");
-            _armory set [_roleID, _scraped];
-            _masterHash set ["Armory", _armory];
-            diag_log format ["[FBT Scrape] Captured legacy gear for %1 (%2)", _roleID, _roleName];
-        };
+            if (count _roleSave > 0) then {
+                [_agent, _roleSave] call _fnc_dress;
+            } else {
+                [_selSide, _selFaction, _selCamo, _roleID, _agent] call _uniCode;
+                [_selSide, _selFaction, _selCamo, _roleID, _agent] call _wepCode;
+                [_selSide, _selFaction, _selCamo, _roleID, _agent] call _geaCode;
+                private _scraped = [_agent] call _fnc_scrape;
+                _armory set [_roleID, _scraped];
+            };
 
             _agent switchMove "AmovPercMstpSlowWrflDnon";
 
-            _newUnits pushBack _agent;
+            _newTmpUnits pushBack _agent;
             if (_forEachIndex == 0) then { _newLeads pushBack _agent; };
         };
     } forEach _rolesInGroup;
 } forEach _groupsList;
 
+// 5. ATOMIC COMMIT
+// Final check before committing: Are we still the active spawn?
+if ((missionNamespace getVariable ["FBT_ActiveSpawn", 0]) != _myID) exitWith {
+    ctrlShow [456999, false];
+    diag_log "[FBT] Atomic Spawn Aborted: Newer script took control.";
+};
+
+// Update Global References
+missionNamespace setVariable ["FBT_UnitPool", _unitPool];
+missionNamespace setVariable ["FBT_ParadeUnits", _newTmpUnits];
 missionNamespace setVariable ["FBT_ParadeLeads", _newLeads];
 
+// Hide remaining pool units that aren't used in this faction
+for "_i" from _poolIdx to (count _unitPool - 1) do {
+    (_unitPool select _i) hideObject true;
+};
 
-// 5. SYNCHRONIZED REVEAL (Pre-load Assets)
-uiSleep 0.5; // Brief wait to allow gear textures/models to settle
+// 6. TEXTURE BUFFER & ATOMIC REVEAL
+uiSleep 0.3; // Allow brief window for hidden dressing textures to settle
 
 private _activeTab = missionNamespace getVariable ["FBT_ActiveTab", "Overview"];
 private _selectedPath = tvCurSel (findDisplay 456000 displayCtrl 456010);
@@ -141,13 +165,18 @@ private _selectedID = (findDisplay 456000 displayCtrl 456010) tvData _selectedPa
             _x hideObject true;
         };
     };
-} forEach _newUnits;
+} forEach _newTmpUnits;
+
+// Clear Loading Status
+ctrlShow [456999, false];
 
 if (_activeTab == "Overview") then {
     if (!(missionNamespace getVariable ["FBT_SuppressEvents", false])) then {
-        [] execVM "Scripts\Faction_Builder_Tool\Functions\Camera\FBT_UpdateBirdEye.sqf";
+        [] call (missionNamespace getVariable ["FBT_Fnc_UpdateBirdEye", {}]);
     };
 };
 
-systemChat format ["[FBT] Instant Batch Complete: %1 agents transitioned.", count _newUnits];
+diag_log format ["[FBT] Atomic Spawn Complete: %1 agents active in parade.", count _newTmpUnits];
 missionNamespace setVariable ["FBT_SuppressEvents", false];
+
+

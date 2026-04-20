@@ -12,7 +12,33 @@ if (isNil "FBT_Anchor") exitWith { systemChat "Error: FBT_Anchor (or PXG_Anchor)
 // Initialize Data Store
 execVM "Scripts\Faction_Builder_Tool\Functions\Core\FBT_DataInit.sqf";
 
-// Initialization Locks
+// ---------------------------------------------------------
+// 1. Pre-Compile Core Function Library (Optimization)
+// ---------------------------------------------------------
+FBT_fnc_PrepareFramework = compile preprocessFile "Scripts\Faction_Builder_Tool\Functions\Core\FBT_PrepareFramework.sqf";
+FBT_fnc_LoadFactionData  = compile preprocessFile "Scripts\Faction_Builder_Tool\Functions\Core\FBT_LoadFactionData.sqf";
+FBT_fnc_DressDummy       = compile preprocessFile "Scripts\Faction_Builder_Tool\Functions\Armory\FBT_DressDummy.sqf";
+FBT_fnc_ScrapeUnit       = compile preprocessFile "Scripts\Faction_Builder_Tool\Functions\Core\FBT_ScrapeUnit.sqf";
+FBT_fnc_UpdateBirdEye    = compile preprocessFile "Scripts\Faction_Builder_Tool\Functions\Camera\FBT_UpdateBirdEye.sqf";
+
+// UI Functions
+FBT_fnc_UpdateDropdowns  = compile preprocessFile "Scripts\Faction_Builder_Tool\Functions\UI\FBT_UpdateDropdowns.sqf";
+FBT_fnc_TabSwitch        = compile preprocessFile "Scripts\Faction_Builder_Tool\Functions\UI\FBT_TabSwitch.sqf";
+FBT_fnc_UpdatePreview    = compile preprocessFile "Scripts\Faction_Builder_Tool\Functions\UI\FBT_UpdatePreview.sqf";
+FBT_fnc_SpawnParade      = compile preprocessFile "Scripts\Faction_Builder_Tool\Functions\Staging\FBT_SpawnParade.sqf";
+
+missionNamespace setVariable ["FBT_Fnc_PrepareFramework", FBT_fnc_PrepareFramework];
+missionNamespace setVariable ["FBT_Fnc_LoadFactionData",  FBT_fnc_LoadFactionData];
+missionNamespace setVariable ["FBT_Fnc_DressDummy",       FBT_fnc_DressDummy];
+missionNamespace setVariable ["FBT_Fnc_ScrapeUnit",       FBT_fnc_ScrapeUnit];
+missionNamespace setVariable ["FBT_Fnc_UpdateBirdEye",    FBT_fnc_UpdateBirdEye];
+missionNamespace setVariable ["FBT_Fnc_UpdateDropdowns",  FBT_fnc_UpdateDropdowns];
+missionNamespace setVariable ["FBT_Fnc_TabSwitch",        FBT_fnc_TabSwitch];
+missionNamespace setVariable ["FBT_Fnc_UpdatePreview",    FBT_fnc_UpdatePreview];
+missionNamespace setVariable ["FBT_Fnc_SpawnParade",      FBT_fnc_SpawnParade];
+
+
+// 2. Initialize Hardware & Session Data
 missionNamespace setVariable ["FBT_SuppressEvents", true];
 missionNamespace setVariable ["FBT_ActiveSpawn", -1];
 
@@ -30,6 +56,12 @@ createDialog "FBT_Dialog"; // Updated dialog class name
 waitUntil {!isNull (findDisplay 456000)};
 private _display = findDisplay 456000;
 _display setVariable ["FBT_Inventory_Collapsed", true];
+
+// --- SESSION PERSISTENCE: COMMIT ON UNLOAD ---
+_display displayAddEventHandler ["Unload", {
+    ["Commit"] call (missionNamespace getVariable ["FBT_fnc_Pythia_Sync", {}]);
+    systemChat "[FBT] Session Changes Committed to Disk.";
+}];
 
 // 1. Scan the Spawn Set (Markers)
 [] call compile preprocessFileLineNumbers "Scripts\Faction_Builder_Tool\Functions\Staging\FBT_GetSpawnSet.sqf";

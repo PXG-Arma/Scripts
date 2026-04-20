@@ -23,9 +23,8 @@ private _pylonInfo = getAllPylonsInfo _vehicle;
 private _hasPylons = (count _pylonInfo > 0);
 
 // Toggle Visibility
-(_display displayCtrl IDC_MOTORPOOL_PYLON_PANEL) ctrlShow _hasPylons;
-(_display displayCtrl 461706) ctrlShow _hasPylons; // Header
-_ctrlGroup ctrlShow _hasPylons;
+private _sideIDCs = [IDC_MOTORPOOL_PYLON_PANEL, 461706, IDC_MOTORPOOL_PYLON_CONTAINER];
+[_display, _hasPylons, _sideIDCs] execVM "Scripts\Misc\PXG_Handle_UI_Expansion.sqf";
 
 if (!_hasPylons) exitWith {};
 

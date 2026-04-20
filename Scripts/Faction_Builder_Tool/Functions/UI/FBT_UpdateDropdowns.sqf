@@ -14,10 +14,10 @@ private _fnc_UpdateDropdowns = missionNamespace getVariable ["FBT_Fnc_UpdateDrop
 private _fnc_Prepare        = missionNamespace getVariable ["FBT_Fnc_PrepareFramework", {}];
 private _fnc_LoadData       = missionNamespace getVariable ["FBT_Fnc_LoadFactionData", {}];
 
-private _registry = missionNamespace getVariable ["FBT_MasterRegistry_Cache", []];
+private _registry = missionNamespace getVariable ["PXG_MasterRegistry_Cache", []];
 if (count _registry == 0) then {
     _registry = call compile preprocessFile "Scripts\Factions\Factions_Registry.sqf";
-    missionNamespace setVariable ["FBT_MasterRegistry_Cache", _registry];
+    missionNamespace setVariable ["PXG_MasterRegistry_Cache", _registry];
 };
 
 // IDCs
@@ -142,62 +142,74 @@ switch (_mode) do {
 
         private _factionPath = ["Scripts\Factions\", _selSide, "\", _selFaction, "\", (if(_selSub != "")then{_selSub+"\"}else{""}), (if(_selEra != "")then{_selEra+"\"}else{""}), _selCamo, "\"] joinString "";
         
-        // 1. Load Armory Sequence
-        private _armorySeq = [];
-        private _loadoutPath = _factionPath + "Loadoutlist.sqf";
-        if (fileExists _loadoutPath) then {
-            private _loadouts = call compile preprocessFile _loadoutPath;
-            private _groupNames = _loadouts select 0;
-            private _roleNames  = _loadouts select 1;
-            private _scriptNames = _loadouts select 2;
-            {
-                private _gIdx = _forEachIndex;
-                private _gName = _x;
-                { _armorySeq pushBack [_x, (_roleNames select _gIdx) select _forEachIndex, _gName]; } forEach (_scriptNames select _gIdx);
-            } forEach _groupNames;
-        };
-        _masterHash set ["ArmorySequence", _armorySeq];
-
-        // 2. Load Motorpool Sequence
-        private _motorSeq = [];
-        private _vehPath = _factionPath + "Vehicles.sqf";
-        if (fileExists _vehPath) then {
-            private _vehs = call compile preprocessFile _vehPath;
-            {
-                private _catName = _x select 0;
-                private _vList = _x select 1;
-                { _motorSeq pushBack [_x select 0, _catName, _x select 1]; } forEach _vList;
-            } forEach _vehs;
-        };
-        _masterHash set ["MotorpoolSequence", _motorSeq];
-
-        // 2.5 Prepare Framework Proxy
-        [_factionPath] call _fnc_Prepare;
-
-        // 2.6 Load physical gear data from disk into Session Hash
-        [_factionPath] call _fnc_LoadData;
-
-        // 3. Process Sequence into Flat Arrays for Spawner
-        private _groupsList = [];
-        private _rolesList  = [];
-        private _idList     = [];
-        
-        {
-            _x params ["_roleID", "_roleName", "_groupName"];
-            private _gIdx = _groupsList find _groupName;
-            if (_gIdx == -1) then {
-                _groupsList pushBack _groupName;
-                _rolesList pushBack [_roleName];
-                _idList pushBack [_roleID];
-            } else {
-                (_rolesList select _gIdx) pushBack _roleName;
-                (_idList select _gIdx) pushBack _roleID;
+        // --- DATA LOADING STRATEGY ---
+        // 1. Priority: Faction_Core.sqf (Modern Structure)
+        private _corePath = _factionPath + "Faction_Core.sqf";
+        if (fileExists _corePath) then {
+            [_factionPath] call _fnc_LoadData; // This populates MasterHash from Core
+        } else {
+            // 2. Fallback: Legacy Files
+            private _armorySeq = [];
+            private _loadoutPath = _factionPath + "Loadoutlist.sqf";
+            if (fileExists _loadoutPath) then {
+                private _loadouts = call compile preprocessFile _loadoutPath;
+                private _groupNames = _loadouts select 0;
+                private _roleNames  = _loadouts select 1;
+                private _scriptNames = _loadouts select 2;
+                {
+                    private _gIdx = _forEachIndex;
+                    private _gName = _x;
+                    { _armorySeq pushBack [_x, (_roleNames select _gIdx) select _forEachIndex, _gName]; } forEach (_scriptNames select _gIdx);
+                } forEach _groupNames;
             };
-        } forEach _armorySeq;
+            _masterHash set ["ArmorySequence", _armorySeq];
 
-        _masterHash set ["ArmoryGroups", _groupsList];
-        _masterHash set ["ArmoryRoles", _rolesList];
-        _masterHash set ["ArmoryIDs", _idList];
+            // Load Motorpool Sequence
+            private _motorSeq = [];
+            private _vehPath = _factionPath + "Vehicles.sqf";
+            if (fileExists _vehPath) then {
+                private _vehs = call compile preprocessFile _vehPath;
+                {
+                    private _catName = _x select 0;
+                    private _vList = _x select 1;
+                    { _motorSeq pushBack [_x select 0, _catName, _x select 1]; } forEach _vList;
+                } forEach _vehs;
+            };
+            _masterHash set ["MotorpoolSequence", _motorSeq];
+
+            // Prepare Framework Proxy (Scraper)
+            [_factionPath] call _fnc_Prepare;
+            
+            // Load physical gear data
+            [_factionPath] call _fnc_LoadData;
+        };
+
+        // 3. Process Sequence into Spawner Arrays
+        // SAFETY: Only rebuild if the session data is missing OR if we just loaded from disk
+        private _existingGroups = _masterHash getOrDefault ["ArmoryGroups", []];
+        if (count _existingGroups == 0 || (fileExists _corePath)) then {
+            private _groupsList = [];
+            private _rolesList  = [];
+            private _idList     = [];
+            
+            private _armorySeq = _masterHash getOrDefault ["ArmorySequence", []];
+            {
+                _x params ["_roleID", "_roleName", "_groupName"];
+                private _gIdx = _groupsList find _groupName;
+                if (_gIdx == -1) then {
+                    _groupsList pushBack _groupName;
+                    _rolesList pushBack [_roleName];
+                    _idList pushBack [_roleID];
+                } else {
+                    (_rolesList select _gIdx) pushBack _roleName;
+                    (_idList select _gIdx) pushBack _roleID;
+                };
+            } forEach _armorySeq;
+
+            _masterHash set ["ArmoryGroups", _groupsList];
+            _masterHash set ["ArmoryRoles", _rolesList];
+            _masterHash set ["ArmoryIDs", _idList];
+        };
 
         // Final Debounced Spawn
         if (!_isSuppressed) then {

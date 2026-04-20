@@ -20,9 +20,23 @@ tvClear _treeIDC;
 
 if (_targetSide == "") exitWith {};
 
-private _registryPath = "Scripts\Factions\Factions_Registry.sqf";
-if !(fileExists _registryPath) exitWith { diag_log "[PXG Error] Faction Registry not found!"; };
-private _masterRegistry = call compile preprocessFile _registryPath;
+private _masterRegistry = missionNamespace getVariable ["PXG_MasterRegistry_Cache", []];
+if (count _masterRegistry == 0) then {
+    private _registryPath = "Scripts\Factions\Factions_Registry.sqf";
+    if (fileExists _registryPath) then {
+        private _data = call compile preprocessFile _registryPath;
+        if (_data isEqualType [] && {count _data > 0}) then {
+            _masterRegistry = _data;
+            missionNamespace setVariable ["PXG_MasterRegistry_Cache", _masterRegistry];
+        } else {
+            diag_log format ["[PXG Warning] Master Registry at %1 is empty or malformed. Using empty tree.", _registryPath];
+            _masterRegistry = [];
+        };
+    } else {
+        diag_log "[PXG Error] Faction Registry not found!";
+        _masterRegistry = [];
+    };
+};
 
 private _filteredRegistry = _masterRegistry select { (_x select 0) == _targetSide };
 

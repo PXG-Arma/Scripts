@@ -178,5 +178,3 @@ if (_activeTab == "Overview") then {
 
 diag_log format ["[FBT] Atomic Spawn Complete: %1 agents active in parade.", count _newTmpUnits];
 missionNamespace setVariable ["FBT_SuppressEvents", false];
-
-

@@ -23,7 +23,9 @@ FBT_fnc_Pythia_Sync = {
     // --- MODE: COMMIT (Direct scanned rebuild) ---
     if (_mode == "Commit") exitWith {
         diag_log "[FBT] Committing Registry to Disk...";
-        ["FBT.call", ["fbt_manager", "update_registry", [_missionRoot]]] call py3_fnc_callExtension;
+        private _res = ["FBT.call", ["fbt_manager", "update_registry", [_missionRoot]]] call py3_fnc_callExtension;
+        missionNamespace setVariable ["PXG_MasterRegistry_Cache", nil];
+        _res
     };
 
     // --- MODE: SYNC (Fast Session Save) ---
@@ -52,5 +54,30 @@ FBT_fnc_Pythia_Sync = {
     // Arguments: [mission_root, data_pairs, run_scan]
     private _res = ["FBT.call", ["fbt_manager", "save_faction", [_missionRoot, _fullDataPairs, false]]] call py3_fnc_callExtension;
     
+    if (_res isEqualType [] && {count _res >= 4} && {_res select 0}) then {
+        private _newEntries = _res select 3;
+        if (_newEntries isEqualType []) then {
+            private _cache = missionNamespace getVariable ["PXG_MasterRegistry_Cache", []];
+            private _added = 0;
+            { 
+                private _entry = _x;
+                if ({ _x isEqualTo _entry } count _cache == 0) then { 
+                    _cache pushBack _entry; 
+                    _added = _added + 1;
+                }; 
+            } forEach _newEntries;
+            
+            if (_added > 0) then {
+                _cache sort true;
+                missionNamespace setVariable ["PXG_MasterRegistry_Cache", _cache];
+                diag_log format ["[FBT Sync] Memory Bridge Updated: %1 new entries added to cache.", _added];
+            } else {
+                diag_log "[FBT Sync] Memory Bridge: No new entries added (already present in cache).";
+            };
+        };
+    } else {
+        diag_log format ["[FBT Sync] Warning: Registry Cache not updated. Backend Result: %1", _res];
+    };
+
     _res
 };

@@ -1,12 +1,8 @@
 /*
     FBT_DataInit.sqf
     -------------------------------
-    Initializes the master Hashmap and the Pythia Bridge.
+    Initializes the master Hashmap.
 */
-
-// 0. Initialize Pythia Bridge
-[] call compile preprocessFileLineNumbers "Scripts\Faction_Builder_Tool\Functions\Core\FBT_Bridge_Init.sqf";
-[] call compile preprocessFileLineNumbers "Scripts\Faction_Builder_Tool\Functions\Core\FBT_Pythia_Sync.sqf";
 
 private _masterHash = createHashMap;
 

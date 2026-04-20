@@ -15,6 +15,9 @@ execVM "Scripts\Faction_Builder_Tool\Functions\Core\FBT_DataInit.sqf";
 // ---------------------------------------------------------
 // 1. Pre-Compile Core Function Library (Optimization)
 // ---------------------------------------------------------
+[] call compile preprocessFileLineNumbers "Scripts\Faction_Builder_Tool\Functions\Core\FBT_Bridge_Init.sqf";
+[] call compile preprocessFileLineNumbers "Scripts\Faction_Builder_Tool\Functions\Core\FBT_Pythia_Sync.sqf";
+
 FBT_fnc_PrepareFramework = compile preprocessFile "Scripts\Faction_Builder_Tool\Functions\Core\FBT_PrepareFramework.sqf";
 FBT_fnc_LoadFactionData  = compile preprocessFile "Scripts\Faction_Builder_Tool\Functions\Core\FBT_LoadFactionData.sqf";
 FBT_fnc_DressDummy       = compile preprocessFile "Scripts\Faction_Builder_Tool\Functions\Armory\FBT_DressDummy.sqf";

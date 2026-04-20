@@ -110,3 +110,50 @@ PermissionError: [Errno 13] Permission denied: 'c:\\users\\pino4\\onedrive\\docu
 [00:52:16] Retrying direct write due to lock (9/10): [Errno 13] Permission denied: 'c:\\users\\pino4\\onedrive\\documentos\\arma 3 - other profiles\\aquafox\\mpmissions\\test\\tanoa_pxg_template.tanoa\\scripts\\factions\\FBT_Registry_Generated.sqf'
 [00:52:17] FATAL WRITE ERROR after 10 tries: [Errno 13] Permission denied: 'c:\\users\\pino4\\onedrive\\documentos\\arma 3 - other profiles\\aquafox\\mpmissions\\test\\tanoa_pxg_template.tanoa\\scripts\\factions\\FBT_Registry_Generated.sqf'
 [00:52:17] FAILED TO WRITE: c:/users/pino4/onedrive/documentos/arma 3 - other profiles/aquafox/mpmissions/test/tanoa_pxg_template.tanoa/scripts/factions/FBT_Registry_Generated.sqf
+[18:30:57] Starting Registry Scan in: c:/users/pino4/onedrive/documentos/arma 3 - other profiles/aquafox/mpmissions/test/tanoa_pxg_template.tanoa/scripts/factions
+[18:30:57] Scan SUCCESS: 5 factions found.
+[18:30:58] REGISTRY UPDATED: 5 entries indexed.
+[18:33:42] Starting Registry Scan in: c:/users/pino4/onedrive/documentos/arma 3 - other profiles/aquafox/mpmissions/test/tanoa_pxg_template.tanoa/scripts/factions
+[18:33:42] Scan SUCCESS: 5 factions found.
+[18:33:42] Retrying direct write due to lock (1/10): [Errno 13] Permission denied: 'c:\\users\\pino4\\onedrive\\documentos\\arma 3 - other profiles\\aquafox\\mpmissions\\test\\tanoa_pxg_template.tanoa\\scripts\\factions\\factions_registry.sqf'
+[18:33:43] Retrying direct write due to lock (2/10): [Errno 13] Permission denied: 'c:\\users\\pino4\\onedrive\\documentos\\arma 3 - other profiles\\aquafox\\mpmissions\\test\\tanoa_pxg_template.tanoa\\scripts\\factions\\factions_registry.sqf'
+[18:33:43] Retrying direct write due to lock (3/10): [Errno 13] Permission denied: 'c:\\users\\pino4\\onedrive\\documentos\\arma 3 - other profiles\\aquafox\\mpmissions\\test\\tanoa_pxg_template.tanoa\\scripts\\factions\\factions_registry.sqf'
+[18:33:43] Retrying direct write due to lock (4/10): [Errno 13] Permission denied: 'c:\\users\\pino4\\onedrive\\documentos\\arma 3 - other profiles\\aquafox\\mpmissions\\test\\tanoa_pxg_template.tanoa\\scripts\\factions\\factions_registry.sqf'
+[18:33:44] Retrying direct write due to lock (5/10): [Errno 13] Permission denied: 'c:\\users\\pino4\\onedrive\\documentos\\arma 3 - other profiles\\aquafox\\mpmissions\\test\\tanoa_pxg_template.tanoa\\scripts\\factions\\factions_registry.sqf'
+[18:33:44] Retrying direct write due to lock (6/10): [Errno 13] Permission denied: 'c:\\users\\pino4\\onedrive\\documentos\\arma 3 - other profiles\\aquafox\\mpmissions\\test\\tanoa_pxg_template.tanoa\\scripts\\factions\\factions_registry.sqf'
+[18:33:45] Retrying direct write due to lock (7/10): [Errno 13] Permission denied: 'c:\\users\\pino4\\onedrive\\documentos\\arma 3 - other profiles\\aquafox\\mpmissions\\test\\tanoa_pxg_template.tanoa\\scripts\\factions\\factions_registry.sqf'
+[18:33:45] Retrying direct write due to lock (8/10): [Errno 13] Permission denied: 'c:\\users\\pino4\\onedrive\\documentos\\arma 3 - other profiles\\aquafox\\mpmissions\\test\\tanoa_pxg_template.tanoa\\scripts\\factions\\factions_registry.sqf'
+[18:33:45] Retrying direct write due to lock (9/10): [Errno 13] Permission denied: 'c:\\users\\pino4\\onedrive\\documentos\\arma 3 - other profiles\\aquafox\\mpmissions\\test\\tanoa_pxg_template.tanoa\\scripts\\factions\\factions_registry.sqf'
+[18:33:46] FATAL WRITE ERROR after 10 tries: [Errno 13] Permission denied: 'c:\\users\\pino4\\onedrive\\documentos\\arma 3 - other profiles\\aquafox\\mpmissions\\test\\tanoa_pxg_template.tanoa\\scripts\\factions\\factions_registry.sqf'
+[18:33:46] FAILED TO WRITE REGISTRY: c:/users/pino4/onedrive/documentos/arma 3 - other profiles/aquafox/mpmissions/test/tanoa_pxg_template.tanoa/scripts/factions/factions_registry.sqf
+[18:36:30] Starting Registry Scan in: c:/users/pino4/onedrive/documentos/arma 3 - other profiles/aquafox/mpmissions/test/tanoa_pxg_template.tanoa/scripts/factions
+[18:36:30] Scan SUCCESS: 5 factions found.
+[18:36:30] REGISTRY UPDATED: 5 entries indexed.
+[18:39:52] Saved: Scripts/Factions/BLUFOR/British Armed Forces/Army/Modern/Woodland
+[18:43:43] Starting Registry Scan in: c:/users/pino4/onedrive/documentos/arma 3 - other profiles/aquafox/mpmissions/test/tanoa_pxg_template.tanoa/scripts/factions
+[18:43:43] Scan SUCCESS: 6 factions found.
+[18:43:43] REGISTRY UPDATED: 6 entries indexed.
+[18:49:10] Saved: Scripts/Factions/BLUFOR/British Armed Forces/Army/Modern/Woodland
+[18:54:52] Starting Registry Scan in: c:/users/pino4/onedrive/documentos/arma 3 - other profiles/aquafox/mpmissions/test/tanoa_pxg_template.tanoa/scripts/factions
+[18:54:52] Scan SUCCESS: 6 factions found.
+[18:54:52] REGISTRY UPDATED: 6 entries indexed.
+[18:55:39] Starting Registry Scan in: c:/users/pino4/onedrive/documentos/arma 3 - other profiles/aquafox/mpmissions/test/tanoa_pxg_template.tanoa/scripts/factions
+[18:55:39] Scan SUCCESS: 6 factions found.
+[18:55:39] REGISTRY UPDATED: 6 entries indexed.
+[19:23:30] Saved: Scripts/Factions/BLUFOR/British Armed Forces/Army/Modern/Woodland
+[19:27:20] Starting Registry Scan in: c:/users/pino4/onedrive/documentos/arma 3 - other profiles/aquafox/mpmissions/test/tanoa_pxg_template.tanoa/scripts/factions
+[19:27:20] Scan SUCCESS: 6 factions found.
+[19:27:20] REGISTRY UPDATED: 6 entries indexed.
+[19:27:35] Starting Registry Scan in: c:/users/pino4/onedrive/documentos/arma 3 - other profiles/aquafox/mpmissions/test/tanoa_pxg_template.tanoa/scripts/factions
+[19:27:35] Scan SUCCESS: 6 factions found.
+[19:27:35] Retrying direct write due to lock (1/10): [Errno 13] Permission denied: 'c:\\users\\pino4\\onedrive\\documentos\\arma 3 - other profiles\\aquafox\\mpmissions\\test\\tanoa_pxg_template.tanoa\\scripts\\factions\\factions_registry.sqf'
+[19:27:35] Retrying direct write due to lock (2/10): [Errno 13] Permission denied: 'c:\\users\\pino4\\onedrive\\documentos\\arma 3 - other profiles\\aquafox\\mpmissions\\test\\tanoa_pxg_template.tanoa\\scripts\\factions\\factions_registry.sqf'
+[19:27:36] Retrying direct write due to lock (3/10): [Errno 13] Permission denied: 'c:\\users\\pino4\\onedrive\\documentos\\arma 3 - other profiles\\aquafox\\mpmissions\\test\\tanoa_pxg_template.tanoa\\scripts\\factions\\factions_registry.sqf'
+[19:27:36] Retrying direct write due to lock (4/10): [Errno 13] Permission denied: 'c:\\users\\pino4\\onedrive\\documentos\\arma 3 - other profiles\\aquafox\\mpmissions\\test\\tanoa_pxg_template.tanoa\\scripts\\factions\\factions_registry.sqf'
+[19:27:37] Retrying direct write due to lock (5/10): [Errno 13] Permission denied: 'c:\\users\\pino4\\onedrive\\documentos\\arma 3 - other profiles\\aquafox\\mpmissions\\test\\tanoa_pxg_template.tanoa\\scripts\\factions\\factions_registry.sqf'
+[19:27:37] Retrying direct write due to lock (6/10): [Errno 13] Permission denied: 'c:\\users\\pino4\\onedrive\\documentos\\arma 3 - other profiles\\aquafox\\mpmissions\\test\\tanoa_pxg_template.tanoa\\scripts\\factions\\factions_registry.sqf'
+[19:27:37] Retrying direct write due to lock (7/10): [Errno 13] Permission denied: 'c:\\users\\pino4\\onedrive\\documentos\\arma 3 - other profiles\\aquafox\\mpmissions\\test\\tanoa_pxg_template.tanoa\\scripts\\factions\\factions_registry.sqf'
+[19:27:38] Retrying direct write due to lock (8/10): [Errno 13] Permission denied: 'c:\\users\\pino4\\onedrive\\documentos\\arma 3 - other profiles\\aquafox\\mpmissions\\test\\tanoa_pxg_template.tanoa\\scripts\\factions\\factions_registry.sqf'
+[19:27:38] Retrying direct write due to lock (9/10): [Errno 13] Permission denied: 'c:\\users\\pino4\\onedrive\\documentos\\arma 3 - other profiles\\aquafox\\mpmissions\\test\\tanoa_pxg_template.tanoa\\scripts\\factions\\factions_registry.sqf'
+[19:27:38] FATAL WRITE ERROR after 10 tries: [Errno 13] Permission denied: 'c:\\users\\pino4\\onedrive\\documentos\\arma 3 - other profiles\\aquafox\\mpmissions\\test\\tanoa_pxg_template.tanoa\\scripts\\factions\\factions_registry.sqf'
+[19:27:38] FAILED TO WRITE REGISTRY: c:/users/pino4/onedrive/documentos/arma 3 - other profiles/aquafox/mpmissions/test/tanoa_pxg_template.tanoa/scripts/factions/factions_registry.sqf

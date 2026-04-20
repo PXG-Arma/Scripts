@@ -82,11 +82,14 @@ if (count _allLeadPositions > 0) then {
     missionNamespace setVariable ["FBT_Field_Center", _centroid];
     missionNamespace setVariable ["FBT_Field_Zoom", (_maxRadius * 2.5) max 12];
 
-    private _anchorPosASL = getPosASL (missionNamespace getVariable ["FBT_Anchor", objNull]);
-    if (!isNull (missionNamespace getVariable ["FBT_Anchor", objNull])) then {
+    private _anchorPosASL = getPosASL _anchor;
+    if (!isNull _anchor) then {
         _centroid set [2, _anchorPosASL select 2];
         missionNamespace setVariable ["FBT_Field_Center", _centroid];
     };
+
+    private _bearing = if (!isNull _anchor) then { getDir _anchor } else { 0 };
+    missionNamespace setVariable ["FBT_Field_Bearing", _bearing];
 
     diag_log format ["[FBT] Camera Field Calculated. Center: %1 | Zoom: %2 | Bearing: %3", _centroid, (_maxRadius * 2.5) max 12, _bearing];
 } else {

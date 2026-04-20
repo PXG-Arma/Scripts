@@ -84,11 +84,12 @@ def save_faction(mission_root, data_pairs, run_scan=False):
             processed_data["Armory"] = armory_dict
             
         # Explicit Modular Metadata Handling
-        modular_keys = ["SlotGroups", "GunGroups", "Attachment_Standards", "SightGroups"]
+        modular_keys = ["SlotGroups", "GunGroups", "Attachment_Standards", "SightGroups", "ArmoryGroups", "ArmoryRoles", "ArmoryIDs"]
         for key in modular_keys:
             val = raw_data.get(key, {})
-            # Ensure it's a dict for Hashmap serialization
-            if isinstance(val, list): val = {k: v for k, v in val}
+            # Ensure it's a dict for Hashmap serialization if it's supposed to be
+            if isinstance(val, list) and key not in ["ArmoryGroups", "ArmoryRoles", "ArmoryIDs"]: 
+                val = {k: v for k, v in val}
             processed_data[key] = val
             
         # Motorpool Recat (Framework compatible)
@@ -207,13 +208,14 @@ def update_registry(mission_root):
             
         content = header + "\n".join(rows) + "\n]\n"
         
-        # DYNAMIC DUO
-        registry_path = os.path.join(factions_dir, "FBT_Registry_Generated.sqf").replace("\\", "/")
+        # FINAL WRITE
+        registry_path = os.path.join(factions_dir, "factions_registry.sqf").replace("\\", "/")
         
         if _force_write(mission_root, registry_path, content):
+            _log(mission_root, f"REGISTRY UPDATED: {len(found_entries)} entries indexed.")
             return [True, f"{len(found_entries)} factions indexed", found_entries]
         else:
-            _log(mission_root, f"FAILED TO WRITE: {registry_path}")
+            _log(mission_root, f"FAILED TO WRITE REGISTRY: {registry_path}")
             return [False, f"Permission Denied writing to {registry_path}", []]
         
     except Exception as e:

@@ -1,14 +1,20 @@
-_avialableVariants = ["------- Airborne -------",
-                      "VDV(WD) Modern",
-					  "VDV(D) Modern",
-					  "--------- Army ---------",
-					  "USSR(WD) Early",
-					  "MSV(WD) Modern",
-					  "---- Marine Corps ----",
-					  "VMF(WD) Modern",
-					  "--- Special Forces ---",
-					  "Spetsnaz(WD) Modern",
-					  "-- Law Enforcement --",
-					  "Police Modern"];
+// The variantlist shows the available subfactions, try to follow the same format shown. A Subfaction Header like Airborne, Army, Marines, or SF and then the actual faction underneath.
+// To list your faction you put down the Name + Era. Due to current limitations the Subfaction name can't have spaces. Our current Eras are Early, Late and Modern
+// The last faction in the list can not have a comma.
+
+_avialableVariants = [//"------- Airborne -------",
+					  //"Airborne(D) Modern",
+					  "-- Motostrelkovye Voyska --",
+					  //"Army(WD) Early",
+					  //"Army(D) Late",
+					  "MSV(WD) Modern"
+					  //"---- Marine Corps ----",
+					  //"Marine(WD) Modern",
+					  //"Marine(D) Modern",
+					  //"--- Special Forces ---", 
+					  //"Delta(Mix) Late",
+					  //"GreenBerets(D) Modern",
+					  //"Raiders(WD) Modern"
+					  ];
 
 _avialableVariants

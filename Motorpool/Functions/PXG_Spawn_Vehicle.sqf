@@ -54,9 +54,9 @@ if (count _nearVehicles > 0) then {
 	};
 	
 	private _vehicle = createVehicle[_vehicleType, _spawnCoords, [], 0, "CAN_COLLIDE"];
-	
-	_vehicle setDir getDir _spawnPosition;
 
+	_vehicle setDir getDir _spawnPosition;
+    
 	_vehicleSplitType = _vehicleType splitString "_";
 
 	_variantArray = tvText [461501, _indexFaction];

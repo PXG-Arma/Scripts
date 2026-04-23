@@ -1,14 +1,15 @@
 _indexSpawn = lbCurSel 451500;
 _indexSide = lbCurSel 451504;
 _indexFaction = tvCurSel 451501;
-_indexSupply = lbCurSel 451502;
-_supplyData = lbData [451502, _indexSupply];
+_indexSupply = tvCurSel 451502;
+_supplyData = tvData [451502, _indexSupply];
 
 if (_indexSide == -1) exitWith { hint "Please select side."};
 if (count _indexFaction == 0) exitWith { hint "Please select faction."};
 if (count _indexFaction == 1) exitWith { hint "Please select faction variant."};
-if (_indexSupply == -1) exitWith { hint "Please select supply crate."};
-if (_indexSpawn == -1) exitWith {hint "Please select spawn point."};
+if (count _indexSupply == 0) exitWith { hint "Please select supply crate."};
+if (count _indexSupply < 2) exitWith { hint "Please select a supply, not a category."};
+if (_indexSpawn == -1) exitWith { hint "Please select spawn point."};
 
 _spawnPosition = synchronizedObjects (player getVariable "PXG_Resupply_Master") select _indexSpawn;
 
@@ -67,6 +68,26 @@ if (count _nearVehicles > 0) then {
 			};
 		};
 
+		case "Slingloadable Crate (8)": {		
+			if (((_vehicle getVariable "ace_cargo_space") - 7) >= 0) then {
+			
+                [_supplyData, "B_CargoNet_01_ammo_F", 7, _vehicle, _spawnPosition] call compile preprocessFileLineNumbers "Scripts\Resupply\Functions\PXG_Crate_Spawn_VehicleLoad.sqf";
+				hint "Loaded crate into vehicle";
+			} else {
+				hint "Could not load crate into vehicle";
+			};
+		};
+
+    case "Vehicle Ressuply":
+		{
+			if (((_vehicle getVariable "ace_cargo_space") - 4) >= 0) then {
+				[_supplyData, "Box_NATO_AmmoVeh_F", 2, _vehicle, _spawnPosition] call compile preprocessFileLineNumbers "Scripts\Resupply\Functions\PXG_Crate_Spawn_VehicleLoad.sqf";
+				hint "Loaded crate into vehicle";
+			} else {
+				hint "Could not load crate into vehicle";
+			};
+		};
+
 		case "LAT Resupply";
 		case "MAT Resupply";
 		case "MAT Resupply (HEAT)";
@@ -84,6 +105,7 @@ if (count _nearVehicles > 0) then {
 
 		case "40mm Heavy";
 		case "40mm Grenades";
+		case "Grenades";
 		case "Hand Grenades":
 		{	
 			if (((_vehicle getVariable "ace_cargo_space") - 1) >= 0) then {
@@ -108,6 +130,8 @@ if (count _nearVehicles > 0) then {
 		};
 
 		case "Misc. Medical Supplies";
+		case "Basic Medical Supplies";
+		case "Advanced Medical Supplies";
 		case "Autoinjectors";
 		case "Bandages";
 		case "Blood IVs":
@@ -215,6 +239,44 @@ if (count _nearVehicles > 0) then {
 		_track setDir getDir _spawnPosition;
 	};
 
+	case "Slingloadable Crate (8)": {
+		private _crate = createVehicle["B_CargoNet_01_ammo_F", getPosATL _spawnPosition, [], 0, "CAN_COLLIDE"];
+		_crate setDir getDir _spawnPosition;
+		_crate addEventHandler ["HandleDamage", {0}];
+		_crate allowDamage false;
+		_crate setDamage 0;
+		
+		//Remove default contents from crate
+		clearItemCargoGlobal _crate;
+		clearMagazineCargoGlobal _crate;
+		clearWeaponCargoGlobal _crate;
+		clearBackpackCargoGlobal _crate;
+
+		[_crate, 7] call ace_cargo_fnc_setSize;
+		[_crate, 8] call ace_cargo_fnc_setSpace;
+		_crate setVariable ["ace_cargo_customName", "Slingload Crate", true];
+		[_crate, true, [0,1,1], 0, true] remoteExec ["ace_dragging_fnc_setCarryable"];
+	};
+
+    case "Vehicle Resupply":
+	{
+		private _crate = createVehicle["Box_NATO_AmmoVeh_F", getPosATL _spawnPosition, [], 0, "CAN_COLLIDE"];
+		_crate setDir getDir _spawnPosition;
+		_crate addEventHandler ["HandleDamage", {0}];
+		_crate allowDamage false;
+		_crate setDamage 0;
+		
+		//Remove default contents from crate
+		clearItemCargoGlobal _crate;
+		clearMagazineCargoGlobal _crate;
+		clearWeaponCargoGlobal _crate;
+		clearBackpackCargoGlobal _crate;
+
+		[_crate] call compile preprocessFile "Scripts\Resupply\Functions\PXG_Crate_Fill.sqf";
+		[_crate, 4] call ace_cargo_fnc_setSize;
+		[_crate, true, [0,1,1], 0, true] remoteExec ["ace_dragging_fnc_setCarryable"];
+	};
+
 	case "LAT Resupply";
 	case "MAT Resupply";
 	case "MAT Resupply (HEAT)";
@@ -260,7 +322,7 @@ if (count _nearVehicles > 0) then {
 		[_crate, true, [0,1,1], 0, true] remoteExec ["ace_dragging_fnc_setCarryable"];
 	};
 
-	case "40mm Flares";
+	case "Flares";
 	case "40mm Smoke Rounds";
 	case "Smoke Grenades";
 	case "Stun Grenades":
@@ -282,6 +344,8 @@ if (count _nearVehicles > 0) then {
 		[_crate, true, [0,1,1], 0, true] remoteExec ["ace_dragging_fnc_setCarryable"];
 	};
 
+	case "Advanced Medical Supplies";
+	case "Basic Medical Supplies";
 	case "Misc. Medical Supplies";
 	case "Autoinjectors";
 	case "Bandages";

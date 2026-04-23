@@ -1,3 +1,5 @@
+// This file lists all the Radios that is common accross all Factions, This should never be touched!
+
 params["_side","_faction","_variant", "_loadout"]; 
 
 _variantArray = _variant splitString " ";
@@ -9,12 +11,15 @@ if (_variantEra == "Early") then {
 		case "plt";
 		case "plt_med"; 
 		case "logi";
-		case "pil";
-		case "hpil";
+		case "plt_eod";
+		case "r_pil";
+		case "f_pil";
 		case "sqd_ld";
+		case "sf_ld";
 		case "ar_ld";
 		case "sup_mmg_l";
 		case "sup_hmg_l";
+		case "sup_gmg_l";
 		case "sup_mat_l";
 		case "sup_hat_l";
 		case "sup_aa_l";
@@ -30,10 +35,13 @@ if (_variantEra == "Insurgency") then {
 		case "plt";
 		case "plt_med";  
 		case "logi";
+		case "plt_eod";
 		case "sqd_ld";
-		case "rcn_ld";
+		case "sf_ld";
 		case "ar_ld";
 		case "sup_mmg_l";
+		case "sup_hmg_l";
+		case "sup_gmg_l";
 		case "sup_mat_l";
 		case "sup_hat_l";
 		case "sup_aa_l";
@@ -41,9 +49,14 @@ if (_variantEra == "Insurgency") then {
 			player addItemToUniform "ACRE_PRC343";
 			player addItemToUniform "ACRE_PRC152"
 		};
-		case "pil": {};
-		case "tacp": { 
+		case "r_pil";
+		case "f_pil": {player addItemToUniform "ACRE_PRC152"};
+		case "rcn_ld": { 
 			player addItemToUniform "ACRE_PRC343"; 
+			player addItemToBackpack "ACRE_PRC117F"; 
+		};
+		case "tacp": { 
+			player addItemToUniform "ACRE_PRC152"; 
 			player addItemToBackpack "ACRE_PRC117F"; 
 		};
 	};
@@ -54,10 +67,14 @@ if (_variantEra == "Late") then {
 		default { player addItemToUniform "ACRE_PRC343"};
 		case "plt";
 		case "plt_med";  
+		case "plt_eod";
 		case "logi";
 		case "sqd_ld";
+		case "sf_ld";
 		case "ar_ld";
 		case "sup_mmg_l";
+		case "sup_hmg_l";
+		case "sup_gmg_l";
 		case "sup_mat_l";
 		case "sup_hat_l";
 		case "sup_aa_l";
@@ -65,10 +82,14 @@ if (_variantEra == "Late") then {
 			player addItemToUniform "ACRE_PRC343";
 			player addItemToVest "ACRE_PRC152";
 		};
-		case "pil": { player addItemToUniform "ACRE_PRC152"};
-		case "rcn_ld";
-		case "tacp": { 
+		case "r_pil";
+		case "f_pil": { player addItemToUniform "ACRE_PRC152"};
+		case "rcn_ld": { 
 			player addItemToUniform "ACRE_PRC343"; 
+			player addItemToBackpack "ACRE_PRC117F"; 
+		};
+		case "tacp": { 
+			player addItemToUniform "ACRE_PRC152"; 
 			player addItemToBackpack "ACRE_PRC117F";
 		};
 	};
@@ -78,11 +99,15 @@ if (_variantEra == "Modern" || _variantEra == "Future") then {
 	switch (_loadout) do {
 		default { player addItemToUniform "ACRE_PRC343"};
 		case "plt";
-		case "plt_med";  
+		case "plt_med";
+		case "plt_eod";
 		case "logi";
 		case "sqd_ld";
+		case "sf_ld";
 		case "ar_ld";
 		case "sup_mmg_l";
+		case "sup_hmg_l";
+		case "sup_gmg_l";
 		case "sup_mat_l";
 		case "sup_hat_l";
 		case "sup_aa_l";
@@ -90,11 +115,14 @@ if (_variantEra == "Modern" || _variantEra == "Future") then {
 			player addItemToUniform "ACRE_PRC343";
 			player addItemToVest "ACRE_PRC152"
 		};
-		case "hpil";
-		case "pil": { player addItemToUniform "ACRE_PRC152"};
-		case "rcn_ld";
-		case "tacp": { 
+		case "r_pil";
+		case "f_pil": { player addItemToUniform "ACRE_PRC152"};
+		case "rcn_ld": { 
 			player addItemToUniform "ACRE_PRC343"; 
+			player addItemToBackpack "ACRE_PRC117F"; 
+		};
+		case "tacp": { 
+			player addItemToUniform "ACRE_PRC152"; 
 			player addItemToBackpack "ACRE_PRC117F";
 		};
 	};

@@ -10,6 +10,15 @@ _faction = tvText [431501, _faction];
 // Get variant name
 _variant = tvText [431501, _indexFaction];
 
+// Intercept category headers (which contain "-") to prevent them from creating errors
+if (_variant find "-" != -1) exitWith {
+	tvClear 431503; // Clear roles list
+	lbClear 431504; // Clear weapons list
+	lbClear 431505; // Clear scopes list
+	ctrlSetText [431701, ""]; // Clear weapon image preview
+	ctrlSetText [431702, ""]; // Clear scope image preview
+};
+
 // Split variant name to get variant era 
 _variantArray = _variant splitString " ";
 _variantEra = _variantArray #1;

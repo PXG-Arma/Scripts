@@ -87,7 +87,7 @@ class dialog_supply_spawn
 			w = 0.12 * safezoneW;
 			h = 0.11 * safezoneH;
 		};		
-		class dim_supply_cratecontent_list: PxgGuiRscListbox
+		class dim_supply_cratecontent_list: PxgGuiRscTree
 		{
 			idc = 451502;
 
@@ -96,7 +96,7 @@ class dialog_supply_spawn
 			w = 0.12 * safezoneW;
 			h = 0.41 * safezoneH;
 
-			onLBSelChanged = "call compile preprocessfile 'Scripts\Resupply\Functions\PXG_Refresh_Contents.sqf'";
+			onTreeSelChanged = "call compile preprocessfile 'Scripts\Resupply\Functions\PXG_Refresh_Contents.sqf'";
 		};
 		
 		class dim_supply_faction_list: PxgGuiRscTree
